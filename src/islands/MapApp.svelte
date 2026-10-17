@@ -671,8 +671,8 @@
           {#each chapter.narrative.split(/\n\n+/) as para, i (i)}<p>{para}</p>{/each}
           {#if chapter.sources?.length}
             <p class="srcs sans">
-              Sources: {#each chapter.sources as src, i (i)}{i > 0 ? ', ' : ''}<a
-                  href={src.url}>{src.title ?? new URL(src.url).hostname}</a
+              Sources: {#each chapter.sources as src, i (i)}{i > 0 ? ', ' : ''}<a href={src.url}
+                  >{src.title ?? new URL(src.url).hostname}</a
                 >{/each}
             </p>
           {/if}

@@ -286,7 +286,9 @@
         <section aria-labelledby="today">
           <h3 id="today">Native lands today</h3>
           <ul class="refs sans">
-            {#each report.lands_here as l, i (i)}<li>You are inside: <strong>{l}</strong></li>{/each}
+            {#each report.lands_here as l, i (i)}<li>
+                You are inside: <strong>{l}</strong>
+              </li>{/each}
             {#each report.lands_near as l, i (i)}<li>{l.name}, about {l.km} km away</li>{/each}
           </ul>
           <p class="fine sans">
