@@ -296,6 +296,22 @@
   "quote": "to acquire approximately 270 acres of land into trust for the Oneida Indian Nation"
  },
  {
+  "id": "camp-spirit-lake-white-horse-hill",
+  "field": "location_text",
+  "shown": "680 acres of White Horse Hill National Game Preserve",
+  "source_says": "hay-production land transferred from BIA to FWS in 1959 to feed bison at the nearby preserve",
+  "url": "https://www.doi.gov/pressreleases/department-interior-announces-completed-land-transfer-us-fish-and-wildlife-service",
+  "quote": "to grow hay for feeding bison in the winter at the nearby White Horse Hill National Game Preserve"
+ },
+ {
+  "id": "camp-fort-reno",
+  "field": "acres",
+  "shown": "6700",
+  "source_says": "9,500 acres (Tribal Business News, 2026); 9,600 acres set aside in 1883 and about 8,500 acres transferred to USDA in 1948 (Tribes' submission)",
+  "url": "https://tribalbusinessnews.com/sections/real-estate/15541-farm-bill-draft-would-block-return-of-fort-reno-to-cheyenne-and-arapaho-tribes",
+  "quote": "transferring the 9,500‑acre Fort Reno property"
+ },
+ {
   "id": "org-cultural-conservancy",
   "field": "website",
   "shown": "https://www.cultural-conservancy.org/",
