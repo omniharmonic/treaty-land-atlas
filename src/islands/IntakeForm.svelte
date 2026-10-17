@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { relayFetch } from '../lib/relay';
   // One form for claims, corrections and removal requests. It posts to the private intake
   // (relay/api/claim), which files an issue in a private repository: contact details are never public.
   let {
@@ -38,7 +39,7 @@
     status = 'sending';
     error = '';
     try {
-      const res = await fetch(`${relay}/api/claim`, {
+      const res = await relayFetch(relay, `/api/claim`, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ kind, record_id: record, nation, role, contact, message, website }),

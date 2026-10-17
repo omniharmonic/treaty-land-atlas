@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { relayFetch } from '../../lib/relay';
   // Native Land Digital lookup through our no-store relay (docs/release/nld-relay.md).
   // The browser never sees an API key, and nothing is saved. If the relay is not set up,
   // this falls back to a plain link to native-land.ca.
@@ -21,8 +22,9 @@
     status = 'loading';
     where = `${c[0].toFixed(2)}, ${c[1].toFixed(2)}`;
     try {
-      const res = await fetch(
-        `${relay}/api/lookup?lat=${c[0]}&lng=${c[1]}&maps=territories,languages`,
+      const res = await relayFetch(
+        relay,
+        `/api/lookup?lat=${c[0]}&lng=${c[1]}&maps=territories,languages`,
       );
       if (res.status === 503 || res.status === 410 || res.status === 403) {
         status = 'unavailable';

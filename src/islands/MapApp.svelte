@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { relayFetch } from '../lib/relay';
   import { onMount } from 'svelte';
   import {
     Map as MapLibre,
@@ -211,7 +212,7 @@
       .map((b) => [(b[1] + b[3]) / 2, (b[0] + b[2]) / 2] as [number, number]);
     Promise.all(
       points.map((p) =>
-        fetch(`${relay}/api/lookup?lat=${p[0]}&lng=${p[1]}&maps=territories`)
+        relayFetch(relay, `/api/lookup?lat=${p[0]}&lng=${p[1]}&maps=territories`)
           .then((r) => (r.ok ? r.json() : r.status === 503 ? 'unavailable' : []))
           .catch(() => []),
       ),

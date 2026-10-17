@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { relayFetch } from '../lib/relay';
   // Where you live: type an address (or share your location) and read the record of that land.
   // The address stays in the URL hash, which browsers never send to a server; it goes only to the
   // geocoder through the relay, which keeps nothing. After lookup the hash holds rounded
@@ -78,7 +79,7 @@
     message = 'Finding the place…';
     loadData();
     try {
-      const res = await fetch(`${relay}/api/geocode?q=${encodeURIComponent(text)}`);
+      const res = await relayFetch(relay, `/api/geocode?q=${encodeURIComponent(text)}`);
       if (res.status === 404) {
         status = 'notfound';
         message = 'No match. Try a town and state (Tulsa, OK) or a ZIP code.';
@@ -117,7 +118,7 @@
     homelands = [];
     if (!relay) return;
     homelandStatus = 'loading';
-    fetch(`${relay}/api/lookup?lat=${lat}&lng=${lng}&maps=territories`)
+    relayFetch(relay, `/api/lookup?lat=${lat}&lng=${lng}&maps=territories`)
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((list: { properties?: { Name?: string; description?: string } }[]) => {
         homelands = (Array.isArray(list) ? list : [])
