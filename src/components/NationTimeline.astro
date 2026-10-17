@@ -1,0 +1,189 @@
+---
+// A nation's record on one line of years: treaties, land recorded as ceded (sized by acres,
+// colored by how), broken promises, court cases and land returns. Every mark links to its record.
+// For a present-day nation, it includes the peoples whose history it carries.
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { incoming, node, outgoing, pathFor, year, type Node } from '../lib/graph';
+import { href } from '../lib/href';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+const stories = JSON.parse(
+  readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'cession-stories.json'), 'utf8'),
+) as Record<string, { how: string; nations: string[]; acres: number; ceded_year: number | null }>;
+
+const who = new Set([
+  n.id,
+  ...outgoing(n.id)
+    .filter((e) => e.type === 'successor_of')
+    .map((e) => e.target),
+]);
+type Mark = { id: string; y: number; label: string; href: string | null; how?: string; r?: number };
+const mk = (id: string, y: number | null, extra: Partial<Mark> = {}): Mark | null => {
+  const m = node(id);
+  const p = m ? pathFor(m) : null;
+  return y && m ? { id, y, label: m.label, href: p ? href(p) : null, ...extra } : null;
+};
+const seen = new Set<string>();
+const collect = (ids: string[], f: (id: string) => Mark | null) =>
+  ids
+    .filter((id) => (seen.has(id) ? false : (seen.add(id), true)))
+    .map(f)
+    .filter((m): m is Mark => !!m);
+const fromWho = (type: string, edge: string, dir: 'in' | 'out') =>
+  [...who].flatMap((w) =>
+    (dir === 'in' ? incoming(w) : outgoing(w))
+      .filter((e) => e.type === edge && node(dir === 'in' ? e.source : e.target)?.type === type)
+      .map((e) => (dir === 'in' ? e.source : e.target)),
+  );
+
+const treaties = collect(fromWho('Instrument', 'party_to', 'out'), (id) => mk(id, year(node(id)!)));
+const mine = Object.entries(stories).filter(([, s]) => s.nations.some((x) => who.has(x)));
+const maxAcres = Math.max(1, ...mine.map(([, s]) => s.acres));
+const land = collect(
+  Object.entries(stories)
+    .filter(([, s]) => s.nations.some((x) => who.has(x)))
+    .map(([id]) => id),
+  (id) =>
+    mk(id, stories[id]!.ceded_year, {
+      how: stories[id]!.how,
+      r: 3 + 9 * Math.sqrt(stories[id]!.acres / maxAcres),
+    }),
+);
+const broken = collect(fromWho('Violation', 'involves_nation', 'in'), (id) =>
+  mk(id, year(node(id)!)),
+);
+const cases = collect(fromWho('Case', 'involves_nation', 'in'), (id) => mk(id, year(node(id)!)));
+const returns = collect(fromWho('Campaign', 'involves_nation', 'in'), (id) =>
+  mk(id, year(node(id)!)),
+);
+
+const lanes = [
+  { key: 'treaties', label: 'Treaties', marks: treaties },
+  { key: 'land', label: 'Land taken', marks: land },
+  { key: 'broken', label: 'Promises broken', marks: broken },
+  { key: 'cases', label: 'In court', marks: cases },
+  { key: 'returns', label: 'Land returned', marks: returns },
+].filter((l) => l.marks.length);
+const all = lanes.flatMap((l) => l.marks.map((m) => m.y));
+const y0 = Math.min(1780, ...all);
+const y1 = 2026;
+const W = 1000;
+const L = 118; // label column
+const LANE = 34;
+const H = lanes.length * LANE + 26;
+const x = (y: number) => L + ((y - y0) / (y1 - y0)) * (W - L - 12);
+const ticks = [y0, ...[1800, 1850, 1900, 1950, 2000].filter((t) => t > y0 + 8), y1];
+const total = lanes.reduce((s, l) => s + l.marks.length, 0);
+---
+
+{lanes.length > 1 && (
+  <section class="timeline" aria-labelledby="tl-h">
+    <h2 id="tl-h">The record over time</h2>
+    <div class="scroll">
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        role="group"
+        aria-label={`Timeline of ${total} records from ${y0} to today`}
+      >
+        {ticks.map((t) => (
+          <g class="tick">
+            <line x1={x(t)} x2={x(t)} y1="0" y2={H - 18} />
+            <text x={x(t)} y={H - 4} text-anchor={t === y1 ? 'end' : 'middle'}>
+              {t === 2026 ? 'today' : t}
+            </text>
+          </g>
+        ))}
+        {lanes.map((l, i) => (
+          <g class={`lane ${l.key}`} transform={`translate(0 ${i * LANE + 4})`}>
+            <text class="lab" x="0" y={LANE / 2 + 4}>
+              {l.label}
+            </text>
+            <line class="rail" x1={L} x2={W - 12} y1={LANE / 2} y2={LANE / 2} />
+            {l.marks.map((m) => (
+              <a href={m.href ?? undefined} aria-label={`${m.label}, ${m.y}`}>
+                <title>{`${m.label} (${m.y})`}</title>
+                {l.key === 'land' ? (
+                  <circle
+                    cx={x(m.y)}
+                    cy={LANE / 2}
+                    r={m.r}
+                    style={`fill: var(--how-${m.how ?? 'unknown'})`}
+                  />
+                ) : (
+                  <rect x={x(m.y) - 2.5} y={LANE / 2 - 9} width="5" height="18" rx="1" />
+                )}
+              </a>
+            ))}
+          </g>
+        ))}
+      </svg>
+    </div>
+    <p class="sans note">
+      Each mark opens its record. Land circles are sized by acres and colored by how the land was
+      taken; hover or focus a mark for its name.
+    </p>
+  </section>
+)}
+
+<style>
+  .timeline {
+    margin: var(--space-6) 0;
+  }
+  .scroll {
+    overflow-x: auto;
+  }
+  svg {
+    min-width: 640px;
+    width: 100%;
+    height: auto;
+    display: block;
+    font-family: var(--sans);
+  }
+  .tick line {
+    stroke: var(--rule);
+  }
+  .tick text,
+  .lab {
+    font-size: 13px;
+    fill: var(--ink-2);
+  }
+  .rail {
+    stroke: var(--rule-strong);
+    stroke-width: 1;
+  }
+  circle {
+    fill-opacity: 0.75;
+    stroke: var(--ink);
+    stroke-width: 0.6;
+  }
+  rect {
+    fill: var(--ink-2);
+  }
+  .broken rect {
+    fill: var(--how-pressure);
+  }
+  .cases rect {
+    fill: var(--how-congress);
+  }
+  .returns rect {
+    fill: var(--held);
+  }
+  a:hover circle,
+  a:focus-visible circle {
+    fill-opacity: 1;
+    stroke-width: 2;
+  }
+  a:hover rect,
+  a:focus-visible rect {
+    stroke: var(--ink);
+    stroke-width: 2;
+  }
+  .note {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+  }
+</style>

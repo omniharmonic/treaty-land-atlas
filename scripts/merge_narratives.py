@@ -23,7 +23,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OVERLAYS = ROOT / "data" / "overlays"
 TAG = "narrative-wave-2026-10"
-KIND = {"Instrument": "instruments", "Case": "cases", "Violation": "violations"}
+KEPT = {"kept", "broken", "partly", "unknown"}
+KIND = {"Instrument": "instruments", "Case": "cases", "Violation": "violations", "Statute": "statutes",
+        "Doctrine": "doctrine", "PolicyEra": "eras", "Campaign": "returns", "Organization": "organizations"}
 HOW = {"treaty", "pressure", "removal", "congress", "executive", "unknown"}
 
 
@@ -67,6 +69,12 @@ def main(src):
                 "confidence": o.get("confidence") if o.get("confidence") in ("high", "medium", "low") else None,
                 "cautions": cautions.strip() or None,
                 "sources": [{k: s[k] for k in ("url", "title", "quote") if s.get(k)} for s in sources],
+                "verdict": o.get("verdict") or None,
+                "promises": [
+                    {k: p[k] for k in ("article", "promise", "kept", "evidence_url", "evidence_quote") if p.get(k)}
+                    for p in (o.get("promises") or [])
+                    if isinstance(p, dict) and p.get("promise") and p.get("kept") in KEPT
+                ] if kind == "instruments" else None,
             }
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(f"---\n{front(meta)}\n---\n{o['narrative'].strip()}\n", encoding="utf-8")
@@ -79,6 +87,20 @@ def main(src):
                 m["how"] = None
         (ROOT / "data" / "story.json").write_text(json.dumps(s, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         print(f"data/story.json: {len(s.get('chapters', []))} chapters, {len(s.get('moments', []))} moments")
+    issues = []
+    for f in sorted(src.glob("out-*.jsonl")):
+        for line in f.read_text(encoding="utf-8").splitlines():
+            try:
+                o = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            for i in o.get("page_fact_issues") or []:
+                if isinstance(i, dict) and i.get("url"):
+                    issues.append({"id": o.get("id"), **i})
+    if issues:
+        out = ROOT / "docs" / "review" / "page-fact-issues.json"
+        out.write_text(json.dumps(issues, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        print(f"{len(issues)} page-fact issues -> {out.relative_to(ROOT)}")
     print("overlays written:", written)
     for x in skipped:
         print("skipped:", *x)

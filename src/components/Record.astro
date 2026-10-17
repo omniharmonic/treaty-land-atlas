@@ -11,6 +11,7 @@ import SupportBox from './SupportBox.astro';
 import Narrative from './Narrative.astro';
 import RecordStory from './RecordStory.astro';
 import LocatorMap from './LocatorMap.astro';
+import NationTimeline from './NationTimeline.astro';
 
 interface Props {
   n: Node;
@@ -88,6 +89,7 @@ const flagText: Record<string, string> = {
     <Narrative n={n} />
     <RecordStory n={n} />
     <LocatorMap n={n} />
+    {n.type === 'Nation' && <NationTimeline n={n} />}
 
     {facts.length > 0 && (
       <dl class="facts">

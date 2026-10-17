@@ -22,6 +22,13 @@ const host = (u: string) => {
     return u;
   }
 };
+const promises = o?.promises ?? [];
+const KEPT: Record<string, string> = {
+  kept: 'Kept',
+  broken: 'Broken',
+  partly: 'Partly kept',
+  unknown: 'Not known',
+};
 const CONF: Record<string, string> = {
   high: 'Well supported by the sources below.',
   medium: 'Supported by the sources below; some details rest on one source.',
@@ -36,6 +43,34 @@ const CONF: Record<string, string> = {
     {paras.map((p) => (
       <p>{p}</p>
     ))}
+    {promises.length > 0 && (
+      <section class="promises" aria-labelledby="promised">
+        <h3 id="promised">What was promised, and what happened</h3>
+        <ul>
+          {promises.map((p) => (
+            <li class={p.kept}>
+              <span class="mark sans">{KEPT[p.kept]}</span>
+              <div>
+                <p class="what">
+                  {p.promise}
+                  {p.article && <span class="art sans"> ({p.article})</span>}
+                </p>
+                {p.evidence_quote && (
+                  <p class="ev sans">
+                    <q>{p.evidence_quote}</q>{' '}
+                    {p.evidence_url && (
+                      <a href={p.evidence_url} rel="noopener">
+                        {host(p.evidence_url)}
+                      </a>
+                    )}
+                  </p>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
     <p class="label sans">
       A summary of the sources, written with AI assistance and checked against the quotes below. It
       has not yet been reviewed by a historian or by the nations involved.{' '}
@@ -68,6 +103,49 @@ const CONF: Record<string, string> = {
 )}
 
 <style>
+  .promises h3 {
+    font-size: var(--s1);
+    margin: var(--space-5) 0 var(--space-2);
+  }
+  .promises ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-4);
+  }
+  .promises li {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--rule);
+  }
+  .mark {
+    font-size: var(--s-1);
+    font-weight: 600;
+    align-self: start;
+    padding: 2px var(--space-2);
+    border-left: 4px solid var(--rule-strong);
+  }
+  .broken .mark {
+    border-left-color: var(--how-pressure);
+  }
+  .partly .mark {
+    border-left-color: var(--how-treaty);
+  }
+  .kept .mark {
+    border-left-color: var(--held);
+  }
+  .what {
+    margin: 0;
+  }
+  .art,
+  .ev {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+  }
+  .ev {
+    margin: var(--space-1) 0 0;
+  }
   .narrative {
     margin: var(--space-6) 0;
     max-width: var(--measure);

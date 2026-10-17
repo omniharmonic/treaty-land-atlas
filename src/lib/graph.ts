@@ -213,6 +213,13 @@ export interface PublicOverlay {
   sources: (string | { url: string; title?: string; quote?: string })[];
   cautions: string | null;
   confidence: 'high' | 'medium' | 'low' | null;
+  promises?: {
+    article?: string;
+    promise: string;
+    kept: 'kept' | 'broken' | 'partly' | 'unknown';
+    evidence_url?: string;
+    evidence_quote?: string;
+  }[];
   content_warnings: string[];
 }
 

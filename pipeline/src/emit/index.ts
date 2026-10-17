@@ -60,6 +60,8 @@ export function nodeYear(n: GraphNode): number | null {
 
 /** Node types whose records are federal acts; a sourced interpretation of them is publishable. */
 export const INTERPRETABLE = new Set([
+  'Campaign',
+  'Organization',
   'Instrument',
   'Case',
   'Statute',
@@ -100,6 +102,7 @@ export function projectNode(n: GraphNode, overlay?: Overlay): Record<string, unk
       sources: allowed ? overlay.sources : [],
       cautions: allowed ? (overlay.cautions ?? null) : null,
       confidence: allowed ? (overlay.confidence ?? null) : null,
+      promises: allowed ? (overlay.promises ?? []) : [],
     };
   }
   return out;

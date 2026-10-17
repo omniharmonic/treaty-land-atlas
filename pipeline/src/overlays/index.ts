@@ -37,6 +37,19 @@ export const overlaySchema = z.strictObject({
   confidence: z.enum(['high', 'medium', 'low']).optional(),
   cautions: z.string().optional(),
   written_by: z.string().optional(),
+  verdict: z.string().optional(),
+  // treaty promises and what became of them, each with its evidence (wave 2)
+  promises: z
+    .array(
+      z.strictObject({
+        article: z.string().optional(),
+        promise: z.string(),
+        kept: z.enum(['kept', 'broken', 'partly', 'unknown']),
+        evidence_url: z.string().optional(),
+        evidence_quote: z.string().optional(),
+      }),
+    )
+    .optional(),
 });
 
 export type Overlay = z.infer<typeof overlaySchema> & { body: string; file: string };
