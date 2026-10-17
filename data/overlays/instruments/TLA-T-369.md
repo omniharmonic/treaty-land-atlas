@@ -1,0 +1,16 @@
+---
+id: "TLA-T-369"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 1868 Fort Laramie treaty created the Great Sioux Reservation, closed the Bozeman Trail forts, and required three-fourths consent to any cession."
+how: "treaty_negotiated"
+how_basis: "The treaty text and the Supreme Court describe a treaty concluded at the end of the Powder River War; I use \"treaty_negotiated\" because the sources describe the treaty itself as an agreement, while the later taking is a separate act."
+confidence: "medium"
+cautions: "Input gives acreage figures (about 33 million plus 25 million) from Wikipedia; no source I opened states them, so none is given. Input Stat. page: the OSU page says 15 Stat. 635, matching the project note. Input source URL (digitreaties) was replaced by OSU text. Input lists seven violations and four cases; I opened only Sioux Nation. The Oceti Sakowin view of the treaty was not opened; sources here are the treaty and a Supreme Court opinion. The sentence about later reduction rests on the input's violation list (V025), not on a source I opened."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Sioux and Arapaho, 1868 (Fort Laramie)", "quote": "unless executed and signed by at least three-fourths of all the adult male Indians, occupying or interested in the same"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Sioux and Arapaho, 1868 (Fort Laramie)", "quote": "shall be held and considered to be unceded Indian territory"}, {"url": "https://www.law.cornell.edu/supremecourt/text/448/371", "title": "United States v. Sioux Nation of Indians, 448 U.S. 371 (1980) (Cornell LII)", "quote": "The Fort Laramie Treaty was concluded at the culmination of the Powder River War of 1866-1867"}]
+---
+On April 29, 1868, at Fort Laramie, Lieutenant General William T. Sherman and other U.S. commissioners signed with bands of the Sioux Nation. The Supreme Court says the treaty "was concluded at the culmination of the Powder River War of 1866-1867," in which Sioux leaders, led by Red Cloud, fought incursions onto their lands.
+
+Article 2 set apart the Great Sioux Reservation, bounded by the Missouri River, the northern border of Nebraska, the 46th parallel and the 104th meridian, for the "absolute and undisturbed use and occupation" of the Sioux. Article 16 declared the country north of the North Platte River and east of the Big Horn Mountains "unceded Indian territory" and promised that military posts there would be abandoned. Article 12 said no cession of reservation land was valid without the signatures of at least three-fourths of adult male Sioux.
+
+The agreement was ratified in 1869. Gold was found in the Black Hills in 1874, and in 1877 Congress took the Hills without that consent; the Court later called this a taking requiring compensation. The Great Sioux Reservation was later reduced; see the 1877 Act and later entries.

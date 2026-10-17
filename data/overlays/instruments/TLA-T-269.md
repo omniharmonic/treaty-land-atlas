@@ -1,0 +1,16 @@
+---
+id: "TLA-T-269"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 1854 Treaty of Wolf River let the Menominee stay in Wisconsin, trading their 1848 western lands for a Wolf River reservation."
+how: "treaty_negotiated"
+how_basis: "The treaty's own preamble records that the Menominee were unwilling to move west and that the President allowed them to stay, so it records a negotiated change rather than a removal."
+confidence: "high"
+cautions: "Encyclopedia.com is a reference summary, not a primary source; the termination date (1954 law, effective 1961) comes from the 1968 Supreme Court opinion's reference to the 1954 Act and the input data. The input's acreage notes (432 sq mi; ~235,000 acres) are not in the sources I read. Acreage: The 1848 treaty guaranteed not less than 600,000 acres west of the Mississippi (preamble). The Wolf River tract is described by townships, 24 by 18 miles; no acreage is stated for it."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1854-0626", "title": "Treaty with the Menominee, 1854 (Oklahoma State University Tribal Treaties Database)", "quote": "upon manifestation of great unwillingness on the part of said Indians to remove"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep391/usrep391404/usrep391404.pdf", "title": "Menominee Tribe v. United States, 391 U.S. 404 (1968)", "quote": "survived the Termination Act of 1954"}, {"url": "https://www.encyclopedia.com/history/united-states-and-canada/north-american-indigenous-peoples/menominee", "title": "Menominee, Encyclopedia.com", "quote": "signed the Menominee Restoration Act, restoring tribal status to the reservation"}]
+---
+On May 12, 1854, at the Falls of Wolf River, Wisconsin, Superintendent Francis Huebschmann and the Menominee chiefs, headmen and warriors signed articles amending the 1848 treaty. That treaty had promised the Menominee land west of the Mississippi, at Crow Wing, in exchange for their Wisconsin lands. The 1854 preamble says that, "upon manifestation of great unwillingness on the part of said Indians to remove," the President had consented to their staying temporarily on the Wolf and Oconto Rivers.
+
+Now the Menominee ceded the lands assigned to them in 1848, and the United States gave them a tract on the Wolf River, townships 28, 29 and 30 in ranges 13 to 16. That is 24 miles by 18 miles. The Supreme Court later described the Menominee as "granted a reservation in Wisconsin by the Treaty of Wolf River in 1854."
+
+Congress passed the Menominee Termination Act in 1954. In 1968 the Supreme Court held that the tribe's hunting and fishing rights under the treaty "survived the Termination Act of 1954." In 1973 President Nixon signed the Menominee Restoration Act, restoring the reservation, according to Encyclopedia.com. In 1856 the Menominee ceded a tract for the Stockbridge-Munsee.

@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import WhereApp from '../islands/WhereApp.svelte';
+import { href } from '../lib/href';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const relay = process.env.PUBLIC_NLD_RELAY ?? 'https://api.landback.land';
+---
+
+<Base
+  title="Whose land are you on?"
+  description="Type an address and read the record of that land: whose homeland it is, how the United States took it, the promises broken, and who is working to restore it."
+>
+  <div>
+    <h1>Whose land are you on?</h1>
+    <p class="lede">
+      Type an address, a town or a ZIP code. You will see whose homelands it lies in, how and when
+      the United States recorded it as ceded, the promises broken, and the people working to restore
+      land and law there today.
+    </p>
+    <WhereApp client:only="svelte" {base} {relay} />
+    <noscript>
+      <p>
+        This lookup needs JavaScript. Without it, <a href={href('/places/')}>choose your state</a>.
+      </p>
+    </noscript>
+  </div>
+</Base>

@@ -119,6 +119,8 @@ def main(folder):
         text = m.group(1) if m else ""
         quoted = re.findall(r'"([^"]+)"', text)
         text = " ; ".join(quoted) if quoted else re.split(r"[.(]", text)[0]
+        # treaty and place names are not peoples: "Treaty of Medicine Creek" must not match Creek
+        text = re.sub(r"\b[Tt]reat(?:y|ies) of [A-Z][\w' -]*?(?=[,;]|\s\d|$)|\b[A-Z][\w' -]*? [Tt]reat(?:y|ies)\b", " ", text)
         hits = {nid for nid, _, _ in alias.find(text)
                 if kinds.get(nid) in ("historical_party", "peoples_or_confederacy", "community_or_band")}
         for nid in sorted(hits):

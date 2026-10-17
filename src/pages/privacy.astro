@@ -14,8 +14,18 @@ import Page from '../layouts/Page.astro';
       sees your IP address when your browser asks for tiles.
     </li>
     <li>
-      <strong>Our Native Land Digital relay</strong> (on Vercel), only if you press “Look up this
-      place.” It receives the map’s center, rounded to about a kilometer, and stores nothing.
+      <strong>Our Native Land Digital relay</strong> (on Vercel), when you look up a place or follow
+      a nation on the map. It receives a point, rounded to about a kilometer, and stores nothing.
+    </li>
+    <li>
+      <strong>Where you live</strong>, only if you look up a place. The address you type goes
+      through our relay to the US Census Bureau’s geocoder (or, if Census finds no match,
+      OpenStreetMap’s Nominatim) and comes back as coordinates rounded to about 100 meters. Nothing
+      is stored. The address stays in the part of the web address after the #, which browsers do not
+      send to servers; after the lookup it is replaced by the rounded coordinates, so a link you
+      share points to a neighborhood, not a house. Everything else about the place is worked out in
+      your browser. “Use my location” asks your browser and sends your location nowhere except the
+      territory lookup below.
     </li>
     <li>
       <strong>Our private intake</strong> (on Vercel), only if you send the claim or correction

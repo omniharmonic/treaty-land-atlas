@@ -179,10 +179,12 @@ export function supportFor(
     rank(all.flatMap((id) => ix.by_nation[id] ?? []).filter((o) => ix.orgs[o])),
     limits.direct,
   );
-  const states = new Set([
-    ...(input.states ?? []),
-    ...(input.nations ?? []).flatMap((id) => ix.nation_states[id] ?? []),
-  ]);
+  // a place's own states when known; otherwise every state where the nations' cessions lie
+  const states = new Set(
+    input.states?.length
+      ? input.states
+      : (input.nations ?? []).flatMap((id) => ix.nation_states[id] ?? []),
+  );
   const nearby = take(
     rank([...states].flatMap((s) => ix.by_state[s] ?? []).filter((o) => ix.orgs[o])),
     limits.nearby,

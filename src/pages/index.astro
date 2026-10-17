@@ -1,22 +1,60 @@
 ---
 import Base from '../layouts/Base.astro';
-import { byType, pathFor, year } from '../lib/graph';
+import { byType, graph, pathFor, year } from '../lib/graph';
 import { href } from '../lib/href';
 import { homeMap } from '../lib/svgmap';
+import { supportIndex } from '../lib/support';
 
 const art = homeMap();
 const cessions = byType('GeoFeature').length;
 const nations = byType('Nation').length;
+const treaties = byType('Instrument').length;
 const returns = byType('Campaign')
   .filter((n) => String(n['campaign_status']).startsWith('completed') && n.confidence !== 'low')
   .sort((a, b) => (year(b) ?? 0) - (year(a) ?? 0))
   .slice(0, 4);
 const acres = (n: (typeof returns)[number]) =>
   n['acres'] ? `${Number(n['acres']).toLocaleString('en-US')} acres` : null;
+const g = graph();
+const ix = supportIndex([...g.nodes.values()], g.edges);
+const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
 ---
 
-<Base title="Treaty Land Atlas">
-  <section class="hero">
+<Base
+  title="Treaty Land Atlas"
+  description="Type an address and learn whose homelands you live on, how the United States took that land, the treaty promises broken, and who is working to restore it."
+>
+  <section class="hero" aria-labelledby="ask">
+    <div class="question">
+      <h1 id="ask">Whose land are you on?</h1>
+      <p class="lede">
+        Every place in the United States has a treaty history. Find yours: whose homeland it is, how
+        it was taken and when, which promises were broken, and who is working to restore land and
+        law there now.
+      </p>
+      <form class="ask sans" id="ask-form" role="search" aria-label="Look up a place">
+        <label for="home-q">Your address, town or ZIP code</label>
+        <div class="row">
+          <input
+            id="home-q"
+            name="q"
+            type="text"
+            autocomplete="street-address"
+            required
+            minlength="3"
+          />
+          <button type="submit">Look it up</button>
+        </div>
+        <p class="fine">
+          Nothing is stored or tracked. <a href={href('/where/#loc')}>Use my location instead</a>
+        </p>
+      </form>
+      <noscript>
+        <p class="sans">
+          The lookup needs JavaScript. <a href={href('/places/')}>Choose your state</a> instead.
+        </p>
+      </noscript>
+    </div>
     <figure class="drawing" aria-labelledby="hero-cap">
       <svg
         viewBox={`0 0 ${art.width} ${art.height}`}
@@ -27,71 +65,66 @@ const acres = (n: (typeof returns)[number]) =>
         <path class="lands" d={art.lands}></path>
       </svg>
       <figcaption id="hero-cap" class="sans">
-        Graphite: {cessions} areas the United States recorded as ceded, 1784 to 1894, from C. C.
-        Royce’s maps. Green: reservations and trust lands today.
+        Graphite: {cessions} areas the United States recorded as ceded, 1784 to 1894. Green: Native
+        lands today.
       </figcaption>
     </figure>
-    <div class="words">
-      <h1>
-        The United States made treaties with Native nations. This is the record of what was
-        promised, what was taken, and what is coming back.
-      </h1>
-      <p class="sans actions">
-        <a class="primary" href={href('/map/')}>
-          Open the map
-        </a>
-        <a href={href('/nations/')}>Find a nation</a>
-      </p>
-    </div>
   </section>
 
-  <section class="ways" aria-labelledby="ways">
-    <h2 id="ways" class="visually-hidden">
-      Ways in
-    </h2>
+  <section class="learn" aria-labelledby="learn">
+    <h2 id="learn">Keep learning</h2>
     <dl>
       <div>
         <dt>
-          <a href={href('/map/')}>Move through time</a>
+          <a href={href('/map/')}>Watch the land change hands</a>
         </dt>
         <dd>
-          Slide from 1784 to 1894 and watch the record of cessions grow, or stop the clock in a
-          chosen year and see what had already been promised.
+          Play the years from 1784 to 1894, colored by how each piece was taken: treaty, pressure,
+          removal, Congress or executive order. Follow one nation through its losses.
         </dd>
       </div>
       <div>
         <dt>
-          <a href={href('/nations/')}>Start with a nation</a>
+          <a href={href('/treaties/')}>Read what was promised</a>
+        </dt>
+        <dd>
+          {treaties} treaties and agreements, each with a plain reading of its sources, the land it
+          took, the promises broken and the cases fought over it.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <a href={href('/nations/')}>Meet the nations</a>
         </dt>
         <dd>
           {nations} nations and peoples, in the treaty records and today, with their own names where
-          we have a source. Including the communities the federal list leaves out.
-        </dd>
-      </div>
-      <div>
-        <dt>
-          <a href={href('/treaties/')}>Read a treaty’s story</a>
-        </dt>
-        <dd>
-          Every treaty links to the land it recorded as ceded, the promises broken, the cases fought
-          over it, and the governments that carry it today.
-        </dd>
-      </div>
-      <div>
-        <dt>
-          <a href={href('/places/')}>Start where you are</a>
-        </dt>
-        <dd>
-          Choose a state to see the treaties, cessions and nations connected to it. No address, no
-          tracking.
+          a source gives them, including communities the federal list leaves out.
         </dd>
       </div>
     </dl>
   </section>
 
-  <section class="returning" aria-labelledby="returning">
-    <h2 id="returning">Land is coming back</h2>
-    <ul>
+  <section class="support" aria-labelledby="support">
+    <h2 id="support">Then, support the people doing the work</h2>
+    <p>
+      Your lookup shows the nations and groups tied to your place. These work across the country on
+      treaty rights, Native law and land return:
+    </p>
+    <ul class="orgs">
+      {national.map((o) => (
+        <li>
+          <a href={href(o.path ?? '/support/')}>{o.label}</a>
+          <span class="sans meta">{o.focus.split(/[;.]/)[0]}</span>
+          {o.donate && (
+            <a class="give sans" href={o.donate} rel="noopener">
+              Give on their site
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+    <h3>Land is coming back</h3>
+    <ul class="returns">
       {returns.map((r) => (
         <li>
           <a href={href(pathFor(r)!)}>{r.label}</a>
@@ -102,9 +135,9 @@ const acres = (n: (typeof returns)[number]) =>
         </li>
       ))}
     </ul>
-    <p>
-      <a href={href('/returns/')}>All documented land returns</a> and{' '}
-      <a href={href('/support/')}>how to support them</a>.
+    <p class="sans">
+      <a href={href('/returns/')}>All documented land returns</a> ·{' '}
+      <a href={href('/support/')}>Every listed organization, and how they are checked</a>
     </p>
   </section>
 
@@ -121,18 +154,85 @@ const acres = (n: (typeof returns)[number]) =>
   </section>
 </Base>
 
+<script>
+  // The address goes in the hash of /where/, which browsers never send to a server.
+  const form = document.getElementById('ask-form') as HTMLFormElement | null;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const q = (form.elements.namedItem('q') as HTMLInputElement).value.trim();
+    if (q.length < 3) return;
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    location.href = `${base}/where/#q=${encodeURIComponent(q)}`;
+  });
+</script>
+
 <style>
   .hero {
     display: grid;
-    gap: var(--space-5);
+    gap: var(--space-6);
     padding: var(--space-6) 0 var(--space-7);
   }
   @media (min-width: 980px) {
     .hero {
-      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-      align-items: end;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      align-items: center;
       gap: var(--space-7);
     }
+  }
+  h1 {
+    font-size: clamp(2.6rem, 7.4vw, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    margin: 0 0 var(--space-4);
+    max-width: 9ch;
+  }
+  .lede {
+    max-width: 34rem;
+  }
+  .ask {
+    margin-top: var(--space-5);
+    max-width: 34rem;
+  }
+  .ask label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  input {
+    flex: 1 1 14rem;
+    min-width: 0;
+    min-height: 3.25rem;
+    font: inherit;
+    font-size: var(--s1);
+    padding: var(--space-2) var(--space-3);
+    border: 2px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--sheet);
+    color: var(--ink);
+  }
+  button {
+    min-height: 3.25rem;
+    padding: 0 var(--space-5);
+    font: inherit;
+    font-weight: 600;
+    background: var(--moss);
+    color: var(--on-moss);
+    border: 0;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  button:hover {
+    background: var(--moss-deep);
+  }
+  .fine {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin-top: var(--space-2);
   }
   .drawing {
     margin: 0;
@@ -147,7 +247,7 @@ const acres = (n: (typeof returns)[number]) =>
     stroke: var(--ink-3);
     stroke-width: 0.6;
     stroke-linejoin: round;
-    opacity: 0.75;
+    opacity: 0.7;
   }
   .lands {
     fill: var(--moss);
@@ -155,7 +255,6 @@ const acres = (n: (typeof returns)[number]) =>
     stroke-width: 0.4;
     opacity: 0.85;
     animation: grow 2.4s var(--ease) 0.4s both;
-    transform-origin: 50% 60%;
   }
   @keyframes grow {
     from {
@@ -167,64 +266,67 @@ const acres = (n: (typeof returns)[number]) =>
       filter: blur(0);
     }
   }
+  @media (prefers-reduced-motion: reduce) {
+    .lands {
+      animation: none;
+    }
+  }
   figcaption {
     font-size: var(--s-2);
     color: var(--ink-2);
     margin-top: var(--space-2);
-    max-width: 60ch;
   }
-  .words h1 {
-    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
-    line-height: 1.22;
-    max-width: 22ch;
-  }
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3) var(--space-5);
-    align-items: center;
-    margin-top: var(--space-5);
-  }
-  .primary {
-    background: var(--moss);
-    color: var(--on-moss);
-    padding: var(--space-3) var(--space-5);
-    border-radius: var(--radius);
-    text-decoration: none;
-    min-height: var(--tap);
-    display: inline-flex;
-    align-items: center;
-  }
-  .primary:hover {
-    background: var(--moss-deep);
-    color: var(--on-moss);
-  }
-  .ways dl {
-    display: grid;
-    gap: var(--space-5) var(--space-7);
-    margin: 0;
+  .learn,
+  .support {
     padding: var(--space-6) 0;
     border-top: 1px solid var(--rule);
   }
+  .learn dl {
+    display: grid;
+    gap: var(--space-5) var(--space-7);
+    margin: 0;
+  }
   @media (min-width: 760px) {
-    .ways dl {
-      grid-template-columns: 1fr 1fr;
+    .learn dl {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
-  .ways dt {
+  .learn dt {
     font-size: var(--s1);
     margin-bottom: var(--space-1);
   }
-  .ways dd {
+  .learn dd {
     margin: 0;
     color: var(--ink-2);
   }
-  .returning ul {
+  .support > p {
+    max-width: 40rem;
+  }
+  .orgs,
+  .returns {
     list-style: none;
     padding: 0;
+    max-width: 40rem;
   }
-  .returning li {
-    padding: var(--space-2) 0;
+  .orgs li,
+  .returns li {
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--rule);
+  }
+  .orgs li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 var(--space-4);
+    align-items: baseline;
+  }
+  .orgs .meta {
+    grid-column: 1;
+  }
+  .give {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    font-weight: 600;
+    color: var(--moss);
   }
   .meta {
     display: block;
@@ -232,7 +334,7 @@ const acres = (n: (typeof returns)[number]) =>
     color: var(--ink-3);
   }
   .claim-note {
-    margin-top: var(--space-7);
+    margin-top: var(--space-6);
     padding: var(--space-5) var(--space-5) var(--space-3);
     border-left: 3px solid var(--moss);
     background: var(--sheet);
