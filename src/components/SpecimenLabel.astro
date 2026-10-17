@@ -1,0 +1,113 @@
+---
+// The record's label, like a herbarium sheet: what this is, where it came from, how sure we are.
+import { REVIEW_WORD, TYPE_NAME, type Node } from '../lib/graph';
+import { CONFIDENCE_WORD } from '../lib/facts';
+import { href } from '../lib/href';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+const repo = 'https://github.com/omniharmonic/treaty-land-atlas';
+const flagWord: Record<string, string> = {
+  text_has_from_memory_tag: 'Some details not yet checked against a source',
+  text_has_disputed_tag: 'Some details are disputed',
+  text_has_unverified_tag: 'Some details unverified',
+  skeleton_record: 'Basic record from the National Archives index',
+  distinct_legal_context: 'Distinct legal context',
+  geometry_missing: 'No shape in the source',
+  context_row_not_a_treaty: 'Context record, not a treaty',
+};
+const sourceFile = n.provenance?.source_file;
+---
+
+<div class="label sans">
+  <dl>
+    <div>
+      <dt>Record</dt>
+      <dd>
+        <code>{n.id}</code>
+      </dd>
+    </div>
+    <div>
+      <dt>Kind</dt>
+      <dd>{TYPE_NAME[n.type]?.[0] ?? n.type}</dd>
+    </div>
+    {n.confidence && (
+      <div>
+        <dt>Confidence</dt>
+        <dd>{CONFIDENCE_WORD[n.confidence] ?? n.confidence}</dd>
+      </div>
+    )}
+    {n.tribal_review?.scope === 'nation_specific' && (
+      <div>
+        <dt>Nation review</dt>
+        <dd>{REVIEW_WORD[n.tribal_review.status] ?? n.tribal_review.status}</dd>
+      </div>
+    )}
+    {(n.flags ?? []).length > 0 && (
+      <div>
+        <dt>Notes</dt>
+        <dd>
+          <ul>
+            {(n.flags ?? []).map((f) => (
+              <li>{flagWord[f] ?? f.replace(/_/g, ' ')}</li>
+            ))}
+          </ul>
+        </dd>
+      </div>
+    )}
+    {sourceFile && (
+      <div>
+        <dt>From</dt>
+        <dd>
+          <a href={`${repo}/blob/main/${sourceFile}`}>{sourceFile.split('/').pop()}</a>
+        </dd>
+      </div>
+    )}
+  </dl>
+  <p class="actions">
+    <a href={href(`/corrections/?record=${encodeURIComponent(n.id)}`)}>Correct this record</a>
+  </p>
+</div>
+
+<style>
+  .label {
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    padding: var(--space-4);
+    font-size: var(--s-2);
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+  dl {
+    margin: 0;
+    display: grid;
+    gap: var(--space-2);
+  }
+  dl > div {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: var(--space-3);
+  }
+  dt {
+    color: var(--ink-3);
+  }
+  dd {
+    margin: 0;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  dd ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  code {
+    font-family: var(--sans);
+    font-variant-numeric: tabular-nums;
+  }
+  .actions {
+    margin: var(--space-4) 0 0;
+  }
+</style>

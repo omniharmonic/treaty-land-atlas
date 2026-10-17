@@ -1,0 +1,72 @@
+---
+import { pathFor, year, type Edge, type Node } from '../lib/graph';
+import { href } from '../lib/href';
+
+interface Props {
+  edge: Edge;
+  other: Node;
+}
+const { edge, other } = Astro.props;
+const path = pathFor(other);
+const y = year(other);
+const disputed =
+  edge.review?.successor_status === 'disputed' || edge.qualifiers?.['disputed'] === true;
+const status = disputed
+  ? 'disputed'
+  : edge.status === 'proposed'
+    ? 'suggested'
+    : edge.status === 'accepted'
+      ? 'reviewed'
+      : null;
+const role =
+  typeof edge.qualifiers?.['role'] === 'string' ? (edge.qualifiers['role'] as string) : null;
+const roleWord: Record<string, string> = {
+  present_day_per_usfs: 'per the Forest Service, under review',
+  named_in_royce_schedule: 'as named in Royce’s Schedule',
+};
+---
+
+<li class="item">
+  {path ? <a href={href(path)}>{other.label}</a> : <span>{other.label}</span>}
+  {y && <span class="year">{y}</span>}
+  {role && roleWord[role] && <span class="note">{roleWord[role]}</span>}
+  {status && (
+    <span class:list={['mark', status]} title={edge.basis ?? undefined}>
+      {status}
+    </span>
+  )}
+</li>
+
+<style>
+  .item {
+    padding: var(--space-1) 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 var(--space-3);
+  }
+  .year,
+  .note,
+  .mark {
+    font-family: var(--sans);
+    font-size: var(--s-2);
+    color: var(--ink-3);
+  }
+  .year {
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .mark {
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    padding: 0 0.5em;
+    line-height: 1.5;
+  }
+  .mark.disputed {
+    border-color: var(--warn);
+    color: var(--warn);
+  }
+  .mark.reviewed {
+    border-color: var(--moss);
+    color: var(--moss);
+  }
+</style>

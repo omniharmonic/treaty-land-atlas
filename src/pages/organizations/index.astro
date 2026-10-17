@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import IndexList from '../../components/IndexList.astro';
+import { byType } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+const all = byType('Organization').sort((a, b) => a.label.localeCompare(b.label));
+const listed = all.filter((n) => n.confidence !== 'low' && n['display_eligible'] !== false);
+const other = all.filter((n) => !listed.includes(n));
+---
+
+<Base
+  title="Organizations"
+  description="Native-led land trusts, tribal programs and allied groups working on land return."
+>
+  <div class="intro">
+    <h1>Organizations</h1>
+    <p class="lede">
+      Tribal programs, Native-led land trusts and allied groups working on land return.
+    </p>
+    <p>
+      We list an organization only after checking its registration and its own website. We take no
+      money and handle no payments. Read the{' '}
+      <a href={href('/support/policy/')}>donation integrity policy</a>.
+    </p>
+  </div>
+  <h2>Checked ({listed.length})</h2>
+  <IndexList items={listed} note={(n) => (n['focus'] as string)?.slice(0, 110) ?? null} />
+  <h2>Not yet checked well enough to link ({other.length})</h2>
+  <IndexList items={other} />
+</Base>
+
+<style>
+  .intro {
+    padding-top: var(--space-6);
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import IndexList from '../../components/IndexList.astro';
+import { byType, year, type Node } from '../../lib/graph';
+
+const chrono = (xs: Node[]) =>
+  xs.sort((a, b) => (year(a) ?? 0) - (year(b) ?? 0) || a.label.localeCompare(b.label));
+const cases = chrono(byType('Case'));
+const statutes = chrono(byType('Statute'));
+const doctrines = byType('Doctrine').sort((a, b) => a.label.localeCompare(b.label));
+const eras = byType('PolicyEra').sort((a, b) => Number(a['start_year']) - Number(b['start_year']));
+---
+
+<Base
+  title="Law"
+  description="Federal Indian law: the court cases, statutes and doctrines that shaped what treaties came to mean."
+>
+  <div class="intro">
+    <h1>Law</h1>
+    <p class="lede">
+      What courts and Congress did with the treaties: {cases.length} court cases, {statutes.length}{' '}
+      statutes, and the doctrines they built.
+    </p>
+  </div>
+  <h2>Policy eras</h2>
+  <IndexList items={eras} dated />
+  <h2>Court cases</h2>
+  <IndexList items={cases} dated note={(n) => (n['full_citation'] as string) ?? null} />
+  <h2>Statutes</h2>
+  <IndexList items={statutes} dated note={(n) => (n['citation'] as string) ?? null} />
+  <h2>Doctrines</h2>
+  <IndexList items={doctrines} />
+</Base>
+
+<style>
+  .intro {
+    padding-top: var(--space-6);
+  }
+</style>

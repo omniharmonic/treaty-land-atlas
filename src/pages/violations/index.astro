@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import IndexList from '../../components/IndexList.astro';
+import { byType, year } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+const all = byType('Violation').sort((a, b) => (year(a) ?? 0) - (year(b) ?? 0));
+---
+
+<Base
+  title="Violations and alterations"
+  description="Documented ways treaty promises were broken, altered or never kept."
+>
+  <div class="intro">
+    <h1>Violations and alterations</h1>
+    <p class="lede">
+      {all.length} documented ways treaty promises were broken, altered, or never kept.
+    </p>
+    <p>
+      Words matter here: breach, abrogation, diminishment and termination mean different things in
+      law. See the
+      <a href={href('/glossary/')}>glossary</a>.
+    </p>
+  </div>
+  <IndexList items={all} dated note={(n) => (n['nations_text'] as string) ?? null} />
+</Base>
+
+<style>
+  .intro {
+    padding-top: var(--space-6);
+  }
+</style>

@@ -1,0 +1,201 @@
+- generic [active] [ref=f31e1]:
+    - link "Skip to main content" [ref=f31e2] [cursor=pointer]:
+        - /url: '#main-content'
+    - generic [ref=f31e4]:
+        - banner [ref=f31e5]:
+            - generic [ref=f31e6]:
+                - generic [ref=f31e7]:
+                    - generic [ref=f31e9]:
+                        - link "The New York State Senate" [ref=f31e11] [cursor=pointer]:
+                            - /url: /
+                        - generic [ref=f31e12]:
+                            - list [ref=f31e13]:
+                                - listitem [ref=f31e14]:
+                                    - link "View YouTube channel" [ref=f31e15] [cursor=pointer]:
+                                        - /url: https://www.youtube.com/user/NYSenate
+                            - link "i get involved" [ref=f31e18] [cursor=pointer]:
+                                - /url: /citizen-guide
+                            - link "f login" [ref=f31e19] [cursor=pointer]:
+                                - /url: /user/login
+                    - text: h
+                    - navigation "main" [ref=f31e22]:
+                        - text: '>'
+                        - list [ref=f31e23]:
+                            - listitem [ref=f31e24]:
+                                - link "News & Issues" [ref=f31e25] [cursor=pointer]:
+                                    - /url: /news-and-issues
+                            - listitem [ref=f31e26]:
+                                - link "Senators & Committees" [ref=f31e27] [cursor=pointer]:
+                                    - /url: /senators-committees
+                            - listitem [ref=f31e28]:
+                                - link "Bills & Laws" [ref=f31e29] [cursor=pointer]:
+                                    - /url: /legislation
+                            - listitem [ref=f31e30]:
+                                - link "Events" [ref=f31e31] [cursor=pointer]:
+                                    - /url: /events
+                            - listitem [ref=f31e32]:
+                                - link "About The Senate" [ref=f31e33] [cursor=pointer]:
+                                    - /url: /about
+                        - button "open and focus search m" [ref=f31e34] [cursor=pointer]
+                        - text: f
+                - generic [ref=f31e35]:
+                    - heading "Find your Senator and share your views on important issues." [level=2] [ref=f31e37]
+                    - link "$ find your senator" [ref=f31e39] [cursor=pointer]:
+                        - /url: /find-my-senator
+        - main [ref=f31e40]:
+            - generic [ref=f31e42]:
+                - heading "Legislation" [level=1] [ref=f31e43]
+                - generic [ref=f31e44]:
+                    - heading "> Search OpenLegislation Statutes" [level=3] [ref=f31e47] [cursor=pointer]
+                    - navigation "breadcrumbs" [ref=f31e48]:
+                        - list [ref=f31e49]:
+                            - listitem [ref=f31e50]:
+                                - text: '>'
+                                - link "The Laws of New York" [ref=f31e51] [cursor=pointer]:
+                                    - /url: /legislation/laws/all
+                            - listitem [ref=f31e52]:
+                                - text: '>'
+                                - link "Consolidated Laws of New York" [ref=f31e53] [cursor=pointer]:
+                                    - /url: /legislation/laws/CONSOLIDATED
+                    - generic [ref=f31e56]:
+                        - generic [ref=f31e59]:
+                            - generic [ref=f31e60]: Viewing most recent revision (from 2025-12-26)
+                            - generic [ref=f31e61]:
+                                - generic [ref=f31e62] [cursor=pointer]: 'View historical revision as of:'
+                                - combobox "View historical revision as of:" [ref=f31e63] [cursor=pointer]:
+                                    - option "-- Choose a Date --"
+                                    - option "2025-12-26" [selected]
+                                    - option "2014-09-22"
+                                - text: e
+                        - generic [ref=f31e64]:
+                            - heading "Share" [level=3] [ref=f31e65]
+                            - list [ref=f31e66]:
+                                - listitem [ref=f31e67]:
+                                    - link "Facebook !" [ref=f31e68] [cursor=pointer]:
+                                        - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.nysenate.gov/legislation/laws/IND
+                                - listitem [ref=f31e69]:
+                                    - link [ref=f31e70] [cursor=pointer]:
+                                        - /url: 'https://twitter.com/intent/tweet?text=From @nysenate: https://www.nysenate.gov/legislation/laws/IND'
+                                        - img "Twitter icon" [ref=f31e71]
+                                - listitem [ref=f31e72]:
+                                    - link "Email N" [ref=f31e73] [cursor=pointer]:
+                                        - /url: 'mailto:?subject=CHAPTER 26 Indian  | NY State Senate&body=Check out this law: https://www.nysenate.gov/legislation/laws/IND'
+                    - generic [ref=f31e74]:
+                        - generic [ref=f31e76]:
+                            - heading "CHAPTER 26" [level=2] [ref=f31e77]
+                            - heading "Indian" [level=3] [ref=f31e78]
+                        - generic [ref=f31e79]:
+                            - list [ref=f31e80]:
+                                - listitem [ref=f31e81]:
+                                    - link "ARTICLE 1 Short Title" [ref=f31e82] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A1
+                                        - generic [ref=f31e83]: ARTICLE 1
+                                        - generic [ref=f31e84]: Short Title
+                                - listitem [ref=f31e85]:
+                                    - link "ARTICLE 2 General Provisions" [ref=f31e86] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A2
+                                        - generic [ref=f31e87]: ARTICLE 2
+                                        - generic [ref=f31e88]: General Provisions
+                                - listitem [ref=f31e89]:
+                                    - link "ARTICLE 3 The Onondaga Tribe" [ref=f31e90] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A3
+                                        - generic [ref=f31e91]: ARTICLE 3
+                                        - generic [ref=f31e92]: The Onondaga Tribe
+                                - listitem [ref=f31e93]:
+                                    - link "ARTICLE 4 The Seneca Indians" [ref=f31e94] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A4
+                                        - generic [ref=f31e95]: ARTICLE 4
+                                        - generic [ref=f31e96]: The Seneca Indians
+                                - listitem [ref=f31e97]:
+                                    - link "ARTICLE 5 The Seneca Indians On the Allegany and Cattaraugus Reservations" [ref=f31e98] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A5
+                                        - generic [ref=f31e99]: ARTICLE 5
+                                        - generic [ref=f31e100]: The Seneca Indians On the Allegany and Cattaraugus Reservations
+                                - listitem [ref=f31e101]:
+                                    - link "ARTICLE 6 The Seneca Indians On the Tonawanda Reservation" [ref=f31e102] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A6
+                                        - generic [ref=f31e103]: ARTICLE 6
+                                        - generic [ref=f31e104]: The Seneca Indians On the Tonawanda Reservation
+                                - listitem [ref=f31e105]:
+                                    - link "ARTICLE 7 The Tuscarora Nation" [ref=f31e106] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A7
+                                        - generic [ref=f31e107]: ARTICLE 7
+                                        - generic [ref=f31e108]: The Tuscarora Nation
+                                - listitem [ref=f31e109]:
+                                    - link "ARTICLE 8 The Saint Regis Tribe" [ref=f31e110] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A8
+                                        - generic [ref=f31e111]: ARTICLE 8
+                                        - generic [ref=f31e112]: The Saint Regis Tribe
+                                - listitem [ref=f31e113]:
+                                    - link "ARTICLE 9 The Shinnecock Tribe" [ref=f31e114] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A9
+                                        - generic [ref=f31e115]: ARTICLE 9
+                                        - generic [ref=f31e116]: The Shinnecock Tribe
+                                - listitem [ref=f31e117]:
+                                    - link "ARTICLE 10 The Poospatuck (unkechauge) Indian Nation" [ref=f31e118] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A10
+                                        - generic [ref=f31e119]: ARTICLE 10
+                                        - generic [ref=f31e120]: The Poospatuck (unkechauge) Indian Nation
+                                - listitem [ref=f31e121]:
+                                    - link "ARTICLE 15 Laws Repealed; When to Take Effect" [ref=f31e122] [cursor=pointer]:
+                                        - /url: https://www.nysenate.gov/legislation/laws/IND/A15
+                                        - generic [ref=f31e123]: ARTICLE 15
+                                        - generic [ref=f31e124]: Laws Repealed; When to Take Effect
+                            - generic [ref=f31e125]: 'INDIAN LAW Laws 1909, Chap. 31. AN ACT in relation to Indians, constituting chapter twenty-six of the consolidated laws.Became a law February 17, 1909, with the approval of the Governor.Passed, three-fifths being present.The People of the State of New York, represented in Senate andAssembly, do enact as follows: CHAPTER 26 OF THE CONSOLIDATED LAWS INDIAN LAWArticle 1. Short title (§ 1.) 2. General provisions (§§ 2-19). 3. The Onondaga tribe (§§ 20-28). 4. The Seneca Indians (§§ 40-60). 5. The Seneca Indians on the Allegany and Cattaraugus reservations (§§ 70-79). 6. The Seneca Indians on the Tonawanda Reservation (§§ 80-90). 7. The Tuscarora nation (§§ 95-98). 8. The Saint Regis tribe (§§ 100-114). 9. The Shinnecock tribe (§§ 120-122). 10. The Poospatuck (Unkechauge) Indian Nation (§§ 150-153). 15. Laws repealed; when to take effect (§§ 200-201).'
+        - contentinfo [ref=f31e126]:
+            - generic [ref=f31e131]:
+                - generic [ref=f31e133]:
+                    - link "NYSenate.gov New York State Senate Seal" [ref=f31e135] [cursor=pointer]:
+                        - /url: /
+                        - generic [ref=f31e136]: NYSenate.gov
+                        - img "New York State Senate Seal" [ref=f31e137]
+                    - navigation [ref=f31e138]:
+                        - heading "Socials" [level=2] [ref=f31e139]
+                        - generic [ref=f31e140]:
+                            - paragraph [ref=f31e141]: Follow the New York State Senate
+                            - list [ref=f31e142]:
+                                - listitem [ref=f31e143]:
+                                    - link "Go to youtube-2 Page" [ref=f31e144] [cursor=pointer]:
+                                        - /url: https://www.youtube.com/user/NYSenate
+                - navigation [ref=f31e149]:
+                    - heading "Footer" [level=2] [ref=f31e150]
+                    - list [ref=f31e151]:
+                        - listitem [ref=f31e152]:
+                            - link "News & Issues" [ref=f31e153] [cursor=pointer]:
+                                - /url: /news-and-issues
+                        - listitem [ref=f31e154]:
+                            - link "Senators & Committees" [ref=f31e155] [cursor=pointer]:
+                                - /url: /senators-committees
+                        - listitem [ref=f31e156]:
+                            - link "Bills & Laws" [ref=f31e157] [cursor=pointer]:
+                                - /url: /legislation
+                        - listitem [ref=f31e158]:
+                            - link "Budget" [ref=f31e159] [cursor=pointer]:
+                                - /url: /majority-issues/new-york-state-budget
+                        - listitem [ref=f31e160]:
+                            - link "Events" [ref=f31e161] [cursor=pointer]:
+                                - /url: /events
+                        - listitem [ref=f31e162]:
+                            - link "About the Senate" [ref=f31e163] [cursor=pointer]:
+                                - /url: /about
+                - navigation [ref=f31e166]:
+                    - heading "Footer Right" [level=2] [ref=f31e167]
+                    - list [ref=f31e168]:
+                        - listitem [ref=f31e169]:
+                            - link "Contact the Senate" [ref=f31e170] [cursor=pointer]:
+                                - /url: /contact
+                        - listitem [ref=f31e171]:
+                            - link "Report a Website Issue" [ref=f31e172] [cursor=pointer]:
+                                - /url: /report-website-issue
+                        - listitem [ref=f31e173]:
+                            - link "Home Rule Form" [ref=f31e174] [cursor=pointer]:
+                                - /url: /home-rule-form
+                        - listitem [ref=f31e175]:
+                            - link "Site Policies" [ref=f31e176] [cursor=pointer]:
+                                - /url: /policies-and-waivers
+                        - listitem [ref=f31e177]:
+                            - link "About this Website" [ref=f31e178] [cursor=pointer]:
+                                - /url: /nysenategov-source-code
+                        - listitem [ref=f31e179]:
+                            - link "GET INVOLVED" [ref=f31e180] [cursor=pointer]:
+                                - /url: /citizen-guide

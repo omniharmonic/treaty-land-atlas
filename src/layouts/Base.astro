@@ -1,11 +1,35 @@
 ---
+import '@fontsource/atkinson-hyperlegible-next/400.css';
+import '@fontsource/atkinson-hyperlegible-next/600.css';
+import '@fontsource/noto-sans-cherokee/400.css';
+import '@fontsource/noto-sans-osage/400.css';
+import '../styles/global.css';
+import { href } from '../lib/href';
+
 interface Props {
   title: string;
   description?: string;
+  /** Full-bleed pages (the map) skip the frame and footer spacing. */
+  bleed?: boolean;
+  noindex?: boolean;
 }
-const { title, description = 'United States treaty law with Native nations, over time.' } =
-  Astro.props;
+const {
+  title,
+  description = 'What the United States promised Native nations, what happened, what courts said, and what is being returned.',
+  bleed = false,
+  noindex = false,
+} = Astro.props;
 const stage = process.env.SITE_STAGE ?? 'preview';
+const pageTitle = title === 'Treaty Land Atlas' ? title : `${title}, Treaty Land Atlas`;
+const nav = [
+  ['/map/', 'Map'],
+  ['/nations/', 'Nations'],
+  ['/treaties/', 'Treaties'],
+  ['/law/', 'Law'],
+  ['/returns/', 'Land returns'],
+  ['/search/', 'Search'],
+];
+const here = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -13,21 +37,161 @@ const stage = process.env.SITE_STAGE ?? 'preview';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    {stage !== 'production' && <meta name="robots" content="noindex, nofollow" />}
+    {(stage !== 'production' || noindex) && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="stylesheet" href={href('/fonts/charis.css')} />
+    <link
+      rel="preload"
+      href={href('/fonts/charis-regular-core.woff2')}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href={href('/favicon.svg')} type="image/svg+xml" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#edf0e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141c17" media="(prefers-color-scheme: dark)" />
+    <slot name="head" />
   </head>
-  <body>
-    {stage !== 'production' && (
-      <p class="stage-banner" role="note">
-        Work in progress, not for citation.
+  <body class={bleed ? 'bleed' : ''}>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <div class="frame bar">
+        <a class="wordmark" href={href('/')}>
+          Treaty Land Atlas
+        </a>
+        <nav aria-label="Main">
+          <ul>
+            {nav.map(([path, label]) => (
+              <li>
+                <a
+                  href={href(path!)}
+                  aria-current={here.startsWith(href(path!)) ? 'page' : undefined}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class={bleed ? 'frame bleed-note' : 'frame'}>
+      <p class="stage-note sans">
+        Early release. Nothing here has been reviewed by a Native nation or a lawyer yet. Every
+        record shows its sources and how sure we are. <a href={href('/about/')}>What that means</a>
       </p>
-    )}
-    <main id="main">
+    </div>
+    <main id="main" class={bleed ? '' : 'frame'}>
       <slot />
     </main>
-    <footer>
-      <p>Created by Benjamin Life (@omniharmonic).</p>
-    </footer>
+    {!bleed && (
+      <footer class="site-footer">
+        <div class="frame">
+          <p>
+            Created by Benjamin Life (@omniharmonic). Text and data CC BY 4.0, code MIT.
+            <a href={href('/methods/sources/')}>Sources and credits</a>.
+          </p>
+          <ul class="footer-links sans">
+            <li>
+              <a href={href('/claim/')}>For Native nations: claim or correct a page</a>
+            </li>
+            <li>
+              <a href={href('/corrections/')}>Report an error</a>
+            </li>
+            <li>
+              <a href={href('/methods/')}>Methods</a>
+            </li>
+            <li>
+              <a href={href('/about/')}>About</a>
+            </li>
+            <li>
+              <a href={href('/privacy/')}>Privacy</a>
+            </li>
+            <li>
+              <a href={href('/accessibility/')}>Accessibility</a>
+            </li>
+          </ul>
+          <p class="small muted">
+            Not legal advice. Nothing here is a legal description of land, title or jurisdiction.
+          </p>
+        </div>
+      </footer>
+    )}
   </body>
 </html>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-5);
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-3);
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: var(--s1);
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.005em;
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    font-family: var(--sans);
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    text-decoration: none;
+    display: inline-block;
+    padding: var(--space-2) 0;
+    min-height: 24px;
+  }
+  nav a:hover,
+  nav a[aria-current='page'] {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--moss);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35em;
+  }
+  .stage-note {
+    font-size: var(--s-2);
+    color: var(--ink-2);
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+    max-width: none;
+  }
+  .site-footer {
+    margin-top: var(--space-8);
+    padding: var(--space-6) 0 var(--space-7);
+    border-top: 1px solid var(--rule);
+    font-size: var(--s-1);
+    color: var(--ink-2);
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+  }
+  .bleed .stage-note {
+    margin: var(--space-1) 0;
+  }
+</style>

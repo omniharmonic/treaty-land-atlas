@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import IndexList from '../../components/IndexList.astro';
+import { byType } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+const all = byType('Nation').sort((a, b) =>
+  a.label.localeCompare(b.label, 'en', { sensitivity: 'base' }),
+);
+const present = all.filter((n) => n['entity_kind'] === 'present_day_government');
+const historical = all.filter((n) => n['entity_kind'] !== 'present_day_government');
+const listed = present.filter((n) => n['federal_recognition'] === 'listed_federal_register_2026');
+const otherPresent = present.filter(
+  (n) => n['federal_recognition'] !== 'listed_federal_register_2026',
+);
+const endonym = (n: (typeof all)[number]) =>
+  ((n['names'] as { name: string; kind: string }[]) ?? []).find((x) => x.kind === 'endonym')?.name;
+---
+
+<Base
+  title="Nations"
+  description="Native nations in the treaty record and today, with their own names where we have a source."
+>
+  <div class="intro">
+    <h1>Nations</h1>
+    <p class="lede">
+      {all.length} nations and peoples: the {historical.length} treaty parties as the records name
+      them, and {present.length}
+      governments today.
+    </p>
+    <p>
+      The federal list is one record among several. Many communities it leaves out signed treaties,
+      lost land, and continue today; they belong here too. Every name shows its source. If a page is
+      about your nation, you can
+      <a href={href('/claim/')}>claim it</a>.
+    </p>
+  </div>
+
+  <nav aria-label="On this page" class="toc sans">
+    <a href="#today">Governments today</a>
+    <a href="#other">Not on the federal list</a>
+    <a href="#historical">Treaty parties as named in the records</a>
+  </nav>
+
+  <h2 id="today">Governments today ({listed.length})</h2>
+  <p class="muted small">
+    Listed by the Bureau of Indian Affairs in the Federal Register, January 30, 2026.
+  </p>
+  <IndexList items={listed} note={endonym} />
+
+  <h2 id="other">Not on the federal list ({otherPresent.length})</h2>
+  <p class="muted small">
+    State-recognized nations, nations whose federal relationship was terminated, and communities
+    petitioning for or outside federal acknowledgment. Status is recorded as each source states it.
+  </p>
+  <IndexList items={otherPresent} note={(n) => endonym(n) ?? null} />
+
+  <h2 id="historical">Treaty parties as named in the records ({historical.length})</h2>
+  <p class="muted small">
+    These are the names treaties and federal records used, which are often not the names the peoples
+    used for themselves. Each page links to the present-day governments that carry that history.
+  </p>
+  <IndexList items={historical} note={endonym} />
+</Base>
+
+<style>
+  .intro {
+    padding-top: var(--space-6);
+  }
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    font-size: var(--s-1);
+    margin: var(--space-5) 0;
+  }
+</style>

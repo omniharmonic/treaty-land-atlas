@@ -1,0 +1,186 @@
+---
+import { REVIEW_WORD, TYPE_NAME, cleanTags, type Node } from '../lib/graph';
+import { factsFor } from '../lib/facts';
+import Connections from './Connections.astro';
+import Sources from './Sources.astro';
+import SpecimenLabel from './SpecimenLabel.astro';
+import ClaimBox from './ClaimBox.astro';
+
+interface Props {
+  n: Node;
+  kicker?: string;
+}
+const { n, kicker } = Astro.props;
+const facts = factsFor(n);
+const isNationSpecific = n.tribal_review?.scope === 'nation_specific';
+const status = n.tribal_review?.status ?? 'not_yet_contacted';
+const summary = n.summary ? cleanTags(n.summary) : null;
+const notes = n.notes ? cleanTags(n.notes) : null;
+type Name = {
+  name: string;
+  kind: string;
+  source_url?: string | null;
+  language_or_script?: string | null;
+};
+const names = ((n['names'] as Name[]) ?? []).filter((x) => x.kind !== 'preferred_label');
+const nameGroups: [string, string[]][] = [
+  ['Self-names', ['endonym', 'endonym_per_seed']],
+  ['Official names', ['official_name']],
+  ['Names in treaties and records', ['source_label', 'exonym', 'historical_spelling']],
+  ['Other names in English', ['common_english']],
+  ['Peoples within this name', ['related_people']],
+];
+const flagText: Record<string, string> = {
+  'from-memory': 'not yet checked against a source',
+  unverified: 'unverified',
+  disputed: 'disputed',
+};
+---
+
+<article class="record">
+  <div>
+    <p class="kicker sans">{kicker ?? TYPE_NAME[n.type]?.[0]}</p>
+    <h1>{n.label}</h1>
+    {isNationSpecific && (
+      <p class:list={['review-note', 'sans', status]}>
+        {REVIEW_WORD[status] ?? status}.{' '}
+        {status === 'not_yet_contacted' &&
+          'What follows comes from public records and research. It does not speak for the nation.'}
+      </p>
+    )}
+    {summary?.text && <p class="lede">{summary.text}</p>}
+
+    {facts.length > 0 && (
+      <dl class="facts">
+        {facts.map((fct) => (
+          <div>
+            <dt class="sans">{fct.label}</dt>
+            <dd>
+              {fct.href ? <a href={fct.href}>{fct.value}</a> : fct.value}
+              {(fct.flags ?? []).map((fl) => (
+                <span class="flag sans">{flagText[fl] ?? fl}</span>
+              ))}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    )}
+
+    {n.type === 'Nation' && names.length > 0 && (
+      <section aria-labelledby="names">
+        <h2 id="names">Names</h2>
+        <p class="small muted sans">
+          Each name shows where it comes from. A nation’s own name is shown as the nation writes it.
+        </p>
+        {nameGroups.map(([title, kinds]) => {
+          const list = names.filter((x) => kinds.includes(x.kind));
+          const seen = new Set<string>();
+          const unique = list.filter((x) => {
+            const k = x.name.toLowerCase();
+            return seen.has(k) ? false : (seen.add(k), true);
+          });
+          return (
+            unique.length > 0 && (
+              <div class="names">
+                <h3>{title}</h3>
+                <ul>
+                  {unique.map((x) => (
+                    <li lang={x.kind.startsWith('endonym') ? 'und' : undefined}>
+                      {x.source_url ? <a href={x.source_url}>{x.name}</a> : x.name}
+                      {x.language_or_script && !/^(en|english)$/i.test(x.language_or_script) && (
+                        <span class="lang sans">{x.language_or_script}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          );
+        })}
+      </section>
+    )}
+
+    <slot />
+
+    {notes?.text && (
+      <section>
+        <h2>Research notes</h2>
+        <p>{notes.text}</p>
+      </section>
+    )}
+
+    <Connections id={n.id} />
+    <Sources id={n.id} />
+  </div>
+  <aside aria-label="About this record">
+    <SpecimenLabel n={n} />
+    {n.type === 'Nation' && <ClaimBox n={n} />}
+  </aside>
+</article>
+
+<style>
+  .kicker {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin: 0 0 var(--space-2);
+  }
+  .review-note {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--lichen);
+  }
+  .review-note.reviewed,
+  .review-note.co_authored {
+    border-left-color: var(--moss);
+  }
+  .facts {
+    display: grid;
+    gap: var(--space-3);
+    margin: var(--space-5) 0;
+  }
+  .facts > div {
+    display: grid;
+    gap: var(--space-1) var(--space-5);
+  }
+  @media (min-width: 640px) {
+    .facts > div {
+      grid-template-columns: 11rem minmax(0, 1fr);
+    }
+  }
+  .facts dt {
+    font-size: var(--s-1);
+    color: var(--ink-3);
+    padding-top: 0.15em;
+  }
+  .facts dd {
+    margin: 0;
+    max-width: var(--measure);
+  }
+  .flag {
+    display: inline-block;
+    margin-left: var(--space-2);
+    font-size: var(--s-2);
+    color: var(--warn);
+    border-bottom: 1px dotted currentColor;
+  }
+  .names h3 {
+    font-family: var(--sans);
+    font-size: var(--s-1);
+    font-weight: 600;
+    color: var(--ink-2);
+    margin: var(--space-4) 0 var(--space-1);
+  }
+  .names ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-5);
+  }
+  .lang {
+    font-size: var(--s-2);
+    color: var(--ink-3);
+    margin-left: var(--space-2);
+  }
+</style>

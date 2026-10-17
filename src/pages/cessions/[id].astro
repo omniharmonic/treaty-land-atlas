@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Record from '../../components/Record.astro';
+import { byType, type Node } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+export function getStaticPaths() {
+  return byType('GeoFeature').map((n) => ({
+    params: { id: n.id.replace('geo-royce-', '') },
+    props: { n },
+  }));
+}
+const { n } = Astro.props as { n: Node };
+void href;
+---
+
+<Base title={n.label}>
+  <Record n={n}>
+    <p class="sans small">
+      <a href={href(`/map/#sel=${encodeURIComponent(n.id)}`)}>See this cession on the map</a>
+    </p>
+    <p class="small muted">
+      Shapes come from C. C. Royce’s 1899 maps as georeferenced by the US Forest Service. They are
+      approximate and are not legal descriptions of land. Royce recorded land the United States
+      treated as ceded; the shape does not show a nation’s territory.
+    </p>
+  </Record>
+</Base>

@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import Record from '../../components/Record.astro';
+import { byType, type Node } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+export function getStaticPaths() {
+  return byType('Doctrine').map((n) => ({
+    params: { id: n.id.replace(/^doctrine-/, '') },
+    props: { n },
+  }));
+}
+const { n } = Astro.props as { n: Node };
+void href;
+---
+
+<Base title={n.label}>
+  <Record n={n} />
+</Base>

@@ -1,0 +1,43 @@
+---
+import type { Node } from '../lib/graph';
+import { href } from '../lib/href';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+const reviewed = ['reviewed', 'co_authored'].includes(n.tribal_review?.status ?? '');
+---
+
+<div class="claim sans">
+  {reviewed ? (
+    <p>This page has been reviewed by the nation. Changes go through its office.</p>
+  ) : (
+    <>
+      <p>
+        <strong>Is this your nation?</strong> You can claim this page: correct it, add your own
+        account in your own words, or ask us to take it down.
+      </p>
+      <p>
+        <a
+          href={href(`/claim/?id=${encodeURIComponent(n.id)}&name=${encodeURIComponent(n.label)}`)}
+        >
+          Claim this page
+        </a>
+      </p>
+    </>
+  )}
+</div>
+
+<style>
+  .claim {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    border-left: 3px solid var(--moss);
+    background: var(--sheet);
+    font-size: var(--s-1);
+  }
+  .claim p {
+    margin: 0 0 var(--space-2);
+  }
+</style>

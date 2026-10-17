@@ -7,6 +7,7 @@ import { dirname, join } from 'node:path';
 import { PUBLIC_DATA_DIR } from '../paths.ts';
 import type { Graph, GraphEdge, GraphNode } from '../validate/graph.ts';
 import type { Overlay } from '../overlays/index.ts';
+import { routeFor } from '../../../src/lib/routes.ts';
 
 export interface EmitOptions {
   outDir?: string;
@@ -118,6 +119,7 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
     })
     .sort((a, b) => a.id.localeCompare(b.id));
   const byId = new Map(nodes.map((n) => [n.id, n]));
+  const nationIds = nodes.filter((n) => n.type === 'Nation').map((n) => n.id);
   const edges = graph.edges
     // A human-rejected link is wrong, so it is not published (it stays in build/ for the record).
     .filter((e) => e.status !== 'rejected' && byId.has(e.source) && byId.has(e.target))
@@ -185,7 +187,13 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
           const m = byId.get(id)!;
           return [
             id,
-            { type: m.type, label: m.label, confidence: m.confidence, year: nodeYear(m) },
+            {
+              type: m.type,
+              label: m.label,
+              confidence: m.confidence,
+              year: nodeYear(m),
+              path: routeFor(id, m.type, nationIds),
+            },
           ];
         }),
       ),

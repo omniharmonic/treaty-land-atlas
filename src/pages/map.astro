@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import MapApp from '../islands/MapApp.svelte';
+import { href } from '../lib/href';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const relay = process.env.PUBLIC_NLD_RELAY ?? 'https://landback-nld-relay.vercel.app';
+---
+
+<Base
+  title="Map"
+  bleed
+  description="Slide through 1784 to 1894 and see the land the United States recorded as ceded, from Royce's 1899 maps, with reservations and trust lands today."
+>
+  <h1 class="visually-hidden">Map of land cessions, 1784 to 1894</h1>
+  <MapApp client:only="svelte" {base} {relay} />
+  <noscript>
+    <div class="frame">
+      <p>
+        The map needs JavaScript. Every cession has its own page in the{' '}
+        <a href={href('/cessions/')}>cessions index</a>, and every treaty in the{' '}
+        <a href={href('/treaties/')}>treaties index</a>.
+      </p>
+    </div>
+  </noscript>
+</Base>

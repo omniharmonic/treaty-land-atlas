@@ -1,0 +1,152 @@
+- generic [active] [ref=f3e1]:
+    - generic [ref=f3e2]:
+        - region "Official website banner" [ref=f3e3]:
+            - group [ref=f3e5]:
+                - generic "Massachusetts State Seal An official website of the Commonwealth of Massachusetts Here's how you know" [ref=f3e6]:
+                    - generic [ref=f3e8]:
+                        - img "Massachusetts State Seal" [ref=f3e9]
+                        - generic [ref=f3e10]:
+                            - text: An official website of the Commonwealth of Massachusetts
+                            - generic [ref=f3e11]: Here's how you know
+        - banner [ref=f3e15]:
+            - link "Skip to main content" [ref=f3e16] [cursor=pointer]:
+                - /url: '#main-content'
+            - navigation "main" [ref=f3e17]:
+                - generic [ref=f3e18]:
+                    - button "Menu" [ref=f3e20] [cursor=pointer]
+                    - list "Language options and quick access links" [ref=f3e25]:
+                        - listitem [ref=f3e26]:
+                            - button "Language" [ref=f3e28] [cursor=pointer]
+                        - listitem [ref=f3e32]:
+                            - link "State Organizations" [ref=f3e33] [cursor=pointer]:
+                                - /url: /massachusetts-state-organizations
+            - generic [ref=f3e37]:
+                - link [ref=f3e40] [cursor=pointer]:
+                    - /url: /
+                    - img "Mass.gov home" [ref=f3e42]
+                    - generic [aria-hidden] [ref=f3e43]: Mass.gov
+                - search [ref=f3e46]:
+                    - generic [ref=f3e47]: Search terms
+                    - combobox "Search terms" [ref=f3e48]
+                    - button "Search" [ref=f3e49] [cursor=pointer]
+        - navigation "Breadcrumbs" [ref=f3e54]:
+            - list [ref=f3e55]:
+                - listitem [ref=f3e56]:
+                    - link "Home" [ref=f3e57] [cursor=pointer]:
+                        - /url: /
+                - listitem [ref=f3e60]:
+                    - link "Governor Maura Healey and Lt. Governor Kim Driscoll" [ref=f3e61] [cursor=pointer]:
+                        - /url: /orgs/governor-maura-healey-and-lt-governor-kim-driscoll
+                - listitem [ref=f3e62]:
+                    - link "Governor Healey's Executive Orders" [ref=f3e63] [cursor=pointer]:
+                        - /url: /lists/governor-healeys-executive-orders
+                - listitem [ref=f3e64]: 'No. 637: Recognizing the Herring Pond Wampanoag Tribe'
+        - main [ref=f3e65]:
+            - generic [ref=f3e66]:
+                - generic [ref=f3e68]:
+                    - generic [ref=f3e69]:
+                        - generic [ref=f3e70]:
+                            - text: This is a part of
+                            - generic [ref=f3e71]: the law library
+                            - text: ':'
+                        - link "Massachusetts Executive Orders 600-699" [ref=f3e73] [cursor=pointer]:
+                            - /url: /law-library/massachusetts-executive-orders-600-699
+                        - button "Show the table of contents for <span>Massachusetts Executive Orders 600-699</span>" [ref=f3e77] [cursor=pointer]:
+                            - generic [ref=f3e78]: +
+                    - text: + +
+                - generic [ref=f3e80]:
+                    - generic [ref=f3e81]: Executive Order
+                    - 'heading "Executive Order No. 637: Recognizing the Herring Pond Wampanoag Tribe" [level=1] [ref=f3e82]':
+                        - generic [ref=f3e83]: Executive Order
+                        - text: 'No. 637: Recognizing the Herring Pond Wampanoag Tribe'
+            - generic [ref=f3e84]:
+                - generic [ref=f3e85]:
+                    - table [ref=f3e88]:
+                        - rowgroup [ref=f3e89]:
+                            - row [ref=f3e90]:
+                                - rowheader "Date:" [ref=f3e91]
+                                - cell "11/19/2024" [ref=f3e92]
+                            - row [ref=f3e94]:
+                                - rowheader "Issuer:" [ref=f3e95]
+                                - cell "Maura Healey" [ref=f3e96]
+                            - row [ref=f3e98]:
+                                - rowheader "Mass Register:" [ref=f3e99]
+                                - cell "No. 1536" [ref=f3e100]
+                    - generic [ref=f3e102]:
+                        - paragraph [ref=f3e103]: WHEREAS, indigenous tribes, with rich cultures, histories, and traditions, have continuously inhabited lands within the borders of what is now Massachusetts for centuries, contributing to the fabric of our community in important ways over time;
+                        - paragraph [ref=f3e104]: WHEREAS, since its founding, the Commonwealth of Massachusetts has enjoyed a special relationship with the indigenous tribes of the region;
+                        - paragraph [ref=f3e105]: WHEREAS, for over three centuries, the Commonwealth has molded this relationship by Treaty and Agreement, Legislative Act and Executive Order, and has never ceased to recognize the special status of these indigenous tribes;
+                        - paragraph [ref=f3e106]: WHEREAS, since well before the arrival of the Mayflower, the Herring Pond Wampanoag Tribe has continuously inhabited lands within the borders of what is now Massachusetts, with ancestral homelands stretching from the Plymouth area to the upper reaches of Cape Cod;
+                        - paragraph [ref=f3e107]:
+                            - text: WHEREAS, official records dating to the 17
+                            - superscript [ref=f3e108]: th
+                            - text: century reflect the Herring Pond Wampanoag Tribe’s continuous status as a socially and culturally cohesive tribal community within Massachusetts;
+                        - paragraph [ref=f3e109]: WHEREAS, the Earle Report of 1861, a census conducted pursuant to Chapter 166 of the Acts of 1859, recognized the Herring Pond Wampanoag Tribe as a distinct and autonomous tribal community then existing within Massachusetts;
+                        - paragraph [ref=f3e110]: WHEREAS, the Wampanoag Tribe of Gay Head (Aquinnah) and the Mashpee Wampanoag Tribe—federally-recognized tribes within Massachusetts—enjoy government-to-government relationships with the Herring Pond Wampanoag, and recognize a kinship relationship with the Herring Pond Wampanoag;
+                        - paragraph [ref=f3e111]: WHEREAS, the Herring Pond Wampanoag Tribe presently contains close to 200 members, each with a genealogical connection to individuals identified as tribal members in the Earle Report of 1861 or in the Briggs Report of 1859, another governmental census of Native Americans in Massachusetts;
+                        - paragraph [ref=f3e112]: WHEREAS, the Herring Pond Wampanoag Tribal Council is the governing body of the Herring Pond Wampanoag Tribe and exercises governmental functions for the Herring Pond Wampanoag Tribe;
+                        - paragraph [ref=f3e113]: WHEREAS, the Commission on Indian Affairs acknowledges the Herring Pond Wampanoag Tribe as one of the historic tribes of Massachusetts and the Herring Pond Wampanoag Tribal Council as its governing body;
+                        - paragraph [ref=f3e114]: WHEREAS, Executive Order No. 126 instructed state agencies to deal directly with the Mashpee Wampanoag Indian Tribal Council on matters affecting the Mashpee Tribe; with the Wampanoag Tribal Council of Gay Head on matters affecting the Wampanoag Tribe of Gay Head Aquinnah; with the Commission on Indian Affairs on matters affecting Wampanoag Indians who are members of neither the Gay Head nor the Mashpee Tribes; and with the Hassanamisco Nipmuc Tribal Council on matters affecting the Nipmuc Tribe;
+                        - paragraph [ref=f3e115]: 'NOW, THEREFORE, I, Maura Healey, Governor of the Commonwealth of Massachusetts, by virtue of all authority vested in me by the Constitution, Part 2, c. 2, § I, Art. I, do hereby order as follows:'
+                        - paragraph [ref=f3e116]: Section 1. Like the Mashpee Wampanoag Tribe, the Wampanoag Tribe of Gay Head, and the Hassanamisco Nipmuc Tribe, the Herring Pond Wampanoag Tribe is recognized by the Commonwealth of Massachusetts and the Herring Pond Wampanoag Tribal Council is recognized as its governing body consistent with, and for all purposes under, Executive Order No. 126.
+                        - paragraph [ref=f3e117]: Section 2. All executive branch agencies shall deal directly with the Herring Pond Wampanoag Tribal Council on matters affecting the Herring Pond Wampanoag Tribe.
+                        - paragraph [ref=f3e118]: This Executive Order shall take effect immediately and shall continue in effect until amended, superseded, or revoked by subsequent Executive Order.
+                - complementary
+            - navigation "pagenation" [ref=f3e121]:
+                - generic [ref=f3e122]:
+                    - text: 'This is part of:'
+                    - link "This page is part of Massachusetts Executive Orders 600-699 category." [ref=f3e124] [cursor=pointer]:
+                        - /url: /law-library/massachusetts-executive-orders-600-699
+                        - text: Massachusetts Executive Orders 600-699
+                - list [ref=f3e127]:
+                    - listitem [ref=f3e128] [cursor=pointer]:
+                        - link [aria-hidden] [ref=f3e129]:
+                            - /url: /executive-orders/no-636-reaffirming-and-reconstituting-a-state-rehabilitation-advisory-council-for-the-massachusetts-commission-for-the-blind
+                        - generic [aria-hidden] [ref=f3e130]: 'Previous:'
+                        - 'link "Previous page, No. 636: Reaffirming and Reconstituting a State Rehabilitation Advisory Council for the Massachusetts Commission for the Blind" [ref=f3e132]':
+                            - /url: /executive-orders/no-636-reaffirming-and-reconstituting-a-state-rehabilitation-advisory-council-for-the-massachusetts-commission-for-the-blind
+                            - text: 'No. 636: Reaffirming and Reconstituting a State Rehabilitation Advisory Council for the Massachusetts Commission for the Blind'
+                    - listitem [ref=f3e133] [cursor=pointer]:
+                        - link [aria-hidden] [ref=f3e134]:
+                            - /url: /executive-orders/no-638-promoting-the-equitable-participation-of-women-and-underrepresented-groups-in-construction
+                        - generic [aria-hidden] [ref=f3e135]: 'Next:'
+                        - 'link "Next page, No. 638: Promoting the Equitable Participation of Women and Underrepresented Groups in Construction" [ref=f3e137]':
+                            - /url: /executive-orders/no-638-promoting-the-equitable-participation-of-women-and-underrepresented-groups-in-construction
+                            - text: 'No. 638: Promoting the Equitable Participation of Women and Underrepresented Groups in Construction'
+            - generic [ref=f3e138]:
+                - heading "Help Us Improve Mass.gov with your feedback" [level=2] [ref=f3e139]:
+                    - text: Help Us Improve Mass.gov
+                    - generic [ref=f3e140]: with your feedback
+                - radiogroup "Did you find what you were looking for on this webpage?" [ref=f3e142]:
+                    - generic [ref=f3e145]:
+                        - generic [ref=f3e147]:
+                            - radio "Yes" [ref=f3e148]
+                            - generic [ref=f3e149] [cursor=pointer]: 'Yes'
+                        - generic [ref=f3e152]:
+                            - radio "No" [ref=f3e153]
+                            - generic [ref=f3e154] [cursor=pointer]: 'No'
+    - contentinfo [ref=f3e156]:
+        - generic [ref=f3e157]:
+            - generic [ref=f3e158]:
+                - link [ref=f3e161] [cursor=pointer]:
+                    - /url: /
+                    - img "Mass.gov home" [ref=f3e163]
+                    - generic [aria-hidden] [ref=f3e164]: Mass.gov
+                - link "State Organizations" [ref=f3e166] [cursor=pointer]:
+                    - /url: /massachusetts-state-organizations
+            - generic [ref=f3e169]:
+                - navigation "site navigation" [ref=f3e170]:
+                    - link "Digital Accessibility Statement" [ref=f3e172] [cursor=pointer]:
+                        - /url: /info-details/enterprise-digital-accessibility-statement
+                    - link "Privacy Policy" [ref=f3e174] [cursor=pointer]:
+                        - /url: /massgov-privacy-policy
+                    - link "Site Policies" [ref=f3e176] [cursor=pointer]:
+                        - /url: /massgov-site-policies
+                    - link "Public Records Requests" [ref=f3e178] [cursor=pointer]:
+                        - /url: /topics/public-records-requests
+                - generic [ref=f3e179]:
+                    - generic [ref=f3e180]: © 2026 Commonwealth of Massachusetts.
+                    - text: Mass.gov® is a registered service mark of the Commonwealth of Massachusetts.
+    - region "Quick access to feedback form":
+        - link "Feedback" [ref=f3e181] [cursor=pointer]:
+            - /url: '#feedback'

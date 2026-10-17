@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import IndexList from '../../components/IndexList.astro';
+import { byType, year } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+const all = byType('Campaign').sort((a, b) => (year(b) ?? 0) - (year(a) ?? 0));
+const statusWord = (s: unknown) => String(s ?? '').replace(/-/g, ' ');
+---
+
+<Base
+  title="Land returns"
+  description="Documented returns of land to Native nations, and campaigns under way."
+>
+  <div class="intro">
+    <h1>Land returns</h1>
+    <p class="lede">{all.length} documented returns and campaigns, most recent first.</p>
+    <p>
+      “Land Back” means different things to different people; we describe each return in the words
+      of its sources. To support a return, see <a href={href('/support/')}>how to help</a>.
+    </p>
+  </div>
+  <IndexList
+    items={all}
+    dated
+    note={(n) =>
+      `${n['nation_text'] ?? ''}${n['acres'] ? `, ${Number(n['acres']).toLocaleString('en-US')} acres` : ''} (${statusWord(n['campaign_status'])})`
+    }
+  />
+</Base>
+
+<style>
+  .intro {
+    padding-top: var(--space-6);
+  }
+</style>

@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import IndexList from '../../components/IndexList.astro';
+import { byType, year } from '../../lib/graph';
+
+const all = byType('Instrument').sort(
+  (a, b) => (year(a) ?? 0) - (year(b) ?? 0) || a.id.localeCompare(b.id),
+);
+const ratified = all.filter((n) => n['ratification_status'] === 'ratified').length;
+const unratified = all.filter((n) => n['ratification_status'] === 'unratified').length;
+const parties = (n: (typeof all)[number]) => {
+  const t = (n['parties_text'] as string) ?? null;
+  return t && !n.label.startsWith(t) ? t : null;
+};
+---
+
+<Base
+  title="Treaties and agreements"
+  description="Every treaty, agreement and related instrument in the atlas, in date order."
+>
+  <div class="intro">
+    <h1>Treaties and agreements</h1>
+    <p class="lede">
+      {all.length} instruments, in the order they were signed: {ratified} ratified, {unratified}{' '}
+      never ratified, and the agreements, statutes and orders that worked like them.
+    </p>
+    <details class="sans small">
+      <summary>Why there is no single count of treaties</summary>
+      <p>
+        The National Archives series of ratified Indian treaties holds 368 federal-era treaties (375
+        counting seven British-era items); “about 370” is common in government writing. Other counts
+        (377, 389, 418) include different kinds of documents. We show each record with its source
+        rather than one number.
+      </p>
+    </details>
+  </div>
+  <IndexList items={all} dated note={parties} />
+</Base>
+
+<style>
+  .intro {
+    padding-top: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+  details summary {
+    cursor: pointer;
+    color: var(--moss);
+  }
+</style>

@@ -1,0 +1,100 @@
+---
+import { incoming, node, outgoing, phrase, year, type Edge } from '../lib/graph';
+import RelatedItem from './RelatedItem.astro';
+
+interface Props {
+  id: string;
+  /** Edge types to leave out (shown elsewhere on the page). */
+  skip?: string[];
+  /** Cap per group; the rest go behind a details toggle. */
+  limit?: number;
+}
+const { id, skip = ['evidenced_by', 'derived_from'], limit = 12 } = Astro.props;
+type Row = { edge: Edge; other: NonNullable<ReturnType<typeof node>> };
+const groups = new Map<string, Row[]>();
+for (const [dir, list] of [
+  ['out', outgoing(id)],
+  ['in', incoming(id)],
+] as const) {
+  for (const e of list) {
+    if (skip.includes(e.type)) continue;
+    const other = node(dir === 'out' ? e.target : e.source);
+    if (!other) continue;
+    const key = `${dir}:${e.type}`;
+    (groups.get(key) ?? groups.set(key, []).get(key)!).push({ edge: e, other });
+  }
+}
+const sorted = [...groups.entries()]
+  .map(([key, rows]) => {
+    const [dir, type] = key.split(':') as ['out' | 'in', string];
+    rows.sort(
+      (a, b) =>
+        (year(a.other) ?? 9999) - (year(b.other) ?? 9999) ||
+        a.other.label.localeCompare(b.other.label),
+    );
+    // one row per related record, even when several links join the same pair
+    const seen = new Set<string>();
+    const unique = rows.filter((r) =>
+      seen.has(r.other.id) ? false : (seen.add(r.other.id), true),
+    );
+    return { title: phrase(type, dir), type, rows: unique };
+  })
+  .sort((a, b) => b.rows.length - a.rows.length);
+---
+
+{sorted.length > 0 && (
+  <section class="connections" aria-labelledby={`conn-${id}`}>
+    <h2 id={`conn-${id}`}>Connections</h2>
+    <p class="small muted sans">
+      Links marked “suggested” were inferred from matching names or dates and have not been reviewed
+      by a person.
+    </p>
+    {sorted.map((g) => (
+      <section class="group">
+        <h3>
+          {g.title} <span class="count">{g.rows.length}</span>
+        </h3>
+        <ul>
+          {g.rows.slice(0, limit).map((r) => (
+            <RelatedItem edge={r.edge} other={r.other} />
+          ))}
+        </ul>
+        {g.rows.length > limit && (
+          <details>
+            <summary class="sans">Show all {g.rows.length}</summary>
+            <ul>
+              {g.rows.slice(limit).map((r) => (
+                <RelatedItem edge={r.edge} other={r.other} />
+              ))}
+            </ul>
+          </details>
+        )}
+      </section>
+    ))}
+  </section>
+)}
+
+<style>
+  .connections ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-3);
+  }
+  .group h3 {
+    font-family: var(--sans);
+    font-size: var(--s-1);
+    font-weight: 600;
+    color: var(--ink-2);
+    margin: var(--space-5) 0 var(--space-2);
+  }
+  .count {
+    font-weight: 400;
+    color: var(--ink-3);
+  }
+  details summary {
+    cursor: pointer;
+    font-size: var(--s-1);
+    color: var(--moss);
+    min-height: 24px;
+  }
+</style>

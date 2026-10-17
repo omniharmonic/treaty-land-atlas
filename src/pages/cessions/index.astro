@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import IndexList from '../../components/IndexList.astro';
+import { byType } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+const all = byType('GeoFeature').sort(
+  (a, b) => Number(a['t_first'] ?? 0) - Number(b['t_first'] ?? 0),
+);
+---
+
+<Base
+  title="Royce cessions"
+  description="The 724 land cessions C. C. Royce recorded between 1784 and 1894."
+>
+  <div class="intro">
+    <h1>Royce cessions</h1>
+    <p class="lede">
+      In 1899 Charles C. Royce mapped {all.length} areas the United States recorded as ceded between
+      1784 and 1894. The US Forest Service georeferenced his maps; we draw from that layer.
+    </p>
+    <p>
+      The shapes are approximate and are not legal descriptions. Royce recorded what the government
+      treated as ceded, not the extent of any nation’s homeland.{' '}
+      <a href={href('/map/')}>See them on the map</a>.
+    </p>
+  </div>
+  <IndexList
+    items={all}
+    dated
+    note={(n) => ((n['tribes_as_named_in_schedule'] as string[]) ?? []).join(', ') || null}
+  />
+</Base>
+
+<style>
+  .intro {
+    padding-top: var(--space-6);
+  }
+</style>

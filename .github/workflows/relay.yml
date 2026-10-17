@@ -36,6 +36,15 @@ jobs:
           if [ -z "$NLD_API_KEY" ]; then echo "No NLD_API_KEY; skipping"; exit 0; fi
           npx --yes vercel@64 env rm NLD_KEY production --yes --token "$VERCEL_TOKEN" >/dev/null 2>&1 || true
           printf '%s' "$NLD_API_KEY" | npx --yes vercel@64 env add NLD_KEY production --token "$VERCEL_TOKEN"
+      - name: Sync the claims token into the Vercel environment
+        working-directory: relay
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          CLAIMS_GITHUB_TOKEN: ${{ secrets.CLAIMS_GITHUB_TOKEN }}
+        run: |
+          if [ -z "$CLAIMS_GITHUB_TOKEN" ]; then echo "No CLAIMS_GITHUB_TOKEN; claim form will answer not_configured"; exit 0; fi
+          npx --yes vercel@64 env rm CLAIMS_GITHUB_TOKEN production --yes --token "$VERCEL_TOKEN" >/dev/null 2>&1 || true
+          printf '%s' "$CLAIMS_GITHUB_TOKEN" | npx --yes vercel@64 env add CLAIMS_GITHUB_TOKEN production --token "$VERCEL_TOKEN"
       - name: Deploy
         working-directory: relay
         env:

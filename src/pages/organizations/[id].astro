@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import Record from '../../components/Record.astro';
+import { byType, type Node } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+export function getStaticPaths() {
+  return byType('Organization').map((n) => ({
+    params: { id: n.id.replace(/^org-/, '') },
+    props: { n },
+  }));
+}
+const { n } = Astro.props as { n: Node };
+void href;
+---
+
+<Base title={n.label}>
+  <Record n={n}>
+    {n['listing_status'] !== 'not_listed' && n.confidence !== 'low' && n['website'] ? (
+      <p class="sans">
+        <a href={String(n['website'])}>Visit the organization’s website</a>
+        {n['donation_url'] && (
+          <>
+            {' '}
+            or <a href={String(n['donation_url'])}>give directly on its own page</a>. This site
+            takes no money.
+          </>
+        )}
+      </p>
+    ) : (
+      <p class="small muted">
+        We have not verified this organization well enough to link to it. See our{' '}
+        <a href={href('/support/policy/')}>donation integrity policy</a>.
+      </p>
+    )}
+  </Record>
+</Base>

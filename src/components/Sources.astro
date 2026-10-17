@@ -1,0 +1,70 @@
+---
+import { sourcesOf } from '../lib/graph';
+
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+const tierWord: Record<string, string> = {
+  primary_record: 'primary record',
+  authoritative_secondary: 'reference work',
+  legal_text_mirror: 'legal text copy',
+  pointer_only: 'pointer',
+  self_described: 'self-description',
+  news: 'news',
+  unclassified: 'unclassified',
+};
+const seen = new Set<string>();
+const rows = sourcesOf(id).filter(({ source }) =>
+  seen.has(source.id) ? false : (seen.add(source.id), true),
+);
+---
+
+{rows.length > 0 ? (
+  <section aria-labelledby={`src-${id}`}>
+    <h2 id={`src-${id}`}>Sources</h2>
+    <ol class="sources">
+      {rows.map(({ edge, source }) => (
+        <li>
+          {typeof source['url'] === 'string' ? (
+            <a href={source['url'] as string}>{source.label}</a>
+          ) : (
+            source.label
+          )}
+          <span class="tier sans">{tierWord[String(source['source_tier'])] ?? ''}</span>
+          {edge.basis && edge.basis.length < 400 && (
+            <blockquote class="small">{edge.basis}</blockquote>
+          )}
+        </li>
+      ))}
+    </ol>
+  </section>
+) : (
+  <section>
+    <h2>Sources</h2>
+    <p class="muted">
+      No source is linked to this record yet. That is a gap we are working to close.
+    </p>
+  </section>
+)}
+
+<style>
+  .sources {
+    padding-left: 1.4em;
+  }
+  .sources li {
+    margin-bottom: var(--space-3);
+    overflow-wrap: anywhere;
+  }
+  .tier {
+    font-size: var(--s-2);
+    color: var(--ink-3);
+    margin-left: var(--space-2);
+  }
+  blockquote {
+    margin: var(--space-1) 0 0;
+    padding-left: var(--space-3);
+    border-left: 2px solid var(--lichen);
+    color: var(--ink-2);
+  }
+</style>

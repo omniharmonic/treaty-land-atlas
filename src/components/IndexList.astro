@@ -1,0 +1,64 @@
+---
+import { pathFor, year, type Node } from '../lib/graph';
+import { href } from '../lib/href';
+
+interface Props {
+  items: Node[];
+  /** Show the year before the name (chronological lists). */
+  dated?: boolean;
+  note?: (n: Node) => string | null | undefined;
+}
+const { items, dated = false, note } = Astro.props;
+---
+
+<ul class:list={['index', { dated }]}>
+  {items.map((n) => {
+    const p = pathFor(n);
+    const y = year(n);
+    const extra = note?.(n);
+    return (
+      <li>
+        {dated && <span class="y sans">{y ?? ''}</span>}
+        <span>
+          {p ? <a href={href(p)}>{n.label}</a> : n.label}
+          {extra && <span class="note sans">{extra}</span>}
+        </span>
+      </li>
+    );
+  })}
+</ul>
+
+<style>
+  .index {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6);
+    columns: 1;
+  }
+  .index li {
+    padding: 3px 0;
+    break-inside: avoid;
+  }
+  .dated li {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: var(--space-3);
+  }
+  .y {
+    color: var(--ink-3);
+    font-size: var(--s-1);
+    font-variant-numeric: lining-nums tabular-nums;
+    padding-top: 0.2em;
+  }
+  .note {
+    display: block;
+    font-size: var(--s-2);
+    color: var(--ink-3);
+  }
+  @media (min-width: 800px) {
+    .index:not(.dated) {
+      columns: 2;
+      column-gap: var(--space-7);
+    }
+  }
+</style>
