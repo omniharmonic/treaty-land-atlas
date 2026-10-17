@@ -770,7 +770,12 @@
             "per_seed_tribal_government",
             "per_seed_not_federally_recognized",
             "not_applicable",
-            "listed_federal_register_2026"
+            "listed_federal_register_2026",
+            "state_recognized",
+            "state_recognition_withdrawn",
+            "not_federally_recognized",
+            "terminated_not_restored",
+            "petitioning_federal_acknowledgment"
           ],
           "description": "What the seeds say, not a determination. Recognition is a legal category and is for the federal government and nations to state. 'listed_federal_register_2026' = the entity appears in the BIA list published at 91 FR 4102 (Jan. 30, 2026): a statement about a federal document, not a determination by this project."
         },
@@ -871,6 +876,71 @@
             "null"
           ],
           "description": "Federal Register parent entity for a component band (e.g. Minnesota Chippewa Tribe)."
+        },
+        "recognition_records": {
+          "type": "array",
+          "description": "Sourced statements of recognition status (federal list, state recognition, termination, acknowledgment petitions), as each source states them. Not determinations by this project.",
+          "items": {
+            "type": "object",
+            "required": [
+              "status",
+              "source_url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "detail": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "where": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "year": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "confidence": {
+                "enum": [
+                  "high",
+                  "medium",
+                  "low"
+                ]
+              }
+            }
+          }
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The nation's or community's own website, as found by research."
+        },
+        "disputed_with": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other nation ids that claim the same people or history (shown as disputed, never ranked)."
         }
       },
       "allOf": [

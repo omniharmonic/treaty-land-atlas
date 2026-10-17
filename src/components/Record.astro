@@ -1,6 +1,8 @@
 ---
 import { REVIEW_WORD, TYPE_NAME, cleanTags, type Node } from '../lib/graph';
-import { factsFor } from '../lib/facts';
+import { STATUS_WORD, factsFor } from '../lib/facts';
+import { node as nodeById, pathFor } from '../lib/graph';
+import { href } from '../lib/href';
 import Connections from './Connections.astro';
 import Sources from './Sources.astro';
 import SpecimenLabel from './SpecimenLabel.astro';
@@ -39,6 +41,17 @@ const allNames = [
 const searchNames = [
   ...new Set([...allNames, ...allNames.map((x) => x.normalize('NFKD').replace(/\p{M}/gu, ''))]),
 ].join(' · ');
+type RecRecord = {
+  status: string;
+  detail?: string | null;
+  where?: string | null;
+  year?: string | null;
+  source_url: string;
+};
+const records = ((n['recognition_records'] as RecRecord[]) ?? []).filter((r) => r.source_url);
+const disputedWith = ((n['disputed_with'] as string[]) ?? [])
+  .map((id) => nodeById(id))
+  .filter(Boolean);
 const flagText: Record<string, string> = {
   'from-memory': 'not yet checked against a source',
   unverified: 'unverified',
@@ -110,6 +123,41 @@ const flagText: Record<string, string> = {
           );
         })}
       </section>
+    )}
+
+    {records.length > 0 && (
+      <section aria-labelledby="status">
+        <h2 id="status">Recognition, as each source states it</h2>
+        <p class="small muted sans">
+          Recognition is a legal and political status that governments assign; it is not a measure
+          of who a people are.
+        </p>
+        <ul class="records">
+          {records.map((r) => (
+            <li>
+              <strong>{STATUS_WORD[r.status] ?? r.status.replace(/_/g, ' ')}</strong>
+              {r.where && `, ${r.where}`}
+              {r.year && ` (${r.year})`}
+              {r.detail && <span class="detail">{r.detail}</span>}
+              <a class="src sans" href={r.source_url}>
+                source
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+    {disputedWith.length > 0 && (
+      <p class="review-note sans">
+        Disputed: another organization claims the same people or history:{' '}
+        {disputedWith.map((d, i) => (
+          <>
+            {i > 0 && ', '}
+            <a href={href(pathFor(d!) ?? '/')}>{d!.label}</a>
+          </>
+        ))}
+        . We show each claim and do not choose between them.
+      </p>
     )}
 
     <slot />
@@ -189,6 +237,22 @@ const flagText: Record<string, string> = {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-1) var(--space-5);
+  }
+  .records {
+    list-style: none;
+    padding: 0;
+  }
+  .records li {
+    margin-bottom: var(--space-3);
+  }
+  .records .detail {
+    display: block;
+    color: var(--ink-2);
+    font-size: var(--s-1);
+  }
+  .src {
+    font-size: var(--s-2);
+    margin-left: var(--space-2);
   }
   .lang {
     font-size: var(--s-2);

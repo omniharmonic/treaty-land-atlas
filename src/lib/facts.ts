@@ -40,6 +40,7 @@ const RECOGNITION: Record<string, string> = {
   not_federally_recognized: 'Not on the federal list',
   terminated_not_restored: 'Federal relationship terminated and not restored',
   petitioning_federal_acknowledgment: 'Petitioning for federal acknowledgment',
+  state_recognition_withdrawn: 'State recognition withdrawn',
   not_applicable: 'Not applicable',
   unknown: 'Not recorded',
 };
@@ -79,6 +80,9 @@ export function factsFor(n: Node): Fact[] {
           RECOGNITION[String(n['federal_recognition'])] ?? n['federal_recognition'],
         ),
         f('Part of', n['component_of']),
+        f('Website', n['website'], {
+          href: typeof n['website'] === 'string' ? (n['website'] as string) : undefined,
+        }),
         f('Region', n['region']),
       ].filter(Boolean) as Fact[];
     case 'GeoFeature':
@@ -159,6 +163,8 @@ export function factsFor(n: Node): Fact[] {
       return [];
   }
 }
+
+export const STATUS_WORD = RECOGNITION;
 
 export const CONFIDENCE_WORD: Record<string, string> = {
   high: 'High',

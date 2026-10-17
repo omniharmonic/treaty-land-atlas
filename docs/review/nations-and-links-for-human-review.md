@@ -56,6 +56,35 @@ The research found these tribal-looking domains serving unrelated or spam conten
 
 indiancanyon.org (spam), the Tule River Tribe's site (injected spam text), sancarlosapache.com (jewelry), whiteearth-nsn.gov (casino page), lbst.org (unrelated), cheyenneriversiouxtribe.org (medical site). One Peoria Tribe page carried hidden text addressed to AI tools; it was ignored.
 
+
+## 6. Nations beyond the federal list: held for a person to check
+
+Imported (104 nations, `crosswalks/nations-beyond-federal-list.csv`): state-recognized tribes confirmed on a state source, and communities with a documented treaty, claims, court or termination record, or a documented acknowledgment petition. Held back, because the only support found was the community's own site, a news report, or a secondary list:
+
+- Amah Mutsun Tribal Band (California (Santa Cruz / San Benito region)): petitioning federal acknowledgment. disputed: nat-pd-amah-mutsun-msjb (leadership dispute within Petitioner #120 led to a separate petition #412). Petition #120 status unclear: absent from the cur
+- Amah Mutsun Tribal Band of the Mission San Juan Bautista (California (San Benito County)): petitioning federal acknowledgment. disputed: nat-pd-amah-mutsun. No community website found. Two governmental sources document only the petition, not a continuing community.
+- The Ancient Boii Tribe-Clovis (NJ): state recognized. Not confirmed by New Jersey; New Jersey sources refer to three recognized tribes.
+- Burt Lake Band of Ottawa and Chippewa Indians (MI): state recognized. Michigan House Resolution 193 (2025) commemorates the 'Burt Lake Burnout' and names the 'Cheboiganing Band of Ottawa and Chippewa Indians (Burt Lake Band)' but 
+- Central Band of Cherokee (TN): state recognition withdrawn. Secondary (news) source only; the chancery order was not located on a state site. Commission ceased July 1, 2010.
+- Chappaquiddick Wampanoag (MA): state recognized. Not confirmed by Massachusetts. EO 637 (2024) names only Mashpee, Gay Head, Hassanamisco Nipmuc and Herring Pond as recognized; the MA Commission on Indian Affa
+- Chaubunnagungamaug Nipmucks (MA): state recognized. Not confirmed by Massachusetts. EO 637 (2024) names only Mashpee, Gay Head, Hassanamisco Nipmuc and Herring Pond as recognized; the MA Commission on Indian Affa
+- Cherokee Wolf Clan (TN): state recognition withdrawn. Secondary (news) source only; the chancery order was not located on a state site. Commission ceased July 1, 2010.
+- Chickamauga Band (TN): state recognition withdrawn. Secondary (news) source only; the chancery order was not located on a state site. Commission ceased July 1, 2010. Cherokee One Feather (June 2010) spells it 'Ch
+- Nanticoke Indian Tribe (Nanticoke Indian Association) (Delaware (Millsboro)): not federally recognized. Treaty claim documented only by the tribe's own site; OFA list confirms petitioner status only. State recognition by Delaware not verified here (another researc
+- Pocasset Wampanoag Tribe (MA): state recognized. Not confirmed by Massachusetts. EO 637 (2024) names only Mashpee, Gay Head, Hassanamisco Nipmuc and Herring Pond as recognized; the MA Commission on Indian Affa
+- Remnant Yuchi Nation (TN): state recognition withdrawn. Secondary (news) source only; the chancery order was not located on a state site. Commission ceased July 1, 2010.
+- Sand Hill Band of Indians (NJ): state recognized. Not confirmed by New Jersey. NJ AG settlement agreements and a Governor's-office letter quoted by the NJ courts refer to three recognized tribes.
+- Schaghticoke Indian Tribe (Connecticut (Kent)): petitioning federal acknowledgment. disputed: nat-pd-schaghticoke-tribal-nation. schaghticokeindiantribe.com is a parked domain. Continuing community not independently documented in sources opened
+- Seaconke Wampanoag Tribe (MA): state recognized. Not confirmed by Massachusetts. EO 637 (2024) names only Mashpee, Gay Head, Hassanamisco Nipmuc and Herring Pond as recognized; the MA Commission on Indian Affa
+- Tanasi Council (TN): state recognition withdrawn. Secondary (news) source only; the chancery order was not located on a state site. Commission ceased July 1, 2010.
+- Texas Band of Yaqui Indians (TX): state recognized. The resolution honors the band; the tribe describes it as state recognition, Wikipedia as a congratulatory resolution. Recorded here only as the tribe's claimed
+- United Eastern Lenape Nation (TN): state recognition withdrawn. Secondary (news) source only; the chancery order was not located on a state site. Commission ceased July 1, 2010.
+- United Remnant Band of the Shawnee Nation (OH): state recognized. Secondary sources only. Also named under 'Ohio (1)' in the undated AIAC multi-state list (https://aiac.alabama.gov/wp-content/uploads/2026/05/StateRecognizedTri
+
+Default: add a held row only when a state source, court or claims record, or the nation itself confirms it. Communities the research excluded on purpose (no qualifying record found) are listed in the research summary in the commit message of this change.
+
+Disputed pairs are shown as separate nations, each marked disputed: Amah Mutsun (two petitions), Schaghticoke (two organizations), Juaneño/Acjachemen, Gabrielino/Tongva.
+
 ## How to record a decision
 
 - A link: `npm run links:review -- --decide=<edge id> --decision=accepted|rejected --role="<role>"`.

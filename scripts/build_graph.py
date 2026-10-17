@@ -1382,6 +1382,66 @@ def add_evidence_edges(data):
     # Organizations with a donation url but no website are not given a Source: donation_url is an attribute, never evidence.
 
 
+def build_beyond_federal(cross):
+    """Nations beyond the federal list: state-recognized, terminated, petitioning and other documented
+    communities (crosswalks/nations-beyond-federal-list.csv, one sourced fact per row)."""
+    rows = cross.get("nations-beyond-federal-list.csv", [])
+    by_id = defaultdict(list)
+    for r in rows:
+        by_id[r["nation_id"]].append(r)
+    # status shown when a nation has several facts: the federal list wins, then the most specific
+    rank = ["listed_federal_register_2026", "state_recognized", "terminated_not_restored",
+            "petitioning_federal_acknowledgment", "state_recognition_withdrawn", "not_federally_recognized"]
+    for nid, facts in sorted(by_id.items()):
+        first = facts[0]
+        if nid not in G.nodes:
+            G.add_node("Nation", nid, first["name"], "crosswalks/nations-beyond-federal-list.csv", nid,
+                       "medium" if any(f["confidence"] == "high" for f in facts) else "low", "levels",
+                       {"entity_kind": "present_day_government", "federal_recognition": "not_federally_recognized",
+                        "legal_context": "standard", "region": blank_to_none(first["state_or_region"]),
+                        "names": [{"name": first["name"], "kind": "preferred_label", "review": "unreviewed"}],
+                        "endonym_status": "none_recorded"},
+                       scope="nation_specific", origin="crosswalk")
+        node = G.nodes[nid]
+        records = node.setdefault("recognition_records", [])
+        for f in facts:
+            records.append({"status": f["recognition_status"], "detail": blank_to_none(f["recognition_detail"]),
+                            "where": blank_to_none(f["state_or_region"]), "year": blank_to_none(f["recognition_year"]),
+                            "source_url": f["source_url"], "evidence_quote": blank_to_none(f["evidence_quote"]),
+                            "confidence": f["confidence"] if f["confidence"] in ("high", "medium", "low") else "low"})
+            if f["name"] != node["label"] and not any(n["name"] == f["name"] for n in node["names"]):
+                node["names"].append({"name": f["name"], "kind": "official_name", "review": "unreviewed",
+                                      "source_url": f["source_url"], "confidence": f["confidence"] or "medium"})
+            for url in (f["source_url"], f["second_source_url"]):
+                if url.startswith("http"):
+                    sid = get_source_node(url, set())
+                    G.add_edge("evidenced_by", nid, sid, "asserted_by_seed", f["confidence"] or "medium", "crosswalk_manual",
+                               f"recognition status: {f['recognition_status']}", "crosswalks/nations-beyond-federal-list.csv", nid,
+                               basis=(f["evidence_quote"] if url == f["source_url"] else f["second_evidence_quote"]) or None,
+                               origin="crosswalk", qualifiers={"role": "recognition_source", "tier": G.nodes[sid]["source_tier"]})
+            if f["website"].startswith("http") and not node.get("website"):
+                node["website"] = f["website"]
+            for other in filter(None, f["disputed_with"].split(";")):
+                node.setdefault("disputed_with", [])
+                if other not in node["disputed_with"]:
+                    node["disputed_with"].append(other)
+        statuses = {f["recognition_status"] for f in facts}
+        if node.get("federal_recognition") != "listed_federal_register_2026":
+            node["federal_recognition"] = next((s for s in rank if s in statuses), "not_federally_recognized")
+
+
+def add_beyond_federal_edges(cross):
+    for i, r in enumerate(cross.get("nations-beyond-federal-list.csv", []), start=2):
+        for rel in filter(None, r["related_ids"].split(";")):
+            if rel in G.nodes and rel != r["nation_id"]:
+                G.add_edge("successor_of", r["nation_id"], rel, "proposed", r["confidence"] or "medium", "crosswalk_manual",
+                           "research: community carries this treaty party's history", "crosswalks/nations-beyond-federal-list.csv",
+                           f"line {i}", basis=r["recognition_detail"] or None, origin="crosswalk",
+                           qualifiers={"extent": "unknown", "disputed": bool(r["disputed_with"]), "basis_ref": r["source_url"]},
+                           crosswalk_file="crosswalks/nations-beyond-federal-list.csv",
+                           successor_status="disputed" if r["disputed_with"] else "unreviewed")
+
+
 def corrections(cross, action):
     return [r for r in cross.get("nation-corrections.csv", []) if r["action"] == action]
 
@@ -1574,6 +1634,7 @@ def main():
     build_nations(cross)
     build_places(data)
     build_present_day_nations(cross)
+    build_beyond_federal(cross)
     apply_nation_corrections(cross)
     apply_instrument_citations(cross)  # before the stat-cite cross-check in add_crosswalk_edges
 
@@ -1593,6 +1654,7 @@ def main():
     add_doctrine_edges()
     stat_ok, stat_bad = add_crosswalk_edges(cross, merge)
     add_successor_research_edges(cross)
+    add_beyond_federal_edges(cross)
     add_violation_case_edges()
     add_evidence_edges(data)
     mark_disputed_successors(cross)
