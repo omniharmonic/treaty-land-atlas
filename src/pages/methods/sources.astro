@@ -1,0 +1,37 @@
+---
+import Page from '../../layouts/Page.astro';
+import { readFileSync } from 'node:fs';
+import { parse } from 'yaml';
+
+const registry = parse(readFileSync('data/licenses/registry.yaml', 'utf8')) as {
+  sources: {
+    id: string;
+    name: string;
+    status: string;
+    attribution_text: string;
+    license_stated: string;
+  }[];
+};
+const used = registry.sources.filter((s) => s.status !== 'not_used');
+---
+
+<Page
+  title="Sources and credits"
+  lede="Every outside dataset and work this atlas draws on, with its credit line and terms."
+>
+  {used.map((s) => (
+    <section>
+      <h2>{s.name}</h2>
+      <p>{s.attribution_text}</p>
+      <p class="small muted">Terms as stated: {s.license_stated}</p>
+    </section>
+  ))}
+  <section>
+    <h2>Software and fonts</h2>
+    <p>
+      Built with Astro, Svelte and MapLibre GL JS. Fonts: Charis (SIL International), Atkinson
+      Hyperlegible Next (Braille Institute), Noto Sans Cherokee and Noto Sans Osage (Google), all
+      under the SIL Open Font License 1.1.
+    </p>
+  </section>
+</Page>

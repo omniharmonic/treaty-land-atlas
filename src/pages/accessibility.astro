@@ -1,0 +1,34 @@
+---
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/href';
+---
+
+<Page
+  title="Accessibility"
+  lede="We aim to meet WCAG 2.2 at level AA, and to give every map state a text equivalent."
+>
+  <ul>
+    <li>
+      The time slider is a standard range control: arrow keys, Page Up and Page Down, Home and End
+      all work, and buttons step to the previous or next year with a cession.
+    </li>
+    <li>
+      Everything on the map is also in the list beside it, and every cession has its own page.
+    </li>
+    <li>
+      Map colors are from a colorblind-safe set, and line patterns show the kind of instrument, so
+      color is never the only signal.
+    </li>
+    <li>
+      Nothing moves on its own. “Play years” is off by default and disabled if you prefer reduced
+      motion.
+    </li>
+    <li>
+      Names are shown in their own scripts and spellings, including Cherokee and Osage syllabaries,
+      with fonts that cover them.
+    </li>
+  </ul>
+  <p>
+    If something does not work for you, <a href={href('/corrections/')}>tell us</a>.
+  </p>
+</Page>

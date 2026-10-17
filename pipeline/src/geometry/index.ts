@@ -333,6 +333,7 @@ function processToday(): string[] {
   out.features.sort((a, b) =>
     String(a.properties['GEOID']).localeCompare(String(b.properties['GEOID'])),
   );
+  for (const f of out.features) f.properties['k'] = todayKind(String(f.properties['LSAD']));
   const body = JSON.stringify({ type: 'FeatureCollection', features: out.features });
   mkdirSync(DERIVED_DIR, { recursive: true });
   writeFileSync(join(DERIVED_DIR, 'today-aiannh.json'), body + '\n');
@@ -348,6 +349,18 @@ function processToday(): string[] {
   return [
     `Today layer: ${out.features.length} features; ${(Buffer.byteLength(body) / 1024).toFixed(0)} KB, ${(gz / 1024).toFixed(0)} KB gzip.`,
   ];
+}
+
+/**
+ * Census LSAD codes: statistical areas (Oklahoma, Alaska Native village, tribal- and state-designated)
+ * are not reservations and must not be drawn or described as reservations; Hawaiian Home Lands are a
+ * distinct legal regime. Everything else is a reservation, rancheria, pueblo, colony, community or
+ * off-reservation trust land.
+ */
+export function todayKind(lsad: string): 'land' | 'statistical' | 'hawaiian_home_land' {
+  if (['79', '80', '88', '90', '92'].includes(lsad)) return 'statistical';
+  if (lsad === '78') return 'hawaiian_home_land';
+  return 'land';
 }
 
 /** Replace (or add) one row in data/PROVENANCE.md, keyed by output path. */

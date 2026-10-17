@@ -1,0 +1,63 @@
+---
+import Page from '../../layouts/Page.astro';
+import IndexList from '../../components/IndexList.astro';
+import { byType } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+const listed = byType('Organization')
+  .filter((n) => n.confidence !== 'low' && n['display_eligible'] !== false && n['website'])
+  .sort((a, b) => {
+    const rank = (n: typeof a) =>
+      ['tribal-government', 'yes-verified'].includes(String(n['indigenous_led']))
+        ? 0
+        : n['indigenous_led'] === 'yes-self-described'
+          ? 1
+          : 2;
+    return rank(a) - rank(b) || a.label.localeCompare(b.label);
+  });
+const lead: Record<string, string> = {
+  'tribal-government': 'Tribal government',
+  'yes-verified': 'Native-led (checked)',
+  'yes-self-described': 'Native-led (self-described)',
+  mixed: 'Mixed leadership',
+  no: 'Allied organization, not Native-led',
+  unverified: 'Leadership not checked',
+  'state-agency': 'State agency',
+  'federal-program': 'Federal program',
+};
+---
+
+<Page
+  title="Support land return"
+  lede="This site takes no money. These are organizations we have checked, and other ways to help."
+>
+  <p>
+    We put Native-led and tribally controlled efforts first. A gift to an allied organization is not
+    a gift to a tribe, and we say which is which. Most tribal governments do not ask the public for
+    donations; if you want to support a particular nation, ask it, or one of the Native-led groups
+    below, what would help. Read our{' '}
+    <a href={href('/support/policy/')}>donation integrity policy</a>.
+  </p>
+  <h2>Checked organizations</h2>
+  <IndexList items={listed} note={(n) => lead[String(n['indigenous_led'])] ?? null} />
+  <h2>Other ways to help</h2>
+  <ul>
+    <li>
+      Some Native hosts ask residents to pay a voluntary land tax or rent, such as Real Rent
+      Duwamish in Seattle and the Shuumi Land Tax in the East Bay. Find out whether the people whose
+      land you live on ask for this.
+    </li>
+    <li>Learn whose land you are on and what those nations are asking for, in their own words.</li>
+    <li>
+      Support policy: federal trust acquisition, co-management, and returns of public land are
+      decided by people you can call.
+    </li>
+    <li>Give land. Some returns came from private owners and conservation groups.</li>
+  </ul>
+  <h2>Staying safe</h2>
+  <p>
+    Open donation links from the organization’s own website, and check that the payee matches the
+    organization. If a link here looks wrong, <a href={href('/corrections/')}>tell us</a> and we
+    will take it down while we check.
+  </p>
+</Page>

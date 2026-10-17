@@ -301,8 +301,8 @@
             id: 'today-fill',
             type: 'fill',
             source: 'today',
-            filter: on('today') as never,
-            paint: { 'fill-color': v('--moss'), 'fill-opacity': 0.18 },
+            filter: ['all', on('today'), ['==', ['get', 'k'], 'land']] as never,
+            paint: { 'fill-color': v('--moss'), 'fill-opacity': 0.22 },
           });
           map.addLayer({
             id: 'honored-ceded',
@@ -367,8 +367,15 @@
             id: 'today-line',
             type: 'line',
             source: 'today',
-            filter: on('today') as never,
+            filter: ['all', on('today'), ['!=', ['get', 'k'], 'statistical']] as never,
             paint: { 'line-color': v('--river'), 'line-width': 1.3 },
+          });
+          map.addLayer({
+            id: 'today-statistical',
+            type: 'line',
+            source: 'today',
+            filter: ['all', on('today'), ['==', ['get', 'k'], 'statistical']] as never,
+            paint: { 'line-color': v('--river'), 'line-width': 1, 'line-dasharray': [0.5, 2] },
           });
           for (const layer of ['cession-fill', 'honored-retained', 'honored-ceded']) {
             map.on(
@@ -811,6 +818,9 @@
   }
   .sw.retained {
     background: color-mix(in srgb, var(--moss) 45%, transparent);
+  }
+  .sw.stat {
+    border: 1.5px dotted var(--river);
   }
   .sw.today {
     border: 1.5px solid var(--river);

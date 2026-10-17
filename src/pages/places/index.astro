@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import { byType, incoming, pathFor } from '../../lib/graph';
+import { href } from '../../lib/href';
+
+const states = byType('Place')
+  .filter((n) => n.id.startsWith('plc-state-'))
+  .map((n) => ({ n, count: incoming(n.id).filter((e) => e.type === 'located_in').length }))
+  .sort((a, b) => a.n.label.localeCompare(b.n.label));
+---
+
+<Base
+  title="Start where you are"
+  description="Choose a state to see the treaties, cessions and nations connected to it."
+>
+  <div class="intro">
+    <h1>Start where you are</h1>
+    <p class="lede">
+      Choose a state to see the treaties, Royce cessions, nations and land returns connected to it.
+    </p>
+    <p class="muted">State level only: no address lookup, no location tracking.</p>
+  </div>
+  <ul class="states sans">
+    {states.map(({ n, count }) => (
+      <li>
+        <a href={href(pathFor(n)!)}>{n.label}</a> <span class="c">{count} records</span>
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .intro {
+    padding-top: var(--space-6);
+  }
+  .states {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: var(--space-6);
+  }
+  @media (min-width: 800px) {
+    .states {
+      columns: 4;
+    }
+  }
+  .states li {
+    padding: var(--space-1) 0;
+  }
+  .c {
+    font-size: var(--s-2);
+    color: var(--ink-3);
+  }
+</style>

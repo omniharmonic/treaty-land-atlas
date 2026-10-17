@@ -1,0 +1,76 @@
+---
+import Page from '../layouts/Page.astro';
+import { byType, pathFor, year } from '../lib/graph';
+import { href } from '../lib/href';
+
+const kinds = ['Instrument', 'Statute', 'Case', 'Campaign'] as const;
+const word: Record<string, string> = {
+  Instrument: 'Treaty',
+  Statute: 'Statute',
+  Case: 'Court',
+  Campaign: 'Return',
+};
+const items = kinds
+  .flatMap((k) => byType(k).map((n) => ({ n, y: year(n) })))
+  .filter((x) => x.y !== null);
+const decades = new Map<number, typeof items>();
+for (const it of items) {
+  const d = Math.floor(it.y! / 10) * 10;
+  (decades.get(d) ?? decades.set(d, []).get(d)!).push(it);
+}
+const sorted = [...decades.entries()].sort((a, b) => a[0] - b[0]);
+const eras = byType('PolicyEra').sort((a, b) => Number(a['start_year']) - Number(b['start_year']));
+const eraFor = (d: number) =>
+  eras.filter((e) => Number(e['start_year']) <= d + 9 && (Number(e['end_year']) || 2100) >= d);
+---
+
+<Page
+  title="Timeline"
+  lede="Treaties, statutes, court decisions and land returns, decade by decade, from 1722 to today."
+>
+  {sorted.map(([d, list]) => (
+    <section class="decade">
+      <h2 id={`d${d}`}>{d}s</h2>
+      <p class="eras sans small">
+        {eraFor(d).map((e) => (
+          <a href={href(pathFor(e)!)}>{e.label}</a>
+        ))}
+      </p>
+      <ul>
+        {list
+          .sort((a, b) => a.y! - b.y!)
+          .map(({ n, y }) => (
+            <li>
+              <span class="y sans">{y}</span>
+              <span class="k sans">{word[n.type]}</span>
+              <a href={href(pathFor(n)!)}>{n.label}</a>
+            </li>
+          ))}
+      </ul>
+    </section>
+  ))}
+</Page>
+
+<style>
+  .decade ul {
+    list-style: none;
+    padding: 0;
+  }
+  .decade li {
+    display: grid;
+    grid-template-columns: 3rem 4rem 1fr;
+    gap: var(--space-2);
+    padding: 2px 0;
+  }
+  .y,
+  .k {
+    font-size: var(--s-1);
+    color: var(--ink-3);
+    padding-top: 0.15em;
+  }
+  .eras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+</style>

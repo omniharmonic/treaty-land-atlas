@@ -1,0 +1,53 @@
+---
+import Page from '../../layouts/Page.astro';
+import { href } from '../../lib/href';
+---
+
+<Page
+  title="The “honored through” view"
+  lede="Stop the clock in a chosen year and see what had already been promised."
+>
+  <p>
+    Choose a year. Land that Royce records as ceded on or before that year is drawn in grey. Land
+    recorded as ceded later is drawn in green: under the agreements in force that year, it would
+    still have been held by the nations. As you move the slider past the chosen year, each later
+    cession appears as an outline, so you can see what changed and when.
+  </p>
+  <p>The choice of years is fixed so the view is not cherry-picked:</p>
+  <ul>
+    <li>
+      <strong>1783</strong>: the end of the Revolutionary War, before any federal treaty.
+    </li>
+    <li>
+      <strong>1830</strong>: the Indian Removal Act.
+    </li>
+    <li>
+      <strong>1851</strong>: the first Fort Laramie treaty.
+    </li>
+    <li>
+      <strong>1868</strong>: the second Fort Laramie treaty.
+    </li>
+    <li>
+      <strong>1871</strong>: Congress ends treaty-making.
+    </li>
+    <li>
+      <strong>1887</strong>: the General Allotment Act.
+    </li>
+  </ul>
+  <h2>What this view does not do</h2>
+  <ul>
+    <li>
+      It does not judge whether any cession was freely agreed. Many later cessions were negotiated
+      by the nations themselves; many were coerced. The records of each say which.
+    </li>
+    <li>It does not show land Royce never mapped (before 1784, after 1894, Alaska and Hawaii).</li>
+    <li>
+      It is not a legal claim. A “Legal status today” panel always accompanies it, separating what a
+      treaty said from what courts and Congress have done since.
+    </li>
+  </ul>
+  <p>
+    This view and its legal-status panel are awaiting review by a federal Indian law reviewer.{' '}
+    <a href={href('/map/#v=honored&cut=1851&y=1868')}>Try it on the map</a>.
+  </p>
+</Page>

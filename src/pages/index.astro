@@ -1,11 +1,243 @@
 ---
 import Base from '../layouts/Base.astro';
+import { byType, pathFor, year } from '../lib/graph';
+import { href } from '../lib/href';
+import { homeMap } from '../lib/svgmap';
+
+const art = homeMap();
+const cessions = byType('GeoFeature').length;
+const nations = byType('Nation').length;
+const returns = byType('Campaign')
+  .filter((n) => String(n['campaign_status']).startsWith('completed') && n.confidence !== 'low')
+  .sort((a, b) => (year(b) ?? 0) - (year(a) ?? 0))
+  .slice(0, 4);
+const acres = (n: (typeof returns)[number]) =>
+  n['acres'] ? `${Number(n['acres']).toLocaleString('en-US')} acres` : null;
 ---
 
 <Base title="Treaty Land Atlas">
-  <h1>Treaty Land Atlas</h1>
-  <p>
-    A free, educational map and knowledge graph of United States treaty law with Native nations. The
-    site is being built. Nothing here is reviewed by a Native nation or a lawyer yet.
-  </p>
+  <section class="hero">
+    <figure class="drawing" aria-labelledby="hero-cap">
+      <svg
+        viewBox={`0 0 ${art.width} ${art.height}`}
+        role="img"
+        aria-label="Outlines of land cessions recorded by Royce, with today's reservations and trust lands"
+      >
+        <path class="ceded" d={art.ceded}></path>
+        <path class="lands" d={art.lands}></path>
+      </svg>
+      <figcaption id="hero-cap" class="sans">
+        Graphite: {cessions} areas the United States recorded as ceded, 1784 to 1894, from C. C.
+        Royce’s maps. Green: reservations and trust lands today.
+      </figcaption>
+    </figure>
+    <div class="words">
+      <h1>
+        The United States made treaties with Native nations. This is the record of what was
+        promised, what was taken, and what is coming back.
+      </h1>
+      <p class="sans actions">
+        <a class="primary" href={href('/map/')}>
+          Open the map
+        </a>
+        <a href={href('/nations/')}>Find a nation</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="ways" aria-labelledby="ways">
+    <h2 id="ways" class="visually-hidden">
+      Ways in
+    </h2>
+    <dl>
+      <div>
+        <dt>
+          <a href={href('/map/')}>Move through time</a>
+        </dt>
+        <dd>
+          Slide from 1784 to 1894 and watch the record of cessions grow, or stop the clock in a
+          chosen year and see what had already been promised.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <a href={href('/nations/')}>Start with a nation</a>
+        </dt>
+        <dd>
+          {nations} nations and peoples, in the treaty records and today, with their own names where
+          we have a source. Including the communities the federal list leaves out.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <a href={href('/treaties/')}>Read a treaty’s story</a>
+        </dt>
+        <dd>
+          Every treaty links to the land it recorded as ceded, the promises broken, the cases fought
+          over it, and the governments that carry it today.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <a href={href('/places/')}>Start where you are</a>
+        </dt>
+        <dd>
+          Choose a state to see the treaties, cessions and nations connected to it. No address, no
+          tracking.
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="returning" aria-labelledby="returning">
+    <h2 id="returning">Land is coming back</h2>
+    <ul>
+      {returns.map((r) => (
+        <li>
+          <a href={href(pathFor(r)!)}>{r.label}</a>
+          <span class="sans meta">
+            {year(r)}
+            {acres(r) && `, ${acres(r)}`}
+          </span>
+        </li>
+      ))}
+    </ul>
+    <p>
+      <a href={href('/returns/')}>All documented land returns</a> and{' '}
+      <a href={href('/support/')}>how to support them</a>.
+    </p>
+  </section>
+
+  <section class="claim-note" aria-labelledby="claim-h">
+    <h2 id="claim-h">For Native nations</h2>
+    <p>
+      Nothing here speaks for your nation, and nothing has been reviewed by a nation yet. Every
+      nation’s page can be claimed: corrected, told in your own words, or taken down. A removal
+      request is honored first and discussed second.
+    </p>
+    <p class="sans">
+      <a href={href('/claim/')}>Claim or correct a page</a>
+    </p>
+  </section>
 </Base>
+
+<style>
+  .hero {
+    display: grid;
+    gap: var(--space-5);
+    padding: var(--space-6) 0 var(--space-7);
+  }
+  @media (min-width: 980px) {
+    .hero {
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      align-items: end;
+      gap: var(--space-7);
+    }
+  }
+  .drawing {
+    margin: 0;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .ceded {
+    fill: none;
+    stroke: var(--ink-3);
+    stroke-width: 0.6;
+    stroke-linejoin: round;
+    opacity: 0.75;
+  }
+  .lands {
+    fill: var(--moss);
+    stroke: var(--moss);
+    stroke-width: 0.4;
+    opacity: 0.85;
+    animation: grow 2.4s var(--ease) 0.4s both;
+    transform-origin: 50% 60%;
+  }
+  @keyframes grow {
+    from {
+      opacity: 0;
+      filter: blur(3px);
+    }
+    to {
+      opacity: 0.85;
+      filter: blur(0);
+    }
+  }
+  figcaption {
+    font-size: var(--s-2);
+    color: var(--ink-2);
+    margin-top: var(--space-2);
+    max-width: 60ch;
+  }
+  .words h1 {
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    line-height: 1.22;
+    max-width: 22ch;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-5);
+    align-items: center;
+    margin-top: var(--space-5);
+  }
+  .primary {
+    background: var(--moss);
+    color: var(--on-moss);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius);
+    text-decoration: none;
+    min-height: var(--tap);
+    display: inline-flex;
+    align-items: center;
+  }
+  .primary:hover {
+    background: var(--moss-deep);
+    color: var(--on-moss);
+  }
+  .ways dl {
+    display: grid;
+    gap: var(--space-5) var(--space-7);
+    margin: 0;
+    padding: var(--space-6) 0;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 760px) {
+    .ways dl {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .ways dt {
+    font-size: var(--s1);
+    margin-bottom: var(--space-1);
+  }
+  .ways dd {
+    margin: 0;
+    color: var(--ink-2);
+  }
+  .returning ul {
+    list-style: none;
+    padding: 0;
+  }
+  .returning li {
+    padding: var(--space-2) 0;
+  }
+  .meta {
+    display: block;
+    font-size: var(--s-1);
+    color: var(--ink-3);
+  }
+  .claim-note {
+    margin-top: var(--space-7);
+    padding: var(--space-5) var(--space-5) var(--space-3);
+    border-left: 3px solid var(--moss);
+    background: var(--sheet);
+  }
+  .claim-note h2 {
+    margin-top: 0;
+  }
+</style>

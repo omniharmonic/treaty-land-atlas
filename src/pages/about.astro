@@ -1,0 +1,56 @@
+---
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/href';
+import { graph } from '../lib/graph';
+
+const g = graph();
+const reviewed = [...g.nodes.values()].filter((n) =>
+  ['reviewed', 'co_authored'].includes(n.tribal_review?.status ?? ''),
+).length;
+const suggested = g.edges.filter((e) => e.status === 'proposed').length;
+---
+
+<Page
+  title="About"
+  lede="A free, public record of United States treaty law with Native nations, built to point attention and support toward Land Back."
+>
+  <h2>Who made this</h2>
+  <p>
+    The Treaty Land Atlas was created by Benjamin Life (@omniharmonic). It is not Indigenous-led. It
+    does not speak for any nation, and it is not a substitute for what nations say about themselves.
+    It is an attempt to make the public record easy to see and hard to ignore, and to hand that
+    record back to the nations it concerns.
+  </p>
+  <h2>Where things stand</h2>
+  <ul>
+    <li>
+      Pages reviewed by a Native nation: <strong>{reviewed}</strong>. Every nation’s page can be{' '}
+      <a href={href('/claim/')}>claimed</a>.
+    </li>
+    <li>
+      Links suggested by matching names or dates and not yet reviewed by a person:{' '}
+      <strong>{suggested.toLocaleString('en-US')}</strong>. Each is labeled.
+    </li>
+    <li>Legal review: not yet. Nothing here is legal advice.</li>
+  </ul>
+  <h2>How sure we are</h2>
+  <p>
+    Every record carries a confidence level and its sources. Details that were not yet checked
+    against a source are marked where they appear. Where sources disagree, we show the disagreement
+    rather than choosing. See <a href={href('/methods/')}>methods</a>.
+  </p>
+  <h2>Open data</h2>
+  <p>
+    The code is MIT licensed and the project’s own text and data are CC BY 4.0, credited to Benjamin
+    Life (@omniharmonic). The complete data, the build, and every change are public at
+    <a href="https://github.com/omniharmonic/treaty-land-atlas">
+      github.com/omniharmonic/treaty-land-atlas
+    </a>
+    . Text a nation contributes stays under the terms that nation sets.
+  </p>
+  <h2>Support</h2>
+  <p>
+    This site takes no money. To support land return, see{' '}
+    <a href={href('/support/')}>how to help</a>.
+  </p>
+</Page>

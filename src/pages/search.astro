@@ -1,0 +1,41 @@
+---
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/href';
+---
+
+<Page title="Search" lede="Search every treaty, nation, case and record, by any of its names.">
+  <div id="search" class="sans"></div>
+  <noscript>
+    <p>
+      Search needs JavaScript. Every record is also listed in the indexes:{' '}
+      <a href={href('/nations/')}>nations</a>, <a href={href('/treaties/')}>treaties</a>,{' '}
+      <a href={href('/law/')}>law</a>.
+    </p>
+  </noscript>
+  <link rel="stylesheet" href={href('/pagefind/pagefind-ui.css')} />
+  <script is:inline define:vars={{ bundle: href('/pagefind/') }}>
+    const s = document.createElement('script');
+    s.src = bundle + 'pagefind-ui.js';
+    s.onload = () =>
+      new PagefindUI({
+        element: '#search',
+        showSubResults: false,
+        showImages: false,
+        bundlePath: bundle,
+        autofocus: true,
+      });
+    document.head.appendChild(s);
+  </script>
+</Page>
+
+<style is:global>
+  #search {
+    --pagefind-ui-primary: var(--moss);
+    --pagefind-ui-text: var(--ink);
+    --pagefind-ui-background: var(--sheet);
+    --pagefind-ui-border: var(--rule-strong);
+    --pagefind-ui-tag: var(--sheet-2);
+    --pagefind-ui-border-radius: 2px;
+    --pagefind-ui-font: var(--sans);
+  }
+</style>

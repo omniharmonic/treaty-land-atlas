@@ -1,0 +1,28 @@
+---
+import Page from '../layouts/Page.astro';
+---
+
+<Page title="Privacy" lede="No analytics, no cookies, no accounts, no tracking.">
+  <p>
+    This site is a set of static files. It does not set cookies, run analytics, or record what you
+    search for.
+  </p>
+  <h2>Who else your browser talks to</h2>
+  <ul>
+    <li>
+      <strong>OpenFreeMap</strong> serves the basemap tiles on the map page. Like any web server it
+      sees your IP address when your browser asks for tiles.
+    </li>
+    <li>
+      <strong>Our Native Land Digital relay</strong> (on Vercel), only if you press “Look up this
+      place.” It receives the map’s center, rounded to about a kilometer, and stores nothing.
+    </li>
+    <li>
+      <strong>Our private intake</strong> (on Vercel), only if you send the claim or correction
+      form. What you write goes to a private inbox and is never published.
+    </li>
+  </ul>
+  <p>
+    Fonts and everything else are served from this site. The search runs entirely in your browser.
+  </p>
+</Page>

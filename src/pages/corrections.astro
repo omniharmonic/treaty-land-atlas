@@ -1,0 +1,22 @@
+---
+import Page from '../layouts/Page.astro';
+import IntakeForm from '../islands/IntakeForm.svelte';
+const relay = process.env.PUBLIC_NLD_RELAY ?? 'https://landback-nld-relay.vercel.app';
+---
+
+<Page
+  title="Report an error"
+  lede="If something here is wrong, tell us what and, if you can, a source that shows it."
+>
+  <p>
+    Every record has an id (for example <code>TLA-T-369</code>) shown in its label. Including it
+    helps. Primary sources are best: the treaty text, the Statutes at Large, a court opinion, a
+    nation’s own website.
+  </p>
+  <IntakeForm client:load {relay} kind="correction" />
+  <h2>What happens next</h2>
+  <p>
+    We check the source, change the data, and log the change publicly in the repository’s data
+    changelog. Corrections from a Native nation about itself are applied first and checked after.
+  </p>
+</Page>

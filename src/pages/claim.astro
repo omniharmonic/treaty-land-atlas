@@ -1,0 +1,40 @@
+---
+import Page from '../layouts/Page.astro';
+import IntakeForm from '../islands/IntakeForm.svelte';
+import { href } from '../lib/href';
+const relay = process.env.PUBLIC_NLD_RELAY ?? 'https://landback-nld-relay.vercel.app';
+---
+
+<Page
+  title="Claim or correct a page"
+  lede="Every nation’s page in this atlas can be claimed by that nation: reviewed, corrected, told in its own words, or taken down."
+>
+  <p>
+    The pages were built from federal records, court decisions, and research. None of it speaks for
+    any nation, and no nation has reviewed it yet. If a page concerns your nation, you decide what
+    happens to it.
+  </p>
+  <h2>What claiming a page means</h2>
+  <ul>
+    <li>We mark the page as under your nation’s review and hold any changes you ask for.</li>
+    <li>
+      Your nation can add its own account, in its own words and its own names, credited to the
+      office you choose.
+    </li>
+    <li>You choose the license for anything you contribute. It never defaults to ours.</li>
+    <li>Review is not endorsement: a reviewed page says only that your nation reviewed it.</li>
+  </ul>
+  <h2>Taking content down</h2>
+  <p>
+    A removal request is honored first and discussed second. The page and every link to it are
+    hidden at the next build. If you want, the address shows a short note that the content was
+    withdrawn at your nation’s request; if you prefer, it shows nothing.
+  </p>
+  <h2>Write to us</h2>
+  <IntakeForm client:load {relay} />
+  <p class="small muted">
+    Not writing for a nation? To report an error, use the{' '}
+    <a href={href('/corrections/')}>corrections page</a>. More about how review works:{' '}
+    <a href={href('/for-tribal-reviewers/')}>for tribal reviewers</a>.
+  </p>
+</Page>

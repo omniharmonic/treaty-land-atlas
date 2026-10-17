@@ -34,6 +34,8 @@ export function routeFor(id: string, type: string, nationIds: Iterable<string>):
       return `/returns/${strip(id, 'camp-')}/`;
     case 'PolicyEra':
       return `/eras/${id}/`;
+    case 'Place':
+      return id.startsWith('plc-state-') ? `/places/${strip(id, 'plc-')}/` : null;
     default:
       return null;
   }

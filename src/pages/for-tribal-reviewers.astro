@@ -1,0 +1,50 @@
+---
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/href';
+---
+
+<Page
+  title="For tribal reviewers"
+  lede="What review means here, what we ask, and what we will not do."
+>
+  <h2>What is on a nation’s page now</h2>
+  <p>
+    Public records only: treaties the nation is named in, Royce cessions associated with it, court
+    cases, land returns, and names with their sources. There is no narrative about your nation’s
+    culture, beliefs or priorities, and there will not be unless your nation writes or approves it.
+  </p>
+  <h2>What review can mean</h2>
+  <ul>
+    <li>
+      <strong>Reviewed:</strong> your office looked at the page and its corrections are in. The page
+      says so, with the date and the office.
+    </li>
+    <li>
+      <strong>Written with:</strong> your nation contributed its own account, credited as you
+      choose.
+    </li>
+    <li>
+      <strong>Edits requested:</strong> the page is marked as under revision while we make your
+      changes.
+    </li>
+    <li>
+      <strong>Declined:</strong> only the bare public record stays, with no narrative.
+    </li>
+    <li>
+      <strong>Withdrawn:</strong> the content comes down.
+    </li>
+  </ul>
+  <h2>What we will not do</h2>
+  <ul>
+    <li>Treat silence as consent.</li>
+    <li>Publish sacred sites, burials, or other sensitive locations.</li>
+    <li>
+      Decide which of several governments speaks for a shared history. Where claims differ, we show
+      each one and mark it disputed.
+    </li>
+    <li>Take money, or ask for it on your behalf.</li>
+  </ul>
+  <p>
+    <a href={href('/claim/')}>Claim or correct a page</a>
+  </p>
+</Page>

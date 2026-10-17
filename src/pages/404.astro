@@ -1,0 +1,12 @@
+---
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/href';
+---
+
+<Page title="Page not found" lede="There is no page at this address.">
+  <p>
+    It may have moved, or it may have been taken down at a nation’s request. Try{' '}
+    <a href={href('/search/')}>search</a>, or start from <a href={href('/nations/')}>nations</a>,{' '}
+    <a href={href('/treaties/')}>treaties</a> or <a href={href('/map/')}>the map</a>.
+  </p>
+</Page>

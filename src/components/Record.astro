@@ -30,6 +30,15 @@ const nameGroups: [string, string[]][] = [
   ['Other names in English', ['common_english']],
   ['Peoples within this name', ['related_people']],
 ];
+// every name and alias, plus forms without diacritics, so search finds "Dakota" for "Dakȟóta"
+const allNames = [
+  ...((n['names'] as Name[]) ?? []).map((x) => x.name),
+  ...((n['aliases'] as string[]) ?? []),
+  String(n['official_name'] ?? ''),
+].filter(Boolean);
+const searchNames = [
+  ...new Set([...allNames, ...allNames.map((x) => x.normalize('NFKD').replace(/\p{M}/gu, ''))]),
+].join(' · ');
 const flagText: Record<string, string> = {
   'from-memory': 'not yet checked against a source',
   unverified: 'unverified',
@@ -37,9 +46,12 @@ const flagText: Record<string, string> = {
 };
 ---
 
-<article class="record">
+<article class="record" data-pagefind-body>
   <div>
-    <p class="kicker sans">{kicker ?? TYPE_NAME[n.type]?.[0]}</p>
+    <p class="kicker sans" data-pagefind-filter="kind">
+      {kicker ?? TYPE_NAME[n.type]?.[0]}
+    </p>
+    <span class="visually-hidden">{searchNames}</span>
     <h1>{n.label}</h1>
     {isNationSpecific && (
       <p class:list={['review-note', 'sans', status]}>
