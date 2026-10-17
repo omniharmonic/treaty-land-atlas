@@ -390,6 +390,10 @@ export async function geometryCommand(args: string[]) {
   try {
     if (which === 'all' || which === 'cessions') out.push(...processCessions());
     if (which === 'all' || which === 'today') out.push(...processToday());
+    if (which === 'all' || which === 'cessions' || which === 'cells') {
+      const { writeCessionCells } = await import('./landloss.ts');
+      out.push(writeCessionCells());
+    }
   } catch (err) {
     console.error((err as Error).message);
     process.exitCode = 1;

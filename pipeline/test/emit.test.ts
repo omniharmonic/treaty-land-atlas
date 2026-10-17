@@ -59,23 +59,29 @@ describe('emit', () => {
     }
   });
 
-  it('withholds overlay narrative unless the node allows narrative', () => {
-    const n = graph.nodes.find((x) => x.type === 'Instrument')!;
-    const overlays = new Map([
-      [
-        n.id,
-        {
-          id: n.id,
-          ai_assisted: false,
-          content_warnings: [],
-          sources: [],
-          body: 'Narrative',
-          file: 'x.md',
-        },
-      ],
-    ]);
-    const { read } = run({ overlays });
-    expect(read(`entities/Instrument/${n.id}.json`).node.overlay.narrative).toBeNull();
+  it('publishes sourced summaries of federal records but holds nation narrative for review', () => {
+    const inst = graph.nodes.find((x) => x.type === 'Instrument')!;
+    const nation = graph.nodes.find(
+      (x) =>
+        x.type === 'Nation' &&
+        !(x['publication'] as { narrative_allowed?: boolean })?.narrative_allowed,
+    )!;
+    const ov = (id: string) => ({
+      id,
+      ai_assisted: true,
+      content_warnings: [],
+      sources: [],
+      body: 'Narrative',
+      file: 'x.md',
+    });
+    const { read } = run({
+      overlays: new Map([
+        [inst.id, ov(inst.id)],
+        [nation.id, ov(nation.id)],
+      ]),
+    });
+    expect(read(`entities/Instrument/${inst.id}.json`).node.overlay.narrative).toBe('Narrative');
+    expect(read(`entities/Nation/${nation.id}.json`).node.overlay.narrative).toBeNull();
   });
 
   it('writes no build timestamp and never copies the raw graph', () => {

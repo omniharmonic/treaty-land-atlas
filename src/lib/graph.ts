@@ -203,3 +203,26 @@ export function cleanTags(text: unknown): { text: string; flags: string[] } {
     .trim();
   return { text: out, flags: [...flags] };
 }
+
+/* ---------- overlays ---------- */
+
+export interface PublicOverlay {
+  ai_assisted: boolean;
+  headline: string | null;
+  narrative: string | null;
+  sources: (string | { url: string; title?: string; quote?: string })[];
+  cautions: string | null;
+  confidence: 'high' | 'medium' | 'low' | null;
+  content_warnings: string[];
+}
+
+/** The published overlay for a node, as the data emit projected it (so publication rules apply once). */
+export function overlayFor(n: Pick<Node, 'id' | 'type'>): PublicOverlay | null {
+  try {
+    const file = join(ROOT, 'public', 'data', 'entities', n.type, `${n.id}.json`);
+    const o = JSON.parse(readFileSync(file, 'utf8')).node.overlay as PublicOverlay | undefined;
+    return o?.narrative ? o : null;
+  } catch {
+    return null;
+  }
+}

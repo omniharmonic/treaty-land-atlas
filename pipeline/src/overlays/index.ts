@@ -18,7 +18,25 @@ export const overlaySchema = z.strictObject({
       reviewer_role: z.string().min(1),
     })
     .optional(),
-  sources: z.array(z.string()).default([]),
+  sources: z
+    .array(
+      z.union([
+        z.string(),
+        z.strictObject({
+          url: z.string(),
+          title: z.string().optional(),
+          quote: z.string().optional(),
+        }),
+      ]),
+    )
+    .default([]),
+  // research interpretation fields (2026-10-17 narrative wave)
+  headline: z.string().optional(),
+  how: z.string().optional(),
+  how_basis: z.string().optional(),
+  confidence: z.enum(['high', 'medium', 'low']).optional(),
+  cautions: z.string().optional(),
+  written_by: z.string().optional(),
 });
 
 export type Overlay = z.infer<typeof overlaySchema> & { body: string; file: string };

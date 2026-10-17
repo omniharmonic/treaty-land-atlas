@@ -29,6 +29,15 @@
   --data-violation: #d55e00;
   --data-today: #1d2a22;
 
+  /* how land was taken (Okabe-Ito; every cause also has a line pattern and a label) */
+  --how-treaty: #e69f00;
+  --how-pressure: #d55e00;
+  --how-removal: #cc79a7;
+  --how-congress: #0072b2;
+  --how-executive: #56b4e9;
+  --how-unknown: #8a8f86;
+  --held: #4f7a43;
+
   --serif:
     'Charis', Charter, 'Iowan Old Style', Georgia, 'Noto Sans Cherokee', 'Noto Sans Osage', serif;
   --sans:
@@ -84,6 +93,13 @@
     --data-return: #3fc79a;
     --data-violation: #f0794a;
     --data-today: #e3e9df;
+    --how-treaty: #f0b429;
+    --how-pressure: #f07a3f;
+    --how-removal: #e095c2;
+    --how-congress: #3d9be0;
+    --how-executive: #8fd0f5;
+    --how-unknown: #8f978b;
+    --held: #6f9a5f;
   }
 }
 

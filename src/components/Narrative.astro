@@ -1,0 +1,106 @@
+---
+// "What happened": a plain-language reading of the sources for a federal record (treaty, case,
+// violation), with the sources quoted beneath it. Written with AI assistance and labeled so.
+// A nation's own story is never shown here; it waits for that nation's review.
+import { overlayFor, type Node } from '../lib/graph';
+import { href } from '../lib/href';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+const o = overlayFor(n);
+const paras = (o?.narrative ?? '')
+  .split(/\n\s*\n/)
+  .map((p) => p.trim())
+  .filter(Boolean);
+const sources = (o?.sources ?? []).map((s) => (typeof s === 'string' ? { url: s } : s));
+const host = (u: string) => {
+  try {
+    return new URL(u).hostname.replace(/^www\./, '');
+  } catch {
+    return u;
+  }
+};
+const CONF: Record<string, string> = {
+  high: 'Well supported by the sources below.',
+  medium: 'Supported by the sources below; some details rest on one source.',
+  low: 'Thinly sourced: read the sources and cautions before relying on this.',
+};
+---
+
+{o && (
+  <section class="narrative" aria-labelledby="what-happened">
+    <h2 id="what-happened">What happened</h2>
+    {o.headline && <p class="headline">{o.headline}</p>}
+    {paras.map((p) => (
+      <p>{p}</p>
+    ))}
+    <p class="label sans">
+      A summary of the sources, written with AI assistance and checked against the quotes below. It
+      has not yet been reviewed by a historian or by the nations involved.{' '}
+      {o.confidence && CONF[o.confidence]}{' '}
+      <a href={href(`/corrections/?record=${encodeURIComponent(n.id)}`)}>Report an error</a>.
+    </p>
+    {o.cautions && (
+      <p class="cautions sans">
+        <strong>Cautions.</strong> {o.cautions}
+      </p>
+    )}
+    {sources.length > 0 && (
+      <details class="quotes sans">
+        <summary>
+          What the sources say ({sources.length} source{sources.length === 1 ? '' : 's'})
+        </summary>
+        <ol>
+          {sources.map((s) => (
+            <li>
+              {s.quote && <q>{s.quote}</q>}
+              <a href={s.url} rel="noopener">
+                {s.title ?? host(s.url)}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </details>
+    )}
+  </section>
+)}
+
+<style>
+  .narrative {
+    margin: var(--space-6) 0;
+    max-width: var(--measure);
+  }
+  .headline {
+    font-size: var(--s1);
+    line-height: 1.35;
+  }
+  .label,
+  .cautions {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+  }
+  .label {
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--lichen);
+  }
+  .quotes summary {
+    cursor: pointer;
+    font-size: var(--s-1);
+    font-weight: 600;
+  }
+  .quotes ol {
+    padding-left: var(--space-5);
+    font-size: var(--s-1);
+  }
+  .quotes li {
+    margin: var(--space-2) 0;
+  }
+  .quotes q {
+    display: block;
+    font-family: var(--serif);
+    font-size: var(--s0);
+    color: var(--ink);
+  }
+</style>

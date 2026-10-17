@@ -2,12 +2,14 @@
 // The emit is a projection, not a copy: suppressed ids vanish everywhere, organization
 // listings that fail donation-integrity rules lose their links, and no timestamps are written.
 import { createHash } from 'node:crypto';
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { PUBLIC_DATA_DIR } from '../paths.ts';
 import type { Graph, GraphEdge, GraphNode } from '../validate/graph.ts';
 import type { Overlay } from '../overlays/index.ts';
 import { routeFor } from '../../../src/lib/routes.ts';
+import { cessionStories, landLoss } from './story.ts';
+import { supportIndex } from '../../../src/lib/support.ts';
 
 export interface EmitOptions {
   outDir?: string;
@@ -56,6 +58,17 @@ export function nodeYear(n: GraphNode): number | null {
   }
 }
 
+/** Node types whose records are federal acts; a sourced interpretation of them is publishable. */
+export const INTERPRETABLE = new Set([
+  'Instrument',
+  'Case',
+  'Statute',
+  'Violation',
+  'GeoFeature',
+  'PolicyEra',
+  'Doctrine',
+]);
+
 /** Public projection of one node. */
 export function projectNode(n: GraphNode, overlay?: Overlay): Record<string, unknown> {
   const { provenance, ...rest } = n as GraphNode & { provenance?: Record<string, unknown> };
@@ -75,12 +88,18 @@ export function projectNode(n: GraphNode, overlay?: Overlay): Record<string, unk
   }
   if (overlay) {
     const publication = n['publication'] as { narrative_allowed?: boolean } | undefined;
+    // Sourced interpretation of federal records is published, labeled; anything written about a
+    // nation itself waits for that nation's review (G3 s.3.3; decision log 2026-10-17).
+    const allowed = INTERPRETABLE.has(n.type) || publication?.narrative_allowed === true;
     out['overlay'] = {
       content_warnings: overlay.content_warnings,
       ai_assisted: overlay.ai_assisted,
       legal_review: overlay.legal_review ?? null,
-      // Narrative only where the node's publication state allows it (G3 s.3.3).
-      narrative: publication?.narrative_allowed ? overlay.body : null,
+      headline: allowed ? (overlay.headline ?? null) : null,
+      narrative: allowed ? overlay.body : null,
+      sources: allowed ? overlay.sources : [],
+      cautions: allowed ? (overlay.cautions ?? null) : null,
+      confidence: allowed ? (overlay.confidence ?? null) : null,
     };
   }
   return out;
@@ -200,6 +219,26 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
     });
   }
 
+  // Story tables: how each cession happened, and approximate land recorded as ceded over time.
+  const stories = cessionStories(graph, overlays);
+  write(
+    'tables/cession-stories.json',
+    Object.fromEntries([...stories.entries()].sort(([a], [b]) => a.localeCompare(b))),
+  );
+  write('tables/land-loss.json', landLoss(graph, stories));
+  write(
+    'tables/headlines.json',
+    Object.fromEntries(
+      [...overlays.entries()]
+        .filter(([id, o]) => o.headline && byId.has(id) && INTERPRETABLE.has(byId.get(id)!.type))
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([id, o]) => [id, o.headline]),
+    ),
+  );
+  write('tables/story.json', storyTable(graph));
+  // Who is doing the work, for every map panel (src/lib/support.ts).
+  write('tables/support.json', supportIndex(nodes, edges));
+
   // Tables for the map, timeline and lists.
   write(
     'tables/instruments-lite.json',
@@ -266,7 +305,19 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
   for (const [name, src] of Object.entries(opts.layers ?? {}).sort(([a], [b]) =>
     a.localeCompare(b),
   )) {
-    const body = readFileSync(src);
+    let body = readFileSync(src);
+    if (name === 'cessions') {
+      // add how each cession happened and the nations named, for color and the nation view
+      const fc = JSON.parse(body.toString('utf8')) as {
+        features: { properties: Record<string, unknown> }[];
+      };
+      for (const f of fc.features) {
+        const st = stories.get(String(f.properties['id']));
+        f.properties['how'] = st?.how ?? 'unknown';
+        f.properties['nations'] = st?.nations ?? [];
+      }
+      body = Buffer.from(JSON.stringify(fc) + '\n');
+    }
     const hash = sha256(body).slice(0, 10);
     const rel = `layers/${name}.${hash}.json`;
     mkdirSync(join(outDir, 'layers'), { recursive: true });
@@ -296,6 +347,27 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
     files,
     counts: { nodes: nodes.length, edges: edges.length, suppressed: excluded.length },
     excluded,
+  };
+}
+
+/** Chapters and moments for the map: data/story.json when present, else the policy eras. */
+function storyTable(graph: Graph) {
+  const file = join(PUBLIC_DATA_DIR, '..', '..', 'data', 'story.json');
+  if (existsSync(file)) return JSON.parse(readFileSync(file, 'utf8'));
+  const eras = graph.nodes
+    .filter((n) => n.type === 'PolicyEra')
+    .sort((a, b) => Number(a['start_year']) - Number(b['start_year']));
+  return {
+    chapters: eras.map((e) => ({
+      start_year: Number(e['start_year']),
+      end_year: Number(e['end_year']) || 2026,
+      title: e.label,
+      lede: String(e.summary ?? '').split('. ')[0],
+      narrative: e.summary ?? '',
+      key_records: [],
+      sources: [],
+    })),
+    moments: [],
   };
 }
 

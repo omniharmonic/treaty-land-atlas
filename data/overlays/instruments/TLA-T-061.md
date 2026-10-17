@@ -1,0 +1,16 @@
+---
+id: "TLA-T-061"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "After the Creek War, Andrew Jackson dictated terms at Fort Jackson, taking nearly 22 million acres from the Creek Nation."
+how: "treaty_under_pressure"
+how_basis: "The treaty is styled a capitulation after military victory, and the Encyclopedia of Alabama and National Park Service describe Jackson dictating terms and allied Creeks objecting."
+confidence: "high"
+cautions: "Acreage differs: the input says about 23 million (citing Wikipedia); the National Park Service says nearly 22 million and the Encyclopedia of Alabama says more than 21 million. The NPS says the treaty was made with the Creek National Council, an American ally, and the lands taken included land of towns that stayed friendly. The 'removal' point is the Encyclopedia of Alabama's. Acreage: Nearly 22 million acres per the National Park Service; more than 21 million per the Encyclopedia of Alabama."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1814-0107", "title": "Tribal Treaties Database: Treaty of Fort Jackson (Capitulation of the Creeks), 1814 (Oklahoma State University Libraries)", "quote": "Articles of agreement and capitulation"}, {"url": "https://www.nps.gov/articles/treaty-of-fort-jackson.htm", "title": "Summer 1814: The Treaty of Ft. Jackson ends the Creek War - National Park Service", "quote": "Andrew Jackson served as the sole representative of the United States and dictated the terms"}, {"url": "https://encyclopediaofalabama.org/article/treaty-of-fort-jackson/", "title": "Treaty of Fort Jackson - Encyclopedia of Alabama", "quote": "The agreement was notable for forcing the Creeks to cede more than 21 million acres of land in the Mississippi Territory"}, {"url": "https://encyclopediaofalabama.org/article/treaty-of-fort-jackson/", "title": "Treaty of Fort Jackson - Encyclopedia of Alabama", "quote": "Many of the Creeks who had allied with the United States objected that they were being punished for the offenses of the Red Sticks"}]
+---
+On August 9, 1814, Major General Andrew Jackson signed "articles of agreement and capitulation" with Creek chiefs, deputies and warriors at Fort Jackson, Alabama, ending the Creek War. The text calls the war waged by the "hostile Creeks" "unprovoked, inhuman, and sanguinary." In Article 1 the Creek ceded a large area west and south of a line beginning on the Coosa River. Friendly chiefs could apply for private one-mile-square reserves. The treaty also required the Creek to break contact with British and Spanish posts, allowed U.S. forts and roads, and demanded the surrender of prophets.
+
+The Encyclopedia of Alabama says Jackson imposed terms harsher than the parties envisioned and justified the land as payment for the war. The National Park Service says Jackson "dictated the terms" and that when allied Creek leaders pointed out that only a faction had attacked, he replied that they were still responsible. The cession was nearly 22 million acres.
+
+The Encyclopedia of Alabama says it later led to the removal of most of the Creek Nation to the West. In 1962 the Indian Claims Commission authorized nearly $4 million for a disputed tract of about nine million acres, according to the NPS.

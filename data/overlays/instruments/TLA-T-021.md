@@ -1,0 +1,16 @@
+---
+id: "TLA-T-021"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "At Canandaigua the United States acknowledged Six Nations land in New York, with Seneca boundaries, a road right and annual goods."
+how: "treaty_negotiated"
+how_basis: "The OSU text and Ganondagan describe a negotiated treaty in which the United States acknowledged Six Nations lands and paid goods and annual sums."
+confidence: "medium"
+cautions: "Ganondagan's statement that the treaty 'has never been broken' is the site's own view; it also says there have been violations, and the input links violations V017-V019 and four cases. Which Fort Stanwix treaty (1784 or 1768) the lands were ceded under is not clear from Ganondagan; the text of Article III refers to a 1768-era strip ceded to the Crown. Senate ratification date was not captured, as the input notes."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1794-0034", "title": "Tribal Treaties Database: Treaty of Canandaigua (Pickering Treaty), 1794 - Six Nations (Oklahoma State University Libraries)", "quote": "the United States will never claim the same, nor disturb them or either of the Six Nations"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1794-0034", "title": "Tribal Treaties Database: Treaty of Canandaigua (Pickering Treaty), 1794 - Six Nations (Oklahoma State University Libraries)", "quote": "it shall remain theirs, until they choose to sell the same to the people of the United States"}, {"url": "https://ganondagan.org/canandaigua-treaty", "title": "Canandaigua Treaty of 1794 - Ganondagan State Historic Site", "quote": "The Haudenosaunee (Iroquois) Nations sent 1600 representatives to the treaty council"}, {"url": "https://ganondagan.org/canandaigua-treaty", "title": "Canandaigua Treaty of 1794 - Ganondagan State Historic Site", "quote": "the Canandaigua Treaty restored to the Six Nations lands in western New York State that had been ceded by the Fort Stanwix Treaty"}]
+---
+On November 11, 1794, Timothy Pickering signed a treaty at Canandaigua, New York, as President Washington's agent, with the chiefs of the Six Nations. Article II acknowledged the Oneida, Onondaga and Cayuga reservations as their property and said the United States would "never claim the same." Article III described the Seneca Nation's boundaries in western New York. Seneca land would stay theirs "until they choose to sell the same to the people of the United States."
+
+Ganondagan, a New York State historic site, says about 1,600 Haudenosaunee representatives attended, including about 800 Seneca, and that Quaker observers were present at Seneca invitation. In return, the Six Nations agreed not to claim other lands in the United States and ceded the right to a wagon road from Fort Schlosser to Lake Erie. The United States delivered $10,000 in goods and raised yearly payments to $4,500.
+
+Ganondagan states the treaty restored lands in western New York that had been ceded under the Fort Stanwix treaty and that it "has never been broken" and is still recognized, though violations have occurred. The linked violation and case records, including Oneida, Sherrill, Cayuga and Kinzua, cover later disputes.

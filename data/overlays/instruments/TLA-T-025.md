@@ -1,0 +1,16 @@
+---
+id: "TLA-T-025"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "At Colerain the Creek renewed the 1790 treaty, agreed to mark the Georgia boundary, and allowed U.S. posts on their lands."
+how: "treaty_negotiated"
+how_basis: "The OSU text and the Charlton County Historical Society describe a council with a large Creek attendance, though soldiers accompanied the commissioners."
+confidence: "medium"
+cautions: "The input says the treaty included 'provisions on fugitive slaves and trade'. I found no fugitive-slave article in the OSU text; Article VII requires delivery of prisoners including 'negroes', and Article VIII provides goods and blacksmiths. The OSU margin notes the third and fourth articles were altered (Senate changes), which I did not trace. The Charlton County source is an early local history, quoted as written."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1796-0046", "title": "Tribal Treaties Database: Treaty of Colerain with the Creeks, 1796 (Oklahoma State University Libraries)", "quote": "is, and shall remain obligatory on the contracting parties, according to the terms of it"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1796-0046", "title": "Tribal Treaties Database: Treaty of Colerain with the Creeks, 1796 (Oklahoma State University Libraries)", "quote": "The President of the United States of America shall have full powers, whenever he may deem it advisable, to establish a trading or military post"}, {"url": "https://www.charltoncountyhistoricalsociety.org/colerain", "title": "Coleraine - Charlton County Historical Society", "quote": "they positively refused to cede any of the territory between the Oconee and the Ocmulgee rivers to Georgia"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1796-0046", "title": "Tribal Treaties Database: Treaty of Colerain with the Creeks, 1796 (Oklahoma State University Libraries)", "quote": "particularly the leaving it in the discretion of the President to establish trading or military posts on their lands"}]
+---
+On June 29, 1796, three U.S. commissioners signed a treaty at Colerain, Georgia, with Creek kings, chiefs and warriors. Article I said the 1790 Treaty of New York "is, and shall remain obligatory." The boundary from the Currahee Mountain to the Oconee source was to be marked as the President directed. The President could set up trading or military posts on the Altamaha, with five miles square annexed to each, and the Creek would help mark the line with Spain.
+
+A history from the Charlton County Historical Society says about 20 kings, 75 chiefs and 340 warriors attended, and that the commissioners were accompanied by soldiers. It says the Creek pledged to abide by the New York treaty but "positively refused to cede" land between the Oconee and Ocmulgee rivers to Georgia, which displeased Georgia's agents.
+
+The United States gave goods worth six thousand dollars and two blacksmiths, with the grant of discretion over posts named as a reason. In 1802 the Treaty of Fort Wilkinson, also in this atlas, said garrisons would be placed on Creek land "in the manner and on the terms established by the treaty of Colerain."

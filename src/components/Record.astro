@@ -7,6 +7,8 @@ import Connections from './Connections.astro';
 import Sources from './Sources.astro';
 import SpecimenLabel from './SpecimenLabel.astro';
 import ClaimBox from './ClaimBox.astro';
+import SupportBox from './SupportBox.astro';
+import Narrative from './Narrative.astro';
 
 interface Props {
   n: Node;
@@ -80,6 +82,8 @@ const flagText: Record<string, string> = {
       </p>
     )}
     {summary?.text && <p class="lede">{summary.text}</p>}
+
+    <Narrative n={n} />
 
     {facts.length > 0 && (
       <dl class="facts">
@@ -167,6 +171,8 @@ const flagText: Record<string, string> = {
     )}
 
     <slot />
+
+    <SupportBox n={n} />
 
     {notes?.text && (
       <section>

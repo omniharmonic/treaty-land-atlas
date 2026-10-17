@@ -1,0 +1,16 @@
+---
+id: "TLA-T-315"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 1861 Fort Wise treaty, signed by nine chiefs, ceded most Cheyenne and Arapaho land for a small Arkansas River reservation."
+how: "treaty_under_pressure"
+how_basis: "The National Archives article says many Cheyennes and Arapahos did not recognize the treaty, and the NPS says only a few chiefs signed (via a biography page not opened); the treaty lists nine signers."
+confidence: "medium"
+cautions: "The input source was a DigiTreaties page; I used the OSU database text instead. Input says \"signed by a minority of chiefs\"; the two pages I opened say many did not recognize it but give no count, so the minority claim rests on a search summary of an NPS biography I did not open. Input Stat. page 1163 matches the OSU page. Sand Creek casualty figures were not used."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-arapaho-and-cheyenne-1861-0807", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Arapaho and Cheyenne, 1861", "quote": "making four hundred and fifty thousand dollars in annuities in the period of fifteen years"}, {"url": "https://www.archives.gov/publications/prologue/2001/summer/sand-creek-massacre-1", "title": "The Search for the Site of the Sand Creek Massacre (National Archives, Prologue)", "quote": "not all Cheyennes and Arapahos recognized the Treaty of Fort Wise, and many refused to abide by it"}, {"url": "https://www.nps.gov/places/wayside-fort-lyon-reservation.htm", "title": "Wayside: Fort Lyon Reservation (National Park Service)", "quote": "The Treaty of Fort Wise promised government assistance with teaching the Cheyenne and Arapaho how to farm; however, instructors were never sent."}]
+---
+On February 18, 1861, at Fort Wise, commissioners Albert G. Boone and F. B. Culver signed an agreement with nine named Arapaho and Cheyenne chiefs, including Black Kettle and Little Raven. The chiefs ceded all land the tribes claimed except a reserve along the Arkansas River, bounded by Sandy Fork and the Purgatory River. Each member was to receive forty acres. The United States promised $30,000 a year for fifteen years, a total of $450,000.
+
+A National Archives article says gold discoveries in 1858 and 1859 brought a tide of settlers, and that trader and agent William Bent asked the government to define the Indians' territorial rights. The result was this treaty, which swapped most of their land for a much smaller triangular tract.
+
+Not all Cheyennes and Arapahos accepted it. The National Archives states that many refused to abide by it. The National Park Service says promised farming instruction never arrived, and most who moved to the reserve left it. In 1864 Colorado troops attacked a village at Sand Creek, on the reserve's boundary. The 1865 Little Arkansas treaty, also in this atlas, formally condemned that attack.

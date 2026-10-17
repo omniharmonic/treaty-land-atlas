@@ -1,0 +1,16 @@
+---
+id: "TLA-T-043"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Sauk and Fox chiefs ceded lands between the Mississippi and Illinois rivers and beyond, a cession many Sauk and Meskwaki later rejected."
+how: "treaty_under_pressure"
+how_basis: "Before Knox, a college-linked history, says many Sauk and Meskwaki considered the treaty void because important leaders and the tribal council were absent, which makes the signers' authority disputed."
+confidence: "medium"
+cautions: "Disputed signatory authority is the basis for the 'under pressure' label; none of my sources describes force or threats. No acreage is stated in the OSU text. A search turned up figures of 15 million and over 50 million acres from other sources I did not open, so I give none. The Before Knox page is a college-linked history, not a scholarly article. The input says Black Hawk never accepted the treaty and later contested it; I have not verified the details of that beyond the Before Knox account."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1804-0074", "title": "Tribal Treaties Database: Treaty of St. Louis with the Sauk and Fox, 1804 (Oklahoma State University Libraries)", "quote": "do hereby cede and relinquish forever to the United States, all the lands included within the above-described boundary"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1804-0074", "title": "Tribal Treaties Database: Treaty of St. Louis with the Sauk and Fox, 1804 (Oklahoma State University Libraries)", "quote": "goods suited to the circumstances of the Indians of the value of one thousand dollars"}, {"url": "https://www.beforeknox.com/the-united-states-context/the-black-hawk-war-and-treaties", "title": "The Black Hawk War and Treaties - Before Knox", "quote": "was signed in the absence of important leaders and without the consent of the Tribal Council"}, {"url": "https://www.beforeknox.com/the-united-states-context/the-black-hawk-war-and-treaties", "title": "The Black Hawk War and Treaties - Before Knox", "quote": "The construction of Fort Madison on the western side of the Mississippi in 1808 also called the legitimacy of the treaty into question"}]
+---
+On November 3, 1804, at St. Louis, William Henry Harrison, governor of Indiana Territory, made a treaty with chiefs and head men of the united Sac and Fox tribes. The treaty placed the tribes under U.S. protection and defined a boundary line from the Missouri River near the Gasconade to the Jefferson River, up the Mississippi to the Wisconsin River and across to the Illinois. The tribes ceded all lands inside it for goods worth $2,234.50 and a yearly delivery of goods worth $1,000, at St. Louis.
+
+The text says the tribes could live and hunt on the ceded land while it remained U.S. property. A history from Before Knox says many Meskwaki and Sauk, including Black Hawk, considered the treaty void because it was "signed in the absence of important leaders and without the consent of the Tribal Council." The same source notes that building Fort Madison in 1808, on the side of the Mississippi that was supposed to remain theirs, called the treaty's legitimacy into question.
+
+Sauk and Fox bands confirmed the treaty in 1815 and 1816, in treaties also in this atlas. See the linked violation record for later events.
