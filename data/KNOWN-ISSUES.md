@@ -344,22 +344,22 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 - **warn** `org-stockbridge-munsee`: listed organization has no website
 - **warn** `org-tule-river-tribe`: listed organization has no website
 - **warn** `org-washoe-tribe`: listed organization has no website
-- **warn** `G-02`: Native Land Digital: pending (blocks public launch; live lookup)
-- **warn** `G-03`: LOC Royce credit line: pending (blocks public launch)
-- **warn** `G-04`: Census today layer: pending (blocks public launch)
-- **warn** `G-08`: Treaty, case and statute text and quotations: pending (blocks public launch)
-- **warn** `G-09`: Third-party scholarly portals: link only: pending (blocks public launch)
-- **warn** `G-10`: Basemap: pending (blocks public launch)
-- **warn** `G-11`: Software and fonts: pending (blocks public launch)
-- **warn** `G-12`: Verification wave: pending (blocks public launch)
-- **warn** `G-14`: Governance documents: pending (blocks tribal outreach; public launch)
-- **warn** `G-15`: Tribal advisory: pending (blocks nation pages; counterfactuals)
-- **warn** `G-16`: Legal review: pending (blocks Phase 4 release; public launch)
-- **warn** `G-17`: Charitable-solicitation review: pending (blocks Phase 5 release)
-- **warn** `G-18`: Sensitive-content review: pending (blocks public launch)
-- **warn** `G-19`: Accessibility audit: pending (blocks public launch)
-- **warn** `G-20`: Corrections and takedown readiness: pending (blocks public launch)
-- **warn** `G-21`: Privacy: pending (blocks public launch)
+- **error** `G-02`: Native Land Digital: pending (blocks public launch; live lookup)
+- **error** `G-03`: LOC Royce credit line: pending (blocks public launch)
+- **error** `G-04`: Census today layer: pending (blocks public launch)
+- **error** `G-08`: Treaty, case and statute text and quotations: pending (blocks public launch)
+- **error** `G-09`: Third-party scholarly portals: link only: pending (blocks public launch)
+- **error** `G-10`: Basemap: pending (blocks public launch)
+- **error** `G-11`: Software and fonts: pending (blocks public launch)
+- **error** `G-12`: Verification wave: pending (blocks public launch)
+- **error** `G-14`: Governance documents: pending (blocks tribal outreach; public launch)
+- **error** `G-15`: Tribal advisory: pending (blocks nation pages; counterfactuals)
+- **error** `G-16`: Legal review: pending (blocks Phase 4 release; public launch)
+- **error** `G-17`: Charitable-solicitation review: pending (blocks Phase 5 release)
+- **error** `G-18`: Sensitive-content review: pending (blocks public launch)
+- **error** `G-19`: Accessibility audit: pending (blocks public launch)
+- **error** `G-20`: Corrections and takedown readiness: pending (blocks public launch)
+- **error** `G-21`: Privacy: pending (blocks public launch)
 - **warn** `V017.mechanism_summary`: mentions "graves": check that no location detail is given
 - **warn** `V049.land_lost_description`: mentions "ceremonial": check that no location detail is given
 - **warn** `org-apache-stronghold.summary`: mentions "sacred site": check that no location detail is given

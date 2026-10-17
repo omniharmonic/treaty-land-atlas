@@ -1382,6 +1382,29 @@ def add_evidence_edges(data):
     # Organizations with a donation url but no website are not given a Source: donation_url is an attribute, never evidence.
 
 
+def apply_edge_reviews(cross):
+    """Human decisions from crosswalks/edge-reviews.csv (written by `npm run links:review`).
+
+    Edge ids are deterministic, so a decision keeps applying on every rebuild. Only a row here can
+    make an edge `accepted`; a review for an edge that no longer exists is reported, not dropped silently.
+    """
+    for i, r in enumerate(cross.get("edge-reviews.csv", []), start=2):
+        edge = G.edges.get(r["edge_id"])
+        if edge is None:
+            issue("warn", "review_for_missing_edge", "crosswalks/edge-reviews.csv", f"line {i}",
+                  f"Edge {r['edge_id']} is not in the graph any more; its review ({r['decision']}) is not applied.")
+            continue
+        if r["decision"] not in ("accepted", "rejected") or not r["reviewer_role"].strip() or not r["date"].strip():
+            issue("error", "review_row_incomplete", "crosswalks/edge-reviews.csv", f"line {i}",
+                  "decision must be accepted or rejected, with reviewer_role and date.")
+            continue
+        edge["status"] = r["decision"]
+        edge["review"]["reviewer_role"] = r["reviewer_role"].strip()
+        edge["review"]["date"] = r["date"].strip()
+        if r["notes"].strip():
+            edge["qualifiers"]["review_notes"] = r["notes"].strip()
+
+
 # --------------------------------------------------------------------------------------
 # 5. Checks
 # --------------------------------------------------------------------------------------
@@ -1505,6 +1528,7 @@ def main():
     add_successor_research_edges(cross)
     add_violation_case_edges()
     add_evidence_edges(data)
+    apply_edge_reviews(cross)  # last, so every edge exists before a human decision is applied
 
     # checks
     edge_types, _ = load_edge_rules()

@@ -1,0 +1,9 @@
+title = "treaty-land-atlas"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "nld-key"
+description = "Native Land Digital API key assigned in code or config"
+regex = '''(?i)(nld[_-]?key|native[_-]?land[_-]?key)\s*[:=]\s*['"]?[A-Za-z0-9_\-]{16,}'''

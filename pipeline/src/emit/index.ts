@@ -119,7 +119,8 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
     .sort((a, b) => a.id.localeCompare(b.id));
   const byId = new Map(nodes.map((n) => [n.id, n]));
   const edges = graph.edges
-    .filter((e) => byId.has(e.source) && byId.has(e.target))
+    // A human-rejected link is wrong, so it is not published (it stays in build/ for the record).
+    .filter((e) => e.status !== 'rejected' && byId.has(e.source) && byId.has(e.target))
     .sort((a, b) => a.id.localeCompare(b.id));
 
   for (const sub of ['entities', 'tables', 'layers'])

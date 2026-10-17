@@ -14,6 +14,8 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
@@ -27,5 +29,26 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run test:unit
+      - name: Data build (seed CSVs and crosswalks -> graph -> public/data)
+        run: npm run data:build
+      - name: Data validation (writes build/report.md; fails on any error)
+        run: npm run data:validate -- --mode=preview
+      - name: Committed graph inputs are up to date
+        run: |
+          python3 scripts/link_royce.py
+          git diff --exit-code -- crosswalks/instrument-royce.csv || {
+            echo "::error::crosswalks/instrument-royce.csv is stale. Run: python3 scripts/link_royce.py"; exit 1; }
       - run: npm run check:attribution
+      - run: node scripts/check-no-nld.mjs public/data
       - run: npm run build
+      - run: node scripts/check-no-nld.mjs dist
+      - name: Data summary
+        if: always()
+        run: |
+          {
+            echo "## Data"
+            if [ -f build/report.md ]; then head -n 12 build/report.md; fi
+            echo
+            echo "### Changed data files"
+            git diff --stat HEAD~1 -- seed-data crosswalks data 2>/dev/null || echo "(first commit)"
+          } >> "$GITHUB_STEP_SUMMARY"
