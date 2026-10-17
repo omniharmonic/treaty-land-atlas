@@ -10,7 +10,7 @@ verdict: "new"
 ---
 The Rappahannock Tribe is based at Indian Neck, Virginia. Its history page says the Virginia General Assembly recognized it as one of the state's historic tribes on March 25, 1983, and that G. Anne Richardson was sworn in as Chief in 1998. The tribe's mission, in its words, is to preserve Rappahannock culture, social structures and political structures while educating the public.
 
-The tribe's donate page lists "Land Back" as one of its programs and says one of its highest priorities is to reacquire land that was stolen from its ancestors along the Rappahannock River. The page says the tribe "successfully rematriated 465 acres" at the site of its ancestral town, Pissacoack, at Fones Cliffs in April 2022. It says it is fundraising to purchase two more properties, of 703 and 964 acres, and has a goal of $7.6 million. That is a fundraising goal, not a result. The page does not describe the legal form of the 2022 transfer.
+The tribe's donate page lists "Land Back" as one of its programs and says one of its highest priorities is to reacquire land along the Rappahannock River that the tribe says was taken from its ancestors. The page says the tribe "successfully rematriated 465 acres" at the site of its ancestral town, Pissacoack, at Fones Cliffs in April 2022. It says it is fundraising to purchase two more properties, of 703 and 964 acres, and has a goal of $7.6 million. That is a fundraising goal, not a result. The page does not describe the legal form of the 2022 transfer.
 
 The tribe also describes archaeology, natural resources, housing, health and a youth program called Return to the River. Its news page records a January 2026 appeal against a state permit that would let Caroline County withdraw water from the river.
 

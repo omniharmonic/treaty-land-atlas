@@ -272,6 +272,30 @@
   "quote": "was awarded a $2.26 million grant to reclaim 351 acres of their Indigenous homelands"
  },
  {
+  "id": "camp-santa-ynez-camp4",
+  "field": "acres",
+  "shown": "1390",
+  "source_says": "1,427 acres (tribe's Dec. 17, 2019 release); more than 1,400 acres (tribe's reservation page)",
+  "url": "https://chumash.gov/press-releases/hole-in-one-golfers-drive-away-in-new-chevysnbspwon-at-chumash-charity-golf-classicnbsp-c85c5-wgz5c-559cs-ped8t-n9jay",
+  "quote": "directing the Department of Interior to take 1,427 acres, otherwise known as Camp 4, into federal trust"
+ },
+ {
+  "id": "camp-santa-ynez-camp4",
+  "field": "year",
+  "shown": "2017 vs 2019 (per atlas note)",
+  "source_says": "2017 agency decision was voided in February 2019; the tribe says trust status came through legislation on December 20, 2019",
+  "url": "https://chumash.gov/the-santa-ynez-reservation",
+  "quote": "more than 1,400 acres of ranch land known as Camp 4 was placed into trust through federal legislation on December 20, 2019"
+ },
+ {
+  "id": "camp-sherrill-oneida-reacquisition",
+  "field": "acres",
+  "shown": "18000",
+  "source_says": "no source opened gives the Nation's total trust acreage; the BIA decision covers about 270 acres, and a 2013 agreement caps total acquisitions at 25,000 acres",
+  "url": "https://www.bia.gov/sites/default/files/dup/inline-files/508_compliant_2023.02.17_oneida_nation_fact_sheet_and_q_a_0.pdf",
+  "quote": "to acquire approximately 270 acres of land into trust for the Oneida Indian Nation"
+ },
+ {
   "id": "org-cultural-conservancy",
   "field": "website",
   "shown": "https://www.cultural-conservancy.org/",
@@ -406,5 +430,61 @@
   "source_says": "Tribe's page dates the Land Claims Settlement 1990; the Settlement Act is Pub. L. 101-41, June 21, 1989; no dollar total found in sources read",
   "url": "https://www.puyalluptribe-nsn.gov/about-our-tribe/",
   "quote": "since the 1990 Land Claims Settlement between the Tribe, local governments, Washington State, and the US Government"
+ },
+ {
+  "id": "org-rosebud-sioux-tribe",
+  "field": "vetting_notes",
+  "shown": "Tribe's role inferred from search-result headlines",
+  "source_says": "AP report names Rosebud's president among the three tribal leaders who bought it",
+  "url": "https://www.mprnews.org/story/2012/12/01/regional/pe-sla-land-dakota",
+  "quote": "Those three tribes were the only ones to contribute to the purchase, Scott said."
+ },
+ {
+  "id": "org-santa-ynez-chumash",
+  "field": "focus",
+  "shown": "Camp 4 trust land (1,390 acres per Wikipedia)",
+  "source_says": "House Report 115-319 describes a 1,400-acre purchase in 2010 and an approximately 1,427.28-acre trust action on January 20, 2017",
+  "url": "https://www.gpo.gov/fdsys/pkg/CRPT-115hrpt319/html/CRPT-115hrpt319.htm",
+  "quote": "to place approximately 1,427.28 acres of land located in Santa Barbara County, California, into trust"
+ },
+ {
+  "id": "org-southern-sierra-miwuk",
+  "field": "focus",
+  "shown": "About 900 acres returned Dec 2025",
+  "source_says": "PFT: transfer completed in November 2025; 'nearly 900-acre'",
+  "url": "https://www.pacificforest.org/returning-yosemite-to-ssmn/",
+  "quote": "This transfer, completed in November 2025 with funding from the California Natural Resources Agency Tribal Nature-Based Solutions Program"
+ },
+ {
+  "id": "org-spirit-lake-nation",
+  "field": "focus",
+  "shown": "White Horse Hill, 680 acres returned (date not stated)",
+  "source_says": "Interior's press release dated March 17, 2025 announces completed transfer of 680 acres to be held in trust; land was held by the Fish and Wildlife Service for the White Horse Hill National Game Preserve",
+  "url": "https://www.doi.gov/pressreleases/department-interior-announces-completed-land-transfer-us-fish-and-wildlife-service",
+  "quote": "has completed the transfer of 680 acres of land to the Bureau of Indian Affairs to be held in trust for the Spirit Lake Nation"
+ },
+ {
+  "id": "org-penobscot-nation",
+  "field": "focus",
+  "shown": "735 acres (Elliotsville Foundation, Oct 2020); 30,000+ acre parcel near Katahdin Woods and Waters in process",
+  "source_says": "Maine Public (Oct 30, 2020) calls it a 'return'; MaineBiz quotes the Chief on 'restoration of land stewardship'; TBN gives more than 31,000 acres",
+  "url": "https://tribalbusinessnews.com/sections/real-estate/14518-penboscot-landback",
+  "quote": "has secured more than 31,000 acres in the Katahdin region of Maine with designs on returning the land"
+ },
+ {
+  "id": "org-stockbridge-munsee",
+  "field": "focus",
+  "shown": "372 acres ... (finalized Apr 2025; $2.5M, $2.26M state grant); Berkshire Edge says 351 acres funded",
+  "source_says": "WBUR (Aug 2023) reports a 351-acre plan; Tribal Business News (Apr 30, 2025) reports the finalized purchase of 372 acres",
+  "url": "https://tribalbusinessnews.com/sections/real-estate/15120-stockbridge-munsee-band-reclaims-372-acres-of-ancestral-homeland",
+  "quote": "The tribe has finalized a $2.5 million purchase for 372 acres of land on the northern slope of Monument Mountain in western Massachusetts"
+ },
+ {
+  "id": "org-washoe-tribe",
+  "field": "focus",
+  "shown": "WélmeltiɁ Preserve (10,274 acres), held by the Waší·šiw Land Trust (tribal)",
+  "source_says": "Northern Sierra Partnership says the preserve is owned by the Waší·šiw Land Trust, a Washoe-led nonprofit; announcement dated Feb 11, 2026",
+  "url": "https://northernsierrapartnership.org/blog-3-1/four-year-partnership-with-washoe-tribenbspresults-innbsplargest-indigenous-land-return-in-sierra-history",
+  "quote": "The WélmeltiɁ Preserve is now owned by the Waší·šiw Land Trust, a Washoe-led nonprofit"
  }
 ]

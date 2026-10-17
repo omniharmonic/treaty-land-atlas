@@ -1,0 +1,17 @@
+---
+id: "org-penobscot-nation"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The Penobscot Nation, per its website, exercises sovereign powers; in 2020 a foundation returned 735 acres, and a 31,000-acre return was planned."
+confidence: "medium"
+cautions: "Whether the 2020 return was a deed or a stewardship arrangement is unresolved; sources use both 'return' and 'restoration of land stewardship'. The 31,000-acre return was a plan in 2023, with a $32 million fundraising goal; no confirmation of completion was found. The Nation's own pages read mention neither. The Nation is a party to the Wabanaki Alliance advocacy about the 1980 settlement act."
+sources: [{"url": "https://www.penobscotnation.org/government/index.php", "title": "Government - Penobscot Nation", "quote": "to protect Penobscot People, culture and our territory by the wise exercise of our Sovereign Powers"}, {"url": "https://www.mainepublic.org/environment-and-outdoors/2020-10-30/elliotsville-foundation-returns-735-acres-to-penobscots", "title": "Ancestral lands near Brownville returned to the Penobscot Nation (Maine Public)", "quote": "The Penobscot Nation is celebrating the historic return of a 735-acre parcel, part of the Penobscots’ ancestral territory"}, {"url": "https://mainebiz.biz/article/quimby-familys-foundation-returns-735-acres-of-northern-maine-land-to-penobscot-nation/", "title": "Quimby family's foundation returns 735 acres (MaineBiz)", "quote": "extremely grateful to Elliotsville Foundation for this generous restoration of land stewardship to our tribe"}, {"url": "https://tribalbusinessnews.com/sections/real-estate/14518-penboscot-landback", "title": "Trust for Public Land initiates historic land return (Tribal Business News)", "quote": "National nonprofit Trust for Public Land (TPL) has secured more than 31,000 acres in the Katahdin region of Maine with designs on returning the land"}]
+verdict: "new"
+---
+The Penobscot Nation's official website states that the mission of its government is to work with the Tribal Council and administration to protect Penobscot people, culture and territory by the wise exercise of its sovereign powers, to promote prosperity, and to preserve cultural values. Its Department of Natural Resources runs fish and wildlife licensing, forestry, water-quality and other programs, and the Nation publishes materials on Penobscot waters.
+
+In October 2020 Maine Public reported that the Elliotsville Foundation returned a 735-acre parcel of the Penobscots' ancestral territory to the Nation, west of the Pleasant River near Brownville. The Nation's Natural Resources Director John Banks called it sacred ground because it provides sustenance for many tribal families. The foundation's Lucas St. Clair said the land is surrounded by Penobscot land. MaineBiz quotes Chief Kirk Francis thanking the foundation for "this generous restoration of land stewardship," which leaves unclear whether title passed or a stewardship arrangement was made.
+
+A larger return was in progress. Tribal Business News reported in November 2023 that the Trust for Public Land had bought more than 31,000 acres in the Katahdin region with the aim of returning it to the Penobscot Nation, and quoted the Nation's natural resources director on the value of access to the national monument. Completion was not confirmed by sources read.
+
+The Nation's own pages read do not describe either return.

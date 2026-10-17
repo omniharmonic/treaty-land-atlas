@@ -1635,7 +1635,8 @@ def apply_record_corrections(cross):
                 continue
             new = old.replace(r["find"], r["value"])
         else:
-            new = int(r["value"]) if isinstance(old, int) and r["value"].isdigit() else r["value"]
+            numeric = isinstance(old, int) or field in ("start_year", "year", "end_year")
+            new = int(r["value"]) if numeric and r["value"].isdigit() else r["value"]
         if field == "label":
             node["label"] = new
         else:
