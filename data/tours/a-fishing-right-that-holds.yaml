@@ -1,0 +1,33 @@
+id: a-fishing-right-that-holds
+title: A fishing right that still holds
+question: What does "in common with" mean today?
+summary: A clause in the 1854 and 1855 Washington treaties, and the court cases that made it law.
+content_warnings: []
+nations: []
+review: Not yet reviewed by the treaty tribes of western Washington.
+beats:
+  - title: The treaties of 1854 and 1855
+    text: >-
+      The treaties made in western Washington in 1854 and 1855 reserved the right to take fish at usual and accustomed
+      grounds "in common with the citizens of the Territory."
+    records: [TLA-T-281, TLA-T-283, TLA-T-286]
+    map: { y: 1855 }
+  - title: 1974, the Boldt decision
+    text: >-
+      United States v. Washington held that the treaties secured the tribes a share of the harvest, not just a place in
+      line.
+    records: [case-us-v-washington-boldt-1974]
+  - title: 1979, a fair share
+    text: >-
+      The Supreme Court upheld the right in Washington v. Washington State Commercial Passenger Fishing Vessel
+      Association: a fair share, up to half the harvest.
+    records: [case-wa-fishing-vessel-1979]
+  - title: 2018, the culverts
+    text: >-
+      In the culverts case the courts held that the state had to fix road culverts that blocked salmon, because a
+      fishing right means little without fish.
+    records: [case-washington-v-us-culverts-2018]
+  - title: Today
+    text: >-
+      The treaty tribes co-manage the fisheries of western Washington. The right reserved in 1855 is still exercised.
+    records: [TLA-T-283]

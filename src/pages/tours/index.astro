@@ -1,0 +1,36 @@
+---
+import Page from '../../layouts/Page.astro';
+import { tours } from '../../lib/tours';
+import { href } from '../../lib/href';
+const all = tours();
+---
+
+<Page title="Stories" lede="Short guided walks through the record. Each one ends in the present.">
+  <ul class="tours">
+    {all.map((t) => (
+      <li>
+        <a href={href(`/tours/${t.id}/`)}>{t.title}</a>
+        <p>
+          {t.question} {t.summary}
+        </p>
+      </li>
+    ))}
+  </ul>
+</Page>
+
+<style>
+  .tours {
+    list-style: none;
+    padding: 0;
+  }
+  .tours li {
+    margin-bottom: var(--space-5);
+  }
+  .tours a {
+    font-size: var(--s1);
+  }
+  .tours p {
+    margin: var(--space-1) 0 0;
+    color: var(--ink-2);
+  }
+</style>

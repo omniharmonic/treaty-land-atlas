@@ -1,0 +1,54 @@
+id: fort-laramie-and-the-black-hills
+title: Fort Laramie and the Black Hills
+question: What happens to a promise over time?
+summary: Two treaties, a seizure, a Supreme Court ruling, a refusal to sell, and land bought back.
+content_warnings: [war and violence, seizure of sacred land]
+nations: [nat-oceti-sakowin]
+review: Not yet reviewed by the Oceti Sakowin nations. The Black Hills are sacred; this tour gives no precise locations.
+beats:
+  - title: 1851, the first Fort Laramie treaty
+    text: >-
+      The 1851 treaty at Fort Laramie (Horse Creek) set out territories for the Lakota, Dakota and Nakota and their
+      neighbors. It did not create a reservation. It was written in English with too few interpreters, and both sides
+      broke its terms.
+    records: [TLA-T-FL1851]
+    map: { y: 1851, sel: null }
+  - title: Shared and overlapping lands
+    text: >-
+      Several nations used the same country. A later court held that the 1851 treaty recognized the Crow Nation's title
+      to part of it, while a dissent noted that many peoples ranged over the same lands.
+    records: [TLA-T-FL1851, nat-crow]
+  - title: 1868, the Great Sioux Reservation
+    text: >-
+      The 1868 treaty set apart the Great Sioux Reservation, including the Black Hills, reserved hunting lands beyond it,
+      and promised that no further cession would be valid without the signatures of three-fourths of adult men. Not
+      every band signed.
+    records: [TLA-T-369]
+    map: { y: 1868 }
+  - title: 1877, the Black Hills taken
+    text: >-
+      Gold was found in 1874 and the nations refused to sell. In 1877 Congress passed an act taking the Black Hills
+      without the three-fourths consent the treaty required.
+    records: [TLA-A-1877]
+    map: { y: 1877 }
+  - title: 1980, the Supreme Court
+    text: >-
+      In United States v. Sioux Nation of Indians the Supreme Court held the 1877 act was a taking that required just
+      compensation, with interest from 1877.
+    records: [case-us-v-sioux-nation-1980]
+  - title: The money refused
+    text: >-
+      The Great Sioux Nation tribes have refused the award, which has grown with interest, because the Black Hills were
+      never for sale. The refusal is itself an act of sovereignty.
+    records: [camp-black-hills-claim]
+  - title: Pe' Sla, bought back
+    text: >-
+      In 2012 the tribes raised money to buy Pe' Sla, a place in the Black Hills central to their creation story, with
+      the help of Native-led organizations.
+    records: [camp-pesla-2012]
+  - title: Today
+    text: >-
+      The governments that carry the 1868 treaty today are listed on the Oceti Sakowin page. The claim to the Black
+      Hills continues.
+    records: [nat-oceti-sakowin]
+    map: { y: 1894, v: honored, cut: 1868 }

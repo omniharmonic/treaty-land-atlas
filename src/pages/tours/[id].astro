@@ -1,0 +1,90 @@
+---
+import Base from '../../layouts/Base.astro';
+import { node, pathFor } from '../../lib/graph';
+import { href } from '../../lib/href';
+import { mapHash, tours, type Tour } from '../../lib/tours';
+
+export function getStaticPaths() {
+  return tours().map((t) => ({ params: { id: t.id }, props: { t } }));
+}
+const { t } = Astro.props as { t: Tour };
+---
+
+<Base title={t.title} description={`${t.question} ${t.summary}`}>
+  <article class="tour">
+    <p class="kicker sans">A story in {t.beats.length} steps</p>
+    <h1>{t.title}</h1>
+    <p class="lede">{t.question}</p>
+    <p class="review sans">{t.review}</p>
+    {t.content_warnings.length > 0 && (
+      <p class="warn sans">This story includes {t.content_warnings.join(' and ')}.</p>
+    )}
+    <ol class="beats">
+      {t.beats.map((b) => (
+        <li>
+          <h2>{b.title}</h2>
+          <p>{b.text}</p>
+          <p class="links sans">
+            {(b.records ?? []).map((id) => {
+              const n = node(id);
+              const p = n ? pathFor(n) : null;
+              return n && p ? <a href={href(p)}>{n.label}</a> : null;
+            })}
+            {b.map && <a href={href(`/map/${mapHash(b.map)}`)}>See it on the map</a>}
+          </p>
+        </li>
+      ))}
+    </ol>
+    <p class="sans">
+      <a href={href('/tours/')}>More stories</a>
+    </p>
+  </article>
+</Base>
+
+<style>
+  .tour {
+    max-width: 44rem;
+    padding: var(--space-6) 0 var(--space-7);
+  }
+  .kicker {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin: 0;
+  }
+  .review,
+  .warn {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    border-left: 3px solid var(--lichen);
+    padding-left: var(--space-3);
+  }
+  .beats {
+    list-style: none;
+    padding: 0;
+    counter-reset: beat;
+  }
+  .beats li {
+    counter-increment: beat;
+    border-top: 1px solid var(--rule);
+    padding-top: var(--space-4);
+    margin-top: var(--space-6);
+  }
+  .beats h2 {
+    margin-top: 0;
+    font-size: var(--s2);
+  }
+  .beats h2::before {
+    content: counter(beat);
+    font-family: var(--sans);
+    font-size: var(--s-1);
+    color: var(--moss);
+    display: block;
+    margin-bottom: var(--space-1);
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-5);
+    font-size: var(--s-1);
+  }
+</style>

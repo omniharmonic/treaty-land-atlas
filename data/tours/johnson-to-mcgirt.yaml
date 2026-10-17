@@ -1,0 +1,44 @@
+id: johnson-to-mcgirt
+title: From Johnson to McGirt
+question: How did American law decide whose rights count, and how has it changed?
+summary: Seven court decisions, from the doctrine of discovery to a reservation affirmed in 2020.
+content_warnings: []
+nations: []
+review: Awaiting review by a federal Indian law reviewer. Not legal advice.
+beats:
+  - title: 1823, discovery
+    text: >-
+      Johnson v. M'Intosh held that European "discovery" gave title to the discovering government. Native nations were
+      called the rightful occupants of the soil, but with only a right of occupancy that only the United States could
+      buy.
+    records: [case-johnson-v-mintosh-1823]
+  - title: 1832, a nation's own laws
+    text: >-
+      Worcester v. Georgia held that Georgia's laws had no force in the Cherokee Nation. Within a few years
+      the Cherokee were forced west on the Trail of Tears.
+    records: [case-worcester-v-georgia-1832]
+  - title: 1955, title without protection
+    text: >-
+      Tee-Hit-Ton Indians v. United States held that land held by original occupancy, never recognized by treaty or act
+      of Congress, could be taken without compensation.
+    records: [case-tee-hit-ton-v-us-1955]
+  - title: 1984, only Congress can shrink a reservation
+    text: >-
+      Solem v. Bartlett held that a reservation is diminished only when Congress clearly says so, and set the test courts
+      use to decide.
+    records: [case-solem-v-bartlett-1984]
+  - title: 2005, land bought back is not land restored
+    text: >-
+      City of Sherrill v. Oneida Indian Nation held that the Oneida could not revive sovereignty over land it bought on
+      the open market, and pointed to federal trust acquisition instead.
+    records: [case-city-of-sherrill-v-oneida-2005, camp-sherrill-oneida-reacquisition]
+  - title: 2019, a treaty right survives statehood
+    text: >-
+      Herrera v. Wyoming held that the Crow Tribe's 1868 treaty right to hunt on unoccupied lands did not end when
+      Wyoming became a state.
+    records: [case-herrera-v-wyoming-2019]
+  - title: 2020, a reservation that never ended
+    text: >-
+      McGirt v. Oklahoma held that Congress never disestablished the Muscogee (Creek) reservation, so it remains Indian
+      country. Treaties remain law.
+    records: [case-mcgirt-v-oklahoma-2020, nat-pd-muscogee-nation]

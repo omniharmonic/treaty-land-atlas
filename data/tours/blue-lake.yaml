@@ -1,0 +1,23 @@
+id: blue-lake
+title: Blue Lake comes home
+question: What has a land return looked like?
+summary: A sacred lake taken in 1906 and returned by Congress in 1970 after decades of advocacy.
+content_warnings: []
+nations: [nat-pd-taos-pueblo]
+review: Not yet reviewed by Taos Pueblo. Taos Pueblo tells this history in its own words on its own website.
+beats:
+  - title: 1906, taken
+    text: >-
+      In 1906 the federal government took Blue Lake and the land around it, sacred to Taos Pueblo, into a national
+      forest.
+    records: [camp-blue-lake-1970]
+  - title: Decades of advocacy
+    text: >-
+      Taos Pueblo pressed for the land's return for more than sixty years, including testimony before Congress by its
+      leaders.
+    records: [camp-blue-lake-1970]
+  - title: 1970, returned
+    text: >-
+      On December 15, 1970, Public Law 91-550 restored 48,000 acres including Blue Lake to Taos Pueblo, one of the
+      landmark returns of land to a nation by act of Congress.
+    records: [camp-blue-lake-1970, nat-pd-taos-pueblo]
