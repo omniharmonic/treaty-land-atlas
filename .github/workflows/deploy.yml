@@ -1,0 +1,51 @@
+name: deploy
+# Builds the data and the site and publishes to GitHub Pages (landback.land).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      SITE_STAGE: production
+      SITE_URL: https://landback.land
+      PUBLIC_NLD_RELAY: https://landback-nld-relay.vercel.app
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Pin build date to the last commit
+        run: echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
+      - run: npm ci
+      - run: npm run data:build
+      - name: Validate (errors stop the deploy; open release gates are reported, not blocking, per the owner's 2026-10-17 launch decision)
+        run: npm run data:validate -- --mode=preview
+      - run: npm run build
+      - run: node scripts/check-no-nld.mjs dist
+      - run: npm run check:attribution
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

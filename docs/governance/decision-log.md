@@ -29,3 +29,6 @@ Every owner decision, with its date. Numbers refer to `docs/03-DECISIONS-AND-OPE
 | 2026-10-17 | D-36 | Test Charis SIL + Atkinson Hyperlegible for coverage; fall back to Noto. | Phase 2 |
 | 2026-10-17 | backups | `verification/originals/` (pre-correction seed backups) is **lost**. `verification/CORRECTIONS-APPLIED.md` is the only record of the 2026-10-16 corrections (old and new values per field). | |
 | 2026-10-17 | scope | Build Phase 1 (data pipeline), then Phase 2 (map and slider), pausing for owner review between them. | |
+| 2026-10-17 | launch | **Go live** at landback.land (GitHub Pages) before legal and tribal review, with a visible early-release notice on every page. Open release gates are reported by `npm run release:check` but do not block deploys. | Owner instruction: "keep building out phase 2 until the entire project is live". |
+| 2026-10-17 | nations | Records for **all** nations, not only the federal list: state-recognized, terminated, petitioning and documented communities; every nation page can be claimed by that nation. | Owner instruction. Evidence rules in `scripts/merge_nations_beyond.py`. |
+| 2026-10-17 | NLD key | The API key lives only in the GitHub secret `NLD_API_KEY`; a no-store Vercel relay holds it server-side. | `docs/release/nld-relay.md` |
