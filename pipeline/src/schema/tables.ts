@@ -272,7 +272,7 @@ export const geodataSourceRow = z.strictObject({
   content: optional,
   format: optional,
   license_or_terms: optional,
-  url: required,
+  url,
   update_status: optional,
   fit_for_timeslider: optional,
   notes: optional,

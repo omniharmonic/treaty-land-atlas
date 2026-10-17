@@ -341,6 +341,45 @@ def load_all():
 # --------------------------------------------------------------------------------------
 # 3. Nodes
 # --------------------------------------------------------------------------------------
+REVIEW_PUBLICATION = {
+    # status -> (publication.state, narrative_allowed). Only a nation's review opens narrative.
+    "not_yet_contacted": ("record_only", False),
+    "invited": ("record_only", False),
+    "edits_requested": ("record_only", False),
+    "reviewed": ("published", True),
+    "co_authored": ("published", True),
+    "declined": ("record_only", False),
+    "withdrawn": ("withheld", False),
+}
+
+
+def apply_review_ledger(cross):
+    """Set tribal_review and publication from crosswalks/tribal-review-ledger.csv.
+
+    Nodes without a ledger row keep not_yet_contacted / narrative_allowed=false:
+    silence is never consent (G3 s.3.3). The latest row per node wins (rows are read in order).
+    """
+    for r in cross.get("tribal-review-ledger.csv", []):
+        node = G.nodes.get(r["node_id"])
+        status = r["status"]
+        if node is None:
+            issue("error", "review_ledger_unknown_node", "tribal-review-ledger.csv", r["node_id"], "Ledger row names a node that does not exist.")
+            continue
+        if status not in REVIEW_PUBLICATION:
+            issue("error", "review_ledger_bad_status", "tribal-review-ledger.csv", r["node_id"], f"Unknown review status {status!r}.")
+            continue
+        if status in ("reviewed", "co_authored") and not (r["date"] and r["reviewer_role"] and r["record_id"]):
+            issue("error", "review_ledger_incomplete", "tribal-review-ledger.csv", r["node_id"], "reviewed/co_authored needs date, reviewer_role and record_id; row ignored.")
+            continue
+        state, narrative = REVIEW_PUBLICATION[status]
+        node["tribal_review"] = {
+            "status": status, "scope": r["scope"] or node["tribal_review"]["scope"],
+            "date": blank_to_none(r["date"]), "reviewer_role": blank_to_none(r["reviewer_role"]),
+            "notes": blank_to_none(r["notes"]),
+        }
+        node["publication"] = {"state": state, "narrative_allowed": narrative}
+
+
 def rit_to_id(rit):
     """NARA RIT number -> atlas id.  '7' -> TLA-T-007, '19A' -> TLA-T-019A."""
     m = re.fullmatch(r"(\d+)([A-Z]?)", rit.strip())
@@ -1213,6 +1252,7 @@ def main():
     build_geodata_sources(data)
     build_nations(cross)
     build_places(data)
+    apply_review_ledger(cross)
 
     # edges
     alias_index = AliasIndex(cross["nation-aliases.csv"])

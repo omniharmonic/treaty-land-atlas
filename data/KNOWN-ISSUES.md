@@ -7,4 +7,365 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 0 finding(s).
 
 - none
+
+### stage: validate
+357 finding(s).
+
+- **warn** `nara-ratified-treaties-index.csv RIT 55`: missing_naid: NARA row has no NAID (marked 'Treaty unavailable'); no source link can be built for it.
+- **warn** `treaties-seed.csv TLA-S-HI1993`: statute_only_in_treaties_seed: 'Apology Resolution (Pub. L. 103-150), 1993' is a statute row in treaties-seed.csv with no matching row in statutes-seed.csv; created as stat-apology-resolution-1993. Add it to statutes-seed.csv.
+- **warn** `organizations-seed.csv org-nana`: data_mismatch: 'NANA Regional Corporation' is typed 'tribal-government' but the name says Corporation (ANCSA corporations are not tribal governments). Check indigenous_led.
+- **warn** `violation-instrument-links.csv V027`: stat_cite_crosscheck: 12 Stat. 997 is printed in treaty_name but no linked instrument has that stat_cite.
+- **warn** `violation-instrument-links.csv V039`: stat_cite_crosscheck: 21 Stat. 199 is printed in treaty_name but no linked instrument has that stat_cite.
+- **warn** `violation-instrument-links.csv V047`: stat_cite_crosscheck: 7 Stat. 418 is printed in treaty_name but no linked instrument has that stat_cite.
+- **warn** `violation-instrument-links.csv V047`: stat_cite_crosscheck: 11 Stat. 700 is printed in treaty_name but no linked instrument has that stat_cite.
+- **warn** `violation-instrument-links.csv V047`: stat_cite_crosscheck: 14 Stat. 786 is printed in treaty_name but no linked instrument has that stat_cite.
+- **warn** `graph GEO-001`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-002`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-003`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-004`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-005`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-006`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-007`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-008`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-009`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-010`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-011`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-012`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-013`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-014`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-015`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-016`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-017`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-018`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-019`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-020`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-021`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-022`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-023`: orphan_node: Source node has no edges.
+- **warn** `graph GEO-024`: orphan_node: Source node has no edges.
+- **warn** `graph TLA-T-004`: orphan_node: Instrument node has no edges.
+- **warn** `graph TLA-T-005`: orphan_node: Instrument node has no edges.
+- **warn** `graph nat-pd-coastal-chumash`: orphan_node: Nation node has no edges.
+- **warn** `graph nat-pd-muckleshoot`: orphan_node: Nation node has no edges.
+- **warn** `graph plc-region-multi-region`: orphan_node: Place node has no edges.
+- **warn** `TLA-A-1874`: instrument has no source URL and no NARA NAID
+- **warn** `TLA-T-016`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-019`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-019A`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-020`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-024`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-026`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-028`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-029`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-030`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-031`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-032`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-033`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-034`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-035`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-037`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-038`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-039`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-040`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-041`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-042`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-045`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-046`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-047`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-048`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-049`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-050`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-051`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-052`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-053`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-055`: instrument has no source URL and no NARA NAID
+- **warn** `TLA-T-055`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-056`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-058`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-059`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-060`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-062`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-063`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-064`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-065`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-066`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-067`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-068`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-069`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-071`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-072`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-073`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-074`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-075`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-076`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-077`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-079`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-080`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-081`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-082`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-083`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-084`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-085`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-086`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-087`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-088`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-091`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-092`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-093`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-094`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-095`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-096`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-097`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-098`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-099`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-100`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-101`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-102`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-103`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-106`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-107`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-108`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-110`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-111`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-112`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-113`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-114`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-118`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-119`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-121`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-122`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-123`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-124`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-126`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-127`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-128`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-129`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-130`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-131`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-132`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-134`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-135`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-136`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-137`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-138`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-140`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-141`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-142`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-143`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-146`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-147`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-149`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-150`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-151`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-152`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-153`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-154`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-155`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-156`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-157`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-158`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-161`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-162`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-163`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-164`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-165`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-166`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-169`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-171`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-172`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-174`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-175`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-176`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-177`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-178`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-179`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-180`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-181`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-182`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-183`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-184`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-186`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-187`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-188`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-190`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-191`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-192`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-193`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-194`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-195`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-196`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-197`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-200`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-202`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-203`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-204`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-205`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-206`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-207`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-208`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-209`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-210`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-211`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-212`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-213`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-214`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-215`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-216`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-217`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-218`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-219`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-221`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-222`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-224`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-225`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-226`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-227`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-228`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-229`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-231`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-232`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-233`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-234`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-235`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-236`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-237`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-238`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-239`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-240`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-241`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-243`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-244`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-245`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-246`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-247`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-249`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-250`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-251`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-252`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-253`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-254`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-257`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-260`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-264`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-265`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-266`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-267`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-268`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-269`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-270`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-271`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-272`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-273`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-274`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-276`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-277`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-278`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-279`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-280`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-282`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-285`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-287`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-288`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-292`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-297`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-298`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-300`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-301`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-302`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-303`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-306`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-308`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-309`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-310`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-311`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-312`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-313`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-314`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-316`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-317`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-318`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-319`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-320`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-321`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-322`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-327`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-328`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-329`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-330`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-331`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-333`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-334`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-335`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-336`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-337`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-338`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-339`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-340`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-342`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-343`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-344`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-345`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-346`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-347`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-348`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-349`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-350`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-351`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-353`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-354`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-357`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-359`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-360`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-361`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-362`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-363`: ratified instrument has no Statutes at Large citation
+- **warn** `TLA-T-368`: ratified instrument has no Statutes at Large citation
+- **warn** `stat-catawba-settlement-act-1993`: verified statute has no source URL
+- **warn** `stat-civilization-fund-act-1819`: verified statute has no source URL
+- **warn** `stat-flood-control-act-1944-pick-sloan`: verified statute has no source URL
+- **warn** `stat-house-concurrent-resolution-108-1953`: verified statute has no source URL
+- **warn** `stat-menominee-restoration-act-1973`: verified statute has no source URL
+- **warn** `stat-menominee-termination-act-1954`: verified statute has no source URL
+- **warn** `stat-national-historic-preservation-act-1966`: verified statute has no source URL
+- **warn** `stat-northwest-ordinance-1787`: verified statute has no source URL
+- **warn** `stat-rhode-island-settlement-act-1978`: verified statute has no source URL
+- **warn** `org-cheyenne-arapaho-tribes`: listed organization has no website
+- **warn** `org-houlton-maliseet`: listed organization has no website
+- **warn** `org-kai-poma`: listed organization has no website
+- **warn** `org-mckenzie-river-trust`: listed organization has no website
+- **warn** `org-mechoopda`: listed organization has no website
+- **warn** `org-menominee-tribe`: listed organization has no website
+- **warn** `org-mikmaq-nation`: listed organization has no website
+- **warn** `org-nana`: listed organization has no website
+- **warn** `org-oneida-indian-nation`: listed organization has no website
+- **warn** `org-penobscot-nation`: listed organization has no website
+- **warn** `org-puyallup-tribe`: listed organization has no website
+- **warn** `org-rosebud-sioux-tribe`: listed organization has no website
+- **warn** `org-save-the-redwoods-league`: listed organization has no website
+- **warn** `org-siletz-ctsi`: listed organization has no website
+- **warn** `org-southern-sierra-miwuk`: listed organization has no website
+- **warn** `org-stockbridge-munsee`: listed organization has no website
+- **warn** `org-tule-river-tribe`: listed organization has no website
+- **warn** `org-washoe-tribe`: listed organization has no website
+- **error** `GEO-022`: not a URL: (none verified; ask each nation)
+- **warn** `G-02`: Native Land Digital: pending (blocks public launch; live lookup)
+- **warn** `G-03`: LOC Royce credit line: pending (blocks public launch)
+- **warn** `G-04`: Census today layer: pending (blocks public launch)
+- **warn** `G-08`: Treaty, case and statute text and quotations: pending (blocks public launch)
+- **warn** `G-09`: Third-party scholarly portals: link only: pending (blocks public launch)
+- **warn** `G-10`: Basemap: pending (blocks public launch)
+- **warn** `G-11`: Software and fonts: pending (blocks public launch)
+- **warn** `G-12`: Verification wave: pending (blocks public launch)
+- **warn** `G-14`: Governance documents: pending (blocks tribal outreach; public launch)
+- **warn** `G-15`: Tribal advisory: pending (blocks nation pages; counterfactuals)
+- **warn** `G-16`: Legal review: pending (blocks Phase 4 release; public launch)
+- **warn** `G-17`: Charitable-solicitation review: pending (blocks Phase 5 release)
+- **warn** `G-18`: Sensitive-content review: pending (blocks public launch)
+- **warn** `G-19`: Accessibility audit: pending (blocks public launch)
+- **warn** `G-20`: Corrections and takedown readiness: pending (blocks public launch)
+- **warn** `G-21`: Privacy: pending (blocks public launch)
+- **warn** `V017.mechanism_summary`: mentions "graves": check that no location detail is given
+- **warn** `V049.land_lost_description`: mentions "ceremonial": check that no location detail is given
+- **warn** `org-apache-stronghold.summary`: mentions "sacred site": check that no location detail is given
+- **warn** `org-nhlc.summary`: mentions "burial": check that no location detail is given
 <!-- generated:end -->

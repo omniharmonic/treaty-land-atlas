@@ -1,0 +1,173 @@
+# License registry (docs/design/J4 s.2-4, J3 s.4.2).
+# Single source for attribution text: NOTICE.md and the site's Credits page are generated from it.
+# status: pending | cleared | blocked | not_used
+# A production build (npm run release:check) fails while any gate for a feature in the build is pending or blocked.
+
+sources:
+  - id: usfs-royce
+    name: 'Tribal Lands Ceded to the United States (USDA Forest Service)'
+    used_in: [layers/cessions, tables/cession-events]
+    license_stated: 'CC BY 4.0 (Data.gov); agency metadata: access constraints None, use "for informational purposes only", no explicit license'
+    conflict: true
+    status: cleared
+    evidence: docs/governance/decision-log.md
+    evidence_note: 'Owner decision 2026-10-17: treat as open US government data and build with it; revisit if the agency says otherwise. No written agency reply yet.'
+    attribution_text: 'Boundary data: Tribal Lands Ceded to the United States, USDA Forest Service (Geospatial Service and Technology Center; Office of Tribal Relations), based on C. C. Royce, Indian Land Cessions in the United States (1899). Modified by Benjamin Life (@omniharmonic): re-projected, simplified, dates and legal types derived. Licensed CC BY 4.0 per Data.gov. Not a legal document; do not use to determine title, ownership, boundaries, or jurisdiction.'
+    required_notices: [modified, not legal documents]
+    gate: G-01
+
+  - id: loc-royce-1899
+    name: 'C. C. Royce, Indian Land Cessions in the United States (1899), Library of Congress'
+    used_in: [links]
+    license_stated: 'Public domain; credit "Law Library of Congress" (LOC item page)'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Source: Royce (1899), Library of Congress, Law Library of Congress.'
+    required_notices: []
+    gate: G-03
+
+  - id: census-aiannh
+    name: 'U.S. Census Bureau Cartographic Boundary File, American Indian / Alaska Native / Native Hawaiian Areas (1:500,000)'
+    used_in: [layers/today-aiannh]
+    license_stated: 'Not copyrighted; acknowledge the Census Bureau; TIGER/Line is a registered trademark'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Present-day boundaries: U.S. Census Bureau, Cartographic Boundary Files (American Indian/Alaska Native/Native Hawaiian Areas). Statistical boundaries; not legal land descriptions.'
+    required_notices: [statistical boundaries, not legal]
+    gate: G-04
+
+  - id: native-land-digital
+    name: 'Native Land Digital (native-land.ca)'
+    used_in: [integrations/territory]
+    license_stated: 'Data Sovereignty Treaty: non-commercial, no altering boundaries, no storing or distributing API data without explicit permission; site also shows a CC0 label'
+    conflict: true
+    status: pending
+    evidence: null
+    evidence_note: 'Owner decision 2026-10-17: load live in the browser at view time, never store or redistribute. Written permission for live lookup not yet requested.'
+    attribution_text: 'Native Land Digital (native-land.ca) is an Indigenous-led nonprofit; its maps do not represent official or legal boundaries. Used for educational and non-commercial purposes.'
+    required_notices: [not legal boundaries, live data not stored]
+    gate: G-02
+
+  - id: hcn-land-grab
+    name: 'High Country News, Land-Grab Universities'
+    used_in: []
+    license_stated: 'Disputed: ODbL / CC BY-SA wording vs CC0 LICENSE file'
+    conflict: true
+    status: not_used
+    evidence: null
+    attribution_text: 'High Country News, Land-Grab Universities.'
+    required_notices: []
+    gate: G-06
+
+  - id: newberry-ahcb
+    name: 'Atlas of Historical County Boundaries, The Newberry Library'
+    used_in: []
+    license_stated: 'Any lawful purpose without fees, subject to the rights page'
+    conflict: false
+    status: not_used
+    evidence: null
+    attribution_text: 'Boundary data: Atlas of Historical County Boundaries, The Newberry Library.'
+    required_notices: []
+    gate: G-07
+
+  - id: bia-lar
+    name: 'Bureau of Indian Affairs, Land Area Representation'
+    used_in: []
+    license_stated: 'Public information; "No legal inference can or should be made"'
+    conflict: false
+    status: not_used
+    evidence: null
+    attribution_text: 'Source: Bureau of Indian Affairs, Land Area Representation.'
+    required_notices: []
+    gate: G-05
+
+  - id: treaty-texts-public-domain
+    name: 'Kappler, Indian Affairs: Laws and Treaties; Statutes at Large; NARA treaty records'
+    used_in: [citations]
+    license_stated: 'US government works; cite and link, short extracts only'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Citations: Kappler, Indian Affairs: Laws and Treaties; United States Statutes at Large; National Archives (NARA) Ratified Indian Treaties.'
+    required_notices: []
+    gate: G-08
+
+  - id: scholarly-portals
+    name: 'OSU Tribal Treaties Database; Indigenous Digital Archive (MIAC with NARA); UNL Treaties Portal; Avalon Project'
+    used_in: [links]
+    license_stated: 'Link only; no license for reuse stated (UNL original content CC BY-NC-SA 3.0)'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Treaty texts and indexes linked from: Tribal Treaties Database (Oklahoma State University Libraries); Indigenous Digital Archive (Museum of Indian Arts and Culture, with the U.S. National Archives); American Indian Treaties Portal (University of Nebraska-Lincoln).'
+    required_notices: [link only]
+    gate: G-09
+
+  - id: openfreemap
+    name: 'OpenFreeMap basemap (OpenMapTiles schema, OpenStreetMap data)'
+    used_in: [map/basemap]
+    license_stated: 'Software MIT; data ODbL; attribution required'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Basemap: OpenFreeMap © OpenMapTiles. Data © OpenStreetMap contributors.'
+    required_notices: [visitor IP visible to tile provider]
+    gate: G-10
+
+  - id: fonts
+    name: 'Self-hosted fonts (Charis SIL / Atkinson Hyperlegible or Noto)'
+    used_in: [site/fonts]
+    license_stated: 'SIL Open Font License 1.1 (to be confirmed per package)'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Fonts: SIL Open Font License 1.1.'
+    required_notices: []
+    gate: G-11
+
+  - id: npm-dependencies
+    name: 'Software dependencies (Astro, Svelte, MapLibre GL JS, Zod and others)'
+    used_in: [site/code]
+    license_stated: 'MIT, BSD-3-Clause, ISC, Apache-2.0; MPL-2.0 for build tooling only'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Software: see the package licenses listed in NOTICE.md.'
+    required_notices: []
+    gate: G-11
+
+  - id: project-own
+    name: 'Treaty Land Atlas text and compiled data'
+    used_in: [site/content, data]
+    license_stated: 'Code MIT; text and data CC BY 4.0'
+    conflict: false
+    status: cleared
+    evidence: docs/governance/decision-log.md
+    attribution_text: 'Treaty Land Atlas, by Benjamin Life (@omniharmonic). Code: MIT. Text and data: CC BY 4.0.'
+    required_notices: []
+    gate: G-13
+
+gates:
+  - { id: G-01, kind: license, title: 'USFS Royce layer license', blocks: public launch }
+  - { id: G-02, kind: license, title: 'Native Land Digital', blocks: 'public launch; live lookup' }
+  - { id: G-03, kind: license, title: 'LOC Royce credit line', blocks: public launch }
+  - { id: G-04, kind: license, title: 'Census today layer', blocks: public launch }
+  - { id: G-05, kind: license, title: 'BIA LAR (only if used)', blocks: BIA feature }
+  - { id: G-06, kind: license, title: 'HCN Land-Grab data (only if used)', blocks: Land-Grab feature }
+  - { id: G-07, kind: license, title: 'Newberry data (only if used)', blocks: Newberry feature }
+  - { id: G-08, kind: license, title: 'Treaty, case and statute text and quotations', blocks: public launch }
+  - { id: G-09, kind: license, title: 'Third-party scholarly portals: link only', blocks: public launch }
+  - { id: G-10, kind: license, title: 'Basemap', blocks: public launch }
+  - { id: G-11, kind: license, title: 'Software and fonts', blocks: public launch }
+  - { id: G-12, kind: content, title: 'Verification wave', status: pending, blocks: public launch }
+  - { id: G-13, kind: license, title: "The project's own license", blocks: public launch }
+  - { id: G-14, kind: content, title: 'Governance documents', status: pending, blocks: 'tribal outreach; public launch' }
+  - { id: G-15, kind: content, title: 'Tribal advisory', status: pending, blocks: 'nation pages; counterfactuals' }
+  - { id: G-16, kind: content, title: 'Legal review', status: pending, blocks: 'Phase 4 release; public launch' }
+  - { id: G-17, kind: content, title: 'Charitable-solicitation review', status: pending, blocks: Phase 5 release }
+  - { id: G-18, kind: content, title: 'Sensitive-content review', status: pending, blocks: public launch }
+  - { id: G-19, kind: content, title: 'Accessibility audit', status: pending, blocks: public launch }
+  - { id: G-20, kind: content, title: 'Corrections and takedown readiness', status: pending, blocks: public launch }
+  - { id: G-21, kind: content, title: 'Privacy', status: pending, blocks: public launch }

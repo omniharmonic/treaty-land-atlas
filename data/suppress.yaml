@@ -1,0 +1,10 @@
+# Removal fast lane (docs/design/J3 s.7.4).
+# Any id listed here is removed from every public file on the next build:
+# the graph, entity files, search index, tables and tours. Edges touching it go too.
+# A nation's removal request is honored first and discussed second.
+#
+# - id: nat-example
+#   reason: Removal requested by the nation's cultural office
+#   date: 2026-01-01
+#   requested_by_role: tribal_government
+[]
