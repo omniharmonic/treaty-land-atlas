@@ -1442,6 +1442,58 @@ def add_beyond_federal_edges(cross):
                            successor_status="disputed" if r["disputed_with"] else "unreviewed")
 
 
+def build_california_bands(cross):
+    """Bands as printed in the 18 unratified California treaties (crosswalks/california-treaty-bands.csv)."""
+    for r in cross.get("california-treaty-bands.csv", []):
+        gid = r["group_id"]
+        if gid and gid not in G.nodes:
+            G.add_node("Nation", gid, r["group_label"], "crosswalks/california-treaty-bands.csv", gid, "medium", "levels",
+                       {"entity_kind": "peoples_or_confederacy", "federal_recognition": "not_applicable",
+                        "legal_context": "standard", "region": "California",
+                        "names": [{"name": r["group_label"], "kind": "preferred_label", "review": "unreviewed"}],
+                        "endonym_status": "none_recorded"},
+                       scope="nation_specific", origin="crosswalk",
+                       notes="People or language group named in research on the 1851-52 California treaties.")
+        bid = r["band_id"]
+        if bid not in G.nodes:
+            G.add_node("Nation", bid, r["band_name_as_printed"], "crosswalks/california-treaty-bands.csv", bid,
+                       r["confidence"] or "medium", "levels",
+                       {"entity_kind": "historical_party", "federal_recognition": "not_applicable",
+                        "legal_context": "standard", "region": "California",
+                        "names": [{"name": r["band_name_as_printed"], "kind": "preferred_label", "review": "unreviewed"},
+                                  {"name": r["band_name_as_printed"], "kind": "source_label", "review": "unreviewed",
+                                   "source_url": r["source_url"], "notes": "as printed in the treaty"}],
+                        "endonym_status": "none_recorded"},
+                       scope="nation_specific", origin="crosswalk",
+                       notes=f"Named in an unratified California treaty of 1851-52. People: {r['people_group_text'] or 'not identified'}. {r['notes']}".strip())
+
+
+def add_california_band_edges(cross):
+    for i, r in enumerate(cross.get("california-treaty-bands.csv", []), start=2):
+        bid, sid = r["band_id"], (get_source_node(r["source_url"], set()) if r["source_url"].startswith("http") else None)
+        conf = r["confidence"] if r["confidence"] in ("high", "medium", "low") else "medium"
+        G.add_edge("party_to", bid, r["instrument_id"], "asserted_by_seed", "high", "crosswalk_manual",
+                   "band named in the treaty text (Kappler vol. 4)", "crosswalks/california-treaty-bands.csv", f"line {i}",
+                   basis=f"Named in the treaty as printed: {r['band_name_as_printed']}.", origin="crosswalk",
+                   qualifiers={"role": "named_party"})
+        if sid:
+            G.add_edge("evidenced_by", bid, sid, "asserted_by_seed", conf, "crosswalk_manual", "identification source",
+                       "crosswalks/california-treaty-bands.csv", f"line {i}", basis=r["evidence_quote"] or None,
+                       origin="crosswalk", qualifiers={"role": "identification_source", "tier": G.nodes[sid]["source_tier"]})
+        if r["group_id"]:
+            G.add_edge("part_of", bid, r["group_id"], "proposed", conf, "crosswalk_manual", r["people_group_text"],
+                       "crosswalks/california-treaty-bands.csv", f"line {i}", basis=r["evidence_quote"] or None,
+                       origin="crosswalk", evidence=[sid] if sid else None)
+        for pid in filter(None, r["present_day_ids"].split(";")):
+            if pid in G.nodes:
+                G.add_edge("successor_of", pid, bid, "proposed", "low" if conf == "medium" else "medium", "crosswalk_manual",
+                           "research: present-day community carrying this band's history", "crosswalks/california-treaty-bands.csv",
+                           f"line {i}", basis=r["notes"] or None, origin="crosswalk",
+                           qualifiers={"extent": "unknown", "disputed": False, "basis_ref": r["source_url"]},
+                           crosswalk_file="crosswalks/california-treaty-bands.csv", evidence=[sid] if sid else None,
+                           successor_status="unreviewed")
+
+
 def corrections(cross, action):
     return [r for r in cross.get("nation-corrections.csv", []) if r["action"] == action]
 
@@ -1635,6 +1687,7 @@ def main():
     build_places(data)
     build_present_day_nations(cross)
     build_beyond_federal(cross)
+    build_california_bands(cross)
     apply_nation_corrections(cross)
     apply_instrument_citations(cross)  # before the stat-cite cross-check in add_crosswalk_edges
 
@@ -1655,6 +1708,7 @@ def main():
     stat_ok, stat_bad = add_crosswalk_edges(cross, merge)
     add_successor_research_edges(cross)
     add_beyond_federal_edges(cross)
+    add_california_band_edges(cross)
     add_violation_case_edges()
     add_evidence_edges(data)
     mark_disputed_successors(cross)
