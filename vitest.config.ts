@@ -4,5 +4,6 @@ export default defineConfig({
   test: {
     include: ['pipeline/test/**/*.test.ts', 'src/**/*.test.ts', 'scripts/**/*.test.ts'],
     testTimeout: 30_000,
+    globalSetup: ['pipeline/test/global-setup.ts'],
   },
 });

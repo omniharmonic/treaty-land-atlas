@@ -28,9 +28,9 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run typecheck
-      - run: npm run test:unit
       - name: Data build (seed CSVs and crosswalks -> graph -> public/data)
         run: npm run data:build
+      - run: npm run test:unit
       - name: Data validation (writes build/report.md; fails on any error)
         run: npm run data:validate -- --mode=preview
       - name: Committed graph inputs are up to date

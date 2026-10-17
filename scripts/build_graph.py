@@ -1382,6 +1382,36 @@ def add_evidence_edges(data):
     # Organizations with a donation url but no website are not given a Source: donation_url is an attribute, never evidence.
 
 
+def apply_instrument_citations(cross):
+    """Sourced Statutes at Large and Kappler citations for instruments the seeds left blank
+    (crosswalks/instrument-citations.csv, research wave 2026-10-17). Seed values are never overwritten;
+    a disagreement is reported."""
+    for i, r in enumerate(cross.get("instrument-citations.csv", []), start=2):
+        node = G.nodes.get(r["instrument_id"])
+        if node is None or node["type"] != "Instrument":
+            issue("warn", "citation_row_unknown_instrument", "crosswalks/instrument-citations.csv", f"line {i}",
+                  f"No instrument {r['instrument_id']}.")
+            continue
+        stat = normalize_stat_cite(r["stat_cite"])
+        for field, value in (("stat_cite", stat), ("kappler_cite", r["kappler_cite"].strip() or None)):
+            if not value:
+                continue
+            if node.get(field) and node[field] != value:
+                issue("warn", "citation_disagrees_with_seed", "crosswalks/instrument-citations.csv", r["instrument_id"],
+                      f"{field}: seed has {node[field]!r}, research found {value!r} ({r['source_url']}). Seed kept.")
+                continue
+            node[field] = value
+            if field == "stat_cite":
+                node["stat_cite_raw"] = r["stat_cite"].strip()
+        if r["source_url"].startswith("http"):
+            sid = get_source_node(r["source_url"], set())
+            G.add_edge("evidenced_by", node["id"], sid, "asserted_by_seed",
+                       r["confidence"] if r["confidence"] in ("high", "medium", "low") else "medium",
+                       "crosswalk_manual", "source for the Stat. and Kappler citations", "crosswalks/instrument-citations.csv",
+                       f"line {i}", basis=r["evidence_quote"] or None, origin="crosswalk",
+                       qualifiers={"role": "citation_source", "tier": G.nodes[sid]["source_tier"]})
+
+
 def apply_edge_reviews(cross):
     """Human decisions from crosswalks/edge-reviews.csv (written by `npm run links:review`).
 
@@ -1511,6 +1541,7 @@ def main():
     build_nations(cross)
     build_places(data)
     build_present_day_nations(cross)
+    apply_instrument_citations(cross)  # before the stat-cite cross-check in add_crosswalk_edges
 
     # edges
     alias_index = AliasIndex(cross["nation-aliases.csv"] + research_alias_rows(cross))
