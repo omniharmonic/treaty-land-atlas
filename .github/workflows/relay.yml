@@ -1,0 +1,43 @@
+name: relay
+# Deploys the Native Land Digital relay (relay/) to Vercel. The API key lives only in the
+# GitHub secret NLD_API_KEY; this job copies it into the Vercel project's encrypted
+# environment and redeploys. The key never enters the repository or the website bundle.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['relay/**', '.github/workflows/relay.yml']
+permissions:
+  contents: read
+concurrency:
+  group: relay
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check required secrets
+        env:
+          HAS_TOKEN: ${{ secrets.VERCEL_TOKEN != '' }}
+          HAS_KEY: ${{ secrets.NLD_API_KEY != '' }}
+        run: |
+          if [ "$HAS_TOKEN" != "true" ]; then echo "::error::Set the VERCEL_TOKEN secret (see docs/release/nld-relay.md)"; exit 1; fi
+          if [ "$HAS_KEY" != "true" ]; then echo "::warning::NLD_API_KEY is not set; the relay will answer not_configured"; fi
+      - name: Sync the key into the Vercel environment
+        working-directory: relay
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          NLD_API_KEY: ${{ secrets.NLD_API_KEY }}
+        run: |
+          if [ -z "$NLD_API_KEY" ]; then echo "No NLD_API_KEY; skipping"; exit 0; fi
+          npx --yes vercel@64 env rm NLD_KEY production --yes --token "$VERCEL_TOKEN" >/dev/null 2>&1 || true
+          printf '%s' "$NLD_API_KEY" | npx --yes vercel@64 env add NLD_KEY production --token "$VERCEL_TOKEN"
+      - name: Deploy
+        working-directory: relay
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx --yes vercel@64 deploy --prod --yes --token "$VERCEL_TOKEN"

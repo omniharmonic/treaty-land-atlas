@@ -1382,6 +1382,39 @@ def add_evidence_edges(data):
     # Organizations with a donation url but no website are not given a Source: donation_url is an attribute, never evidence.
 
 
+def corrections(cross, action):
+    return [r for r in cross.get("nation-corrections.csv", []) if r["action"] == action]
+
+
+def apply_nation_corrections(cross):
+    """Hand corrections from crosswalks/nation-corrections.csv (each row has a source and a reason)."""
+    for r in corrections(cross, "set_label"):
+        node = G.nodes.get(r["target"])
+        if node is None:
+            issue("error", "correction_unknown_node", "crosswalks/nation-corrections.csv", r["target"], "No such node.")
+            continue
+        old = node["label"]
+        node["label"] = r["value"]
+        node["names"] = [n for n in node["names"] if n["kind"] != "preferred_label"]
+        node["names"].insert(0, {"name": r["value"], "kind": "preferred_label", "review": "unreviewed",
+                                 "source_url": blank_to_none(r["source_url"]), "notes": r["reason"]})
+        if old != r["value"] and not any(n["name"] == old for n in node["names"]):
+            node["names"].append({"name": old, "kind": "source_label", "review": "unreviewed",
+                                  "notes": "earlier label in this project"})
+
+
+def mark_disputed_successors(cross):
+    for r in corrections(cross, "mark_successor_disputed"):
+        present, party = r["target"].split(">")
+        hits = [e for e in G.edges.values() if e["type"] == "successor_of" and e["source"] == present and e["target"] == party]
+        if not hits:
+            issue("warn", "correction_no_edge", "crosswalks/nation-corrections.csv", r["target"], "No successor edge to mark disputed.")
+        for e in hits:
+            e["qualifiers"]["disputed"] = True
+            e["qualifiers"]["dispute_note"] = r["reason"]
+            e["review"]["successor_status"] = "disputed"
+
+
 def apply_instrument_citations(cross):
     """Sourced Statutes at Large and Kappler citations for instruments the seeds left blank
     (crosswalks/instrument-citations.csv, research wave 2026-10-17). Seed values are never overwritten;
@@ -1541,9 +1574,12 @@ def main():
     build_nations(cross)
     build_places(data)
     build_present_day_nations(cross)
+    apply_nation_corrections(cross)
     apply_instrument_citations(cross)  # before the stat-cite cross-check in add_crosswalk_edges
 
     # edges
+    removed_aliases = {norm_text(r["target"]) for r in corrections(cross, "remove_alias")}
+    cross["nation-aliases.csv"] = [a for a in cross["nation-aliases.csv"] if norm_text(a["alias"]) not in removed_aliases]
     alias_index = AliasIndex(cross["nation-aliases.csv"] + research_alias_rows(cross))
     apply_name_research(cross, alias_index)
     build_geofeatures(cross, alias_index)
@@ -1559,6 +1595,7 @@ def main():
     add_successor_research_edges(cross)
     add_violation_case_edges()
     add_evidence_edges(data)
+    mark_disputed_successors(cross)
     apply_edge_reviews(cross)  # last, so every edge exists before a human decision is applied
 
     # checks

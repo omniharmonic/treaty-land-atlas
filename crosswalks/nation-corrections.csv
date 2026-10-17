@@ -1,0 +1,14 @@
+action,target,value,source_url,reason
+set_label,nat-gros-ventre,Gros Ventre (Aaniiih),https://ftbelknap.org/,The Fort Belknap Indian Community writes Aaniiih; A'aninin is an older transcription.
+set_label,nat-crow,Crow (Apsáalooke),https://www.crow-nsn.gov/,The Crow Tribe writes Apsáalooke with an acute accent.
+set_label,nat-flathead-salish,Séliš (Bitterroot Salish),https://cskt.org/our-story/,"CSKT: ""Flathead"" is not a tribal name; kept only as an exonym."
+set_label,nat-pd-spirit-lake,Spirit Lake Tribe,https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of,Name as printed in the 2026 Federal Register list and on the tribe's history page.
+set_label,nat-pd-kiowa-tribe,Kiowa Tribe,https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of,Name as printed in the 2026 Federal Register list (previously Kiowa Indian Tribe of Oklahoma).
+set_label,nat-pd-crow-tribe,Crow Tribe of Montana,https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of,Name as printed in the 2026 Federal Register list.
+set_label,nat-pd-stockbridge-munsee,Stockbridge Munsee Community,https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of,Name as printed in the 2026 Federal Register list (no hyphen).
+set_label,nat-pd-miccosukee,Miccosukee Tribe of Indians,https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of,Name as printed in the 2026 Federal Register list.
+remove_alias,belantse-etoa,,,No source found for this alias (research wave 2026-10-17).
+mark_successor_disputed,nat-pd-cherokee-nation>nat-cherokee,,https://www.cherokee.gov/about-the-nation/history/,The Cherokee Nation and the United Keetoowah Band both claim to carry the historical Cherokee Nation's treaty status.
+mark_successor_disputed,nat-pd-united-keetoowah-band>nat-cherokee,,https://www.okhistory.org/publications/enc/entry?entry=CH014,The UKB describes itself as successor in interest; the Cherokee Nation objects.
+mark_successor_disputed,nat-pd-delaware-nation>nat-delaware-lenape,,https://www.delawarenation-nsn.gov/about-us/,The Delaware Nation and the Delaware Tribe of Indians both claim the 1778 Fort Pitt treaty history.
+mark_successor_disputed,nat-pd-delaware-tribe>nat-delaware-lenape,,https://delawaretribe.org/,The Delaware Tribe of Indians and the Delaware Nation both claim the 1778 Fort Pitt treaty history.
