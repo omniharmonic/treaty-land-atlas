@@ -5,7 +5,6 @@
     relay = '',
     kind: initialKind = 'claim',
     recordId = '',
-    recordName = '',
     repo = 'https://github.com/omniharmonic/treaty-land-atlas',
   }: {
     relay?: string;

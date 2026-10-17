@@ -28,7 +28,8 @@
     "data:build": "npm run graph:build && tsx pipeline/src/cli.ts build",
     "links:review": "tsx pipeline/src/cli.ts links-review",
     "release:check": "tsx pipeline/src/cli.ts release-check",
-    "check:attribution": "node scripts/check-attribution.mjs"
+    "check:attribution": "node scripts/check-attribution.mjs",
+    "check": "npm run lint && npm run typecheck && npm run test:unit"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
