@@ -633,8 +633,8 @@ def build_policy_eras(data):
                    flags=text_flags(r["summary"], r["key_acts"]), summary=blank_to_none(r["summary"]))
 
 
-def build_organizations(data):
-    for r in data["organizations-seed.csv"]:
+def build_organizations(data, rows=None, source_file="seed-data/organizations-seed.csv"):
+    for r in (data["organizations-seed.csv"] if rows is None else rows):
         conf = r["confidence"].strip().lower()
         eligible = conf in ("high", "medium")
         if r["indigenous_led"] == "tribal-government" and re.search(r"corporation", r["name"], re.I):
@@ -644,13 +644,42 @@ def build_organizations(data):
         flags = text_flags(r["vetting_notes"], r["nations_served"])
         if "DISTINCT LEGAL CONTEXT" in (r["nations_served"] + r["region"]).upper():
             flags.append("distinct_legal_context")
-        G.add_node("Organization", r["id"], r["name"], "seed-data/organizations-seed.csv", r["id"], conf, "levels",
+        G.add_node("Organization", r["id"], r["name"], source_file, r["id"], conf, "levels",
                    {"name": r["name"], "org_type": blank_to_none(r["org_type"]), "indigenous_led": r["indigenous_led"],
                     "nations_served_text": blank_to_none(r["nations_served"]), "region_text": blank_to_none(r["region"]),
                     "focus": blank_to_none(r["focus"]), "donation_url": blank_to_none(r["donation_url"]),
                     "ein_or_registry": blank_to_none(r["ein_or_registry"]), "vetting_notes": blank_to_none(r["vetting_notes"]),
                     "website": blank_to_none(r["website"]), "display_eligible": eligible},
-                   flags=flags, scope=scope, state="record_only" if eligible else "draft", summary=blank_to_none(r["focus"]))
+                   flags=flags, scope=scope, state="record_only" if eligible else "draft", summary=blank_to_none(r["focus"]),
+                   origin="seed_csv" if rows is None else "crosswalk")
+
+
+def build_research_orgs(data, cross):
+    """Organizations vetted in the 2026-10 research wave (F4 policy), kept apart from the seed with
+    their source URL and evidence quote. Their states are added to the region text so the usual
+    state matching applies."""
+    rows = []
+    for r in cross.get("organizations-research.csv", []):
+        states = [x.strip() for x in r["states"].split(";") if x.strip()]
+        region = "; ".join(filter(None, [r["region"], ", ".join(states)]))
+        notes = f"{r['vetting_notes']} Source: {r['source_url']} (\"{r['evidence_quote']}\")"
+        rows.append({**r, "region": region, "vetting_notes": notes})
+    build_organizations(data, rows, "crosswalks/organizations-research.csv")
+
+
+def add_research_org_edges(cross):
+    for i, r in enumerate(cross.get("organizations-research.csv", []), start=2):
+        if r["id"] not in G.nodes:
+            continue
+        etype = "governing_body_of" if r["indigenous_led"] == "tribal-government" else "serves_nation"
+        for nid in filter(None, (x.strip() for x in r["nation_ids"].split(";"))):
+            if nid not in G.nodes:
+                issue("warn", "unresolved_reference", "organizations-research.csv", f"line {i}: {r['id']}", f"nation id {nid} is not in the graph.")
+                continue
+            G.add_edge(etype, r["id"], nid, "proposed", r["confidence"] or "medium", "crosswalk_manual",
+                       "research: the organization's own site names this nation", "crosswalks/organizations-research.csv",
+                       f"line {i}", basis=r["evidence_quote"] or None, origin="crosswalk",
+                       qualifiers={"basis_ref": r["source_url"]}, crosswalk_file="crosswalks/organizations-research.csv")
 
 
 def build_campaigns(data):
@@ -1681,6 +1710,7 @@ def main():
     build_violations(data)
     build_policy_eras(data)
     build_organizations(data)
+    build_research_orgs(data, cross)
     build_campaigns(data)
     build_geodata_sources(data)
     build_nations(cross)
@@ -1700,6 +1730,7 @@ def main():
     apply_review_ledger(cross)
     add_nation_edges(alias_index, cross["nation-link-overrides.csv"])
     add_tribe_org_edges(data, alias_index)
+    add_research_org_edges(cross)
     add_nation_structure_edges(cross)
     add_org_campaign_edges(data)
     add_place_edges(data)
