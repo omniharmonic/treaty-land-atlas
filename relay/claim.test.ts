@@ -39,6 +39,23 @@ describe('claim intake', () => {
     expect(sent!.body).toContain('office@example.org');
     expect(await res.text()).not.toContain('office@example.org');
   });
+  it('saves to private storage without a GitHub token', async () => {
+    const saved: { path: string; body: string }[] = [];
+    const res = await handleClaim(
+      post(good),
+      { ALLOWED_ORIGINS: 'https://landback.land' },
+      fetch,
+      async (path, body) => {
+        saved.push({ path, body });
+      },
+    );
+    expect(res.status).toBe(201);
+    expect(saved[0]!.path).toMatch(/^claims\/\d{4}-\d{2}-\d{2}-claim-[0-9a-f]{8}\.json$/);
+    expect(JSON.parse(saved[0]!.body)).toMatchObject({
+      nation: 'Karuk Tribe',
+      contact: 'office@example.org',
+    });
+  });
   it('refuses other origins and reports missing configuration', async () => {
     expect((await handleClaim(post(good, 'https://evil.example'), env)).status).toBe(403);
     expect(

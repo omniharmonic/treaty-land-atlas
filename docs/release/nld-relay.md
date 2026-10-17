@@ -4,7 +4,7 @@ The site shows Native Land Digital (NLD) territory and language information live
 
 ## Why a relay
 
-A static website cannot keep a secret: any key placed in its JavaScript can be read by every visitor. So the browser never sees the key. It calls a tiny function, `relay/`, deployed on Vercel at `https://landback-nld-relay.vercel.app/api/lookup?lat=..&lng=..&maps=territories,languages`. The function:
+A static website cannot keep a secret: any key placed in its JavaScript can be read by every visitor. So the browser never sees the key. It calls a tiny function, `relay/`, deployed on Vercel at `https://api.landback.land/api/lookup?lat=..&lng=..&maps=territories,languages`. The function:
 
 - answers only requests from `https://landback.land` (and `localhost` for development);
 - rounds coordinates to two decimals (about 1 km) and allows only the `territories` and `languages` layers;

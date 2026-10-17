@@ -2,5 +2,8 @@
   "name": "landback-nld-relay",
   "private": true,
   "type": "module",
-  "description": "No-store relay for Native Land Digital lookups (Treaty Land Atlas, Benjamin Life (@omniharmonic))"
+  "description": "No-store relay for Native Land Digital lookups (Treaty Land Atlas, Benjamin Life (@omniharmonic))",
+  "dependencies": {
+    "@vercel/blob": "2.8.0"
+  }
 }

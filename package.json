@@ -30,7 +30,8 @@
     "release:check": "tsx pipeline/src/cli.ts release-check",
     "check:attribution": "node scripts/check-attribution.mjs",
     "check": "npm run lint && npm run typecheck && npm run test:unit",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "claims": "node scripts/claims.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
@@ -39,6 +40,7 @@
     "@eslint/js": "10.0.1",
     "@playwright/test": "^1.63.0",
     "@types/node": "26.6.4",
+    "@vercel/blob": "^2.8.0",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "astro": "7.3.5",

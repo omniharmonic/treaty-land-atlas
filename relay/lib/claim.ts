@@ -1,9 +1,12 @@
 // Claim intake: a Native nation (or its office) asks to claim, correct or remove a page.
-// The request becomes an issue in a PRIVATE repository, so contact details never become public.
-// Needs CLAIMS_GITHUB_TOKEN (fine-grained, Issues: read and write, on the claims repo only).
+// Each request is saved as a JSON file in a PRIVATE Vercel Blob store (claims/<date>-<id>.json), so
+// contact details never become public. If CLAIMS_GITHUB_TOKEN is set (fine-grained, Issues: write,
+// on the private claims repo only), an issue is also opened there as a notification.
 
 export interface ClaimEnv {
   CLAIMS_GITHUB_TOKEN?: string;
+  BLOB_READ_WRITE_TOKEN?: string;
+  BLOB_STORE_ID?: string;
   CLAIMS_REPO?: string;
   ALLOWED_ORIGINS?: string;
 }
@@ -54,10 +57,14 @@ export function parseClaim(body: unknown): Claim | string {
   return claim;
 }
 
+/** Saves one claim; injected so tests never touch storage. */
+export type SaveClaim = (path: string, body: string) => Promise<void>;
+
 export async function handleClaim(
   request: Request,
   env: ClaimEnv,
   fetchImpl: typeof fetch = fetch,
+  save?: SaveClaim,
 ) {
   const allowed = env.ALLOWED_ORIGINS
     ? env.ALLOWED_ORIGINS.split(',').map((x) => x.trim())
@@ -72,7 +79,8 @@ export async function handleClaim(
   };
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
   if (request.method !== 'POST') return json(405, { status: 'method_not_allowed' }, cors);
-  if (!env.CLAIMS_GITHUB_TOKEN) return json(503, { status: 'not_configured' }, cors);
+  if (!save && !env.BLOB_READ_WRITE_TOKEN && !env.BLOB_STORE_ID && !env.CLAIMS_GITHUB_TOKEN)
+    return json(503, { status: 'not_configured' }, cors);
   let body: unknown;
   try {
     body = await request.json();
@@ -100,6 +108,22 @@ export async function handleClaim(
         : '_Reply within a few business days. Record the outcome in crosswalks/tribal-review-ledger.csv._',
     ].join('\n'),
   };
+  const received = new Date().toISOString();
+  const record = JSON.stringify({ received, ...claim }, null, 2);
+  const path = `claims/${received.slice(0, 10)}-${claim.kind}-${crypto.randomUUID().slice(0, 8)}.json`;
+  let stored = false;
+  if (save || env.BLOB_READ_WRITE_TOKEN || env.BLOB_STORE_ID) {
+    try {
+      await (save ?? blobSave)(path, record);
+      stored = true;
+    } catch {
+      stored = false;
+    }
+  }
+  if (!env.CLAIMS_GITHUB_TOKEN)
+    return stored
+      ? json(201, { status: 'received' }, cors)
+      : json(502, { status: 'intake_failed' }, cors);
   const res = await fetchImpl(`https://api.github.com/repos/${repo}/issues`, {
     method: 'POST',
     headers: {
@@ -110,6 +134,15 @@ export async function handleClaim(
     },
     body: JSON.stringify(issue),
   });
-  if (!res.ok) return json(502, { status: 'intake_failed' }, cors);
+  if (!res.ok && !stored) return json(502, { status: 'intake_failed' }, cors);
   return json(201, { status: 'received' }, cors);
+}
+
+async function blobSave(path: string, body: string) {
+  const { put } = await import('@vercel/blob');
+  await put(path, body, {
+    access: 'private',
+    contentType: 'application/json',
+    addRandomSuffix: false,
+  });
 }

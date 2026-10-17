@@ -18,7 +18,7 @@ jobs:
     env:
       SITE_STAGE: production
       SITE_URL: https://landback.land
-      PUBLIC_NLD_RELAY: https://landback-nld-relay.vercel.app
+      PUBLIC_NLD_RELAY: https://api.landback.land
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
