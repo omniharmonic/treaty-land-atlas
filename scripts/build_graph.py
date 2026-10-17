@@ -51,7 +51,7 @@ BUILD = ROOT / "build"
 SCHEMA_DIR = ROOT / "docs" / "design" / "schema"
 C3_DOC = ROOT / "docs" / "research" / "C3-doctrine-map.md"
 
-SCHEMA_VERSION = "0.1.0"
+SCHEMA_VERSION = "0.2.0"
 
 
 def build_date():
@@ -101,6 +101,7 @@ TYPE_DEFAULTS = {
     "Campaign":     {"scope": "nation_specific",    "data_class": "D"},
     "Source":       {"scope": "public_record_only", "data_class": "P"},
     "Doctrine":     {"scope": "public_record_only", "data_class": "D"},
+    "GeoFeature":   {"scope": "public_record_only", "data_class": "P"},
 }
 TYPE_ORDER = ["Instrument", "Statute", "Case", "Doctrine", "PolicyEra", "Violation", "Nation", "Organization",
               "Campaign", "Place", "Source", "Person", "GeoFeature"]
@@ -718,6 +719,240 @@ def get_state_place(code):
     return pid
 
 
+# --- Present-day nations, sourced names, successors (research wave 2, 2026-10-17) -------
+FR_SOURCE_URL = "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of"
+FR_CITATION = "91 FR 4102 (Jan. 30, 2026)"
+RESEARCH_ALIAS_KINDS = {"endonym", "exonym", "historical_spelling", "common_english", "official_name"}
+# Research names that are also ordinary English words or other peoples' parts are never used as text aliases.
+ALIAS_STOPLIST = {"nation", "people", "the people", "band", "tribe", "indians", "snake", "creek", "black"}
+
+
+def fr_key(name):
+    """Normalized Federal Register name for lookups (drops "previously listed as" notes)."""
+    name = re.sub(r"\(previously listed as[^)]*\)", " ", name or "")
+    return re.sub(r"[^a-z0-9]+", " ", norm_text(name).replace("&", "and")).strip()
+
+
+def fr_index(cross):
+    index = {}
+    for r in cross.get("federally-recognized-tribes.csv", []):
+        index[fr_key(r["official_name"])] = r["nation_id"]
+        if r["previously_listed_as"]:
+            index.setdefault(fr_key(r["previously_listed_as"]), r["nation_id"])
+    return index
+
+
+def research_alias_rows(cross):
+    """Extra alias rows from sourced research names and Federal Register official names.
+    Curated rows in nation-aliases.csv always win: a text already listed there is never re-mapped."""
+    taken = {norm_text(a["alias"]) for a in cross["nation-aliases.csv"]}
+    extra = {}
+
+    def add(text, nid, kind):
+        t = norm_text(text)
+        if len(t) < 5 or t in taken or t in ALIAS_STOPLIST:
+            return
+        extra.setdefault(t, set()).add(nid)
+        kinds[t] = kind
+
+    kinds = {}
+    for r in cross.get("federally-recognized-tribes.csv", []):
+        add(re.sub(r"\s*\(.*$", "", r["official_name"]), r["nation_id"], "source_label")
+        if r["previously_listed_as"]:
+            add(r["previously_listed_as"], r["nation_id"], "source_label")
+    for r in cross.get("nation-names.csv", []):
+        if r["name_kind"] in RESEARCH_ALIAS_KINDS and r["confidence"] in ("high", "medium"):
+            add(r["name"], r["nation_id"], "historical_spelling" if r["name_kind"] != "endonym" else "endonym_per_seed")
+    # A text claimed by several nations stays ambiguous: link to all, the review decides.
+    return [{"alias": t, "nation_ids": ";".join(sorted(ids)), "alias_kind": kinds[t], "only_in": "", "notes": "research_wave_2"}
+            for t, ids in sorted(extra.items())]
+
+
+def build_present_day_nations(cross):
+    """Every entity in the 2026 Federal Register list becomes (or updates) a present-day Nation node."""
+    rows = cross.get("federally-recognized-tribes.csv", [])
+    if not rows:
+        return
+    fr_src = get_source_node(FR_SOURCE_URL, set())
+    G.nodes[fr_src].update({"label": f"Indian Entities Recognized by and Eligible To Receive Services From the BIA, {FR_CITATION}",
+                            "publisher": "Bureau of Indian Affairs (Federal Register)", "source_tier": "primary_record",
+                            "tier_basis": "manual"})
+    for r in rows:
+        nid, official = r["nation_id"], r["official_name"]
+        if nid not in G.nodes:
+            label = re.sub(r"\s*\(previously listed as[^)]*\)\s*$", "", official)
+            G.add_node("Nation", nid, label, "crosswalks/federally-recognized-tribes.csv", nid, "high", "levels",
+                       {"entity_kind": "present_day_government", "federal_recognition": "listed_federal_register_2026",
+                        "legal_context": "distinct_alaska_ancsa" if r["section"] == "alaska" else "standard",
+                        "region": "Alaska" if r["section"] == "alaska" else None,
+                        "names": [{"name": label, "kind": "preferred_label", "review": "unreviewed"}],
+                        "endonym_status": "none_recorded"},
+                       flags=["distinct_legal_context"] if r["section"] == "alaska" else [],
+                       scope="nation_specific", origin="crosswalk", notes=blank_to_none(r["notes"]))
+        node = G.nodes[nid]
+        node["federal_recognition"] = "listed_federal_register_2026"
+        node["official_name"] = official
+        node["external_ids"]["federal_register_2026"] = official
+        if not any(n["name"] == official for n in node["names"]):
+            node["names"].append({"name": official, "kind": "official_name", "review": "unreviewed",
+                                  "source_url": FR_SOURCE_URL, "confidence": "high"})
+        if r["previously_listed_as"]:
+            node["names"].append({"name": r["previously_listed_as"], "kind": "historical_spelling", "review": "unreviewed",
+                                  "source_url": FR_SOURCE_URL, "confidence": "high", "notes": "previously listed as"})
+        G.add_edge("evidenced_by", nid, fr_src, "asserted_by_seed", "high", "crosswalk_manual",
+                   "listed in the 2026 Federal Register notice", "crosswalks/federally-recognized-tribes.csv", nid,
+                   basis=f"Listed in {FR_CITATION}.", origin="crosswalk", qualifiers={"role": "primary_record", "tier": "primary_record"})
+    # Component bands named inside a Federal Register entry (e.g. the six Minnesota Chippewa Tribe reservations).
+    for r in rows:
+        m = re.search(r"component reservations:\s*(.*)\)", r["official_name"])
+        if not m:
+            continue
+        for part in re.split(r";\s*", m.group(1)):
+            band = norm_text(re.sub(r"\s*\(.*?\)", "", part))
+            for nid, node in G.nodes.items():
+                if node["type"] == "Nation" and nid != r["nation_id"] and any(
+                        norm_text(n["name"]).startswith(band) for n in node["names"]):
+                    node["component_of"] = re.sub(r"\s*\(.*$", "", r["official_name"])
+                    G.add_edge("part_of", nid, r["nation_id"], "asserted_by_seed", "high", "crosswalk_manual",
+                               "component reservation named in the Federal Register entry",
+                               "crosswalks/federally-recognized-tribes.csv", r["nation_id"],
+                               basis=f"{FR_CITATION} lists {part.strip()} as a component reservation.", origin="crosswalk")
+
+
+def apply_name_research(cross, alias_index):
+    """Sourced names (nation-names.csv) go onto Nation nodes; each source becomes a Source node."""
+    for r in cross.get("nation-names.csv", []):
+        node = G.nodes.get(r["nation_id"])
+        if node is None:
+            issue("warn", "name_row_unknown_nation", "nation-names.csv", r["nation_id"], f"No Nation node for name '{r['name']}'.")
+            continue
+        entry = {"name": r["name"], "kind": r["name_kind"], "review": "unreviewed", "source_url": r["source_url"],
+                 "language_or_script": blank_to_none(r["language_or_script"]),
+                 "confidence": r["confidence"] if r["confidence"] in ("high", "medium", "low") else "low",
+                 "notes": blank_to_none(r["notes"])}
+        if not any(n["name"] == entry["name"] and n["kind"] == entry["kind"] for n in node["names"]):
+            node["names"].append(entry)
+        if r["name_kind"] == "endonym" and node.get("endonym_status") != "tribal_confirmed":
+            node["endonym_status"] = "sourced_unreviewed"
+        sid = get_source_node(r["source_url"], set())
+        G.add_edge("evidenced_by", node["id"], sid, "asserted_by_seed", r["confidence"] or "medium", "crosswalk_manual",
+                   f"source for the name '{r['name']}'", "crosswalks/nation-names.csv", r["nation_id"],
+                   basis=(r["evidence_quote"] or None), origin="crosswalk",
+                   qualifiers={"role": "name_source", "tier": G.nodes[sid]["source_tier"]})
+        if r["name_kind"] == "related_people":
+            # The named people is part of this umbrella label, where the name resolves to a nation node.
+            for pid, _, _ in alias_index.find(r["name"]):
+                if pid != node["id"] and G.nodes.get(pid, {}).get("type") == "Nation":
+                    G.add_edge("part_of", pid, node["id"], "proposed", "medium", "alias_text_match",
+                               f"related_people row: {r['name']}", "crosswalks/nation-names.csv", r["nation_id"],
+                               basis=r["evidence_quote"] or None, origin="crosswalk", evidence=[sid])
+
+
+def add_successor_research_edges(cross):
+    for i, r in enumerate(cross.get("nation-successor-research.csv", []), start=2):
+        sid = get_source_node(r["basis_ref"], set()) if r["basis_ref"].startswith("http") else None
+        if sid and r["present_nation_id"] in G.nodes:
+            G.add_edge("evidenced_by", r["present_nation_id"], sid, "asserted_by_seed", "medium", "crosswalk_manual",
+                       "source for a successor proposal", "crosswalks/nation-successor-research.csv", f"line {i}",
+                       basis=r["evidence_quote"] or None, origin="crosswalk",
+                       qualifiers={"role": "successor_basis", "tier": G.nodes[sid]["source_tier"]})
+        G.add_edge("successor_of", r["present_nation_id"], r["party_nation_id"], "proposed",
+                   r["confidence"] if r["confidence"] in ("high", "medium", "low") else "low",
+                   "crosswalk_manual", f"basis_ref: {r['basis_ref']}", "crosswalks/nation-successor-research.csv", f"line {i}",
+                   basis=r["evidence_quote"] or r["notes"] or None,
+                   qualifiers={"extent": r["extent"], "disputed": r["disputed"] == "true", "basis_ref": r["basis_ref"],
+                               "notes": r["notes"]},
+                   origin="crosswalk", crosswalk_file="crosswalks/nation-successor-research.csv",
+                   evidence=[sid] if sid else None,
+                   successor_status="disputed" if r["disputed"] == "true" else "unreviewed")
+
+
+# --- Royce cessions as GeoFeatures (J5 P1-09, P1-10) ----------------------------------
+CESSION_EVENTS = ROOT / "data" / "derived" / "cession-events.json"
+
+
+def build_geofeatures(cross, alias_index):
+    if not CESSION_EVENTS.exists():
+        issue("info", "no_cession_events", "data/derived/cession-events.json", "", "Run npm run data:geometry to add Royce cessions.")
+        return
+    events = json.loads(CESSION_EVENTS.read_text(encoding="utf-8"))
+    frx = fr_index(cross)
+    for o in cross.get("usfs-tribe-name-overrides.csv", []):
+        if o["nation_id"] in G.nodes:
+            frx[fr_key(o["name_in_usfs"])] = o["nation_id"]
+        else:
+            issue("error", "override_unknown_nation", "usfs-tribe-name-overrides.csv", o["nation_id"], "Override names a nation that does not exist.")
+    links = defaultdict(list)
+    for r in cross.get("instrument-royce.csv", []):
+        links[r["cessnum"]].append(r)
+    for ev in events:
+        gid = ev["id"]
+        missing = ev["geometry_quality"] == "missing"
+        first = ev["dates"][0]["date"] if ev["dates"] else None
+        G.add_node("GeoFeature", gid, f"Royce cession {ev['cessnum']}" + (f" ({first})" if first else ""),
+                   "data/derived/cession-events.json", ev["cessnum"], "medium", "levels",
+                   {"geometry_role": "cession", "boundary_type": "map_generalization",
+                    "date_semantic_note": "Dates are Royce Schedule dates (USFS cessdate1-5): the instrument dates Royce gave, not necessarily the date the land changed hands.",
+                    "geometry_file": "none" if missing else "layers/cessions.json",
+                    "geometry_source": {"dataset": "USDA Forest Service, Tribal Lands Ceded to the United States (EDW_TribalCessionLands_01)",
+                                        "license": "CC BY 4.0 per Data.gov (owner decision 2026-10-17; see data/licenses/registry.yaml)",
+                                        "original_source": "C. C. Royce, Indian Land Cessions in the United States (1899)",
+                                        "georeferencing": "USFS georeferencing of Royce's 1899 maps", "digitization_notes": None,
+                                        "reviewed_against_treaty_text": "no", "reviewer": None},
+                    "uncertainty": {"tier": "T4" if missing else "T3",
+                                    "reason": "No geometry in the USFS layer." if missing else "Boundaries from Royce's c. 1:2,000,000 maps; positional accuracy not stated; not a legal description.",
+                                    "min_display_scale": None, "render": "schematic" if missing else "dashed"},
+                    "version": {"semver": "1.0.0", "changed": "2026-10-17", "change_note": "First import from the USFS layer.", "change_id": None},
+                    "royce_cession_number": ev["cessnum"], "dates": ev["dates"], "t_first": ev["t_first"], "t_last": ev["t_last"],
+                    "legal_type": ev["legal_type"], "legal_type_basis": ev["legal_type_basis"],
+                    "statute_url": ev["statute_url"], "executive_order_url": ev["executive_order_url"], "maps": ev["maps"],
+                    "tribes_as_named_in_schedule": ev["tribes_as_named_in_schedule"],
+                    "present_day_tribes_per_usfs": ev["present_day_tribes_per_usfs"],
+                    "states": ev["states"], "counties": ev["counties"], "citations": ev["citations"],
+                    "geometry_quality": ev["geometry_quality"]},
+                   flags=["geometry_missing"] if missing else [], data_class="P", origin="external_dataset",
+                   notes="geometry_role is 'cession' for every USFS feature: no field in the source distinguishes cessions from reservations.")
+        G.add_edge("derived_from", gid, "GEO-001", "asserted_by_seed", "high", "seed_fk", "USFS layer feature",
+                   "data/derived/cession-events.json", ev["cessnum"], basis="Feature of the USFS Tribal Lands Ceded layer.",
+                   origin="external_dataset")
+        for code in ev["states"]:
+            if code in STATE_NAME_BY_CODE:
+                G.add_edge("located_in", gid, get_state_place(code), "asserted_by_seed", "high", "seed_list_field", "USFS state field",
+                           "data/derived/cession-events.json", ev["cessnum"], basis="State listed in the USFS table.", origin="external_dataset")
+        for lk in links.get(ev["cessnum"], []):
+            if lk["instrument_id"] not in G.nodes or lk["status"] == "rejected":
+                continue
+            status = "accepted" if lk["status"] == "accepted" else "proposed"
+            conf = "high" if status == "accepted" else ("medium" if lk["status"] == "proposed" else "low")
+            G.add_edge("depicts", gid, lk["instrument_id"], status, conf, "crosswalk_manual", lk["match_keys"],
+                       "crosswalks/instrument-royce.csv", f"{lk['cessnum']}#{lk['date_n']}", basis=lk["basis"],
+                       qualifiers={"role": f"date{lk['date_n']}", "match_keys": lk["match_keys"], "crosswalk_status": lk["status"]},
+                       origin="crosswalk", crosswalk_file="crosswalks/instrument-royce.csv")
+            inst = G.nodes[lk["instrument_id"]]
+            if ev["cessnum"] not in inst.setdefault("royce_cession_numbers", []):
+                inst["royce_cession_numbers"].append(ev["cessnum"])
+        for name in ev["present_day_tribes_per_usfs"]:
+            nid = frx.get(fr_key(name))
+            hits = [nid] if nid else [h for h, _, _ in alias_index.find(name)]
+            if not hits:
+                issue("info", "usfs_present_day_name_unmatched", "data/derived/cession-events.json", ev["cessnum"],
+                      f"USFS present-day tribe '{name}' matches no Nation node.")
+            for h in dict.fromkeys(hits):
+                G.add_edge("attributed_to_nation", gid, h, "proposed", "medium", "seed_list_field" if nid else "alias_text_match",
+                           "USFS presdaytrb field", "data/derived/cession-events.json", ev["cessnum"],
+                           basis=f"USFS lists '{name}' as a present-day tribe for this cession (attribution under review).",
+                           qualifiers={"role": "present_day_per_usfs", "name_in_source": name}, origin="external_dataset")
+        for name in ev["tribes_as_named_in_schedule"]:
+            for h in dict.fromkeys(nid for nid, _, _ in alias_index.find(name)):
+                G.add_edge("attributed_to_nation", gid, h, "proposed", "medium", "alias_text_match",
+                           "Royce Schedule tribe name", "data/derived/cession-events.json", ev["cessnum"],
+                           basis=f"Royce's Schedule names '{name}' for this cession.",
+                           qualifiers={"role": "named_in_royce_schedule", "name_in_source": name}, origin="external_dataset")
+    for n in G.nodes.values():
+        if n["type"] == "Instrument" and n.get("royce_cession_numbers"):
+            n["royce_cession_numbers"] = sorted(n["royce_cession_numbers"], key=lambda c: (len(c), c))
+
+
 # --- Sources from URLs ------------------------------------------------------------------
 URL_RE = re.compile(r"https?://[^\s;|<>\"']+")
 
@@ -1252,10 +1487,13 @@ def main():
     build_geodata_sources(data)
     build_nations(cross)
     build_places(data)
-    apply_review_ledger(cross)
+    build_present_day_nations(cross)
 
     # edges
-    alias_index = AliasIndex(cross["nation-aliases.csv"])
+    alias_index = AliasIndex(cross["nation-aliases.csv"] + research_alias_rows(cross))
+    apply_name_research(cross, alias_index)
+    build_geofeatures(cross, alias_index)
+    apply_review_ledger(cross)
     add_nation_edges(alias_index, cross["nation-link-overrides.csv"])
     add_tribe_org_edges(data, alias_index)
     add_nation_structure_edges(cross)
@@ -1264,6 +1502,7 @@ def main():
     add_era_edges()
     add_doctrine_edges()
     stat_ok, stat_bad = add_crosswalk_edges(cross, merge)
+    add_successor_research_edges(cross)
     add_violation_case_edges()
     add_evidence_edges(data)
 

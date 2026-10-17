@@ -1,0 +1,39 @@
+{
+  "description": "Pinned raw upstream files. Raw files are not committed; restore them with npm run data:restore or re-fetch with npm run data:fetch.",
+  "files": [
+    {
+      "source": "census-aiannh",
+      "file": "cb_2025_us_aiannh_500k.zip",
+      "url": "https://www2.census.gov/geo/tiger/GENZ2025/shp/cb_2025_us_aiannh_500k.zip",
+      "bytes": 1527626,
+      "sha256": "79d2f62c00c9c52d4034d56b20eb493a003fcc6e265717077b32a4c5edebe467",
+      "retrieved": "2026-10-17"
+    },
+    {
+      "source": "usfs-royce",
+      "file": "attributes.json",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TribalCessionLands_01/MapServer/2/query?where=1%3D1&outFields=*&f=json",
+      "bytes": 1164103,
+      "sha256": "16361cc8704d8bfa1ab73505a8e1795f0ca37629d0c5a19631f08a85f515fba7",
+      "retrieved": "2026-10-17",
+      "records": 725
+    },
+    {
+      "source": "usfs-royce",
+      "file": "layer1-metadata.json",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TribalCessionLands_01/MapServer/1?f=json",
+      "bytes": 825599,
+      "sha256": "ec43b2dbcfc8cb6415ae4e29ba47e650795c384cf8deed54dde918a82ab115ae",
+      "retrieved": "2026-10-17"
+    },
+    {
+      "source": "usfs-royce",
+      "file": "polygons.geojson",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TribalCessionLands_01/MapServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+      "bytes": 5470021,
+      "sha256": "ec7afffc57a4fcbddfae5329ad0f32d2f68417e88068dbae49319851966dfe71",
+      "retrieved": "2026-10-17",
+      "records": 718
+    }
+  ]
+}

@@ -62,21 +62,21 @@ function dataVersion(): string {
   return `${date}+${sha}`;
 }
 
-function layerFiles(): string[] {
-  const dir = join(PUBLIC_DATA_DIR, 'layers');
-  if (!existsSync(dir)) return [];
-  return readdirSync(dir)
-    .filter((f) => f.endsWith('.json'))
-    .map((f) => `layers/${f}`);
+const DERIVED = join(ROOT, 'data', 'derived');
+
+/** Derived geometry and event files that the emit publishes under layers/. */
+function derivedLayers(): Record<string, string> {
+  if (!existsSync(DERIVED)) return {};
+  return Object.fromEntries(
+    readdirSync(DERIVED)
+      .filter((f) => f.endsWith('.json'))
+      .sort()
+      .map((f) => [f.replace(/\.json$/, ''), join(DERIVED, f)]),
+  );
 }
 
 function layerIds(): string[] {
-  // layers/cessions.<hash>.json -> layers/cessions
-  return [
-    ...new Set(
-      layerFiles().map((f) => f.replace(/\.[0-9a-f]{8,}\.json$/, '').replace(/\.json$/, '')),
-    ),
-  ];
+  return Object.keys(derivedLayers()).map((n) => `layers/${n}`);
 }
 
 async function ingest() {
@@ -123,7 +123,7 @@ function runEmit(outDir = PUBLIC_DATA_DIR) {
     suppressed,
     overlays,
     dataVersion: dataVersion(),
-    extraFiles: outDir === PUBLIC_DATA_DIR ? layerFiles() : [],
+    layers: derivedLayers(),
     licenses: reg.sources
       .filter((s) => s.status !== 'not_used')
       .map((s) => ({

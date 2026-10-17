@@ -9,7 +9,7 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 - none
 
 ### stage: validate
-357 finding(s).
+353 finding(s).
 
 - **warn** `nara-ratified-treaties-index.csv RIT 55`: missing_naid: NARA row has no NAID (marked 'Treaty unavailable'); no source link can be built for it.
 - **warn** `treaties-seed.csv TLA-S-HI1993`: statute_only_in_treaties_seed: 'Apology Resolution (Pub. L. 103-150), 1993' is a statute row in treaties-seed.csv with no matching row in statutes-seed.csv; created as stat-apology-resolution-1993. Add it to statutes-seed.csv.
@@ -19,7 +19,6 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 - **warn** `violation-instrument-links.csv V047`: stat_cite_crosscheck: 7 Stat. 418 is printed in treaty_name but no linked instrument has that stat_cite.
 - **warn** `violation-instrument-links.csv V047`: stat_cite_crosscheck: 11 Stat. 700 is printed in treaty_name but no linked instrument has that stat_cite.
 - **warn** `violation-instrument-links.csv V047`: stat_cite_crosscheck: 14 Stat. 786 is printed in treaty_name but no linked instrument has that stat_cite.
-- **warn** `graph GEO-001`: orphan_node: Source node has no edges.
 - **warn** `graph GEO-002`: orphan_node: Source node has no edges.
 - **warn** `graph GEO-003`: orphan_node: Source node has no edges.
 - **warn** `graph GEO-004`: orphan_node: Source node has no edges.
@@ -45,8 +44,6 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 - **warn** `graph GEO-024`: orphan_node: Source node has no edges.
 - **warn** `graph TLA-T-004`: orphan_node: Instrument node has no edges.
 - **warn** `graph TLA-T-005`: orphan_node: Instrument node has no edges.
-- **warn** `graph nat-pd-coastal-chumash`: orphan_node: Nation node has no edges.
-- **warn** `graph nat-pd-muckleshoot`: orphan_node: Nation node has no edges.
 - **warn** `graph plc-region-multi-region`: orphan_node: Place node has no edges.
 - **warn** `TLA-A-1874`: instrument has no source URL and no NARA NAID
 - **warn** `TLA-T-016`: ratified instrument has no Statutes at Large citation
@@ -347,7 +344,6 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 - **warn** `org-stockbridge-munsee`: listed organization has no website
 - **warn** `org-tule-river-tribe`: listed organization has no website
 - **warn** `org-washoe-tribe`: listed organization has no website
-- **error** `GEO-022`: not a URL: (none verified; ask each nation)
 - **warn** `G-02`: Native Land Digital: pending (blocks public launch; live lookup)
 - **warn** `G-03`: LOC Royce credit line: pending (blocks public launch)
 - **warn** `G-04`: Census today layer: pending (blocks public launch)

@@ -349,6 +349,16 @@
       ],
       "inverse": "evidences",
       "description": "The node or edge-subject is supported by this source. qualifiers.tier mirrors the source tier."
+    },
+    "attributed_to_nation": {
+      "source_types": [
+        "GeoFeature"
+      ],
+      "target_types": [
+        "Nation"
+      ],
+      "inverse": "attributed_cession",
+      "description": "A nation associated with a cession polygon. qualifiers.role: present_day_per_usfs (the USFS presdaytrb field, under review) | named_in_royce_schedule (as named in Royce's 1899 Schedule)."
     }
   },
   "type": "object",
@@ -531,7 +541,8 @@
             "overrules_in_effect",
             "responds_to",
             "cites",
-            "evidenced_by"
+            "evidenced_by",
+            "attributed_to_nation"
           ]
         },
         "source": {

@@ -2,7 +2,7 @@
 // The emit is a projection, not a copy: suppressed ids vanish everywhere, organization
 // listings that fail donation-integrity rules lose their links, and no timestamps are written.
 import { createHash } from 'node:crypto';
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { PUBLIC_DATA_DIR } from '../paths.ts';
 import type { Graph, GraphEdge, GraphNode } from '../validate/graph.ts';
@@ -10,6 +10,8 @@ import type { Overlay } from '../overlays/index.ts';
 
 export interface EmitOptions {
   outDir?: string;
+  /** Derived layer files (data/derived/*.json) to publish under layers/ with content-hashed names. */
+  layers?: Record<string, string>;
   suppressed?: Set<string>;
   overlays?: Map<string, Overlay>;
   dataVersion: string;
@@ -120,8 +122,7 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
     .filter((e) => byId.has(e.source) && byId.has(e.target))
     .sort((a, b) => a.id.localeCompare(b.id));
 
-  // Clean only the files this stage owns; layers/ is written by the geometry stage.
-  for (const sub of ['entities', 'tables'])
+  for (const sub of ['entities', 'tables', 'layers'])
     rmSync(join(outDir, sub), { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
 
@@ -251,6 +252,19 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
     ),
   ).length;
 
+  // Geometry layers: copied byte-for-byte, named by content hash so browsers can cache forever.
+  const layers: Record<string, string> = {};
+  for (const [name, src] of Object.entries(opts.layers ?? {}).sort(([a], [b]) =>
+    a.localeCompare(b),
+  )) {
+    const body = readFileSync(src);
+    const hash = sha256(body).slice(0, 10);
+    const rel = `layers/${name}.${hash}.json`;
+    mkdirSync(join(outDir, 'layers'), { recursive: true });
+    writeFileSync(join(outDir, rel), body);
+    files[rel] = { bytes: body.length, sha256: sha256(body) };
+    layers[name] = rel;
+  }
   for (const rel of opts.extraFiles ?? []) files[rel] ??= { bytes: 0, sha256: '' };
   const manifest = {
     schema_version: graph.nodesDoc.schema_version,
@@ -258,6 +272,7 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
     counts: { nodes: nodes.length, edges: edges.length },
     edge_status: countBy(edges, (e) => e.status),
     review: { nodes_reviewed_by_nation: reviewed, nodes_total: nodes.length },
+    layers,
     licenses: opts.licenses ?? [],
     files: Object.fromEntries(
       Object.entries(files)

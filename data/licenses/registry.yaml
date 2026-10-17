@@ -6,7 +6,7 @@
 sources:
   - id: usfs-royce
     name: 'Tribal Lands Ceded to the United States (USDA Forest Service)'
-    used_in: [layers/cessions, tables/cession-events]
+    used_in: [layers/cessions, layers/cession-events]
     license_stated: 'CC BY 4.0 (Data.gov); agency metadata: access constraints None, use "for informational purposes only", no explicit license'
     conflict: true
     status: cleared

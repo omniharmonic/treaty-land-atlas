@@ -42,19 +42,24 @@ function loadSchema(name: string) {
   return JSON.parse(readFileSync(join(SCHEMA_DIR, name), 'utf8'));
 }
 
-let validators: {
-  nodes: ReturnType<Ajv2020['compile']>;
-  edges: ReturnType<Ajv2020['compile']>;
-} | null = null;
+type Validate = ReturnType<Ajv2020['compile']>;
+interface Validators {
+  nodes: Validate;
+  edges: Validate;
+  byType: (type: string) => ReturnType<Ajv2020['getSchema']>;
+}
+let validators: Validators | null = null;
 
-function getValidators() {
+function getValidators(): Validators {
   if (validators) return validators;
   // strict: false because the schemas carry x-* annotation keywords (x-edge-types).
   const ajv = new Ajv2020({ allErrors: true, strict: false });
   addFormats.default(ajv);
+  const entities = loadSchema('entities.schema.json');
   validators = {
-    nodes: ajv.compile(loadSchema('entities.schema.json')),
+    nodes: ajv.compile(entities),
     edges: ajv.compile(loadSchema('edges.schema.json')),
+    byType: (type: string) => ajv.getSchema(`${entities.$id}#/$defs/${type}`),
   };
   return validators;
 }
@@ -70,7 +75,24 @@ export function validateGraph(graph: Graph): Finding[] {
     ['edges.json', v.edges, graph.edgesDoc, graph.edges],
   ] as const) {
     if (!validate(doc)) {
-      const errors = validate.errors ?? [];
+      // A node failing the Node oneOf reports errors for every type; re-check failing nodes
+      // against their own type definition so the message names the real problem.
+      const raw = validate.errors ?? [];
+      const failing = new Set<number>();
+      for (const e of raw) {
+        const m = /^\/nodes\/(\d+)/.exec(e.instancePath);
+        if (label === 'nodes.json' && m) failing.add(Number(m[1]));
+      }
+      const errors: typeof raw = raw.filter(
+        (e) => !(label === 'nodes.json' && /^\/nodes\/\d+/.test(e.instancePath)),
+      );
+      for (const i of failing) {
+        const node = graph.nodes[i]!;
+        const own = v.byType(node.type);
+        if (own && !own(node))
+          for (const e of own.errors ?? [])
+            errors.push({ ...e, instancePath: `/nodes/${i}${e.instancePath}` });
+      }
       for (const e of errors.slice(0, MAX_SCHEMA_FINDINGS)) {
         const idx = /^\/(?:nodes|edges)\/(\d+)/.exec(e.instancePath)?.[1];
         const item = idx ? (items as { id: string }[])[Number(idx)] : undefined;
