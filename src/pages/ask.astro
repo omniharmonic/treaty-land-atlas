@@ -1,0 +1,67 @@
+---
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/href';
+
+const endpoint = 'https://api.landback.land/api/mcp';
+---
+
+<Page
+  title="Talk it through with an AI assistant"
+  lede="Connect an AI assistant to this atlas and ask it about the land where you live: whose homeland it is, the treaties that took it, the promises broken, and who you can support."
+>
+  <p>
+    The atlas runs a read-only <a href="https://modelcontextprotocol.io/">Model Context Protocol</a>
+    server. An assistant connected to it looks things up in this atlas instead of guessing, quotes
+    its sources and links back to the records here.
+  </p>
+  <h2>Connect</h2>
+  <p>Server address:</p>
+  <pre class="sans"><code>{endpoint}</code></pre>
+  <ul>
+    <li>
+      <strong>Claude</strong> (web or desktop): Settings, Connectors, Add custom connector, then
+      paste the address.
+    </li>
+    <li>
+      <strong>Claude Code</strong>:<code>claude mcp add --transport http landback {endpoint}</code>
+    </li>
+    <li>Other assistants: add a remote MCP server (Streamable HTTP) with the address above.</li>
+  </ul>
+  <h2>What it can do</h2>
+  <dl>
+    <dt>
+      <code>whose_land</code>
+    </dt>
+    <dd>The treaty history of an address, town, ZIP code or point.</dd>
+    <dt>
+      <code>get_record</code>
+    </dt>
+    <dd>
+      One treaty, cession, nation, case or violation, with its sourced summary and connections.
+    </dd>
+    <dt>
+      <code>search_atlas</code>
+    </dt>
+    <dd>Find records by name, including other names and spellings.</dd>
+    <dt>
+      <code>support_the_work</code>
+    </dt>
+    <dd>
+      The nations and organizations restoring land and law for a nation or state, with links to give
+      on their own sites.
+    </dd>
+  </dl>
+  <h2>Ask it</h2>
+  <ul>
+    <li>“Whose land is 1234 Pine Street, Missoula, Montana? How was it taken?”</li>
+    <li>“Which treaty promises were broken where I live, and what happened in court?”</li>
+    <li>“Who is working on land return near me, and how can I help?”</li>
+  </ul>
+  <h2>Limits</h2>
+  <p>
+    The assistant only knows what this atlas records, and the atlas is an early release: nothing has
+    been reviewed by a Native nation or a lawyer yet. It cannot speak for any nation. Nothing it
+    says is legal advice. Addresses go to the Census Bureau’s geocoder and are not stored; see
+    <a href={href('/privacy/')}>privacy</a>.
+  </p>
+</Page>

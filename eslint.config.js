@@ -8,6 +8,7 @@ export default tseslint.config(
   {
     ignores: [
       'dist/',
+      'relay/lib/atlas.gen.js',
       '.astro/',
       'build/',
       'public/data/',

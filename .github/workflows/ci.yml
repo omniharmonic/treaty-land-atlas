@@ -39,6 +39,8 @@ jobs:
           git diff --exit-code -- crosswalks/instrument-royce.csv || {
             echo "::error::crosswalks/instrument-royce.csv is stale. Run: python3 scripts/link_royce.py"; exit 1; }
       - run: npm run check:attribution
+      - name: Relay bundle matches src/lib (MCP server shares the site's logic)
+        run: node scripts/build-relay-lib.mjs --check
       - run: node scripts/check-no-nld.mjs public/data
       - run: npm run build
       - run: node scripts/check-no-nld.mjs dist

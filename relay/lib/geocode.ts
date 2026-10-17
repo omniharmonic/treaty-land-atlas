@@ -71,6 +71,12 @@ async function nominatim(q: string, fetchImpl: typeof fetch): Promise<Place | nu
   };
 }
 
+/** Census first, then OpenStreetMap; null when neither finds the place. */
+export async function geocode(q: string, fetchImpl: typeof fetch = fetch): Promise<Place | null> {
+  const hit = (await census(q, fetchImpl).catch(() => null)) ?? (await nominatim(q, fetchImpl));
+  return hit && Number.isFinite(hit.lat) && Number.isFinite(hit.lng) ? hit : null;
+}
+
 export async function handleGeocode(
   request: Request,
   env: RelayEnv,
@@ -84,9 +90,8 @@ export async function handleGeocode(
   if (!q)
     return json(400, { status: 'bad_request', message: 'type an address, town or ZIP code' }, cors);
   try {
-    const hit = (await census(q, fetchImpl).catch(() => null)) ?? (await nominatim(q, fetchImpl));
-    if (!hit || !Number.isFinite(hit.lat) || !Number.isFinite(hit.lng))
-      return json(404, { status: 'not_found' }, cors);
+    const hit = await geocode(q, fetchImpl);
+    if (!hit) return json(404, { status: 'not_found' }, cors);
     return json(200, { status: 'ok', ...hit }, cors);
   } catch {
     return json(502, { status: 'upstream_error' }, cors);

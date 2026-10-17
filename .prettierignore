@@ -12,3 +12,4 @@ verification/
 data/
 *.md
 *.csv
+relay/lib/atlas.gen.js

@@ -327,7 +327,8 @@
         Built from C. C. Royce’s 1899 maps as digitized by the US Forest Service, the treaty records
         in this atlas, and Census boundaries. Royce’s lines are approximate. Not a legal description
         of land or title. <a href={url('/methods/')}>Methods</a> ·
-        <a href={url(`/corrections/`)}>Report an error</a>
+        <a href={url(`/corrections/`)}>Report an error</a> ·
+        <a href={url('/ask/')}>Talk it through with an AI assistant</a>
       </p>
     </article>
   {/if}
