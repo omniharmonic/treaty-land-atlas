@@ -6,6 +6,7 @@ import { homeMap } from '../lib/svgmap';
 import { supportIndex } from '../lib/support';
 
 const art = homeMap();
+const SPAN = 8000; // ms for 1784 to 1894
 const cessions = byType('GeoFeature').length;
 const nations = byType('Nation').length;
 const treaties = byType('Instrument').length;
@@ -25,8 +26,46 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
   description="Type an address and learn whose homelands you live on, how the United States took that land, the treaty promises broken, and who is working to restore it."
 >
   <section class="hero" aria-labelledby="ask">
-    <div class="question">
-      <h1 id="ask">Whose land are you on?</h1>
+    <h1 id="ask">Whose land are you on?</h1>
+    <figure class="land" id="land" aria-labelledby="land-cap">
+      <div class="stage">
+        <svg
+          viewBox={`0 0 ${art.width} ${art.height}`}
+          role="img"
+          aria-label={`Map of the lower 48 states. Green land still held by Native nations drains year by year as ${cessions} cessions are recorded, 1784 to 1894; then today's reservations and trust lands appear.`}
+        >
+          {art.years.map(({ y, d }) => (
+            <path
+              class="yr"
+              d={d}
+              style={`--d: ${Math.round(((y - 1784) / (1894 - 1784)) * SPAN)}ms`}
+            />
+          ))}
+          <path class="today" d={art.lands} />
+        </svg>
+        <p class="clock" aria-hidden="true">
+          <span id="clock-year">1784</span>
+        </p>
+      </div>
+      <figcaption id="land-cap" class="sans">
+        <span class="key">
+          <i class="k-held"></i>Held by Native nations, by the United States’ own record
+        </span>
+        <span class="key">
+          <i class="k-ceded"></i>Recorded as ceded, 1784 to 1894 (Royce)
+        </span>
+        <span class="key">
+          <i class="k-today"></i>Native lands today
+        </span>
+        <span class="note">
+          Royce’s record begins in 1784; most of the East was taken earlier, by colonies and states.
+        </span>
+        <button type="button" class="replay" id="replay">
+          Play it again
+        </button>
+      </figcaption>
+    </figure>
+    <div class="copy">
       <p class="lede">
         Every place in the United States has a treaty history. Find yours: whose homeland it is, how
         it was taken and when, which promises were broken, and who is working to restore land and
@@ -55,20 +94,6 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
         </p>
       </noscript>
     </div>
-    <figure class="drawing" aria-labelledby="hero-cap">
-      <svg
-        viewBox={`0 0 ${art.width} ${art.height}`}
-        role="img"
-        aria-label="Outlines of land cessions recorded by Royce, with today's reservations and trust lands"
-      >
-        <path class="ceded" d={art.ceded}></path>
-        <path class="lands" d={art.lands}></path>
-      </svg>
-      <figcaption id="hero-cap" class="sans">
-        Graphite: {cessions} areas the United States recorded as ceded, 1784 to 1894. Green: Native
-        lands today.
-      </figcaption>
-    </figure>
   </section>
 
   <section class="learn" aria-labelledby="learn">
@@ -155,6 +180,32 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
 </Base>
 
 <script>
+  // The land drains year by year (CSS, one path per year); this keeps the year in step and
+  // replays on request. Reduced motion: the final state is shown and the clock reads "Today".
+  const fig = document.getElementById('land');
+  const clock = document.getElementById('clock-year');
+  const SPAN = 8000;
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function play() {
+    if (!fig || !clock) return;
+    if (still) {
+      clock.textContent = 'Today';
+      return;
+    }
+    fig.classList.remove('play');
+    void fig.getBoundingClientRect(); // restart the CSS animations
+    fig.classList.add('play');
+    const t0 = performance.now();
+    const tick = (t: number) => {
+      const k = (t - t0) / SPAN;
+      clock.textContent = k >= 1 ? 'Today' : String(1784 + Math.floor(k * 110));
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  play();
+  document.getElementById('replay')?.addEventListener('click', play);
+
   // The address goes in the hash of /where/, which browsers never send to a server.
   const form = document.getElementById('ask-form') as HTMLFormElement | null;
   form?.addEventListener('submit', (e) => {
@@ -169,14 +220,30 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
 <style>
   .hero {
     display: grid;
-    gap: var(--space-6);
-    padding: var(--space-6) 0 var(--space-7);
+    grid-template-areas: 'q' 'land' 'copy';
+    gap: var(--space-4);
+    padding: var(--space-5) 0 var(--space-7);
+  }
+  .hero h1 {
+    grid-area: q;
+  }
+  .land {
+    grid-area: land;
+  }
+  .copy {
+    grid-area: copy;
   }
   @media (min-width: 980px) {
     .hero {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-      align-items: center;
-      gap: var(--space-7);
+      grid-template-areas: 'q land' 'copy land';
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.45fr);
+      grid-template-rows: auto 1fr;
+      align-items: start;
+      gap: var(--space-4) var(--space-7);
+      padding-top: var(--space-6);
+    }
+    .land {
+      align-self: center;
     }
   }
   h1 {
@@ -234,47 +301,109 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     color: var(--ink-2);
     margin-top: var(--space-2);
   }
-  .drawing {
+  .land {
     margin: 0;
   }
-  svg {
+  .note {
+    flex-basis: 100%;
+    font-size: var(--s-2);
+  }
+  .land svg {
     width: 100%;
     height: auto;
     display: block;
+    overflow: visible;
   }
-  .ceded {
-    fill: none;
+  .yr {
+    fill: var(--held);
+    fill-opacity: 0;
     stroke: var(--ink-3);
-    stroke-width: 0.6;
+    stroke-width: 0.5;
+    stroke-opacity: 0.45;
     stroke-linejoin: round;
-    opacity: 0.7;
   }
-  .lands {
-    fill: var(--moss);
-    stroke: var(--moss);
-    stroke-width: 0.4;
-    opacity: 0.85;
-    animation: grow 2.4s var(--ease) 0.4s both;
+  .today {
+    fill: var(--moss-deep);
+    stroke: var(--moss-deep);
+    stroke-width: 0.6;
   }
-  @keyframes grow {
+  .play .yr {
+    animation: cede 700ms ease-out var(--d) both;
+  }
+  .play .today {
+    animation: rise 1800ms ease-out 8200ms both;
+  }
+  @keyframes cede {
     from {
-      opacity: 0;
-      filter: blur(3px);
+      fill-opacity: 0.66;
+      stroke: var(--held);
+      stroke-opacity: 0.9;
     }
     to {
-      opacity: 0.85;
-      filter: blur(0);
+      fill-opacity: 0;
+      stroke: var(--ink-3);
+      stroke-opacity: 0.45;
     }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .lands {
-      animation: none;
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: scale(0.985);
     }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .stage {
+    position: relative;
+  }
+  .clock {
+    position: absolute;
+    left: 1%;
+    bottom: 2%;
+    margin: 0;
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    color: var(--ink);
+    font-variant-numeric: lining-nums tabular-nums;
+    pointer-events: none;
   }
   figcaption {
-    font-size: var(--s-2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    align-items: center;
+    font-size: var(--s-1);
     color: var(--ink-2);
-    margin-top: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  .key i {
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-right: var(--space-2);
+    vertical-align: -0.1rem;
+    border-radius: 2px;
+  }
+  .k-held {
+    background: color-mix(in srgb, var(--held) 66%, var(--ground));
+  }
+  .k-ceded {
+    border: 1px solid var(--ink-3);
+  }
+  .k-today {
+    background: var(--moss-deep);
+  }
+  .replay {
+    background: none;
+    border: 0;
+    padding: var(--space-1) 0;
+    min-height: var(--tap);
+    font: inherit;
+    color: var(--moss);
+    text-decoration: underline;
+    cursor: pointer;
   }
   .learn,
   .support {

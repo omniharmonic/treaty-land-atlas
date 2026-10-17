@@ -19,6 +19,7 @@ const pages = [
   '/map/',
   '/where/#at=40.015,-105.27&p=Boulder%2C%20CO&s=CO',
   '/ask/',
+  '/story/',
 ];
 
 for (const path of pages) {

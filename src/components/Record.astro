@@ -9,6 +9,8 @@ import SpecimenLabel from './SpecimenLabel.astro';
 import ClaimBox from './ClaimBox.astro';
 import SupportBox from './SupportBox.astro';
 import Narrative from './Narrative.astro';
+import RecordStory from './RecordStory.astro';
+import LocatorMap from './LocatorMap.astro';
 
 interface Props {
   n: Node;
@@ -84,6 +86,8 @@ const flagText: Record<string, string> = {
     {summary?.text && <p class="lede">{summary.text}</p>}
 
     <Narrative n={n} />
+    <RecordStory n={n} />
+    <LocatorMap n={n} />
 
     {facts.length > 0 && (
       <dl class="facts">

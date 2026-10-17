@@ -989,7 +989,10 @@ URL_RE = re.compile(r"https?://[^\s;|<>\"']+")
 def extract_urls(text):
     urls = []
     for u in URL_RE.findall(text or ""):
-        u = u.rstrip(".,);]")
+        u = u.rstrip(".,;]")
+        # strip a closing parenthesis only when it is not part of the URL ("..._(1868)" keeps it)
+        while u.endswith(")") and u.count(")") > u.count("("):
+            u = u[:-1].rstrip(".,;]")
         if u not in urls:
             urls.append(u)
     return urls

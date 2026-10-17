@@ -1,5 +1,5 @@
 ---
-import { sourcesOf } from '../lib/graph';
+import { node, sourcesOf } from '../lib/graph';
 
 interface Props {
   id: string;
@@ -14,13 +14,49 @@ const tierWord: Record<string, string> = {
   news: 'news',
   unclassified: 'unclassified',
 };
+// Cessions carry their sources as fields: Royce's Schedule pages, Kappler pages and map sheets.
+const n = node(id);
+type Extra = { url: string; label: string; tier: string };
+const extra: Extra[] = [];
+if (n?.type === 'GeoFeature') {
+  for (const d of (n['dates'] as {
+    date: string;
+    royce_schedule_url?: string;
+    kappler_url?: string;
+  }[]) ?? []) {
+    if (d.royce_schedule_url)
+      extra.push({
+        url: d.royce_schedule_url,
+        label: `Royce, Indian Land Cessions (1899), Schedule entry dated ${d.date}`,
+        tier: 'primary record',
+      });
+    if (d.kappler_url)
+      extra.push({
+        url: d.kappler_url,
+        label: `Kappler, Indian Affairs: Laws and Treaties, text for ${d.date}`,
+        tier: 'primary record',
+      });
+  }
+  for (const m of (n['maps'] as { name: string; url: string }[]) ?? [])
+    extra.push({
+      url: m.url,
+      label: `Royce’s map sheet: ${m.name} (Library of Congress)`,
+      tier: 'primary record',
+    });
+  extra.push({
+    url: 'https://catalog.data.gov/dataset/tribal-lands-ceded-to-the-united-states-feature-layer',
+    label: 'USDA Forest Service, Tribal Lands Ceded to the United States (digitized Royce maps)',
+    tier: 'reference work',
+  });
+}
+const extraUnique = extra.filter((x, i) => extra.findIndex((y) => y.url === x.url) === i);
 const seen = new Set<string>();
 const rows = sourcesOf(id).filter(({ source }) =>
   seen.has(source.id) ? false : (seen.add(source.id), true),
 );
 ---
 
-{rows.length > 0 ? (
+{rows.length + extraUnique.length > 0 ? (
   <section aria-labelledby={`src-${id}`}>
     <h2 id={`src-${id}`}>Sources</h2>
     <ol class="sources">
@@ -35,6 +71,12 @@ const rows = sourcesOf(id).filter(({ source }) =>
           {edge.basis && edge.basis.length < 400 && (
             <blockquote class="small">{edge.basis}</blockquote>
           )}
+        </li>
+      ))}
+      {extraUnique.map((x) => (
+        <li>
+          <a href={x.url}>{x.label}</a>
+          <span class="tier sans">{x.tier}</span>
         </li>
       ))}
     </ol>

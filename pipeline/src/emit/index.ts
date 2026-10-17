@@ -315,8 +315,18 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
         const st = stories.get(String(f.properties['id']));
         f.properties['how'] = st?.how ?? 'unknown';
         f.properties['nations'] = st?.nations ?? [];
+        // where Royce's Schedule shows a later entry did the ceding, the map dates the land by it
+        if (st?.entries && st.ceded_year) f.properties['t0'] = st.ceded_year + 0.5;
       }
       body = Buffer.from(JSON.stringify(fc) + '\n');
+    }
+    if (name === 'cession-events') {
+      const list = JSON.parse(body.toString('utf8')) as Record<string, unknown>[];
+      for (const e of list) {
+        const st = stories.get(String(e['id']));
+        if (st?.entries && st.ceded_year) e['t_first'] = st.ceded_year + 0.5;
+      }
+      body = Buffer.from(JSON.stringify(list) + '\n');
     }
     const hash = sha256(body).slice(0, 10);
     const rel = `layers/${name}.${hash}.json`;

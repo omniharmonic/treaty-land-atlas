@@ -1,0 +1,47 @@
+---
+// "In the record": paragraphs written from this atlas's linked records (src/lib/recordStory.ts).
+import type { Node } from '../lib/graph';
+import { href } from '../lib/href';
+import { storyFor } from '../lib/recordStory';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+const paras = storyFor(n).filter((p) => p.some((x) => (typeof x === 'string' ? x.trim() : true)));
+---
+
+{paras.length > 0 && (
+  <section class="in-record" aria-labelledby="in-record">
+    <h2 id="in-record">In the record</h2>
+    {paras.map((p) => (
+      <p>
+        {p.map((x) =>
+          typeof x === 'string' ? x : x.href ? <a href={href(x.href)}>{x.text}</a> : x.text,
+        )}
+      </p>
+    ))}
+    <p class="label sans">
+      Written from the records linked here; open any of them for its sources.
+      {n.type === 'Nation' &&
+        ' This is what the United States’ treaty record says, not the nation’s own account.'}
+    </p>
+  </section>
+)}
+
+<style>
+  .in-record {
+    margin: var(--space-6) 0;
+    max-width: var(--measure);
+  }
+  .in-record p:first-of-type {
+    font-size: var(--s1);
+    line-height: 1.4;
+  }
+  .label {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--lichen);
+  }
+</style>

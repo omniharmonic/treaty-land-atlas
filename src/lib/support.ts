@@ -219,7 +219,12 @@ export function concerns(
     if (e.type === 'attributed_to_nation' || e.type === 'involves_nation') nations.add(e.target);
     if (e.type === 'located_in' && e.target.startsWith('plc-state-'))
       states.add(e.target.slice(10).toUpperCase());
-    if (e.type === 'concerns_instrument' || e.type === 'depicts' || e.type === 'enabled_by')
+    // a cession's people are the ones Royce names, not every party to its treaties
+    if (
+      e.type === 'concerns_instrument' ||
+      e.type === 'enabled_by' ||
+      (e.type === 'depicts' && !out(id).some((x) => x.type === 'attributed_to_nation'))
+    )
       parties(e.target);
   }
   if (type === 'Instrument') parties(id);

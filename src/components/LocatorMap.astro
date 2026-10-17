@@ -1,0 +1,131 @@
+---
+// Where this record's land is: its cessions on a quiet map of all of Royce's cessions, colored by
+// how each was taken. Static SVG; the base map is one shared file.
+import { incoming, outgoing, type Node } from '../lib/graph';
+import { href } from '../lib/href';
+import { locatorMap } from '../lib/svgmap';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { HOW_LABEL, HOW_ORDER, type How } from '../islands/map/how';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+const stories = JSON.parse(
+  readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'cession-stories.json'), 'utf8'),
+) as Record<string, { how: How; nations: string[]; instrument: string | null }>;
+const ids = new Set<string>();
+const ofInstrument = (i: string) =>
+  incoming(i)
+    .filter((e) => e.type === 'depicts')
+    .forEach((e) => ids.add(e.source));
+if (n.type === 'GeoFeature') ids.add(n.id);
+if (n.type === 'Instrument') ofInstrument(n.id);
+if (n.type === 'Nation') {
+  const who = new Set([
+    n.id,
+    ...outgoing(n.id)
+      .filter((e) => e.type === 'successor_of')
+      .map((e) => e.target),
+  ]);
+  for (const [gid, s] of Object.entries(stories))
+    if (s.nations.some((x) => who.has(x))) ids.add(gid);
+}
+if (n.type === 'Place')
+  incoming(n.id)
+    .filter((e) => e.type === 'located_in' && e.source.startsWith('geo-'))
+    .forEach((e) => ids.add(e.source));
+if (n.type === 'Violation')
+  incoming(n.id)
+    .filter((e) => e.type === 'violated_by')
+    .forEach((e) => ofInstrument(e.source));
+if (n.type === 'Case')
+  outgoing(n.id)
+    .filter((e) => e.type === 'concerns_instrument')
+    .forEach((e) => ofInstrument(e.target));
+const m = ids.size ? locatorMap(ids) : null;
+const used = HOW_ORDER.filter((h) => m?.hi.some((x) => stories[x.id]?.how === h));
+const base = href('/map/base.svg');
+---
+
+{m && m.hi.length > 0 && (
+  <figure class="locator">
+    <div
+      class="frame-map"
+      style={`background-image: url(${base}); aspect-ratio: ${m.width} / ${m.height}`}
+    >
+      <svg
+        viewBox={`0 0 ${m.width} ${m.height}`}
+        role="group"
+        aria-label={`Map of the lower 48 states showing ${m.hi.length} cession${m.hi.length === 1 ? '' : 's'} connected to this record.`}
+      >
+        {m.hi.map((x) => (
+          <a
+            href={href(`/cessions/${x.id.replace('geo-royce-', '')}/`)}
+            aria-label={`Royce cession ${x.id.replace('geo-royce-', '')}`}
+          >
+            <path d={x.d} style={`fill: var(--how-${stories[x.id]?.how ?? 'unknown'})`} />
+          </a>
+        ))}
+      </svg>
+    </div>
+    <figcaption class="sans">
+      {used.map((h) => (
+        <span class="key">
+          <i style={`background: var(--how-${h})`} />
+          {HOW_LABEL[h]}
+        </span>
+      ))}
+      <span class="note">Royce’s cession shapes (1899): approximate, not legal boundaries.</span>
+    </figcaption>
+  </figure>
+)}
+
+<style>
+  .locator {
+    margin: var(--space-5) 0;
+    max-width: 44rem;
+  }
+  .frame-map {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  path {
+    fill-opacity: 0.8;
+    stroke: var(--ink);
+    stroke-width: 0.5;
+    stroke-opacity: 0.55;
+  }
+  a:hover path,
+  a:focus-visible path {
+    fill-opacity: 1;
+    stroke-width: 1.4;
+    stroke-opacity: 1;
+  }
+  figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-4);
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin-top: var(--space-2);
+  }
+  .key i {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: var(--space-1);
+    vertical-align: -0.05rem;
+    border-radius: 2px;
+  }
+  .note {
+    flex-basis: 100%;
+    font-size: var(--s-2);
+  }
+</style>

@@ -1,0 +1,441 @@
+---
+// The story of the land, 1784 to today: chapters that scroll past a pinned map. As each chapter
+// comes into view, land taken before it fades to its cause, land taken during it glows, and land
+// still held stays green. Static SVG and a small observer; works without JavaScript as a long read.
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import Base from '../layouts/Base.astro';
+import { node, pathFor } from '../lib/graph';
+import { href } from '../lib/href';
+import { storyMap } from '../lib/svgmap';
+import { HOW_LABEL, HOW_ORDER } from '../islands/map/how';
+
+type Src = { url: string; title?: string; quote?: string };
+interface Chapter {
+  start_year: number;
+  end_year: number;
+  title: string;
+  lede: string;
+  narrative: string;
+  key_records?: string[];
+  sources: Src[];
+}
+interface Moment {
+  year: number;
+  title: string;
+  text: string;
+  how: string | null;
+  sources: Src[];
+}
+const story = JSON.parse(
+  readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'story.json'), 'utf8'),
+) as { chapters: Chapter[]; moments: Moment[] };
+const chapters = [...story.chapters].sort((a, b) => a.start_year - b.start_year);
+const map = storyMap();
+const host = (u: string) => {
+  try {
+    return new URL(u).hostname.replace(/^www\./, '');
+  } catch {
+    return u;
+  }
+};
+const recordLink = (id: string) => {
+  const n = node(id);
+  const p = n ? pathFor(n) : null;
+  return n && p ? { label: n.label, href: href(p) } : null;
+};
+---
+
+<Base
+  title="How the land was taken"
+  description="The story of Native land and United States treaty law from 1784 to today, told in twelve chapters beside a map that changes as you read."
+  bleed
+>
+  <div class="story">
+    <div class="pin" aria-hidden="true">
+      <figure class="board">
+        <svg viewBox={`0 0 ${map.width} ${map.height}`} id="story-map">
+          {map.groups.map((g) => (
+            <path class="c" data-y={g.y} style={`--how: var(--how-${g.how})`} d={g.d} />
+          ))}
+          <path class="lands" d={map.lands} />
+        </svg>
+        <p class="years" id="story-years">
+          1784
+        </p>
+        <p class="key sans">
+          <span>
+            <i class="k-held"></i>Still held
+          </span>
+          {HOW_ORDER.filter((h) => h !== 'unknown').map((h) => (
+            <span>
+              <i style={`background: var(--how-${h})`}></i>
+              {HOW_LABEL[h]}
+            </span>
+          ))}
+          <span>
+            <i class="k-lands"></i>Native lands today
+          </span>
+        </p>
+      </figure>
+    </div>
+
+    <div class="read">
+      <header class="opening">
+        <h1>How the land was taken</h1>
+        <p class="lede">
+          In 1784 nearly all of the land west of the Appalachians was Native land, and the new
+          United States knew it: it needed treaties to claim it. Over the next 110 years the
+          government recorded more than 700 cessions. Scroll to watch them happen, and to see what
+          came after.
+        </p>
+        <p class="sans small">
+          Map: C. C. Royce’s 1899 cession maps, colored by how each piece was taken. Chapters are
+          AI-assisted summaries of the sources listed under each, not yet reviewed by historians or
+          by the nations involved.
+        </p>
+      </header>
+
+      {chapters.map((c, i) => {
+        const moments = story.moments
+          .filter((m) => m.year >= c.start_year && m.year <= c.end_year)
+          .sort((a, b) => a.year - b.year);
+        const records = (c.key_records ?? []).map(recordLink).filter(Boolean);
+        return (
+          <article class="chapter" data-from={c.start_year} data-to={c.end_year} id={`ch-${i + 1}`}>
+            <p class="span">
+              {c.start_year}
+              {c.end_year !== c.start_year && (
+                <>&ndash;{c.end_year >= 2026 ? 'today' : c.end_year}</>
+              )}
+            </p>
+            <h2>{c.title}</h2>
+            <p class="chapter-lede">{c.lede}</p>
+            {c.narrative
+              .split(/\n\s*\n/)
+              .filter(Boolean)
+              .map((p) => (
+                <p>{p}</p>
+              ))}
+            {moments.length > 0 && (
+              <ol class="moments">
+                {moments.map((m) => (
+                  <li
+                    style={m.how ? `--how: var(--how-${m.how})` : undefined}
+                    class:list={[{ taken: !!m.how }]}
+                  >
+                    <span class="my">{m.year}</span>
+                    <div>
+                      <h3>{m.title}</h3>
+                      <p>{m.text}</p>
+                      {m.sources.length > 0 && (
+                        <p class="msrc sans">
+                          {m.sources.map((s, k) => (
+                            <>
+                              {k > 0 && ', '}
+                              <a href={s.url} rel="noopener">
+                                {s.title ?? host(s.url)}
+                              </a>
+                            </>
+                          ))}
+                        </p>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            )}
+            {records.length > 0 && (
+              <p class="sans small">
+                Read the records:{' '}
+                {records.map((r, k) => (
+                  <>
+                    {k > 0 && ', '}
+                    <a href={r!.href}>{r!.label}</a>
+                  </>
+                ))}
+              </p>
+            )}
+            <details class="sources sans">
+              <summary>Sources for this chapter ({c.sources.length})</summary>
+              <ol>
+                {c.sources.map((s) => (
+                  <li>
+                    {s.quote && <q>{s.quote}</q>}
+                    <a href={s.url} rel="noopener">
+                      {s.title ?? host(s.url)}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          </article>
+        );
+      })}
+
+      <footer class="closing">
+        <h2>Now find your place in it</h2>
+        <p>
+          Every address in the United States sits somewhere in this story. See whose homeland it is,
+          which treaties took it, and who is working to restore land and law there today.
+        </p>
+        <p class="sans">
+          <a class="go" href={href('/where/')}>
+            Look up where you live
+          </a>
+          <a href={href('/map/')}>Explore the full map</a>
+          <a href={href('/tours/')}>Follow a guided tour</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // Set the map to the chapter in the middle of the screen.
+  const svg = document.getElementById('story-map');
+  const label = document.getElementById('story-years');
+  const paths = [...(svg?.querySelectorAll<SVGPathElement>('path.c') ?? [])];
+  function show(from: number, to: number) {
+    for (const p of paths) {
+      const y = Number(p.dataset['y']);
+      p.classList.toggle('gone', y < from);
+      p.classList.toggle('now', y >= from && y <= to);
+    }
+    svg?.classList.toggle('after', from > 1894);
+    if (label)
+      label.textContent = from === to ? String(from) : `${from}–${to >= 2026 ? 'today' : to}`;
+  }
+  const chapters = [...document.querySelectorAll<HTMLElement>('.chapter')];
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries)
+        if (e.isIntersecting) {
+          chapters.forEach((c) => c.classList.toggle('active', c === e.target));
+          show(
+            Number((e.target as HTMLElement).dataset['from']),
+            Number((e.target as HTMLElement).dataset['to']),
+          );
+        }
+    },
+    { rootMargin: '-45% 0px -45% 0px' },
+  );
+  chapters.forEach((c) => io.observe(c));
+  svg?.classList.add('live');
+  document.querySelector('.story')?.classList.add('js');
+  show(1784, 1794);
+</script>
+
+<style>
+  .story {
+    display: grid;
+  }
+  @media (min-width: 960px) {
+    .story {
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    }
+  }
+  .pin {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 46vh;
+    background: var(--ground);
+    border-bottom: 1px solid var(--rule);
+    padding: var(--space-3) var(--space-4) var(--space-2);
+  }
+  @media (min-width: 960px) {
+    .pin {
+      height: 100vh;
+      border-bottom: 0;
+      border-right: 1px solid var(--rule);
+      padding: var(--space-6) var(--space-5);
+      display: flex;
+      align-items: center;
+    }
+  }
+  .board {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto auto;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+  .c {
+    fill: var(--how);
+    fill-opacity: 0.35;
+    stroke: var(--ink-3);
+    stroke-width: 0.4;
+    stroke-opacity: 0.5;
+    transition:
+      fill 600ms ease,
+      fill-opacity 600ms ease;
+  }
+  .live .c {
+    fill: var(--held);
+    fill-opacity: 0.55;
+  }
+  .live .c.gone {
+    fill: var(--how);
+    fill-opacity: 0.18;
+  }
+  .live .c.now {
+    fill: var(--how);
+    fill-opacity: 0.95;
+    stroke: var(--ink);
+    stroke-opacity: 0.8;
+  }
+  .lands {
+    fill: var(--moss-deep);
+    opacity: 0;
+    transition: opacity 800ms ease;
+  }
+  .after .lands,
+  svg:not(.live) .lands {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .c,
+    .lands {
+      transition: none;
+    }
+  }
+  .years {
+    margin: 0;
+    font-size: clamp(1.6rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px var(--space-3);
+    margin: var(--space-1) 0 0;
+    font-size: var(--s-2);
+    color: var(--ink-2);
+  }
+  @media (max-width: 959px) {
+    .key {
+      display: none;
+    }
+  }
+  .key i {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: 4px;
+    vertical-align: -0.05rem;
+    border-radius: 2px;
+  }
+  .k-held {
+    background: color-mix(in srgb, var(--held) 55%, var(--ground));
+  }
+  .k-lands {
+    background: var(--moss-deep);
+  }
+  .read {
+    padding: var(--space-6) var(--gutter, 16px) var(--space-7);
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+  .opening {
+    min-height: 60vh;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.02;
+    margin: 0 0 var(--space-4);
+  }
+  .chapter {
+    padding: 20vh 0 var(--space-6);
+    transition: opacity 400ms ease;
+  }
+  .span {
+    font-size: var(--s1);
+    color: var(--ink-2);
+    font-variant-numeric: lining-nums tabular-nums;
+    margin: 0;
+  }
+  .chapter h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    line-height: 1.15;
+    margin: var(--space-1) 0 var(--space-3);
+  }
+  .chapter-lede {
+    font-size: var(--s1);
+    line-height: 1.4;
+  }
+  .moments {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-5) 0;
+  }
+  .moments li {
+    display: grid;
+    grid-template-columns: 3.6rem minmax(0, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-3) 0 var(--space-3) var(--space-3);
+    border-left: 4px solid var(--rule);
+  }
+  .moments li.taken {
+    border-left-color: var(--how);
+  }
+  .my {
+    font-variant-numeric: lining-nums tabular-nums;
+    color: var(--ink-2);
+  }
+  .moments h3 {
+    font-size: var(--s0);
+    margin: 0 0 var(--space-1);
+  }
+  .moments p {
+    margin: 0;
+    font-size: var(--s-1);
+  }
+  .msrc {
+    margin-top: var(--space-1) !important;
+    font-size: var(--s-2) !important;
+  }
+  .small {
+    font-size: var(--s-1);
+  }
+  .sources summary {
+    cursor: pointer;
+    font-size: var(--s-1);
+    font-weight: 600;
+  }
+  .sources ol {
+    font-size: var(--s-1);
+    padding-left: var(--space-5);
+  }
+  .sources q {
+    display: block;
+    font-family: var(--serif);
+  }
+  .closing {
+    padding: 20vh 0 var(--space-6);
+  }
+  .closing .sans {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-5);
+    align-items: center;
+  }
+  .go {
+    background: var(--moss);
+    color: var(--on-moss);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .go:hover {
+    background: var(--moss-deep);
+    color: var(--on-moss);
+  }
+</style>

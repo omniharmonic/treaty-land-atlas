@@ -27,7 +27,15 @@ export interface WhereData {
   today: Collection;
   stories: Record<
     string,
-    { how: string; how_basis: string; instrument: string | null; nations: string[] }
+    {
+      how: string;
+      how_basis: string;
+      instrument: string | null;
+      nations: string[];
+      instruments?: { id: string; date: string | null }[];
+      entries?: unknown[];
+      royce_summary?: string;
+    }
   >;
   headlines: Record<string, string>;
   lite: { nodes: LiteNode[]; edges: LiteEdge[] };
@@ -46,7 +54,17 @@ export interface Ref {
 export interface WhereReport {
   lat: number;
   lng: number;
-  cessions: (Ref & { how: string; how_basis: string; instrument: Ref | null; nations: Ref[] })[];
+  cessions: (Ref & {
+    how: string;
+    how_basis: string;
+    instrument: Ref | null;
+    nations: Ref[];
+    /** every instrument Royce ties to this land, in date order */
+    instruments: Ref[];
+    /** true when Royce's Schedule has been read to find which instrument ceded the land */
+    checked: boolean;
+    royce_summary: string | null;
+  })[];
   /** violations of the treaties that took this land: the broken promises */
   broken: Ref[];
   cases: Ref[];
@@ -125,10 +143,17 @@ export function placeReport(d: WhereData, lat: number, lng: number): WhereReport
       how_basis: st?.how_basis ?? '',
       instrument: st?.instrument ? ref(st.instrument) : null,
       nations,
+      instruments: (st?.instruments ?? []).map((x) => ref(x.id)),
+      checked: !!st?.entries,
+      royce_summary: st?.royce_summary ?? null,
     };
   });
   const instruments = [
-    ...new Set(cessions.map((c) => c.instrument?.id).filter(Boolean) as string[]),
+    ...new Set(
+      cessions.flatMap((c) =>
+        c.instruments.map((i) => i.id).concat(c.instrument ? [c.instrument.id] : []),
+      ),
+    ),
   ];
   const broken = new Map<string, Ref>();
   const cases = new Map<string, Ref>();

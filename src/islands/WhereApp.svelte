@@ -185,7 +185,11 @@
     <article class="report">
       <p class="place sans">{place || `${report.lat}, ${report.lng}`}</p>
       <h2 tabindex="-1" bind:this={heading}>
-        {#if first}
+        {#if first && !first.checked && first.instruments.length > 1}
+          The United States’ record ties this land to treaties and acts of {list(
+            first.instruments.map((i) => String(i.year ?? '')).filter(Boolean),
+          )}{firstNations ? `, taken from the ${firstNations}` : ''}.
+        {:else if first}
           The United States recorded this land as ceded in {first.year}, {HOW_PHRASE[first.how] ??
             'by means Royce does not state'}{firstNations ? `, from the ${firstNations}` : ''}.
         {:else}
@@ -238,6 +242,17 @@
                 <span class="yr">{c.year}</span>
                 <div>
                   <p class="how sans">{HOW_LABEL[c.how as How] ?? c.how}</p>
+                  {#if c.royce_summary}<p class="what">{c.royce_summary}</p>{/if}
+                  {#if !c.checked && c.instruments.length > 1}
+                    <p class="sans small">
+                      Royce ties this land to {c.instruments.length} instruments: {#each c.instruments as x, i (i)}{i >
+                        0
+                          ? ', '
+                          : ''}{#if x.path}<a href={url(x.path)}>{x.label}</a
+                          >{:else}{x.label}{/if}{/each}. Which one ceded it is still being checked
+                      against Royce’s schedule.
+                    </p>
+                  {/if}
                   {#if c.instrument}
                     <p class="what">
                       {#if c.instrument.headline}{c.instrument.headline}{:else}{c.instrument

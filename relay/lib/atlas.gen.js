@@ -129,11 +129,18 @@ function placeReport(d, lat, lng) {
       how: st?.how ?? p.how ?? "unknown",
       how_basis: st?.how_basis ?? "",
       instrument: st?.instrument ? ref(st.instrument) : null,
-      nations
+      nations,
+      instruments: (st?.instruments ?? []).map((x) => ref(x.id)),
+      checked: !!st?.entries,
+      royce_summary: st?.royce_summary ?? null
     };
   });
   const instruments = [
-    ...new Set(cessions.map((c) => c.instrument?.id).filter(Boolean))
+    ...new Set(
+      cessions.flatMap(
+        (c) => c.instruments.map((i) => i.id).concat(c.instrument ? [c.instrument.id] : [])
+      )
+    )
   ];
   const broken = /* @__PURE__ */ new Map();
   const cases = /* @__PURE__ */ new Map();
