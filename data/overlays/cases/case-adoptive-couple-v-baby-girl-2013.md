@@ -5,7 +5,7 @@ written_by: "narrative-wave-2026-10"
 headline: "The Court held the Indian Child Welfare Act did not block an adoption over a father who never had custody."
 confidence: "high"
 cautions: "Citation and year match the U.S. Reports. The 'eroded' land-rights label in our data is a loose fit: the case concerns child custody, not land. The Brackeen reference rests on our own case list; not re-read for this entry."
-sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep570/usrep570637/usrep570637.pdf", "title": "Adoptive Couple v. Baby Girl, 570 U.S. 637 (2013) (U.S. Reports, Library of Congress)", "quote": "neither § 1912(f) nor § 1912(d) bars the termi- nation of his parental rights"}]
+sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep570/usrep570637/usrep570637.pdf", "title": "Adoptive Couple v. Baby Girl, 570 U.S. 637 (2013) (U.S. Reports, Library of Congress)", "quote": "neither § 1912(f) nor § 1912(d) bars the termination of his parental rights"}]
 ---
 This case was a custody fight, not a land dispute. A non-Indian couple in South Carolina sought to adopt Baby Girl, whose birth mother had chosen them. Her biological father, a member of the Cherokee Nation, had agreed to give up his rights but later contested the adoption. He relied on the Indian Child Welfare Act of 1978 (ICWA), the federal law on custody proceedings for Indian children. No treaty was at issue.
 

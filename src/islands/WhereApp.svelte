@@ -205,7 +205,7 @@
           <p class="muted sans">Loading the territory maps…</p>
         {:else if homelandStatus === 'done' && homelands.length}
           <p class="homelands">
-            {#each homelands as h, i (h.name)}{i > 0
+            {#each homelands as h, i (i)}{i > 0
                 ? i === homelands.length - 1
                   ? ' and '
                   : ', '
@@ -286,8 +286,8 @@
         <section aria-labelledby="today">
           <h3 id="today">Native lands today</h3>
           <ul class="refs sans">
-            {#each report.lands_here as l (l)}<li>You are inside: <strong>{l}</strong></li>{/each}
-            {#each report.lands_near as l (l.name)}<li>{l.name}, about {l.km} km away</li>{/each}
+            {#each report.lands_here as l, i (i)}<li>You are inside: <strong>{l}</strong></li>{/each}
+            {#each report.lands_near as l, i (i)}<li>{l.name}, about {l.km} km away</li>{/each}
           </ul>
           <p class="fine sans">
             Census Bureau boundaries (2024). Statistical areas are not reservations.

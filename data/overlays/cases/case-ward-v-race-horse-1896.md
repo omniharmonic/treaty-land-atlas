@@ -4,7 +4,7 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "A Bannock treaty hunting right did not survive Wyoming statehood, so Wyoming could enforce its game laws against a Bannock hunter."
 confidence: "medium"
-cautions: "Citation and year match. The statement that Herrera held Race Horse 'no longer good law' will be verified when Herrera is read. Mille Lacs distinguishing it is in that case's syllabus."
+cautions: "Citation and year match. Herrera's syllabus says that case is 'controlled by Mille Lacs, not Race Horse'; Mille Lacs distinguishing Race Horse is in that case's syllabus."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep163/usrep163504/usrep163504.pdf", "title": "Ward v. Race Horse, 163 U.S. 504 (1896) (U.S. Reports, Library of Congress)", "quote": "The act contains no exception or reservation in favor of or for the benefit of Indians."}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep163/usrep163504/usrep163504.pdf", "title": "Ward v. Race Horse, 163 U.S. 504 (1896) (U.S. Reports, Library of Congress)", "quote": "exemptions must be strictly construed"}]
 ---
 Race Horse, a Bannock, was held for violating Wyoming's game laws. The Bannock Treaty of February 24, 1869 (Fort Bridger) said they "shall have the right to hunt upon the unoccupied lands of the United States so long as game may be found thereon." Race Horse sought release through habeas corpus, relying on the treaty. The lower court discharged him.

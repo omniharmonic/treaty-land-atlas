@@ -671,7 +671,7 @@
           {#each chapter.narrative.split(/\n\n+/) as para, i (i)}<p>{para}</p>{/each}
           {#if chapter.sources?.length}
             <p class="srcs sans">
-              Sources: {#each chapter.sources as src, i (src.url)}{i > 0 ? ', ' : ''}<a
+              Sources: {#each chapter.sources as src, i (i)}{i > 0 ? ', ' : ''}<a
                   href={src.url}>{src.title ?? new URL(src.url).hostname}</a
                 >{/each}
             </p>
@@ -682,7 +682,7 @@
 
     {#if nearMoments.length || thisYear.length}
       <section class="moments" aria-label="What happened">
-        {#each nearMoments as m (m.year + m.title)}
+        {#each nearMoments as m, i (i)}
           <article class="moment">
             <p class="m-year sans">{m.year}</p>
             <h3>{m.title}</h3>
@@ -739,7 +739,7 @@
               > (loaded live, not stored; not legal boundaries):
             </p>
             <ul class="small">
-              {#each territories as t (t.name)}<li>
+              {#each territories as t, i (i)}<li>
                   {#if t.url}<a href={t.url}>{t.name}</a>{:else}{t.name}{/if}
                 </li>{/each}
             </ul>

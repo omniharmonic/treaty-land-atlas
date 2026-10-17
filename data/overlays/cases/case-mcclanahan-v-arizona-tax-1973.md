@@ -5,7 +5,7 @@ written_by: "narrative-wave-2026-10"
 headline: "Arizona could not tax the income of a Navajo living and earning her income on the Navajo Reservation."
 confidence: "high"
 cautions: "Citation and year match. The opinion names the appellant as an enrolled member of the Navajo tribe; I have not given a first name."
-sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep411/usrep411164/usrep411164.pdf", "title": "McClanahan v. Arizona State Tax Commission, 411 U.S. 164 (1973) (U.S. Reports, Library of Congress)", "quote": "the State has interfered with mat- ters which the relevant treaty and statutes leave to the exclusive province of the Federal Government"}]
+sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep411/usrep411164/usrep411164.pdf", "title": "McClanahan v. Arizona State Tax Commission, 411 U.S. 164 (1973) (U.S. Reports, Library of Congress)", "quote": "the State has interfered with matters which the relevant treaty and statutes leave to the exclusive province of the Federal Government"}]
 ---
 McClanahan, an enrolled member of the Navajo Nation, lived on the Arizona part of the Navajo Reservation, and all her income came from reservation sources. Arizona assessed its personal income tax on her. The state courts upheld the tax.
 

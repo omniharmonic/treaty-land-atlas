@@ -132,7 +132,7 @@
   }
   .fine {
     font-size: var(--s-2);
-    color: var(--ink-3);
+    color: var(--ink-2);
     margin: var(--space-3) 0 0;
   }
 </style>

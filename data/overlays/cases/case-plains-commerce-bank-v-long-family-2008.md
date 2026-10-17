@@ -5,7 +5,7 @@ written_by: "narrative-wave-2026-10"
 headline: "A tribal court lacked jurisdiction over a discrimination claim against a non-Indian bank for selling its own reservation fee land."
 confidence: "medium"
 cautions: "Citation and year match. The 'narrowed the consensual exception' reading is background knowledge; the syllabus I read gave the Roberts authorship and the holding. The Tribe's name and state were not stated in the part I read."
-sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep554/usrep554316/usrep554316.pdf", "title": "Plains Commerce Bank v. Long Family Land & Cattle Co., 554 U.S. 316 (2008) (U.S. Reports, Library of Congress)", "quote": "The Tribal Court did not have jurisdiction to adjudicate a discrimi­ nation claim concerning the non-Indian Bank's sale of its fee land."}]
+sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep554/usrep554316/usrep554316.pdf", "title": "Plains Commerce Bank v. Long Family Land & Cattle Co., 554 U.S. 316 (2008) (U.S. Reports, Library of Congress)", "quote": "The Tribal Court did not have jurisdiction to adjudicate a discrimi nation claim concerning the non-Indian Bank's sale of its fee land."}]
 ---
 Plains Commerce Bank, a non-Indian bank, owned land in fee simple on a tribal reservation. It sold that land to non-Indians. The Longs, an Indian couple who had leased the land with an option to buy, sued in tribal court, claiming the Bank offered them worse terms than the buyers received. A tribal jury ruled against the Bank on three claims including discrimination, and the tribal court gave the Longs an option to buy the land they occupied, nullifying part of the sale.
 

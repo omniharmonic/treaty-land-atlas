@@ -5,7 +5,7 @@ written_by: "narrative-wave-2026-10"
 headline: "The Oneida Nation could not revive tribal sovereignty over old reservation land it bought back, so the city could tax it."
 confidence: "high"
 cautions: "Citation and year match. The last sentence (trust process as the route) is my gloss, not stated in the syllabus I read. Our data lists the Treaty of Fort Schuyler (1788) and Canandaigua; the syllabus describes the 1788 treaty as one between the State and the Oneida Nation."
-sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep544/usrep544197/usrep544197.pdf", "title": "City of Sherrill v. Oneida Indian Nation of New York, 544 U.S. 197 (2005) (U.S. Reports, Library of Congress)", "quote": "The Oneidas long ago relinquished governmental reins and cannot re- gain them through open-market purchases from current titleholders."}]
+sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep544/usrep544197/usrep544197.pdf", "title": "City of Sherrill v. Oneida Indian Nation of New York, 544 U.S. 197 (2005) (U.S. Reports, Library of Congress)", "quote": "The Oneidas long ago relinquished governmental reins and cannot regain them through open-market purchases from current titleholders."}]
 ---
 The Oneida Nation's homeland once covered some six million acres of central New York. In 1788 the Oneidas ceded their lands to the State but kept a reservation of about 300,000 acres; the 1794 Treaty of Canandaigua acknowledged that reservation. New York kept buying reservation land, and by 1920 the Oneidas in the state retained only 32 acres. In 1997 and 1998 the Oneida Indian Nation bought parcels in Sherrill, New York, once inside the reservation, and refused to pay city property taxes.
 

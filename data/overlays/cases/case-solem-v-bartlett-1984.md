@@ -5,7 +5,7 @@ written_by: "narrative-wave-2026-10"
 headline: "The 1908 Cheyenne River Act opened reservation land to homesteaders without diminishing the reservation; the Court set a framework for such cases."
 confidence: "high"
 cautions: "Citation and year match. The three-step description uses the later cases' summaries as well as this syllabus; the 'McGirt' reference is from our case list."
-sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep465/usrep465463/usrep465463.pdf", "title": "Solem v. Bartlett, 465 U.S. 463 (1984) (U.S. Reports, Library of Congress)", "quote": "Only Congress can divest an Indian reservation of its land and di- minish its boundaries."}]
+sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep465/usrep465463/usrep465463.pdf", "title": "Solem v. Bartlett, 465 U.S. 463 (1984) (U.S. Reports, Library of Congress)", "quote": "Only Congress can divest an Indian reservation of its land and diminish its boundaries."}]
 ---
 In 1908 Congress authorized the Secretary of the Interior to open 1.6 million acres of the Cheyenne River Sioux Reservation in South Dakota for homesteading, with sale proceeds credited to the Indians. A tribal member was convicted in state court of attempted rape on opened land. He argued that the crime occurred in Indian country, so South Dakota lacked jurisdiction.
 
