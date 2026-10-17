@@ -921,6 +921,32 @@
   .muted {
     color: var(--ink-2);
   }
+  @media (max-width: 899px) {
+    .year {
+      top: var(--space-3);
+      bottom: auto;
+      font-size: clamp(2.6rem, 14vw, 4rem);
+    }
+  }
+  .mapwrap :global(.maplibregl-ctrl-attrib) {
+    background: color-mix(in srgb, var(--ground) 82%, transparent);
+    font-family: var(--sans);
+    font-size: 10px;
+    line-height: 1.35;
+    color: var(--ink-2);
+  }
+  .mapwrap :global(.maplibregl-ctrl-attrib a) {
+    color: var(--ink-2);
+  }
+  .mapwrap :global(.maplibregl-ctrl-group) {
+    background: var(--sheet);
+    border-radius: var(--radius);
+    box-shadow: none;
+    border: 1px solid var(--rule-strong);
+  }
+  .mapwrap :global(.maplibregl-ctrl-group button + button) {
+    border-top-color: var(--rule);
+  }
   .honored .year {
     color: var(--moss-deep);
   }

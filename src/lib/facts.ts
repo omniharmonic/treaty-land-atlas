@@ -75,10 +75,12 @@ export function factsFor(n: Node): Fact[] {
     case 'Nation':
       return [
         f('Official name', n['official_name']),
-        f(
-          'Recorded status',
-          RECOGNITION[String(n['federal_recognition'])] ?? n['federal_recognition'],
-        ),
+        ['unknown', 'not_applicable'].includes(String(n['federal_recognition']))
+          ? null
+          : f(
+              'Recorded status',
+              RECOGNITION[String(n['federal_recognition'])] ?? n['federal_recognition'],
+            ),
         f('Part of', n['component_of']),
         f('Website', n['website'], {
           href: typeof n['website'] === 'string' ? (n['website'] as string) : undefined,

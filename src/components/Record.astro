@@ -24,7 +24,13 @@ type Name = {
   source_url?: string | null;
   language_or_script?: string | null;
 };
-const names = ((n['names'] as Name[]) ?? []).filter((x) => x.kind !== 'preferred_label');
+// All-lowercase entries without a source are alias match keys from the crosswalk, not names
+// anyone writes; keep them for search but not for display.
+const names = ((n['names'] as Name[]) ?? []).filter(
+  (x) =>
+    x.kind !== 'preferred_label' &&
+    !(x.name === x.name.toLowerCase() && !x.source_url && /[a-z]/.test(x.name)),
+);
 const nameGroups: [string, string[]][] = [
   ['Self-names', ['endonym', 'endonym_per_seed']],
   ['Official names', ['official_name']],

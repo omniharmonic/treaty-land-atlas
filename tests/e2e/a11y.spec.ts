@@ -5,7 +5,7 @@ const pages = [
   '/',
   '/nations/',
   '/nations/cherokee-nation/',
-  '/nations/pd-duwamish-tribe/',
+  '/nations/duwamish-tribe/',
   '/treaties/',
   '/treaties/tla-t-369/',
   '/cessions/517/',
@@ -21,7 +21,9 @@ const pages = [
 
 for (const path of pages) {
   test(`no WCAG 2.2 AA violations: ${path}`, async ({ page }) => {
-    await page.goto(path);
+    const res = await page.goto(path);
+    expect(res?.status(), `${path} should exist`).toBe(200);
+    await expect(page).not.toHaveTitle(/not found/i);
     if (path === '/map/') await page.waitForSelector('.summary');
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])

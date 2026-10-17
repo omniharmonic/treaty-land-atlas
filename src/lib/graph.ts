@@ -59,6 +59,8 @@ export function graph() {
     (out.get(e.source) ?? out.set(e.source, []).get(e.source)!).push(e);
     (inc.get(e.target) ?? inc.set(e.target, []).get(e.target)!).push(e);
   }
+  // Display labels: a spaced hyphen used as a dash in seed labels reads as a comma.
+  for (const n of map.values()) n.label = n.label.replace(/ - /g, ', ');
   cache = { nodes: map, edges: kept, out, in: inc };
   return cache;
 }
