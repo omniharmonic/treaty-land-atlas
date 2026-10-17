@@ -2,11 +2,10 @@ name: relay
 # Deploys the Native Land Digital relay (relay/) to Vercel. The API key lives only in the
 # GitHub secret NLD_API_KEY; this job copies it into the Vercel project's encrypted
 # environment and redeploys. The key never enters the repository or the website bundle.
+# Optional: Vercel's GitHub integration already redeploys relay/ on every push. Run this by hand only
+# if you keep the key in the GitHub secret NLD_API_KEY and have added a VERCEL_TOKEN secret.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['relay/**', '.github/workflows/relay.yml']
 permissions:
   contents: read
 concurrency:

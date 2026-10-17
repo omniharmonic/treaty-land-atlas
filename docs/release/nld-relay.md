@@ -13,25 +13,23 @@ A static website cannot keep a secret: any key placed in its JavaScript can be r
 
 ## Where the key lives
 
-The key's only source of truth is the GitHub repository secret **`NLD_API_KEY`**. The `relay` workflow copies it into the Vercel project's encrypted environment (`NLD_KEY`) and redeploys. GitHub masks secrets in logs.
+The key lives in the Vercel project's **encrypted environment variable `NLD_KEY`** (project `landback-nld-relay`, production). It never enters the repository or the website. Vercel's GitHub integration redeploys `relay/` on every push to `main`. The relay is served at `https://api.landback.land`.
+
+Claims and corrections from the site's forms are saved as JSON files in a **private Vercel Blob store** (`landback-claims`), reachable only with the project's credentials. Read them with `npm run claims` (run `cd relay && vercel env pull` once first).
 
 ## One-time setup (owner)
 
-Run these in your own terminal. Never paste a key into a chat, an issue, or a file.
+Run this in your own terminal and paste the key at the prompt. Never paste a key into a chat, an issue, or a file.
 
 ```sh
-# 1. Your Native Land Digital API key (from your NLD account's API page):
-gh secret set NLD_API_KEY --repo omniharmonic/treaty-land-atlas
-# 2. A Vercel token so GitHub can deploy the relay (create at https://vercel.com/account/tokens,
-#    scope: the omniharmonic team, expiry as you prefer):
-gh secret set VERCEL_TOKEN --repo omniharmonic/treaty-land-atlas
-# 3. Deploy:
-gh workflow run relay --repo omniharmonic/treaty-land-atlas
+cd relay
+vercel env add NLD_KEY production      # paste your Native Land Digital API key
+vercel deploy --prod                   # or just push to main
 ```
 
-`VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` are already set as repository variables (they are identifiers, not secrets).
+Optional GitHub route: keep the key in the GitHub secret `NLD_API_KEY`, add a `VERCEL_TOKEN` secret (create at https://vercel.com/account/tokens), and run the `relay` workflow by hand; it copies the secret into Vercel.
 
-To rotate the key: set `NLD_API_KEY` again and rerun the workflow. To switch the feature off at once: set `NLD_ENABLED=false` in the Vercel project's environment, or remove the secret and rerun.
+To rotate the key: `vercel env update NLD_KEY production`, then redeploy. To switch the feature off at once: set `NLD_ENABLED=false` in the Vercel project's environment, or remove the secret and rerun.
 
 ## Terms
 
