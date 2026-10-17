@@ -1,0 +1,67 @@
+---
+// A nation's land recorded as ceded over time, by cause, from the same estimate the map uses.
+// For a present-day nation with no cessions of its own, shows the peoples whose history it carries.
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import LandMeter from '../islands/map/LandMeter.svelte';
+import { outgoing, type Node } from '../lib/graph';
+import { href } from '../lib/href';
+import type { How } from '../islands/map/how';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+type Series = { total: number[]; by_how: Record<How, number[]>; cessions: string[]; label: string };
+const loss = JSON.parse(
+  readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'land-loss.json'), 'utf8'),
+) as { years: number[]; by_nation: Record<string, Series> };
+const ids = loss.by_nation[n.id]
+  ? [n.id]
+  : outgoing(n.id)
+      .filter((e) => e.type === 'successor_of' && loss.by_nation[e.target])
+      .map((e) => e.target)
+      .slice(0, 2);
+const last = loss.years[loss.years.length - 1]!;
+---
+
+{ids.length > 0 && (
+  <section aria-labelledby="land-h">
+    <h2 id="land-h">Land recorded as ceded</h2>
+    {ids[0] !== n.id && (
+      <p class="small sans">
+        This nation carries the history of peoples named in Royce’s schedule. Their record:
+      </p>
+    )}
+    {ids.map((id) => {
+      const s = loss.by_nation[id]!;
+      return (
+        <div class="meter">
+          <LandMeter
+            years={loss.years}
+            total={s.total}
+            byHow={s.by_how}
+            year={last}
+            label={s.label}
+          />
+          <p class="sans small">
+            {s.cessions.length} cession{s.cessions.length === 1 ? '' : 's'}.{' '}
+            <a href={href(`/map/#y=${last}&nation=${id}`)}>
+              Follow {s.label} through the years on the map
+            </a>
+          </p>
+        </div>
+      );
+    })}
+  </section>
+)}
+
+<style>
+  .meter {
+    max-width: 30rem;
+    margin-bottom: var(--space-5);
+  }
+  .small {
+    font-size: var(--s-1);
+  }
+</style>
