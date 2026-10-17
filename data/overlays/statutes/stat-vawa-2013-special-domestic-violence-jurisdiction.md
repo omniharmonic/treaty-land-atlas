@@ -1,0 +1,17 @@
+---
+id: "stat-vawa-2013-special-domestic-violence-jurisdiction"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 2013 Violence Against Women Act let participating tribes prosecute non-Indians for domestic violence, partly answering the Supreme Court's 1978 Oliphant ruling."
+confidence: "high"
+cautions: "The record's phase dates ('2013-2015') were checked only against the statute's two-year rule and pilot provision; which tribes started when was not examined. The Act's protections for defendants (jury trial rights, counsel) are not summarized here. Whether the Act 'overrides' Oliphant is a legal characterization; the statute says it 'recognized and affirmed' tribal inherent power, and the Oliphant holding itself is described by the Court as subject to congressional authorization."
+sources: [{"url": "https://www.law.cornell.edu/supremecourt/text/435/191", "title": "Oliphant v. Suquamish Indian Tribe, 435 U.S. 191 (1978), Cornell LII", "quote": "Indian tribal courts do not have inherent criminal jurisdiction to try and to punish non-Indians"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-127/pdf/STATUTE-127-Pg54.pdf", "title": "Violence Against Women Reauthorization Act of 2013, Pub. L. 113-4, 127 Stat. 54, section 904", "quote": "the inherent power of that tribe, which is hereby recognized and affirmed, to exercise special domestic violence criminal jurisdiction over all persons"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-127/pdf/STATUTE-127-Pg54.pdf", "title": "Violence Against Women Reauthorization Act of 2013, Pub. L. 113-4, 127 Stat. 54, section 904", "quote": "if neither the defendant nor the alleged victim is an Indian"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-127/pdf/STATUTE-127-Pg54.pdf", "title": "Violence Against Women Reauthorization Act of 2013, Pub. L. 113-4, 127 Stat. 54, section 908", "quote": "shall take effect on the date that is 2 years after the date of enactment of this Act"}]
+verdict: "new"
+---
+In 1978 the Supreme Court held in Oliphant v. Suquamish Indian Tribe that tribal courts "do not have inherent criminal jurisdiction to try and to punish non-Indians" unless Congress specifically authorizes it. For decades that left a gap on reservations when a non-Indian abused an Indian partner.
+
+Public Law 113-4, approved March 7, 2013, section 904, added section 204 to the Indian Civil Rights Act. It says that the powers of self-government of a "participating tribe" include "the inherent power of that tribe, which is hereby recognized and affirmed, to exercise special domestic violence criminal jurisdiction over all persons." The jurisdiction is concurrent with the United States and states.
+
+The grant had limits. A tribe may not use it if neither the defendant nor the victim is an Indian. It may be used only over a defendant who lives or works in the tribe's Indian country, or who is the spouse, intimate partner or dating partner of a tribal member or of an Indian living there. Covered conduct includes domestic violence and dating violence in the tribe's Indian country, and violations of protection orders.
+
+The law phased in. The new jurisdiction took effect two years after enactment, but tribes could ask the Attorney General during that period to be designated participating tribes on an accelerated basis, under a pilot project. Congress later widened the list of crimes in the 2022 reauthorization.

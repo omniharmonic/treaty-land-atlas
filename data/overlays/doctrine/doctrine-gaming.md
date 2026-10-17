@@ -1,0 +1,15 @@
+---
+id: "doctrine-gaming"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "After California v. Cabazon (1987) barred California from regulating tribal bingo, Congress passed the Indian Gaming Regulatory Act in 1988."
+confidence: "high"
+cautions: "IGRA's three classes of gaming and its tribal-state compact requirement for casino-style (Class III) gaming were not opened and are not described. Seminole Tribe v. Florida (1996), which limited suits to enforce compacts, was not examined. Gaming revenue figures and effects on tribal economies are not covered. The link between Cabazon and IGRA's passage is the sequence of dates; no opened source states that Cabazon caused it."
+sources: [{"url": "https://www.law.cornell.edu/supremecourt/text/480/202", "title": "California v. Cabazon Band of Mission Indians, 480 U.S. 202 (1987), Cornell LII", "quote": "State jurisdiction is pre-empted if it interferes or is incompatible with federal and tribal interests reflected in federal law"}, {"url": "https://www.law.cornell.edu/uscode/text/25/2701", "title": "25 U.S.C. 2701, Findings (Indian Gaming Regulatory Act), Cornell LII", "quote": "a principal goal of Federal Indian policy is to promote tribal economic development, tribal self-sufficiency, and strong tribal government"}, {"url": "https://www.law.cornell.edu/uscode/text/25/2702", "title": "25 U.S.C. 2702, Declaration of policy, Cornell LII", "quote": "to ensure that the Indian tribe is the primary beneficiary of the gaming operation"}, {"url": "https://www.law.cornell.edu/uscode/text/25/2702", "title": "25 U.S.C. 2702, Declaration of policy, Cornell LII", "quote": "the establishment of a National Indian Gaming Commission"}]
+verdict: "new"
+---
+The Cabazon and Morongo Bands of Mission Indians ran bingo games on their reservations in Riverside County, California, under federally approved ordinances. California tried to enforce its bingo law against them. In California v. Cabazon Band of Mission Indians (1987), the Supreme Court held that Public Law 280 did not authorize it, because California's bingo statute was a "civil/regulatory" law, not a "criminal/prohibitory" one. The Court also found state authority pre-empted, because it "interferes or is incompatible with federal and tribal interests reflected in federal law."
+
+Congress responded with the Indian Gaming Regulatory Act, Public Law 100-497, signed October 17, 1988. It found that "a principal goal of Federal Indian policy is to promote tribal economic development, tribal self-sufficiency, and strong tribal government," and that tribes have the exclusive right to regulate gaming on Indian lands if the gaming is not prohibited by federal law and is conducted in a state that does not prohibit it as a matter of criminal law and public policy.
+
+The Act's stated purposes include providing a statutory basis for gaming by tribes as a means of promoting tribal economic development, self-sufficiency, and strong tribal governments, and for regulation to shield gaming from organized crime and ensure the tribe is the primary beneficiary. It also created federal standards and a National Indian Gaming Commission.

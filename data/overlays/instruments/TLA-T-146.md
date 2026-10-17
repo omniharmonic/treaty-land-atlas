@@ -2,15 +2,18 @@
 id: "TLA-T-146"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Potawatomi ceded Indiana lands along the Tippecanoe, Eel and Wabash rivers plus a road strip, for a 22-year annuity and goods."
+headline: "In 1826 the Potawatomi ceded land in northern Indiana and a road strip for a 22-year annuity and goods."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession with annuities and goods; no opened source describes coercion."
-confidence: "medium"
-cautions: "Single source. The treaty's wording about Potawatomi 'attachment' and 'liberality' is the commissioners' language, not necessarily the nation's view. The goods were supplied by traders and paid by the United States if ratified; whether any were charged against the tribe was not examined. Acreage not stated."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1826-0273", "title": "Treaty with the Potawatomi, 1826 (Kappler, OSU Tribal Treaties Database)", "quote": "As an evidence of the attachment which the Potawatamie tribe feel towards the American people"}]
+confidence: "high"
+cautions: "Acreage is not stated. The treaty's words about the tribe's attachment and liberality are the treaty's wording, not a statement by the nation. What happened to the road lands was not researched."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1826-0273", "title": "Tribal Treaties Database (OSU)", "quote": "payment for all these goods shall be made by the Potawatamie tribe out of their annuity"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg295.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Commissioners on the part of the United States"}]
+verdict: "fixed"
 ---
-On October 16, 1826, Lewis Cass, James B. Ray and John Tipton signed a treaty near the mouth of the Mississinewa River on the Wabash, in Indiana, with chiefs and warriors of the Potawatomi.
+On October 16, 1826, Lewis Cass, James B. Ray and John Tipton signed a treaty near the mouth of the Mississinewa River, upon the Wabash in Indiana. They signed for the United States, with the chiefs and warriors of the Potawatamie Tribe.
 
-The Potawatomi ceded a large tract in northern Indiana bounded by the Tippecanoe, Eel, St. Joseph and Wabash rivers, and a small tract on Lake Michigan. Article 2 says the tribe wished, "as an evidence of the attachment which the Potawatamie tribe feel towards the American people," to cede a strip 100 feet wide from Lake Michigan to the Wabash, plus a section of land for each mile, for a road toward the Ohio River by way of Indianapolis, with the Indiana legislature controlling the grants.
+In Article 1 the Potawatomi ceded all their right to land within a boundary that followed the Tippecanoe, Eel, St. Joseph and Wabash rivers and the Miami River near Fort Wayne. They also ceded a smaller tract on Lake Michigan. In Article 2, "as an evidence of the attachment which the Potawatamie tribe feel towards the American people," the treaty has the tribe cede a strip a hundred feet wide from Lake Michigan to the Wabash for a road. It adds one section of land for each mile of the road, with a road onward through Indianapolis to the Ohio River. The Indiana legislature was given the right to locate the road and use the land.
 
-In return the United States agreed to a $2,000 annuity in silver for twenty-two years, a blacksmith, education funds, a mill and salt. It had already delivered goods valued at $30,547.71, and the treaty says it would pay the suppliers named in a schedule if ratified.
+In return, the United States agreed to pay an annuity of $2,000 in silver for twenty-two years and support a blacksmith. It promised $2,000 a year for education, a corn mill, a miller and 160 bushels of salt a year. It had delivered goods worth $30,547.71 and agreed to pay $9,573 in claims against the tribe.
+
+Article 4 adds that payment for the goods "shall be made by the Potawatamie tribe out of their annuity, if this treaty should not be ratified." The Statutes at Large record a proclamation on February 7, 1827.

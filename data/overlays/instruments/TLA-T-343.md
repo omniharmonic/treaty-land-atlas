@@ -2,15 +2,18 @@
 id: "TLA-T-343"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1865 Little Arkansas treaty set a Kiowa and Comanche reservation and had them relinquish claims to land outside it."
+headline: "In 1865 the Comanche and Kiowa agreed at the Little Arkansas River to a southern plains reservation and gave up claims elsewhere."
 how: "treaty_negotiated"
-how_basis: "The treaty text records a negotiated reservation treaty; I found no statement of duress in the text."
-confidence: "low"
-cautions: "Only the treaty text was read. The pressure context (post-Sand Creek, Civil War) is not documented in sources I opened for this treaty. Input cites Royce 478 and 511."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Comanche and Kiowa, 1865", "quote": "set apart for the absolute and undisturbed use and occupation of the tribes who are parties to this treaty"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Comanche and Kiowa, 1865", "quote": "the country north of the Cimarone River and west of the eastern boundary of New Mexico"}]
+how_basis: "The treaty text records a negotiated reservation treaty with signatures by chiefs; it states no duress."
+confidence: "high"
+cautions: "Only the treaty text was read. The record lists Royce numbers 478 and 511, which were not checked. No context source on the pressures behind the treaty was opened."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Comanche and Kiowa, 1865", "quote": "set apart for the absolute and undisturbed use and occupation of the tribes who are parties to this treaty"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Comanche and Kiowa, 1865", "quote": "the country north of the Cimarone River and west of the eastern boundary of New Mexico"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Comanche and Kiowa, 1865", "quote": "they will not while so absent encamp, by day or night, within ten miles of any of the main travelled routes"}]
+verdict: "fixed"
 ---
-On October 18, 1865, at the Little Arkansas River in Kansas, seven U.S. commissioners, including John B. Sanborn, William S. Harney and Kit Carson, signed with chiefs of several Comanche bands and of the Kiowa. Article 2 set apart a district of the southern plains, running from the northeast corner of New Mexico to the 98th meridian and the Cimarron River, for the tribes' "absolute and undisturbed use and occupation." Whites other than government employees were barred.
+On October 18, 1865, at the council ground on the Little Arkansas River, seven U.S. commissioners signed a treaty with chiefs of several Comanche bands and of the Kiowa. The commissioners included John B. Sanborn, William S. Harney and Kit Carson.
 
-The tribes agreed to move to the reservation, keep peace, stay ten miles from main roads and military posts when away, and relinquish claims to all U.S. land outside it. The text names "the country north of the Cimarone River and west of the eastern boundary of New Mexico." They also agreed to try to bring absent bands into the treaty.
+Article 2 set apart a district of the southern plains for the tribes' "absolute and undisturbed use and occupation." It runs from the northeast corner of New Mexico down to the Red River, along the 98th degree of west longitude, and up the Cimarron River to the southern line of Kansas. Only officers, agents and employees of the government, or people formally adopted into a tribe, could live there.
 
-The treaty allowed the United States to build roads and military posts through the reservation. The sources opened here do not describe the 1867 Medicine Lodge treaty that followed, which is covered in its own entries.
+The tribes agreed to move there when the President directed. They agreed to carry written permission when away to hunt, and not to camp within ten miles of main roads, military posts, towns or villages. They gave up all claims outside the reservation, naming "the country north of the Cimarone River and west of the eastern boundary of New Mexico."
+
+The United States kept the right to build roads and military posts through the reservation, with compensation for injury set by Congress. Article 5 promised annual spending for forty years. The pages opened here do not trace later events.

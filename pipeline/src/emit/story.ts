@@ -10,7 +10,15 @@ import { cellAcres, cellLat } from '../geometry/landloss.ts';
 import { routeFor } from '../../../src/lib/routes.ts';
 import { readCsv } from '../ingest/csv.ts';
 
-export const HOW = ['treaty', 'pressure', 'removal', 'congress', 'executive', 'unknown'] as const;
+export const HOW = [
+  'treaty',
+  'pressure',
+  'removal',
+  'unratified',
+  'congress',
+  'executive',
+  'unknown',
+] as const;
 export type How = (typeof HOW)[number];
 
 const FROM_RESEARCH: Record<string, How> = {
@@ -20,7 +28,7 @@ const FROM_RESEARCH: Record<string, How> = {
   act_of_congress: 'congress',
   agreement_ratified_by_statute: 'congress',
   executive_order: 'executive',
-  unratified: 'treaty',
+  unratified: 'unratified',
   other: 'unknown',
 };
 
@@ -31,6 +39,13 @@ export function instrumentHow(
   overlays: Map<string, Overlay>,
 ): { how: How; basis: string } {
   const o = overlays.get(n.id);
+  // a treaty the Senate never ratified is its own cause, whatever research says about its making
+  if (n['ratification_status'] === 'unratified')
+    return {
+      how: 'unratified',
+      basis:
+        o?.how_basis ?? 'the Senate never ratified this treaty, yet the land was treated as ceded',
+    };
   if (o?.how && FROM_RESEARCH[o.how])
     return { how: FROM_RESEARCH[o.how]!, basis: o.how_basis ?? 'research interpretation' };
   const type = String(n['instrument_type'] ?? '');
@@ -59,7 +74,9 @@ export interface CessionStory {
   acres: number;
   /** every instrument Royce ties to this area, in date order */
   instruments: { id: string; date: string | null }[];
-  /** year the land was recorded as ceded: Royce's ceding entry when researched, else the first date */
+  /** ceded / taken / kept per Royce's Schedule; unchecked until researched */
+  status: 'ceded' | 'taken' | 'kept' | 'unchecked';
+  /** year the land left Native hands per Royce's Schedule; the first date when unchecked; null if kept */
   ceded_year: number | null;
   /** what each of Royce's entries did, from the Schedule (crosswalks/royce-entry-roles.csv) */
   entries?: { date: string; role: string; instrument: string | null; quote: string }[];
@@ -73,6 +90,8 @@ interface RoyceRole {
   instrument_id: string;
   quote: string;
   ceded_by: string;
+  taken_by: string;
+  status: 'ceded' | 'taken' | 'kept' | 'unclear';
   summary: string;
   confidence: string;
 }
@@ -108,7 +127,10 @@ export function cessionStories(
       .filter((n): n is GraphNode => !!n)
       .sort((a, b) => String(a['date_signed'] ?? '').localeCompare(String(b['date_signed'] ?? '')));
     const roleRows = roles.get(g.id) ?? [];
-    const cededBy = roleRows[0]?.ceded_by || null;
+    const status =
+      roleRows[0]?.status === 'unclear' ? 'unchecked' : (roleRows[0]?.status ?? 'unchecked');
+    // the date the land left Native hands: the ceding entry, or the act that took reservation land
+    const cededBy = roleRows[0]?.ceded_by || roleRows[0]?.taken_by || null;
     const cededInst =
       roleRows.find((r) => r.date === cededBy && r.instrument_id && byId.has(r.instrument_id))
         ?.instrument_id ??
@@ -142,7 +164,8 @@ export function cessionStories(
           (cells.cells[g.id] ?? []).reduce((sum, c) => sum + cellAcres(cellLat(c)), 0) / 1000,
         ) * 1000,
       instruments: linked.map((n) => ({ id: n.id, date: (n['date_signed'] as string) ?? null })),
-      ceded_year: cededBy ? Number(cededBy.slice(0, 4)) : t,
+      status,
+      ceded_year: status === 'kept' ? null : cededBy ? Number(cededBy.slice(0, 4)) : t,
       ...(roleRows.length
         ? {
             entries: roleRows.map((r) => ({
@@ -204,7 +227,9 @@ export function landLoss(graph: Graph, stories: Map<string, CessionStory>) {
   ) as Cells;
   const t0 = new Map<string, number>();
   for (const g of graph.nodes.filter((n) => n.type === 'GeoFeature')) {
-    const researched = stories.get(g.id)?.entries ? stories.get(g.id)!.ceded_year : null;
+    const st = stories.get(g.id);
+    if (st?.status === 'kept') continue;
+    const researched = st?.entries ? st.ceded_year : null;
     if (researched) t0.set(g.id, researched + 0.5);
     else if (typeof g['t_first'] === 'number') t0.set(g.id, g['t_first'] as number);
   }

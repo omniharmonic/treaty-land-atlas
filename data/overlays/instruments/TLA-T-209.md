@@ -2,15 +2,16 @@
 id: "TLA-T-209"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1836 Cedar Point treaty had the Menominee cede about four million acres in Wisconsin and agree to leave within a year."
+headline: "In 1836 the Menominee ceded about four million acres in Wisconsin for $20,000 a year for twenty years and agreed to leave."
 how: "removal"
-how_basis: "The OSU treaty text pays $99,710.50 of Menominee debts from the cession and requires the Menominee to remove from the ceded country within one year."
-confidence: "medium"
-cautions: "Quote and figures from a summary of the page. The treaty says four million acres is an estimate. The treaty text is silent on negotiation conditions. Acreage: About 4 million acres (estimated in the treaty) plus eight townships, or 184,320 acres."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1836-0463", "title": "Treaty with the Menominee, 1836 (OSU Tribal Treaties Database)", "quote": "agree to remove from the country ceded, within one year after the ratification of this treaty"}]
+how_basis: "Article 4 of the treaty text has the nation agree to remove from the ceded country within one year after ratification."
+confidence: "high"
+cautions: "Four million acres is the treaty's own estimate. Article 4 says the removal clause applies within one year of ratification; whether and how it was carried out is not covered by the sources opened."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1836-0463", "title": "Treaty with the Menominee, 1836 (OSU Tribal Treaties Database)", "quote": "the quantity of land contained in the tract hereby ceded, being estimated at about four millions of acres"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1836-0463", "title": "Treaty with the Menominee, 1836 (OSU Tribal Treaties Database)", "quote": "agree to remove from the country ceded, within one year after the ratification of this treaty"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg506.pdf", "title": "Treaty with the Menominee, 7 Stat. 506 (govinfo)", "quote": "being estimated at about four millions of acres"}]
+verdict: "fixed"
 ---
-On September 3, 1836, Henry Dodge, Governor of Wisconsin Territory, acting as commissioner for the United States, signed a treaty at Cedar Point on the Fox River near Green Bay with the chiefs and headmen of the Menominee nation. The Menominee ceded a tract estimated at about four million acres, bounded by the Wolf River, the Chippewa boundary, Green Bay, the Fox River and Winnebago Lake. They also ceded a separate tract along the Wisconsin River of eight townships, or 184,320 acres.
+On September 3, 1836, Henry Dodge, Governor of Wisconsin Territory and commissioner for the United States, signed articles of agreement at Cedar Point on the Fox River near Green Bay. The other party was the chiefs and head men of the Menomonie (Menominee) nation. In Article 1 the nation agreed to cede a district of country described by boundaries, from the mouth of the Wolf River to the Chippewa boundary and down to Green Bay and the Fox River. The treaty estimates it at about four million acres. A separate tract on the Wisconsin River, eight townships or 184,320 acres, was also ceded.
 
-The United States agreed to pay $20,000 a year for 20 years, provisions, tobacco, salt, farm tools and two blacksmiths. It also agreed to pay Menominee debts totalling $99,710.50, subject to review by the Commissioner of Indian Affairs, $80,000 for people of mixed descent, and $76,000 for the release of claims under the 1831 and 1832 treaties.
+In Article 2 the United States agreed to pay $20,000 a year for twenty years, plus $3,000 a year in provisions, tobacco and salt, and $500 a year for farming tools and cattle. It agreed to supply two blacksmiths. It also agreed to pay the Menominee's debts, scheduled at $99,710.50, but only after the Commissioner of Indian Affairs examined each one. Another $80,000 went to relatives of mixed blood.
 
-The Menominee agreed to remove from the ceded country within one year after ratification. The page does not describe pressure, and the sources used here do not describe later events.
+In Article 3 the nation released the United States from some provisions of the 1831 and 1832 treaties, and the United States set aside $76,000 for them. Article 4 says the Menominee agreed to remove from the ceded country within one year after ratification. The treaty was proclaimed on February 15, 1837. The text does not describe the negotiation, and the sources used here do not say what followed.

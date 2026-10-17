@@ -1,0 +1,17 @@
+---
+id: "camp-buyback-2012-2022"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Interior's Land Buy-Back Program bought fractional land interests from willing owners and placed nearly 3 million acres in tribal trust."
+confidence: "high"
+cautions: "\"Nearly 3 million acres\" is Interior's own figure; the atlas value of 3,000,000 is a rounding of that. The program consolidated fractional interests in allotted land; it did not recover ceded land. The $1.69 billion figure is what Interior says was paid to owners."
+sources: [{"url": "https://www.doi.gov/pressreleases/three-million-acres-land-returned-tribes-through-interior-departments-land-buy-back", "title": "Three Million Acres of Land Returned to Tribes Through Interior Department's Land Buy-Back Program (DOI, Dec. 4, 2023)", "quote": "nearly 3 million acres in 15 states were consolidated and restored to Tribal trust ownership"}, {"url": "https://www.doi.gov/pressreleases/three-million-acres-land-returned-tribes-through-interior-departments-land-buy-back", "title": "Three Million Acres of Land Returned to Tribes Through Interior Department's Land Buy-Back Program (DOI, Dec. 4, 2023)", "quote": "The Interior Department created the Land Buy-Back Program in 2012 to carry out the land consolidation aspects of the Cobell v. Salazar Settlement Agreement"}, {"url": "https://www.doi.gov/pressreleases/three-million-acres-land-returned-tribes-through-interior-departments-land-buy-back", "title": "Three Million Acres of Land Returned to Tribes Through Interior Department's Land Buy-Back Program (DOI, Dec. 4, 2023)", "quote": "Appropriated funding for the Buy-Back Program ended in November 2022"}, {"url": "https://www.everycrsreport.com/files/2026-03-06_IF13173_333a3ec0948e330dd67fe43d9e3d3a081dab563c.html", "title": "Federal Management of Tribal Trust Funds (CRS IF13173)", "quote": "In 2010, Congress settled this case, Cobell v. Salazar"}]
+verdict: "new"
+---
+The Land Buy-Back Program for Tribal Nations was not a return of land taken by treaty cession. It consolidated land that was split into tiny shares among heirs, a result of allotment. The Department of the Interior explains that after the General Allotment Act of 1887 divided reservations into allotments, each owner's heirs shared title, so the number of owners grew exponentially over generations.
+
+Interior created the program in 2012 to carry out the land consolidation part of the Cobell v. Salazar settlement. The Congressional Research Service says Congress settled the Cobell case, a 1996 class action by account holders over trust mismanagement, in 2010. The program used voluntary sales with individual landowners and put the purchased interests into trust for tribes.
+
+On December 4, 2023, Interior announced the program's conclusion. It said nearly 3 million acres in 15 states were consolidated and restored to tribal trust ownership, and $1.69 billion was paid to more than 123,000 interested individuals. Appropriated funding ended in November 2022. The program worked with more than 50 tribes.
+
+Interior reports that at locations where offers were sent, fractionated tracts with 50 percent or greater tribal ownership increased by more than 100 percent. Assistant Secretary Bryan Newland said reducing fractionation allows more efficient trust management and upholds tribal sovereignty. These are Interior's own figures and statements.

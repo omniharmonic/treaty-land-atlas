@@ -2,13 +2,16 @@
 id: "case-santa-clara-pueblo-v-martinez-1978"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Indian Civil Rights Act did not let federal courts hear civil suits against the Pueblo over its membership rule."
+headline: "The Indian Civil Rights Act did not allow federal civil suits against Santa Clara Pueblo over its membership rule, the Court held in 1978."
 confidence: "high"
-cautions: "Citation and year match. Marshall as author comes from the first lines of the syllabus. Our data lists no land effect."
-sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep436/usrep436049/usrep436049.pdf", "title": "Santa Clara Pueblo v. Martinez, 436 U.S. 49 (1978) (U.S. Reports, Library of Congress)", "quote": "Suits against the tribe under the ICRA are barred by the tribe's sovereign immunity from suit"}]
+cautions: "The opinion decides which court may hear the claim; it does not rule on the merits of the membership rule. The atlas summary says \"tribes decide membership\"; that framing is not quoted from the opinion and is not asserted here."
+sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep436/usrep436049/usrep436049.pdf", "title": "Santa Clara Pueblo v. Martinez, 436 U.S. 49 (1978) (U.S. Reports, Library of Congress)", "quote": "Suits against the tribe under the ICRA are barred by the tribe's sovereign immunity from suit"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep436/usrep436049/usrep436049.pdf", "title": "Santa Clara Pueblo v. Martinez, 436 U.S. 49 (1978) (U.S. Reports, Library of Congress)", "quote": "Congress' failure to provide remedies other than habeas corpus for enforcement of the ICRA was deliberate"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep436/usrep436049/usrep436049.pdf", "title": "Santa Clara Pueblo v. Martinez, 436 U.S. 49 (1978) (U.S. Reports, Library of Congress)", "quote": "Tribal courts, which have repeatedly been recognized as appropriate forums for adjudicating disputes involving important interests of both Indians and non-Indians"}]
+verdict: "fixed"
 ---
-A female member of the Santa Clara Pueblo and her daughter challenged a Pueblo ordinance. It denied tribal membership to children of women who married outside the tribe, but not to similarly situated children of men. They sued the Pueblo and its Governor under Title I of the Indian Civil Rights Act of 1968, which bars tribes from denying "the equal protection of its laws." The Act's only express remedy was habeas corpus to test detention.
+Julia Martinez, a full-blooded member of the Santa Clara Pueblo who lived on the reservation in northern New Mexico, married a Navajo man in 1941. Two years earlier the Pueblo had passed the membership ordinance at issue in the case. The ordinance denied membership to children of female members who marry outside the tribe, but not to similarly situated children of male members.
 
-The Supreme Court, in an opinion by Justice Marshall, held that the Pueblo's sovereign immunity barred suits against the tribe, and that the Act did not impliedly create a private cause of action against the Governor. Congress, it found, deliberately chose not to provide other remedies, reflecting a commitment to tribal self-determination. Tribal forums are appropriate for such disputes.
+Martinez and her daughter Audrey sued the Pueblo and its Governor in federal court. They said the ordinance violated Title I of the Indian Civil Rights Act of 1968, which provides that no tribe shall "deny to any person within its jurisdiction the equal protection of its laws." The Act's only express remedy is habeas corpus, a way to test the legality of a detention by tribal order.
 
-Santa Clara is the leading case on tribal sovereign immunity from suit and on tribal control over membership. The Court later cited it in Kiowa (1998) and Bay Mills (2014) for the immunity rule. It remains debated because it left claimants without a federal forum.
+On May 15, 1978, the Supreme Court reversed the Tenth Circuit. Justice Marshall wrote that suits against the tribe under the Act "are barred by the tribe's sovereign immunity from suit." The Court also held that the Act does not impliedly allow a private suit against the Governor. It said Congress deliberately gave no remedy other than habeas corpus, in keeping with a commitment to tribal self-determination, and that tribal forums are available to decide such claims.
+
+Justice White dissented.

@@ -914,13 +914,26 @@ def build_geofeatures(cross, alias_index):
     links = defaultdict(list)
     for r in cross.get("instrument-royce.csv", []):
         links[r["cessnum"]].append(r)
+    # what Royce's Schedule says each area is (research, crosswalks/royce-entry-roles.csv)
+    royce = {}
+    for r in cross.get("royce-entry-roles.csv", []):
+        if r["confidence"] in ("high", "medium") and r["status"] != "unclear":
+            royce.setdefault(r["id"], r)
     for ev in events:
         gid = ev["id"]
         missing = ev["geometry_quality"] == "missing"
         first = ev["dates"][0]["date"] if ev["dates"] else None
-        G.add_node("GeoFeature", gid, f"Royce cession {ev['cessnum']}" + (f" ({first})" if first else ""),
+        rr = royce.get(gid)
+        if rr and rr["status"] == "kept":
+            label = f"Royce area {ev['cessnum']} (reservation)"
+        else:
+            when = (rr["ceded_by"] or rr["taken_by"]) if rr else first
+            label = f"Royce cession {ev['cessnum']}" + (f" ({when})" if when else "")
+        G.add_node("GeoFeature", gid, label,
                    "data/derived/cession-events.json", ev["cessnum"], "medium", "levels",
-                   {"geometry_role": "cession", "boundary_type": "map_generalization",
+                   {"geometry_role": "reservation" if rr and rr["status"] == "kept" else "cession",
+                    "royce_status": rr["status"] if rr else "unchecked",
+                    "boundary_type": "map_generalization",
                     "date_semantic_note": "Dates are Royce Schedule dates (USFS cessdate1-5): the instrument dates Royce gave, not necessarily the date the land changed hands.",
                     "geometry_file": "none" if missing else "layers/cessions.json",
                     "geometry_source": {"dataset": "USDA Forest Service, Tribal Lands Ceded to the United States (EDW_TribalCessionLands_01)",
@@ -1099,6 +1112,21 @@ def add_nation_edges(alias_index, overrides):
             link("involves_nation", nid, n["nations_text"] or "", "case", "case", "seed-data/cases-seed.csv", nid, "case nations text")
         elif n["type"] == "Campaign":
             link("involves_nation", nid, n["nation_text"] or "", "campaign", "campaign", "seed-data/campaigns-seed.csv", nid, "campaign nation text")
+    # reviewed corrections that add the right nation where text matching missed or mismatched it
+    for i, o in enumerate(overrides, start=2):
+        if o["action"] != "add":
+            continue
+        if o["source_id"] not in G.nodes or o["nation_id"] not in G.nodes:
+            issue("error", "override_unknown_id", "nation-link-overrides.csv", f"line {i}", f"{o['source_id']} or {o['nation_id']} is not in the graph.")
+            continue
+        if o["source_table"] == "instrument":
+            G.add_edge("party_to", o["nation_id"], o["source_id"], "proposed", "high", "crosswalk_manual", "reviewed party correction",
+                       "crosswalks/nation-link-overrides.csv", f"line {i}", basis=o["reason"], origin="crosswalk",
+                       qualifiers={"role": "named_party"}, crosswalk_file="crosswalks/nation-link-overrides.csv")
+        else:
+            G.add_edge("involves_nation", o["source_id"], o["nation_id"], "proposed", "high", "crosswalk_manual", "reviewed correction",
+                       "crosswalks/nation-link-overrides.csv", f"line {i}", basis=o["reason"], origin="crosswalk",
+                       crosswalk_file="crosswalks/nation-link-overrides.csv")
     for table, items in unresolved_strings.items():
         for src_id, text in items:
             issue("info", "unresolved_nation_text", table, src_id, f"No alias matched: '{text[:140]}'")
@@ -1589,6 +1617,41 @@ def apply_instrument_citations(cross):
                        qualifiers={"role": "citation_source", "tier": G.nodes[sid]["source_tier"]})
 
 
+def apply_record_corrections(cross):
+    """Sourced corrections to record fields (crosswalks/record-corrections.csv, from source
+    verification). The listed value is kept in the record's "corrections" list so nothing is silently overwritten,
+    and the correcting source is linked with its quote. Each correction is listed on the record."""
+    for i, r in enumerate(cross.get("record-corrections.csv", []), start=2):
+        node = G.nodes.get(r["record_id"])
+        field = r["field"]
+        if node is None:
+            issue("error", "correction_unknown_record", "crosswalks/record-corrections.csv", f"line {i}", r["record_id"])
+            continue
+        old = node.get(field) if field != "label" else node["label"]
+        if r["mode"] == "replace_text":
+            if not isinstance(old, str) or r["find"] not in old:
+                issue("warn", "correction_text_not_found", "crosswalks/record-corrections.csv", r["record_id"],
+                      f"{field} does not contain {r['find']!r}; not applied.")
+                continue
+            new = old.replace(r["find"], r["value"])
+        else:
+            new = int(r["value"]) if isinstance(old, int) and r["value"].isdigit() else r["value"]
+        if field == "label":
+            node["label"] = new
+        else:
+            node[field] = new
+            if field == "date_signed":
+                node["date_signed_basis"] = f"treaty text: {r['source_url']}"
+        node.setdefault("corrections", []).append(
+            {"field": field, "as_listed": old, "source_url": r["source_url"], "evidence_quote": r["evidence_quote"] or None})
+        if r["source_url"].startswith("http"):
+            sid = get_source_node(r["source_url"], set())
+            G.add_edge("evidenced_by", node["id"], sid, "asserted_by_seed", "high", "crosswalk_manual",
+                       f"source for the corrected {field}", "crosswalks/record-corrections.csv", f"line {i}",
+                       basis=r["evidence_quote"] or None, origin="crosswalk",
+                       qualifiers={"role": "correction_source", "tier": G.nodes[sid]["source_tier"]})
+
+
 def apply_edge_reviews(cross):
     """Human decisions from crosswalks/edge-reviews.csv (written by `npm run links:review`).
 
@@ -1723,6 +1786,7 @@ def main():
     build_california_bands(cross)
     apply_nation_corrections(cross)
     apply_instrument_citations(cross)  # before the stat-cite cross-check in add_crosswalk_edges
+    apply_record_corrections(cross)
 
     # edges
     removed_aliases = {norm_text(r["target"]) for r in corrections(cross, "remove_alias")}

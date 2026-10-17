@@ -1,0 +1,17 @@
+---
+id: "org-tongva-taraxat-paxaavxa-conservancy"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Tongva Taraxat Paxaavxa Conservancy, a Tongva-led nonprofit in Altadena, California, received a one-acre property in 2021 and 2022 reports describe it as returned."
+confidence: "low"
+cautions: "The only description comes from a grantor's story, not from the Conservancy; no website or donation page was found. The article says both 'given via land transfer' and 'purchased'. The Tongva San Gabriel Band is not federally recognized. Whether the property is still held after later events is unknown. Do not give a donation URL."
+sources: [{"url": "https://www.firstnations.org/stories/returning-the-peoples-land-to-the-tongva-community/", "title": "Returning the People's Land to the Tongva Community (First Nations Development Institute)", "quote": "through its Tongva-led nonprofit, the Taraxat Paaxaavxa Conservancy"}, {"url": "https://www.firstnations.org/stories/returning-the-peoples-land-to-the-tongva-community/", "title": "Returning the People's Land to the Tongva Community (First Nations Development Institute)", "quote": "The acre of property sits at the base of the San Gabriel Mountains in Altadena."}, {"url": "https://www.firstnations.org/stories/returning-the-peoples-land-to-the-tongva-community/", "title": "Returning the People's Land to the Tongva Community (First Nations Development Institute)", "quote": "was given via land transfer to the Tongva Taraxat Paaxaavxa Conservancy by its owner Sharon Alexander"}, {"url": "https://www.firstnations.org/stories/returning-the-peoples-land-to-the-tongva-community/", "title": "Returning the People's Land to the Tongva Community (First Nations Development Institute)", "quote": "the conservancy received $60,000 in grants over the course of the spring and summer 2021"}, {"url": "https://projects.propublica.org/nonprofits/organizations/871422866", "title": "ProPublica Nonprofit Explorer: Tongva Taraxat Paxaavxa Conservancy", "quote": "Altadena, CA Tax exemption issued: Jan. 2022 EIN: 87-1422866"}]
+verdict: "new"
+---
+The Tongva Taraxat Paxaavxa Conservancy is a nonprofit tied to the Gabrieleño/Tongva San Gabriel Band of Mission Indians. It has no website that could be found. Most of what is known comes from a First Nations Development Institute impact story. That story calls it a Tongva-led nonprofit and says Taraxat Paaxaavxa roughly translates to "the people's land." Kimberly Johnson is quoted as the Conservancy's vice president.
+
+The story says the Conservancy now holds about one acre of property at the base of the San Gabriel Mountains in Altadena, California, with a house, a cottage and grounds for gatherings. It reports that the owner, Sharon Alexander, who was interested in land-back efforts, transferred the property to the Conservancy. The same article elsewhere says the Conservancy "purchased" it, so the terms are unclear. The land was publicly announced in a Los Angeles Times story on Indigenous Peoples Day in 2022.
+
+First Nations says its California Tribal Fund gave the Conservancy $60,000 in grants over spring and summer 2021 for repairs, a part-time coordinator and legal counsel. The Conservancy plans ceremony space and a native plant garden.
+
+ProPublica Nonprofit Explorer lists Tongva Taraxat Paxaavxa Conservancy of Altadena as a 501(c)(3) with exemption issued in January 2022.

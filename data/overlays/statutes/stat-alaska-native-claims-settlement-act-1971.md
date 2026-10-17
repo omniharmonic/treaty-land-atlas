@@ -1,0 +1,17 @@
+---
+id: "stat-alaska-native-claims-settlement-act-1971"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "ANCSA in 1971 extinguished Alaska Native aboriginal land claims in exchange for corporation-held land and money, not reservations."
+confidence: "high"
+cautions: "The $962.5 million and 44 million acre figures come from the Supreme Court's description rather than from the statute sections opened here. Later amendments to ANCSA and the details of subsistence law are not covered. The Venetie holding concerns one tribe's former reservation land conveyed to corporations; its wider effect on other Alaska land was not reviewed."
+sources: [{"url": "https://www.law.cornell.edu/uscode/text/43/1601", "title": "43 U.S. Code sec. 1601 (ANCSA findings), Cornell LII", "quote": "an immediate need for a fair and just settlement of all claims by Natives and Native groups of Alaska"}, {"url": "https://www.law.cornell.edu/uscode/text/43/1601", "title": "43 U.S. Code sec. 1601 (ANCSA findings), Cornell LII", "quote": "without creating a reservation system or lengthy wardship or trusteeship"}, {"url": "https://www.law.cornell.edu/uscode/text/43/1603", "title": "43 U.S. Code sec. 1603 (extinguishment), Cornell LII", "quote": "including any aboriginal hunting or fishing rights that may exist, are hereby extinguished"}, {"url": "https://www.law.cornell.edu/supremecourt/text/522/520", "title": "Alaska v. Native Village of Venetie Tribal Government, 522 U.S. 520 (1998), Cornell LII", "quote": "authorized the transfer of $962.5 million in federal funds and approximately 44 million acres of Alaska land"}, {"url": "https://www.law.cornell.edu/supremecourt/text/522/520", "title": "Alaska v. Native Village of Venetie Tribal Government, 522 U.S. 520 (1998), Cornell LII", "quote": "Held: The Tribe's land is not \"Indian country.''"}]
+verdict: "new"
+---
+The Alaska Native Claims Settlement Act (ANCSA) became law on December 18, 1971. Its findings say there was "an immediate need for a fair and just settlement of all claims by Natives and Native groups of Alaska, based on aboriginal land claims." They add that the settlement should come "rapidly, with certainty" and "without litigation," and "without creating a reservation system or lengthy wardship or trusteeship."
+
+Section 4 (43 U.S.C. 1603) is the extinguishment clause: "All aboriginal titles, if any, and claims of aboriginal title in Alaska based on use and occupancy, including submerged land underneath all water areas, both inland and offshore, and including any aboriginal hunting or fishing rights that may exist, are hereby extinguished." It also ends claims based on any statute or treaty relating to Native use and occupancy, including claims pending before courts or the Indian Claims Commission.
+
+In return, the Supreme Court's summary in Alaska v. Native Village of Venetie (1998) says ANCSA revoked the Venetie Reservation and all but one of the other Native reserves, and authorized transferring $962.5 million and about 44 million acres of land to state-chartered private business corporations formed by Alaska Natives. Those corporations received fee simple title, with no federal restrictions on later transfers.
+
+That structure mattered later. In Venetie the Court held that the Tribe's ANCSA land, which had been conveyed to its corporations, was not "Indian country," so the Tribe could not tax a non-member contractor.

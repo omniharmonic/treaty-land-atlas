@@ -38,7 +38,7 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
             <path
               class="yr"
               d={d}
-              style={`--d: ${Math.round(((y - 1784) / (1894 - 1784)) * SPAN)}ms`}
+              style={`--d: ${Math.round(((Math.min(y, 1895) - 1784) / (1894 - 1784)) * SPAN)}ms`}
             />
           ))}
           <path class="today" d={art.lands} />

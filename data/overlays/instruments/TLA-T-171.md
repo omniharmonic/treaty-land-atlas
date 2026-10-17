@@ -2,15 +2,18 @@
 id: "TLA-T-171"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1832 Apalachicola treaty surrendered a Florida river reservation for $13,000 and removal west of the Mississippi."
+headline: "In 1832 the Apalachicola Band surrendered its river reservation in Florida for $13,000 and agreed to move west of the Mississippi."
 how: "removal"
 how_basis: "The OSU treaty text provides for surrender of the reservation and emigration west of the Mississippi, with payment for removal expenses."
-confidence: "medium"
-cautions: "No acreage stated on the page. The treaty page does not describe coercion; wider context was not checked."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-appalachicola-band-1832-0352", "title": "Treaty with the Appalachicola Band, 1832 (OSU Tribal Treaties Database)", "quote": "surrender to the United States, all their right, title and interest to a reservation of land"}]
+confidence: "high"
+cautions: "The page states no acreage and does not describe threats or pressure. Wider context of the Seminole removal was not checked here."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-appalachicola-band-1832-0352", "title": "Tribal Treaties Database (OSU)", "quote": "surrender to the United States, all their right, title and interest to a reservation of land"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-appalachicola-band-1832-0352", "title": "Tribal Treaties Database (OSU)", "quote": "to meet the charges of a party to explore immediately the country west in search of a home more suitable to their habits"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg377.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "TREATY WITH THE APPALACHICOLA BAND"}]
+verdict: "fixed"
 ---
-On October 11, 1832, commissioner James Gadsden and chiefs of the Apalachicola Band, including John Blunt, Davy and Cockrane, signed a treaty at Tallahassee, Florida Territory. The band surrendered its reservation along the Apalachicola River, which the 1823 Treaty of Camp Moultrie had set aside for it.
+On October 11, 1832, the chiefs of the Apalachicola Band signed a treaty at Tallahassee, Florida Territory, with commissioner James Gadsden for the United States. The band surrendered "all their right, title and interest to a reservation of land" made for its benefit in the additional article of the 1823 Treaty of Camp Moultrie. That tract ran along the Apalachicola River, beginning one mile below Tuski Hajo's improvements.
 
-The band agreed to move west of the Mississippi with about 256 people. The United States agreed to pay $13,000: $3,000 already received and $10,000 once the band began its removal. The money was to cover an advance party to find a new home and the full costs of emigration and subsistence. Chiefs Blunt and Davy kept a $5,000 annuity while they remained in Florida.
+The band agreed to remove, with its warriors and families then living on the reservation, "amounting in all to (256) two hundred and fifty-six souls," to the west of the Mississippi. The United States agreed to pay $13,000. Three thousand dollars was paid in cash. The other $10,000 was due when the band completed its arrangements and began to move. The money was to cover a party to explore the western country and "all the expenses of emigration, and subsistence."
 
-The band was to leave by November 1, 1833, with a possible extension of up to a year. The page does not state the reservation's acreage and does not describe threats. The sources used here do not describe what followed.
+The band would leave the reservation by November 1, 1833, with an extension of up to another year if unavoidable circumstances required it. The United States also agreed to continue to Blunt and Davy, chiefs of the towns agreeing to emigrate, their share of a $5,000 annuity.
+
+The Statutes at Large record a proclamation on February 13, 1833. The treaty does not state the reservation's acreage, and the text does not say what happened after the band left.

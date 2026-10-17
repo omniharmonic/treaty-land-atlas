@@ -1,0 +1,17 @@
+---
+id: "stat-indian-claims-commission-act-1946"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 1946 Indian Claims Commission Act let tribes bring claims against the United States, including claims for land taken without agreed payment."
+confidence: "medium"
+cautions: "The record's totals (546 dockets, about $818 million in judgments) and its note that the Commission could award only money were not found in a source opened here; the Act's text speaks of 'the amount' of relief, not of land return. Settlements tied to termination of tribes were not sourced."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-60/pdf/STATUTE-60-Pg1049.pdf", "title": "Indian Claims Commission Act, Aug. 13, 1946, 60 Stat. 1049 (Statutes at Large), govinfo.gov", "quote": "claims arising from the taking by the United States, whether as the result of a treaty of cession or otherwise"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-60/pdf/STATUTE-60-Pg1049.pdf", "title": "Indian Claims Commission Act, Aug. 13, 1946, 60 Stat. 1049 (Statutes at Large), govinfo.gov", "quote": "The Commission shall receive claims for a period of five years after the date of the approval of this Act"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-60/pdf/STATUTE-60-Pg1049.pdf", "title": "Indian Claims Commission Act, Aug. 13, 1946, 60 Stat. 1049 (Statutes at Large), govinfo.gov", "quote": "whether there are any just grounds for relief of the claimant and, if so, the amount thereof"}, {"url": "https://www.archives.gov/research/guide-fed-records/groups/279.html", "title": "Records of the Indian Claims Commission (RG 279), National Archives", "quote": "Abolished: Effective September 30, 1978, by an act of October 8, 1976 (90 Stat. 1990)."}, {"url": "https://www.archives.gov/research/guide-fed-records/groups/279.html", "title": "Records of the Indian Claims Commission (RG 279), National Archives", "quote": "Heard and determined claims against the United States on behalf of any tribe, band, or other identifiable group of American Indians"}]
+verdict: "new"
+---
+Congress created the Indian Claims Commission on August 13, 1946. The Act's title says it was "To create an Indian Claims Commission, to provide for the powers, duties, and functions thereof." It opened one forum for tribal claims.
+
+Section 2 gave the Commission power to hear claims by "any Indian tribe, band, or other identifiable group" in five classes. They included claims under the Constitution, laws and treaties; claims to revise treaties on grounds such as "fraud, duress, unconscionable consideration" or mistake; and claims from the taking of land "owned or occupied by the claimant without the payment for such lands of compensation agreed to by the claimant." Another class covered "fair and honorable dealings" not recognized by existing law. Claims could be heard despite statutes of limitation.
+
+There were firm limits. Section 12 gave five years to file, and a claim not presented in that time could not be taken up by any court, agency or Congress. A final determination states whether there are "just grounds for relief" and "the amount thereof," and Section 22 says payment of a claim is "a full discharge of the United States" of all claims touching the same matter, while a determination against a claimant would "forever bar any further claim." Either side could appeal to the Court of Claims.
+
+The National Archives says the Commission was abolished effective September 30, 1978, with pending cases going to the Court of Claims.

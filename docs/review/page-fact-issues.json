@@ -1,0 +1,410 @@
+[
+ {
+  "id": "case-employment-div-v-smith-1990",
+  "field": "nations_text",
+  "shown": "Native American Church members (Klamath)",
+  "source_says": "The opinion describes respondents only as members of the Native American Church; Klamath is not mentioned",
+  "url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep494/usrep494872/usrep494872.pdf",
+  "quote": "fired from their jobs with a private drug rehabilitation organization because they ingested peyote for sacramental purposes at a ceremony of the Native American Church"
+ },
+ {
+  "id": "case-herrera-v-wyoming-2019",
+  "field": "treaty_at_issue_text",
+  "shown": "Fort Laramie Treaty of 1868 (Crow)",
+  "source_says": "The treaty is the 1868 Treaty Between the United States and the Crow Tribe of Indians, May 7, 1868, 15 Stat. 650; the Treaty of Fort Laramie in the opinion is the 1851 treaty",
+  "url": "https://www.supremecourt.gov/opinions/18pdf/17-532_q86b.pdf",
+  "quote": "Treaty Between the United States of America and the Crow Tribe of Indians (1868 Treaty), Art. IV, May 7, 1868, 15 Stat. 650."
+ },
+ {
+  "id": "case-lopez-v-us-oak-flat-2026",
+  "field": "holding_summary",
+  "shown": "The Court denied an application to stop the Oak Flat land transfer",
+  "source_says": "Application (25A1008) denied by Justice Kagan.",
+  "url": "https://www.supremecourt.gov/search.aspx?filename=/docket/docketfiles/html/public/25A1008.html",
+  "quote": "application (25A1008) denied by Justice Kagan."
+ },
+ {
+  "id": "case-michigan-v-bay-mills-2014",
+  "field": "treaty_at_issue_text",
+  "shown": "Treaty of 1836 (land purchase funds for the casino)",
+  "source_says": "The opinion says Bay Mills bought the land with interest from a federal appropriation compensating 19th-century takings under the Michigan Indian Land Claims Settlement Act; it does not mention an 1836 treaty",
+  "url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep572/usrep572782/usrep572782.pdf",
+  "quote": "Bay Mills had bought the Vanderbilt property with accrued interest from a federal appropriation"
+ },
+ {
+  "id": "case-oak-flat-9th-circuit-2026",
+  "field": "summary",
+  "shown": "A 2-1 panel cleared the exchange",
+  "source_says": "Judge Rawlinson partially dissented, only on the appraisal issue; the panel affirmed denial of a preliminary injunction",
+  "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2026/04/08/25-5189.pdf",
+  "quote": "Judge Rawlinson partially dissented."
+ },
+ {
+  "id": "TLA-A-1877",
+  "field": "notes",
+  "shown": "$15.5 million plus interest per Wikipedia",
+  "source_says": "The Court affirmed an award of interest on a principal sum of $17.1 million, the fair market value of the Black Hills as of 1877",
+  "url": "https://www.law.cornell.edu/supremecourt/text/448/371",
+  "quote": "the principal sum of $17.1 million (the fair market value of the Black Hills as of 1877)"
+ },
+ {
+  "id": "TLA-A-1900",
+  "field": "date_ratified_basis",
+  "shown": "1900-06-06 [from-memory]",
+  "source_says": "Approved, June 6, 1900.",
+  "url": "https://treaties.okstate.edu/treaties/agreement-with-the-comanche-kiowa-and-apache-1892-22361",
+  "quote": "Approved, June 6, 1900."
+ },
+ {
+  "id": "TLA-T-022",
+  "field": "land_description",
+  "shown": "Acknowledgment of Oneida/Tuscarora/Stockbridge lands in New York; compensation for Revolutionary War losses.",
+  "source_says": "Treaty text contains compensation terms and no land acknowledgment",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-oneida-etc-1794-0037",
+  "quote": "relinquish all other claims of compensation and rewards for their losses and services in the late war"
+ },
+ {
+  "id": "TLA-T-023",
+  "field": "parties_text",
+  "shown": "Wyandot, Delaware, Shawnee, Ottawa, Chippewa, Potawatomi, Eel River, Wea, Kickapoo, Piankashaw, and Kaskaskia at Greenville",
+  "source_says": "Miamis also named as a party (twelve tribes)",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1795-0039",
+  "quote": "the tribes of Indians, called the Wyandots, Delawares, Shawanoes, Ottawas, Chipewas, Putawatimes, Miamis, Eel-river, Weea's, Kickapoos, Piankashaws, and Kaskaskias"
+ },
+ {
+  "id": "TLA-T-025",
+  "field": "land_description",
+  "shown": "Reaffirmed boundaries; provisions on fugitive slaves and trade.",
+  "source_says": "Treaty text provides for posts with five-mile-square land annexed and goods and blacksmiths; no fugitive-slave article found",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1796-0046",
+  "quote": "the leaving it in the discretion of the President to establish trading or military posts on their lands"
+ },
+ {
+  "id": "TLA-T-057",
+  "field": "land_description",
+  "shown": "Cession of roughly 2.5 million acres in Indiana ('from-memory')",
+  "source_says": "Native Voices timeline gives 3 million acres; the treaty text gives no acreage",
+  "url": "https://nlm.nih.gov/nativevoices/timeline/257.html",
+  "quote": "negotiates the treaty of Fort Wayne with the \"Delawares, Shawanoes, Putawatimies, Miamies and Kickapoos,\" and others to acquire 3 million acres"
+ },
+ {
+  "id": "TLA-T-061",
+  "field": "land_description (acreage note)",
+  "shown": "Acreage ~23 million per Wikipedia (pointer)",
+  "source_says": "Nearly 22 million acres",
+  "url": "https://www.nps.gov/articles/treaty-of-fort-jackson.htm",
+  "quote": "the Creek Nation ceded nearly 22 million acres to the United States"
+ },
+ {
+  "id": "TLA-T-125",
+  "field": "ratification_status",
+  "shown": "ratified",
+  "source_says": "The 1825 Indian Springs treaty was ratified by the United States on March 7, 1825 but then declared null and void by the 1826 Treaty of Washington.",
+  "url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg286.pdf",
+  "quote": "is hereby declared to be null and void, to every intent and purpose whatsoever"
+ },
+ {
+  "id": "TLA-U-PIKE1805",
+  "field": "ratification_status",
+  "shown": "unratified",
+  "source_says": "Ratified Apr. 16, 1808. Never proclaimed by the President.",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1805-1031",
+  "quote": "Ratified Apr. 16, 1808. Never proclaimed by the President."
+ },
+ {
+  "id": "TLA-T-001",
+  "field": "date_signed",
+  "shown": "1722-08-14",
+  "source_says": "Proceedings at Albany began 27 August 1722; the Virginia agreement was answered 6 September 1722",
+  "url": "https://treaties.okstate.edu/treaties/great-treaty-of-1722-21770",
+  "quote": "Albany 27 day of August 1722"
+ },
+ {
+  "id": "TLA-T-004",
+  "field": "date_signed",
+  "shown": "1752-06-01",
+  "source_says": "Signed 13 June 1752",
+  "url": "https://treaties.okstate.edu/treaties/treaty-of-logstown-1752-21778",
+  "quote": "this thirteenth day of June, in the Year of our Lord 1752"
+ },
+ {
+  "id": "TLA-T-055",
+  "field": "label",
+  "shown": "Osage [Treaty unavailable] (1808)",
+  "source_says": "The Oklahoma State page carries the full treaty text dated 10 Nov 1808",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1808-0095",
+  "quote": "Articles of a treaty made and concluded at fort Clark"
+ },
+ {
+  "id": "TLA-T-068",
+  "field": "parties_text",
+  "shown": "Makah",
+  "source_says": "The text names the Mahas, not the Makah",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-makah-1815-0115",
+  "quote": "the Chiefs and Warriors of the Mahas"
+ },
+ {
+  "id": "TLA-T-075",
+  "field": "ratified",
+  "shown": "(not shown in record)",
+  "source_says": "Page header lists ratification as Dec. 26, 1818, unlike the other 1815 treaties (Dec. 26, 1815)",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1815-0123",
+  "quote": "Ratified Dec. 26, 1818."
+ },
+ {
+  "id": "TLA-T-088",
+  "field": "proclamation",
+  "shown": "(not shown in record)",
+  "source_says": "Page header prints proclamation as Dec. 26, 1877, which cannot be right for an 1817 treaty",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1817-0140",
+  "quote": "Proclamation, Dec. 26,1877."
+ },
+ {
+  "id": "TLA-T-129",
+  "field": "place",
+  "shown": "Fort Lockout",
+  "source_says": "The text says 'fort Look-out'",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-teton-etc-sioux-1825-0227",
+  "quote": "Done at fort Look-out, near the three rivers of the Sioux pass"
+ },
+ {
+  "id": "TLA-T-142",
+  "field": "parties_text",
+  "shown": "Makah (Maha)",
+  "source_says": "The text names the Maha tribe; the database title says Makah",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-makah-tribe-1825-0260",
+  "quote": "the Maha tribe of Indians, the President of the United States"
+ },
+ {
+  "id": "TLA-T-166",
+  "field": "date_signed",
+  "shown": "1832-01-29",
+  "source_says": "Concluded 19 January 1832",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-1832-0339",
+  "quote": "on the nineteenth day of January, 1832"
+ },
+ {
+  "id": "TLA-T-282",
+  "field": "date_signed",
+  "shown": "1855-01-22",
+  "source_says": "Header of the OSU page says Jan. 22, 1855, but the treaty's closing clause says the fourth day of January, 1855",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-kalapuya-etc-1855-0665",
+  "quote": "this fourth day of January, eighteen hundred and fifty-five, at Dayton, in Oregon Territory"
+ },
+ {
+  "id": "TLA-T-350",
+  "field": "date_signed",
+  "shown": "1865-10-28",
+  "source_says": "Closing clause on the OSU page says the twenty-sixth day of October, 1865 (header says Oct. 28)",
+  "url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-oglala-band-1865-0906",
+  "quote": "this twenty-sixth day of October, eighteen hundred and sixty-five after the contents had previously been read"
+ },
+ {
+  "id": "stat-indian-appropriations-act-1851",
+  "field": "summary",
+  "shown": "Appropriated funds to concentrate tribes on defined reservations",
+  "source_says": "The act reorganizes superintendents and agents and pays treaty obligations; no reservation-concentration clause appears",
+  "url": "https://www.govinfo.gov/content/pkg/STATUTE-9/pdf/STATUTE-9-Pg574-2.pdf",
+  "quote": "shall be negotiated by such officers and agents of the Indian"
+ },
+ {
+  "id": "stat-indian-relocation-act-1956",
+  "field": "summary",
+  "shown": "Funded relocation of Native people from reservations to cities",
+  "source_says": "Act authorizes a vocational training program for adult Indians on or near reservations",
+  "url": "https://www.govinfo.gov/content/pkg/STATUTE-70/pdf/STATUTE-70-Pg986.pdf",
+  "quote": "the Secretary of the Interior is authorized to undertake a program of vocational training"
+ },
+ {
+  "id": "stat-indian-civil-rights-act-1968",
+  "field": "summary",
+  "shown": "capping tribal criminal punishment (originally 1 year/$5,000; raised later)",
+  "source_says": "Original cap was six months or $500; 1986 amendment raised it to one year and $5,000",
+  "url": "https://www.law.cornell.edu/uscode/text/25/1302",
+  "quote": "for a term of six months or a fine of $500, or both"
+ },
+ {
+  "id": "doctrine-laches",
+  "field": "summary",
+  "shown": "Equitable bar from delay (Sherrill, Cayuga) that defeats land claims despite title",
+  "source_says": "Sherrill: equitable doctrines render inequitable the Tribe's unilateral revival of sovereignty over repurchased parcels; Cayuga: a possessory land claim is barred by laches",
+  "url": "https://www.law.cornell.edu/supremecourt/text/544/197",
+  "quote": "render inequitable the piecemeal shift in governance this suit seeks unilaterally to initiate"
+ },
+ {
+  "id": "camp-ancsa-1971",
+  "field": "acres",
+  "shown": "44,000,000",
+  "source_says": "approximately 45 million acres received (CRS); acreage figures vary by source",
+  "url": "https://www.everycrsreport.com/reports/R46997.html",
+  "quote": "Under provisions of the settlement, Alaska Natives received approximately 45 million acres"
+ },
+ {
+  "id": "camp-ca-tnbs-statewide",
+  "field": "acres",
+  "shown": "40574.94",
+  "source_says": "approximately 38,950 acres supported by the April 2024 awards (a different measure; a later cumulative total was not found)",
+  "url": "https://wildfiretaskforce.org/nearly-39000-acres-of-land-returned-to-california-tribes/",
+  "quote": "support the return of approximately 38,950 acres of land to California Native American tribes"
+ },
+ {
+  "id": "camp-hawaiian-home-lands",
+  "field": "start_year",
+  "shown": "1920",
+  "source_says": "The Act is titled 1920 but was signed into law July 9, 1921",
+  "url": "https://dhhl.hawaii.gov/about/government/",
+  "quote": "signed into law by President Warren Harding on July 9, 1921 (chapter 42, 42 Stat. 108)"
+ },
+ {
+  "id": "camp-mikmaq-bridgewater-2026",
+  "field": "summary",
+  "shown": "$1.9M is the amount still to be raised to complete the purchase, not stated as the total price",
+  "source_says": "Maine Public describes the $1.9 million as the parcel price, with fundraising completed",
+  "url": "https://www.mainepublic.org/maine/2026-06-26/mikmaq-nation-to-expand-lands-with-new-aroostook-county-parcel",
+  "quote": "held the land for the tribe until fundraising for the $1.9 million parcel was completed"
+ },
+ {
+  "id": "camp-monument-mountain-2025",
+  "field": "acres",
+  "shown": "372",
+  "source_says": "351 acres in the 2023 grant announcement; 372 acres at closing in 2025",
+  "url": "https://theberkshireedge.com/a-return-to-the-past-monument-mountain-set-to-revert-back-to-mohican-stewardship",
+  "quote": "was awarded a $2.26 million grant to reclaim 351 acres of their Indigenous homelands"
+ },
+ {
+  "id": "org-cultural-conservancy",
+  "field": "website",
+  "shown": "https://www.cultural-conservancy.org/",
+  "source_says": "The organization's site is https://www.nativeland.org/",
+  "url": "https://www.nativeland.org/",
+  "quote": "We are The Cultural Conservancy, a Native-led organization founded in 1985."
+ },
+ {
+  "id": "org-dine-care",
+  "field": "website",
+  "shown": "(none)",
+  "source_says": "dine-care.org is the organization's site",
+  "url": "https://www.dine-care.org/",
+  "quote": "Welcome to Diné C.A.R.E."
+ },
+ {
+  "id": "org-ka-honua-momona",
+  "field": "ein_or_registry",
+  "shown": "name mismatch, same-entity not confirmed",
+  "source_says": "The site's mailing address is Ka Honua Momona International, Kaunakakai, matching ProPublica's KHM International name and town",
+  "url": "https://kahonuamomona.org/",
+  "quote": "Mailing Address: Ka Honua Momona International PO Box 482188, Kaunakakai, HI 96748-2188"
+ },
+ {
+  "id": "org-native-american-land-conservancy",
+  "field": "website",
+  "shown": "https://www.nativeamericanlandconservancy.org/",
+  "source_says": "The domain did not resolve when fetched; NALC's own statement gives a P.O. box in Indio, California",
+  "url": "https://mdlt.org/s/Tribes_NALC-Statement.pdf",
+  "quote": "P.O. BOX 3074 Indio, California 92202"
+ },
+ {
+  "id": "org-indian-canyon",
+  "field": "ein_or_registry",
+  "shown": "None verified; ProPublica search returned only Indian Canyon Land Charitable Organization (93-4596851), not shown to be this band",
+  "source_says": "Costanoan Indian Research, Inc., the nonprofit at Indian Canyon, lists federal ID 68-0287736",
+  "url": "https://indiancanyonlife.org/?p=205",
+  "quote": "Costanoan Indian Research, Inc. is a registered 501(c)(3)"
+ },
+ {
+  "id": "org-indian-canyon",
+  "field": "website",
+  "shown": "indiancanyon.org (unrelated content)",
+  "source_says": "indiancanyonlife.org is a live community site; the event page also lists indiancanyon.org, which the vetting notes say now serves unrelated content",
+  "url": "https://indiancanyonlife.org/?p=205",
+  "quote": "www.indiancanyonlife.org www.indiancanyon.org"
+ },
+ {
+  "id": "org-native-governance-center",
+  "field": "region_text",
+  "shown": "Great Lakes; Plains; MN, ND, SD",
+  "source_says": "Region now also includes the four Native nations sharing geography with Nebraska.",
+  "url": "https://nativegov.org/about/",
+  "quote": "we’ve expanded our region to include the 4 Native nations sharing geography with Nebraska"
+ },
+ {
+  "id": "org-pacific-forest-trust",
+  "field": "summary",
+  "shown": "Stewarded the land for 20 years before ~900-acre return near Yosemite (Dec 2025)",
+  "source_says": "PFT says the transfer was completed in November 2025; no 20-year stewardship figure appears on the pages read.",
+  "url": "https://www.pacificforest.org/returning-yosemite-to-ssmn/",
+  "quote": "This transfer, completed in November 2025 with funding from the California Natural Resources Agency Tribal Nature-Based Solutions Program"
+ },
+ {
+  "id": "org-rappahannock-tribe",
+  "field": "ein_or_registry",
+  "shown": "ProPublica lists 'Rappahannock Tribe Foundation', EIN 54-1118538",
+  "source_says": "Tribe's donate page says the IRS recognizes 'Rappahannock Tribe, Inc.' as the 501(c)(3); the name differs from the ProPublica entry",
+  "url": "https://www.rappahannocktribe.org/donate/",
+  "quote": "The IRS recognizes Rappahannock Tribe, Inc. as a 501(c)3 nonprofit organization"
+ },
+ {
+  "id": "org-save-california-salmon",
+  "field": "vetting_notes",
+  "shown": "Site text read does not say 'Indigenous-led'",
+  "source_says": "The About page describes SCS as an Indigenous-led non-profit",
+  "url": "https://www.californiasalmon.org/about-3",
+  "quote": "501(c)(3) Indigenous-led non-profit organization"
+ },
+ {
+  "id": "org-save-the-redwoods-league",
+  "field": "focus",
+  "shown": "announced July 28, 2026 per yuroktribe.org",
+  "source_says": "Conveyance dated June 30, 2026 on the Yurok Tribe page; June 29, 2026 in the league's story; July 28 is the story's posting date",
+  "url": "https://www.yuroktribe.org/",
+  "quote": "Save the Redwoods conveyed the property to the Yurok Tribe on June 30, 2026."
+ },
+ {
+  "id": "org-utah-dine-bikeyah",
+  "field": "vetting_notes",
+  "shown": "Native leadership is not verified from the site",
+  "source_says": "UDB's About page describes the organization as Native American-led",
+  "url": "https://utahdinebikeyah.org/about/",
+  "quote": "Utah Diné Bikéyah is a Native American-led, values-driven organization"
+ },
+ {
+  "id": "org-wishtoyo-chumash-foundation",
+  "field": "ein_or_registry",
+  "shown": "EIN 95-4124859 (Wishtoyo Foundation, Ventura CA, 501(c)(3))",
+  "source_says": "The site says Wishtoyo was founded in 1997, while ProPublica shows tax exemption issued in October 1988 under this EIN",
+  "url": "https://projects.propublica.org/nonprofits/organizations/954124859",
+  "quote": "Tax exemption issued: Oct. 1988 EIN: 95-4124859"
+ },
+ {
+  "id": "org-yurok-tribe",
+  "field": "focus",
+  "shown": "Blue Creek Salmon Sanctuary and Yurok Tribal Community Forest (47,097 acres); 'O Rew Redwoods Gateway (125 acres, 2026)",
+  "source_says": "Acreage 47,097 comes from Western Rivers Conservancy's project page, not the Tribe's; conveyance date of 'O Rew is June 30, 2026 on the Tribe's page",
+  "url": "https://www.yuroktribe.org/",
+  "quote": "Save the Redwoods conveyed the property to the Yurok Tribe on June 30, 2026."
+ },
+ {
+  "id": "org-oneida-indian-nation",
+  "field": "summary",
+  "shown": "About 18,000 acres in trust (2022 est.), 25,000-acre cap under 2013 agreement; 2023 BIA trust decision for about 270 acres (16 parcels)",
+  "source_says": "Federal Register: final determination February 17, 2023 for 269.543 acres; the parcels are described as OIN Parcels 75-81. Total-acreage figures were not found in sources read.",
+  "url": "https://www.govinfo.gov/content/pkg/FR-2023-03-01/html/2023-04166.htm",
+  "quote": "made a final agency determination to acquire in trust 269.543 acres, more or less"
+ },
+ {
+  "id": "org-pamunkey",
+  "field": "summary",
+  "shown": "About 13 acres reported returned for cultural and educational use (Washington Post 7/28/2026 headline)",
+  "source_says": "Long & Foster reports the Tribe bought the 13-acre estate for $1.95 million in May 2026",
+  "url": "https://newsroom.longandfoster.com/?p=42537",
+  "quote": "Dotts represented the Tribe in its $1.95 million purchase of Windsor Shades , a 13-acre estate overlooking the Pamunkey River in West Point, Virginia."
+ },
+ {
+  "id": "org-puyallup-tribe",
+  "field": "summary",
+  "shown": "1989 Land Claims Settlement (about $162-163M)",
+  "source_says": "Tribe's page dates the Land Claims Settlement 1990; the Settlement Act is Pub. L. 101-41, June 21, 1989; no dollar total found in sources read",
+  "url": "https://www.puyalluptribe-nsn.gov/about-our-tribe/",
+  "quote": "since the 1990 Land Claims Settlement between the Tribe, local governments, Washington State, and the US Government"
+ }
+]

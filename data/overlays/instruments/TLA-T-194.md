@@ -2,15 +2,16 @@
 id: "TLA-T-194"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1834 Muck Rose treaty had a Potawatomi chief and band cede six sections reserved under the 1832 treaty."
+headline: "In December 1834 a Potawatomi chief, Muck Rose, and his band ceded six reserved sections on the Tippecanoe River."
 how: "treaty_negotiated"
-how_basis: "The OSU treaty text records a cession of reserved sections for goods and an annuity, with no coercion described."
+how_basis: "The treaty text records a cession of reserved sections for goods and an annuity, signed by a commissioner and a chief, and no coercion is described."
 confidence: "medium"
-cautions: "Quote from a summary of the page. Only the treaty text was consulted. Acreage: Six sections (the page states no acreage)."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0429", "title": "Treaty with the Potawatomi, 1834 (OSU Tribal Treaties Database)", "quote": "yield peaceable possession of the said sections of land to the United States within three years"}]
+cautions: "Annuity terms conflict: the OSU text says $1,000 for two years; the Statutes at Large page (7 Stat. 467) reads $400 for one year. Both are given. Acreage is not stated."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0429", "title": "Treaty with the Potawatomi, 1834 (OSU Tribal Treaties Database)", "quote": "yield peaceable possession of the said sections of land to the United States within three years"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0429", "title": "Treaty with the Potawatomi, 1834 (OSU Tribal Treaties Database)", "quote": "six sections of land reserved for them by the second article of the treaty"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg467.pdf", "title": "Treaty with the Potawatomi, 7 Stat. 467 (govinfo)", "quote": "an annuity of four hundred dollars for one year"}]
+verdict: "fixed"
 ---
-On December 10, 1834, commissioner William Marshall signed a treaty on the Tippecanoe River, Indiana, for the United States with Muck Rose, a Potawatomi chief, and his band. Several other Potawatomi also signed. The band ceded six sections of land that had been reserved for them under the 1832 treaty on the Tippecanoe River. The page does not state the acreage.
+On December 10, 1834, William Marshall, commissioner for the United States, signed a short treaty at a camp on the Tippecanoe River in Indiana. The other party was Muck Rose, a chief of the Potawatomi (spelled Potawattamie in the text), and his band.
 
-In return the United States agreed to pay $400 in goods at signing and an annuity of $1,000 for two years. The band agreed to yield peaceable possession of the sections to the United States within three years.
+Article 1 has the chief and his band cede six sections of land. These sections had been reserved for them by the second article of the October 26, 1832 treaty with the Potawatomi on the Tippecanoe River. The treaty states no acreage. In Article 2 the band agreed to yield peaceable possession of the sections to the United States within three years of the date of ratification of the 1832 treaty.
 
-The treaty text is a short cession agreement. It transfers the reserved sections and sets the payment terms. It does not state any broader purpose, and the page describes no pressure, coercion or circumstances of signing. The sources used here do not describe later events, so what followed for the band is not covered in this entry.
+For this the United States stipulated to pay four hundred dollars in goods at signing, which the treaty acknowledges as received. The OSU text also lists an annuity of one thousand dollars for two years. The Statutes at Large page, however, reads "an annuity of four hundred dollars for one year," so the sources disagree on the annuity. The treaty was proclaimed on March 16, 1835. The text does not describe how the negotiation went or what happened to the band afterward.

@@ -623,6 +623,34 @@
             "string",
             "null"
           ]
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -941,6 +969,34 @@
             "type": "string"
           },
           "description": "Other nation ids that claim the same people or history (shown as disputed, never ranked)."
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -1093,6 +1149,34 @@
             "null"
           ],
           "description": "ID of a GeoFeature, if any. None in v0."
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -1358,6 +1442,34 @@
             ]
           },
           "description": "G2 s.4 evidence categories. Empty until assigned with citations."
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -1516,6 +1628,34 @@
             "string",
             "null"
           ]
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -1628,6 +1768,34 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
           }
         }
       },
@@ -1742,6 +1910,34 @@
             "string",
             "null"
           ]
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -1896,6 +2092,34 @@
         "display_eligible": {
           "type": "boolean",
           "description": "True only when confidence is high or medium (F README rule)."
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -2059,6 +2283,34 @@
             "string",
             "null"
           ]
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -2244,6 +2496,34 @@
             "string",
             "null"
           ]
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -2344,6 +2624,34 @@
             "null"
           ],
           "description": "Row count printed in C3 Part 4. build_graph.py recomputes it and reports mismatches."
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -2450,6 +2758,34 @@
             "integer",
             "null"
           ]
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [
@@ -2539,6 +2875,15 @@
             "null"
           ],
           "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "royce_status": {
+          "description": "What Royce's Schedule says this area is (crosswalks/royce-entry-roles.csv): ceded, taken (reservation land restored to the public domain), kept (a reservation as of 1894), or unchecked.",
+          "enum": [
+            "ceded",
+            "taken",
+            "kept",
+            "unchecked"
+          ]
         },
         "geometry_role": {
           "enum": [
@@ -2851,6 +3196,34 @@
             "ok",
             "missing"
           ]
+        },
+        "corrections": {
+          "description": "Sourced corrections applied to this record's fields (crosswalks/record-corrections.csv): the value as originally listed and the source that corrected it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "as_listed",
+              "source_url"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "as_listed": {},
+              "source_url": {
+                "type": "string"
+              },
+              "evidence_quote": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       },
       "allOf": [

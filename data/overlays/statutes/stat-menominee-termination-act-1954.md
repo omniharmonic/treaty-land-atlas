@@ -1,0 +1,17 @@
+---
+id: "stat-menominee-termination-act-1954"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 1954 Menominee Termination Act ended federal supervision of the tribe, but the Supreme Court held treaty hunting and fishing rights survived."
+confidence: "high"
+cautions: "Only the first page of the Termination Act (68 Stat. 250) was available, so the Act's later sections (the final tribal roll, the state-law provisions, the April 30, 1961 effective date in the record) rest on the Supreme Court's description in Menominee Tribe v. United States. The Court's 1961 date is 'fully effective in 1961'; the record's April 30, 1961 date was not confirmed. Effects on tribal land and population after termination are not covered by the sources opened."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-68/pdf/STATUTE-68-Pg250.pdf", "title": "Act of June 17, 1954 (Menominee Termination Act), 68 Stat. 250, Statutes at Large", "quote": "To provide for a per capita distribution of Menominee tribal funds and authorize the withdrawal of the Menominee Tribe from Federal jurisdiction."}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-68/pdf/STATUTE-68-Pg250.pdf", "title": "Act of June 17, 1954 (Menominee Termination Act), 68 Stat. 250, Statutes at Large", "quote": "no child born thereafter shall be eligible for enrollment"}, {"url": "https://www.law.cornell.edu/supremecourt/text/391/404", "title": "Menominee Tribe v. United States, 391 U.S. 404 (1968), Cornell LII", "quote": "the Termination Act of 1954, which became fully effective in 1961"}, {"url": "https://www.law.cornell.edu/supremecourt/text/391/404", "title": "Menominee Tribe v. United States, 391 U.S. 404 (1968), Cornell LII", "quote": "survived the Termination Act of 1954"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-87/pdf/STATUTE-87-Pg770.pdf", "title": "Menominee Restoration Act, Pub. L. 93-197, 87 Stat. 770 (1973)", "quote": "there are hereby reinstated all rights"}]
+verdict: "new"
+---
+On June 17, 1954, Congress passed an act "to provide for a per capita distribution of Menominee tribal funds and authorize the withdrawal of the Menominee Tribe from Federal jurisdiction." Its stated purpose was "orderly termination of Federal supervision over the property and members" of the Menominee Indian Tribe of Wisconsin. Section 3 closed the tribal roll at midnight on the date of enactment, so no child born afterward could be enrolled.
+
+Termination took years to carry out. In Menominee Tribe v. United States (1968), the Supreme Court described the Termination Act of 1954 as having "became fully effective in 1961." Under it, the federal government ceded to Wisconsin its power of supervision over the tribe and the reservation lands, and Wisconsin's laws applied to the tribe and its members as to other citizens.
+
+The Court then asked what had happened to the tribe's treaty rights. The 1854 Treaty of Wolf River had confirmed a reservation "for a home, to be held as Indian lands are held." The Court held that this language includes the right to hunt and fish. Reading the Termination Act together with Public Law 280, which protected treaty hunting and fishing rights, it concluded that these rights "survived the Termination Act of 1954."
+
+Congress reversed termination in the Menominee Restoration Act of December 22, 1973. That Act repealed the 1954 law and reinstated rights and privileges lost under it.

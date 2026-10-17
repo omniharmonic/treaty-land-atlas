@@ -2,15 +2,18 @@
 id: "TLA-T-170"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1832 Fort Armstrong treaty after the Black Hawk War had the Sauk and Fox cede a Mississippi frontier tract for annuities."
+headline: "After the Black Hawk War, the Sac and Fox ceded a Mississippi frontier tract in 1832, keeping 400 square miles, for annuities."
 how: "treaty_under_pressure"
 how_basis: "The OSU treaty text ties the cession to the 1832 war, cites the United States action against the hostile band, and notes chiefs held as hostages."
-confidence: "medium"
-cautions: "Quote and the framing of war costs come from a page summary and should be checked in the page. The name Black Hawk Purchase is not used on the page. Input record date 1832-09-21 matches. Acreage: About 400 square miles reserved from the cession (Keokuk reserve); no acreage stated for the cession."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1832-0349", "title": "Treaty with the Sauk and Foxes, 1832 (OSU Tribal Treaties Database)", "quote": "hereby cede to the United States forever"}]
+confidence: "high"
+cautions: "The page describes the cession's boundaries but states no acreage. No source opened describes the war itself beyond the treaty's preamble, which is the United States' own account. The Sac and Fox nations' own accounts were not consulted."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1832-0349", "title": "Tribal Treaties Database (OSU)", "quote": "partly as indemnity for the expense incurred, and partly to secure the future safety and tranquillity of the invaded frontier"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1832-0349", "title": "Tribal Treaties Database (OSU)", "quote": "shall be held as hostages for the future good conduct of the late hostile bands"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg374.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Sac and Fox"}]
+verdict: "fixed"
 ---
-On September 21, 1832, Major General Winfield Scott and Illinois Governor John Reynolds signed a treaty at Fort Armstrong, Rock Island, Illinois, for the United States with the confederated Sac and Fox. The tribes ceded a large tract along the Mississippi frontier and agreed to leave it by June 1 of the following year. The page describes the boundaries but states no total acreage and does not use the name Black Hawk Purchase.
+On September 21, 1832, Major General Winfield Scott and Illinois Governor John Reynolds signed a treaty of peace, friendship and cession at Fort Armstrong, Rock Island, Illinois. The other party was the confederated tribes of Sac and Fox, represented in general council. The treaty text does not use the name Black Hawk Purchase.
 
-The treaty followed the 1832 war, which the United States described as an unprovoked attack by a band of the Sac and Fox. The summary of the page says the United States framed the land demand as repayment for war costs and a way to secure the frontier, and the cession was larger than the number of hostile band members would justify. Several chiefs, including Black Hawk, were held as hostages.
+The preamble says "a formidable band" of the Sac and Fox nation had left their country in April and begun "an unprovoked war" on citizens of the United States. It says the United States had "subdued the said hostile band." The United States then demanded, "partly as indemnity for the expense incurred, and partly to secure the future safety and tranquillity of the invaded frontier," a cession "more than proportional to the numbers of the hostile band."
 
-The United States agreed to pay $20,000 in specie a year for thirty years and $40,000 to the traders Farnham and Davenport. About 400 square miles of the ceded land were set aside as the Keokuk reserve.
+Article 1 ceded a tract along the Mississippi, described by boundaries but with no stated acreage. Article 2 reserved 400 square miles for the tribes, around Keokuck's principal village on the Ioway River. The United States agreed to pay $20,000 a year in specie for thirty years, to maintain a smith's shop, and to pay the traders Farnham and Davenport $40,000 for debts the tribes had acknowledged.
+
+Article 7 says Black Hawk, his sons, the Prophet and others would be held as hostages "for the future good conduct of the late hostile bands." The Statutes at Large record a proclamation on February 13, 1833.

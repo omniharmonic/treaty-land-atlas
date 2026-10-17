@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test('a place reads as a land record, with the people doing the work', async ({ page }) => {
   await page.goto('/where/#at=40.015,-105.27&p=Boulder%2C%20CO&s=CO');
-  await expect(page.getByRole('heading', { level: 2 }).first()).toContainText('1851');
+  await expect(page.getByRole('heading', { level: 2 }).first()).toContainText('1861');
   await expect(page.getByRole('heading', { name: 'How this land was taken' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Who is doing the work' })).toBeVisible();
   await expect(

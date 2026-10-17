@@ -42,7 +42,7 @@ def main(src):
     src = Path(src)
     types = {n["id"]: n["type"] for n in json.load(open(ROOT / "build" / "nodes.json"))["nodes"]}
     written, skipped = {}, []
-    for f in sorted(src.glob("out-*.jsonl")):
+    for f in sorted(p for p in src.glob("out-*.jsonl") if not p.name.startswith("out-royce")):
         for line in f.read_text(encoding="utf-8").splitlines():
             try:
                 o = json.loads(line)
@@ -82,6 +82,9 @@ def main(src):
     story = src / "out-story.json"
     if story.exists():
         s = json.loads(story.read_text(encoding="utf-8"))
+        for item in s.get("chapters", []) + s.get("moments", []):
+            for k in ("verdict", "problems_found"):
+                item.pop(k, None)
         for m in s.get("moments", []):
             if m.get("how") not in HOW:
                 m["how"] = None

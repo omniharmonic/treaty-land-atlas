@@ -1,0 +1,17 @@
+---
+id: "camp-pesla-2012"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "On November 30, 2012, a 1,942-acre parcel bought for $9 million was returned to the Oceti Sakowin; ILTF gave $900,000 in rapid financing."
+confidence: "medium"
+cautions: "All facts are from ILTF's own announcement, a partner organization that helped finance the purchase, as republished by UCLA; no independent report or tribal statement was opened. Which Oceti Sakowin tribe holds title, and in what form, is not stated; the atlas note that the Rosebud Sioux Tribe led the effort is inferred from headlines and was not confirmed here. The site is sacred to the Oceti Sakowin; only the broad region is given."
+sources: [{"url": "https://main.aisc.ucla.edu/?p=89", "title": "ILTF: Pe' Sla Returns to Oceti Sakowin (UCLA American Indian Studies Center, reposting ILTF, Nov. 30, 2012)", "quote": "full ownership and control of the sacred site Pe’Sla, located in the Black Hills, was officially returned to the Oceti Sakowin (Great Sioux Nation)"}, {"url": "https://main.aisc.ucla.edu/?p=89", "title": "ILTF: Pe' Sla Returns to Oceti Sakowin (UCLA American Indian Studies Center, reposting ILTF, Nov. 30, 2012)", "quote": "raise the $9 million purchase price for the 1,942 acre parcel of land that contains Pe’ Sla"}, {"url": "https://main.aisc.ucla.edu/?p=89", "title": "ILTF: Pe' Sla Returns to Oceti Sakowin (UCLA American Indian Studies Center, reposting ILTF, Nov. 30, 2012)", "quote": "was able to provide $900,000 in rapid financing in order to help the tribes secure the initial purchase agreement"}, {"url": "https://main.aisc.ucla.edu/?p=89", "title": "ILTF: Pe' Sla Returns to Oceti Sakowin (UCLA American Indian Studies Center, reposting ILTF, Nov. 30, 2012)", "quote": "It is anticipated that each tribe will also participate in the oversight and management of the land"}]
+verdict: "new"
+---
+On November 30, 2012, the Indian Land Tenure Foundation (ILTF) announced that full ownership and control of Pe' Sla, a site sacred to the Oceti Sakowin (Great Sioux Nation), had been officially returned to the Oceti Sakowin at a 2:00 pm ceremony in Rapid City, South Dakota. The text is ILTF's statement, republished by the UCLA American Indian Studies Center.
+
+ILTF says the effort was to raise a $9 million purchase price for the 1,942-acre parcel that contains Pe' Sla. The Reynolds family had announced in August that it planned to sell the land at auction to the highest bidder. ILTF says Indian Land Capital Company, its affiliate lender, provided $900,000 in rapid financing to help the tribes secure the initial purchase agreement. All the tribes of the Oceti Sakowin, it says, contributed time, effort and scarce funds, and the public fundraising was carried out by LastRealIndians and ILTF.
+
+ILTF states that it is anticipated each tribe will participate in the oversight and management of the land to protect its spiritual and cultural values. It also notes that the ownership of this land and the rest of the Black Hills is still disputed by non-Indians, and says it does not accept that the Nation's losses are permanent.
+
+The seed record mentions a later mining controversy involving Pe' Sla; no source read here addresses it. This record describes only the 2012 purchase and return, as ILTF reported it.

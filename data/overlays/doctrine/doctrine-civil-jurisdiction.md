@@ -1,0 +1,15 @@
+---
+id: "doctrine-civil-jurisdiction"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Tribal civil power is strongest over members; Williams v. Lee (1959) protected it, and Montana (1981) limited it over non-members."
+confidence: "high"
+cautions: "The Williams v. Lee facts (a trader suing a Navajo couple over a debt) were not quoted from the opinion and were skimmed only; the Court's holding language is exact. Later cases narrowing tribal civil power over non-members (such as Nevada v. Hicks and Plains Commerce Bank) were fetched but not summarized here. Critiques by named scholars were not opened."
+sources: [{"url": "https://www.law.cornell.edu/supremecourt/text/358/217", "title": "Williams v. Lee, 358 U.S. 217 (1959), Cornell LII", "quote": "would undermine the authority of the tribal courts over Reservation affairs and hence would infringe on the right of the Indians to govern themselves"}, {"url": "https://www.law.cornell.edu/supremecourt/text/450/544", "title": "Montana v. United States, 450 U.S. 544 (1981), Cornell LII", "quote": "the inherent sovereign powers of an Indian tribe do not extend to the activities of nonmembers of the tribe"}, {"url": "https://www.law.cornell.edu/supremecourt/text/450/544", "title": "Montana v. United States, 450 U.S. 544 (1981), Cornell LII", "quote": "the activities of nonmembers who enter consensual relationships with the tribe or its members"}, {"url": "https://www.law.cornell.edu/supremecourt/text/450/544", "title": "Montana v. United States, 450 U.S. 544 (1981), Cornell LII", "quote": "threatens or has some direct effect on the political integrity, the economic security, or the health or welfare of the tribe"}]
+verdict: "new"
+---
+Civil jurisdiction is the power to regulate and decide non-criminal matters: contracts, taxes, land use, family law. The Supreme Court has built two lines of cases. The first protects tribal self-government. In Williams v. Lee (1959), a non-Indian trader sued a Navajo couple in Arizona state court over a debt from goods sold on the reservation. The Court held that state jurisdiction there would "undermine the authority of the tribal courts over Reservation affairs and hence would infringe on the right of the Indians to govern themselves."
+
+The second line limits tribal power over non-members. In Montana v. United States (1981), the Court said that the "inherent sovereign powers of an Indian tribe do not extend to the activities of nonmembers of the tribe." Montana then named exceptions. A tribe may regulate "the activities of nonmembers who enter consensual relationships with the tribe or its members," and may exercise civil authority over non-Indian conduct on fee land within the reservation when it "threatens or has some direct effect on the political integrity, the economic security, or the health or welfare of the tribe."
+
+A separate record covers the Montana rule in more detail. Together, the cases mean that who is being regulated, and where, often decides which government may act.

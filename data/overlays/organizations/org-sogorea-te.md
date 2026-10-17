@@ -1,0 +1,15 @@
+---
+id: "org-sogorea-te"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Sogorea Te' Land Trust, led by Indigenous women in Oakland, reports rematriating a house, a garden, a park and a 2022 cultural easement."
+confidence: "high"
+cautions: "Results are the trust's own accounts; no deed, acreage total or city record was read. A cultural easement is not a transfer of title. The Ohlone are not federally recognized, which the trust says kept them from being a party to an earlier easement elsewhere. Use the .org domain; another domain appears in search results."
+sources: [{"url": "https://sogoreate-landtrust.org/staff-board/", "title": "Staff & Board - Sogorea Te' Land Trust", "quote": "Corrina Gould Read Bio (Ohlone) Corrina Gould is the tribal spokesperson for the Confederated Villages of Lisjan."}, {"url": "https://sogoreate-landtrust.org/what-is-rematriation/", "title": "What is Rematriation?", "quote": "Rematriation is Indigenous women-led work to restore sacred relationships between Indigenous people and our ancestral land"}, {"url": "https://sogoreate-landtrust.org/land-sites/", "title": "Land Sites - Sogorea Te' Land Trust", "quote": "It was rematriated in 2018 in collaboration with Northern California Land Trust."}, {"url": "https://sogoreate-landtrust.org/sequoia-point-land-return/", "title": "Rinihmu Pulte'irekne (Sequoia Point)", "quote": "returned to Indigenous hands in 2022 through the creation of a cultural easement with The City of Oakland"}, {"url": "https://projects.propublica.org/nonprofits/organizations/824415931", "title": "ProPublica Nonprofit Explorer: Sogorea Te' Land Trust", "quote": "Tax exemption issued: Dec. 2019 EIN: 82-4415931"}]
+verdict: "new"
+---
+Sogorea Te' Land Trust works in the East Bay, which it describes as the traditional land of the Lisjan Ohlone. Its history page says the trust's name comes from a sacred place and a long struggle to protect it, and that organizers Corrina Gould and Johnella LaRose led efforts. Its staff and board page lists them as Directors: Gould (Ohlone), the tribal spokesperson for the Confederated Villages of Lisjan, and LaRose (Shoshone Bannock/Carrizo). The trust says its work is made possible by the leadership of Indigenous women and culture keepers.
+
+Its Rematriation page defines rematriation as Indigenous women-led work to restore sacred relationships between Indigenous people and ancestral land. The Land Sites page lists results. Rammay, a small garden in West Oakland, was rematriated in 2018 in collaboration with Northern California Land Trust. 'Ookwe Park in Richmond was opened in July 2021 as the first park returned to the care of the Confederated Villages of Lisjan and the trust, with the City of Richmond. In 2022 the Rinihmu Pulte'irekne site was returned to Indigenous hands through a cultural easement with the City of Oakland. The trust also reports it raised money and bought its first house, the first land in the territory held entirely by the trust.
+
+ProPublica Nonprofit Explorer lists Sogorea Te' Land Trust as a 501(c)(3) with exemption issued in December 2019. The site gives no total acreage.

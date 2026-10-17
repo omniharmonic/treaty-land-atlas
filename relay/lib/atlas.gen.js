@@ -125,14 +125,15 @@ function placeReport(d, lat, lng) {
     const nations = (st?.nations ?? p.nations ?? []).map(ref);
     return {
       ...ref(p.id),
-      year: Math.floor(p.t0),
+      year: st?.ceded_year ?? Math.floor(p.t0),
       how: st?.how ?? p.how ?? "unknown",
       how_basis: st?.how_basis ?? "",
       instrument: st?.instrument ? ref(st.instrument) : null,
       nations,
       instruments: (st?.instruments ?? []).map((x) => ref(x.id)),
       checked: !!st?.entries,
-      royce_summary: st?.royce_summary ?? null
+      royce_summary: st?.royce_summary ?? null,
+      status: st?.status ?? "unchecked"
     };
   });
   const instruments = [

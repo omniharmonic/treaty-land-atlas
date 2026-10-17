@@ -1,0 +1,17 @@
+---
+id: "org-shared-spaces-foundation"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Shared Spaces Foundation, a Seattle-area nonprofit, has worked since 2020 to preserve 3.56 acres for return to the Duwamish people as the Heron's Nest."
+confidence: "low"
+cautions: "Completion of the purchase and any transfer to the Duwamish is not confirmed by the sources read; they date from 2021 and 2022. The record's source, a Buffalo's Fire article of August 2026, could not be found. The EIN match is by name only, and the tax exemption date (August 2022) is later than the 2021 project announcements. The foundation's leadership today and its tribal ties are not stated. No donation URL is given."
+sources: [{"url": "https://urban.uw.edu/news/how-a-seattle-community-is-supporting-a-tribes-fight-for-its-existence", "title": "How a Seattle community is supporting a tribe's fight for its existence", "quote": "The end goal: To repatriate the land to the Duwamish , its original inhabitants."}, {"url": "https://urban.uw.edu/news/how-a-seattle-community-is-supporting-a-tribes-fight-for-its-existence", "title": "How a Seattle community is supporting a tribe's fight for its existence", "quote": "said Amanda Lee, president of the Shared Spaces Foundation"}, {"url": "https://www.westsideseattle.com/node/57758", "title": "Shared Spaces foundation announces receipt of $900,000 SIF grant", "quote": "On October 5th, the City of Seattle issued a $900,000 grant from its Strategic Investment Fund (SIF) to the Shared Spaces Foundation."}, {"url": "https://www.westsideseattle.com/node/57758", "title": "Shared Spaces foundation announces receipt of $900,000 SIF grant", "quote": "Over 5,000 hours of community volunteering has been put into the restoration efforts since early 2020."}, {"url": "https://projects.propublica.org/nonprofits/organizations/861742244", "title": "ProPublica Nonprofit Explorer: Shared Spaces Foundation", "quote": "Tukwila, WA Tax exemption issued: Aug. 2022 EIN: 86-1742244"}]
+verdict: "new"
+---
+Shared Spaces Foundation is a Seattle-area nonprofit. A 2022 University of Washington news item, republished from CNN, says that in 2020 it found a three-and-a-half-acre property for sale in West Seattle, about two miles from the Duwamish cultural center. The foundation consulted the Duwamish Tribe and decided to rehabilitate the land, raise money to buy it and repatriate it to the Duwamish. The article quotes Amanda Lee as the foundation's president.
+
+A November 2021 notice from the foundation says the Heron's Nest project preserves 3.56 acres in the West Seattle Greenbelt for community use, stewardship and education, and for repatriation to the Duwamish people. It says the City of Seattle issued a $900,000 Strategic Investment Fund grant on October 5, 2021, to be applied to buying the land, and that the foundation was leasing the parcel at that time. It reports more than 5,000 hours of community volunteering since early 2020.
+
+The Duwamish Tribe is described in the news item as not recognized by the US government. The articles read are from 2021 and 2022. They do not confirm that the purchase or the transfer to the Duwamish has been completed, and they do not say who now leads the foundation.
+
+ProPublica Nonprofit Explorer lists a Shared Spaces Foundation in Tukwila, Washington, as a 501(c)(3) with tax exemption issued in August 2022; the match to this project is by name.

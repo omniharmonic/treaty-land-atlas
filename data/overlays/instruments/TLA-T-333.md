@@ -2,15 +2,18 @@
 id: "TLA-T-333"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "An 1864 Chippewa treaty released the Saginaw Bay townships and concentrated the bands' land at Isabella, Michigan."
+headline: "In 1864 the Saginaw, Swan Creek and Black River Chippewas released their Saginaw Bay townships and kept the unsold land at Isabella, Michigan."
 how: "treaty_negotiated"
-how_basis: "The treaty text records an agreement with the Chippewa bands, with replacement selections; the text states no coercion."
-confidence: "low"
-cautions: "Only the treaty text read; no context source. Input lists Royce numbers 396 and 464 which I did not check. Reasons for the release are not documented in sources opened."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-swan-creek-and-black-river-1864-0868", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864", "quote": "do hereby release to the United States the several townships of land reserved to said tribe"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-swan-creek-and-black-river-1864-0868", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864", "quote": "all of the unsold lands within the six townships in Isabella County"}]
+how_basis: "The treaty text records an agreement between two U.S. commissioners and the Chippewa bands, with replacement land selections; the text states no coercion."
+confidence: "high"
+cautions: "Only the treaty text was read; no context source. The record lists Royce cession numbers 396 and 464, which were not checked. The reasons for the release are not documented in the sources opened."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-swan-creek-and-black-river-1864-0868", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864", "quote": "do hereby release to the United States the several townships of land reserved to said tribe"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-swan-creek-and-black-river-1864-0868", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864", "quote": "all of the unsold lands within the six townships in Isabella County"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-swan-creek-and-black-river-1864-0868", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864", "quote": "Ratified May 22, 1866. | Proclaimed Aug. 16, 1866."}]
+verdict: "fixed"
 ---
-On October 18, 1864, at the Isabella reservation in Michigan, special commissioner H. J. Alvord and agent D. C. Leach signed with the Chippewas of Saginaw, Swan Creek and Black River. The Chippewas released to the United States the townships reserved to them on Saginaw Bay under an 1855 treaty. They also gave up any right to locate lands in lieu of land the United States had sold on the Isabella reservation, and the right to buy unselected land there.
+On October 18, 1864, at the Isabella Indian Reservation in Michigan, two U.S. officials signed an agreement with the Chippewas of Saginaw, Swan Creek, and Black River. They were special commissioner H. J. Alvord and Indian agent D. C. Leach. The Chippewas were parties to an earlier treaty of August 2, 1855, which had reserved townships for them in two places: on Saginaw Bay and in Isabella County.
 
-In exchange the United States agreed to set apart for the Chippewas the unsold land within six townships in Isabella County. People who had selected land on Saginaw Bay could choose equal amounts at Isabella. Chiefs who signed received an extra eighty acres and headmen forty acres, with fee-simple patents.
+In this treaty the Chippewas released the Saginaw Bay townships to the United States. They also gave up any claim to locate lands in place of land the United States had sold or disposed of on the Isabella reservation. They gave up the right to buy the unselected lands there as well.
 
-The text shows the tribe giving up its Saginaw Bay holdings and concentrating on Isabella. It does not describe why. The pages opened here do not trace what followed, so later events are not covered.
+In return, the United States agreed to set apart, for the exclusive use of the Chippewas, all the unsold land in the six Isabella County townships named in the 1855 treaty. Anyone who had picked land on Saginaw Bay could choose the same amount at Isabella. Each chief who signed received eighty more acres, and each headman forty, with fee-simple patents (full private title).
+
+The database record lists the treaty as ratified May 22, 1866, and proclaimed August 16, 1866. The treaty text does not say why the bands agreed. The pages opened here do not trace what followed, so later events are not covered.

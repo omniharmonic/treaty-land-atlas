@@ -2,15 +2,16 @@
 id: "TLA-T-250"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Chippewa of the Mississippi and Lake Superior ceded a tract between the Crow Wing and Long Prairie Rivers for payments."
+headline: "In 1847 the Chippewa of the Mississippi and Lake Superior ceded a Minnesota tract near the Crow Wing River for $34,000 and annuities."
 how: "treaty_negotiated"
-how_basis: "The OSU treaty text records a negotiated cession with stated payments; no source I read describes coercion."
-confidence: "medium"
-cautions: "Only the treaty text and the Menominee treaty text were used. The statement about the Menominee and Winnebago home is the Menominee treaty's wording about the 1847 cessions. No acreage is stated."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567", "title": "Treaty with the Chippewa of the Mississippi and Lake Superior, 1847 (Tribal Treaties Database, Oklahoma State University)", "quote": "The Chippewa Indians of the Mississippi and Lake Superior cede and sell to the United States all the land within the following boundaries"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567", "title": "Treaty with the Chippewa of the Mississippi and Lake Superior, 1847 (Tribal Treaties Database, Oklahoma State University)", "quote": "before the United States use or occupy the said tract of land north of Long Prairie River"}]
+how_basis: "The OSU treaty text records a negotiated cession with stated payments, and no coercion is stated."
+confidence: "high"
+cautions: "No acreage is stated. Article 5 was stricken out and its content is not shown. The sources used here do not describe the council or what followed."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567", "title": "Treaty with the Chippewa of the Mississippi and Lake Superior, 1847 (OSU Tribal Treaties Database)", "quote": "before the United States use or occupy the said tract of land north of Long Prairie River"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567", "title": "Treaty with the Chippewa of the Mississippi and Lake Superior, 1847 (OSU Tribal Treaties Database)", "quote": "seventeen thousand dollars in specie, and to the Chippewas of the Mississippi seventeen thousand dollars in specie"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-9/pdf/STATUTE-9-Pg904.pdf", "title": "Treaty with the Chippewa, 9 Stat. 904 (govinfo)", "quote": "One-day"}]
+verdict: "fixed"
 ---
-On August 2, 1847, at Fond du Lac, U.S. commissioners Isaac A. Verplank and Henry M. Rice and the Chippewa of the Mississippi and Lake Superior signed a treaty. The Chippewa ceded a tract of land bounded by the Crow Wing, Long Prairie and Watab Rivers and the Mississippi, and their interest in a tract north of the Long Prairie River called One-day's Hunt. The boundary with the Pillager band was to be settled to the Pillagers' satisfaction before the United States used that land.
+On August 2, 1847, Isaac A. Verplank and Henry M. Rice, commissioners for the United States, signed a treaty at Fond du Lac of Lake Superior with the Chippewa Indians of the Mississippi and Lake Superior, through their chiefs and head-men. In Article 2 they ceded and sold all the land within boundaries starting at the junction of the Crow Wing and Mississippi rivers. The line ran up the Crow Wing and Long Prairie rivers, along the Sioux-Chippewa boundary, and down the Watab River to the Mississippi. They also ceded their interest in a tract north of the Long Prairie River called One-day's Hunt. The treaty states no acreage.
 
-The United States agreed to pay $17,000 in specie to the Chippewa of Lake Superior and $17,000 to the Chippewa of the Mississippi, plus $1,000 a year to the Mississippi bands for forty-six years, with funds for schools, blacksmiths and laborers on request.
+The boundary with the Pillager band was indefinite, so the treaty says it must be defined to the Pillagers' satisfaction before the United States used or occupied the tract north of the Long Prairie River.
 
-The next treaty in this atlas, with the Menominee in 1848, gives the Menominee, as a home, the country ceded by this treaty and the Pillager treaty that was not assigned to the Winnebago.
+In Article 3 the United States agreed to pay $17,000 in specie to the Chippewas of Lake Superior and $17,000 to the Chippewas of the Mississippi, within six months of ratification. It also agreed to pay the Mississippi Indians $1,000 a year for forty-six years, which could be spent on schools, blacksmiths and laborers on their request. Article 4 let Chippewas of mixed blood share the annuities. Article 5 was stricken out. The treaty was ratified on April 3, 1848 and proclaimed on April 7, 1848.

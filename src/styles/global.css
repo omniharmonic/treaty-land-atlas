@@ -33,6 +33,7 @@
   --how-treaty: #e69f00;
   --how-pressure: #d55e00;
   --how-removal: #cc79a7;
+  --how-unratified: #f0e442;
   --how-congress: #0072b2;
   --how-executive: #56b4e9;
   --how-unknown: #8a8f86;
@@ -98,6 +99,7 @@
     --how-removal: #e095c2;
     --how-congress: #3d9be0;
     --how-executive: #8fd0f5;
+    --how-unratified: #f0e442;
     --how-unknown: #8f978b;
     --held: #6f9a5f;
   }

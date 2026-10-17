@@ -1,0 +1,17 @@
+---
+id: "camp-6nicc-onchiota-2026"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The Six Nations Iroquois Cultural Center bought 600 forested acres in Onchiota, New York, for $1.1 million, with Nature Conservancy help, in March 2026."
+confidence: "high"
+cautions: "Sources differ on who bought: TNC says the Center purchased the land with TNC funding; Paul Smith's College says TNC bought it and transferred ownership. They also differ on the adjoining parcel (330 acres per TNC, 300 acres per the college), so the \"900-acre\" total is approximate; Native News Online says 600 plus a 330-acre parcel from the Adirondack Land Trust in 2022 and calls the total 900 acres. The 2022 transfer date for the earlier parcel comes only from Native News Online.The buyer is a nonprofit cultural center, not a tribal government."
+sources: [{"url": "https://www.nature.org/en-us/newsroom/land-return-onchiota/", "title": "600 Acres in the Adirondacks Return to Haudenosaunee Care (The Nature Conservancy, Mar. 9, 2026)", "quote": "the Six Nations Iroquois Cultural Center (6NICC) purchased the land from Paul Smith’s College for $1.1 million"}, {"url": "https://www.nature.org/en-us/newsroom/land-return-onchiota/", "title": "600 Acres in the Adirondacks Return to Haudenosaunee Care (The Nature Conservancy, Mar. 9, 2026)", "quote": "will be home to an extension of the 6NICC, a Haudenosaunee gathering space, and an Indigenous youth camp"}, {"url": "https://www.paulsmiths.edu/news/historic-land-back-partnership-returns-more-than-900-acres-to-indigenous-stewardship/", "title": "Historic Land-Back Partnership Returns More Than 900 Acres (Paul Smith's College, Mar. 10, 2026)", "quote": "The Nature Conservancy purchased 600 acres of land from Paul Smith’s College for $1.1 million and transferred ownership to the Six Nations Iroquois Cultural Center"}, {"url": "https://www.nature.org/en-us/newsroom/land-return-onchiota/", "title": "600 Acres in the Adirondacks Return to Haudenosaunee Care (The Nature Conservancy, Mar. 9, 2026)", "quote": "This acquisition of over 600 acres will serve as a classroom to share and learn Indigenous ecological knowledge"}]
+verdict: "new"
+---
+In March 2026 the Six Nations Iroquois Cultural Center (6NICC), a nonprofit in Onchiota, New York, took ownership of about 600 acres of forest in the Adirondacks. The Nature Conservancy (TNC) announced the return on March 9, 2026, calling it one of the largest private land return initiatives in what is now New York State.
+
+TNC's release says the Cultural Center purchased the land from Paul Smith's College for $1.1 million with TNC's assistance and funding. Paul Smith's College describes the mechanics a little differently: TNC bought the 600 acres from the college and then transferred ownership to the Cultural Center. The college adds that the Adirondack Land Trust had already transferred 300 acres of adjoining land to the Center, making a 900-acre tract. TNC says the Center already had 330 adjacent acres under its care.
+
+The Cultural Center says what it plans. Its director, David Fadden, said in TNC's release that the acquisition will serve as a classroom to share and learn Indigenous ecological knowledge. TNC reports the combined land will be managed according to Indigenous traditions and scientific ecological principles and will be home to an extension of the Center, a Haudenosaunee gathering space and an Indigenous youth camp.
+
+TNC says the Center was founded in 1954 by Ray and Christine Fadden. TNC calls this its first land return in New York.

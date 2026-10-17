@@ -1,0 +1,17 @@
+---
+id: "stat-nagpra-1990"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "NAGPRA, signed November 16, 1990, made museums and federal agencies inventory Native remains and return them to descendants and tribes."
+confidence: "high"
+cautions: "The 2023 regulations (a separate record) changed how the Act is implemented. This story does not describe enforcement results or the number of items returned, because no source opened gives them. Exceptions, the definition of 'museum', and civil penalties were not examined."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-104/pdf/STATUTE-104-Pg3048.pdf", "title": "Native American Graves Protection and Repatriation Act, Pub. L. 101-601, 104 Stat. 3048 (Nov. 16, 1990)", "quote": "To provide for the protection of Native American graves, and for other purposes."}, {"url": "https://www.nps.gov/subjects/nagpra/index.htm", "title": "Native American Graves Protection and Repatriation Act, National Park Service", "quote": "belong, in the first instance, to lineal descendants, Indian Tribes, and Native Hawaiian organizations"}, {"url": "https://www.law.cornell.edu/uscode/text/25/3002", "title": "25 U.S.C. 3002, Ownership, Cornell LII", "quote": "in the case of Native American human remains and associated funerary objects , in the lineal descendants of the Native American"}, {"url": "https://www.law.cornell.edu/uscode/text/25/3003", "title": "25 U.S.C. 3003, Inventory for human remains and associated funerary objects, Cornell LII", "quote": "shall compile an inventory of such items and, to the extent possible based on information possessed by such museum or Federal agency"}, {"url": "https://www.law.cornell.edu/uscode/text/25/3005", "title": "25 U.S.C. 3005, Repatriation, Cornell LII", "quote": "shall expeditiously return such remains and associated funerary objects."}]
+verdict: "new"
+---
+Before 1990, no federal statute required museums and agencies to give Native ancestors or sacred items back. The Native American Graves Protection and Repatriation Act, Public Law 101-601, approved November 16, 1990, did. The National Park Service, which helps administer it, says Congress acknowledged that human remains and other cultural items removed from Federal or tribal lands "belong, in the first instance, to lineal descendants, Indian Tribes, and Native Hawaiian organizations."
+
+The Act sets a priority order for ownership of Native American cultural items excavated or discovered on federal or tribal lands after the Act's date. Human remains and associated funerary objects go first to lineal descendants. If none can be found, they go to the tribe on whose tribal land they were discovered, or to the tribe with the closest cultural affiliation that states a claim.
+
+It also created duties for institutions. Each federal agency and museum holding Native American human remains and associated funerary objects must compile an inventory and, to the extent possible, identify the items' geographical and cultural affiliation. Those inventories had to be done in consultation with tribal officials, within five years of the Act. When cultural affiliation is shown, the agency or museum "shall expeditiously return" the remains and objects on request.
+
+Return depends on a request: the agency or museum acts when a lineal descendant, tribe or Native Hawaiian organization asks and cultural affiliation is shown.

@@ -2,15 +2,18 @@
 id: "TLA-T-173"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1832 Pontotoc Creek treaty ceded all Chickasaw land east of the Mississippi for sale by the United States."
+headline: "In 1832 the Chickasaw ceded all land east of the Mississippi to be sold by the United States, with net proceeds paid to them."
 how: "removal"
 how_basis: "The OSU treaty preamble says state laws left the Chickasaw unable to follow them and that they preferred to seek a home in the west; removal costs were paid from land sales."
-confidence: "medium"
-cautions: "The page summary said the treaty \"appears not to have been ratified\", which conflicts with the input (ratified, 7 Stat. 381) and the proclamation date it also gives (March 1, 1833); likely a note about another instrument. Verify on the page. Quote from a summary."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1832-0356", "title": "Treaty with the Chickasaw, 1832 (OSU Tribal Treaties Database)", "quote": "Rather than submit to this great evil, they prefer to seek a home in the west"}]
+confidence: "high"
+cautions: "The preamble is the treaty's own wording; it presents the Chickasaw as having asked for relief from state law. Other sources on pressure were not opened. Acreage is not stated. The OSU page's identifier line reads RIT_172 although the catalog lists RIT_173; this was not treated as an error in the record."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1832-0356", "title": "Tribal Treaties Database (OSU)", "quote": "Rather than submit to this great evil, they prefer to seek a home in the west"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1832-0356", "title": "Tribal Treaties Database (OSU)", "quote": "all the land which they own on the east side of the Mississippi river"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg381.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Chickasaw"}]
+verdict: "fixed"
 ---
-On October 20, 1832, Commissioner John Coffee signed a treaty on Pontotoc Creek for the United States with the whole Chickasaw Nation in general council. The Chickasaw ceded all their land east of the Mississippi River. The treaty gives no acreage and no lump-sum price. The United States would survey and sell the land and pay the Chickasaw the proceeds after costs, with most of the net going into a perpetual national fund.
+On October 20, 1832, General John Coffee, authorized by the President, met "the whole Chickasaw Nation, in General Council assembled" at the council house on Pontotoc Creek. The treaty they signed opens with the Chickasaw "oppressed in their present situation; by being made subject to the laws of the States in which they reside." It says that, being "ignorant of the language and laws of the white man," they could not understand or obey them, and "rather than submit to this great evil, they prefer to seek a home in the west."
 
-The preamble says the Chickasaw, ignorant of the language and laws of the white man, could not understand or obey them. Rather than submit, they preferred to seek a home in the west. The Chickasaw were to try to find a western home. If they failed before the first public sale, they could select reserved tracts by family size.
+In Article 1 the Chickasaw ceded "all the land which they own on the east side of the Mississippi river." The treaty states no acreage and no lump-sum price. Under Articles 2 and 3 the United States would survey and sell the land at auction and private sale, then pay the nation the money from sales, minus the cost of surveying and selling.
 
-Removal costs and a year of provisions were to come from the proceeds. The sources used here do not cover what followed. The OSU page gives proclamation as March 1, 1833.
+The Chickasaw promised to try to find a western home. If they failed before the first public sale, each family could select land from the surveys: for example one section for a single man of twenty-one and two sections for a family of five or fewer, with extra for those who held slaves. Article 11 created a perpetual national fund from the proceeds.
+
+The Statutes at Large record a proclamation on March 1, 1833. The sources opened here do not cover what followed.

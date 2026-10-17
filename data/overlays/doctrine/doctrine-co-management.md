@@ -1,0 +1,17 @@
+---
+id: "doctrine-co-management"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Bears Ears made tribes partners in managing a national monument through a Commission; the Coalition says a July 2026 proclamation ended it."
+confidence: "medium"
+cautions: "The July 2026 reduction is reported only on the Bears Ears Inter-Tribal Coalition's website; the proclamation itself, the exact date, and any legal challenge were not opened. The 2016 Proclamation 9558 was described through Proclamation 10285, not read directly. The Commission's role was advisory in the Proclamation text cited. The Coalition's page says 'five Tribes'; the five named here come from Proclamation 10285."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/FR-2021-10-15/pdf/2021-22672.pdf", "title": "Proclamation 10285, Bears Ears National Monument, 86 Fed. Reg. (Oct. 15, 2021)", "quote": "to ensure that management of the monument would be guided by, and benefit from, expertise of Tribal Nations"}, {"url": "https://www.govinfo.gov/content/pkg/FR-2021-10-15/pdf/2021-22672.pdf", "title": "Proclamation 10285, Bears Ears National Monument, 86 Fed. Reg. (Oct. 15, 2021)", "quote": "to provide guidance and recommendations on the development and implementation of management plans"}, {"url": "https://www.govinfo.gov/content/pkg/FR-2021-10-15/pdf/2021-22672.pdf", "title": "Proclamation 10285, Bears Ears National Monument, 86 Fed. Reg. (Oct. 15, 2021)", "quote": "the monument will be jointly managed as a single unit consisting of the entire 1.36 million-acre monument"}, {"url": "https://www.bearsearscoalition.org/the-bears-ears-inter-tribal-coalition-turns-eleven-amid-monument-rollbacks/", "title": "The Bears Ears Inter-Tribal Coalition Turns Eleven Following Monument Rollbacks (Coalition website)", "quote": "President Trump reduced Bears Ears National Monument by approximately 91 percent and terminated the Bears Ears Commission."}]
+verdict: "new"
+---
+Co-management means tribes and federal agencies share decisions about federal land. Bears Ears National Monument in Utah is the best-known example. President Obama created it in Proclamation 9558 of December 28, 2016. According to President Biden's Proclamation 10285, he also established the Bears Ears Commission "to ensure that management of the monument would be guided by, and benefit from, expertise of Tribal Nations and traditional and historical knowledge of the area."
+
+The Proclamation names the Hopi Tribe, Navajo Nation, Ute Indian Tribe of the Uintah and Ouray Reservation, Ute Mountain Ute Tribe and Pueblo of Zuni as the Tribes that united to request permanent protection. In 2017, President Trump reduced the monument by more than 1.1 million acres. In October 2021, Proclamation 10285 restored it to approximately 1.36 million acres and reestablished the Commission "to provide guidance and recommendations on the development and implementation of management plans."
+
+The Commission advised; the Proclamation still left the monument to be managed jointly by federal agencies as a single unit.
+
+The arrangement has changed again. The Bears Ears Inter-Tribal Coalition, on its own website, reports that "President Trump reduced Bears Ears National Monument by approximately 91 percent and terminated the Bears Ears Commission" in July 2026. The Coalition says this "ended the nation's first and most established framework for Tribal collaborative management of a national monument." This summary relies on the Coalition's account; the 2026 proclamation itself was not opened.

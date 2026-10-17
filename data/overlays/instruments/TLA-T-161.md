@@ -2,15 +2,16 @@
 id: "TLA-T-161"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1831 Menominee treaty ceded about 3 million acres in Wisconsin and settled a dispute with New York tribes."
+headline: "In 1831 the Menominee set aside land for New York tribes and ceded about 2.5 million acres, according to the treaty's own estimates."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated exchange of land for payments, though it also notes Menominee protest over the New York claims."
-confidence: "medium"
-cautions: "Acreage figures come from a summary of the treaty text and should be checked against the page. Input record lists date 1831-02-08; page gives the same. No secondary source consulted. Acreage: About 500,000 acres (New York Indians lands) and about 2.5 million acres (east of Fox River), roughly 3 million in all, as summarized from the treaty text."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1831-0319", "title": "Treaty with the Menominee, 1831 (OSU Tribal Treaties Database)", "quote": "they neither sold nor received any value, for the land claimed by these tribes"}]
+confidence: "high"
+cautions: "Acreage figures are the treaty's own estimates. No secondary source was opened to describe later events. The Menominee nation's own account was not consulted."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1831-0319", "title": "Tribal Treaties Database (OSU)", "quote": "they neither sold nor received any value, for the land claimed by these tribes"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1831-0319", "title": "Tribal Treaties Database (OSU)", "quote": "the whole comprising by estimation, two million five hundred thousand acres"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg342.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Menomonee"}]
+verdict: "fixed"
 ---
-In February 1831 the United States and Menominee chiefs and headmen signed a treaty at Washington. The Menominee gave up two large areas: about 500,000 acres on the west side of the Fox River, set aside for tribes from New York, and about 2.5 million acres on the east side of the Fox River, Winnebago Lake and Green Bay.
+On February 8, 1831, John H. Eaton, Secretary of War, and Samuel C. Stambaugh, Indian Agent at Green Bay, signed articles with chiefs and head men of the Menomonee nation at Washington. The Menomonee first defined the boundaries of their country. They said they had not yet sold any of their lands and so received no annuities, while the Pootowottomees and Winnebagoes had sold much of theirs, received large annuities and were "now encroaching" on Menomonee land.
 
-The treaty text says the purpose was to settle a long dispute with the New York tribes, who claimed Wisconsin land. The Menominee protested in the text that they had never sold that land. The treaty also records that the Menominee had received no annuities, because they had not sold land, while neighbouring tribes had. In return the United States promised $20,000 for the New York cession, farmers and instructors, a mill, goods and yearly payments for twelve years.
+The agreement was partly meant to settle a long dispute with the New York Indians, who claimed to have bought part of the Menomonee country. The Menomonee declared they were "always protesting that they are under no obligation to recognize any claim of the New York Indians." They said they "neither sold nor received any value" for it. Even so, "at the solicitation of their Great Father, the President," they agreed to set apart land west of the Fox River as a home for New York tribes. The treaty puts it at "about five hundred thousand acres," to be paid for with $20,000.
 
-The treaty reserved to the United States rights to build roads and military posts anywhere in Menominee country. It was proclaimed in July 1832. The sources used here do not describe later events; the 1836 Menominee treaty in this atlas continues the story.
+In the third article they ceded all their country southeast of Winnebago Lake, the Fox River and Green Bay, "by estimation, two million five hundred thousand acres." They kept a reservation on the Fox River. The United States promised farmers, teachers, houses, a mill, goods and $6,000 a year for twelve years. The Menomonee could hunt and fish on the ceded land until it was surveyed and offered for sale. The Statutes at Large record a proclamation on July 9, 1832.

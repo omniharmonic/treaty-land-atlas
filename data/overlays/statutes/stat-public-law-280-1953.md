@@ -1,0 +1,17 @@
+---
+id: "stat-public-law-280-1953"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Public Law 280 (1953) gave six states criminal and civil jurisdiction in Indian country; a 1968 law later required tribal consent for new assumptions."
+confidence: "high"
+cautions: "The record says Alaska was added later; that was not confirmed in any page opened. The 1968 date comes from the source notes to 25 U.S.C. 1321 (Pub. L. 90-284, Apr. 11, 1968); 1321 and 1323 are today's codified text. Effects of the Act on tribal courts and policing were not examined. Bryan's holding is described only by the passage quoted."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-67/pdf/STATUTE-67-Pg588.pdf", "title": "Public Law 280, 67 Stat. 588 (Aug. 15, 1953), Statutes at Large", "quote": "to the same extent that such State has jurisdiction over offenses committed elsewhere within the State"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-67/pdf/STATUTE-67-Pg588.pdf", "title": "Public Law 280, 67 Stat. 588 (Aug. 15, 1953), Statutes at Large", "quote": "with respect to hunting, trapping, or fishing or the control, licensing, or regulation thereof"}, {"url": "https://www.law.cornell.edu/supremecourt/text/426/373", "title": "Bryan v. Itasca County, 426 U.S. 373 (1976), Cornell LII", "quote": "was with the problem of lawlessness on certain Indian reservations, and the absence of adequate tribal institutions for law enforcement"}, {"url": "https://www.law.cornell.edu/uscode/text/25/1321", "title": "25 U.S.C. 1321, Assumption by State of criminal jurisdiction, Cornell LII", "quote": "with the consent of the Indian tribe occupying the particular Indian country"}, {"url": "https://www.law.cornell.edu/uscode/text/25/1323", "title": "25 U.S.C. 1323, Retrocession of jurisdiction by State, Cornell LII", "quote": "The United States is authorized to accept a retrocession by any State"}]
+verdict: "new"
+---
+Before 1953, states generally lacked power to prosecute most crimes on Indian reservations. Public Law 280, approved August 15, 1953, changed that for several states. Its criminal section gave each listed state jurisdiction "over offenses committed by or against Indians" in the listed Indian country, "to the same extent that such State has jurisdiction over offenses committed elsewhere within the State." As first enacted the list was California, Minnesota, Nebraska, Oregon and Wisconsin, each for "all Indian country within the State," with exceptions for the Red Lake, Warm Springs and Menominee Reservations.
+
+A civil section gave the same states power over civil causes of action between Indians or to which Indians are parties. Section 7 let any other state assume jurisdiction by its own legislative action. The Act also contained a protection: nothing in it authorizes taxing trust property or deprives any Indian of rights under federal treaty "with respect to hunting, trapping, or fishing."
+
+The Supreme Court read the civil grant narrowly in Bryan v. Itasca County (1976). It said the primary concern of Congress, as it emerges from the sparse legislative history, was the problem of lawlessness on certain reservations and the absence of adequate tribal institutions for law enforcement.
+
+Congress changed the rules in 1968. Under 25 U.S.C. 1321, a state may assume criminal jurisdiction in Indian country only with the consent of the Indian tribe occupying it, and the United States may accept a state's retrocession, or return, of jurisdiction.

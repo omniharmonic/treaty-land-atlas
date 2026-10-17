@@ -2,15 +2,18 @@
 id: "TLA-T-196"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1834 Logansport treaty had Mota's Potawatomi band cede four reserved sections and agree to move west of the Mississippi."
+headline: "In December 1834 Mota's Potawatomi band ceded four reserved sections and agreed to move west of the Mississippi River."
 how: "removal"
-how_basis: "The OSU treaty text arranges the band's removal west of the Mississippi within three years in return for ceding its reserved sections."
-confidence: "medium"
-cautions: "Quote from a summary of the page. The page does not describe pressure. Acreage: Four sections (the page states no acreage)."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0431", "title": "Treaty with the Potawatomi, 1834 (OSU Tribal Treaties Database)", "quote": "The above-named Chief and his band hereby cede to the United States the four sections of land"}]
+how_basis: "Article 2 of the treaty text commits the band to remove west of the Mississippi River within three years or less."
+confidence: "high"
+cautions: "Acreage is not stated (four sections). The sources used here do not describe the circumstances of signing or the band's later history."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0431", "title": "Treaty with the Potawatomi, 1834 (OSU Tribal Treaties Database)", "quote": "to remove, with their families, to a country provided for them by the United States, west of the Mississippi river"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0431", "title": "Treaty with the Potawatomi, 1834 (OSU Tribal Treaties Database)", "quote": "the sum of six hundred and eighty dollars in goods, at the signing of this treaty"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg469.pdf", "title": "Treaty with the Potawatomi, 7 Stat. 469 (govinfo)", "quote": "west of the Mississippi river, within three years or less"}]
+verdict: "fixed"
 ---
-On December 17, 1834, commissioner William Marshall signed a treaty at the Indian Agency in Logansport, Indiana, for the United States with Mota, a Potawatomi chief, acting for himself and his band. The band ceded the four sections of land that had been reserved for them under the 1832 treaty. The page does not state the acreage.
+On December 17, 1834, William Marshall, commissioner for the United States, signed a treaty at the Indian Agency at Logansport, Indiana. The other party was Mota, a chief of the Potawatomi (spelled Potawattimie in the text), acting for his band.
 
-The United States agreed to pay $680 in goods at signing and $600 in cash with the 1835 annuity payment. It also agreed to remove the band west of the Mississippi River, to a country provided for them, within three years or less, and to supply goods, farming utensils or other necessary articles.
+In Article 1 the chief and his band ceded the four sections of land reserved for them by the second article of the October 1832 treaty. In Article 2 they agreed to yield peaceable possession and to remove, with their families, to a country the United States would provide for them west of the Mississippi River. They were to go within three years or less of the ratification date of the 1832 treaty.
 
-The treaty therefore combined a cession of a reservation with a removal. The page describes no pressure, coercion or circumstances surrounding the signing. The sources used here do not describe later events, so what happened to the band after the treaty is not covered in this entry.
+The United States stipulated to remove the chief, head men and their bands to the new country, and to furnish goods, farming utensils or other articles, as provided in the fifth article of the October 1832 treaty. It also paid six hundred and eighty dollars in goods at signing, which the treaty acknowledges as received, and promised six hundred dollars in cash with the 1835 annuity payment. The treaty was proclaimed on March 16, 1835.
+
+The treaty text does not say how the band was brought to sign or what happened to the band afterward.

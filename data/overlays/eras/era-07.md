@@ -1,0 +1,17 @@
+---
+id: "era-07"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "After Nixon's 1970 message rejecting termination, Congress returned Blue Lake's 48,000 acres, settled Alaska Native claims in 1971, and passed the 1975 self-determination law."
+confidence: "medium"
+cautions: "ANCSA acreage is given as approximately 45 million by CRS; other sources say up to 44 million, and the atlas ANCSA record uses 44 million. The era also included restoration of terminated tribes and other laws that were not verified here. Alaska Native corporations under ANCSA are a distinct legal arrangement, not tribal trust land."
+sources: [{"url": "https://www.presidency.ucsb.edu/node/240040", "title": "Special Message to the Congress on Indian Affairs, July 8, 1970 (American Presidency Project)", "quote": "This policy of forced termination is wrong, in my judgment, for a number of reasons."}, {"url": "https://text-message.blogs.archives.gov/2020/11/10/righting-a-wrong-the-return-of-blue-lake-to-the-taos-pueblo/", "title": "Righting a Wrong: The Return of Blue Lake to the Taos Pueblo (National Archives)", "quote": "in 1906 an injustice was done in which land involved in this bill, 48,000 acres, was taken from the Indians involved"}, {"url": "https://www.everycrsreport.com/reports/R46997.html", "title": "Alaska Native Lands and the Alaska Native Claims Settlement Act (CRS R46997)", "quote": "Alaska Natives received approximately 45 million acres"}, {"url": "https://www.everycrsreport.com/reports/R46997.html", "title": "Alaska Native Lands and the Alaska Native Claims Settlement Act (CRS R46997)", "quote": "shared in a settlement payment of approximately $962.5 million"}, {"url": "https://www.law.cornell.edu/uscode/text/25/5302", "title": "25 U.S.C. 5302 (Indian Self-Determination Act policy)", "quote": "assuring maximum Indian participation in the direction of educational as well as other Federal services"}]
+verdict: "new"
+---
+Self-determination replaced termination as federal policy in the 1970s. President Nixon's Special Message on Indian Affairs, July 8, 1970, called forced termination wrong and set the new direction.
+
+Blue Lake was an early test. The National Archives says President Nixon signed H.R. 471 on December 15, 1970, transferring legal ownership of the lake and surrounding mountain land to Taos Pueblo. At the signing Nixon said the act represented justice because in 1906 an injustice was done, when 48,000 acres were taken from the Taos Pueblo Indians. The Archives records that the Pueblo had pursued the return for generations and that earlier compromises in 1927 and 1940 left them unsatisfied.
+
+On December 18, 1971, Nixon signed the Alaska Native Claims Settlement Act. The Congressional Research Service calls it the largest land claims settlement in U.S. history at the time. It says ANCSA extinguished Alaska Native claims to over 360 million acres, Alaska Natives received approximately 45 million acres, and the corporations shared a payment of approximately $962.5 million. Land went to more than 200 village corporations and 12 regional corporations, not to tribes.
+
+In the Indian Self-Determination and Education Assistance Act of January 4, 1975, Congress recognized the obligation of the United States to respond to the strong expression of the Indian people for self-determination by assuring maximum Indian participation in directing federal services.

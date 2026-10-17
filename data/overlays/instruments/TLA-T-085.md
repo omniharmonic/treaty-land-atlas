@@ -2,15 +2,18 @@
 id: "TLA-T-085"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Choctaw ceded land east of a Tombigbee River boundary in Mississippi and Alabama for annual payments and merchandise."
+headline: "In 1816 the Choctaw ceded land east of a Tombigbee River line for $6,000 a year for twenty years and $10,000 in merchandise."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for stated annual payments and merchandise, with no mention of coercion."
-confidence: "medium"
-cautions: "Single source (treaty text). Acreage not stated; location is described only by river boundaries."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137", "title": "Treaty with the Choctaw, 1816 (Kappler, OSU Tribal Treaties Database)", "quote": "cede to the United States all their title and claim to lands lying east of the following boundary"}]
+confidence: "high"
+cautions: "Single source (treaty text). No acreage is stated and the location is described only by river and treaty boundaries. The record's description of the land as in Mississippi and Alabama is not stated in the text."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137", "title": "Treaty with the Choctaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "cede to the United States all their title and claim to lands lying east of the following boundary"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137", "title": "Treaty with the Choctaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "the sum of six thousand dollars annually, for twenty years"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137", "title": "Treaty with the Choctaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "Mount Dexter, on the 16th November, 1805"}]
+verdict: "fixed"
 ---
-On October 24, 1816, John Coffee, John Rhea and John McKee, commissioners for President James Madison, concluded a "treaty of cession" with the mingoes, captains and warriors of the Choctaw Nation at the Choctaw trading house.
+On October 24, 1816, John Coffee, John Rhea and John McKee, commissioners for President James Madison, signed a "treaty of cession" at the Choctaw trading house. The other side was the mingoes, leaders, captains and warriors of the Choctaw nation, "in general council assembled, in behalf of themselves and the whole nation."
 
-The Choctaw ceded all title and claim to land east of a boundary beginning at the mouth of Ooktibbuha, on the Chickasaw boundary. It ran down the Tombigbee River until it met the northern line of a 1805 Choctaw cession at Mount Dexter. In return the United States agreed to pay $6,000 a year for twenty years and to deliver $10,000 in merchandise on signing.
+Article 1 has the Choctaw cede "all their title and claim to lands lying east of the following boundary." The line begins at the mouth of Ooktibbuha on the Chickasaw boundary and runs down the Tombigbee River until it meets the northern boundary of the cession the Choctaw made at Mount Dexter on November 16, 1805.
 
-The treaty is short, only two articles, and the Oklahoma State database text is the only source used here. It does not describe the negotiation or what the land became. The text shows the 1816 cession adjoined an earlier 1805 cession, so the land taken in 1816 added to land the Choctaw had already given up.
+In Article 2 the United States agreed to pay the Choctaw nation $6,000 a year for twenty years. It also agreed to deliver $10,000 in merchandise on signing.
+
+The treaty has only two articles. The cession joined a line from the earlier 1805 cession, so the 1816 land was added to territory the Choctaw had already given up. The text does not describe the negotiation or say what the land became. It gives no acreage and describes the location only by rivers and the earlier treaty line.

@@ -1,0 +1,15 @@
+---
+id: "org-tataviam-land-conservancy"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Tataviam Land Conservancy, founded by the Fernandeño Tataviam Band in 2018, received a donation of more than 500 acres in January 2024."
+confidence: "high"
+cautions: "The donation announcement is the Band's and Conservancy's own; acreage is given as 'more than 500' in the release and 550 elsewhere on the site. The Band is not described here as a federally recognized government. The donate form's payee was not shown on the page; confirm at checkout."
+sources: [{"url": "https://www.tataviam.land/about/organization/", "title": "Tribally Founded - Tataviam Land Conservancy", "quote": "The Tataviam Land Conservancy is a Tribally-operated nonprofit organization"}, {"url": "https://www.tataviam.land/about/team/", "title": "Team - Tataviam Land Conservancy", "quote": "Luis Cervantes Executive Director"}, {"url": "https://www.tataviam.land/land-donation/550-acres-donated-to-conservancy/", "title": "Land Donation Marks Historic Return of Ancestral Territory", "quote": "the donation of more than 500 acres of historic ancestral land to the Tataviam Land Conservancy"}, {"url": "https://www.tataviam.land/projects/workforce-development/", "title": "Workforce Development - Tataviam Land Conservancy", "quote": "To steward its 550 acres, TLC has cultivated and overseen many workforce partnerships"}, {"url": "https://projects.propublica.org/nonprofits/organizations/831446244", "title": "ProPublica Nonprofit Explorer: Tataviam Land Conservancy", "quote": "San Fernando, CA Tax exemption issued: July 2019 EIN: 83-1446244"}]
+verdict: "new"
+---
+The Tataviam Land Conservancy (TLC) says it was formally established in 2018, as a vision it traces to 1797. It describes itself as a Tribally-operated nonprofit whose mission is to restore the unceded ancestral homelands of the Fernandeño Tataviam Band of Mission Indians through protective land management, traditional ecological knowledge, and cultural and educational programs. Its home page says it is the first tribally operated land conservancy in Los Angeles. The Conservancy says it is governed by a Native-majority board and overseen by the Band. Its team page lists Luis Cervantes as Executive Director.
+
+Its main result is a land gift. In a January 8, 2024 announcement, the Band said Land Veritas donated more than 500 acres of ancestral land in northern Los Angeles County to the Conservancy. The release calls it the first-ever land donation to the Conservancy and the first time in more than a century that the Tribe regains ownership of part of its original territory. Land Veritas president Tracey Brownfield is quoted calling the Tribe the best steward of the land. The Conservancy says it will explore a permanent conservation easement. A later project page refers to stewarding "its 550 acres" with a tribal conservation corps.
+
+ProPublica Nonprofit Explorer lists Tataviam Land Conservancy of San Fernando, California, as a 501(c)(3), exemption issued July 2019.

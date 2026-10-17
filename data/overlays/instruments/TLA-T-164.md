@@ -2,15 +2,16 @@
 id: "TLA-T-164"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1831 Shawnee treaty at Wapaghkonnetta ceded 145 square miles in Ohio for 100,000 acres west of the Mississippi."
+headline: "In 1831 the Shawnee at Wapaghkonnetta and Hog Creek ceded 145 square miles in Ohio for 100,000 acres west of the Mississippi."
 how: "removal"
 how_basis: "The OSU treaty text says it implements the 1830 removal act, with Ohio land exchanged for western land and removal."
-confidence: "medium"
-cautions: "Only the treaty text was consulted; the preamble states assent, but the page does not show the conditions of negotiation. Acreage: 145 square miles (sections) ceded in Ohio; 100,000 acres promised west of the Mississippi (treaty text)."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1831-0331", "title": "Treaty with the Shawnee, 1831 (OSU Tribal Treaties Database)", "quote": "have expressed their perfect assent to the conditions of the said act"}]
+confidence: "high"
+cautions: "The treaty page does not show the conditions under which the band agreed. No source opened describes later events or the western land."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1831-0331", "title": "Tribal Treaties Database (OSU)", "quote": "have expressed their perfect assent to the conditions of the said act"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1831-0331", "title": "Tribal Treaties Database (OSU)", "quote": "a tract of land to contain one hundred thousand acres"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg355.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "James B. Gardiner"}]
+verdict: "fixed"
 ---
-On August 8, 1831, special commissioner James B. Gardiner and Indian agent John McElvain signed a treaty for the United States with chiefs, headmen and warriors of the Shawnee at Wapaghkonnetta and Hog Creek, Ohio. The Shawnee ceded 145 square miles, which included their 1817 reservations and a 12,800-acre tract from 1818.
+On August 8, 1831, James B. Gardiner and John McElvain signed articles for the United States at Wapaghkonnetta, Allen County, Ohio. The other party was the principal chiefs, headmen and warriors of the Shawnee residing at Wapaghkonnetta and on Hog Creek.
 
-The treaty says it was made under the Act of Congress of May 28, 1830. Its preamble says the Shawnee had expressed their perfect assent to the conditions of that act. In exchange the United States promised a 100,000-acre tract west of the Mississippi, near the Missouri Shawnee, plus a year of provisions, mills, a blacksmith shop and a $13,000 advance for improvements, to be repaid from land sales.
+The preamble says the President had acted under the Act of Congress of May 28, 1830, and that the Shawnee had "expressed their perfect assent to the conditions of the said act, and their willingness and anxiety to remove west of the Mississippi river." In Article 1 they ceded two reservations granted by the 1817 treaty. One was ten miles square, centered on the council house at Wahpaghkonnetta. The other was twenty-five square miles, including the Shawnee settlement on Hog Creek. They also ceded twelve thousand eight hundred acres granted at St. Mary's in 1818. Together this was "one hundred and forty-five sections or square miles."
 
-Ohio land sales would deduct 70 cents per acre and survey costs, with any balance forming a fund paying a 5 percent annuity. The interpreter Joseph Parks also received a 640-acre grant. The sources used here do not describe later events.
+In Article 2 the United States agreed to remove the band, "about four hundred souls," and grant them 100,000 acres within the fifty-mile-square tract granted to the Shawnee of Missouri in 1825. It also agreed to advance $13,000 in place of improvements, repaid from land sales. The Ohio land would be sold, with seventy cents per acre and other costs deducted, and any balance would pay five percent a year. Joseph Parks, "a quarter blooded Shawnee," was granted a section of 640 acres. The Statutes at Large record a proclamation on April 6, 1832.

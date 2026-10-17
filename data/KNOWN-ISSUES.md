@@ -51,7 +51,6 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 - **warn** `graph GEO-022`: orphan_node: Source node has no edges.
 - **warn** `graph GEO-023`: orphan_node: Source node has no edges.
 - **warn** `graph GEO-024`: orphan_node: Source node has no edges.
-- **warn** `graph TLA-T-004`: orphan_node: Instrument node has no edges.
 - **warn** `graph TLA-T-005`: orphan_node: Instrument node has no edges.
 - **warn** `graph plc-region-multi-region`: orphan_node: Place node has no edges.
 - **warn** `TLA-A-1874`: instrument has no source URL and no NARA NAID
@@ -83,6 +82,7 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 - **warn** `org-siletz-ctsi`: listed organization has no website
 - **warn** `org-southern-sierra-miwuk`: listed organization has no website
 - **warn** `org-stockbridge-munsee`: listed organization has no website
+- **warn** `org-tongva-taraxat-paxaavxa-conservancy`: listed organization has no website
 - **warn** `org-tule-river-tribe`: listed organization has no website
 - **warn** `org-washoe-tribe`: listed organization has no website
 - **warn** `G-02`: Native Land Digital: pending (blocks public launch; live lookup)

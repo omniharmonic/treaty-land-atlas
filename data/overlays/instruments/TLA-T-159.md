@@ -2,15 +2,18 @@
 id: "TLA-T-159"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1830 Prairie du Chien treaty ceded Sauk, Fox and Sioux strips forming a Neutral Ground and lands in Iowa and Minnesota."
-how: "treaty_negotiated"
-how_basis: "The OSU treaty text and a mirror of it record cessions for ten years of annuities and goods, and describe no coercion."
+headline: "In 1830 the Sauk, Fox, Sioux, Omaha, Ioway, Oto and Missouria ceded a large tract and two strips, with ten years of annuities."
+how: "treaty_under_pressure"
+how_basis: "Treaties Matter says the U.S. threatened a military invasion and trade embargo before insisting on land cessions at the 1830 Prairie du Chien council."
 confidence: "medium"
-cautions: "Input lists Yankton and Santee among parties; the treaty copy says they were not fully represented and joined later (Article VI). The Minnesota and Missouri aspects in the input were not confirmed from the text. Details come from summaries of the pages."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305", "title": "Treaty with the Sauk and Foxes, etc., 1830 (OSU Tribal Treaties Database)", "quote": "cede and relinquish to the United States forever all their right and title to the lands"}, {"url": "https://ioway.nativeweb.org/history/treaty1830.htm", "title": "Treaty of 1830 (Ioway Cultural Institute copy of the treaty text)", "quote": "of hunting, which they are sensible must soon entirely fail them"}]
+cautions: "The treaty gives boundaries, not acreage. Treaties Matter describes the strip as a neutral ground; the treaty text itself does not use that term. The pressure described comes from Treaties Matter, not the treaty text. Modern state names are not stated in the treaty."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305", "title": "Tribal Treaties Database (OSU)", "quote": "cede and relinquish to the United States forever all their right and title to the lands"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305", "title": "Tribal Treaties Database (OSU)", "quote": "shall be considered as a full compensation for the cession and relinquishments herein made"}, {"url": "https://www.treatiesmatter.org/treaties/land/1825-1830-Multinational", "title": "Multinational Treaties at Prairie du Chien (Treaties Matter)", "quote": "After threatening a military invasion and trade embargo, the U.S. insisted that peace among American Indians would require land cessions"}]
+verdict: "fixed"
 ---
-On July 15, 1830, commissioners William Clark and Willoughby Morgan signed a treaty at Prairie du Chien for the United States with the Sauk and Fox, several Sioux bands, and the Omaha, Ioway, Oto and Missouria. Under Article I the tribes ceded a large area in present-day Iowa and bordering lands, bounded by the Des Moines, Missouri and Big Sioux rivers. Under Articles II and III the Sauk and Fox and the Sioux each ceded a strip 20 miles wide from the Mississippi to the Des Moines River. A copy of the treaty states no total acreage.
+On July 15, 1830, William Clark and Willoughby Morgan signed a treaty at Prairie du Chien for the United States. The other parties were the Sacs and Foxes, four bands of Sioux, and the Omahas, Ioways, Ottoes and Missourias. The preamble says the tribes were "anxious to remove all causes which may hereafter create any unfriendly feeling between them." It adds that hunting, they were "sensible," would "soon entirely fail them."
 
-The preamble says the aim was to remove causes of unfriendly feeling between the tribes, and notes that hunting would soon fail them. The United States agreed to ten years of annual payments, education funds of $3,000 a year, blacksmiths, tools, and $5,132 in goods, all treated as full payment for the cessions.
+In Article 1 the tribes ceded a large tract bounded by the Des Moines, Little Sioux, Big Sioux (Calumet) and Missouri rivers and the Missouri state line. The ceded land was to be assigned by the President to tribes living there, or to others he chose. In Articles 2 and 3 the Sacs and Foxes and the Sioux each ceded a strip twenty miles wide from the Mississippi to the Des Moines.
 
-The Winnebago were later given the Neutral Ground's eastern part in the 1832 treaty (TLA-T-169). Yankton and Santee Sioux were not fully represented and joined later under Article VI.
+In return the United States agreed to annuities for ten years, from $500 to $3,000 for each group, plus blacksmiths and $3,000 a year for education. It distributed $5,132 in goods, which, together with the annuities, the treaty called "a full compensation."
+
+Treaties Matter, a Minnesota Historical Society project, says that after "threatening a military invasion and trade embargo," the United States insisted that peace among the nations required land cessions by the Dakota and Sac and Fox. It describes the smaller strip as a "neutral ground." Yankton and Santee Sioux, not fully represented, would be bound if they signed.

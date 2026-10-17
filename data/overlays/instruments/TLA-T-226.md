@@ -2,15 +2,16 @@
 id: "TLA-T-226"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Yankton Sioux gave up any claim to the 1830 cession lands in return for $4,000 in goods and presents."
+headline: "In 1837 the Yankton Sioux released claims to the lands ceded in 1830 in return for $4,000 in horses, goods and moving costs."
 how: "treaty_negotiated"
-how_basis: "The OSU treaty text records a small negotiated release with stated payments; no source I read describes coercion."
-confidence: "medium"
-cautions: "Only the treaty text was used. The description 'quitclaim' is my reading of the text; it does not use that word. No acreage is stated."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1837-0496", "title": "Treaty with the Yankton Sioux, 1837 (Tribal Treaties Database, Oklahoma State University)", "quote": "cede to the United States all the right and interest in the land ceded by the treaty, concluded with them and other tribes"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1837-0496", "title": "Treaty with the Yankton Sioux, 1837 (Tribal Treaties Database, Oklahoma State University)", "quote": "the United States stipulate to pay them four thousand dollars"}]
+how_basis: "The OSU treaty text records a negotiated release with stated payments, signed by a commissioner and chiefs and delegates, and no coercion is stated."
+confidence: "high"
+cautions: "No acreage is stated. The words \"short release of a claim\" are this entry's plain-English reading of Article 1; the treaty does not use that phrase. Later history is not covered by the sources opened."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1837-0496", "title": "Treaty with the Yankton Sioux, 1837 (OSU Tribal Treaties Database)", "quote": "cede to the United States all the right and interest in the land ceded by the treaty, concluded with them and other tribes"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1837-0496", "title": "Treaty with the Yankton Sioux, 1837 (OSU Tribal Treaties Database)", "quote": "the United States stipulate to pay them four thousand dollars"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg542.pdf", "title": "Treaty with the Yankton Sioux, 7 Stat. 542 (govinfo)", "quote": "the United States stipulate to pay them four thousand dollars"}]
+verdict: "fixed"
 ---
-On October 21, 1837, in Washington, Carey A. Harris signed for the United States and Yankton chiefs and delegates signed for the Yankton tribe of Sioux. The Yankton ceded all their right and interest in the land ceded by the July 15, 1830 treaty, to the extent they might claim it under the wording of the second article of that treaty.
+On October 21, 1837, Carey A. Harris, authorized by the President, signed a treaty at Washington with the Yankton tribe of Sioux Indians, through their chiefs and delegates. In Article 1 the Yankton ceded to the United States all the right and interest in the land ceded by the July 15, 1830 treaty that they might be entitled to claim under the wording of that treaty's second article. The treaty states no acreage. It is a short release of a claim to land already ceded under the 1830 treaty.
 
-The United States agreed to pay $4,000: $1,500 for horses and presents on the chiefs' arrival at St. Louis, $2,000 in goods the next year, and $500 toward moving the agency building and blacksmith shop. The United States also paid the cost of the delegation's travel. The treaty took effect when ratified by the United States.
+In Article 2 the United States agreed to pay four thousand dollars. Of that, $1,500 was for horses and presents when the chiefs and delegates arrived at St. Louis, $2,000 was for goods at the next year's annuity delivery, and $500 was to move the agency building and blacksmith shop from their present site. Article 3 had the United States pay the expenses of the negotiation and of the delegates' trip to Washington and home again.
 
-The text is a short quitclaim of interests under an earlier treaty, not a new boundary. The sources I read do not say what the Yankton later did with that claim.
+The treaty took effect for the United States on ratification and was proclaimed on February 21, 1838. The text does not describe how the council went, and the sources used here do not say how the Yankton understood or used the claim afterward.

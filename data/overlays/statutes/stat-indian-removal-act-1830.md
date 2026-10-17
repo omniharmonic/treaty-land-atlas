@@ -1,0 +1,17 @@
+---
+id: "stat-indian-removal-act-1830"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The Indian Removal Act of 1830 let the President swap eastern tribal lands for districts west of the Mississippi River."
+confidence: "high"
+cautions: "The record lists 'Pub. L. 21-148'; the Statutes at Large page shows the act as chapter 148 of the first session of the 21st Congress, not a public law number. Vote counts and Jackson's motives were not sourced here."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-4/pdf/STATUTE-4-Pg411.pdf", "title": "An Act to provide for an exchange of lands with the Indians (4 Stat. 411), govinfo.gov", "quote": "for the reception of such tribes or nations of Indians as may choose to exchange the lands where they now reside, and remove there"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-4/pdf/STATUTE-4-Pg411.pdf", "title": "An Act to provide for an exchange of lands with the Indians (4 Stat. 411), govinfo.gov", "quote": "nothing in this act contained shall be construed as authorizing or directing the violation of any existing treaty"}, {"url": "https://www.archives.gov/milestone-documents/jacksons-message-to-congress-on-indian-removal", "title": "Jackson's Message to Congress 'On Indian Removal' (1830), National Archives", "quote": "The Act authorized the President to negotiate removal treaties with Indian tribes living east of the Mississippi River"}, {"url": "https://www.archives.gov/milestone-documents/jacksons-message-to-congress-on-indian-removal", "title": "Jackson's Message to Congress 'On Indian Removal' (1830), National Archives", "quote": "Approximately 4,000 of 16,000 Cherokees died along the way."}, {"url": "https://www.law.cornell.edu/supremecourt/text/31/515", "title": "Worcester v. Georgia, 31 U.S. 515 (1832), Cornell LII", "quote": "in which the laws of Georgia can have no force"}]
+verdict: "new"
+---
+Congress passed the Indian Removal Act, and President Andrew Jackson signed it, on May 28, 1830. Its title says it provides "for an exchange of lands with the Indians residing in any of the states or territories, and for their removal west of the river Mississippi."
+
+The law did not order anyone to move. Section 1 lets the President divide land west of the Mississippi, outside any state or organized territory, into districts "for the reception of such tribes or nations of Indians as may choose to exchange the lands where they now reside, and remove there." Section 3 lets him assure a tribe the United States will "forever secure and guaranty" the new country, with a patent if the tribe prefers. The land would revert to the United States if the Indians became extinct or abandoned it. Section 4 has the United States pay for improvements on land given up. Section 5 provides help moving and a year of support, and Section 8 appropriates $500,000.
+
+Section 7 says nothing in the Act authorizes violating an existing treaty. The National Archives says the Act authorized the President to negotiate removal treaties with tribes east of the Mississippi, mainly in Georgia, Tennessee, Alabama, Mississippi and North Carolina, and that the goal was to send them to unsettled land in the west.
+
+What followed is described by the Archives: the Cherokee were forced west in 1838-39, and "approximately 4,000 of 16,000 Cherokees died along the way." In Worcester v. Georgia (1832) the Supreme Court held the Cherokee nation was "a distinct community" in which Georgia's laws "can have no force."

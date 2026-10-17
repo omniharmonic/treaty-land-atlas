@@ -35,6 +35,8 @@ export interface WhereData {
       instruments?: { id: string; date: string | null }[];
       entries?: unknown[];
       royce_summary?: string;
+      status?: string;
+      ceded_year?: number | null;
     }
   >;
   headlines: Record<string, string>;
@@ -64,6 +66,8 @@ export interface WhereReport {
     /** true when Royce's Schedule has been read to find which instrument ceded the land */
     checked: boolean;
     royce_summary: string | null;
+    /** ceded, taken (reservation land restored to the public domain), kept, or unchecked */
+    status: string;
   })[];
   /** violations of the treaties that took this land: the broken promises */
   broken: Ref[];
@@ -138,7 +142,7 @@ export function placeReport(d: WhereData, lat: number, lng: number): WhereReport
     const nations = (st?.nations ?? p.nations ?? []).map(ref);
     return {
       ...ref(p.id),
-      year: Math.floor(p.t0),
+      year: st?.ceded_year ?? Math.floor(p.t0),
       how: st?.how ?? p.how ?? 'unknown',
       how_basis: st?.how_basis ?? '',
       instrument: st?.instrument ? ref(st.instrument) : null,
@@ -146,6 +150,7 @@ export function placeReport(d: WhereData, lat: number, lng: number): WhereReport
       instruments: (st?.instruments ?? []).map((x) => ref(x.id)),
       checked: !!st?.entries,
       royce_summary: st?.royce_summary ?? null,
+      status: st?.status ?? 'unchecked',
     };
   });
   const instruments = [

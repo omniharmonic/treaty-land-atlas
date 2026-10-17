@@ -16,6 +16,7 @@ interface CessionStory {
   acres: number;
   instruments: { id: string; date: string | null }[];
   ceded_year: number | null;
+  status?: 'ceded' | 'taken' | 'kept' | 'unchecked';
   entries?: { date: string; role: string; instrument: string | null; quote: string }[];
   royce_summary?: string;
 }
@@ -36,6 +37,7 @@ export const HOW_PHRASE: Record<string, string> = {
   treaty: 'treaties and agreements',
   pressure: 'treaties made under documented pressure',
   removal: 'removal treaties',
+  unratified: 'treaties the Senate never ratified',
   congress: 'acts of Congress',
   executive: 'executive orders',
   unknown: 'means Royce does not state',
@@ -44,6 +46,7 @@ const HOW_ONE: Record<string, string> = {
   treaty: 'a treaty or agreement',
   pressure: 'a treaty made under documented pressure',
   removal: 'a removal treaty',
+  unratified: 'a treaty the Senate never ratified',
   congress: 'an act of Congress',
   executive: 'an executive order',
 };
@@ -53,7 +56,7 @@ const ROLE_WORD: Record<string, string> = {
   described_or_recognized: 'described or recognized it as Native land',
   reserved: 'reserved part of it',
   confirmed: 'confirmed an earlier cession',
-  retroceded: 'gave part of it back',
+  retroceded: 'restored reservation land to the public domain (taking it from the nation)',
   other: 'is also listed',
 };
 
@@ -228,6 +231,10 @@ export function cessionStory(g: Node): Paragraph[] {
     s.nations.length ? '. Royce’s schedule names ' : '.',
     ...(s.nations.length ? [...list(s.nations, 5), ' as the people it was taken from.'] : []),
   ]);
+  if (s.status === 'kept')
+    out.push([
+      'This area is not a cession. Royce’s schedule records it as a reservation the nation kept, as of his record’s end in 1894; it is shown on the map as land still held.',
+    ]);
   if (s.entries?.length) {
     const p: Paragraph = [s.royce_summary ? `${s.royce_summary} ` : '', 'In Royce’s schedule: '];
     s.entries.forEach((e, i) => {

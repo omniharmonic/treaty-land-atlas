@@ -1,0 +1,17 @@
+---
+id: "doctrine-guardianship"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 'guardian and ward' idea in Cherokee Nation v. Georgia has been used to justify federal power and to demand federal fiduciary care."
+confidence: "high"
+cautions: "The Court's 'ward' and 'pupil' language is quoted as written and is part of the record of how federal law has described tribes. Critiques by named scholars were not opened. The claim that the guardian image 'supported broad federal authority' is drawn from Kagama's own sentence about protection and power. Full holdings of Jicarilla and Navajo Nation are limited to the quoted syllabus lines."
+sources: [{"url": "https://www.law.cornell.edu/supremecourt/text/30/1", "title": "Cherokee Nation v. Georgia, 30 U.S. (5 Pet.) 1 (1831), Cornell LII", "quote": "Their relation to the United States resembles that of a ward to his guardian."}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep118/usrep118375/usrep118375.pdf", "title": "United States v. Kagama, 118 U.S. 375 (1886), U.S. Reports", "quote": "there arises the duty of protection, and with it the power."}, {"url": "https://www.law.cornell.edu/supremecourt/text/316/286", "title": "Seminole Nation v. United States, 316 U.S. 286 (1942), Cornell LII", "quote": "it has charged itself with moral obligations of the highest responsibility and trust"}, {"url": "https://www.law.cornell.edu/supremecourt/text/10-382", "title": "United States v. Jicarilla Apache Nation, No. 10-382 (U.S. 2011), Cornell LII", "quote": "The fiduciary exception to the attorney-client privilege does not apply to the general trust relationship between the United States and the Indian tribes."}, {"url": "https://www.law.cornell.edu/supremecourt/text/21-1484", "title": "Arizona v. Navajo Nation, No. 21-1484 (U.S. 2023), Cornell LII", "quote": "did not require the United States to take affirmative steps to secure water for the Tribe"}]
+verdict: "new"
+---
+In Cherokee Nation v. Georgia (1831), Chief Justice Marshall wrote that the relation of tribes to the United States "resembles that of a ward to his guardian." The image was meant to describe dependence on federal protection. In United States v. Kagama (1886), the Court went further. It said the Indian tribes "are spoken of as 'wards of the nation,' 'pupils,' as local dependent communities," and that from their weakness and helplessness "there arises the duty of protection, and with it the power."
+
+The framing has two edges. One edge is control: the Court used the guardian image to support broad federal authority over tribes. The other is duty. In Seminole Nation v. United States (1942), the Court held that in carrying out its treaty obligations the Government "is something more than a mere contracting party," and "has charged itself with moral obligations of the highest responsibility and trust," to be judged "by the most exacting fiduciary standards."
+
+Recent cases limit what the duty means. In United States v. Jicarilla Apache Nation (2011), the Court held that the fiduciary exception to attorney-client privilege "does not apply to the general trust relationship between the United States and the Indian tribes." In Arizona v. Navajo Nation (2023), it held that the 1868 treaty reserved necessary water but "did not require the United States to take affirmative steps to secure water for the Tribe."
+
+The Court's guardian language reflects the era's assumptions and is quoted here as law, not as the atlas's view.

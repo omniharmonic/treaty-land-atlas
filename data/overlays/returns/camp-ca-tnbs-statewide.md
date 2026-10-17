@@ -1,0 +1,17 @@
+---
+id: "camp-ca-tnbs-statewide"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "California's Tribal Nature-Based Solutions program funds tribal land returns; its 2024 awards supported about 38,950 acres, and a later total is unconfirmed."
+confidence: "low"
+cautions: "The 40,574.94 acres statewide figure could not be confirmed; the state's own pages that were opened give about 38,950 acres in the April 2024 awards, which are acres funded, not necessarily returned, so the two are different measures. The Natural Resources Agency page was blocked to automated fetching. Hoodline is a local aggregator."
+sources: [{"url": "https://www.gov.ca.gov/2024/04/26/a-step-towards-healing-and-restoration-california-to-support-the-return-of-ancestral-tribal-lands-and-lands-management-projects/", "title": "A Step Towards Healing and Restoration (Governor of California, Apr. 26, 2024)", "quote": "the state has awarded more than $100 million for 33 tribal land projects"}, {"url": "https://wildfiretaskforce.org/nearly-39000-acres-of-land-returned-to-california-tribes/", "title": "Nearly 39,000 Acres of Land Returned to California Tribes (California Wildfire & Forest Resilience Task Force)", "quote": "awarded $107.7 million to fund 33 projects and support the return of approximately 38,950 acres of land to California Native American tribes"}, {"url": "https://www.gov.ca.gov/2024/04/26/a-step-towards-healing-and-restoration-california-to-support-the-return-of-ancestral-tribal-lands-and-lands-management-projects/", "title": "A Step Towards Healing and Restoration (Governor of California, Apr. 26, 2024)", "quote": "went to the Hoopa Valley Tribe to acquire 10,395 acres of forested property"}, {"url": "https://hoodline.com/2026/06/chico-tribe-reclaims-450-acres-in-big-chico-creek-comeback/", "title": "Chico Tribe Reclaims 450 Acres in Big Chico Creek Comeback (Hoodline, June 9, 2026)", "quote": "awarded $107.7 million to assist with the return of nearly 39,000 acres to multiple tribes"}]
+verdict: "cannot_verify"
+---
+California's Tribal Nature-Based Solutions grant program pays for tribes to take back ancestral land and to run restoration projects. Governor Newsom's office announced on April 26, 2024 that the state had awarded more than $100 million for 33 tribal land projects, funded in the 2022-23 and 2023-24 state budgets. The grants can be used for ancestral land return, habitat restoration, wildfire resilience and implementation of Traditional Ecological Knowledge.
+
+A state wildfire task force page summarizing the awards says the California Natural Resources Agency, with CAL FIRE and the Ocean Protection Council, awarded $107.7 million to fund 33 projects and support the return of approximately 38,950 acres to California Native American tribes.
+
+The governor's release says early funding went to the Hoopa Valley Tribe to acquire 10,395 acres of forested property. Tribal leaders quoted in it describe the aim as stewardship. Chairman Kevin Osuna of the Iipay Nation of Santa Ysabel said the tribe looks forward to welcoming the public to its ancestral homelands.
+
+The atlas record cites 40,574.94 acres returned statewide, a figure attributed to a Natural Resources Agency release about the Mechoopda Tribe's 450-acre acquisition in June 2026. That release could not be opened for this record. A local news summary says the program had awarded funding for nearly 39,000 acres.

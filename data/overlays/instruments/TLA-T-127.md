@@ -2,15 +2,18 @@
 id: "TLA-T-127"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Kansa ceded their Missouri lands and a large area to the west, keeping a thirty-mile-wide reservation on the Kansas River."
+headline: "In 1825 the Kansa ceded their Missouri lands and a wide area west, keeping a reservation thirty miles wide on the Kansas River."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession in St. Louis with annuities, with no mention of coercion."
-confidence: "medium"
-cautions: "Single source. A search summary (not opened) quotes a Kansas history article saying the Kansa lost most of their land over time; not verified. Acreage not stated."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0222", "title": "Treaty with the Kansa, 1825 (Kappler, OSU Tribal Treaties Database)", "quote": "The Kansas do hereby cede to the United States all the lands lying within the State of Missouri"}]
+confidence: "high"
+cautions: "Acreage is not stated in the treaty. What happened to the reservation and annuities afterward was not researched in the sources opened here."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0222", "title": "Tribal Treaties Database (OSU)", "quote": "The Kansas do hereby cede to the United States all the lands lying within the State of Missouri"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg244.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Kansas Nation of Indians, duly authorized and empow-"}]
+verdict: "fixed"
 ---
-On June 3, 1825, William Clark signed a treaty at St. Louis with chiefs, head men and warriors of the Kansas Nation. The Kansas ceded all their lands within Missouri and all other lands they occupied or claimed west of Missouri within described boundaries, running from the mouth of the Kansas River north to the Missouri's northwest corner, west to the Nodaway River, and then to the Big Nemaha and the sources of the Kansas.
+On June 3, 1825, William Clark, Superintendent of Indian Affairs, signed a treaty at St. Louis with the chiefs, head men and warriors of the Kansas Nation.
 
-From the cession the treaty reserved a tract for the Kansa beginning twenty leagues up the Kansas River, including their village there, thirty miles wide. The United States agreed to pay $3,500 a year for twenty years, to provide 300 cattle, 300 hogs, poultry, oxen, carts and a blacksmith, and to sell thirty-six sections on the Big Blue River to fund schools. Reservations were also made for people of mixed ancestry.
+The Kansas ceded "all the lands lying within the State of Missouri" to which they had title or claim. They also ceded the lands they occupied or claimed west of Missouri. The boundary began where the Kansas River enters the Missouri. It ran north to Missouri's northwest corner, west to the Nodewa River, then to the Big Nemaha and its source, and on to the source of the Kansas River.
 
-The treaty text is the only source used here. It does not describe the negotiation or what followed.
+From that cession the treaty reserved a tract for the Kansas. It began twenty leagues up the Kansas River, included their village there, and was thirty miles wide. The United States agreed to pay $3,500 a year for twenty years. It promised 300 cattle, 300 hogs, 500 fowls, three yoke of oxen and two carts, along with a blacksmith. Thirty-six sections of good land on the Big Blue River were to be sold to fund schools for Kansa children.
+
+Article 6 made reservations for people of mixed ancestry. The Statutes at Large record a proclamation on December 30, 1825. The treaty text does not state the acreage.

@@ -1,0 +1,17 @@
+---
+id: "stat-burke-act-1906"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 1906 Burke Act let the Interior Secretary end trust protection of an allotment early if he judged the owner competent."
+confidence: "high"
+cautions: "The old record's phrase 'forced fee patents' and its claim of accelerated land loss are not stated in the sources opened here; no acreage lost under the Act was found. The Oklahoma encyclopedia entry says the Secretary decided competency 'before he could even receive an allotment', which differs from the statute text; the statute text was followed. The Solicitor's opinion quotes the 1928 Meriam Report secondhand."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-34/pdf/STATUTE-34-Pg182.pdf", "title": "Burke Act, May 8, 1906, 34 Stat. 182 (Statutes at Large), govinfo.gov", "quote": "shall be satisfied that any Indian allottee is competent and capable of managing his or her affairs"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-34/pdf/STATUTE-34-Pg182.pdf", "title": "Burke Act, May 8, 1906, 34 Stat. 182 (Statutes at Large), govinfo.gov", "quote": "all restrictions as to sale, incumbrance, or taxation of said land shall be removed"}, {"url": "https://blogs.loc.gov/law/2020/09/from-the-serial-set-citizenship-and-suffrage-for-native-americans/", "title": "From the Serial Set: Citizenship and Suffrage for Native Americans, Library of Congress", "quote": "or the Forced Fee Patenting Act"}, {"url": "https://www.okhistory.org/publications/enc/entry?entry=BU010", "title": "Burke Act (1906), Encyclopedia of Oklahoma History and Culture", "quote": "This legislation was also seen by many as an attempt by Congress to hasten the assimilation of American Indians into white culture."}, {"url": "https://www.doi.gov/sites/default/files/m-37055.pdf", "title": "Solicitor's Opinion M-37055 (citing the 1928 Meriam Report), Department of the Interior", "quote": "the effect of removing them in part at least from the jurisdiction of the national government"}]
+verdict: "new"
+---
+The Burke Act, approved May 8, 1906, rewrote Section 6 of the 1887 Dawes Act. That law had made Indians citizens once they received allotments. The Burke Act delayed citizenship for allottees until "the expiration of the trust period" and the conveyance of a fee patent.
+
+The key change is a proviso. The Secretary of the Interior could, whenever he was "satisfied that any Indian allottee is competent and capable of managing his or her affairs," have a patent in fee simple issued. After that, "all restrictions as to sale, incumbrance, or taxation of said land shall be removed." The text does not say the allottee had to ask. Until then, allottees with trust patents stayed under the exclusive jurisdiction of the United States.
+
+Another section covered inheritance. If an allottee died during the trust period, the allotment was cancelled and the Secretary would find the legal heirs and issue them a fee patent, or sell the land and pay the heirs the net proceeds. His findings on heirs were "conclusive and final." The Act did not extend to Indians in the Indian Territory.
+
+The Library of Congress calls the Act the "Forced Fee Patenting Act." The Oklahoma Historical Society's encyclopedia says Congress feared that freed allottees would be cheated of their land, and that many saw the law as an attempt to hasten assimilation. A 1928 report quoted in a Department of the Interior opinion said patents under the Dawes or Burke Acts removed Indians "in part at least" from federal jurisdiction.

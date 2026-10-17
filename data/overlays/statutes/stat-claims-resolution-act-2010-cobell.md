@@ -1,0 +1,17 @@
+---
+id: "stat-claims-resolution-act-2010-cobell"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 2010 Claims Resolution Act funded the Cobell settlement, including $1.9 billion to buy back fractionated land interests for tribes."
+confidence: "high"
+cautions: "Interior's numbers are the agency's own; independent assessments of the program were not reviewed. The Act's text describes the land fund as 'Trust Land Consolidation Fund' and 'Land Consolidation Program'; 'Land Buy-Back Program' is Interior's name for it. The old record's 'about $900 million for about 1.7 million acres by 2016' was not found in an opened source and is replaced by Interior's final figures. The settlement's treatment of class members' accounts was not covered."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/PLAW-111publ291/html/PLAW-111publ291.htm", "title": "Claims Resolution Act of 2010, Pub. L. 111-291, 124 Stat. 3064, govinfo.gov", "quote": "the Secretary of the Treasury shall deposit in the Trust Land Consolidation Fund $1,900,000,000"}, {"url": "https://www.doi.gov/news/pressreleases/salazar-announces-final-steps-on-cobell-litigation-and-implementation-of-settlement", "title": "Salazar Announces Final Steps on Cobell Litigation and Implementation of Settlement, U.S. Department of the Interior (2012)", "quote": "The settlement also includes a $1.9 billion fund for a land consolidation program"}, {"url": "https://www.doi.gov/buybackprogram/about", "title": "The Program, Land Buy-Back Program for Tribal Nations, U.S. Department of the Interior", "quote": "consolidated more than 800,000 interests, equivalent to 2.3 million acres, across 50 locations in 15 states"}, {"url": "https://www.doi.gov/buybackprogram/about", "title": "The Program, Land Buy-Back Program for Tribal Nations, U.S. Department of the Interior", "quote": "The 10-year period for the Program's implementation of land consolidation efforts came to an end November 24, 2022."}]
+verdict: "new"
+---
+The Claims Resolution Act of 2010, Public Law 111-291, was signed December 8, 2010. Title I, "Individual Indian Money Account Litigation Settlement," approved the settlement of the long-running Cobell class action over the government's management of individual American Indian trust accounts. Other titles of the Act deal with a different settlement and with tribal water rights.
+
+For land, the key part is the Trust Land Consolidation Fund. The Act says that on final approval of the settlement, the Treasury would deposit "$1,900,000,000" in it, available to the Secretary of the Interior for 10 years "to conduct the Land Consolidation Program."
+
+The Interior Department says the settlement became final on November 24, 2012. In a press release that year it described a $3.4 billion settlement, including a $1.5 billion fund for class members and a $1.9 billion fund for a program that "allows for the voluntary sale of individual land interests that have 'fractionated,' or split among owners, over successive generations." Up to $60 million of the land fund could pay for scholarships.
+
+Interior's Land Buy-Back Program page says the program bought fractional interests from willing sellers at fair market value and that consolidated interests were "immediately restored to Tribal trust ownership." It says the program consolidated "more than 800,000 interests, equivalent to 2.3 million acres, across 50 locations in 15 states," that its 10-year period ended November 24, 2022, and that a final report was released December 4, 2023.

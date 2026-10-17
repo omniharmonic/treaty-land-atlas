@@ -1,0 +1,15 @@
+---
+id: "camp-menominee-legend-lake-2026"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Wisconsin's Supreme Court ruled 4-3 in June 2026 that a property owners group cannot sue to block Menominee land buybacks, citing sovereign immunity."
+confidence: "medium"
+cautions: "WPR says \"40 parcels\" in its article text, while the law professor in the interview says Keshena \"bought 40 acres\"; the unit is unclear. The ruling is described through WPR's reporting and an interview with one law professor; the court's opinion itself was not opened. The Menominee Nation's own statement was not found. Status is as of the WPR update of June 30, 2026 update."
+sources: [{"url": "https://www.wpr.org/news/wisconsin-supreme-courts-ruling-menominee-land-buyback", "title": "What to know about the Wisconsin Supreme Court's ruling on Menominee land buyback (Wisconsin Public Radio, June 29, 2026)", "quote": "cannot sue to block the Menominee Indian Tribe of Wisconsin from buying back land on its own reservation"}, {"url": "https://www.wpr.org/news/wisconsin-supreme-courts-ruling-menominee-land-buyback", "title": "What to know about the Wisconsin Supreme Court's ruling on Menominee land buyback (Wisconsin Public Radio, June 29, 2026)", "quote": "Tribal sovereign immunity is the rule, not the exception."}, {"url": "https://www.wpr.org/news/wisconsin-supreme-courts-ruling-menominee-land-buyback", "title": "What to know about the Wisconsin Supreme Court's ruling on Menominee land buyback (Wisconsin Public Radio, June 29, 2026)", "quote": "otherwise a tribe could wield sovereign immunity as a sword and seize property with impunity"}]
+verdict: "new"
+---
+A Wisconsin Supreme Court ruling in June 2026 settled, for now, a fight over whether the Menominee Indian Tribe of Wisconsin may buy back land on its own reservation. Wisconsin Public Radio reported on June 29, 2026 that the court ruled 4 to 3 that the Legend Lake Property Owners Association cannot sue to block the buybacks.
+
+The case began in 2018, when the association sued Guy Keshena, a Menominee tribal member, for buying 40 parcels of land and transferring them to a federal trust, where they are tax-exempt. A University of Wisconsin law professor interviewed by WPR gave the figure as 40 acres, so the unit is unclear. Legend Lake exists, the professor said, because after the tribe was terminated, the tribal corporation sold land to a developer. The association put restrictive covenants on that land barring sales to the tribe or its agents.
+
+Justice Susan Crawford wrote for the majority that "tribal sovereign immunity is the rule, not the exception." The professor explained that because the covenants concern the tribe, and the tribe cannot be sued without a waiver, the covenants cannot be enforced against it when it takes land into trust under the Restoration Act. Justice Rebecca Bradley, dissenting, wrote that a tribe could wield immunity as a sword and seize property with impunity. The professor called that overstated, since the ruling turns on the Menominee Restoration Act and applies only to the Menominee.

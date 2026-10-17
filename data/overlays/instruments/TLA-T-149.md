@@ -2,15 +2,18 @@
 id: "TLA-T-149"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Potawatomi ceded reserved tracts in Michigan Territory to consolidate their bands on a new continuous reservation."
+headline: "In 1827 the Potawatomi ceded reserved tracts in Michigan Territory and received a new continuous reservation of ninety-nine sections."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated exchange of reserved tracts, though its stated aim is to distance the bands from white settlements."
-confidence: "medium"
-cautions: "Single source. The treaty speaks of ceding tracts reserved in earlier treaties; no secondary account of why the bands agreed was opened. Acreage: The text states the ceded tracts contain 99.5 sections and the new reservation 99 sections."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1827-0283", "title": "Treaty with the Potawatomi, 1827 (Kappler, OSU Tribal Treaties Database)", "quote": "as far as practicable from the settlements of the Whites"}]
+confidence: "high"
+cautions: "Acreage in sections only: 99.5 sections ceded, 99 reserved, as the treaty states. Why the bands agreed was not covered by the sources opened."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1827-0283", "title": "Tribal Treaties Database (OSU)", "quote": "as far as practicable from the settlements of the Whites"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1827-0283", "title": "Tribal Treaties Database (OSU)", "quote": "which tracts contain in the whole ninety nine sections and one half section of land"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg305.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "A TREATY between the United States and the Potawatamie"}]
+verdict: "fixed"
 ---
-On September 19, 1827, a treaty between the United States and the Potawatomi tribe was signed at St. Joseph, Michigan Territory, Lewis Cass as commissioner. The text states the aim: to consolidate dispersed Potawatomi bands in Michigan Territory at a point removed from the Detroit to Chicago road "and as far as practicable from the settlements of the Whites."
+On September 19, 1827, Lewis Cass, commissioner for the United States, and the chiefs and warriors of the Potawatamie Tribe signed a treaty at St. Joseph, in the Territory of Michigan. The text states its purpose: "to consolidate some of the dispersed bands" of the tribe at a point removed from the Detroit to Chicago road, "and as far as practicable from the settlements of the Whites."
 
-The Potawatomi ceded tracts that had been reserved for them. These included sections at villages on the River Rouge, six sections at Macon on the River Raisin, and the tracts at Mang-ach-qua village, Mickesawbe, Prairie Ronde and Match-e-be-nash-she-wish at the head of the Kalamazoo. The treaty says the ceded tracts contain ninety-nine and a half sections.
+To do this, the tribe ceded tracts that had earlier been reserved for its use. They included two sections at Seginsairn's village and two at Tonguish's village on or near the River Rouge, and six sections at Macon on the River Raisin, less half a section kept for the chief Moran. They also included four tracts at Mang ach qua, Mickesawbe, Prairie Ronde and the head of the Kalamazoo River. The treaty says the ceded tracts "contain in the whole ninety nine sections and one half section of land."
 
-In return the treaty reserved ninety-nine sections that "will form a continuous reservation" in southwestern Michigan, held as Indian reservations usually are. The treaty text is the only source used here. Several of the ceded tracts had been reserved by the 1821 Treaty of Chicago (see TLA-T-117).
+In exchange, the treaty reserved for the tribe, "to be held upon the same terms on which Indian reservations are usually held," tracts in townships south of the base line in Michigan Territory. These "will form a continuous reservation, and contain ninety-nine sections."
+
+The Statutes at Large record a proclamation on February 23, 1829. The treaty does not say why the bands agreed or what happened to the new reservation.

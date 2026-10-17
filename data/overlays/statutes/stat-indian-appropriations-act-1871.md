@@ -1,0 +1,17 @@
+---
+id: "stat-indian-appropriations-act-1871"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "A one-sentence rider in the March 3, 1871 Indian appropriations act ended new treaty-making with tribes but kept existing treaties in force."
+confidence: "high"
+cautions: "Congress's reasons (including the House-Senate dispute over the treaty power often described by historians) were not found in a source opened here, so none are stated. One National Archives page loosely says the 'House' ceased recognition, while another says the Act ended the Senate's role; the statute text itself is what is described."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-16/pdf/STATUTE-16-Pg544.pdf", "title": "Act of Mar. 3, 1871, 16 Stat. 544, 566 (Statutes at Large), govinfo.gov", "quote": "tribe within the territory of the United States shall be acknowledged or"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-16/pdf/STATUTE-16-Pg544.pdf", "title": "Act of Mar. 3, 1871, 16 Stat. 544, 566 (Statutes at Large), govinfo.gov", "quote": "herein contained shall be construed to invalidate or impair the obligation"}, {"url": "https://www.archives.gov/legislative/research/getting-started/american-indian-treaties", "title": "Senate Records Relating to American Indian Treaties, National Archives", "quote": "The Act ended formal treaty making with American Indian nations and the Senate's role in ratifying those treaties."}, {"url": "https://www.archives.gov/research/native-americans/treaties", "title": "American Indian Treaties, National Archives", "quote": "In 1871, the House of Representatives ceased recognition of individual tribes within the U.S. as independent nations"}, {"url": "https://www.law.cornell.edu/uscode/text/25/71", "title": "25 U.S. Code sec. 71, Cornell LII", "quote": "derived from act Mar. 3, 1871, ch. 120, § 1, 16 Stat. 566"}]
+verdict: "new"
+---
+The end of treaty-making came as a proviso inside a spending bill. In the Indian appropriation act approved March 3, 1871, after a line item for insurance and transportation of goods for the Yanktons, the text says: "Provided, That hereafter no Indian nation or tribe within the territory of the United States shall be acknowledged or recognized as an independent nation, tribe, or power with whom the United States may contract by treaty."
+
+A second proviso protects the past: nothing in the Act should "invalidate or impair the obligation of any treaty heretofore lawfully made and ratified with any such Indian nation or tribe." The provision is codified as 25 U.S.C. 71. A later amendment in 1988 added a sentence about state taxes on income from treaty-secured fishing rights.
+
+The National Archives says that before 1871, treaties with tribes were subject to Senate approval, like treaties with foreign governments, and that the Act "ended formal treaty making with American Indian nations and the Senate's role in ratifying those treaties." It adds that in 1871 "the House of Representatives ceased recognition of individual tribes" as independent nations with whom the United States could contract by treaty. After 1871, the Archives says, the United States made agreements with tribes through Acts of Congress, Executive Orders, and Executive Agreements.
+
+The statute does not say why Congress added the rider, and this story does not explain its motives.

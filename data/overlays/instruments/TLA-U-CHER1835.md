@@ -2,15 +2,18 @@
 id: "TLA-U-CHER1835"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The March 1835 Washington proposal to the Cherokee offered $4.5 million for eastern lands but was never ratified."
+headline: "A March 1835 Washington agreement offered the Cherokee $4.5 million and western land for their eastern country, but it was never approved."
 how: "unratified"
-how_basis: "OSU records the agreement as unratified and says it was invalid until approved by the Cherokee people."
+how_basis: "The Oklahoma State University database records the agreement as Unratified, and its own preamble says it would be invalid until approved by the Cherokee people."
 confidence: "medium"
-cautions: "Input source was the Kappler index; this entry uses the OSU agreement page, which also gives Kappler 2:1041. The October 1835 council rejection comes from a search summary only. Quote and figures from a page summary. Acreage: About seven million acres west of the Mississippi plus about 800,000 acres (Article 3, as summarized)."
-sources: [{"url": "https://treaties.okstate.edu/treaties/agreement-with-the-cherokee-1835-1041", "title": "Agreement with the Cherokee, 1835 (OSU Tribal Treaties Database)", "quote": "utterly invalid until approved by them"}]
+cautions: "The old text's statement that the Cherokee council rejected the proposal in October 1835 rests on a search summary and was removed. The Cherokee Nation's own account of the March 1835 proposal was not opened, and no source opened links this proposal to the Treaty of New Echota beyond sharing the year. The seven million and 800,000 acre figures are the text's own."
+sources: [{"url": "https://treaties.okstate.edu/treaties/agreement-with-the-cherokee-1835-1041", "title": "Tribal Treaties Database (Oklahoma State University): Agreement with the Cherokee, 1835", "quote": "to be utterly invalid until approved by them"}, {"url": "https://treaties.okstate.edu/treaties/agreement-with-the-cherokee-1835-1041", "title": "Tribal Treaties Database (Oklahoma State University): Agreement with the Cherokee, 1835", "quote": "that a majority of the people are in favor of the treaty"}, {"url": "https://treaties.okstate.edu/treaties/agreement-with-the-cherokee-1835-1041", "title": "Tribal Treaties Database (Oklahoma State University): Agreement with the Cherokee, 1835", "quote": "March 14, 1835. | Unratified."}, {"url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/cherokee-removal/", "title": "New Georgia Encyclopedia: Cherokee Removal", "quote": "signed the Treaty of New Echota at the Cherokee capital without the authority of Principal Chief Ross or the Cherokee government"}]
+verdict: "fixed"
 ---
-On March 14, 1835, John F. Schermerhorn, acting for the United States, and a Cherokee delegation including John Ridge and Elias Boudinot signed an agreement at Washington. The Cherokee would cede all their lands east of the Mississippi River. The agreement set $4,500,000 for the cession and for all claims against the United States, about seven million acres west of the Mississippi, a perpetual outlet and an extra tract of about 800,000 acres.
+On March 14, 1835, in Washington, John F. Schermerhorn, for the United States, and a delegation of the Cherokee, including John Ridge and Elias Boudinot, signed articles of a treaty. The President directed that it be submitted to the Cherokee Nation "for their consideration and approbation." The preamble calls the articles "merely" propositions that would be "utterly invalid until approved by them." It adds that the Cherokee people were not "in the slightest manner committed."
 
-It was only a proposal. Article 1 required a fair vote of the Cherokee people at New Echota, and the preamble says it would be utterly invalid until approved by them. Article 19 also required signature by a majority of chiefs, headmen and warriors, and ratification by the President and Senate.
+In Article 2 the Cherokee Nation would cede all its lands east of the Mississippi River, in exchange for the additional land in Article 3 and $4,500,000. Article 3 described a tract in the West of seven million acres, "a perpetual outlet west," and a further tract estimated at 800,000 acres.
 
-The OSU database records it as unratified, citing Senate Document No. 120, 25th Congress, 2d session. A web search result said the Cherokee council rejected it in October 1835; that was not confirmed in an opened source. The December 1835 Treaty of New Echota followed.
+Article 1 provided that the people would meet at New Echota, and if a majority favored the treaty it would be considered approved. Article 19 also required approval by a majority of the chiefs, headmen and warriors and ratification by the President and Senate. The database records the agreement as unratified.
+
+The Georgia Encyclopedia says that in 1835 the Treaty Party, led by Major Ridge, John Ridge and Elias Boudinot, signed the Treaty of New Echota "without the authority of Principal Chief Ross or the Cherokee government." The pages opened here do not say how the Cherokee people responded to this March proposal.

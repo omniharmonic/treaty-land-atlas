@@ -2,15 +2,18 @@
 id: "TLA-T-172"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1832 Camp Tippecanoe treaty ceded Potawatomi land between Lake Michigan and the Illinois and Kankakee Rivers."
+headline: "In 1832 the Potawatomi of the Prairie and Kankakee ceded land between Lake Michigan and the Kankakee and Illinois rivers for annuities and goods."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession in return for annuities and goods and does not describe coercion."
-confidence: "medium"
-cautions: "Link to the Potawatomi removal (V011) comes from the input data; not confirmed from this page. $28,746 for claims against the Indians suggests debt payment but the page text was only summarized."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0353", "title": "Treaty with the Potawatomi, 1832 (OSU Tribal Treaties Database)", "quote": "The said tribe having been the faithful allies of the United States during the late conflict with the Sacs and Foxes"}]
+confidence: "high"
+cautions: "No acreage is stated. The treaty page does not describe later removals of the Potawatomi; those were not researched here. The claims-against-the-Indians clause may reflect debt, but no source opened says it shaped the cession."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0353", "title": "Tribal Treaties Database (OSU)", "quote": "The said tribe having been the faithful allies of the United States during the late conflict with the Sacs and Foxes"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0353", "title": "Tribal Treaties Database (OSU)", "quote": "The sum of twenty-eight thousand seven hundred and forty-six dollars, shall be applied to the payment of certain claims against the Indians"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg378.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Potawatamie"}]
+verdict: "fixed"
 ---
-On October 20, 1832, commissioners Jonathan Jennings, John W. Davis and Marks Crume signed a treaty at Camp Tippecanoe, Indiana, for the United States with the chiefs and headmen of the Potawatomi of the Prairie and Kankakee. The Potawatomi ceded a tract bounded by Lake Michigan, the Kankakee and Illinois rivers, and the Illinois-Indiana state line. The page states no acreage.
+On October 20, 1832, commissioners Jonathan Jennings, John W. Davis and Marks Crume signed a treaty at Camp Tippecanoe, Indiana, for the United States. The other party was the chiefs and headmen of the Potawatamie Tribe of Indians of the Prairie and Kankakee.
 
-Several individual reservations of one to five sections were carved from the cession for named people and their families. In return the treaty lists a $15,000 annuity for 20 years, $28,746 to pay claims against the Potawatomi, merchandise worth $45,000 on signing and $30,000 at Chicago in 1833, and $1,400 for stolen horses.
+In Article 1 the tribe ceded a tract that began on Lake Michigan ten miles south of the mouth of the Chicago River. It ran to the Kankakee River ten miles above its mouth, then along the Kankakee and Illinois rivers to the mouth of the Fox River. From there it followed the southern boundary of the Indian Territory to the Illinois-Indiana line and north to Lake Michigan. The text gives no acreage.
 
-The treaty gives the tribe's loyalty as allies of the United States during the conflict with the Sacs and Foxes as the reason for hunting and fishing rights on ceded land. The input data links this treaty to the later Potawatomi removal violation; the treaty page itself does not describe it.
+Article 2 carved out small reservations from the cession for named people and families, ranging from half a section to five sections. In Article 3 the United States agreed to pay $15,000 a year for twenty years, plus life annuities to three men. Article 4 set $28,746 for claims against the tribe, $45,000 in merchandise on signing, $30,000 more at Chicago in 1833 and $1,400 for horses stolen during the late war.
+
+The treaty says the tribe had been "the faithful allies of the United States during the late conflict with the Sacs and Foxes." For that, the United States agreed to let them hunt and fish on the ceded land while it remained government property. The Statutes at Large record a proclamation on January 21, 1833.

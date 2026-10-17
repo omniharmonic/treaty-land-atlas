@@ -1,0 +1,17 @@
+---
+id: "camp-nana-ancsa-transfers"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "Interior announced July 16, 2025 that it conveyed nearly 28,000 acres to NANA Regional Corporation under ANCSA, for a total over 713,000."
+confidence: "high"
+cautions: "Alaska Native corporations are business entities, and ANCSA land is not trust land; this is not a return of land to a tribal government. The corporation's own statement was not opened. The nearly 28,000 acres are an entitlement being filled under ANCSA, not newly recovered ceded land. The transfer date of July 16, 2025 comes from the Interior release; the atlas record had none."
+sources: [{"url": "https://www.doi.gov/pressreleases/interior-finalizes-major-alaskan-land-transfer-nana-regional-corporation", "title": "Interior Finalizes Major Alaskan Land Transfer to NANA Regional Corporation (DOI, July 16, 2025)", "quote": "the conveyance of nearly 28,000 acres of land to NANA Regional Corporation, Inc., under Section 12(c) of the Alaska Native Claims Settlement Act"}, {"url": "https://www.doi.gov/pressreleases/interior-finalizes-major-alaskan-land-transfer-nana-regional-corporation", "title": "Interior Finalizes Major Alaskan Land Transfer to NANA Regional Corporation (DOI, July 16, 2025)", "quote": "bringing the total conveyed to NANA to more than 713,000 acres"}, {"url": "https://www.doi.gov/pressreleases/interior-finalizes-major-alaskan-land-transfer-nana-regional-corporation", "title": "Interior Finalizes Major Alaskan Land Transfer to NANA Regional Corporation (DOI, July 16, 2025)", "quote": "While the initial land selections were completed in the early 1970s, the Bureau of Land Management continues to work on complex conveyances like this one."}, {"url": "https://www.hcn.org/issues/58-2/landback-advances-across-the-west/", "title": "LandBack advances across the West (High Country News, Feb. 2026)", "quote": "the land transfer actually began with the Alaska Native Claims Settlement Act of 1971"}]
+verdict: "new"
+---
+Alaska is a distinct legal setting. Land there went to Alaska Native corporations under the Alaska Native Claims Settlement Act of 1971, not to tribal governments as trust land. The corporation in this record, NANA Regional Corporation, represents Inupiat shareholders in Northwest Alaska; High Country News describes it as an Alaska Native corporation comprising 11 villages.
+
+On July 16, 2025, the Department of the Interior announced the conveyance of nearly 28,000 acres to NANA Regional Corporation, Inc., under Section 12(c) of ANCSA. Interior said this brought the total conveyed to NANA to more than 713,000 acres, and left NANA's land entitlement 96 percent complete. Interior said the land lies at the western end of the proposed Ambler Road corridor and is no longer under Bureau of Land Management jurisdiction.
+
+Interior framed the transfer as support for Alaska resource development, citing Secretary Doug Burgum's statement that putting land into Alaska Native hands advances opportunity while reducing federal barriers to resource development. It noted that while initial land selections were completed in the early 1970s, the Bureau of Land Management continues to work on complex conveyances like this one.
+
+High Country News reported in February 2026 that the transfer actually began with the 1971 settlement act and that over 700,000 acres have been returned to Alaska Natives since then. NANA's own plans for the land were not stated in the sources read.

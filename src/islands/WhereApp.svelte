@@ -148,11 +148,14 @@
     treaty: 'by treaty',
     pressure: 'by a treaty made under documented pressure',
     removal: 'by a removal treaty',
+    unratified: 'under a treaty the Senate never ratified',
     congress: 'by act of Congress',
     executive: 'by executive order',
     unknown: 'by means Royce does not state',
   };
-  const first = $derived(report?.cessions[0] ?? null);
+  // the earliest taking here; areas Royce records as kept reservations are told separately
+  const first = $derived(report?.cessions.find((c) => c.status !== 'kept') ?? null);
+  const keptHere = $derived(report?.cessions.filter((c) => c.status === 'kept') ?? []);
   const firstNations = $derived(first ? list(first.nations.map((n) => n.label)) : '');
 </script>
 
@@ -196,6 +199,14 @@
           Royce’s maps of cessions do not cover this place.
         {/if}
       </h2>
+      {#if keptHere.length}
+        <p class="lede">
+          Royce’s schedule also records a reservation here that the nation kept, at least until
+          1894: {#each keptHere as k, i (k.id)}{i > 0 ? ', ' : ''}{#if k.path}<a href={url(k.path)}
+                >{k.label}</a
+              >{:else}{k.label}{/if}{/each}.
+        </p>
+      {/if}
       {#if !first}
         <p class="lede">
           Royce mapped land the United States recorded as ceded from 1784 to 1894. Much of the East
@@ -233,11 +244,11 @@
         {/if}
       </section>
 
-      {#if report.cessions.length}
+      {#if first}
         <section aria-labelledby="taken">
           <h3 id="taken">How this land was taken</h3>
           <ol class="strata">
-            {#each report.cessions as c (c.id)}
+            {#each report.cessions.filter((c) => c.status !== 'kept') as c (c.id)}
               <li style={`--c: var(--how-${c.how})`}>
                 <span class="yr">{c.year}</span>
                 <div>

@@ -2,15 +2,18 @@
 id: "TLA-T-185"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1833 Fort Gibson treaty recorded Seminole delegates' approval of western land on the Canadian River; chiefs later disputed it."
+headline: "In 1833 at Fort Gibson Seminole delegates approved western land on the Canadian River; the Seminole Nation Museum says chiefs later disputed it."
 how: "treaty_under_pressure"
 how_basis: "The Seminole Nation Museum says many chiefs said they had not committed to removal and some said they were pressured, while the treaty records the delegation's satisfaction."
 confidence: "medium"
-cautions: "Treaty text describes no coercion; the coercion account is from the museum and others not opened. The museum page as fetched did not mention Fort Gibson. Quotes from page summaries."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seminole-1833-0394", "title": "Treaty with the Seminole, 1833 (OSU Tribal Treaties Database)", "quote": "well satisfied with the location provided for them by the Commissioners"}, {"url": "https://seminolenationmuseum.org/history-seminole-nation-the-seminole-wars/", "title": "The Seminole Wars (Seminole Nation Museum)", "quote": "Many of the chiefs stated that they had not committed to moving their people to the new territory"}]
+cautions: "The treaty text records the delegates' satisfaction; the museum's account of coercion is a local museum summary and is not a first-hand source. The treaty gives no acreage or payment. The museum page does not name Fort Gibson."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seminole-1833-0394", "title": "Tribal Treaties Database (OSU)", "quote": "well satisfied with the location provided for them by the Commissioners"}, {"url": "https://seminolenationmuseum.org/history-seminole-nation-the-seminole-wars/", "title": "The Seminole Wars (Seminole Nation Museum)", "quote": "Many of the chiefs stated that they had not committed to moving their people to the new territory"}, {"url": "https://seminolenationmuseum.org/history-seminole-nation-the-seminole-wars/", "title": "The Seminole Wars (Seminole Nation Museum)", "quote": "The refusal of most Seminoles to abandon the reservation north of Lake Okeechobee"}]
+verdict: "fixed"
 ---
-On March 28, 1833, commissioners Montfort Stokes, Henry L. Ellsworth and John F. Schermerhorn signed a treaty at Fort Gibson with delegates of the Seminole. It recites the Payne's Landing agreement of May 1832, under which the Seminole had relinquished their Florida land and would be received as a constituent part of the Creek nation. The page gives no acreage and no payment.
+On March 28, 1833, commissioners Montfort Stokes, Henry L. Ellsworth and John F. Schermerhorn signed a treaty at Fort Gibson for the United States with delegates of the Seminole. The preamble recites the Payne's Landing agreement of May 9, 1832. In it the Seminole had relinquished their Florida lands and agreed to emigrate to the Creek country, to be "received as a constituent part of the Creek nation." That agreement was to bind both sides only if a Seminole delegation, sent at United States expense, was satisfied with the land.
 
-The commissioners designated a tract between the Canadian River and its north fork, extending west no more than twenty-five miles from the mouth of Little River. The treaty records a letter in which the Seminole chiefs say they are well satisfied with the location. Removal would begin once the government made arrangements satisfactory to the Seminole nation, and the commissioners recommended Major Phagan to supervise it at the Seminole's request.
+The preamble says the delegation had since examined the land designated for them and "have expressed themselves satisfied with the same," in a letter of March 1833. The commissioners then assigned the Seminole "for their separate future residence, forever" a tract between the Canadian River and its north fork. It extended west to the forks of Little River, but no more than twenty-five miles west of the mouth of Little River.
 
-The Seminole Nation Museum says many chiefs later stated they had not committed to moving their people, and that refusal to leave led to the Second Seminole War. The treaty page does not say how the delegation was chosen.
+The delegates "declare themselves well satisfied with the location" and agreed that their nation would begin removal "as soon as the Government will make arrangements for their emigration, satisfactory to the Seminole nation." They asked that their agent, Major Phagan, supervise it.
+
+The Seminole Nation Museum says the delegation signed what they believed to be a statement that the land was suitable. It says many chiefs later stated they had not committed to moving their people and were coerced into signing. It says the refusal of most Seminoles to leave led to the Second Seminole War.

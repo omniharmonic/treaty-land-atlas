@@ -1,0 +1,17 @@
+---
+id: "stat-american-indian-probate-reform-act-2004"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "The 2004 American Indian Probate Reform Act created a uniform federal probate code for trust land to curb fractionated ownership."
+confidence: "high"
+cautions: "The Act's effects were not measured in any source opened here. Provisions on partition by sale, tribal probate codes and effective dates were not reviewed in detail. The Cornell U.S. Code page (cited in the old record) shows definitions only and was not needed for this story."
+sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-118/pdf/STATUTE-118-Pg1773.pdf", "title": "American Indian Probate Reform Act of 2004, Pub. L. 108-374, Oct. 27, 2004, 118 Stat. 1773, govinfo.gov", "quote": "did not permit Indian allotment owners to provide for the testamentary"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-118/pdf/STATUTE-118-Pg1773.pdf", "title": "American Indian Probate Reform Act of 2004, Pub. L. 108-374, Oct. 27, 2004, 118 Stat. 1773, govinfo.gov", "quote": "the increasingly fractionated ownership of trust and restricted land as that land is inherited by successive generations of owners as tenants in common"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-118/pdf/STATUTE-118-Pg1773.pdf", "title": "American Indian Probate Reform Act of 2004, Pub. L. 108-374, Oct. 27, 2004, 118 Stat. 1773, govinfo.gov", "quote": "reduce the number of fractionated interests in trust or restricted land"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-118/pdf/STATUTE-118-Pg1773.pdf", "title": "American Indian Probate Reform Act of 2004, Pub. L. 108-374, Oct. 27, 2004, 118 Stat. 1773, govinfo.gov", "quote": "represents less than 5 percent of the entire undivided ownership of the parcel of land"}]
+verdict: "new"
+---
+The American Indian Probate Reform Act (AIPRA), Public Law 108-374, was signed October 27, 2004. Its findings explain the problem. The 1887 General Allotment Act "did not permit Indian allotment owners to provide for the testamentary disposition of the land that was allotted to them," and it sent allotments to heirs under state intestacy law. Congress found that this had caused "the increasingly fractionated ownership of trust and restricted land as that land is inherited by successive generations of owners as tenants in common," differing state rules for land in more than one state, and no uniform probate code.
+
+Congress concluded that a uniform federal probate code "would likely reduce the number of fractionated interests in trust or restricted land." It also said a code would help owners with estate planning and help tribes write their own probate codes.
+
+AIPRA amended Section 207 of the Indian Land Consolidation Act. That section is the one the Supreme Court had twice found unconstitutional in earlier cases. The new rules include a "single heir rule" for small interests: an interest of less than 5 percent of the whole parcel that is not disposed of by a valid will descends to one heir, after any life estate for a surviving spouse living on the parcel. The Act also lets people renounce or disclaim an inherited interest, and lets the Secretary approve voluntary consolidation agreements among heirs during probate.
+
+The number of fractionated interests and the Act's actual results were not found in a source opened for this story.

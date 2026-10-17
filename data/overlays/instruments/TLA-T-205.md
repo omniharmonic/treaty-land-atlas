@@ -2,15 +2,16 @@
 id: "TLA-T-205"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1836 treaty with Naswawkee's and Quashquaw's bands ceded three reserved Potawatomi sections for $1,920 and removal west."
+headline: "In April 1836 the Potawatomi bands of Nas-waw-kee and Quash-quaw ceded three reserved sections for $1,920 and agreed to move west."
 how: "removal"
-how_basis: "The OSU treaty text requires the bands to remove west of the Mississippi within two years in return for the cession payment."
-confidence: "medium"
-cautions: "Quote from a summary of the page. Acreage: Three sections (the page states no acreage)."
-sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0459", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "remove to the country west of the Mississippi river provided by the United States"}]
+how_basis: "Article 3 of the treaty text commits the bands to remove west of the Mississippi within two years."
+confidence: "high"
+cautions: "Acreage not stated (three sections). Article 4 was struck out by the Senate and is not shown. The atlas records a Royce number shared with TLA-T-204 (210)."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0459", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "agree to give possession of the aforesaid three sections of land, and remove to the country west of the Mississippi river"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0459", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "nineteen hundred and twenty dollars at the first payment of annuity after the ratification of this treaty"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg501.pdf", "title": "Treaty with the Potawatomi, 7 Stat. 501 (govinfo)", "quote": "give possession of the aforesaid three sections of land"}]
+verdict: "fixed"
 ---
-On April 22, 1836, commissioner Abel C. Pepper signed a treaty at the Indian agency in Indiana for the United States with the Potawatomi chiefs Nas-waw-kee and Quash-quaw, with other head men and their bands. The treaty was proclaimed on May 25, 1836 (7 Stat. 501). The bands ceded three sections of land reserved to them under the 1832 treaty on the Tippecanoe River. The page gives no acreage.
+On April 22, 1836, Abel C. Pepper, commissioner for the United States, signed a treaty at the Indian agency in Indiana. The other parties were Nas-waw-kee and Quash-quaw, chiefs and head men of the Potawatomi (spelled Patawattimie in the text), and their bands.
 
-The United States agreed to pay $1,920 at the first annuity payment after ratification, and to cover the treaty's necessary expenses. The bands agreed to move to the country west of the Mississippi River that the United States had set aside for the Potawatomi nation, within two years.
+In Article 1 they ceded three sections of land reserved for them by the second article of the October 26, 1832 treaty with the Potawatomi on the Tippecanoe River. The treaty states no acreage. In Article 2 the United States agreed to pay nineteen hundred and twenty dollars, or $1,920, at the first annuity payment after ratification. Article 5 has it pay the necessary expenses of the treaty.
 
-The Senate struck out Article 4, but the page does not say why. It describes no coercion or negotiation pressure, and the sources used here do not describe later events.
+In Article 3 the bands agreed to give possession of the three sections and to remove to the country west of the Mississippi River provided by the United States for the Potawatomi nation, within two years of the signing date. The Senate struck out Article 4, and the page does not show what it said. The treaty was proclaimed on May 25, 1836. The treaty text does not describe how the negotiation went, and the sources used here do not say what happened to the bands afterward.

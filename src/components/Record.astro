@@ -63,6 +63,27 @@ const records = ((n['recognition_records'] as RecRecord[]) ?? []).filter((r) => 
 const disputedWith = ((n['disputed_with'] as string[]) ?? [])
   .map((id) => nodeById(id))
   .filter(Boolean);
+type Correction = {
+  field: string;
+  as_listed: unknown;
+  source_url: string;
+  evidence_quote?: string | null;
+};
+const corrections = ((n['corrections'] as Correction[]) ?? []).filter((c) =>
+  /^https?:/.test(c.source_url),
+);
+const FIELD_WORD: Record<string, string> = {
+  date_signed: 'The signing date',
+  label: 'The title',
+  land_description: 'The land description',
+  summary: 'The summary',
+  notes: 'A note',
+  start_year: 'The year',
+  website: 'The website',
+  indigenous_led: 'Native leadership',
+  holding_summary: 'The holding',
+  treaty_at_issue_text: 'The treaty at issue',
+};
 const flagText: Record<string, string> = {
   'from-memory': 'not yet checked against a source',
   unverified: 'unverified',
@@ -179,6 +200,22 @@ const flagText: Record<string, string> = {
     <slot />
 
     <SupportBox n={n} />
+
+    {corrections.length > 0 && (
+      <section aria-labelledby="corrections-h">
+        <h2 id="corrections-h">Corrections to this record</h2>
+        <ul class="small">
+          {corrections.map((c) => (
+            <li>
+              {FIELD_WORD[c.field] ?? c.field.replace(/_/g, ' ')} was listed as “
+              {String(c.as_listed ?? '')}”; corrected from{' '}
+              <a href={c.source_url}>{new URL(c.source_url).hostname.replace(/^www\./, '')}</a>
+              {c.evidence_quote && <q>{c.evidence_quote}</q>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     {notes?.text && (
       <section>

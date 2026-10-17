@@ -95,12 +95,18 @@ function path(g: Geometry, minStep: number): string {
 }
 
 /** Year each cession was recorded as ceded: the researched Royce date when there is one. */
+/** Year each area left Native hands per the researched Royce entry; 9999 for areas kept. */
 function cededYears(): Map<string, number> {
   const file = join(process.cwd(), 'public', 'data', 'tables', 'cession-stories.json');
   const out = new Map<string, number>();
   if (!existsSync(file)) return out;
-  const t = JSON.parse(readFileSync(file, 'utf8')) as Record<string, { ceded_year?: number }>;
-  for (const [id, s] of Object.entries(t)) if (s.ceded_year) out.set(id, s.ceded_year);
+  const t = JSON.parse(readFileSync(file, 'utf8')) as Record<
+    string,
+    { ceded_year?: number | null; status?: string }
+  >;
+  for (const [id, s] of Object.entries(t))
+    if (s.status === 'kept') out.set(id, 9999);
+    else if (s.ceded_year) out.set(id, s.ceded_year);
   return out;
 }
 
@@ -141,13 +147,16 @@ export function storyMap() {
   const stories = existsSync(file)
     ? (JSON.parse(readFileSync(file, 'utf8')) as Record<
         string,
-        { how: string; ceded_year?: number | null }
+        { how: string; ceded_year?: number | null; status?: string }
       >)
     : {};
   const groups = new Map<string, { y: number; how: string; d: string }>();
   for (const f of cessions) {
     const id = String(f.properties['id']);
-    const y = stories[id]?.ceded_year ?? Math.floor(Number(f.properties['t0']));
+    const y =
+      stories[id]?.status === 'kept'
+        ? 9999
+        : (stories[id]?.ceded_year ?? Math.floor(Number(f.properties['t0'])));
     const how = stories[id]?.how ?? 'unknown';
     const key = `${y}-${how}`;
     const g = groups.get(key) ?? { y, how, d: '' };

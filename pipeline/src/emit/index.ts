@@ -320,6 +320,11 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
         f.properties['nations'] = st?.nations ?? [];
         // where Royce's Schedule shows a later entry did the ceding, the map dates the land by it
         if (st?.entries && st.ceded_year) f.properties['t0'] = st.ceded_year + 0.5;
+        // a reservation the nation kept in Royce's record is never drawn as taken
+        if (st?.status === 'kept') {
+          f.properties['t0'] = 9999;
+          f.properties['kept'] = true;
+        }
       }
       body = Buffer.from(JSON.stringify(fc) + '\n');
     }
@@ -328,6 +333,10 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
       for (const e of list) {
         const st = stories.get(String(e['id']));
         if (st?.entries && st.ceded_year) e['t_first'] = st.ceded_year + 0.5;
+        if (st?.status === 'kept') {
+          e['t_first'] = null;
+          e['kept'] = true;
+        }
       }
       body = Buffer.from(JSON.stringify(list) + '\n');
     }

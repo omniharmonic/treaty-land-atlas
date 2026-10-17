@@ -5,9 +5,10 @@ written_by: "narrative-wave-2026-10"
 headline: "The 1864 treaty ceded Klamath, Modoc and Yahooskin lands for a reservation and annuities; the Supreme Court later read its hunting terms."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated cession for annuities and a reservation; none of the pages opened describe coercion."
-confidence: "medium"
+confidence: "high"
 cautions: "Input says \"~20 million acres ceded\"; I found no acreage in the treaty text or the 1985 opinion, and the project's own note says cession figures conflict, so none is stated. Input says \"terminated 1954\": not verified in any source I opened (the input's violation summary V056 covers it). Input cites digitreaties; I used the OSU text. The Klamath Tribes' own account was not opened."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-klamath-etc-1864-0865", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Klamath, etc., 1864", "quote": "the exclusive right of taking fish in the streams and lakes, included in said reservation, and of gathering edible roots, seeds, and berries"}, {"url": "https://www.law.cornell.edu/supremecourt/text/473/753", "title": "Oregon Department of Fish and Wildlife v. Klamath Indian Tribe, 473 U.S. 753 (1985) (Cornell LII)", "quote": "certain Indian Tribes (now collectively known as respondent Klamath Indian Tribe) ceded their aboriginal title to certain lands in Oregon to the United States"}]
+verdict: "ok"
 ---
 On October 14, 1864, at Klamath Lake, Oregon, J. W. Perit Huntington and William Logan signed with chiefs and headmen of the Klamath, Modoc and Yahooskin band of Snake. The tribes ceded all the country they claimed, described by boundaries beginning at the 44th parallel on the Cascade summit. A reservation on the east shore of the middle Klamath Lake was set apart, and the tribes agreed to move there immediately after ratification.
 

@@ -1,0 +1,20 @@
+---
+id: "TLA-T-152"
+ai_assisted: true
+written_by: "narrative-wave-2026-10"
+headline: "In 1828 the Western Cherokee gave up their Arkansas lands for seven million acres farther west, a guaranteed outlet and payments."
+how: "removal"
+how_basis: "Article 7 has the Cherokee surrender their Arkansas lands and leave within fourteen months in exchange for land farther west, so it sets a removal."
+confidence: "high"
+cautions: "The text gives its own reasons (unfavorable location, avoiding future removal costs); the Western Cherokee's own account was not read. The 1833 supplementary treaty redrew the boundaries; later history of the guarantee was not opened. Treaty text uses 'Cherokees' for the people."
+sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-western-cherokee-1828-0288", "title": "Treaty with the Western Cherokee, 1828, Tribal Treaties Database", "quote": "The United States agree to possess the Cherokees, and to guarantee it to them forever"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-western-cherokee-1828-0288", "title": "Treaty with the Western Cherokee, 1828, Tribal Treaties Database", "quote": "the sum of fifty thousand dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-western-cherokee-1828-0288", "title": "Treaty with the Western Cherokee, 1828, Tribal Treaties Database", "quote": "to give up, and they do hereby surrender, to the United States, and agree to leave the same within fourteen months"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-western-cherokee-1828-0288", "title": "Treaty with the Western Cherokee, 1828, Tribal Treaties Database", "quote": "a home that shall never, in all future time, be embarrassed by having extended around it the lines"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-western-cherokee-1833-0385", "title": "Treaty with the Western Cherokee, 1833, Tribal Treaties Database", "quote": "This supplementary to a former treaty"}]
+verdict: "new"
+promises: [{"article": "Art. 2", "promise": "Guarantee seven million acres west of Arkansas, with a perpetual outlet west, to the Cherokee forever.", "kept": "partly", "evidence_url": "https://treaties.okstate.edu/treaties/treaty-with-the-western-cherokee-1833-0385", "evidence_quote": "not embraced within the limits or boundaries fixed in this present supplementary treaty"}, {"article": "Art. 5", "promise": "Pay the Cherokee fifty thousand dollars after their removal within fourteen months.", "kept": "unknown", "evidence_url": "https://treaties.okstate.edu/treaties/treaty-with-the-western-cherokee-1828-0288", "evidence_quote": "the sum of fifty thousand dollars"}]
+---
+On 6 May 1828, at Washington, Secretary of War James Barbour signed a convention for the United States with chiefs and head men of the Cherokee Nation West of the Mississippi. The treaty says the United States wished to secure the Cherokee a permanent home that no territory or state would ever surround or press upon. It also says the Cherokees' present location in Arkansas was unfavorable, and that they wanted to be free of Arkansas Territory.
+
+The United States defined Arkansas's western boundary and guaranteed to the Cherokee forever seven million acres between the Arkansas and Canadian rivers, plus a perpetual outlet west. It promised to run the lines by 1 October, remove white persons from the Cherokee side, pay for abandoned improvements, and pay fifty thousand dollars after their removal within fourteen months, plus education money, a printing press and other sums. Eastern Cherokees who wished to move west were promised a rifle, blanket, kettle and tobacco for each family head, along with a payment for property left behind.
+
+In Article 7 the chiefs and head men agreed to surrender to the United States, and leave within fourteen months, all their lands in Arkansas secured by the 1817 treaty and the 1819 convention. Article 9 reserved a tract for the military near Fort Gibson.
+
+The page lists a proclamation on 28 May 1828. In 1833 the two sides signed a supplementary treaty that redrew the boundaries.
