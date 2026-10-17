@@ -1,0 +1,2756 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omniharmonic.github.io/treaty-land-atlas/schema/entities.schema.json",
+  "title": "Treaty Land Atlas: nodes file",
+  "description": "Validates build/nodes.json. Author: Benjamin Life (@omniharmonic). Draft v0.1 (2026-10-16). Every node carries confidence, provenance, tribal_review and publication; rules in NodeCommonRules enforce the G2/G3 ethics requirements.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated",
+    "nodes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "counts": {
+      "type": "object"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Node"
+      }
+    }
+  },
+  "$defs": {
+    "Confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "description": "Overall reliability of this record. Seeds that use verified/from-memory/disputed/unverified are mapped (verified->high, otherwise low) and keep the raw value in provenance.source_confidence_raw."
+    },
+    "VerificationStatus": {
+      "enum": [
+        "verified",
+        "from_memory",
+        "disputed",
+        "unverified",
+        "mixed",
+        "not_assessed"
+      ],
+      "description": "Brief section 3 tags. 'mixed' = some fields verified and some from memory. 'not_assessed' = the seed gave only high/medium/low."
+    },
+    "Flags": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "text_has_from_memory_tag",
+          "text_has_disputed_tag",
+          "text_has_unverified_tag",
+          "skeleton_record",
+          "context_row_not_a_treaty",
+          "distinct_legal_context",
+          "unresolved_reference"
+        ]
+      },
+      "uniqueItems": true,
+      "description": "Machine-detected warnings. Shown as badges in the UI."
+    },
+    "Provenance": {
+      "type": "object",
+      "required": [
+        "origin",
+        "source_file"
+      ],
+      "additionalProperties": false,
+      "description": "Where this record came from. Required on every node and edge (G2 s.8.1, G3 E3).",
+      "properties": {
+        "origin": {
+          "enum": [
+            "seed_csv",
+            "nara_index",
+            "crosswalk",
+            "computed",
+            "manual",
+            "external_dataset"
+          ]
+        },
+        "source_file": {
+          "type": "string",
+          "description": "Path of the seed/crosswalk file, relative to the repo root."
+        },
+        "source_row_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ID or row key in that file."
+        },
+        "source_agent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Research agent letter (A-G) that produced the seed, taken from the seed README."
+        },
+        "source_confidence_raw": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The confidence string exactly as it appeared in the seed."
+        },
+        "research_docs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Narrative research files that explain the row, e.g. docs/research/A1-treaty-framework-and-counts.md"
+        },
+        "built_by": {
+          "type": "string",
+          "description": "Script that emitted the record, e.g. scripts/build_graph.py"
+        }
+      }
+    },
+    "TribalReview": {
+      "type": "object",
+      "required": [
+        "status",
+        "scope"
+      ],
+      "additionalProperties": false,
+      "description": "G3 s.3.3 per-nation review status. Silence is never consent: the default is not_yet_contacted.",
+      "properties": {
+        "status": {
+          "enum": [
+            "not_yet_contacted",
+            "invited",
+            "reviewed",
+            "co_authored",
+            "edits_requested",
+            "declined",
+            "withdrawn"
+          ]
+        },
+        "scope": {
+          "enum": [
+            "nation_specific",
+            "public_record_only"
+          ],
+          "description": "nation_specific = content about a nation that needs that nation's review before narrative is published; public_record_only = citations to public federal records."
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+        },
+        "reviewer_role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Office or role (not a person's name unless they agree), e.g. 'THPO office'."
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Publication": {
+      "type": "object",
+      "required": [
+        "state",
+        "narrative_allowed"
+      ],
+      "additionalProperties": false,
+      "description": "What the public site may show. Enforced together with tribal_review by the rules in NodeCommon.",
+      "properties": {
+        "state": {
+          "enum": [
+            "draft",
+            "record_only",
+            "published",
+            "withheld"
+          ],
+          "description": "record_only = citations and public-record facts with a 'not reviewed' banner and no narrative (G3 s.3.3)."
+        },
+        "narrative_allowed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Sensitivity": {
+      "type": "object",
+      "required": [
+        "tier"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tier": {
+          "enum": [
+            "public",
+            "generalized",
+            "withheld"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "DataClass": {
+      "enum": [
+        "P",
+        "D",
+        "N",
+        "R"
+      ],
+      "description": "G3 s.2 classes allowed in the open export: P public record, D derived, N names/identifications, R third-party reuse. Classes K (Indigenous knowledge held under agreement) and S (sensitive) are rejected by design: they never enter the open dataset."
+    },
+    "ExternalIds": {
+      "type": "object",
+      "description": "Stable identifiers in other systems. Values are strings or arrays of strings.",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "NodeCommonRules": {
+      "description": "Rules that apply to every node. They turn the G2/G3 ethics requirements into validation failures.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "tribal_review": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "not_yet_contacted",
+                      "invited",
+                      "edits_requested",
+                      "declined",
+                      "withdrawn"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication": {
+                "properties": {
+                  "narrative_allowed": {
+                    "const": false
+                  }
+                }
+              }
+            }
+          },
+          "$comment": "No narrative that speaks for a nation unless the nation's authorized body has reviewed it (G3 s.3.3)."
+        },
+        {
+          "if": {
+            "properties": {
+              "tribal_review": {
+                "properties": {
+                  "scope": {
+                    "const": "nation_specific"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "if": {
+              "properties": {
+                "publication": {
+                  "properties": {
+                    "state": {
+                      "const": "published"
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "tribal_review": {
+                  "properties": {
+                    "status": {
+                      "enum": [
+                        "reviewed",
+                        "co_authored"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "$comment": "A nation-specific node can only be 'published' after review. Before that it is 'record_only' or 'draft'."
+        },
+        {
+          "if": {
+            "properties": {
+              "tribal_review": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "declined",
+                      "withdrawn"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication": {
+                "properties": {
+                  "state": {
+                    "enum": [
+                      "record_only",
+                      "withheld"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "$comment": "Right to decline / withdraw (G3 s.3.1, s.7.2)."
+        },
+        {
+          "if": {
+            "properties": {
+              "tribal_review": {
+                "properties": {
+                  "status": {
+                    "const": "withdrawn"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication": {
+                "properties": {
+                  "state": {
+                    "const": "withheld"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Instrument": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "instrument_type",
+        "ratification_status",
+        "completeness"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^TLA-(T-\\d{3}[A-Z]?|T-FL1851|U-CA-[A-R]|U-[A-Z0-9]+|X-[A-Z0-9]+|A-\\d{4})$"
+        },
+        "type": {
+          "const": "Instrument"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "instrument_type": {
+          "enum": [
+            "ratified_treaty",
+            "unratified_treaty",
+            "agreement_statutory",
+            "executive_order",
+            "international_treaty",
+            "colonial_instrument",
+            "document_set"
+          ],
+          "description": "Legal category (brief principle 2). Never merge categories: agreements and executive orders are not treaties."
+        },
+        "ratification_status": {
+          "enum": [
+            "ratified",
+            "ratified_with_amendments",
+            "unratified",
+            "not_applicable"
+          ]
+        },
+        "completeness": {
+          "enum": [
+            "seeded",
+            "skeleton"
+          ],
+          "description": "skeleton = only NARA index fields are filled; seeded = row exists in treaties-seed.csv."
+        },
+        "date_signed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+        },
+        "date_ratified": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+        },
+        "date_proclaimed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$",
+          "description": "Not in the seeds yet. G2 s.8.3 requires it for the time slider effective date."
+        },
+        "date_ratified_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Which ratification event the date_ratified refers to."
+        },
+        "parties_text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Parties exactly as printed in the seed (NARA/Kappler spellings). Never an endonym."
+        },
+        "region": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "land_description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "land_desc_basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "acreage_ceded": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Acres as stated by a single source. Retained/reserved acreage never goes here."
+        },
+        "acreage_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Source of the figure. Required in spirit whenever acreage_ceded is set."
+        },
+        "stat_cite": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Normalized 'N Stat. P' or null."
+        },
+        "stat_cite_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kappler_cite": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "treaty_era_label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Era label from treaties-seed.csv. NOT the same scheme as PolicyEra; see normalization map."
+        },
+        "nara": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "rit": {
+              "type": "string"
+            },
+            "naid": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "naid_alt": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nara_title": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "signatory_authority_disputed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "README gap 10: no seed field yet. null = not assessed."
+        },
+        "royce_cession_numbers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "README gap 11: filled after the USFS attribute table is joined."
+        },
+        "date_signed_basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        },
+        {
+          "if": {
+            "properties": {
+              "instrument_type": {
+                "const": "unratified_treaty"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "ratification_status": {
+                "const": "unratified"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "instrument_type": {
+                "enum": [
+                  "international_treaty",
+                  "colonial_instrument",
+                  "document_set"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "flags": {
+                "contains": {
+                  "const": "context_row_not_a_treaty"
+                }
+              }
+            },
+            "required": [
+              "flags"
+            ]
+          },
+          "$comment": "Context rows must carry the flag so counts never include them as US-Native treaties (README caution 12)."
+        }
+      ],
+      "description": "Treaty/Instrument: a ratified or unratified treaty, a statutory agreement, an executive-order reservation, or a context instrument. Primary key is the legacy TLA id, whose numeric part is the NARA RIT number."
+    },
+    "Nation": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "entity_kind",
+        "federal_recognition",
+        "legal_context",
+        "endonym_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^nat-[a-z0-9-]+$"
+        },
+        "type": {
+          "const": "Nation"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "entity_kind": {
+          "enum": [
+            "historical_party",
+            "peoples_or_confederacy",
+            "present_day_government",
+            "community_or_band",
+            "foreign_state",
+            "collective_scope"
+          ],
+          "description": "historical_party = a treaty party as named in NARA/Kappler; present_day_government = a government as named in a seed; collective_scope = a grouping label, not a polity."
+        },
+        "federal_recognition": {
+          "enum": [
+            "unknown",
+            "per_seed_tribal_government",
+            "per_seed_not_federally_recognized",
+            "not_applicable"
+          ],
+          "description": "What the seeds say, not a determination. Recognition is a legal category and is for the federal government and nations to state."
+        },
+        "legal_context": {
+          "enum": [
+            "standard",
+            "distinct_hawaii",
+            "distinct_alaska_ancsa"
+          ]
+        },
+        "region": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "names": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "kind"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "preferred_label",
+                  "source_label",
+                  "historical_spelling",
+                  "common_english",
+                  "endonym_per_seed"
+                ]
+              },
+              "review": {
+                "enum": [
+                  "unreviewed",
+                  "tribal_confirmed",
+                  "tribal_corrected"
+                ]
+              }
+            }
+          },
+          "description": "Alias list. 'endonym_per_seed' means a seed printed it; it is not a confirmed endonym."
+        },
+        "endonym_status": {
+          "enum": [
+            "none_recorded",
+            "per_seed_unreviewed",
+            "tribal_confirmed"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        },
+        {
+          "if": {
+            "properties": {
+              "entity_kind": {
+                "enum": [
+                  "historical_party",
+                  "peoples_or_confederacy",
+                  "present_day_government",
+                  "community_or_band"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "tribal_review": {
+                "properties": {
+                  "scope": {
+                    "const": "nation_specific"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "entity_kind": {
+                "const": "collective_scope"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "tribal_review": {
+                "properties": {
+                  "scope": {
+                    "const": "public_record_only"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "description": "A Native nation, people, band, confederacy or other identified party. Historical party names and present-day governments are SEPARATE nodes joined by 'successor_of' edges with a review status (see H2)."
+    },
+    "Place": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "place_kind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^plc-[a-z0-9-]+$"
+        },
+        "type": {
+          "const": "Place"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "place_kind": {
+          "enum": [
+            "atlas_region",
+            "us_state",
+            "reservation",
+            "cession_area",
+            "landmark_generalized"
+          ]
+        },
+        "code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "USPS code for states."
+        },
+        "geometry_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ID of a GeoFeature, if any. None in v0."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        },
+        {
+          "if": {
+            "properties": {
+              "place_kind": {
+                "const": "landmark_generalized"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sensitivity": {
+                "properties": {
+                  "tier": {
+                    "enum": [
+                      "generalized",
+                      "withheld"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "description": "A coarse place: Atlas region, state, or later a reservation/cession area. Never a sacred-site location (G3 s.4)."
+    },
+    "Violation": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "title",
+        "violation_types",
+        "adjudicated_breach_label_allowed",
+        "year_precision"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^V\\d{3}$"
+        },
+        "type": {
+          "const": "Violation"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "title": {
+          "type": "string"
+        },
+        "violation_types": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "UNILATERAL_ABROGATION_STATUTE",
+              "DIMINISHMENT_DISESTABLISHMENT",
+              "ALLOTMENT",
+              "TERMINATION",
+              "JURISDICTIONAL_EROSION",
+              "STATUTORY_EXTINGUISHMENT_SETTLEMENT",
+              "UNRECOGNIZED_TITLE",
+              "FRAUD_COERCION_NEGOTIATION",
+              "NON_RATIFICATION",
+              "TREATY_PROMISE_UNFULFILLED",
+              "ANNUITY_NONPAYMENT_OR_DIVERSION",
+              "FAILURE_TO_PROTECT",
+              "FORCED_REMOVAL",
+              "EMINENT_DOMAIN_INFRASTRUCTURE",
+              "RESOURCE_RUSH_INVASION",
+              "RAILROAD_GRANT_OR_SALE",
+              "FEDERAL_RESERVE_CARVE_OUT",
+              "WATER_RIGHTS",
+              "HUNTING_FISHING_RIGHTS",
+              "CONTEXT_INFRASTRUCTURE_SITING",
+              "CONTEXT_FEDERAL_LAND_DISPOSAL",
+              "CONTEXT_PROTECTIVE_DESIGNATION_ROLLBACK",
+              "ANNEXATION_CONTEXT"
+            ]
+          },
+          "description": "First item is the primary code (B1 s.4). Codes come from the B1 controlled vocabulary."
+        },
+        "adjudicated_breach_label_allowed": {
+          "type": "boolean",
+          "description": "False for CONTEXT_* and ANNEXATION_CONTEXT codes (B1 s.4.4)."
+        },
+        "year_text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "violation_year exactly as written in the seed (ranges, decades, serial)."
+        },
+        "year_start": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "year_end": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "year_precision": {
+          "enum": [
+            "year",
+            "decade",
+            "unknown"
+          ]
+        },
+        "mechanism_summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "land_lost_description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "acreage_text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Seed text; usually 'not stated in sources read'. Not numeric."
+        },
+        "legal_aftermath": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "treaty_name_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "treaty_year_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nations_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "related_cases_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verification_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "acknowledgment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "B3 ledger value (Court/Statute/ICC-CoC/Apology/None found). Not in the seed yet."
+        },
+        "consent_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_flags": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "E0",
+              "E1",
+              "E2",
+              "E3",
+              "E4",
+              "E5",
+              "E6",
+              "E7"
+            ]
+          },
+          "description": "G2 s.4 evidence categories. Empty until assigned with citations."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        },
+        {
+          "if": {
+            "properties": {
+              "violation_types": {
+                "contains": {
+                  "enum": [
+                    "CONTEXT_INFRASTRUCTURE_SITING",
+                    "CONTEXT_FEDERAL_LAND_DISPOSAL",
+                    "CONTEXT_PROTECTIVE_DESIGNATION_ROLLBACK",
+                    "ANNEXATION_CONTEXT"
+                  ]
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "adjudicated_breach_label_allowed": {
+                "const": false
+              }
+            }
+          },
+          "$comment": "Context codes must not be presented as adjudicated breaches (B1 s.4.4)."
+        }
+      ],
+      "description": "A documented violation, abrogation, diminishment or taking, tied to an instrument by edges, not by free text."
+    },
+    "Case": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "short_name",
+        "full_citation",
+        "year"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^case-[a-z0-9-]+$"
+        },
+        "type": {
+          "const": "Case"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "short_name": {
+          "type": "string"
+        },
+        "full_citation": {
+          "type": "string"
+        },
+        "court": {
+          "type": "string"
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "holding_summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "land_rights_effect": {
+          "enum": [
+            "advanced",
+            "eroded",
+            "mixed",
+            "procedural"
+          ],
+          "description": "Editorial label defined in C1; must be explained wherever shown."
+        },
+        "doctrine_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nations_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "treaty_at_issue_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        }
+      ],
+      "description": "A court decision."
+    },
+    "Statute": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "name",
+        "year"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^stat-[a-z0-9-]+$"
+        },
+        "type": {
+          "const": "Statute"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "name": {
+          "type": "string"
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "citation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "effect_on_land_rights": {
+          "enum": [
+            "advanced",
+            "eroded",
+            "mixed",
+            "procedural"
+          ]
+        },
+        "doctrine_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        }
+      ],
+      "description": "A statute, resolution, regulation, proclamation or opinion that is not an Indian treaty or agreement."
+    },
+    "PolicyEra": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "era_name",
+        "start_year",
+        "end_year"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^era-\\d{2}$"
+        },
+        "type": {
+          "const": "PolicyEra"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "era_name": {
+          "type": "string"
+        },
+        "start_year": {
+          "type": "integer"
+        },
+        "end_year": {
+          "type": "integer"
+        },
+        "key_acts_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "land_effect_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sources_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        }
+      ],
+      "description": "A federal policy era (D2). Boundaries overlap or leave gaps; membership edges use the era-start rule (see H3)."
+    },
+    "Organization": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "name",
+        "indigenous_led",
+        "display_eligible"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^org-[a-z0-9-]+$"
+        },
+        "type": {
+          "const": "Organization"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "name": {
+          "type": "string"
+        },
+        "org_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "indigenous_led": {
+          "enum": [
+            "yes-verified",
+            "yes-self-described",
+            "tribal-government",
+            "state-agency",
+            "federal-program",
+            "mixed",
+            "no",
+            "unverified"
+          ]
+        },
+        "nations_served_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "focus": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "donation_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Blank/null = no verified channel. Never substitute one (F README)."
+        },
+        "ein_or_registry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vetting_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "display_eligible": {
+          "type": "boolean",
+          "description": "True only when confidence is high or medium (F README rule)."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        },
+        {
+          "if": {
+            "properties": {
+              "display_eligible": {
+                "const": false
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication": {
+                "properties": {
+                  "state": {
+                    "enum": [
+                      "draft",
+                      "withheld"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "$comment": "Donation integrity (brief principle 6; F4): low-confidence organizations are tracking rows, not public recommendations."
+        }
+      ],
+      "description": "An organization, tribal government body, program or agency. A tribal government is an Organization linked to a Nation by 'governing_body_of'."
+    },
+    "Campaign": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "name",
+        "campaign_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^camp-[a-z0-9-]+$"
+        },
+        "type": {
+          "const": "Campaign"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "name": {
+          "type": "string"
+        },
+        "campaign_status": {
+          "enum": [
+            "completed",
+            "completed-pending-deed",
+            "pending",
+            "in-progress",
+            "blocked",
+            "contested",
+            "ongoing-claim",
+            "program-ongoing",
+            "program-concluded",
+            "headline-only"
+          ]
+        },
+        "acres": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "acres_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "As reported by the primary cited source (F README); disagreements are in F3 s.8."
+        },
+        "start_year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "location_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nation_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        },
+        {
+          "if": {
+            "properties": {
+              "campaign_status": {
+                "const": "headline-only"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication": {
+                "properties": {
+                  "state": {
+                    "enum": [
+                      "draft",
+                      "record_only",
+                      "withheld"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "description": "A land return, campaign, program or headline-only lead."
+    },
+    "Source": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "source_kind",
+        "source_tier",
+        "tier_basis"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(GEO-\\d{3}|src-[0-9a-f]{10})$"
+        },
+        "type": {
+          "const": "Source"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "source_kind": {
+          "enum": [
+            "url",
+            "dataset",
+            "book",
+            "legal_text"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "domain": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_tier": {
+          "enum": [
+            "primary_record",
+            "authoritative_secondary",
+            "legal_text_mirror",
+            "pointer_only",
+            "self_described",
+            "news",
+            "unclassified"
+          ],
+          "description": "Brief principle 3 hierarchy. Derived from the domain list in build_graph.py; a human should confirm."
+        },
+        "tier_basis": {
+          "enum": [
+            "domain_heuristic",
+            "dataset_inventory",
+            "manual"
+          ]
+        },
+        "publisher": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "format": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license_or_terms": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "update_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fit_for_timeslider": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        }
+      ],
+      "description": "A source cited by a record: a URL, a dataset from the E inventory, a book or a legal text."
+    },
+    "Doctrine": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "tag"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^doctrine-[a-z0-9-]+$"
+        },
+        "type": {
+          "const": "Doctrine"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "tag": {
+          "type": "string"
+        },
+        "definition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "documented_row_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Row count printed in C3 Part 4. build_graph.py recomputes it and reports mismatches."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        }
+      ],
+      "description": "A legal doctrine from the C3 controlled vocabulary."
+    },
+    "Person": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "living"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^per-[a-z0-9-]+$"
+        },
+        "type": {
+          "const": "Person"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "living": {
+          "const": false,
+          "description": "Living individuals are never modelled (privacy, G3 E1). Historical public figures only."
+        },
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "birth_year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "death_year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        }
+      ],
+      "description": "Reserved. Not populated in v0. Only deceased, historically public figures when an edge cannot be expressed another way."
+    },
+    "GeoFeature": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "label",
+        "confidence",
+        "verification_status",
+        "provenance",
+        "tribal_review",
+        "publication",
+        "data_class",
+        "sensitivity",
+        "geometry_role",
+        "boundary_type",
+        "geometry_file",
+        "geometry_source",
+        "uncertainty",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^geo-[a-z0-9-]+(@v\\d+\\.\\d+\\.\\d+)?$"
+        },
+        "type": {
+          "const": "GeoFeature"
+        },
+        "label": {
+          "type": "string",
+          "description": "Display name. Endonym first where known and reviewed (G3 s.6)."
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One or two plain-language sentences."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other IDs and names (e.g. legacy TLA-S-* ids merged into a stat-* node)."
+        },
+        "external_ids": {
+          "$ref": "#/$defs/ExternalIds"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "flags": {
+          "$ref": "#/$defs/Flags"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "tribal_review": {
+          "$ref": "#/$defs/TribalReview"
+        },
+        "publication": {
+          "$ref": "#/$defs/Publication"
+        },
+        "data_class": {
+          "$ref": "#/$defs/DataClass"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text caveats carried from the seed. Never used as the only place a fact is stored."
+        },
+        "geometry_role": {
+          "enum": [
+            "cession",
+            "reservation",
+            "territory_definition",
+            "reserved_right_area",
+            "judicial_title_area"
+          ]
+        },
+        "boundary_description_text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Verbatim from the treaty article (G2 s.9.2)."
+        },
+        "boundary_type": {
+          "enum": [
+            "surveyed_line",
+            "existing_landmark",
+            "vanished_or_ambiguous_landmark",
+            "map_generalization"
+          ]
+        },
+        "date_semantic_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "geometry_file": {
+          "type": "string",
+          "description": "Path of the GeoJSON/TopoJSON file that holds the coordinates."
+        },
+        "geometry_source": {
+          "type": "object",
+          "required": [
+            "dataset",
+            "license",
+            "reviewed_against_treaty_text"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "dataset": {
+              "type": "string"
+            },
+            "license": {
+              "type": "string"
+            },
+            "original_source": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "georeferencing": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "digitization_notes": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reviewed_against_treaty_text": {
+              "enum": [
+                "yes",
+                "no",
+                "partial"
+              ]
+            },
+            "reviewer": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "uncertainty": {
+          "type": "object",
+          "required": [
+            "tier",
+            "render"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "tier": {
+              "enum": [
+                "T1",
+                "T2",
+                "T3",
+                "T4"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "min_display_scale": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "render": {
+              "enum": [
+                "solid",
+                "dashed",
+                "fuzzy_buffer",
+                "schematic"
+              ]
+            }
+          }
+        },
+        "evidence_flags": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "E0",
+              "E1",
+              "E2",
+              "E3",
+              "E4",
+              "E5",
+              "E6",
+              "E7"
+            ]
+          }
+        },
+        "legal_status_today": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "S1",
+              "S2",
+              "S3",
+              "S4",
+              "S5",
+              "S6",
+              "S7",
+              "S8",
+              "S9"
+            ]
+          }
+        },
+        "version": {
+          "type": "object",
+          "required": [
+            "semver",
+            "changed"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "semver": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+$"
+            },
+            "changed": {
+              "type": "string"
+            },
+            "change_note": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "change_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodeCommonRules"
+        },
+        {
+          "if": {
+            "properties": {
+              "uncertainty": {
+                "properties": {
+                  "tier": {
+                    "const": "T4"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "geometry_file": {
+                "const": "none"
+              }
+            }
+          },
+          "$comment": "T4 = no usable geometry: the record is a schematic card and carries geometry_file 'none'."
+        }
+      ],
+      "description": "A polygon (or schematic stand-in) with the full lineage record from G2 s.8.1. No instances in v0; the Royce/USFS join is a later step."
+    },
+    "Node": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Instrument"
+        },
+        {
+          "$ref": "#/$defs/Nation"
+        },
+        {
+          "$ref": "#/$defs/Place"
+        },
+        {
+          "$ref": "#/$defs/Violation"
+        },
+        {
+          "$ref": "#/$defs/Case"
+        },
+        {
+          "$ref": "#/$defs/Statute"
+        },
+        {
+          "$ref": "#/$defs/PolicyEra"
+        },
+        {
+          "$ref": "#/$defs/Organization"
+        },
+        {
+          "$ref": "#/$defs/Campaign"
+        },
+        {
+          "$ref": "#/$defs/Source"
+        },
+        {
+          "$ref": "#/$defs/Doctrine"
+        },
+        {
+          "$ref": "#/$defs/Person"
+        },
+        {
+          "$ref": "#/$defs/GeoFeature"
+        }
+      ],
+      "description": "Any node. 'type' selects exactly one definition."
+    },
+    "NationAliasRow": {
+      "type": "object",
+      "required": [
+        "alias",
+        "nation_ids",
+        "alias_kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "alias": {
+          "type": "string"
+        },
+        "nation_ids": {
+          "type": "string",
+          "description": "Semicolon-separated Nation ids, or NONE for a blocker row (text that is consumed so a shorter alias cannot match inside it)."
+        },
+        "alias_kind": {
+          "enum": [
+            "source_label",
+            "historical_spelling",
+            "common_english",
+            "endonym_per_seed",
+            "blocker"
+          ]
+        },
+        "only_in": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "SuccessorProposalRow": {
+      "type": "object",
+      "required": [
+        "party_nation_id",
+        "present_nation_id",
+        "extent",
+        "status",
+        "basis_ref"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "party_nation_id": {
+          "type": "string",
+          "pattern": "^nat-"
+        },
+        "present_nation_id": {
+          "type": "string",
+          "pattern": "^nat-pd-"
+        },
+        "extent": {
+          "enum": [
+            "full",
+            "partial",
+            "unknown"
+          ]
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "accepted",
+            "rejected"
+          ]
+        },
+        "basis_ref": {
+          "type": "string"
+        },
+        "disputed": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

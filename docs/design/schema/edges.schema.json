@@ -1,0 +1,1645 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omniharmonic.github.io/treaty-land-atlas/schema/edges.schema.json",
+  "title": "Treaty Land Atlas: edges file",
+  "description": "Validates build/edges.json. Author: Benjamin Life (@omniharmonic). Edge vocabulary and endpoint types live in x-edge-types, which scripts/build_graph.py also reads, so the schema is the single source of truth.",
+  "x-edge-types": {
+    "party_to": {
+      "source_types": [
+        "Nation"
+      ],
+      "target_types": [
+        "Instrument"
+      ],
+      "inverse": "has_party",
+      "description": "A nation (as named in the record) is a party to an instrument. qualifiers.role: signatory | named_party | attendee | beneficiary | non_party_context."
+    },
+    "violated_by": {
+      "source_types": [
+        "Instrument"
+      ],
+      "target_types": [
+        "Violation"
+      ],
+      "inverse": "violates",
+      "description": "A violation entry concerns a promise, term or right in this instrument. qualifiers.role: primary | secondary | context. Use 'context' for CONTEXT_* violations."
+    },
+    "enabled_by": {
+      "source_types": [
+        "Violation"
+      ],
+      "target_types": [
+        "Statute",
+        "Instrument"
+      ],
+      "inverse": "enables",
+      "description": "A statute or ratified agreement is the legal act through which the violation was effected, authorized or settled. qualifiers.role gives which."
+    },
+    "adjudicated_in": {
+      "source_types": [
+        "Violation"
+      ],
+      "target_types": [
+        "Case"
+      ],
+      "inverse": "adjudicates",
+      "description": "A court decision addressed the matter. Not proof that a breach was found; read the case's holding."
+    },
+    "concerns_instrument": {
+      "source_types": [
+        "Case"
+      ],
+      "target_types": [
+        "Instrument"
+      ],
+      "inverse": "at_issue_in",
+      "description": "The treaty or agreement at issue in the case."
+    },
+    "involves_nation": {
+      "source_types": [
+        "Violation",
+        "Case",
+        "Campaign"
+      ],
+      "target_types": [
+        "Nation"
+      ],
+      "inverse": "involved_in",
+      "description": "The record names this nation. qualifiers.match = how it was resolved."
+    },
+    "enacted_during": {
+      "source_types": [
+        "Instrument",
+        "Statute",
+        "Case"
+      ],
+      "target_types": [
+        "PolicyEra"
+      ],
+      "inverse": "contains_enactment",
+      "description": "Dated within the era by the era-start rule."
+    },
+    "occurred_during": {
+      "source_types": [
+        "Violation",
+        "Campaign"
+      ],
+      "target_types": [
+        "PolicyEra"
+      ],
+      "inverse": "contains_event",
+      "description": "Start year falls in the era by the era-start rule."
+    },
+    "ratified_by": {
+      "source_types": [
+        "Instrument"
+      ],
+      "target_types": [
+        "Statute"
+      ],
+      "inverse": "ratifies",
+      "description": "A post-1871 agreement was ratified by this act."
+    },
+    "supersedes": {
+      "source_types": [
+        "Instrument",
+        "Statute"
+      ],
+      "target_types": [
+        "Instrument"
+      ],
+      "inverse": "superseded_by",
+      "description": "Replaced by a later instrument (A1 s.3). Not the same as abrogation."
+    },
+    "abrogates": {
+      "source_types": [
+        "Statute",
+        "Instrument"
+      ],
+      "target_types": [
+        "Instrument"
+      ],
+      "inverse": "abrogated_by",
+      "description": "Congress overrode a treaty provision (B1: use only with a cited act)."
+    },
+    "cedes": {
+      "source_types": [
+        "Instrument"
+      ],
+      "target_types": [
+        "Place",
+        "GeoFeature"
+      ],
+      "inverse": "ceded_by",
+      "description": "Land transferred by the instrument (the record's term is 'cession'). qualifiers.acres optional."
+    },
+    "reserves": {
+      "source_types": [
+        "Instrument"
+      ],
+      "target_types": [
+        "Place",
+        "GeoFeature"
+      ],
+      "inverse": "reserved_by",
+      "description": "Land or rights kept or set apart."
+    },
+    "located_in": {
+      "source_types": [
+        "Place",
+        "Instrument",
+        "Violation",
+        "Campaign",
+        "GeoFeature"
+      ],
+      "target_types": [
+        "Place"
+      ],
+      "inverse": "contains",
+      "description": "Coarse containment or location (state, Atlas region)."
+    },
+    "depicts": {
+      "source_types": [
+        "GeoFeature"
+      ],
+      "target_types": [
+        "Instrument",
+        "Place"
+      ],
+      "inverse": "depicted_by",
+      "description": "The geometry represents this instrument's cession/reservation or this place."
+    },
+    "derived_from": {
+      "source_types": [
+        "GeoFeature",
+        "Source"
+      ],
+      "target_types": [
+        "Source"
+      ],
+      "inverse": "source_of",
+      "description": "Lineage of geometry or of a derived dataset."
+    },
+    "part_of": {
+      "source_types": [
+        "Nation"
+      ],
+      "target_types": [
+        "Nation"
+      ],
+      "inverse": "has_part",
+      "description": "A band/people belongs to an umbrella label as used in the seeds. Not a membership claim."
+    },
+    "successor_of": {
+      "source_types": [
+        "Nation"
+      ],
+      "target_types": [
+        "Nation"
+      ],
+      "inverse": "has_successor",
+      "description": "Present-day nation (source) is a successor in interest of a historical treaty party (target). Always carries review.successor_status. Proposed until a nation confirms."
+    },
+    "governing_body_of": {
+      "source_types": [
+        "Organization"
+      ],
+      "target_types": [
+        "Nation"
+      ],
+      "inverse": "governed_by",
+      "description": "A tribal government organization governs this nation identity."
+    },
+    "serves_nation": {
+      "source_types": [
+        "Organization"
+      ],
+      "target_types": [
+        "Nation"
+      ],
+      "inverse": "served_by",
+      "description": "Organization works with or for this nation. qualifiers.roles keeps the F vocabulary (tribal_nonprofit, allied_non_native_org, ...)."
+    },
+    "operates_in": {
+      "source_types": [
+        "Organization"
+      ],
+      "target_types": [
+        "Place"
+      ],
+      "inverse": "has_operator",
+      "description": "Organization's territory or headquarters, at state or region resolution."
+    },
+    "supports_return_of": {
+      "source_types": [
+        "Organization"
+      ],
+      "target_types": [
+        "Campaign"
+      ],
+      "inverse": "supported_by",
+      "description": "Organization is the primary actor or recipient of the campaign (campaigns-seed org_id). qualifiers.role from the F relationship vocabulary where known."
+    },
+    "remedies": {
+      "source_types": [
+        "Campaign"
+      ],
+      "target_types": [
+        "Violation"
+      ],
+      "inverse": "remedied_by",
+      "description": "Land return, settlement or program responds to this violation. Interpretive; always proposed."
+    },
+    "applies_doctrine": {
+      "source_types": [
+        "Case",
+        "Statute"
+      ],
+      "target_types": [
+        "Doctrine"
+      ],
+      "inverse": "applied_in",
+      "description": "Doctrine tag assigned in the seed. Does not say who established the doctrine."
+    },
+    "establishes_doctrine": {
+      "source_types": [
+        "Case",
+        "Statute"
+      ],
+      "target_types": [
+        "Doctrine"
+      ],
+      "inverse": "established_by",
+      "description": "Manual only."
+    },
+    "applies_statute": {
+      "source_types": [
+        "Case"
+      ],
+      "target_types": [
+        "Statute"
+      ],
+      "inverse": "applied_by",
+      "description": "The case construed or applied this statute (C3 seed edge APPLIES)."
+    },
+    "limits": {
+      "source_types": [
+        "Case",
+        "Statute"
+      ],
+      "target_types": [
+        "Case",
+        "Statute",
+        "Doctrine"
+      ],
+      "inverse": "limited_by",
+      "description": "Narrowed in practice (C3). Stored once, in this direction."
+    },
+    "overrules_in_effect": {
+      "source_types": [
+        "Case",
+        "Statute"
+      ],
+      "target_types": [
+        "Case"
+      ],
+      "inverse": "overruled_in_effect_by",
+      "description": "Later authority displaced the earlier case's rule (C3)."
+    },
+    "responds_to": {
+      "source_types": [
+        "Statute"
+      ],
+      "target_types": [
+        "Case"
+      ],
+      "inverse": "triggered",
+      "description": "Congress acted with this case as a recognized trigger. C3 verified this only for Crow Dog/MCA, Cabazon/IGRA, Smith/RFRA, Oliphant/VAWA."
+    },
+    "cites": {
+      "source_types": [
+        "Case",
+        "Statute"
+      ],
+      "target_types": [
+        "Case",
+        "Statute",
+        "Source"
+      ],
+      "inverse": "cited_by",
+      "description": "Explicit citation. No instances in v0."
+    },
+    "evidenced_by": {
+      "source_types": [
+        "Instrument",
+        "Nation",
+        "Place",
+        "Violation",
+        "Case",
+        "Statute",
+        "PolicyEra",
+        "Organization",
+        "Campaign",
+        "Doctrine",
+        "Person",
+        "GeoFeature"
+      ],
+      "target_types": [
+        "Source"
+      ],
+      "inverse": "evidences",
+      "description": "The node or edge-subject is supported by this source. qualifiers.tier mirrors the source tier."
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated",
+    "edges"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "counts": {
+      "type": "object"
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Edge"
+      }
+    }
+  },
+  "$defs": {
+    "EdgeStatus": {
+      "enum": [
+        "asserted_by_seed",
+        "proposed",
+        "accepted",
+        "rejected",
+        "superseded"
+      ],
+      "description": "asserted_by_seed = a seed field states it directly (a foreign key such as campaigns-seed org_id). proposed = inferred by a crosswalk or text match; needs review. accepted = a human reviewer signed off (reviewer_role and date required)."
+    },
+    "Derivation": {
+      "type": "object",
+      "required": [
+        "method"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "enum": [
+            "seed_fk",
+            "seed_list_field",
+            "crosswalk_manual",
+            "alias_text_match",
+            "citation_text_match",
+            "year_rule",
+            "region_text_match",
+            "c3_seed_edge",
+            "manual_review"
+          ]
+        },
+        "rule": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Short human description of the rule or alias that fired."
+        },
+        "crosswalk_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "EdgeReview": {
+      "type": "object",
+      "required": [
+        "tribal_review_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tribal_review_status": {
+          "enum": [
+            "not_yet_contacted",
+            "invited",
+            "reviewed",
+            "co_authored",
+            "edits_requested",
+            "declined",
+            "withdrawn",
+            "not_applicable"
+          ],
+          "description": "not_applicable only for edges between non-nation public-record nodes (e.g. Case to Statute)."
+        },
+        "successor_status": {
+          "enum": [
+            "unreviewed",
+            "tribal_confirmed",
+            "tribal_corrected",
+            "disputed"
+          ]
+        },
+        "legal_review_status": {
+          "enum": [
+            "not_reviewed",
+            "reviewed"
+          ]
+        },
+        "reviewer_role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+        }
+      }
+    },
+    "Edge": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "id",
+        "type",
+        "source",
+        "target",
+        "source_type",
+        "target_type",
+        "status",
+        "confidence",
+        "derivation",
+        "provenance",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^e-[0-9a-f]{12}$",
+          "description": "Deterministic: first 12 hex of sha1(type|source|target|qualifiers.role)."
+        },
+        "type": {
+          "enum": [
+            "party_to",
+            "violated_by",
+            "enabled_by",
+            "adjudicated_in",
+            "concerns_instrument",
+            "involves_nation",
+            "enacted_during",
+            "occurred_during",
+            "ratified_by",
+            "supersedes",
+            "abrogates",
+            "cedes",
+            "reserves",
+            "located_in",
+            "depicts",
+            "derived_from",
+            "part_of",
+            "successor_of",
+            "governing_body_of",
+            "serves_nation",
+            "operates_in",
+            "supports_return_of",
+            "remedies",
+            "applies_doctrine",
+            "establishes_doctrine",
+            "applies_statute",
+            "limits",
+            "overrules_in_effect",
+            "responds_to",
+            "cites",
+            "evidenced_by"
+          ]
+        },
+        "source": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "Instrument",
+            "Nation",
+            "Place",
+            "Violation",
+            "Case",
+            "Statute",
+            "PolicyEra",
+            "Organization",
+            "Campaign",
+            "Source",
+            "Doctrine",
+            "Person",
+            "GeoFeature"
+          ]
+        },
+        "target_type": {
+          "enum": [
+            "Instrument",
+            "Nation",
+            "Place",
+            "Violation",
+            "Case",
+            "Statute",
+            "PolicyEra",
+            "Organization",
+            "Campaign",
+            "Source",
+            "Doctrine",
+            "Person",
+            "GeoFeature"
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/EdgeStatus"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One sentence saying why the edge exists."
+        },
+        "derivation": {
+          "$ref": "#/$defs/Derivation"
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "origin",
+            "source_file"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "origin": {
+              "enum": [
+                "seed_csv",
+                "crosswalk",
+                "computed",
+                "manual",
+                "external_dataset"
+              ]
+            },
+            "source_file": {
+              "type": "string"
+            },
+            "source_row_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "built_by": {
+              "type": "string"
+            }
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(GEO-\\d{3}|src-[0-9a-f]{10})$"
+          },
+          "description": "Source node ids that support this specific edge (optional; node-level evidenced_by edges also exist)."
+        },
+        "qualifiers": {
+          "type": "object",
+          "description": "Edge-specific facts: role, roles, match, extent, acres, year_start, year_end, gap_year, etc."
+        },
+        "review": {
+          "$ref": "#/$defs/EdgeReview"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "party_to"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Nation"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Instrument"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "violated_by"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Instrument"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Violation"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "enabled_by"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Violation"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Statute",
+                  "Instrument"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "adjudicated_in"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Violation"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Case"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "concerns_instrument"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Case"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Instrument"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "involves_nation"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Violation",
+                  "Case",
+                  "Campaign"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Nation"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "enacted_during"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Instrument",
+                  "Statute",
+                  "Case"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "PolicyEra"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "occurred_during"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Violation",
+                  "Campaign"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "PolicyEra"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "ratified_by"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Instrument"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Statute"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "supersedes"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Instrument",
+                  "Statute"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Instrument"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "abrogates"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Statute",
+                  "Instrument"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Instrument"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "cedes"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Instrument"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Place",
+                  "GeoFeature"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "reserves"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Instrument"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Place",
+                  "GeoFeature"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "located_in"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Place",
+                  "Instrument",
+                  "Violation",
+                  "Campaign",
+                  "GeoFeature"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Place"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "depicts"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "GeoFeature"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Instrument",
+                  "Place"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "derived_from"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "GeoFeature",
+                  "Source"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Source"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "part_of"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Nation"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Nation"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "successor_of"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Nation"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Nation"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "governing_body_of"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Organization"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Nation"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "serves_nation"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Organization"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Nation"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "operates_in"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Organization"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Place"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "supports_return_of"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Organization"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Campaign"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "remedies"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Campaign"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Violation"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "applies_doctrine"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Case",
+                  "Statute"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Doctrine"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "establishes_doctrine"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Case",
+                  "Statute"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Doctrine"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "applies_statute"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Case"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Statute"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "limits"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Case",
+                  "Statute"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Case",
+                  "Statute",
+                  "Doctrine"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "overrules_in_effect"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Case",
+                  "Statute"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Case"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "responds_to"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Statute"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Case"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "cites"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Case",
+                  "Statute"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Case",
+                  "Statute",
+                  "Source"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "evidenced_by"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "Instrument",
+                  "Nation",
+                  "Place",
+                  "Violation",
+                  "Case",
+                  "Statute",
+                  "PolicyEra",
+                  "Organization",
+                  "Campaign",
+                  "Doctrine",
+                  "Person",
+                  "GeoFeature"
+                ]
+              },
+              "target_type": {
+                "enum": [
+                  "Source"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "accepted"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "review": {
+                "required": [
+                  "reviewer_role",
+                  "date"
+                ],
+                "properties": {
+                  "reviewer_role": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "required": [
+              "review"
+            ]
+          },
+          "$comment": "An accepted edge needs a named reviewer role and a date."
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "successor_of"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "review": {
+                "required": [
+                  "successor_status"
+                ]
+              }
+            }
+          },
+          "$comment": "G2 s.8.1 successor_review_status is mandatory on successor edges."
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "successor_of"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "proposed",
+                  "accepted",
+                  "rejected",
+                  "superseded"
+                ]
+              }
+            }
+          },
+          "$comment": "A successor claim can never be 'asserted_by_seed': no seed is authoritative for it (G3 s.2 class N)."
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "remedies"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "proposed",
+                  "accepted",
+                  "rejected",
+                  "superseded"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "anyOf": [
+              {
+                "properties": {
+                  "source_type": {
+                    "enum": [
+                      "Nation",
+                      "Violation",
+                      "Campaign",
+                      "Organization"
+                    ]
+                  }
+                },
+                "required": [
+                  "source_type"
+                ]
+              },
+              {
+                "properties": {
+                  "target_type": {
+                    "enum": [
+                      "Nation",
+                      "Violation",
+                      "Campaign",
+                      "Organization"
+                    ]
+                  }
+                },
+                "required": [
+                  "target_type"
+                ]
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "review": {
+                "properties": {
+                  "tribal_review_status": {
+                    "not": {
+                      "const": "not_applicable"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "$comment": "Any edge touching a Nation, Violation, Campaign or Organization needs a real tribal-review status (default not_yet_contacted)."
+        }
+      ]
+    }
+  }
+}

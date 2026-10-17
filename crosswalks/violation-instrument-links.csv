@@ -1,0 +1,108 @@
+violation_id,instrument_id,edge_type,role,basis
+V001,TLA-T-008,violated_by,primary,treaty_name "Treaty with the Delawares (Fort Pitt)" 1778; seed row TLA-T-008
+V002,TLA-T-011,violated_by,primary,"treaty_name cites 7 Stat. 18 (Hopewell, Cherokee)"
+V002,TLA-T-018,violated_by,primary,treaty_name names Holston 1791
+V003,TLA-T-009,violated_by,primary,treaty_name "Treaty of Fort Stanwix" 1784
+V004,TLA-T-023,violated_by,primary,treaty_name cites 7 Stat. 49 (Greenville)
+V004,TLA-T-057,violated_by,secondary,treaty_name names Fort Wayne 1809
+V005,TLA-T-043,violated_by,primary,treaty_name "Treaty of St. Louis (Sauk and Fox)" 1804
+V006,TLA-T-199,violated_by,primary,treaty_name "(New Echota)" 1835
+V007,TLA-T-011,violated_by,primary,treaty_name names Hopewell 1785
+V007,TLA-T-018,violated_by,primary,treaty_name names Holston 1791
+V008,TLA-T-160,violated_by,primary,treaty_name "Treaty of Dancing Rabbit Creek" 1830
+V009,TLA-T-168,violated_by,primary,treaty_name cites 7 Stat. 368 (Payne's Landing)
+V009,TLA-T-120,violated_by,secondary,treaty_name names Moultrie Creek (1823)
+V009,TLA-T-185,violated_by,secondary,treaty year 1833 with Seminole at Fort Gibson (not named in treaty_name; inferred from year list)
+V010,TLA-T-356,violated_by,primary,treaty_name cites 14 Stat. 785 (Creek 1866)
+V012,TLA-T-230,violated_by,primary,treaty_name "Treaty of Buffalo Creek (1838)"
+V012,TLA-T-305,violated_by,secondary,treaty_name names Tonawanda Band (1857)
+V013,TLA-T-223,violated_by,primary,treaty_name cites 7 Stat. 536 (St. Peters 1837)
+V013,TLA-T-242,violated_by,secondary,treaty_name names the 1842 treaty (La Pointe)
+V014,TLA-T-223,violated_by,primary,treaty_name cites 7 Stat. 536
+V015,TLA-T-223,violated_by,primary,treaty_name cites 7 Stat. 536
+V015,TLA-T-242,violated_by,primary,treaty_name cites 7 Stat. 591 (La Pointe 1842)
+V015,TLA-T-275,violated_by,primary,treaty_name cites 10 Stat. 1109 (La Pointe 1854)
+V017,TLA-T-021,violated_by,primary,treaty_name cites 7 Stat. 44 (Canandaigua)
+V018,TLA-T-009,violated_by,primary,treaty_name names Fort Stanwix (1784)
+V018,TLA-T-021,violated_by,primary,treaty_name names Canandaigua (1794)
+V019,TLA-T-021,violated_by,primary,treaty_name names Canandaigua (1794)
+V020,TLA-T-FL1851,violated_by,primary,treaty_name cites 11 Stat. 749
+V021,TLA-T-315,violated_by,primary,treaty_name cites 12 Stat. 1163 (Fort Wise)
+V021,TLA-T-341,violated_by,primary,treaty_name cites 14 Stat. 703 (Little Arkansas)
+V022,TLA-T-364,violated_by,primary,treaty_name cites 15 Stat. 581 (Medicine Lodge; Kiowa and Comanche)
+V023,TLA-T-366,violated_by,primary,Medicine Lodge 1867 with Cheyenne and Arapaho (nations match; Stat. cite not in treaty_name)
+V024,TLA-T-369,violated_by,primary,treaty_name cites 15 Stat. 635 (Fort Laramie 1868)
+V024,TLA-A-1877,enabled_by,enabling_act,B1 4.1 UNILATERAL_ABROGATION_STATUTE cites Act of Feb. 28 1877
+V025,TLA-T-369,violated_by,primary,treaty_name names Fort Laramie (1868) Art. 12
+V026,TLA-T-258,violated_by,primary,treaty_name names Traverse des Sioux
+V026,TLA-T-259,violated_by,primary,treaty_name names Mendota
+V028,TLA-T-FL1851,violated_by,primary,treaty_name names Fort Laramie (1851)
+V029,TLA-T-369,violated_by,primary,treaty_name names Fort Laramie (1868)
+V030,TLA-T-FL1851,violated_by,context,treaty_name names Fort Laramie (1851) as invoked by the Tribe; CONTEXT code (not an adjudicated breach)
+V030,TLA-T-369,violated_by,context,treaty_name names Fort Laramie (1868) as invoked by the Tribe; CONTEXT code
+V031,TLA-T-369,violated_by,primary,treaty_name names Fort Laramie (1868)
+V033,TLA-T-369,violated_by,primary,treaty_name names Fort Laramie (1868)
+V034,TLA-T-370,violated_by,primary,treaty_name cites 15 Stat. 649 (Crow 1868)
+V035,TLA-T-326,violated_by,primary,treaty_name cites 18 Stat. 689 (Ruby Valley)
+V036,TLA-T-325,violated_by,primary,treaty_name "Treaty of Box Elder"
+V037,TLA-T-299,violated_by,primary,treaty_name "Lame Bull Treaty (1855)"
+V038,TLA-T-291,violated_by,primary,treaty_name cites 12 Stat. 957 (Nez Perce 1855)
+V038,TLA-T-323,violated_by,primary,treaty_name cites 14 Stat. 647 (Nez Perce 1863)
+V039,TLA-T-367,violated_by,primary,treaty_name cites 15 Stat. 619 (Ute 1868)
+V039,TLA-A-1874,enabled_by,enabling_act,treaty_name names Brunot Agreement (1873-74)
+V040,TLA-T-372,violated_by,primary,treaty_name cites 15 Stat. 667 (Navajo 1868)
+V041,TLA-T-372,violated_by,primary,treaty_name cites 15 Stat. 667
+V042,TLA-T-261,violated_by,primary,treaty_name names Treaty of Santa Fe (1852) with the Apache
+V043,TLA-T-352,violated_by,primary,treaty_name names Seminole 1866 treaty (the 1856 treaty is not in the seed)
+V044,TLA-T-352,violated_by,secondary,"treaty_name ""1866 reconstruction treaties""; Seminole"
+V044,TLA-T-355,violated_by,secondary,"treaty_name ""1866 reconstruction treaties""; Choctaw and Chickasaw"
+V044,TLA-T-356,violated_by,secondary,"treaty_name ""1866 reconstruction treaties""; Creek"
+V044,TLA-T-358,violated_by,secondary,"treaty_name ""1866 reconstruction treaties""; Cherokee"
+V045,TLA-T-369,violated_by,context,treaty_name gives Fort Laramie 1868 as an example of communal-title reservations
+V045,TLA-T-364,violated_by,context,treaty_name gives Medicine Lodge 1867 as an example
+V046,TLA-T-332,violated_by,context,treaty_name gives Klamath 1864 as an example
+V047,TLA-T-167,violated_by,primary,treaty_name cites 7 Stat. 366 (Creek 1832)
+V047,TLA-T-356,violated_by,primary,treaty_name cites 14 Stat. 786 (Creek 1866; seed cites 14 Stat. 785)
+V049,TLA-T-261,violated_by,context,treaty_name names Treaty of Santa Fe (1852) as invoked; CONTEXT code
+V050,TLA-X-GH1848,violated_by,context,treaty_name names Guadalupe Hidalgo as context (international treaty)
+V051,TLA-T-281,violated_by,primary,treaty_name cites 10 Stat. 1132 (Medicine Creek)
+V052,TLA-T-281,violated_by,primary,treaty_name names Medicine Creek
+V052,TLA-T-283,violated_by,primary,treaty_name names Point Elliott
+V052,TLA-T-284,violated_by,primary,treaty_name names Point No Point
+V052,TLA-T-286,violated_by,primary,treaty_name names Neah Bay
+V052,TLA-T-294,violated_by,primary,treaty_name names Quinault (Olympia)
+V052,TLA-T-290,violated_by,primary,treaty_name names Yakama
+V053,TLA-T-290,violated_by,primary,treaty_name cites 12 Stat. 951 (Yakama)
+V055,TLA-T-263,violated_by,primary,treaty_name "Rogue River treaties (1853-55)"; only the 1853 Table Rock treaty is in the seed
+V056,TLA-T-332,violated_by,primary,treaty_name cites 16 Stat. 707 (Klamath)
+V060,TLA-X-AK1867,violated_by,context,treaty_name names the 1867 cession; international treaty
+V061,TLA-X-HI1849,violated_by,context,treaty_name cites 9 Stat. 977; ANNEXATION_CONTEXT; not a treaty with a Native nation
+V062,TLA-T-372,violated_by,context,treaty_name says Navajo 1868 is historical context
+V062,TLA-T-367,violated_by,context,treaty_name says Ute 1868 is historical context
+V054,TLA-U-CA-A,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-B,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-C,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-D,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-E,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-F,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-G,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-H,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-I,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-J,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-K,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-L,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-M,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-N,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-O,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-P,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-Q,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V054,TLA-U-CA-R,violated_by,primary,18 unratified California treaties named as a set in treaty_name
+V011,TLA-T-208,violated_by,primary,"treaty_name ""Treaty of Yellow River (1836)"": NARA RIT 208, Potawatomi at Near Yellow River, 1836-08-05 (matches the date in the V011 text). Added in the second pass after matching against the NARA skeleton rows."
+V011,TLA-T-175,violated_by,secondary,"treaty_name ""Treaty of Tippecanoe (1832)"": several 1832 Tippecanoe treaties exist in the NARA list (RIT 172 and 175). The seed does not say which one reserved the Menominee sections; 175 is the Wabash and Elkhart Bands treaty of 1832-10-26. Ambiguous; needs a reviewer."
+V011,TLA-T-172,violated_by,secondary,"Same ambiguity as TLA-T-175: RIT 172 (Potawatomi of the Prairie and Kankakee, Camp Tippecanoe, 1832-10-20)."
+V016,TLA-T-269,violated_by,primary,"treaty_name ""Treaty of Wolf River (1854)"": NARA RIT 269, Menominee at Falls of Wolf River, 1854-05-12."
+V027,TLA-T-306,violated_by,primary,"treaty_name ""Treaty with the Ponca, 12 Stat. 997"" with the V027 text ""Mar. 12, 1858 treaty"": NARA RIT 306, Ponca at Washington, 1858-03-12. The Stat. page is not stored on this skeleton node, so the cite cross-check cannot confirm it."
+V027,TLA-T-336,violated_by,secondary,"V027 years include 1865: NARA RIT 336, Ponca at Washington, 1865-03-10."
+V032,TLA-T-360,violated_by,primary,"treaty_name ""Treaty with the Sisseton and Wahpeton Sioux (1867)"": NARA RIT 360, 1867-02-19. The Agreement of 1889 is not in the instrument seeds."
+V059,TLA-T-138,violated_by,primary,"treaty_name ""1825 ... land agreements"": NARA RIT 138, Kansa at Sora Kansas Creek, 1825-08-16 (the 1825 cession)."
+V059,TLA-T-245,violated_by,primary,"treaty_name ""... 1846 land agreements"": NARA RIT 245, Kansa at Methodist Mission, 1846-01-14."

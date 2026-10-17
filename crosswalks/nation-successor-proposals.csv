@@ -1,0 +1,57 @@
+party_nation_id,present_nation_id,extent,status,basis_ref,disputed,notes
+nat-delaware-lenape,nat-pd-delaware-tribe,unknown,proposed,violations-seed-notes.csv V001,false,Named in V001 verification note as holding the historical voice. Tribal confirmation needed.
+nat-delaware-lenape,nat-pd-delaware-nation,unknown,proposed,violations-seed-notes.csv V001,false,Named in V001 verification note as holding the historical voice. Tribal confirmation needed.
+nat-cherokee,nat-pd-cherokee-nation,partial,proposed,cases-seed.csv Cherokee cases; violations-seed V006/V044,false,Other Cherokee governments exist [from-memory]; set is incomplete by design.
+nat-cherokee,nat-pd-united-keetoowah-band,unknown,proposed,docs/research/A1 section 8 item 5; A3 OSU New Echota record,true,Cherokee Nation Attorney General raised a concern about this attribution (per A1/A3). Shown only so the dispute is visible; not an endorsement.
+nat-muscogee-creek,nat-pd-muscogee-nation,full,proposed,violations-seed.csv V010/V047,false,
+nat-seminole,nat-pd-seminole-nation-ok,partial,proposed,violations-seed.csv V043,false,
+nat-seminole,nat-pd-seminole-tribe-fl,partial,proposed,cases-seed.csv case-seminole-tribe-v-florida-1996,false,
+nat-choctaw,nat-pd-ms-choctaw,partial,proposed,cases-seed.csv case-dollar-general-v-miss-choctaw-2016,false,
+nat-choctaw,nat-pd-choctaw-nation,partial,proposed,name inferred from case-choctaw-nation-v-us-1886,false,Weak basis (case title only).
+nat-seneca,nat-pd-seneca-nation,partial,proposed,violations-seed.csv V012/V017,false,
+nat-seneca,nat-pd-tonawanda-seneca,partial,proposed,violations-seed.csv V012,false,TLA-T-305 is the Tonawanda Band treaty.
+nat-tuscarora,nat-pd-tuscarora-nation,full,proposed,violations-seed.csv V019,false,
+nat-cayuga,nat-pd-cayuga-nation,full,proposed,cases-seed.csv case-cayuga-nation-v-pataki-2005,false,
+nat-oneida,nat-pd-oneida-indian-nation,partial,proposed,organizations-seed.csv org-oneida-indian-nation,false,Other Oneida governments exist [from-memory].
+nat-stockbridge,nat-pd-stockbridge-munsee,full,proposed,organizations-seed.csv org-stockbridge-munsee,false,
+nat-mohican,nat-pd-stockbridge-munsee,full,proposed,organizations-seed.csv org-stockbridge-munsee,false,
+nat-munsee,nat-pd-stockbridge-munsee,partial,proposed,organizations-seed.csv org-stockbridge-munsee,false,
+nat-menominee,nat-pd-menominee-tribe,full,proposed,organizations-seed.csv org-menominee-tribe; V016,false,
+nat-puyallup,nat-pd-puyallup,full,proposed,organizations-seed.csv org-puyallup-tribe; V051,false,
+nat-pawnee,nat-pd-pawnee-nation,full,proposed,organizations-seed.csv org-pawnee-nation,false,
+nat-penobscot,nat-pd-penobscot,full,proposed,organizations-seed.csv org-penobscot-nation,false,
+nat-maliseet,nat-pd-houlton-maliseet,partial,proposed,organizations-seed.csv org-houlton-maliseet,false,
+nat-passamaquoddy,nat-pd-passamaquoddy,full,proposed,tribe-org-map.csv,false,
+nat-wampanoag,nat-pd-mashpee-wampanoag,partial,proposed,organizations-seed.csv org-mashpee-wampanoag,false,Mashpee is one Wampanoag nation; others exist.
+nat-sisseton,nat-pd-sisseton-wahpeton,partial,proposed,violations-seed.csv V032,false,
+nat-wahpeton,nat-pd-sisseton-wahpeton,partial,proposed,violations-seed.csv V032,false,
+nat-yankton,nat-pd-yankton-sioux,full,proposed,cases-seed.csv case-south-dakota-v-yankton-sioux-1998,false,
+nat-crow,nat-pd-crow-tribe,full,proposed,violations-seed.csv V034,false,
+nat-ponca,nat-pd-ponca-ne,partial,proposed,violations-seed.csv V027,false,
+nat-ponca,nat-pd-ponca-ok,partial,proposed,violations-seed.csv V027,false,
+nat-omaha,nat-pd-omaha-tribe,full,proposed,violations-seed.csv V033,false,
+nat-kaw,nat-pd-kaw-nation,full,proposed,violations-seed.csv V059,false,
+nat-kiowa,nat-pd-kiowa-tribe,full,proposed,cases-seed.csv case-kiowa-tribe-v-manufacturing-tech-1998,false,
+nat-cheyenne,nat-pd-cheyenne-arapaho,partial,proposed,violations-seed.csv V021 (Southern Cheyenne and Arapaho),false,Northern Cheyenne and Northern Arapaho governments are separate [from-memory]; not entered.
+nat-arapaho,nat-pd-cheyenne-arapaho,partial,proposed,violations-seed.csv V021,false,
+nat-flathead-salish,nat-pd-cskt,partial,proposed,organizations-seed.csv org-cskt nations_served,false,
+nat-kootenai,nat-pd-cskt,partial,proposed,organizations-seed.csv org-cskt nations_served,false,
+nat-pend-doreille,nat-pd-cskt,partial,proposed,organizations-seed.csv org-cskt nations_served,false,
+nat-yakama,nat-pd-yakama-nation,full,proposed,violations-seed.csv V053,false,
+nat-klamath,nat-pd-klamath-tribes,partial,proposed,violations-seed.csv V056,false,
+nat-modoc,nat-pd-klamath-tribes,partial,proposed,violations-seed.csv V056,false,
+nat-yahooskin-snake,nat-pd-klamath-tribes,partial,proposed,violations-seed.csv V056,false,
+nat-rogue-river,nat-pd-siletz,partial,proposed,violations-seed.csv V055,false,Western Oregon tribes were consolidated; other successor governments exist [from-memory].
+nat-navajo,nat-pd-navajo-nation,full,proposed,violations-seed.csv V040/V041,false,
+nat-ute,nat-pd-ute-indian-tribe,partial,proposed,violations-seed.csv V039; V062,false,
+nat-ute,nat-pd-ute-mountain-ute,partial,proposed,violations-seed.csv V039; V062,false,
+nat-ute,nat-pd-southern-ute,partial,proposed,violations-seed.csv V039,false,
+nat-hopi,nat-pd-hopi-tribe,full,proposed,violations-seed.csv V062,false,
+nat-chiricahua-apache,nat-pd-fort-sill-apache,partial,proposed,violations-seed.csv V042,false,
+nat-chiricahua-apache,nat-pd-mescalero,partial,proposed,violations-seed.csv V042,false,
+nat-apache,nat-pd-san-carlos-apache,partial,proposed,violations-seed.csv V049,false,Santa Fe 1852 Apache parties are not identified by band in the seed.
+nat-catawba,nat-pd-catawba,full,proposed,violations-seed.csv V057,false,
+nat-chippewa-ojibwe,nat-pd-mille-lacs-band,partial,proposed,violations-seed.csv V014,false,One of many Chippewa/Ojibwe bands.
+nat-chippewa-ojibwe,nat-pd-white-earth,partial,proposed,tribe-org-map.csv,false,One of many Chippewa/Ojibwe bands.
+nat-chippewa-ojibwe,nat-pd-lac-du-flambeau,partial,proposed,cases-seed.csv case-lac-du-flambeau-v-coughlin-2023,false,One of many Chippewa/Ojibwe bands.
+nat-chippewa-ojibwe,nat-pd-bay-mills,partial,proposed,cases-seed.csv case-michigan-v-bay-mills-2014,false,One of many Chippewa/Ojibwe/Ottawa bands.

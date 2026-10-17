@@ -1,0 +1,16 @@
+campaign_id,violation_id,role,basis
+camp-blue-lake-1970,V050,land_return,B1 4.3 FEDERAL_RESERVE_CARVE_OUT: V050 is Blue Lake 1906 "later returned"
+camp-menominee-restoration-1975,V016,restoration,B1 4.1 TERMINATION remedy: Menominee restoration 1973; V016 is Menominee termination
+camp-puyallup-1989,V051,settlement,B1 4.1 lists Puyallup (V051) among settlement acts
+camp-black-hills-claim,V024,ongoing_claim,campaign is the Black Hills claim; V024 is Black Hills 1877
+camp-pesla-2012,V024,land_return,Pe' Sla is in the Black Hills (campaign location); related to V024
+camp-fort-reno,V023,ongoing_claim,B1 4.3 cites V023 (Fort Reno)
+camp-ancsa-1971,V060,settlement,B1 4.1 STATUTORY_EXTINGUISHMENT_SETTLEMENT: V060 (ANCSA)
+camp-sherrill-oneida-reacquisition,V018,reacquisition,Oneida land claims V018; campaign is Oneida reacquisition
+camp-buyback-2012-2022,V045,program,Land Buy-Back addresses allotment fractionation (V045 is the Dawes Act entry); program context
+camp-tributary-land-returns,V058,context,Maine Wabanaki nations; V058 is Maine settlement context
+camp-penobscot-735-2020,V058,context,Penobscot Nation; V058 is Maine settlement context
+camp-mechoopda-2026,V054,context,Mechoopda are named in unratified California Treaty G (TLA-U-CA-G)
+camp-ca-tnbs-statewide,V054,context,Statewide California program; V054 covers the 18 unratified California treaties
+camp-ca-7pct-pledge-2026,V054,context,Statewide California pledge; headline-only
+camp-ute-utah-trust-lands-2026,V039,context,Ute Indian Tribe; V039 is Ute 1868 / Brunot

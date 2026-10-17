@@ -1,0 +1,20 @@
+source_id,target_id,edge_type,basis,flipped_from_c3
+case-ex-parte-crow-dog-1883,stat-major-crimes-act-1885,responds_to,C3 Part 4 seed edge RESPONDS_TO; direction normalized to statute responds_to case,yes
+case-kagama-1886,stat-major-crimes-act-1885,applies_statute,C3 Part 4 seed edge APPLIES (case to statute),no
+case-menominee-tribe-v-us-1968,stat-menominee-termination-act-1954,limits,C3 Part 4 seed edge LIMITS,no
+case-minnesota-v-mille-lacs-1999,case-ward-v-race-horse-1896,overrules_in_effect,C3 Part 4 seed edge OVERRULES_IN_EFFECT,no
+case-herrera-v-wyoming-2019,case-ward-v-race-horse-1896,overrules_in_effect,C3 Part 4 seed edge OVERRULES_IN_EFFECT,no
+case-california-v-cabazon-1987,stat-indian-gaming-regulatory-act-1988,responds_to,C3 seed edge RESPONDS_TO; verified trigger per C3; direction normalized,yes
+case-oliphant-v-suquamish-1978,stat-vawa-2013-special-domestic-violence-jurisdiction,responds_to,C3 seed edge RESPONDS_TO; verified trigger per C3; direction normalized,yes
+case-oneida-ii-1985,stat-trade-intercourse-acts-1790-1802,applies_statute,C3 seed edge APPLIES,no
+case-city-of-sherrill-v-oneida-2005,case-oneida-ii-1985,limits,C3 seed edge LIMITS,no
+case-carcieri-v-salazar-2009,stat-indian-reorganization-act-1934,limits,C3 seed edge LIMITS,no
+case-hodel-v-irving-1987,stat-indian-land-consolidation-act-1983,limits,C3 seed edge LIMITS,no
+case-cobell-v-salazar-2009,stat-claims-resolution-act-2010-cobell,responds_to,C3 seed edge RESPONDS_TO (interpretive); direction normalized,yes
+case-passamaquoddy-v-morton-1975,stat-maine-indian-claims-settlement-act-1980,responds_to,C3 seed edge RESPONDS_TO (interpretive); direction normalized,yes
+case-lyng-v-nw-indian-cemetery-1988,stat-american-indian-religious-freedom-act-1978,limits,C3 seed edge LIMITS,no
+case-oklahoma-v-castro-huerta-2022,case-mcgirt-v-oklahoma-2020,limits,C3 seed edge had mcgirt LIMITED_BY castro-huerta; flipped to the limiting case as source,yes
+case-tee-hit-ton-v-us-1955,stat-alaska-native-claims-settlement-act-1971,responds_to,C3 seed edge RESPONDS_TO (interpretive); direction normalized,yes
+case-us-v-sioux-nation-1980,case-lone-wolf-v-hitchcock-1903,limits,C3 seed edge LIMITS,no
+case-haaland-v-brackeen-2023,stat-indian-child-welfare-act-1978,applies_statute,C3 seed edge APPLIES,no
+case-becerra-v-san-carlos-apache-2024,stat-indian-self-determination-act-1975,applies_statute,C3 seed edge APPLIES,no

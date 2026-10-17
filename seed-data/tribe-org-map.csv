@@ -1,0 +1,87 @@
+nation,org_id,relationship,region
+Oceti Sakowin (Great Sioux Nation),org-ndn-collective,campaign_partner (LANDBACK; Black Hills / Mount Rushmore),"Black Hills, SD"
+Oceti Sakowin (Great Sioux Nation),org-iltf,fundraising_partner (Pe' Sla 2012),"Black Hills, SD"
+Oceti Sakowin (Great Sioux Nation),org-lplp-sacred-defense-fund,advocacy (Return the Sacred; Pe' Sla),Dakotas
+Rosebud Sioux Tribe (Sicangu Oyate),org-rosebud-sioux-tribe,governing_body,South Dakota
+Cheyenne River Sioux Tribe (Lakota),org-cryp,led_by_members (Bear Butte parcel 2024),"Eagle Butte / Black Hills, SD"
+Spirit Lake Nation (Dakota),org-spirit-lake-nation,"governing_body; return_recipient (White Horse Hill 680 acres, HCN)",North Dakota
+Wiyot,org-wiyot-tribe,governing_body; return_recipient (Tuluwat 2019),"Humboldt Bay, CA"
+Yurok,org-yurok-tribe,"governing_body; return_recipient (Blue Creek 47,097 acres; 'O Rew 125 acres)","Klamath River, CA"
+Yurok,org-western-rivers-conservancy,allied_non_native_org (Blue Creek),"Klamath River, CA"
+Yurok,org-save-the-redwoods-league,allied_non_native_org ('O Rew 2026),Northern California coast
+Yurok,org-ca-cnra,funder_partner (state grants),California
+Esselen,org-esselen-tribe,"tribal_nonprofit; return_recipient (Adler Ranch 1,199 acres)","Big Sur, CA"
+Esselen,org-western-rivers-conservancy,allied_non_native_org (Adler Ranch),"Big Sur, CA"
+Lisjan Ohlone,org-sogorea-te,led_by_members; donation_channel,"East Bay, CA"
+Amah Mutsun (Mutsun Ohlone),org-amah-mutsun-land-trust,led_by_members; donation_channel,"Central Coast, CA"
+Mutsun Costanoan (Indian Canyon),org-indian-canyon,UNVERIFIED (domain unreliable),"Hollister, CA"
+Tule River Yokuts,org-tule-river-tribe,"governing_body; return_recipient (17,030 acres)","Sierra foothills, CA"
+Tule River Yokuts,org-conservation-fund,allied_non_native_org (facilitated),"Sierra foothills, CA"
+Southern Sierra Miwuk,org-southern-sierra-miwuk,governing_body; return_recipient (about 900 acres),"Yosemite gateway, CA"
+Southern Sierra Miwuk,org-pacific-forest-trust,allied_non_native_org (steward before return),"Yosemite gateway, CA"
+Washoe,org-washoe-tribe,"governing_body; return_recipient (10,274 acres)","Lake Tahoe, CA/NV"
+Mechoopda (Maidu),org-mechoopda,governing_body; return_recipient (450 acres),"Butte County, CA"
+Sherwood Valley Band of Pomo,org-kai-poma,tribal_nonprofit (co-creator),"Mendocino County, CA"
+Round Valley Indian Tribes,org-kai-poma,tribal_nonprofit (co-creator),"Mendocino County, CA"
+Coyote Valley Band of Pomo,org-kai-poma,tribal_nonprofit (co-creator),"Mendocino County, CA"
+Chumash (Santa Ynez Band),org-santa-ynez-chumash,"governing_body (Camp 4, unverified)","Santa Ynez Valley, CA"
+Coastal Band of the Chumash Nation,NONE_VERIFIED,no_verified_org (not researched: search budget exhausted),"Central Coast, CA"
+Karuk,NONE_VERIFIED,no_verified_org (Karuk Tribe site read; no land-return or donation page found),"Klamath River, CA"
+Karuk,org-save-california-salmon,advocacy_adjacent (partnership not verified on site read),"Klamath River, CA"
+California tribes (statewide),org-ca-cnra,funder_partner (TNBS program),California
+Multiple California nations,org-cultural-conservancy,pan_tribal_service (unverified Indigenous-led),"San Francisco Bay Area, CA"
+Duwamish,org-duwamish-tribal-services,tribal_nonprofit; donation_channel (Real Rent),"Seattle, WA"
+Duwamish,org-shared-spaces-foundation,allied_non_native_org (Heron's Nest; unverified),"Seattle, WA"
+Confederated Tribes of Siletz Indians,org-siletz-ctsi,"governing_body; return_recipient (Rocky Shores, pending)",Oregon coast
+Confederated Tribes of Siletz Indians,org-mckenzie-river-trust,allied_non_native_org,Oregon coast
+Puyallup,org-puyallup-tribe,governing_body (1989 settlement),"Tacoma, WA"
+Tulalip Tribes,NONE_VERIFIED,no_verified_org (not researched: search budget exhausted),"Puget Sound, WA"
+Muckleshoot Indian Tribe,NONE_VERIFIED,no_verified_org (not researched: search budget exhausted),"Puget Sound, WA"
+Confederated Salish and Kootenai Tribes,org-cskt,"governing_body; return_recipient (Bison Range 18,800 acres)","Flathead Reservation, MT"
+Western Shoshone (Newe),org-wsdp,advocacy (donation channel UNVERIFIED),Nevada / Newe Sogobia
+Taos Pueblo (Tiwa),org-taos-pueblo,"governing_body; return_recipient (Blue Lake 48,000 acres, 1970)","Taos, NM"
+Pueblo nations (other),NONE_VERIFIED,no_verified_org (Taos Blue Lake verified; no Pueblo-led land-return nonprofit verified),New Mexico
+Diné (Navajo Nation),org-dine-care,advocacy_adjacent (existence only),"Window Rock, AZ"
+Diné (Navajo Nation),NONE_VERIFIED,no_verified_org (no dedicated Diné land-return nonprofit verified),Navajo Nation
+Western Apache,org-apache-stronghold,advocacy_adjacent (Oak Flat; existence only),"San Carlos, AZ"
+Cheyenne and Arapaho Tribes,org-cheyenne-arapaho-tribes,governing_body; campaign (Fort Reno),Oklahoma
+Arapaho and Cheyenne (Front Range ancestral lands),org-right-relationship-boulder,allied_non_native_org (ally-led; acts at tribes' request),"Boulder, CO"
+Pawnee,org-pawnee-nation,"governing_body (Nebraska homeland return via donation, KPBS)",Oklahoma / Nebraska
+Pawnee,NONE_VERIFIED,no_verified_org (Pawnee Seed Preservation Project named by KPBS; donation path not checked),Nebraska
+White Earth Nation (Ojibwe / Anishinaabe),org-welrp,led_by_members; donation_channel,"White Earth Reservation, MN"
+Ojibwe / Anishinaabe (pan-regional),org-honor-the-earth,advocacy_adjacent,Great Lakes / Northern Plains
+Anishinaabe (Madeline Island),org-native-land-conservancy,return_recipient (8.5-acre holding; nation not stated),"Madeline Island, WI"
+Menominee,org-menominee-tribe,"governing_body; return_recipient (about 200,000 acres, 1975)",Wisconsin
+Stockbridge-Munsee (Mohican),org-stockbridge-munsee,governing_body; return_recipient (Monument Mountain 372 acres),"Berkshires, MA / Wisconsin"
+Oneida (Haudenosaunee),org-oneida-indian-nation,"governing_body; reacquisition (about 18,000 acres in trust)",Central New York
+Haudenosaunee (Six Nations),org-six-nations-iroquois-cultural-center,led_by_members (unverified); return_recipient (600+ acres 2026),"Adirondacks, NY"
+Haudenosaunee (Six Nations),org-tnc,funder_partner (6NICC purchase),"Adirondacks, NY"
+Haudenosaunee (rematriation network),org-rematriation,led_by_members (unverified nation); advocacy,"Syracuse, NY"
+Wampanoag,org-native-land-conservancy,led_by_members; donation_channel (tribal affiliation per holding not stated),Massachusetts
+Mashpee Wampanoag Tribe,org-mashpee-wampanoag,governing_body (trust status contested; 2026 status unverified),"Cape Cod / Taunton, MA"
+Penobscot (Wabanaki),org-penobscot-nation,governing_body; return_recipient (735 acres 2020),Maine
+Mi'kmaq Nation (Wabanaki),org-mikmaq-nation,"governing_body; return_recipient (3,400+ acres 2026)","Aroostook County, ME"
+Mi'kmaq Nation (Wabanaki),org-conservation-fund,allied_non_native_org,"Aroostook County, ME"
+Houlton Band of Maliseet Indians,org-houlton-maliseet,"governing_body; return_recipient (1,327 acres)","Aroostook County, ME"
+Passamaquoddy (Motahkomikuk and Sipayik),org-wabanaki-commission,campaign_partner (Tributary Land Returns),Maine
+Wabanaki nations (five tribes in Maine),org-first-light-maine,fundraising_partner (Tributary Land Returns; not Indigenous-led per se),Maine
+Wabanaki nations (five tribes in Maine),org-tpl,allied_non_native_org,Maine
+Wabanaki nations (five tribes in Maine),org-tnc,allied_non_native_org,Maine
+Wabanaki nations (five tribes in Maine),org-wabanaki-commission,led_by_members (affirms parcels),Maine
+Pamunkey,org-pamunkey,"governing_body (13-acre return, headline only)",Virginia
+Pan-tribal / national,org-narf,legal_counsel,National
+Pan-tribal / national,org-iltf,pan_tribal_service,National
+Pan-tribal / national,org-ndn-collective,pan_tribal_service,National
+Pan-tribal / national,org-fndi,pan_tribal_service (funder),National
+Pan-tribal / national,org-ien,advocacy_adjacent,National
+Pan-tribal / national,org-doi-buyback,program_context (3 million acres),National
+Pan-tribal / national,org-seeding-sovereignty,advocacy_adjacent (Indigenous leadership unverified),National
+Pan-tribal / national,org-native-american-land-conservancy,UNVERIFIED (website unreadable),"Banning, CA"
+Pan-tribal / national,org-tpl,allied_non_native_org (Tribal and Native Lands page unread),National
+Native Hawaiians (Kanaka Maoli) [HAWAII: distinct legal context],org-nhlc,legal_counsel,Hawaii
+Native Hawaiians (Kanaka Maoli) [HAWAII: distinct legal context],org-kua-hawaii,advocacy; community stewardship,Hawaii
+Native Hawaiians (Kanaka Maoli) [HAWAII: distinct legal context],org-hawaii-land-trust,allied_non_native_org (leadership unverified),Hawaii
+Native Hawaiians (Kanaka Maoli) [HAWAII: distinct legal context],org-dhhl,program_context (state agency),Hawaii
+Native Hawaiians (Kanaka Maoli) [HAWAII: distinct legal context],org-oha,program_context (state agency),Hawaii
+Inupiat (NANA) [ALASKA: ANCSA corporate context],org-nana,program_context (shareholder-owned regional corporation),Northwest Alaska
+Alaska Native peoples [ALASKA: ANCSA corporate context],NONE_VERIFIED,"no_verified_org (no Alaska Native land-return nonprofit vetted; Native Conservancy, Cordova AK, EIN 30-0131766, exists but unvetted)",Alaska

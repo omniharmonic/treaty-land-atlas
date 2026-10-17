@@ -1,0 +1,235 @@
+/* Design tokens for the Treaty Land Atlas (working name: What Was Promised)
+ * Author: Benjamin Life (@omniharmonic). Status: draft, 2026-10-16.
+ * Source of truth for these values: docs/design/I4-visual-identity.md. Mirror: tokens.json.
+ *
+ * Rules baked into the palette:
+ *  - Chrome is ink and paper. Hue is reserved for data meaning (the --data-* set).
+ *  - The --data-* hues come from the Okabe-Ito colorblind-safe set; no layer relies on hue alone
+ *    (every layer also has a pattern, outline or icon; see I4 section 4).
+ *  - Text and essential graphics meet WCAG 2.2 AA: 4.5:1 text, 3:1 non-text (checked in I4 section 3).
+ */
+
+:root {
+  color-scheme: light dark;
+  /* theme: light (default) */
+  --color-bg: #F4F6F8;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EAEFF4;
+  --color-surface-3: #DCE4EC;
+  --color-ink: #13222E;
+  --color-ink-2: #44566A;
+  --color-ink-3: #5B6B7C;
+  --color-rule: #D7DFE7;
+  --color-rule-strong: #74869A;
+  --color-focus: #13222E;
+  --color-focus-halo: #FFFFFF;
+  --color-scrim: rgba(13,24,34,0.48);
+  --color-on-ink: #FFFFFF;
+  --color-danger: #B04A00;
+  --data-reservation: #0072B2;
+  --data-reservation-line: #00598C;
+  --data-recognized: #CC79A7;
+  --data-recognized-line: #A24B7E;
+  --data-cession: #E69F00;
+  --data-cession-line: #8F6100;
+  --data-violation: #D55E00;
+  --data-violation-line: #B04A00;
+  --data-return: #009E73;
+  --data-return-line: #00785A;
+  --data-icc: #5F6F7F;
+  --data-icc-line: #4A5866;
+  --data-today-line: #13222E;
+  --data-today-casing: #FFFFFF;
+  --map-land: #ECEFF2;
+  --map-water: #CFDCE6;
+  --map-line: #B7C3CE;
+  --map-label: #5B6B7C;
+  --map-placeholder-hatch: #D3DBE3;
+  --shadow-sheet: 0 1px 0 rgba(19,34,46,0.06), 0 -8px 24px rgba(19,34,46,0.10);
+
+  /* type */
+  --font-serif: "Charis SIL", Charter, "Bitstream Charter", "Sitka Text", "Iowan Old Style", Georgia, "Noto Serif", serif;
+  --font-sans: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  --step-n2: 0.75rem;
+  --step-n1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5rem;
+  --step-3: 1.875rem;
+  --step-4: 2.375rem;
+  --step-5: 3rem;
+  --step-year: clamp(3.25rem, 14vw, 6.5rem);
+  --leading-tight: 1.12;
+  --leading-heading: 1.2;
+  --leading-ui: 1.4;
+  --leading-serif: 1.6;
+  --leading-sans-body: 1.5;
+  --measure-text: 62ch;
+  --measure-narrow: 44ch;
+  --tracking-display: -0.012em;
+  --tracking-ui: 0.005em;
+  --weight-regular: 400;
+  --weight-strong: 650;
+  --weight-bold: 700;
+
+  /* space, shape, size */
+  --space-0: 0;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --radius-none: 0;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-sheet: 16px;
+  --radius-pill: 999px;
+  --size-tap: 44px;
+  --size-tap-min: 24px;
+  --size-icon-sm: 16px;
+  --size-icon-md: 24px;
+  --size-icon-lg: 32px;
+  --size-marker: 28px;
+  --size-marker-hit: 44px;
+  --size-gutter: 16px;
+  --size-dock-h: 176px;
+  --size-rail-w: 280px;
+  --size-drawer-w: 384px;
+
+  /* motion */
+  --motion-fast: 90ms;
+  --motion-base: 180ms;
+  --motion-slow: 320ms;
+  --motion-year-fade: 400ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+  --motion-ease-settle: cubic-bezier(0.3, 0.7, 0.2, 1);
+  --motion-play-interval: 3000ms;
+
+  /* layering and breakpoints (breakpoints are documentation; CSS custom properties cannot be used in media queries) */
+  --z-map: 0;
+  --z-map-ui: 10;
+  --z-dock: 20;
+  --z-sheet: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+  --bp-sm: 600px;
+  --bp-md: 900px;
+  --bp-lg: 1200px;
+
+  /* map drawing parameters (read by JS; also used in the SVG prototype) */
+  --mapstyle-line-width-hairline: 0.75;
+  --mapstyle-line-width-default: 1.5;
+  --mapstyle-line-width-today: 2.25;
+  --mapstyle-line-casing-extra: 2;
+  --mapstyle-fill-opacity-default: 0.30;
+  --mapstyle-fill-opacity-selected: 0.50;
+  --mapstyle-fill-opacity-ghost: 0.10;
+  --mapstyle-dash-t3: 4 3;
+  --mapstyle-dash-ghost: 2 3;
+  --mapstyle-t2-buffer-px: 6;
+  --mapstyle-t2-buffer-opacity: 0.14;
+  --mapstyle-t3-blur-px: 10;
+  --mapstyle-t3-halo-opacity: 0.20;
+  --mapstyle-uncertainty-exaggerate-factor: 2.5;
+  --mapstyle-historical-max-zoom: 8;
+  --mapstyle-pattern-size: 8;
+}
+
+@media (prefers-color-scheme: dark) {
+:root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --color-bg: #0D1822;
+  --color-surface: #14232F;
+  --color-surface-2: #1B2D3B;
+  --color-surface-3: #243949;
+  --color-ink: #E6EDF3;
+  --color-ink-2: #A9B8C6;
+  --color-ink-3: #8DA0B2;
+  --color-rule: #27394A;
+  --color-rule-strong: #667C90;
+  --color-focus: #E6EDF3;
+  --color-focus-halo: #0D1822;
+  --color-scrim: rgba(0,0,0,0.6);
+  --color-on-ink: #0D1822;
+  --color-danger: #FF9A66;
+  --data-reservation: #4BA6E0;
+  --data-reservation-line: #4BA6E0;
+  --data-recognized: #F2A9CF;
+  --data-recognized-line: #F2A9CF;
+  --data-cession: #F8D24F;
+  --data-cession-line: #F8D24F;
+  --data-violation: #F0602F;
+  --data-violation-line: #FF9A66;
+  --data-return: #3FDB9D;
+  --data-return-line: #3FDB9D;
+  --data-icc: #8496A8;
+  --data-icc-line: #8496A8;
+  --data-today-line: #E6EDF3;
+  --data-today-casing: #0D1822;
+  --map-land: #1A2935;
+  --map-water: #0F1B25;
+  --map-line: #34485A;
+  --map-label: #8DA0B2;
+  --map-placeholder-hatch: #233545;
+  --shadow-sheet: 0 1px 0 rgba(0,0,0,0.4), 0 -8px 24px rgba(0,0,0,0.45);
+}
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #0D1822;
+  --color-surface: #14232F;
+  --color-surface-2: #1B2D3B;
+  --color-surface-3: #243949;
+  --color-ink: #E6EDF3;
+  --color-ink-2: #A9B8C6;
+  --color-ink-3: #8DA0B2;
+  --color-rule: #27394A;
+  --color-rule-strong: #667C90;
+  --color-focus: #E6EDF3;
+  --color-focus-halo: #0D1822;
+  --color-scrim: rgba(0,0,0,0.6);
+  --color-on-ink: #0D1822;
+  --color-danger: #FF9A66;
+  --data-reservation: #4BA6E0;
+  --data-reservation-line: #4BA6E0;
+  --data-recognized: #F2A9CF;
+  --data-recognized-line: #F2A9CF;
+  --data-cession: #F8D24F;
+  --data-cession-line: #F8D24F;
+  --data-violation: #F0602F;
+  --data-violation-line: #FF9A66;
+  --data-return: #3FDB9D;
+  --data-return-line: #3FDB9D;
+  --data-icc: #8496A8;
+  --data-icc-line: #8496A8;
+  --data-today-line: #E6EDF3;
+  --data-today-casing: #0D1822;
+  --map-land: #1A2935;
+  --map-water: #0F1B25;
+  --map-line: #34485A;
+  --map-label: #8DA0B2;
+  --map-placeholder-hatch: #233545;
+  --shadow-sheet: 0 1px 0 rgba(0,0,0,0.4), 0 -8px 24px rgba(0,0,0,0.45);
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+
+/* Reduced motion: collapse all motion tokens. Components must not rely on motion to convey state. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0.01ms;
+    --motion-base: 0.01ms;
+    --motion-slow: 0.01ms;
+    --motion-year-fade: 0.01ms;
+  }
+}
+
+/* Windows high-contrast / forced colors: let the system palette win; keep patterns and outlines (they carry meaning). */
+@media (forced-colors: active) {
+  :root { --color-focus: Highlight; --color-focus-halo: Canvas; }
+}

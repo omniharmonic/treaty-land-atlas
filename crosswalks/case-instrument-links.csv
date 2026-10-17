@@ -1,0 +1,76 @@
+case_id,instrument_id,role,basis
+case-cherokee-nation-v-georgia-1831,TLA-T-011,primary,treaty_at_issue names Hopewell (1785)
+case-worcester-v-georgia-1832,TLA-T-011,primary,treaty_at_issue names Hopewell (1785)
+case-worcester-v-georgia-1832,TLA-T-018,primary,treaty_at_issue names Holston (1791)
+case-cherokee-tobacco-1871,TLA-T-358,primary,treaty_at_issue "Treaty of 1866 (tax exemption)"; Cherokee 1866
+case-standing-bear-v-crook-1879,TLA-T-369,context,treaty_at_issue says 1868 Fort Laramie mistakenly assigned Ponca land; Ponca treaties not in seed
+case-ex-parte-crow-dog-1883,TLA-T-369,primary,treaty_at_issue names Fort Laramie 1868
+case-ex-parte-crow-dog-1883,TLA-A-1877,primary,treaty_at_issue names 1877 Agreement
+case-choctaw-nation-v-us-1886,TLA-T-160,primary,treaty_at_issue names Dancing Rabbit Creek (1830)
+case-ward-v-race-horse-1896,TLA-T-373,primary,treaty_at_issue names Fort Bridger 1868 (Bannock)
+case-lone-wolf-v-hitchcock-1903,TLA-T-365,primary,"treaty_at_issue ""Medicine Lodge Treaty of 1867""; two 1867 Medicine Lodge instruments involve the Kiowa and Comanche (RIT 364 and 365) - reviewer must choose"
+case-lone-wolf-v-hitchcock-1903,TLA-T-364,primary,same ambiguity as above
+case-us-v-winans-1905,TLA-T-290,primary,treaty_at_issue names Yakama 1855 (12 Stat. 951)
+case-shoshone-tribe-v-us-1937,TLA-T-373,primary,treaty_at_issue names Fort Bridger 1868 (Shoshone); RIT 373 covers Eastern Shoshone and Bannock
+case-seminole-nation-v-us-1942,TLA-T-352,primary,treaty_at_issue names Seminole 1866
+case-tulee-v-washington-1942,TLA-T-290,primary,treaty_at_issue names Yakama 1855
+case-northwestern-bands-v-us-1945,TLA-T-325,primary,treaty_at_issue names Box Elder (1863)
+case-seneca-nation-kinzua-1958,TLA-T-021,primary,treaty_at_issue names Canandaigua (1794)
+case-williams-v-lee-1959,TLA-T-372,primary,treaty_at_issue names Navajo Treaty of 1868
+case-puyallup-tribe-v-dept-of-game-1968,TLA-T-281,primary,treaty_at_issue names Medicine Creek (1854)
+case-sohappy-v-smith-1969,TLA-T-289,secondary,"treaty_at_issue ""1855 treaties of the Columbia Plateau tribes"" (Umatilla/Walla Walla/Cayuse); proposed set"
+case-sohappy-v-smith-1969,TLA-T-290,secondary,same proposed set (Yakama)
+case-sohappy-v-smith-1969,TLA-T-293,secondary,same proposed set (Warm Springs)
+case-sohappy-v-smith-1969,TLA-T-291,secondary,same proposed set (Nez Perce)
+case-mcclanahan-v-arizona-tax-1973,TLA-T-372,primary,treaty_at_issue names Navajo Treaty of 1868
+case-oneida-i-1974,TLA-T-009,primary,treaty_at_issue names Fort Stanwix (1784)
+case-oneida-i-1974,TLA-T-021,primary,treaty_at_issue names Canandaigua (1794)
+case-us-v-washington-boldt-1974,TLA-T-281,primary,treaty_at_issue names Medicine Creek
+case-us-v-washington-boldt-1974,TLA-T-283,primary,treaty_at_issue names Point Elliott
+case-us-v-washington-boldt-1974,TLA-T-284,primary,treaty_at_issue names Point No Point
+case-us-v-washington-boldt-1974,TLA-T-286,primary,treaty_at_issue names Neah Bay
+case-us-v-washington-boldt-1974,TLA-T-294,primary,treaty_at_issue names Olympia (Quinault)
+case-rosebud-sioux-v-kneip-1977,TLA-T-369,primary,treaty_at_issue names Fort Laramie 1868
+case-oliphant-v-suquamish-1978,TLA-T-283,primary,treaty_at_issue names Point Elliott (1855)
+case-us-v-wheeler-1978,TLA-T-372,primary,treaty_at_issue names Navajo Treaty of 1868
+case-wa-fishing-vessel-1979,TLA-T-281,primary,treaty_at_issue names Stevens treaties of 1854-1855
+case-wa-fishing-vessel-1979,TLA-T-283,primary,Stevens treaties
+case-wa-fishing-vessel-1979,TLA-T-284,primary,Stevens treaties
+case-wa-fishing-vessel-1979,TLA-T-286,primary,Stevens treaties
+case-wa-fishing-vessel-1979,TLA-T-294,primary,Stevens treaties
+case-us-v-sioux-nation-1980,TLA-T-369,primary,treaty_at_issue names Fort Laramie 1868 (15 Stat. 635)
+case-us-v-sioux-nation-1980,TLA-A-1877,primary,treaty_at_issue names Act of Feb. 28 1877
+case-montana-v-us-1981,TLA-T-FL1851,primary,treaty_at_issue names Fort Laramie 1851
+case-montana-v-us-1981,TLA-T-370,primary,"treaty_at_issue names Fort Laramie 1868; nation is Crow so RIT 370 (Crow) not 369 (Sioux/Arapaho); proposed"
+case-or-dept-fish-wildlife-v-klamath-1985,TLA-T-332,primary,treaty_at_issue names Treaty of 1864 with the Klamath and Modoc
+case-us-v-dann-1985,TLA-T-326,primary,treaty_at_issue names Ruby Valley (1863)
+case-brendale-v-yakima-1989,TLA-T-290,primary,treaty_at_issue names Yakama 1855
+case-south-dakota-v-yankton-sioux-1998,TLA-T-307,primary,treaty_at_issue names Yankton 1858 treaty
+case-minnesota-v-mille-lacs-1999,TLA-T-223,primary,treaty_at_issue cites 7 Stat. 536 (1837)
+case-cayuga-nation-v-pataki-2005,TLA-T-021,primary,treaty_at_issue names Canandaigua (1794)
+case-city-of-sherrill-v-oneida-2005,TLA-T-009,primary,treaty_at_issue names Fort Stanwix (1784)
+case-city-of-sherrill-v-oneida-2005,TLA-T-021,primary,treaty_at_issue names Canandaigua (1794)
+case-michigan-v-bay-mills-2014,TLA-T-201,primary,treaty_at_issue "Treaty of 1836"; Ottawa and Chippewa Washington 1836 (RIT 201); proposed
+case-murphy-v-royal-2017,TLA-T-167,primary,treaty_at_issue names Creek treaty of 1832
+case-murphy-v-royal-2017,TLA-T-356,primary,treaty_at_issue names Creek treaty of 1866
+case-washington-v-us-culverts-2018,TLA-T-281,primary,treaty_at_issue Stevens treaties
+case-washington-v-us-culverts-2018,TLA-T-283,primary,Stevens treaties
+case-washington-v-us-culverts-2018,TLA-T-284,primary,Stevens treaties
+case-washington-v-us-culverts-2018,TLA-T-286,primary,Stevens treaties
+case-washington-v-us-culverts-2018,TLA-T-294,primary,Stevens treaties
+case-herrera-v-wyoming-2019,TLA-T-370,primary,treaty_at_issue "Fort Laramie Treaty of 1868 (Crow)"
+case-wa-dept-licensing-v-cougar-den-2019,TLA-T-290,primary,treaty_at_issue names Yakama 1855
+case-mcgirt-v-oklahoma-2020,TLA-T-167,primary,treaty_at_issue names Creek treaty of 1832
+case-mcgirt-v-oklahoma-2020,TLA-T-356,primary,treaty_at_issue names Creek treaty of 1866
+case-sharp-v-murphy-2020,TLA-T-167,secondary,"treaty_at_issue ""Creek treaties""; same Creek treaties as McGirt; proposed"
+case-sharp-v-murphy-2020,TLA-T-356,secondary,same
+case-arizona-v-navajo-nation-2023,TLA-T-372,primary,treaty_at_issue names Navajo Treaty of 1868
+case-apache-stronghold-v-us-2024,TLA-T-261,primary,treaty_at_issue names Treaty of Santa Fe (1852)
+case-lopez-v-us-oak-flat-2026,TLA-T-261,primary,treaty_at_issue names Treaty of Santa Fe (1852)
+case-jones-v-meehan-1899,TLA-T-327,primary,"treaty_at_issue ""Treaty of 1863 (Old Crossing)"": NARA RIT 327, Chippewa (Red Lake and Pembina) at Old Crossing, 1863-10-02."
+case-menominee-tribe-v-us-1968,TLA-T-269,primary,"treaty_at_issue ""Treaty of Wolf River (1854)"": NARA RIT 269."
+case-decoteau-v-district-county-court-1975,TLA-T-360,primary,"treaty_at_issue ""Treaty of 1867"": NARA RIT 360, Sisseton and Wahpeton at Washington, 1867-02-19. The 1889-1891 agreement and act are not in the instrument seeds."
+case-nebraska-v-parker-2016,TLA-T-266,primary,"treaty_at_issue ""Omaha Treaty of 1854"": NARA RIT 266, Omaha at Washington, 1854-03-16. The Act of 1882 is not in the instrument seeds."
+case-mille-lacs-band-v-madore-2025,TLA-T-287,primary,"treaty_at_issue ""Treaties of 1855, 1863 and 1864"": NARA RIT 287 (Chippewa, Mississippi, 1855-02-22). Matched by date and the first words of the NARA title only."
+case-mille-lacs-band-v-madore-2025,TLA-T-322,secondary,"Same case, 1863: NARA RIT 322 (Chippewa, Mississippi, 1863-03-11). Matched by date and the first words of the NARA title only."
+case-mille-lacs-band-v-madore-2025,TLA-T-331,secondary,"Same case, 1864: NARA RIT 331 (Chippewa, Mississippi, 1864-05-07). Matched by date and the first words of the NARA title only."

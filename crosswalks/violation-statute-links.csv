@@ -1,0 +1,21 @@
+violation_id,statute_id,edge_type,role,basis
+V006,stat-indian-removal-act-1830,enabled_by,authorizing_act,B1 4.2 FORCED_REMOVAL definition ties removal to the Indian Removal Act
+V008,stat-indian-removal-act-1830,enabled_by,authorizing_act,B1 4.2 FORCED_REMOVAL definition
+V009,stat-indian-removal-act-1830,enabled_by,authorizing_act,B1 4.2 FORCED_REMOVAL definition
+V044,stat-curtis-act-1898,enabled_by,effecting_act,B1 4.1 lists V044 (Curtis Act) under UNILATERAL_ABROGATION_STATUTE
+V043,stat-curtis-act-1898,enabled_by,effecting_act,treaty_name cites Curtis Act sec. 19
+V045,stat-general-allotment-dawes-act-1887,enabled_by,effecting_act,V045 is the Dawes Act entry (treaty_year 1887 (statute))
+V016,stat-menominee-termination-act-1954,enabled_by,effecting_act,B1 4.1 lists V016 under TERMINATION; statute id in statutes-seed
+V056,stat-klamath-termination-act-1954,enabled_by,effecting_act,B1 4.1 lists V056 under TERMINATION; statute id in statutes-seed
+V046,stat-house-concurrent-resolution-108-1953,enabled_by,policy_resolution,B1 4.1 TERMINATION cites HCR 108
+V046,stat-public-law-280-1953,enabled_by,effecting_act,B1 4.1 JURISDICTIONAL_EROSION cites Public Law 280
+V060,stat-alaska-native-claims-settlement-act-1971,enabled_by,effecting_act,V060 treaty_year 1971; ANCSA sec. 4 per B1
+V058,stat-maine-indian-claims-settlement-act-1980,enabled_by,settlement_act,B1 4.1 lists V058 among settlement acts
+V057,stat-catawba-settlement-act-1993,enabled_by,settlement_act,B1 4.1 lists V057 among settlement acts
+V028,stat-flood-control-act-1944-pick-sloan,enabled_by,effecting_act,B1 4.3 EMINENT_DOMAIN_INFRASTRUCTURE cites Flood Control Act of 1944
+V029,stat-flood-control-act-1944-pick-sloan,enabled_by,effecting_act,B1 4.3 EMINENT_DOMAIN_INFRASTRUCTURE cites Flood Control Act of 1944
+V018,stat-trade-intercourse-acts-1790-1802,enabled_by,statutory_basis_of_claim,treaty_name names Nonintercourse Act (1790/1793/1834)
+V018,stat-trade-intercourse-act-1834,enabled_by,statutory_basis_of_claim,treaty_name names Nonintercourse Act (1790/1793/1834)
+V062,stat-bears-ears-proclamation-2016,enabled_by,context,V062 is the Bears Ears entry (CONTEXT code)
+V062,stat-bears-ears-proclamation-2017-2021,enabled_by,context,V062 is the Bears Ears entry (CONTEXT code)
+V062,stat-bears-ears-grand-staircase-proclamations-2026,enabled_by,context,V062 is the Bears Ears entry (CONTEXT code)

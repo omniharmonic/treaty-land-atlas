@@ -1,0 +1,6 @@
+source_table,source_id,action,nation_id,reason
+violation,V011,remove,nat-menominee,"V011 text says ""Potawatomi (Menominee band, Twin Lakes)"": Menominee here is a Potawatomi band name, not the Menominee Nation."
+violation,V024,remove,nat-blackfeet,"Here ""Blackfeet"" is the Sihasapa division of the Lakota, not the Blackfeet (Pikuni) Nation of Montana. Text-match false positive."
+instrument,TLA-T-345,remove,nat-blackfeet,"""Sioux (Blackfeet)"" at Fort Sully: Blackfeet is a Lakota division name, not the Blackfeet (Pikuni) Nation of Montana."
+case,case-cobell-v-salazar-2009,remove,nat-blackfeet,"Blackfeet is the lead plaintiff's affiliation; the case concerns a class of individual trust beneficiaries, not the Blackfeet Nation as a party."
+instrument,TLA-T-369,remove,nat-blackfeet,"""Blackfeet"" in the NARA band list for the 1868 Fort Laramie treaty is the Sihasapa (Blackfoot) division of the Lakota, not the Blackfeet (Pikuni) Nation of Montana. Text-match false positive created when TLA-T-369 nations was changed to the full NARA band list (V2 correction, 2026-10-16)."

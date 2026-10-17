@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What Was Promised: wireframe prototype</title>
+<meta name="description" content="Clickable wireframe of the main screen: placeholder map, time slider, layers, detail drawer and support panel. All data is illustrative.">
+<meta name="color-scheme" content="light dark">
+<style>
+/* BEGIN tokens.css (inlined from docs/design/tokens.css) */
+/* Design tokens for the Treaty Land Atlas (working name: What Was Promised)
+ * Author: Benjamin Life (@omniharmonic). Status: draft, 2026-10-16.
+ * Source of truth for these values: docs/design/I4-visual-identity.md. Mirror: tokens.json.
+ *
+ * Rules baked into the palette:
+ *  - Chrome is ink and paper. Hue is reserved for data meaning (the --data-* set).
+ *  - The --data-* hues come from the Okabe-Ito colorblind-safe set; no layer relies on hue alone
+ *    (every layer also has a pattern, outline or icon; see I4 section 4).
+ *  - Text and essential graphics meet WCAG 2.2 AA: 4.5:1 text, 3:1 non-text (checked in I4 section 3).
+ */
+
+:root {
+  color-scheme: light dark;
+  /* theme: light (default) */
+  --color-bg: #F4F6F8;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EAEFF4;
+  --color-surface-3: #DCE4EC;
+  --color-ink: #13222E;
+  --color-ink-2: #44566A;
+  --color-ink-3: #5B6B7C;
+  --color-rule: #D7DFE7;
+  --color-rule-strong: #74869A;
+  --color-focus: #13222E;
+  --color-focus-halo: #FFFFFF;
+  --color-scrim: rgba(13,24,34,0.48);
+  --color-on-ink: #FFFFFF;
+  --color-danger: #B04A00;
+  --data-reservation: #0072B2;
+  --data-reservation-line: #00598C;
+  --data-recognized: #CC79A7;
+  --data-recognized-line: #A24B7E;
+  --data-cession: #E69F00;
+  --data-cession-line: #8F6100;
+  --data-violation: #D55E00;
+  --data-violation-line: #B04A00;
+  --data-return: #009E73;
+  --data-return-line: #00785A;
+  --data-icc: #5F6F7F;
+  --data-icc-line: #4A5866;
+  --data-today-line: #13222E;
+  --data-today-casing: #FFFFFF;
+  --map-land: #ECEFF2;
+  --map-water: #CFDCE6;
+  --map-line: #B7C3CE;
+  --map-label: #5B6B7C;
+  --map-placeholder-hatch: #D3DBE3;
+  --shadow-sheet: 0 1px 0 rgba(19,34,46,0.06), 0 -8px 24px rgba(19,34,46,0.10);
+
+  /* type */
+  --font-serif: "Charis SIL", Charter, "Bitstream Charter", "Sitka Text", "Iowan Old Style", Georgia, "Noto Serif", serif;
+  --font-sans: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  --step-n2: 0.75rem;
+  --step-n1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5rem;
+  --step-3: 1.875rem;
+  --step-4: 2.375rem;
+  --step-5: 3rem;
+  --step-year: clamp(3.25rem, 14vw, 6.5rem);
+  --leading-tight: 1.12;
+  --leading-heading: 1.2;
+  --leading-ui: 1.4;
+  --leading-serif: 1.6;
+  --leading-sans-body: 1.5;
+  --measure-text: 62ch;
+  --measure-narrow: 44ch;
+  --tracking-display: -0.012em;
+  --tracking-ui: 0.005em;
+  --weight-regular: 400;
+  --weight-strong: 650;
+  --weight-bold: 700;
+
+  /* space, shape, size */
+  --space-0: 0;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --radius-none: 0;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-sheet: 16px;
+  --radius-pill: 999px;
+  --size-tap: 44px;
+  --size-tap-min: 24px;
+  --size-icon-sm: 16px;
+  --size-icon-md: 24px;
+  --size-icon-lg: 32px;
+  --size-marker: 28px;
+  --size-marker-hit: 44px;
+  --size-gutter: 16px;
+  --size-dock-h: 176px;
+  --size-rail-w: 280px;
+  --size-drawer-w: 384px;
+
+  /* motion */
+  --motion-fast: 90ms;
+  --motion-base: 180ms;
+  --motion-slow: 320ms;
+  --motion-year-fade: 400ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+  --motion-ease-settle: cubic-bezier(0.3, 0.7, 0.2, 1);
+  --motion-play-interval: 3000ms;
+
+  /* layering and breakpoints (breakpoints are documentation; CSS custom properties cannot be used in media queries) */
+  --z-map: 0;
+  --z-map-ui: 10;
+  --z-dock: 20;
+  --z-sheet: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+  --bp-sm: 600px;
+  --bp-md: 900px;
+  --bp-lg: 1200px;
+
+  /* map drawing parameters (read by JS; also used in the SVG prototype) */
+  --mapstyle-line-width-hairline: 0.75;
+  --mapstyle-line-width-default: 1.5;
+  --mapstyle-line-width-today: 2.25;
+  --mapstyle-line-casing-extra: 2;
+  --mapstyle-fill-opacity-default: 0.30;
+  --mapstyle-fill-opacity-selected: 0.50;
+  --mapstyle-fill-opacity-ghost: 0.10;
+  --mapstyle-dash-t3: 4 3;
+  --mapstyle-dash-ghost: 2 3;
+  --mapstyle-t2-buffer-px: 6;
+  --mapstyle-t2-buffer-opacity: 0.14;
+  --mapstyle-t3-blur-px: 10;
+  --mapstyle-t3-halo-opacity: 0.20;
+  --mapstyle-uncertainty-exaggerate-factor: 2.5;
+  --mapstyle-historical-max-zoom: 8;
+  --mapstyle-pattern-size: 8;
+}
+
+@media (prefers-color-scheme: dark) {
+:root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --color-bg: #0D1822;
+  --color-surface: #14232F;
+  --color-surface-2: #1B2D3B;
+  --color-surface-3: #243949;
+  --color-ink: #E6EDF3;
+  --color-ink-2: #A9B8C6;
+  --color-ink-3: #8DA0B2;
+  --color-rule: #27394A;
+  --color-rule-strong: #667C90;
+  --color-focus: #E6EDF3;
+  --color-focus-halo: #0D1822;
+  --color-scrim: rgba(0,0,0,0.6);
+  --color-on-ink: #0D1822;
+  --color-danger: #FF9A66;
+  --data-reservation: #4BA6E0;
+  --data-reservation-line: #4BA6E0;
+  --data-recognized: #F2A9CF;
+  --data-recognized-line: #F2A9CF;
+  --data-cession: #F8D24F;
+  --data-cession-line: #F8D24F;
+  --data-violation: #F0602F;
+  --data-violation-line: #FF9A66;
+  --data-return: #3FDB9D;
+  --data-return-line: #3FDB9D;
+  --data-icc: #8496A8;
+  --data-icc-line: #8496A8;
+  --data-today-line: #E6EDF3;
+  --data-today-casing: #0D1822;
+  --map-land: #1A2935;
+  --map-water: #0F1B25;
+  --map-line: #34485A;
+  --map-label: #8DA0B2;
+  --map-placeholder-hatch: #233545;
+  --shadow-sheet: 0 1px 0 rgba(0,0,0,0.4), 0 -8px 24px rgba(0,0,0,0.45);
+}
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #0D1822;
+  --color-surface: #14232F;
+  --color-surface-2: #1B2D3B;
+  --color-surface-3: #243949;
+  --color-ink: #E6EDF3;
+  --color-ink-2: #A9B8C6;
+  --color-ink-3: #8DA0B2;
+  --color-rule: #27394A;
+  --color-rule-strong: #667C90;
+  --color-focus: #E6EDF3;
+  --color-focus-halo: #0D1822;
+  --color-scrim: rgba(0,0,0,0.6);
+  --color-on-ink: #0D1822;
+  --color-danger: #FF9A66;
+  --data-reservation: #4BA6E0;
+  --data-reservation-line: #4BA6E0;
+  --data-recognized: #F2A9CF;
+  --data-recognized-line: #F2A9CF;
+  --data-cession: #F8D24F;
+  --data-cession-line: #F8D24F;
+  --data-violation: #F0602F;
+  --data-violation-line: #FF9A66;
+  --data-return: #3FDB9D;
+  --data-return-line: #3FDB9D;
+  --data-icc: #8496A8;
+  --data-icc-line: #8496A8;
+  --data-today-line: #E6EDF3;
+  --data-today-casing: #0D1822;
+  --map-land: #1A2935;
+  --map-water: #0F1B25;
+  --map-line: #34485A;
+  --map-label: #8DA0B2;
+  --map-placeholder-hatch: #233545;
+  --shadow-sheet: 0 1px 0 rgba(0,0,0,0.4), 0 -8px 24px rgba(0,0,0,0.45);
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+
+/* Reduced motion: collapse all motion tokens. Components must not rely on motion to convey state. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0.01ms;
+    --motion-base: 0.01ms;
+    --motion-slow: 0.01ms;
+    --motion-year-fade: 0.01ms;
+  }
+}
+
+/* Windows high-contrast / forced colors: let the system palette win; keep patterns and outlines (they carry meaning). */
+@media (forced-colors: active) {
+  :root { --color-focus: Highlight; --color-focus-halo: Canvas; }
+}
+
+/* END tokens.css */
+
+/* ------------------------------------------------------------------ base */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; background: var(--color-bg); color: var(--color-ink);
+  font: var(--step-n1)/var(--leading-ui) var(--font-sans);
+  letter-spacing: var(--tracking-ui);
+  -webkit-text-size-adjust: 100%; overscroll-behavior: none;
+}
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-underline-offset: 0.18em; }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; box-shadow: 0 0 0 2px var(--color-focus-halo); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.icon { width: 1.5em; height: 1.5em; flex: none; }
+.serif { font-family: var(--font-serif); }
+.muted { color: var(--color-ink-2); }
+[hidden] { display: none !important; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3);
+  min-height: var(--size-tap); padding: 0 var(--space-5);
+  background: var(--color-surface); border: 1px solid var(--color-rule-strong); border-radius: var(--radius-md);
+  font-weight: var(--weight-strong); text-decoration: none; line-height: 1.2;
+}
+.btn:hover { background: var(--color-surface-2); }
+.btn.primary { background: var(--color-ink); color: var(--color-on-ink); border-color: var(--color-ink); }
+.btn.primary:hover { background: var(--color-ink-2); }
+.btn[aria-disabled="true"] { cursor: not-allowed; }
+.btn.quiet { border-color: transparent; background: transparent; }
+.btn.icon-only { width: var(--size-tap); padding: 0; }
+.chip {
+  display: inline-flex; align-items: center; gap: var(--space-2); min-height: 28px; padding: 0 var(--space-4);
+  border: 1px solid var(--color-rule-strong); border-radius: var(--radius-pill); background: var(--color-surface);
+  font-size: var(--step-n2); font-weight: var(--weight-strong); white-space: nowrap;
+}
+.chip svg { width: 16px; height: 16px; }
+
+/* ------------------------------------------------------------------ app grid */
+.app { display: grid; height: 100dvh; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; grid-template-areas: "top" "stage" "dock"; overflow: hidden; }
+.top, .stage, .dock { min-width: 0; }
+.top { grid-area: top; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--size-gutter);
+  padding-top: max(var(--space-3), env(safe-area-inset-top)); border-bottom: 1px solid var(--color-rule); background: var(--color-surface); z-index: var(--z-dock); }
+.wordmark { margin: 0; font: 700 var(--step-1)/1.1 var(--font-serif); letter-spacing: var(--tracking-display); flex: 1; min-width: 0; }
+.wordmark small { display: block; font: 400 var(--step-n2)/1.3 var(--font-sans); color: var(--color-ink-3); letter-spacing: 0; }
+.stage { grid-area: stage; position: relative; min-height: 0; overflow: hidden; background: var(--map-water); }
+.dock { grid-area: dock; background: var(--color-surface); border-top: 1px solid var(--color-rule-strong); z-index: var(--z-dock); position: relative;
+  padding: var(--space-4) var(--size-gutter) max(var(--space-4), env(safe-area-inset-bottom)); }
+
+/* ------------------------------------------------------------------ map */
+#map { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; user-select: none; }
+#map.dragging { cursor: grabbing; }
+.land { fill: var(--map-land); stroke: var(--map-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.wm { fill: var(--map-label); font: 600 20px var(--font-sans); opacity: 0.55; }
+.wm-small { fill: var(--map-label); font: 400 12px var(--font-sans); }
+.feat { cursor: pointer; }
+.feat path { vector-effect: non-scaling-stroke; }
+.feat .shape { fill: none; }
+.feat:focus-visible { outline: none; box-shadow: none; }
+.feat:focus-visible .ring { stroke: var(--color-focus); stroke-width: 4px; opacity: 1; }
+.ring { fill: none; stroke: transparent; stroke-width: 0; opacity: 0; vector-effect: non-scaling-stroke; }
+.enter { animation: fadein var(--motion-year-fade) var(--motion-ease) both; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+.k-reservation .shape { fill: var(--data-reservation); fill-opacity: var(--mapstyle-fill-opacity-default); stroke: var(--data-reservation-line); stroke-width: var(--mapstyle-line-width-default); }
+.k-recognized .wash { fill: var(--data-recognized); fill-opacity: 0.14; }
+.k-recognized .shape { stroke: var(--data-recognized-line); stroke-width: var(--mapstyle-line-width-default); }
+.k-cession .shape { stroke: var(--data-cession-line); stroke-width: var(--mapstyle-line-width-default); }
+.k-cession .wash { fill: var(--data-cession); fill-opacity: 0.30; }
+.k-icc .shape { stroke: var(--data-icc-line); stroke-width: 1.25; stroke-dasharray: 1 3; stroke-linecap: round; }
+.k-return .wash { fill: var(--data-return); fill-opacity: 0.28; }
+.k-return .shape { stroke: var(--data-return-line); stroke-width: 2; }
+.k-today .shape { fill: none; stroke: var(--data-today-line); stroke-width: var(--mapstyle-line-width-today); }
+.k-today .casing { fill: none; stroke: var(--data-today-casing); stroke-width: calc(var(--mapstyle-line-width-today) + var(--mapstyle-line-casing-extra)); }
+.t3 { stroke-dasharray: 5 3.5; }
+.halo { fill: none; stroke-linejoin: round; pointer-events: none; }
+.k-recognized .halo { stroke: var(--data-recognized); } .k-cession .halo { stroke: var(--data-cession); }
+.k-reservation .halo { stroke: var(--data-reservation); }
+.feat.ghost .shape, .feat.ghost .wash { fill-opacity: var(--mapstyle-fill-opacity-ghost); stroke-dasharray: 2 3; opacity: 0.8; }
+.feat.sel .shape { stroke-width: 3.5px; }
+.feat.sel .wash { fill-opacity: var(--mapstyle-fill-opacity-selected); }
+.unc-more .halo { stroke-width: 22px !important; }
+.mk-bg { fill: var(--color-surface); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.mk .icon-g { color: var(--c); }
+.mk-bg { stroke: var(--c); }
+.mk.ghost { opacity: 0.55; }
+.mk.ghost .mk-bg { stroke-dasharray: 2 2; }
+.mk { transform: translate(var(--x), var(--y)) scale(var(--inv)); }
+.mk.sel .mk-bg { stroke-width: 4px; }
+.mk-hit { fill: transparent; }
+.map-label { fill: var(--color-ink); font-weight: 600; font-family: var(--font-sans); paint-order: stroke; stroke: var(--map-land); pointer-events: none; }
+
+.mapui { position: absolute; z-index: var(--z-map-ui); display: flex; gap: var(--space-3); }
+.mapui.tl { left: var(--space-4); right: var(--space-4); top: var(--space-4); flex-direction: column; align-items: flex-start; pointer-events: none; }
+.mapui.tl > * { pointer-events: auto; }
+.mapui.tl .seg { width: 100%; }
+.mapui.tl .seg button { flex: 1; padding: 0 var(--space-3); }
+.mapui.tr { right: var(--space-4); top: 76px; flex-direction: column; align-items: flex-end; }
+.mapui.bl { left: var(--space-4); bottom: var(--space-4); right: 72px; }
+.seg { display: inline-flex; border: 1px solid var(--color-rule-strong); border-radius: var(--radius-md); background: var(--color-surface); overflow: hidden; }
+.seg button { border: 0; background: transparent; min-height: 40px; padding: 0 var(--space-5); font-weight: var(--weight-strong); }
+.seg button[aria-pressed="true"] { background: var(--color-ink); color: var(--color-on-ink); }
+.hold-note { margin: 0; max-width: min(30ch, calc(100% - 88px)); padding: var(--space-3) var(--space-4); background: var(--color-surface); border: 1px solid var(--color-rule-strong); border-radius: var(--radius-md); font-size: var(--step-n2); line-height: 1.35; }
+.disclaim { text-align: left; background: color-mix(in srgb, var(--color-surface) 92%, transparent); border: 1px solid var(--color-rule-strong); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4);
+  font-size: var(--step-n2); line-height: 1.35; max-width: 44ch; }
+.disclaim button { background: none; border: 0; padding: 0; text-decoration: underline; font-weight: var(--weight-strong); min-height: 24px; }
+.zoom { display: flex; flex-direction: column; border: 1px solid var(--color-rule-strong); border-radius: var(--radius-md); overflow: hidden; background: var(--color-surface); }
+.zoom button { width: var(--size-tap); height: var(--size-tap); border: 0; background: transparent; font-size: 22px; line-height: 1; }
+.zoom button + button { border-top: 1px solid var(--color-rule); }
+.today-chip { position: absolute; z-index: var(--z-map-ui); left: 50%; transform: translateX(-50%); bottom: 64px; }
+
+#tableview { position: absolute; inset: 0; overflow: auto; background: var(--color-bg); padding: var(--space-5); }
+#tableview table { border-collapse: collapse; width: 100%; font-size: var(--step-n1); }
+#tableview caption { text-align: left; font: 700 var(--step-1)/1.2 var(--font-serif); padding-bottom: var(--space-3); }
+#tableview th, #tableview td { text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-rule); vertical-align: top; }
+#tableview th { font-weight: var(--weight-strong); background: var(--color-surface-2); position: sticky; top: 0; }
+#tableview td button { background: none; border: 0; padding: 0; text-align: left; text-decoration: underline; font-weight: var(--weight-strong); min-height: 24px; }
+
+/* ------------------------------------------------------------------ dock */
+.legalbar { display: flex; width: 100%; align-items: center; gap: var(--space-4); text-align: left; min-height: var(--size-tap);
+  margin-bottom: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--color-surface-2); border: 1px solid var(--color-rule-strong); border-radius: var(--radius-md); font-size: var(--step-n1); }
+.legalbar b { font-weight: var(--weight-bold); }
+.legalbar .go { margin-left: auto; font-weight: var(--weight-strong); text-decoration: underline; white-space: nowrap; }
+.yearrow { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "year meta play" "cap cap cap"; column-gap: var(--space-5); align-items: end; }
+.year { grid-area: year; font: 700 clamp(3rem, 15vw, 4.5rem)/0.9 var(--font-serif); letter-spacing: -0.025em; font-variant-numeric: lining-nums tabular-nums; margin: 0; }
+.yearmeta { grid-area: meta; min-width: 0; padding-bottom: 4px; }
+.yearmeta .lab { font-size: var(--step-n2); color: var(--color-ink-2); }
+.yearmeta .chap { font-weight: var(--weight-bold); font-size: var(--step-n1); }
+.playbtn { grid-area: play; }
+.capwrap { grid-area: cap; min-width: 0; margin-top: var(--space-3); }
+.cap { margin: 0; font: var(--step-n1)/1.45 var(--font-serif); max-width: 72ch; }
+.cap.clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.linkbtn { background: none; border: 0; padding: 0; min-height: 28px; text-decoration: underline; font-weight: var(--weight-strong); font-size: var(--step-n2); }
+.dockfoot { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.hatchnote { display: none; font-size: var(--step-n2); color: var(--color-ink-2); text-align: right; }
+.sliderwrap { position: relative; margin: var(--space-3) 0 0; }
+.after1894 { position: absolute; top: 50%; height: 10px; transform: translateY(-50%); pointer-events: none; border-radius: 0 5px 5px 0;
+  background: repeating-linear-gradient(135deg, var(--color-rule-strong) 0 2px, transparent 2px 6px); opacity: 0.8; }
+input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: var(--size-tap); background: transparent; margin: 0; position: relative; touch-action: pan-y; }
+input[type=range]::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: var(--color-surface-3); border: 1px solid var(--color-rule-strong); }
+input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; background: var(--color-surface-3); border: 1px solid var(--color-rule-strong); }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; margin-top: -12px; border-radius: 50%; background: var(--color-ink); border: 3px solid var(--color-surface); box-shadow: 0 0 0 1px var(--color-ink); }
+input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--color-ink); border: 3px solid var(--color-surface); box-shadow: 0 0 0 1px var(--color-ink); }
+.stops { display: flex; gap: var(--space-3); overflow-x: auto; padding: var(--space-2) 0 var(--space-2); scrollbar-width: thin; scroll-snap-type: x proximity; }
+.stops button { flex: none; min-height: 40px; min-width: 56px; padding: 0 var(--space-4); border: 1px solid var(--color-rule-strong); background: var(--color-surface); border-radius: var(--radius-md);
+  font: 600 var(--step-n1) var(--font-serif); font-variant-numeric: lining-nums tabular-nums; scroll-snap-align: center; }
+.stops button[aria-pressed="true"] { background: var(--color-ink); color: var(--color-on-ink); border-color: var(--color-ink); }
+.stops button.today { border-width: 2px; border-color: var(--color-ink); }
+.evtoggle { display: flex; align-items: center; gap: var(--space-4); min-height: 36px; background: none; border: 0; padding: 0; text-align: left; font-size: var(--step-n2); color: var(--color-ink-2); }
+.tracks { display: none; margin-top: var(--space-2); }
+.tracks.open { display: grid; gap: 6px; }
+.track { display: grid; grid-template-columns: 112px 1fr; align-items: center; gap: var(--space-3); font-size: var(--step-n2); }
+.track .bar { position: relative; height: 22px; border-bottom: 1px solid var(--color-rule-strong); }
+.track .bar button { position: absolute; bottom: 0; width: 24px; height: 24px; margin-left: -12px; border: 0; background: transparent; padding: 0; }
+.track .bar button::after { content: ""; position: absolute; left: 10px; bottom: 0; width: 4px; height: 12px; background: var(--c, var(--color-ink)); border-radius: 1px; }
+.track .bar button:hover::after, .track .bar button:focus-visible::after { height: 18px; }
+.track .cursor { position: absolute; top: 0; bottom: -1px; width: 2px; background: var(--color-ink); pointer-events: none; }
+
+/* ------------------------------------------------------------------ panels (sheets on phones, columns on desktop) */
+.panel { position: fixed; left: 0; right: 0; bottom: var(--dock-real, 220px); z-index: var(--z-sheet); display: flex; flex-direction: column; overflow: hidden;
+  --avail: calc(100dvh - var(--top-real, 56px) - var(--dock-real, 220px) - 8px);
+  height: 0; visibility: hidden;
+  background: var(--color-surface); border: 1px solid var(--color-rule-strong); border-bottom: 0; border-radius: var(--radius-sheet) var(--radius-sheet) 0 0; box-shadow: var(--shadow-sheet);
+  transition: height var(--motion-slow) var(--motion-ease-settle), visibility 0s linear var(--motion-slow); }
+.panel[data-state="peek"] { height: 76px; visibility: visible; transition-delay: 0s; }
+.panel[data-state="half"] { height: calc(var(--avail) * 0.5); visibility: visible; transition-delay: 0s; }
+.panel[data-state="full"] { height: var(--avail); visibility: visible; transition-delay: 0s; }
+.dock { z-index: var(--z-dock); }
+.phead { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4) var(--space-2) var(--size-gutter); min-height: 60px; border-bottom: 1px solid var(--color-rule); }
+.phead h2 { margin: 0; font: 700 var(--step-1)/1.2 var(--font-serif); flex: 1; min-width: 0; }
+.phead .sub { display: block; font: 400 var(--step-n2)/1.3 var(--font-sans); color: var(--color-ink-2); }
+.pbody { overflow: auto; padding: var(--space-4) var(--size-gutter) var(--space-7); flex: 1; overscroll-behavior: contain; }
+.tabs { display: flex; gap: 0; border-bottom: 1px solid var(--color-rule); padding: 0 var(--space-3); overflow-x: auto; }
+.tabs button { flex: none; min-height: var(--size-tap); padding: 0 var(--space-4); background: none; border: 0; border-bottom: 3px solid transparent; font-weight: var(--weight-strong); color: var(--color-ink-2); }
+.tabs button[aria-selected="true"] { color: var(--color-ink); border-bottom-color: var(--color-ink); }
+.panel h3 { margin: var(--space-6) 0 var(--space-3); font: 700 var(--step-0)/1.25 var(--font-serif); }
+.panel h3:first-child { margin-top: 0; }
+.panel p, .panel li { font: var(--step-0)/var(--leading-serif) var(--font-serif); max-width: var(--measure-text); }
+.panel ul { padding-left: 1.1em; margin: var(--space-3) 0; }
+.panel .meta { font: var(--step-n1)/1.4 var(--font-sans); color: var(--color-ink-2); }
+.dash { display: none; }
+@media (min-width: 900px) {
+  .app { grid-template-columns: var(--size-rail-w) minmax(0, 1fr) var(--size-drawer-w); grid-template-areas: "top top top" "rail stage drawer" "rail dock drawer"; }
+  .panel { position: static; visibility: visible !important; height: auto !important; border: 0; border-radius: 0; box-shadow: none; min-height: 0; overflow: hidden; }
+  #rail { grid-area: rail; border-right: 1px solid var(--color-rule-strong); }
+  #drawer { grid-area: drawer; border-left: 1px solid var(--color-rule-strong); }
+  .panel .only-sheet { display: none; }
+  #layersbtn { display: none; }
+  .mapui.tl { right: auto; }
+  .mapui.tl .seg { width: auto; }
+  .seg button { white-space: nowrap; }
+  .mapui.tr { top: var(--space-4); }
+  .hatchnote { display: block; }
+  .track { grid-template-columns: 140px 1fr; }
+  .yearrow { grid-template-areas: "year meta play" "year cap play"; align-items: center; }
+  .capwrap { margin-top: 0; }
+  .year { font-size: clamp(3.25rem, 6vw, 4.75rem); }
+  .yearmeta { padding-bottom: 0; align-self: end; }
+  .capwrap { align-self: start; }
+  .dock { padding-left: var(--space-6); padding-right: var(--space-6); }
+}
+
+/* voice-coded blocks (I4 section 7) */
+.v-record { margin: var(--space-4) 0; padding: var(--space-4) var(--space-5); background: var(--color-surface-2); border-left: 3px solid var(--color-ink-3); }
+.v-record p { margin: 0; font-style: italic; }
+.v-record .cite { display: block; margin-top: var(--space-3); font: var(--step-n2)/1.4 var(--font-sans); font-style: normal; color: var(--color-ink-2); }
+.v-tribal { margin: var(--space-4) 0; padding: var(--space-4) var(--space-5); border: 1px solid var(--color-rule-strong); border-left: 6px double var(--color-ink); background: var(--color-surface); }
+.notice { margin: var(--space-4) 0; padding: var(--space-3) var(--space-4); background: var(--color-surface-2); border: 1px dashed var(--color-rule-strong); border-radius: var(--radius-md); font: var(--step-n1)/1.45 var(--font-sans); }
+.notice b { font-weight: var(--weight-bold); }
+.badge { display: inline-flex; align-items: center; gap: var(--space-3); padding: 2px var(--space-4) 2px var(--space-3); border: 1px solid var(--color-rule-strong); border-radius: var(--radius-pill); background: var(--color-surface); font: var(--weight-strong) var(--step-n1)/1.3 var(--font-sans); }
+.badge svg { width: 20px; height: 20px; flex: none; }
+.row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.def { display: grid; grid-template-columns: 34px 1fr; gap: var(--space-3); align-items: start; margin: var(--space-3) 0; font: var(--step-n1)/1.4 var(--font-sans); }
+.def svg { width: 32px; height: 32px; color: var(--color-ink); }
+.def strong { font-weight: var(--weight-bold); }
+.sw { display: inline-block; width: 28px; height: 16px; border-radius: 2px; vertical-align: -3px; margin-right: var(--space-3); border: 1.5px solid var(--c); background: var(--bg, transparent); }
+.card { margin: var(--space-4) 0; padding: var(--space-4) var(--space-5); border: 1px solid var(--color-rule-strong); border-radius: var(--radius-md); background: var(--color-surface); }
+.card h4 { margin: 0 0 var(--space-2); font: 700 var(--step-0)/1.25 var(--font-serif); }
+.card dl { margin: var(--space-3) 0; display: grid; grid-template-columns: 9.5em 1fr; gap: var(--space-2) var(--space-4); font: var(--step-n1)/1.4 var(--font-sans); }
+.card dt { color: var(--color-ink-2); } .card dd { margin: 0; }
+.statuslist { list-style: none; padding: 0; margin: var(--space-3) 0; }
+.statuslist li { display: grid; grid-template-columns: 3.2em 1fr; gap: var(--space-3); padding: var(--space-3) 0; border-bottom: 1px solid var(--color-rule); font: var(--step-n1)/1.4 var(--font-sans); }
+.statuslist b { font-weight: var(--weight-bold); }
+.statuslist li.on { background: var(--color-surface-2); }
+.layer { display: grid; grid-template-columns: 44px 1fr; gap: var(--space-3); align-items: center; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-rule); }
+.layer label { display: block; font: 600 var(--step-n1)/1.3 var(--font-sans); }
+.layer .desc { display: block; font-weight: 400; color: var(--color-ink-2); font-size: var(--step-n2); }
+.layer input { width: 28px; height: 28px; margin: 8px; accent-color: var(--color-ink); }
+dialog { border: 1px solid var(--color-rule-strong); border-radius: var(--radius-md); padding: 0; max-width: min(92vw, 560px); width: 100%; background: var(--color-surface); color: var(--color-ink); }
+dialog::backdrop { background: var(--color-scrim); }
+dialog .dbody { padding: var(--space-5) var(--space-6); max-height: 80dvh; overflow: auto; }
+dialog h2 { margin: 0 0 var(--space-3); font: 700 var(--step-2)/1.15 var(--font-serif); }
+dialog li, dialog p { font: var(--step-0)/1.55 var(--font-serif); }
+dialog nav a { display: block; padding: var(--space-3) 0; font: var(--weight-strong) var(--step-0)/1.3 var(--font-sans); text-decoration: none; border-bottom: 1px solid var(--color-rule); }
+@media (forced-colors: active) { .seg button[aria-pressed="true"], .stops button[aria-pressed="true"] { outline: 2px solid Highlight; } }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<!-- Treaty Land Atlas icon sprite. Author: Benjamin Life (@omniharmonic). Draft 2026-10-16. -->
+<!-- 24x24 grid, 1.75 stroke, round joins, currentColor. Frame shape encodes family (page = Congress, circle = treaty-making/performance, hexagon = takings, dashed square = context). Use with <svg class="icon" aria-hidden="true"><use href="#vt-..."/></svg>. Meaning must always be paired with a text label. -->
+<symbol id="vt-unilateral-abrogation-statute" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3h9.5l4 4v14h-13.5z"/><path d="M8.5 11h7M8.5 14.5h7"/><path d="M8 17.5L16.5 8.5"/></g></symbol>
+<symbol id="vt-diminishment-disestablishment" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3h9.5l4 4v14h-13.5z"/><path d="M8.5 9h4v3h3v5h-7z"/></g></symbol>
+<symbol id="vt-allotment" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3h9.5l4 4v14h-13.5z"/><rect x="8.5" y="9.5" width="3" height="3"/><rect x="12.5" y="9.5" width="3" height="3" fill="currentColor"/><rect x="8.5" y="13.5" width="3" height="3"/><rect x="12.5" y="13.5" width="3" height="3"/></g></symbol>
+<symbol id="vt-termination" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3h9.5l4 4v14h-13.5z"/><circle cx="8.8" cy="13" r="1.6"/><circle cx="15.2" cy="13" r="1.6"/><path d="M11.4 15l1.2-4"/></g></symbol>
+<symbol id="vt-jurisdictional-erosion" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3h9.5l4 4v14h-13.5z"/><path d="M15.2 10.2a4 4 0 1 0 0 5.6"/><path d="M16 13h-2.4"/></g></symbol>
+<symbol id="vt-statutory-extinguishment-settlement" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3h9.5l4 4v14h-13.5z"/><path d="M8.5 11.2h7M8.5 14.8h7"/></g></symbol>
+<symbol id="vt-unrecognized-title" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3h9.5l4 4v14h-13.5z"/><rect x="8.5" y="9.5" width="7" height="7" stroke-dasharray="1.4 1.8"/><circle cx="12" cy="13" r="0.9" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="vt-fraud-coercion-negotiation" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.25"/><path d="M7 10l10 3.6"/><path d="M12 12v5.5M9.5 17.5h5"/><circle cx="7" cy="10" r="1.3"/><circle cx="17" cy="13.6" r="1.3"/></g></symbol>
+<symbol id="vt-non-ratification" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.25"/><circle cx="12" cy="12" r="3.6" stroke-dasharray="1.6 1.8"/></g></symbol>
+<symbol id="vt-treaty-promise-unfulfilled" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.25"/><rect x="8" y="8" width="8" height="8" rx="1"/><path d="M9.8 12.2l1.7 1.7 3-3.4" stroke-dasharray="1.6 1.6"/></g></symbol>
+<symbol id="vt-annuity-nonpayment-or-diversion" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.25"/><circle cx="9.6" cy="12" r="2.8"/><path d="M13.6 9.8l3.4 2.2-3.4 2.2"/></g></symbol>
+<symbol id="vt-failure-to-protect" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.25"/><path d="M12 7.2l4 1.4v3.4c0 2.4-1.7 3.9-4 4.9-2.3-1-4-2.5-4-4.9V8.6z"/><path d="M12 8.4v2l-1.4 1.2 1.4 1.2v1.6"/></g></symbol>
+<symbol id="vt-forced-removal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.25"/><circle cx="8" cy="15.5" r="1.5"/><path d="M9.3 14.3L15 9.8" stroke-dasharray="1.6 1.8"/><path d="M12.8 8.8h3.4v3.4"/></g></symbol>
+<symbol id="vt-eminent-domain-infrastructure" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l8.2 4.7v9.4L12 21.4l-8.2-4.7V7.3z"/><path d="M9 8h6l1 7H8z"/><path d="M6.8 17.8q1.3-1 2.6 0t2.6 0 2.6 0 2.6 0"/></g></symbol>
+<symbol id="vt-resource-rush-invasion" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l8.2 4.7v9.4L12 21.4l-8.2-4.7V7.3z"/><rect x="10.4" y="10.4" width="3.2" height="3.2"/><path d="M7 7l2.2 2.2M17 7l-2.2 2.2M7 17l2.2-2.2M17 17l-2.2-2.2"/></g></symbol>
+<symbol id="vt-railroad-grant-or-sale" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l8.2 4.7v9.4L12 21.4l-8.2-4.7V7.3z"/><path d="M9.2 7v10M14.8 7v10M9.2 9.6h5.6M9.2 12h5.6M9.2 14.4h5.6"/></g></symbol>
+<symbol id="vt-federal-reserve-carve-out" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l8.2 4.7v9.4L12 21.4l-8.2-4.7V7.3z"/><path d="M8.2 8h5.2a2.4 2.4 0 0 0 2.4 2.4V16H8.2z"/></g></symbol>
+<symbol id="vt-water-rights" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l8.2 4.7v9.4L12 21.4l-8.2-4.7V7.3z"/><path d="M12 7.2c2.4 2.9 3.7 4.6 3.7 6.2a3.7 3.7 0 0 1-7.4 0c0-1.6 1.3-3.3 3.7-6.2z"/></g></symbol>
+<symbol id="vt-hunting-fishing-rights" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l8.2 4.7v9.4L12 21.4l-8.2-4.7V7.3z"/><path d="M6.8 12c2-3 5-3.4 7.4 0-2.4 3.4-5.4 3-7.4 0z"/><path d="M14.2 12l3-2.4v4.8z"/></g></symbol>
+<symbol id="vt-context-infrastructure-siting" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke-dasharray="3 2.6"/><path d="M7.5 12h9"/><circle cx="7.5" cy="12" r="1" fill="currentColor"/><circle cx="16.5" cy="12" r="1" fill="currentColor"/></g></symbol>
+<symbol id="vt-context-federal-land-disposal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke-dasharray="3 2.6"/><path d="M7.5 9.5h9M14 7l2.5 2.5L14 12M16.5 14.5h-9M10 12l-2.5 2.5L10 17"/></g></symbol>
+<symbol id="vt-context-protective-designation-rollback" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke-dasharray="3 2.6"/><path d="M12 7.5v7M9.2 12l2.8 2.8 2.8-2.8M8.5 17h7"/></g></symbol>
+<symbol id="vt-annexation-context" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke-dasharray="3 2.6"/><circle cx="8.6" cy="15.4" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.4" cy="8.6" r="1.3" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="rv-empty" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/></g></symbol>
+<symbol id="rv-dotted" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7" stroke-dasharray="1.6 2.6"/></g></symbol>
+<symbol id="rv-half" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 5a7 7 0 0 1 0 14z" fill="currentColor"/></g></symbol>
+<symbol id="rv-full" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7" fill="currentColor"/></g></symbol>
+<symbol id="rv-double" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><circle cx="12" cy="12" r="8"/></g></symbol>
+<symbol id="rv-slash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M7 17L17 7"/></g></symbol>
+<symbol id="rv-bar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M8.5 12h7"/></g></symbol>
+</svg>
+
+<div class="app" id="app">
+  <header class="top" id="top">
+    <h1 class="wordmark">What Was Promised<small>Working title. Wireframe prototype with illustrative data.</small></h1>
+    <button class="btn icon-only" id="viewbtn" aria-pressed="false" title="Switch between map and table view" aria-label="Show table view">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 10h16M4 14.5h16M10 5v14"/></svg>
+    </button>
+    <button class="btn icon-only" id="themebtn" title="Switch light and dark" aria-label="Switch to dark theme">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="7.5"/><path d="M12 4.5v15" /><path d="M12 4.5a7.5 7.5 0 0 1 0 15z" fill="currentColor"/></svg>
+    </button>
+    <button class="btn icon-only" id="menubtn" aria-label="Open menu" aria-haspopup="dialog">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg>
+    </button>
+  </header>
+
+  <main class="stage" id="stage">
+    <svg id="map" viewBox="0 0 960 560" role="group" aria-label="Placeholder map of the contiguous United States with illustrative shapes. A table view is available."></svg>
+    <div id="tableview" hidden></div>
+
+    <div class="mapui tl">
+      <div class="seg" role="group" aria-label="Map mode">
+        <button type="button" id="mode-record" aria-pressed="true">Federal record</button>
+        <button type="button" id="mode-honored" aria-pressed="false">Honored through year</button>
+      </div>
+      <p class="hold-note" id="modenote"></p>
+    </div>
+    <div class="mapui tr">
+      <button class="btn" id="layersbtn" aria-controls="rail">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4M4 16l8 4 8-4"/></svg>Layers</button>
+      <div class="zoom" role="group" aria-label="Zoom">
+        <button type="button" id="zin" aria-label="Zoom in">+</button>
+        <button type="button" id="zout" aria-label="Zoom out">&minus;</button>
+      </div>
+    </div>
+    <div class="mapui bl">
+      <p class="disclaim" id="disclaim">Illustrative data. Not a boundary. Not legal advice. <button type="button" id="notbtn">What this map is not</button></p>
+    </div>
+    <button class="btn today-chip" id="todaychip" hidden>Today layer is hidden. Show it</button>
+  </main>
+
+  <aside class="panel" id="rail" data-state="closed" aria-label="Layers" tabindex="-1"></aside>
+  <aside class="panel" id="drawer" data-state="closed" aria-label="Details" tabindex="-1"></aside>
+
+  <section class="dock" id="dock" aria-label="Time slider">
+    <button class="legalbar" id="legalbar" hidden>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M6 8h12M6 8l-3 6a3 3 0 0 0 6 0zM18 8l-3 6a3 3 0 0 0 6 0zM8 20h8"/></svg>
+      <span><b>Legal status today:</b> <span id="legalsum"></span></span><span class="go">Read</span>
+    </button>
+    <div class="yearrow">
+      <p class="year" id="year" aria-hidden="true">1868</p>
+      <div class="yearmeta">
+        <div class="lab" id="yearlabel">Federal record as of</div>
+        <div class="chap" id="chap"></div>
+      </div>
+      <button class="btn playbtn" id="play" aria-pressed="false">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" id="playicon"><path d="M8 5.5v13l11-6.5z"/></svg><span id="playtxt">Play</span></button>
+      <div class="capwrap"><p class="cap clamp" id="cap"></p><button class="linkbtn" id="capmore" aria-expanded="false">Read more</button></div>
+    </div>
+    <div class="sliderwrap">
+      <div class="after1894" id="after1894" aria-hidden="true"></div>
+      <input type="range" id="slider" min="1778" max="2026" step="1" value="1868" aria-label="Year" aria-describedby="slidehelp">
+    </div>
+    <div class="stops" id="stops" role="group" aria-label="Jump to a stop"></div>
+    <div class="dockfoot">
+      <button class="evtoggle" id="evtoggle" aria-expanded="false" aria-controls="tracks"><span id="evsum"></span><span class="linkbtn" id="evlab">Show</span></button>
+      <span class="hatchnote" id="slidehelp">Hatched track: cession polygons end in 1894</span>
+    </div>
+    <div class="tracks" id="tracks"></div>
+    <div class="sr" aria-live="polite" id="live"></div>
+  </section>
+</div>
+
+<dialog id="notdlg" aria-labelledby="notttl"><div class="dbody">
+  <h2 id="notttl">What this map is not</h2>
+  <ul>
+    <li>It is not legal advice, and it is not a statement about any current legal claim.</li>
+    <li>It is not an official boundary. Shapes come from documents and published datasets and are drawn only as precisely as those sources allow.</li>
+    <li>It does not show where anyone lives or owns property. It will never show a parcel or an address.</li>
+    <li>It does not speak for any Native nation. Where a nation has not reviewed a page, the page says so.</li>
+    <li>It is not a proposal about anyone&rsquo;s home.</li>
+  </ul>
+  <p class="meta">This prototype also uses placeholder shapes and invented example names. Nothing on it is real data.</p>
+  <form method="dialog"><button class="btn primary" autofocus>Close</button></form>
+</div></dialog>
+
+<dialog id="menudlg" aria-labelledby="menuttl"><div class="dbody">
+  <h2 id="menuttl">Menu</h2>
+  <nav aria-label="Site sections">
+    <a href="#" data-dead>Map</a><a href="#" data-dead>Guided tours (nine)</a><a href="#" data-dead>Treaties</a><a href="#" data-dead>Nations</a>
+    <a href="#" data-dead>Cases and statutes</a><a href="#" data-dead>Support and our donation policy</a><a href="#" data-dead>Glossary</a>
+    <a href="#" data-dead>Methods and sources</a><a href="#" data-dead>Corrections and tribal review</a><a href="#" data-dead>Accessibility</a>
+  </nav>
+  <p class="meta">Menu links are inert in this prototype. A project by Benjamin Life (@omniharmonic).</p>
+  <form method="dialog"><button class="btn primary">Close</button></form>
+</div></dialog>
+
+<script>
+(function () {
+'use strict';
+/* ====================================================================== data (ALL ILLUSTRATIVE) */
+var STOPS = [
+ {y:1778,l:'First treaty',n:'The first treaty between the United States and a Native nation is signed this year (research note B1). This placeholder map has almost no instruments yet. Empty space here means no U.S. instrument is recorded. It does not mean no one lived there.'},
+ {y:1830,l:'Removal Act',n:'Congress passes the Indian Removal Act (May 28, 1830; 4 Stat. 411). In the placeholder, Example Nation A’s territory is recognized in documents. Dashed edges mean the boundary rests on landmarks.'},
+ {y:1868,l:'Fort Laramie era',n:'Treaties signed in 1868 include Fort Laramie (signed April 29 to November 6; ratified February 16, 1869). Placeholder reservations appear for Example Nations B and D. Nations B and C have overlapping recognized areas, drawn as overlap and never merged.'},
+ {y:1887,l:'Allotment Act',n:'The General Allotment (Dawes) Act is signed on February 8, 1887. In the placeholder, Example Nation B’s reservation has already been reduced by statute, and allotment is marked.'},
+ {y:1934,l:'Reorganization Act',n:'The Indian Reorganization Act ends allotment (research note B1). Royce-based cession polygons end in 1894. After that, this map shows statutes, cases and present-day boundaries.'},
+ {y:1953,l:'Termination policy',n:'House Concurrent Resolution 108 (August 1, 1953) and Public Law 280 (August 15, 1953). A placeholder termination marker appears for Example Nation E.'},
+ {y:1975,l:'Self-determination',n:'Federal policy turns toward self-determination. Placeholder returns appear: land restored to Example Nations D and E.'},
+ {y:2020,l:'McGirt and recent returns',n:'McGirt v. Oklahoma (July 9, 2020) held that the Creek reservation remains Indian country for Major Crimes Act purposes. In the placeholder, a court confirms Example Nation D’s boundaries and land is transferred to Example Nation F.'},
+ {y:2026,l:'Today',n:'575 tribal entities are on the federal list published January 30, 2026 (research note D3). Today’s boundaries come from federal sources and are outlined in ink. As of October 16, 2026.'}
+];
+var NATIONS = {
+ A:{n:'Example Nation A',region:'Placeholder: Southeast',rv:'not-contacted'},
+ B:{n:'Example Nation B',region:'Placeholder: Plains',rv:'reviewed',by:'Example Cultural Office, 2026-09-01'},
+ C:{n:'Example Nation C',region:'Placeholder: Plains',rv:'invited'},
+ D:{n:'Example Nation D',region:'Placeholder: Southwest',rv:'edits-requested'},
+ E:{n:'Example Nation E',region:'Placeholder: Pacific Northwest',rv:'declined'},
+ F:{n:'Example Nation F',region:'Placeholder: Northern Rockies',rv:'co-authored',by:'Example Language Office'},
+ G:{n:'Example Nation G',region:'Placeholder: Great Lakes',rv:'not-contacted'}
+};
+var REVIEW = {
+ 'not-contacted':{t:'Not yet contacted',g:'empty',pub:true},
+ 'invited':{t:'Invited',g:'dotted',pub:true},
+ 'edits-requested':{t:'Edits requested, in progress',g:'half',pub:false},
+ 'reviewed':{t:'Reviewed',g:'full',pub:false},
+ 'co-authored':{t:'Co-authored',g:'double',pub:false},
+ 'declined':{t:'Declined to participate',g:'slash',pub:true},
+ 'withdrawn':{t:'Content withdrawn at nation’s request',g:'bar',pub:true}
+};
+var VT = { /* B1 codes used in the prototype: label + family */
+ FRAUD_COERCION_NEGOTIATION:'Contested authority, fraud or duress', FORCED_REMOVAL:'Forced removal',
+ UNILATERAL_ABROGATION_STATUTE:'Abrogated by statute', DIMINISHMENT_DISESTABLISHMENT:'Reservation diminished or disestablished',
+ ALLOTMENT:'Allotment', TERMINATION:'Federal relationship terminated', FEDERAL_RESERVE_CARVE_OUT:'Carved out for federal use',
+ HUNTING_FISHING_RIGHTS:'Hunting and fishing rights'
+};
+var EV = {E0:'Ratified, no recorded procedural contest',E1:'Ratified, signatory authority contested',E2:'Unratified',E3:'Consent requirement not met',E4:'Unilateral act',E5:'Compensation found inadequate or unfair by a court',E6:'Taking found compensable',E7:'Tribe-asserted account'};
+var ST = {S1:'Reservation boundaries intact',S2:'Diminished',S3:'Disestablished or terminated',S4:'Aboriginal title extinguished with ICC payment',S5:'Compensable taking recognized, land not returned',S6:'Equitable bars to regaining sovereignty over reacquired land',S7:'Treaty rights currently enforceable',S8:'Restored or returned by statute or purchase',S9:'Under litigation or negotiation'};
+var KIND = {recognized:'Treaty-recognized territory (a model of the documents)',reservation:'Reservation as set aside',cession:'Alteration: land transferred or taken',icc:'Aboriginal title as found by the Indian Claims Commission (indicative)',
+ 'return':'Return or restoration',today:'Present-day boundary (federal source)',treaty:'Treaty signing',rights:'Reserved off-reservation right (area not drawn)',event:'Event'};
+var TIERTXT = {T1:'T1. Surveyed or statutory line.',T2:'T2. Described by identifiable features.',T3:'T3. Landmarks moved or ambiguous; edges are soft.',T4:'T4. No usable geometry; shown as an icon only.'};
+
+function blob(cx,cy,rx,ry,n,seed){var p=[],s=seed,i,a,j;function r(){s=(s*9301+49297)%233280;return s/233280;}
+  for(i=0;i<n;i++){a=i/n*2*Math.PI;j=0.84+r()*0.32;p.push([cx+Math.cos(a)*rx*j,cy+Math.sin(a)*ry*j]);}return p;}
+function rect(x0,y0,x1,y1){return [[x0,y0],[x1,y0],[x1,y1],[x0,y1]];}
+
+var F = [
+ {id:'ex-G-1778',k:'treaty',nat:'G',pos:[-80.2,40.6],from:1778,label:'Example treaty signing (placeholder position)',tier:'T4',track:'inst',
+  plain:'The first treaty marker in this placeholder. The real Atlas shows each treaty with its own page, parties and citations.'},
+ {id:'ex-A-rec',k:'recognized',nat:'A',from:1785,to:1836,tier:'T3',hatch:'fwd',poly:blob(-85.8,34.3,3.2,2.3,16,3),label:'Example Nation A: recognized territory',track:'inst',
+  plain:'What the documents recognized for Example Nation A. Landmark boundaries mean the edges are soft.'},
+ {id:'ex-A-ces',k:'cession',nat:'A',from:1836,tier:'T3',poly:blob(-85.4,34.3,3.7,2.6,16,3),label:'Example Nation A: land transferred in 1836',track:'alt',
+  mk:{code:'FRAUD_COERCION_NEGOTIATION',sec:['FORCED_REMOVAL'],y:1836},ev:['E1'],st:['S3'],cw:'forced removal',
+  plain:'U.S. records call this a cession. Sources on file say the signers lacked tribal authorization, so it is flagged E1. The flag is evidence, not a verdict.'},
+ {id:'ex-A-today',k:'today',nat:'A',tier:'T1',poly:rect(-84.5,35.0,-83.9,35.5),label:'Example Nation A: present-day boundary',plain:'Present-day boundary from a federal source.'},
+ {id:'ex-B-rec',k:'recognized',nat:'B',from:1868,to:1877,tier:'T3',hatch:'fwd',poly:blob(-100.8,40.2,4.0,2.6,18,5),label:'Example Nation B: recognized territory',track:'inst',overlap:true,
+  plain:'Territory recognized for Example Nation B in the 1868 instrument. It overlaps a recognized area for Example Nation C.'},
+ {id:'ex-C-rec',k:'recognized',nat:'C',from:1851,to:1877,tier:'T3',hatch:'back',poly:blob(-98.4,42.6,3.6,2.3,18,7),label:'Example Nation C: recognized territory',track:'inst',overlap:true,
+  plain:'Territory recognized for Example Nation C. Where it overlaps Example Nation B, both claims stay on the map.'},
+ {id:'ex-B-res1',k:'reservation',nat:'B',from:1868,to:1877,tier:'T2',poly:[[-104.2,41.8],[-98.0,42.0],[-97.6,38.6],[-103.6,38.4]],label:'Example Nation B: reservation as set aside, 1868',track:'inst',
+  st:['S2','S5'],plain:'The reservation as the 1868 instrument set it aside (illustrative shape).'},
+ {id:'ex-B-res2',k:'reservation',nat:'B',from:1877,to:1889,tier:'T2',poly:[[-102.8,41.4],[-98.0,41.6],[-97.8,39.0],[-102.4,38.9]],label:'Example Nation B: reservation after the 1877 Act',st:['S2','S5'],plain:'The reservation after the 1877 statute.'},
+ {id:'ex-B-res3',k:'reservation',nat:'B',from:1889,tier:'T2',poly:[[-101.6,40.9],[-98.2,41.0],[-98.0,39.4],[-101.4,39.3]],label:'Example Nation B: reservation after 1889',st:['S2','S5'],plain:'The reservation after the 1889 statute.'},
+ {id:'ex-B-ces77',k:'cession',nat:'B',from:1877,tier:'T3',poly:[[-104.2,41.8],[-102.8,41.4],[-102.4,38.9],[-103.6,38.4]],label:'Example Nation B: land taken by the 1877 Act',track:'alt',
+  mk:{code:'UNILATERAL_ABROGATION_STATUTE',sec:[],y:1877},ev:['E3','E4','E6'],st:['S5'],
+  plain:'A statute removed this land. The 1868 instrument required a consent threshold that sources say was not met (E3). A court later found a compensable taking (E6); the remedy was money, not land (S5).'},
+ {id:'ex-B-ces89',k:'cession',nat:'B',from:1889,tier:'T3',poly:[[-102.8,41.4],[-101.6,40.9],[-101.4,39.3],[-102.4,38.9]],label:'Example Nation B: land removed by the 1889 Act',track:'alt',
+  mk:{code:'DIMINISHMENT_DISESTABLISHMENT',sec:['ALLOTMENT'],y:1889},ev:['E4'],st:['S2'],plain:'A statute diminished the reservation boundaries. Courts treat this as a question of jurisdiction, so the status panel says for what purpose.'},
+ {id:'ex-B-allot',k:'event',nat:'B',pos:[-100.2,40.1],from:1887,tier:'T4',label:'Example Nation B: allotment',track:'alt',mk:{code:'ALLOTMENT',sec:[],y:1887},ev:['E4'],st:['S2'],
+  plain:'Communal land is divided into individual parcels and the remainder is opened to non-Native settlement. Shown as a point because parcels are never mapped here.'},
+ {id:'ex-B-icc',k:'icc',nat:'B',tier:'T3',poly:blob(-100.2,40.4,5.3,3.5,20,11),label:'Aboriginal title area (ICC, indicative region)',ev:[],st:['S4'],
+  plain:'A broad region from the 1978 map of areas judicially established. It is not a boundary and it shows only where a tribe proved exclusive use before the Commission.'},
+ {id:'ex-B-today',k:'today',nat:'B',tier:'T1',poly:rect(-100.9,40.7,-99.4,39.8),label:'Example Nation B: present-day boundary',plain:'Present-day boundary from a federal source.'},
+ {id:'ex-B-ret',k:'return',nat:'B',from:2012,tier:'T2',poly:rect(-101.2,40.3,-100.6,39.8),label:'Example Nation B: land returned',track:'ret',st:['S8'],
+  plain:'Land bought by the nation and placed into trust (illustrative). The real Atlas names the mechanism, who holds title and who paid.'},
+ {id:'ex-C-today',k:'today',nat:'C',tier:'T1',poly:rect(-98.9,43.0,-98.2,42.5),label:'Example Nation C: present-day boundary',plain:'Present-day boundary from a federal source.'},
+ {id:'ex-D-res',k:'reservation',nat:'D',from:1868,tier:'T1',poly:rect(-111.0,37.0,-108.6,35.2),label:'Example Nation D: reservation, never diminished',track:'inst',st:['S1','S7'],
+  plain:'A reservation whose boundaries Congress never clearly changed (S1). Surveyed lines, so the edge is solid.'},
+ {id:'ex-D-rights',k:'rights',nat:'D',pos:[-113.2,36.9],from:1868,tier:'T4',label:'Example Nation D: reserved hunting and fishing right',track:'inst',mk:{code:'HUNTING_FISHING_RIGHTS',sec:[],y:1868,right:true},st:['S7'],
+  plain:'A right to hunt and fish off the reservation. It has no area to draw, so it is an icon with text.'},
+ {id:'ex-D-ret',k:'return',nat:'D',from:1975,tier:'T2',poly:rect(-112.4,36.4,-111.5,35.7),label:'Example Nation D: land restored in 1975',track:'ret',st:['S8'],plain:'Land restored by statute (illustrative).'},
+ {id:'ex-D-today',k:'today',nat:'D',tier:'T1',poly:rect(-111.2,37.2,-108.4,35.0),label:'Example Nation D: present-day boundary',plain:'Present-day boundary from a federal source.'},
+ {id:'ex-E-res',k:'reservation',nat:'E',from:1855,tier:'T2',poly:blob(-122.4,44.6,0.9,0.7,12,9),label:'Example Nation E: reservation',track:'inst',st:['S3','S8'],plain:'A reservation set aside in 1855 (illustrative).'},
+ {id:'ex-E-term',k:'event',nat:'E',pos:[-122.4,44.6],from:1953,tier:'T4',label:'Example Nation E: federal relationship terminated',track:'alt',mk:{code:'TERMINATION',sec:[],y:1953},ev:['E4'],st:['S3','S8'],
+  plain:'Congress ended the federal relationship with this nation. Termination is not the same as abrogating a treaty, and it was reversed later by a restoration statute.'},
+ {id:'ex-E-ret',k:'return',nat:'E',from:1975,tier:'T2',poly:blob(-122.4,44.6,0.55,0.45,10,4),label:'Example Nation E: land restored',track:'ret',st:['S8'],plain:'Restoration by statute (illustrative).'},
+ {id:'ex-E-today',k:'today',nat:'E',tier:'T1',poly:rect(-122.9,44.9,-122.0,44.3),label:'Example Nation E: present-day boundary',plain:'Present-day boundary from a federal source.'},
+ {id:'ex-F-res',k:'reservation',nat:'F',from:1855,tier:'T2',poly:rect(-114.6,48.0,-112.4,46.6),label:'Example Nation F: reservation',track:'inst',st:['S8'],plain:'A reservation set aside in 1855 (illustrative).'},
+ {id:'ex-F-carve',k:'event',nat:'F',pos:[-113.9,47.6],from:1910,tier:'T4',label:'Example Nation F: land carved out for federal use',track:'alt',mk:{code:'FEDERAL_RESERVE_CARVE_OUT',sec:[],y:1910},ev:['E4'],st:['S8'],plain:'Land taken out of the reservation for federal use.'},
+ {id:'ex-F-ret',k:'return',nat:'F',from:2020,tier:'T2',poly:rect(-114.0,47.7,-113.1,47.1),label:'Example Nation F: land transferred in 2020',track:'ret',st:['S8'],plain:'Federal land transferred to the nation by statute (illustrative).'},
+ {id:'ex-F-today',k:'today',nat:'F',tier:'T1',poly:rect(-114.8,48.1,-112.2,46.4),label:'Example Nation F: present-day boundary',plain:'Present-day boundary from a federal source.'}
+];
+var LAW = [
+ {y:1831,label:'Example court opinion on nationhood (placeholder)'},{y:1836,label:'Example petition of resistance (placeholder)'},
+ {y:1980,label:'Example court finds a compensable taking (placeholder)'},{y:2020,label:'Example court confirms boundaries (placeholder)'}];
+var ORGS = [
+ {id:'o1',n:'Example Indigenous Land Trust',t:'Indigenous-led nonprofit',lead:'Verified: named Native leadership (illustrative)',reg:'EIN 00-0000000 (illustrative)',payee:'Example Indigenous Land Trust Inc.',des:'General support only',nat:['A','D','E'],tier:1,ver:'2026-10-16',cav:''},
+ {id:'o2',n:'Example Land Rights Legal Fund',t:'Indigenous-led nonprofit',lead:'Self-described. We could not confirm it.',reg:'EIN 00-0000001 (illustrative)',payee:'Example Legal Fund Inc.',des:'General support only',nat:['A','B'],tier:2,ver:'2026-10-16',cav:'Leadership is self-described. We list it with this caveat shown.'},
+ {id:'o3',n:'Example Valley Conservancy',t:'Allied organization (not Indigenous-led)',lead:'Not Indigenous-led',reg:'EIN 00-0000002 (illustrative)',payee:'Example Valley Conservancy',des:'General support only',nat:['B','F'],tier:2,ver:'2026-10-16',cav:'A gift to an ally is not a gift to a nation. This group completes transactions at a tribe’s request; confirm that for each project.'},
+ {id:'o4',n:'Example Seed Project',t:'Fiscally sponsored project',lead:'Self-described. We could not confirm it.',reg:'Sponsor: Example Sponsor Foundation (EIN 00-0000003, illustrative)',payee:'Example Sponsor Foundation',des:'No written confirmation. Treat as general support.',nat:['E'],tier:2,ver:'2026-10-16',cav:'Gifts are deductible only through the sponsor, which may keep an administrative fee.'},
+ {id:'o5',n:'Example Tribal Nonprofit of Nation B',t:'Tribal nonprofit',lead:'Verified: controlled by the nation (illustrative)',reg:'EIN 00-0000004 (illustrative)',payee:'Example Tribal Nonprofit',des:'General support only',nat:['B'],tier:1,ver:'2026-10-16',cav:''},
+ {id:'o6',n:'Example Group (information only)',t:'Indigenous-led nonprofit',lead:'Self-described',reg:'Not verified',payee:'',des:'',nat:['F'],tier:3,ver:'2026-10-16',cav:'We could not verify a donation page, so there is no giving link. Information only.'}
+];
+var LAYERS = [
+ {id:'recognized',t:'Treaty-recognized territory',d:'Hatched. Dashed edge when the boundary rests on landmarks.',c:'var(--data-recognized-line)',bg:'repeating-linear-gradient(135deg, var(--data-recognized) 0 2px, transparent 2px 6px)',on:true},
+ {id:'reservation',t:'Reservations as set aside',d:'Solid wash with a solid edge.',c:'var(--data-reservation-line)',bg:'color-mix(in srgb, var(--data-reservation) 40%, transparent)',on:true},
+ {id:'icc',t:'Aboriginal title (ICC findings), indicative',d:'Dotted edge, no fill. A broad region from the 1978 map.',c:'var(--data-icc-line)',bg:'transparent',on:false},
+ {id:'rights',t:'Reserved off-reservation rights',d:'Icons and text. No area is drawn.',c:'var(--color-ink)',bg:'transparent',on:false},
+ {id:'cession',t:'Cessions and other alterations',d:'Cumulative to the selected year.',c:'var(--data-cession-line)',bg:'color-mix(in srgb, var(--data-cession) 45%, transparent)',on:true},
+ {id:'violation',t:'Violation events',d:'Icons. Used only where sources support an evidence flag.',c:'var(--data-violation-line)',bg:'transparent',on:true},
+ {id:'return',t:'Returns and restorations',d:'Dotted wash with a solid edge.',c:'var(--data-return-line)',bg:'color-mix(in srgb, var(--data-return) 40%, transparent)',on:true},
+ {id:'today',t:'Today: present-day boundaries',d:'Ink outline. Always one tap away.',c:'var(--data-today-line)',bg:'transparent',on:true}
+];
+var ICONCODE_TO_SPRITE = function(c){return '#vt-'+c.toLowerCase().replace(/_/g,'-');};
+
+/* ====================================================================== projection (Albers equal-area, contiguous US) */
+var D2R = Math.PI/180;
+function albersRaw(lon,lat){var p1=29.5*D2R,p2=45.5*D2R,p0=37.5*D2R,l0=-96*D2R;var n=(Math.sin(p1)+Math.sin(p2))/2,C=Math.cos(p1)*Math.cos(p1)+2*n*Math.sin(p1);
+  function rho(p){return Math.sqrt(C-2*n*Math.sin(p))/n;}var th=n*(lon*D2R-l0),r=rho(lat*D2R);return [r*Math.sin(th),-(rho(p0)-r*Math.cos(th))];}
+var OUTLINE = [[-124.7,48.4],[-123.1,48.3],[-122.8,49],[-95.15,49],[-95.15,49.38],[-94.6,48.7],[-93,48.6],[-91.5,48.1],[-89.6,48],[-84.8,46.8],[-84.4,46],[-82.4,45.3],[-82.5,43],[-83.1,42.3],[-82.7,41.7],[-79,42.8],[-79,43.3],[-76.8,43.6],[-76.3,44.2],[-75,45],[-71.5,45],[-71.1,45.3],[-70.3,45.9],[-70,46.7],[-69.2,47.45],[-68.3,47.35],[-67.8,47.07],[-67.8,45.7],[-67.4,45.2],[-67,44.8],[-68.5,44.3],[-70.2,43.6],[-70.7,42.9],[-70.9,42.3],[-70,41.8],[-71,41.5],[-72,41.3],[-73.7,40.9],[-74,40.4],[-74.1,39.7],[-74.9,38.95],[-75.1,38.4],[-75.9,37.1],[-76,36.9],[-75.5,35.25],[-76.5,34.7],[-77.9,33.9],[-79,33.3],[-80.9,32],[-81.4,30.7],[-81.3,29.9],[-80.5,28.4],[-80.05,26.8],[-80.15,25.7],[-80.9,25.15],[-81.8,26.1],[-82.8,27.9],[-83.1,29.1],[-84,30.1],[-85.3,29.7],[-86.5,30.4],[-88.1,30.3],[-89.4,30.2],[-89.1,29],[-90.5,29.1],[-92,29.6],[-93.8,29.7],[-94.8,29.3],[-96.5,28.3],[-97.2,27.6],[-97.15,25.95],[-99.1,26.4],[-99.5,27.5],[-100.5,28.7],[-101.4,29.8],[-102.7,29.7],[-103.1,29],[-104.5,29.6],[-105,30.7],[-106.5,31.8],[-108.2,31.8],[-108.2,31.33],[-111.1,31.33],[-114.8,32.5],[-117.1,32.5],[-117.3,33.1],[-118.4,33.75],[-119.2,34.1],[-120.5,34.5],[-121.9,36.6],[-122.5,37.8],[-123.7,38.9],[-124.4,40.4],[-124.1,41.9],[-124.5,42.8],[-124.1,44],[-123.95,46.2],[-124.1,46.9]];
+var W=960,H=560,M=24, pr=OUTLINE.map(function(p){return albersRaw(p[0],p[1]);});
+var minx=1e9,maxx=-1e9,miny=1e9,maxy=-1e9;pr.forEach(function(p){minx=Math.min(minx,p[0]);maxx=Math.max(maxx,p[0]);miny=Math.min(miny,p[1]);maxy=Math.max(maxy,p[1]);});
+var SC=Math.min((W-2*M)/(maxx-minx),(H-2*M)/(maxy-miny)), OX=(W-SC*(maxx-minx))/2-SC*minx, OY=(H-SC*(maxy-miny))/2-SC*miny;
+function proj(p){var q=albersRaw(p[0],p[1]);return [q[0]*SC+OX,q[1]*SC+OY];}
+function pathOf(poly){return 'M'+poly.map(function(p){var q=proj(p);return q[0].toFixed(1)+' '+q[1].toFixed(1);}).join('L')+'Z';}
+function centroid(poly){var x=0,y=0;poly.forEach(function(p){x+=p[0];y+=p[1];});return [x/poly.length,y/poly.length];}
+var NAT_ST={A:['S3'],B:['S2','S5'],D:['S1','S7'],E:['S3','S8'],F:['S8']};
+F.forEach(function(f){ if(f.poly){f.c=centroid(f.poly);} else {f.c=f.pos;} f.xy=proj(f.c); if(f.k==='today'&&!f.st&&NAT_ST[f.nat]){f.st=NAT_ST[f.nat];} });
+
+/* ====================================================================== state */
+var S = {year:1868, mode:'record', layers:{}, sel:null, tab:'overview', view:'map', k:1.25, cx:480, cy:280, playing:false, cwOk:{}, unc:false, todayHidden:false};
+LAYERS.forEach(function(l){S.layers[l.id]=l.on;});
+var $ = function(id){return document.getElementById(id);};
+var svg=$('map'), NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){var e=document.createElementNS(NS,tag);for(var k in attrs){e.setAttribute(k,attrs[k]);}if(parent)parent.appendChild(e);return e;}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function layerOf(f){ if(f.k==='cession')return 'cession'; if(f.k==='icc')return 'icc'; if(f.k==='return')return 'return'; if(f.k==='today')return 'today'; if(f.k==='rights')return 'rights';
+  if(f.k==='reservation')return 'reservation'; if(f.k==='recognized'||f.k==='treaty')return 'recognized'; if(f.k==='event')return 'violation'; return 'cession'; }
+function chapter(y){var c=STOPS[0];STOPS.forEach(function(s){if(s.y<=y)c=s;});return c;}
+
+/* ====================================================================== visibility rules
+   Federal record: cumulative. recognized/reservation shown while from<=Y<to; cession shown from<=Y; markers from marker year; returns from<=Y; today always.
+   Honored through X: recognized/reservation as at X; everything that happens after X is a ghost (outline only), never a fill. */
+function when(f,y){ var from=f.from==null?-1e9:f.from; if(S.mode==='record') return from<=y?'on':'off'; return from<=y?'on':'ghost'; }
+function status(f,y){
+  if(f.k==='today'||f.k==='icc') return 'on';
+  if(f.k==='recognized'||f.k==='reservation'){ var to=f.to==null?1e9:f.to; if(f.from<=y&&y<to) return 'on'; if(S.mode==='honored'&&f.from>y) return 'ghost'; return 'off'; }
+  return when(f,y);
+}
+function mstatus(f){ var yy=f.mk.y; if(S.mode==='record') return yy<=S.year?'on':'off'; return yy<=S.year?'on':'ghost'; }
+function items(){ var out=[]; F.forEach(function(f){
+  if(S.todayHidden&&f.k==='today') return;
+  if(f.poly&&S.layers[layerOf(f)]){ var s=status(f,S.year); if(s!=='off') out.push({f:f,s:s,type:'poly'}); }
+  if(f.mk||f.k==='treaty'){ var lay=f.k==='treaty'?'recognized':(f.mk.right?'rights':'violation');
+    if(S.layers[lay]){ var ms=f.k==='treaty'?when(f,S.year):mstatus(f); if(ms!=='off') out.push({f:f,s:ms,type:'mk'}); } } });
+  return out; }
+
+/* ====================================================================== map rendering */
+var gLand, gPoly, gMk, gLbl, prevIds={};
+function buildMapStatic(){
+  svg.innerHTML='';
+  var defs=el('defs',{},svg);
+  function pat(id,rot,color,w,gap){var p=el('pattern',{id:id,width:gap,height:gap,patternUnits:'userSpaceOnUse',patternTransform:'rotate('+rot+')'},defs);el('line',{x1:0,y1:0,x2:0,y2:gap,style:'stroke:'+color+';stroke-width:'+w},p);}
+  pat('p-fwd',45,'var(--data-recognized-line)',1.6,8); pat('p-back',-45,'var(--data-recognized-line)',1.6,8);
+  pat('p-ces',0,'var(--data-cession-line)',1.2,7); pat('p-icc',90,'var(--data-icc-line)',1.2,14);
+  var pd=el('pattern',{id:'p-dots',width:7,height:7,patternUnits:'userSpaceOnUse'},defs);el('circle',{cx:3.5,cy:3.5,r:1.3,style:'fill:var(--data-return-line)'},pd);
+  var ph=el('pattern',{id:'p-ph',width:14,height:14,patternUnits:'userSpaceOnUse',patternTransform:'rotate(30)'},defs);el('line',{x1:0,y1:0,x2:0,y2:14,style:'stroke:var(--map-placeholder-hatch);stroke-width:2'},ph);
+  var fl=el('filter',{id:'soft',x:'-20%',y:'-20%',width:'140%',height:'140%'},defs);el('feGaussianBlur',{stdDeviation:'4'},fl);
+  var land=el('path',{d:pathOf(OUTLINE),class:'land'},svg); el('path',{d:pathOf(OUTLINE),fill:'url(#p-ph)',opacity:'0.4','pointer-events':'none'},svg);
+  var wm=el('text',{x:W/2,y:46,'text-anchor':'middle',class:'wm'},svg);wm.textContent='PLACEHOLDER MAP. ILLUSTRATIVE SHAPES. NOT A BOUNDARY.';
+  gPoly=el('g',{},svg); gMk=el('g',{},svg); gLbl=el('g',{},svg);
+}
+function fillFor(f){
+  if(f.k==='recognized') return f.hatch==='back'?'url(#p-back)':'url(#p-fwd)';
+  if(f.k==='cession') return 'url(#p-ces)';
+  if(f.k==='return') return 'url(#p-dots)';
+  return 'none';
+}
+function render(){
+  var its=items(), now={}, y=S.year;
+  gPoly.innerHTML=''; gMk.innerHTML=''; gLbl.innerHTML='';
+  var order=['icc','recognized','reservation','cession','return','today'];
+  order.forEach(function(k){ its.forEach(function(it){ if(it.type==='poly'&&it.f.k===k) drawPoly(it.f,it.s==='ghost',now); }); });
+  its.forEach(function(it){ if(it.type!=='mk')return; if(it.f.k==='treaty') drawTreaty(it.f,it.s==='ghost',now); else drawMk(it.f,it.s==='ghost',now); });
+  prevIds=now; applyView(); updateDock(); updateTable(); highlightSel();
+}
+function drawPoly(f,ghost,now){
+  var g=el('g',{class:'feat k-'+f.k+(ghost?' ghost':'')+(S.unc?' unc-more':'')+(prevIds[f.id]?'':' enter'),'data-id':f.id,tabindex:'0',role:'button','aria-pressed':String(S.sel===f.id),
+    'aria-label':f.label+'. '+KIND[f.k]+(ghost?'. Happens after the selected year.':'')+'.'},gPoly);
+  var d=pathOf(f.poly);
+  if(f.k==='today'){ el('path',{d:d,class:'casing'},g); el('path',{d:d,class:'shape'},g); }
+  else {
+    if(f.tier==='T3'&&!ghost){ el('path',{d:d,class:'halo',filter:'url(#soft)','stroke-width':S.unc?24:10,'stroke-opacity':0.22},g); }
+    if(f.tier==='T2'&&!ghost){ el('path',{d:d,class:'halo','stroke-width':S.unc?16:6,'stroke-opacity':0.14},g); }
+    if(f.k==='recognized'||f.k==='cession'||f.k==='return'){ el('path',{d:d,class:'wash'},g); }
+    if(f.k!=='reservation'&&f.k!=='icc'){ el('path',{d:d,fill:fillFor(f),class:'pat','pointer-events':'none',opacity:ghost?'0.25':'0.9'},g); }
+    if(f.k==='icc'){ el('path',{d:d,fill:'url(#p-icc)',opacity:'0.55','pointer-events':'none'},g); }
+    el('path',{d:d,class:'shape'+(f.tier==='T3'?' t3':'')},g);
+  }
+  el('path',{d:d,class:'ring'},g);
+  g.addEventListener('click',function(){select(f.id);}); g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(f.id);}});
+  now[f.id]=1;
+  if(!ghost&&(f.k==='reservation'||f.k==='recognized'||f.k==='return')){ if(S.k>=1.6||f.k==='reservation'){ var t=el('text',{x:proj(f.c)[0],y:proj(f.c)[1]+3,'text-anchor':'middle',class:'map-label'},gLbl); t.textContent='Nation '+f.nat; } }
+}
+function drawMk(f,ghost,now){
+  var code=f.mk.code, col=f.mk.right?'var(--color-ink)':(code==='FEDERAL_RESERVE_CARVE_OUT'||true?'var(--data-violation-line)':'var(--color-ink)');
+  var g=el('g',{class:'feat mk'+(ghost?' ghost':'')+(S.sel===f.id?' sel':'')+(prevIds['m'+f.id]?'':' enter'),'data-id':f.id,tabindex:'0',role:'button','aria-pressed':String(S.sel===f.id),
+    style:'--x:'+f.xy[0].toFixed(1)+'px;--y:'+f.xy[1].toFixed(1)+'px;--inv:'+(1/S.k).toFixed(3)+';--c:'+col,'aria-label':f.label+'. '+VT[code]+(ghost?'. Happens after the selected year.':'')+'.'},gMk);
+  el('circle',{r:22,class:'mk-hit'},g); el('circle',{r:16,class:'mk-bg'},g);
+  var u=el('use',{href:ICONCODE_TO_SPRITE(code),x:-14,y:-14,width:28,height:28,class:'icon-g',style:'color:'+col},g);
+  g.addEventListener('click',function(e){e.stopPropagation();select(f.id);}); g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(f.id);}});
+  now['m'+f.id]=1;
+}
+function drawTreaty(f,ghost,now){
+  var g=el('g',{class:'feat mk'+(ghost?' ghost':'')+(S.sel===f.id?' sel':''),'data-id':f.id,tabindex:'0',role:'button','aria-pressed':String(S.sel===f.id),
+    style:'--x:'+f.xy[0].toFixed(1)+'px;--y:'+f.xy[1].toFixed(1)+'px;--inv:'+(1/S.k).toFixed(3)+';--c:var(--data-recognized-line)','aria-label':f.label+'. Treaty signing.'},gMk);
+  el('circle',{r:22,class:'mk-hit'},g); el('circle',{r:9,class:'mk-bg'},g); el('circle',{r:3.5,style:'fill:var(--data-recognized-line)'},g);
+  g.addEventListener('click',function(e){e.stopPropagation();select(f.id);}); g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(f.id);}});
+}
+function highlightSel(){ Array.prototype.forEach.call(svg.querySelectorAll('.feat'),function(g){var on=g.getAttribute('data-id')===S.sel;g.classList.toggle('sel',on);g.setAttribute('aria-pressed',String(on));}); }
+
+/* zoom and pan: S.cx,S.cy is the view centre in map units; S.k is the zoom factor (1 = whole map fits) */
+function baseSize(){ var r=svg.getBoundingClientRect(); var a=(r.width||960)/(r.height||560); return a>=W/H?[H*a,H]:[W,W/a]; }
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+function applyView(){
+  var b=baseSize(), w=b[0]/S.k, h=b[1]/S.k, r=svg.getBoundingClientRect(), inv=w/(r.width||960);
+  S.cx=clamp(S.cx,0,W); S.cy=clamp(S.cy,0,H);
+  svg.setAttribute('viewBox',(S.cx-w/2).toFixed(1)+' '+(S.cy-h/2).toFixed(1)+' '+w.toFixed(1)+' '+h.toFixed(1));
+  Array.prototype.forEach.call(svg.querySelectorAll('.mk'),function(g){g.style.setProperty('--inv',inv.toFixed(4));});
+  layoutMarkers(inv);
+  gLbl.setAttribute('style','font-size:'+(12*inv).toFixed(2)+'px;stroke-width:'+(3.5*inv).toFixed(2)+'px');
+  var warn=S.k>=2.4?' Zoom is capped. Shapes are held at the source\u2019s precision (about 1:2,000,000) and do not get more exact as you zoom.':'';
+  var late=S.year>1894?' Cession polygons end in 1894. After that, this map shows statutes, cases and present-day boundaries.':'';
+  $('modenote').textContent=modeText()+late+warn;
+}
+/* markers that would overlap on screen are fanned out around their true position (the real build clusters them with a count badge) */
+function layoutMarkers(inv){
+  var ms=[].slice.call(svg.querySelectorAll('.mk')), placed=[];
+  ms.forEach(function(g){ var f=byId(g.getAttribute('data-id')); if(!f)return; var x=f.xy[0],y=f.xy[1],t=0,ang=0;
+    function clash(){return placed.some(function(p){return Math.hypot((p[0]-x)/inv,(p[1]-y)/inv)<30;});}
+    while(clash()&&t<30){ ang+=Math.PI/3; var rad=(30+Math.floor(t/6)*16)*inv; x=f.xy[0]+Math.cos(ang)*rad; y=f.xy[1]+Math.sin(ang)*rad; t++; }
+    placed.push([x,y]); g.style.setProperty('--x',x.toFixed(1)+'px'); g.style.setProperty('--y',y.toFixed(1)+'px'); });
+}
+function focusOn(f){ var b=baseSize(), h=b[1]/S.k; S.cx=f.xy[0]; S.cy=f.xy[1]+(isDesk()?0:0.22*h); }
+function zoom(dk){S.k=clamp(S.k*dk,1,3.2);render();}
+(function(){var drag=null;
+  svg.addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('.feat'))return;drag={x:e.clientX,y:e.clientY,cx:S.cx,cy:S.cy};svg.setPointerCapture(e.pointerId);svg.classList.add('dragging');});
+  svg.addEventListener('pointermove',function(e){if(!drag)return;var r=svg.getBoundingClientRect(),sc=(baseSize()[0]/S.k)/r.width;S.cx=drag.cx-(e.clientX-drag.x)*sc;S.cy=drag.cy-(e.clientY-drag.y)*sc;applyView();});
+  function end(e){if(drag){drag=null;svg.classList.remove('dragging');}}
+  svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+  svg.addEventListener('click',function(e){ if(!(e.target.closest&&e.target.closest('.feat'))){ if(S.sel){S.sel=null;renderDrawer();highlightSel();updateDock();writeHash();} } });
+})();
+$('zin').onclick=function(){zoom(1.4);}; $('zout').onclick=function(){zoom(1/1.4);};
+
+/* ====================================================================== dock */
+function modeText(){ return S.mode==='record'?'What U.S. documents recorded up to this year.':'A model: what documents had recognized by this year. Later changes are outlines only.'; }
+function updateDock(){
+  var y=S.year, c=chapter(y);
+  $('year').textContent=y; $('slider').value=y;
+  $('slider').setAttribute('aria-valuetext',y+', '+(c.y===y?'':'since '+c.y+', ')+c.l+(S.mode==='honored'?', documents recognized through this year':''));
+  $('yearlabel').textContent=S.mode==='record'?'Federal record as of':'Documents recognized through';
+  $('chap').textContent=(c.y===y?'':'Since '+c.y+': ')+c.l;
+  $('cap').textContent=c.n;
+  Array.prototype.forEach.call($('stops').children,function(b){b.setAttribute('aria-pressed',String(+b.getAttribute('data-y')===y));});
+  var evs=eventsList(), here=evs.filter(function(e){return e.y===y;}).length;
+  $('evsum').textContent=evs.filter(function(e){return e.y<=y;}).length+' events so far'+(here?', '+here+' in '+y:'');
+  Array.prototype.forEach.call(document.querySelectorAll('.cursor'),function(cu){cu.style.left=((y-1778)/(2026-1778)*100)+'%';});
+  var lb=$('legalbar'); lb.hidden=S.mode!=='honored';
+  $('legalsum').textContent=legalSummary();
+  $('mode-record').setAttribute('aria-pressed',String(S.mode==='record'));$('mode-honored').setAttribute('aria-pressed',String(S.mode==='honored'));
+  $('todaychip').hidden=!S.todayHidden;
+  var n=items().length; clearTimeout(updateDock.t);
+  updateDock.t=setTimeout(function(){$('live').textContent=y+'. '+c.l+'. '+n+' shapes and markers shown.';},350);
+  measure();
+}
+function legalSummary(){ var f=byId(S.sel); if(f&&f.st&&f.st.length){return f.st.map(function(s){return s+' '+ST[s];}).join('; ')+'.';} return 'Select a shape to see its status. Status differs by nation.'; }
+function eventsList(){
+  var out=[]; F.forEach(function(f){ if(f.k==='today'||f.k==='icc')return; var tr=f.track; if(!tr)return; var yy=f.mk?f.mk.y:f.from; if(yy==null)return; out.push({y:yy,t:tr,id:f.id,label:f.label}); });
+  LAW.forEach(function(l){out.push({y:l.y,t:'law',label:l.label});});
+  return out.sort(function(a,b){return a.y-b.y;});
+}
+var TRACKS=[['inst','Instruments','var(--data-recognized-line)'],['alt','Alterations and violations','var(--data-violation-line)'],['law','Law and resistance','var(--color-ink)'],['ret','Returns and restoration','var(--data-return-line)']];
+function buildTracks(){
+  var box=$('tracks'); box.innerHTML=''; var evs=eventsList();
+  TRACKS.forEach(function(t){
+    var row=document.createElement('div');row.className='track';
+    var lab=document.createElement('span');lab.textContent=t[1];row.appendChild(lab);
+    var bar=document.createElement('div');bar.className='bar';
+    evs.filter(function(e){return e.t===t[0];}).forEach(function(e){
+      var b=document.createElement('button');b.type='button';b.style.left=((e.y-1778)/248*100)+'%';b.style.setProperty('--c',t[2]);b.setAttribute('aria-label',e.y+': '+e.label);b.title=e.y+': '+e.label;
+      b.onclick=function(){setYear(e.y);if(e.id)select(e.id);}; bar.appendChild(b);});
+    var cu=document.createElement('span');cu.className='cursor';bar.appendChild(cu);row.appendChild(bar);box.appendChild(row);
+  });
+}
+function buildStops(){
+  var box=$('stops'); box.innerHTML='';
+  STOPS.forEach(function(s){var b=document.createElement('button');b.type='button';b.textContent=s.y===2026?'Today':s.y;b.setAttribute('data-y',s.y);b.setAttribute('aria-pressed','false');b.title=s.y+': '+s.l;if(s.y===2026)b.className='today';
+    b.setAttribute('aria-label',s.y+', '+s.l);b.onclick=function(){setYear(s.y);};box.appendChild(b);});
+}
+function setYear(y,silent){S.year=Math.max(1778,Math.min(2026,y));render();if(!silent)writeHash();}
+$('slider').addEventListener('input',function(e){setYear(+e.target.value);});
+$('slider').addEventListener('keydown',function(e){
+  var i,ys=STOPS.map(function(s){return s.y;});
+  if(e.key==='PageUp'){e.preventDefault();setYear(S.year+10);} else if(e.key==='PageDown'){e.preventDefault();setYear(S.year-10);}
+  else if(e.key==='['){e.preventDefault();for(i=ys.length-1;i>=0;i--){if(ys[i]<S.year){setYear(ys[i]);break;}}}
+  else if(e.key===']'){e.preventDefault();for(i=0;i<ys.length;i++){if(ys[i]>S.year){setYear(ys[i]);break;}}}
+});
+$('capmore').onclick=function(){var c=$('cap'),open=c.classList.toggle('clamp')===false;this.textContent=open?'Show less':'Read more';this.setAttribute('aria-expanded',String(open));measure();};
+$('evtoggle').onclick=function(){var t=$('tracks'),o=t.classList.toggle('open');this.setAttribute('aria-expanded',String(o));$('evlab').textContent=o?'Hide':'Show';measure();};
+$('after1894').style.left=((1894-1778)/248*100)+'%'; $('after1894').style.right='0';
+
+/* play: stops only, ends on Today and holds. Never auto-starts. */
+var timer=null;
+function play(){ if(S.playing){stopPlay();return;} S.playing=true;$('play').setAttribute('aria-pressed','true');$('playtxt').textContent='Pause';$('playicon').innerHTML='<path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/>';
+  var ys=STOPS.map(function(s){return s.y;}); var i=ys.findIndex(function(v){return v>S.year;}); if(i<0){i=0;}
+  (function step(){ if(!S.playing)return; setYear(ys[i]); i++; if(i>=ys.length){stopPlay();return;} timer=setTimeout(step,3200); })(); }
+function stopPlay(){S.playing=false;clearTimeout(timer);$('play').setAttribute('aria-pressed','false');$('playtxt').textContent='Play';$('playicon').innerHTML='<path d="M8 5.5v13l11-6.5z"/>';}
+$('play').onclick=play;
+$('slider').addEventListener('pointerdown',stopPlay);
+
+/* ====================================================================== panels */
+var PANELS={rail:$('rail'),drawer:$('drawer')};
+function isDesk(){return window.matchMedia('(min-width:900px)').matches;}
+function openPanel(name,state){ if(isDesk()){return;} Object.keys(PANELS).forEach(function(k){PANELS[k].setAttribute('data-state',k===name?state:'closed');}); }
+function panelState(name){return PANELS[name].getAttribute('data-state');}
+function measure(){ var d=$('dock').offsetHeight,t=$('top').offsetHeight; document.documentElement.style.setProperty('--dock-real',d+'px'); document.documentElement.style.setProperty('--top-real',t+'px'); }
+window.addEventListener('resize',function(){measure();applyView();});
+
+function renderRail(){
+  var h='<div class="phead"><h2 id="layerttl">Layers<span class="sub">What is drawn on the map</span></h2><button class="btn quiet icon-only only-sheet" data-close="rail" aria-label="Close layers">&times;</button></div><div class="pbody">';
+  LAYERS.forEach(function(l){ h+='<div class="layer"><input type="checkbox" id="ly-'+l.id+'" '+(S.layers[l.id]?'checked':'')+'><label for="ly-'+l.id+'"><span class="sw" style="--c:'+l.c+';--bg:'+l.bg+'"></span>'+esc(l.t)+'<span class="desc">'+esc(l.d)+'</span></label></div>'; });
+  h+='<h3>Reading the edges</h3>'
+   +'<div class="def"><svg viewBox="0 0 40 16" style="width:32px;height:14px"><path d="M2 8h36" stroke="currentColor" stroke-width="2" fill="none"/></svg><span><strong>T1, solid.</strong> Surveyed or statutory line.</span></div>'
+   +'<div class="def"><svg viewBox="0 0 40 16" style="width:32px;height:14px"><path d="M2 8h36" stroke="currentColor" stroke-width="2" fill="none"/><path d="M2 8h36" stroke="currentColor" stroke-width="7" opacity=".14" fill="none"/></svg><span><strong>T2, solid with a thin buffer.</strong> Identifiable features.</span></div>'
+   +'<div class="def"><svg viewBox="0 0 40 16" style="width:32px;height:14px"><path d="M2 8h36" stroke="currentColor" stroke-width="2" stroke-dasharray="5 3.5" fill="none"/><path d="M2 8h36" stroke="currentColor" stroke-width="10" opacity=".2" fill="none" style="filter:blur(2px)"/></svg><span><strong>T3, dashed and soft.</strong> Landmarks moved or ambiguous.</span></div>'
+   +'<div class="def"><svg viewBox="0 0 24 24" style="width:22px;height:22px"><use href="#vt-hunting-fishing-rights"/></svg><span><strong>T4, icon only.</strong> No usable geometry. No area drawn.</span></div>'
+   +'<label class="row" style="margin-top:12px;min-height:44px"><input type="checkbox" id="unc" style="width:24px;height:24px;accent-color:var(--color-ink)" '+(S.unc?'checked':'')+'> Show the uncertainty (exaggerated, for teaching)</label>'
+   +'<h3>When shapes overlap</h3><p class="meta" style="font-family:var(--font-sans)">Overlapping claims are never merged. Each claim keeps its own hatch direction and the overlap shows both. Pop-ups list every claimant in alphabetical order.</p>'
+   +'</div>';
+  PANELS.rail.innerHTML=h;
+  LAYERS.forEach(function(l){$('ly-'+l.id).onchange=function(e){S.layers[l.id]=e.target.checked;if(l.id==='today')S.todayHidden=!e.target.checked;render();writeHash();};});
+  $('unc').onchange=function(e){S.unc=e.target.checked;render();};
+}
+$('todaychip').onclick=function(){S.todayHidden=false;S.layers.today=true;renderRail();render();};
+$('layersbtn').onclick=function(){ if(panelState('rail')==='closed'){openPanel('rail','half');} else {openPanel('rail','closed');} };
+
+function byId(id){return F.filter(function(f){return f.id===id;})[0];}
+function select(id){ S.sel=id; S.tab=S.tab==='legal'?'legal':'overview'; var ff=byId(id); if(ff&&ff.xy){focusOn(ff);applyView();} renderDrawer(); highlightSel(); updateDock(); writeHash(); openPanel('drawer',panelState('drawer')==='full'?'full':'half'); }
+function badge(nat){ var n=NATIONS[nat],r=REVIEW[n.rv]; var t=r.t+((n.rv==='reviewed'||n.rv==='co-authored')?(' by '+n.by+' (illustrative)'):'');
+  return '<span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rv-'+r.g+'"/></svg>'+esc(t)+'</span>'; }
+function tierLine(f){ return TIERTXT[f.tier||'T3']; }
+
+function renderDrawer(){
+  var f=byId(S.sel), d=PANELS.drawer, h='';
+  var close='<button class="btn quiet icon-only only-sheet" data-close="drawer" aria-label="Close details">&times;</button><button class="btn quiet icon-only only-sheet" id="sizebtn" aria-label="Resize panel">&#8645;</button>';
+  if(!f){
+    h='<div class="phead"><h2>Details<span class="sub">Select a shape or an event on the map</span></h2>'+close+'</div>'
+     +'<div class="tabs" role="tablist" aria-label="Details"><button role="tab" aria-selected="'+(S.tab!=='support')+'" data-tab="overview">Overview</button><button role="tab" aria-selected="'+(S.tab==='support')+'" data-tab="support">Support</button></div><div class="pbody" role="tabpanel">';
+    if(S.tab==='support'){ h+=supportHTML(null); }
+    else { var c=chapter(S.year);
+      h+='<h3>'+S.year+(c.y===S.year?'':' (since '+c.y+')')+': '+esc(c.l)+'</h3><p>'+esc(c.n)+'</p>'
+        +'<div class="notice"><b>Try this.</b> Tap a shape or an icon. Drag the year. Switch to &ldquo;Honored through year&rdquo; to see what documents had recognized by a year, with the legal status of today beside it.</div>'
+        +'<h3>Every historical view has a present</h3><p>The ink outlines are present-day boundaries from federal sources. They stay on the map unless you hide them, and the &ldquo;Today&rdquo; stop is always one tap away.</p>'; }
+    h+='</div>'; d.innerHTML=h; wireDrawer(); return;
+  }
+  var n=NATIONS[f.nat], rv=REVIEW[n.rv];
+  var hideNarr=rv.pub; // not reviewed or declined: public-record content only
+  h+='<div class="phead"><h2>'+esc(f.label)+'<span class="sub">'+esc(KIND[f.k])+(f.from?' &middot; '+(f.mk?f.mk.y:f.from)+(f.to?' to '+f.to:''):'')+'</span></h2>'+close+'</div>';
+  h+='<div class="tabs" role="tablist" aria-label="Details">'+[['overview','Overview'],['evidence','Evidence'],['legal','Legal today'],['support','Support']].map(function(t){return '<button role="tab" aria-selected="'+(S.tab===t[0])+'" data-tab="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div><div class="pbody" role="tabpanel">';
+  h+='<div class="notice"><b>Illustrative record.</b> Invented example for layout testing. Nothing here is real data.</div>';
+  var gone=status(f,S.year)==='off'; if(gone) h+='<div class="notice">Not shown at '+S.year+'. Move the slider to see it.</div>';
+  if(f.overlap) h+='<div class="notice"><b>Overlapping claims.</b> Other nations’ claims overlap this area. This map does not adjudicate between nations. Claimants, in alphabetical order: Example Nation B, Example Nation C.</div>';
+  if(S.tab==='overview'){
+    h+='<h3>In plain words</h3>';
+    if(hideNarr) h+='<div class="notice"><b>Public-record content only.</b> '+esc(n.n)+' has not reviewed this page, so we do not publish narrative that speaks for it. The record summary follows.</div><p>'+esc(f.plain)+'</p>';
+    else h+='<p>'+esc(f.plain)+'</p>';
+    if(f.cw && !S.cwOk[f.id]){ h+='<div class="notice" role="group" aria-label="Content note"><b>Content note: '+esc(f.cw)+'.</b> The next section describes it factually and without images.<div class="row" style="margin-top:8px"><button class="btn" id="cwgo">Continue</button><button class="btn quiet" id="cwskip">Skip this section</button></div></div>'; }
+    else if(f.k!=='today'){ h+='<h3>What the document says</h3><div class="v-record"><p>[Placeholder: the treaty’s own words appear here, quoted exactly.]</p><span class="cite">Source: Kappler vol. __, p. __; __ Stat. __ (placeholder citation). Voice: quoted primary source.</span></div>'; }
+    h+='<h3>'+esc(n.n)+' today</h3><div class="v-tribal"><div class="row"><strong class="serif">[Endonym goes here]</strong> '+badge(f.nat)+'</div><p class="meta" style="margin:8px 0 0">Official website: [link goes here]. Review is not endorsement. Voice: nation’s own words appear in this style when the nation contributes them.</p></div>';
+    h+='<h3>How exact is this shape?</h3><p class="meta">'+esc(tierLine(f))+' Source geometry is generalized from 1899 maps and is not a legal description.</p>';
+    h+='<div class="row" style="margin-top:16px"><button class="btn" data-dead>Report an error or concern</button><button class="btn" data-dead>Cite this page</button></div>';
+  } else if(S.tab==='evidence'){
+    h+='<h3>Type of event</h3>';
+    if(f.mk){ [f.mk.code].concat(f.mk.sec||[]).forEach(function(c){h+='<div class="def"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="'+ICONCODE_TO_SPRITE(c)+'"/></svg><span><strong>'+esc(VT[c]||c)+'</strong><br><span class="muted">'+c+'</span></span></div>';}); h+='<p class="meta">The precise type sits beside the plain word &ldquo;broken&rdquo;. We use &ldquo;abrogated&rdquo;, &ldquo;diminished&rdquo; and &ldquo;terminated&rdquo; only where a statute or court did.</p>'; }
+    else h+='<p class="meta">No violation type applies to this record.</p>';
+    h+='<h3>Evidence flags</h3>'; if(f.ev&&f.ev.length){ h+='<ul class="statuslist">'+f.ev.map(function(e){return '<li><b>'+e+'</b><span>'+esc(EV[e])+'<br><span class="muted">Citation: [placeholder]</span></span></li>';}).join('')+'</ul><p class="meta">Flags report documented procedure and findings. They are not the site’s verdict.</p>'; } else h+='<p class="meta">No flags on file.</p>';
+    h+='<h3>Courts and statutes</h3><ul><li>[Placeholder case citation, with a link to the case page]</li><li>[Placeholder statute citation]</li></ul>';
+    h+='<h3>Lineage</h3><p class="meta">Geometry: [dataset, version, license]. Georeferenced at 1:2,000,000. Dates are signing dates; effective dates are re-derived from Kappler and Statutes at Large. Record version 0.0.0 (placeholder).</p>';
+  } else if(S.tab==='legal'){ h+=legalHTML(f); }
+  else { h+=supportHTML(f); }
+  h+='</div>'; d.innerHTML=h; wireDrawer();
+}
+function legalHTML(f){
+  var h='<h3>Legal status today</h3><p class="meta" style="font-family:var(--font-sans)">What the treaty said is not always what is legally recoverable now. This panel keeps the two apart.</p>';
+  var on=(f&&f.st)||[]; h+='<ul class="statuslist">';
+  Object.keys(ST).forEach(function(s){ if(on.indexOf(s)>-1) h+='<li class="on"><b>'+s+'</b><span>'+esc(ST[s])+'</span></li>'; });
+  h+='</ul>';
+  if(!on.length) h+='<p class="meta" style="font-family:var(--font-sans)">No status assigned in this placeholder.</p>';
+  h+='<h3>What the treaty said</h3><p>[Placeholder: quote with citation.]</p><h3>What happened</h3><p>[Placeholder: dated events with sources.]</p><h3>What the courts have decided</h3><p>[Placeholder: cases with pin cites.]</p><h3>What this means today</h3><p>[Placeholder: one plain sentence.]</p>'
+   +'<div class="notice">Legal review: pending (illustrative). The reviewer’s role and the date appear here once someone signs off. This panel summarizes legal history for education. It is not legal advice and is not a statement about any current legal claim.</div>';
+  return h;
+}
+function supportHTML(f){
+  var nat=f?f.nat:null, n=nat?NATIONS[nat]:null;
+  var h='<h3>'+(n?'Support work connected to '+esc(n.n):'Support work in Native-led land efforts')+'</h3>'
+   +'<p class="meta" style="font-family:var(--font-sans)"><b>This site collects no money.</b> It links to organizations’ own giving pages. It takes no fee, commission or data from any link. <a href="#" data-dead>How we choose who to list</a>.</p>';
+  if(n){ h+='<div class="card"><h4>Ask first</h4><p style="font-size:var(--step-n1);font-family:var(--font-sans);margin:4px 0">Most tribal governments do not run public donation programs. We do not ask you to give to '+esc(n.n)+' unless it has told us how it wants support. Contact its government and ask what would help. <a href="#" data-dead>[Official website, link goes here]</a></p></div>'; }
+  var list=ORGS.filter(function(o){return !n||o.nat.indexOf(nat)>-1;});
+  if(n&&!list.length) h+='<div class="notice"><b>No verified organization on file for '+esc(n.n)+'.</b> That is a gap in our research, not a judgment. Learn what the nation itself publishes, and <a href="#" data-dead>tell us what we are missing</a>.</div>';
+  var rank={'Tribal government':0,'Tribal nonprofit':1,'Indigenous-led nonprofit':2,'Fiscally sponsored project':3,'Allied organization (not Indigenous-led)':4};
+  list.sort(function(a,b){return rank[a.t]-rank[b.t];}).forEach(function(o){
+    h+='<div class="card"><h4>'+esc(o.n)+'</h4><div class="row"><span class="chip">'+esc(o.t)+'</span><span class="chip">Verified '+esc(o.ver)+'</span></div><dl>'
+      +'<dt>Leadership</dt><dd>'+esc(o.lead)+'</dd><dt>Registry</dt><dd>'+esc(o.reg)+'</dd>'+(o.payee?'<dt>Gift goes to</dt><dd>'+esc(o.payee)+'</dd><dt>Designated gift</dt><dd>'+esc(o.des)+'</dd>':'')
+      +'<dt>Nation consulted</dt><dd>Not yet</dd></dl>'+(o.cav?'<p class="meta" style="font-family:var(--font-sans);margin:4px 0 8px">'+esc(o.cav)+'</p>':'')
+      +(o.tier===3?'<p class="meta"><b>Information only.</b> No giving link.</p>':'<a class="btn primary" href="#" aria-disabled="true" data-dead>Go to '+esc(o.n)+'’s giving page</a><p class="meta" style="margin:6px 0 0">Opens the organization’s own site. (Example only: no real link in this prototype.)</p>')+'</div>';
+  });
+  h+='<h3>Other ways to help</h3><ul><li>Learn what the nation or organization says it is asking for before you act.</li><li>Where a host asks for a voluntary rent or land tax, pay it as they describe.</li><li>Volunteer only where asked, and with the organization’s own guidance.</li><li>Support public-land co-stewardship in your own county.</li></ul>'
+   +'<h3>What a gift does</h3><p>A gift supports an organization’s work. It does not buy a set number of acres. Large returns are usually paid for by public programs, foundations and years of negotiation.</p>';
+  return h;
+}
+function wireDrawer(){
+  var d=PANELS.drawer;
+  Array.prototype.forEach.call(d.querySelectorAll('[data-tab]'),function(b){b.onclick=function(){S.tab=b.getAttribute('data-tab');renderDrawer();var t=d.querySelector('[aria-selected=true]');if(t)t.focus();};});
+  Array.prototype.forEach.call(d.querySelectorAll('[data-close]'),function(b){b.onclick=function(){openPanel(b.getAttribute('data-close'),'closed');};});
+  Array.prototype.forEach.call(d.querySelectorAll('[data-dead]'),function(a){a.onclick=function(e){e.preventDefault();};});
+  var sb=d.querySelector('#sizebtn'); if(sb) sb.onclick=function(){var s=panelState('drawer');openPanel('drawer',s==='half'?'full':(s==='full'?'peek':'half'));};
+  var go=d.querySelector('#cwgo'); if(go) go.onclick=function(){S.cwOk[S.sel]=true;renderDrawer();};
+  var sk=d.querySelector('#cwskip'); if(sk) sk.onclick=function(){S.cwOk[S.sel]=true;S.tab='evidence';renderDrawer();};
+}
+PANELS.rail.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-close]');if(b)openPanel('rail','closed');});
+$('legalbar').onclick=function(){S.tab='legal';renderDrawer();openPanel('drawer','half');};
+
+/* ====================================================================== table view (text equivalent of the map) */
+function updateTable(){
+  var t=$('tableview'); if(t.hidden)return;
+  var rows=items().filter(function(it){return it.f.k!=='today';}).map(function(it){var f=it.f,st=it.s;
+    return '<tr><td><button type="button" data-sel="'+f.id+'">'+esc(f.label)+'</button></td><td>'+esc(KIND[f.k])+'</td><td>'+(f.mk?f.mk.y:(f.from||''))+(f.to?' to '+f.to:'')+'</td><td>'+(f.tier||'')+'</td><td>'+(st==='ghost'?'Happens after '+S.year:'Shown')+'</td><td>'+(f.ev&&f.ev.length?f.ev.join(', '):'')+'</td></tr>';}).join('');
+  t.innerHTML='<table><caption>'+S.year+': '+esc(chapter(S.year).l)+' ('+(S.mode==='record'?'federal record':'honored through this year')+'). Illustrative data.</caption><thead><tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Dates</th><th scope="col">Edge</th><th scope="col">Status</th><th scope="col">Flags</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  Array.prototype.forEach.call(t.querySelectorAll('[data-sel]'),function(b){b.onclick=function(){select(b.getAttribute('data-sel'));};});
+}
+$('viewbtn').onclick=function(){var tv=$('tableview');tv.hidden=!tv.hidden;this.setAttribute('aria-pressed',String(!tv.hidden));this.setAttribute('aria-label',tv.hidden?'Show table view':'Show map view');svg.style.visibility=tv.hidden?'visible':'hidden';updateTable();};
+
+/* ====================================================================== mode, theme, dialogs, url */
+function setMode(m){S.mode=m;if(m==='honored'&&!S.sel){S.tab='legal';}render();renderDrawer();writeHash();}
+$('mode-record').onclick=function(){setMode('record');}; $('mode-honored').onclick=function(){setMode('honored');};
+$('notbtn').onclick=function(){$('notdlg').showModal();}; $('menubtn').onclick=function(){$('menudlg').showModal();};
+Array.prototype.forEach.call(document.querySelectorAll('[data-dead]'),function(a){a.onclick=function(e){e.preventDefault();};});
+$('themebtn').onclick=function(){var r=document.documentElement,cur=r.getAttribute('data-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');var nx=cur==='dark'?'light':'dark';r.setAttribute('data-theme',nx);this.setAttribute('aria-label','Switch to '+(nx==='dark'?'light':'dark')+' theme');try{localStorage.setItem('tla-theme',nx);}catch(e){}};
+try{var th=localStorage.getItem('tla-theme');if(th)document.documentElement.setAttribute('data-theme',th);}catch(e){}
+function writeHash(){ try{ var p=['y='+S.year,'v='+S.mode]; if(S.sel)p.push('sel='+S.sel); var off=LAYERS.filter(function(l){return !S.layers[l.id];}).map(function(l){return l.id;}); var on=LAYERS.filter(function(l){return S.layers[l.id]&&!l.on;}).map(function(l){return l.id;});
+  if(on.length)p.push('on='+on.join(',')); if(off.length)p.push('off='+off.join(',')); history.replaceState(null,'','#'+p.join('&')); }catch(e){} }
+function readHash(){ var h=location.hash.replace(/^#/,''); if(!h)return; h.split('&').forEach(function(kv){var a=kv.split('='),k=a[0],v=a[1]||'';
+  if((k==='y'||k==='t')&&+v>=1778&&+v<=2026)S.year=+v; else if((k==='v'||k==='m')&&(v==='record'||v==='honored'))S.mode=v; else if(k==='sel'&&byId(v))S.sel=v;
+  else if(k==='on')v.split(',').forEach(function(x){if(x in S.layers)S.layers[x]=true;}); else if(k==='off')v.split(',').forEach(function(x){if(x in S.layers)S.layers[x]=false;}); });
+  S.todayHidden=!S.layers.today; }
+
+/* ====================================================================== init */
+buildMapStatic(); buildStops(); buildTracks(); readHash(); renderRail(); renderDrawer(); render();
+(function(){var a=svg.getBoundingClientRect();var asp=a.width/(a.height||1);if(asp<1){S.k=1.9;var c=proj([-100,40]);S.cx=c[0];S.cy=c[1];}render();})();
+measure(); setTimeout(function(){measure();applyView();},150);
+if(!isDesk()&&S.sel) openPanel('drawer','half');
+})();
+</script>
+</body>
+</html>

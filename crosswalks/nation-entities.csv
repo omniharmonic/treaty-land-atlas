@@ -1,0 +1,227 @@
+nation_id,label,entity_kind,federal_recognition,legal_context,part_of,region,notes
+nat-haudenosaunee,Haudenosaunee (Six Nations),peoples_or_confederacy,unknown,standard,,Northeast,"Label as printed in seeds (V003 and tribe-org-map). Also appears as ""Six Nations"" and ""Iroquois"" in period sources."
+nat-oceti-sakowin,Oceti Sakowin (Great Sioux Nation),peoples_or_confederacy,unknown,standard,,Plains,"Label as printed in tribe-org-map and campaigns-seed. Treaty records say ""Sioux""."
+nat-anishinaabe,Anishinaabe,peoples_or_confederacy,unknown,standard,,Great Lakes,Umbrella used in seeds for Ojibwe/Chippewa and related peoples. Membership of the umbrella is not asserted here.
+nat-wabanaki,Wabanaki nations (Maine),peoples_or_confederacy,unknown,standard,,Northeast,Label as printed in tribe-org-map.
+nat-five-tribes,Five Tribes (Cherokee; Chickasaw; Choctaw; Muscogee (Creek); Seminole),collective_scope,not_applicable,standard,,Southeast to Indian Territory,Collective label used in V044 and McGirt-line cases. Not a polity.
+nat-stevens-treaty-tribes,Stevens treaty tribes of western Washington,collective_scope,not_applicable,standard,,Pacific Northwest,Collective label used in US v. Washington and Fishing Vessel. Not a polity.
+nat-california-tribes,California tribes (statewide),collective_scope,not_applicable,standard,,California,Collective label from campaigns-seed and tribe-org-map.
+nat-pan-tribal-national,Pan-tribal / national,collective_scope,not_applicable,standard,,National,Sentinel for pan-tribal organizations. Not a polity; do not render as a Nation page.
+nat-delaware-lenape,Delaware (Lenape),historical_party,unknown,standard,,Northeast,"NARA/Kappler ""Delaware""; V001 gives ""Delaware (Lenape)"". Present-day nations (Delaware Tribe of Indians; Delaware Nation) are named in violations-seed-notes V001 as holding the historical voice; mapping is proposed only."
+nat-wyandot,Wyandot,historical_party,unknown,standard,,Great Lakes,
+nat-shawnee,Shawnee,historical_party,unknown,standard,,Great Lakes,
+nat-miami,Miami,historical_party,unknown,standard,,Great Lakes,
+nat-eel-river,Eel River,historical_party,unknown,standard,,Great Lakes,Period band name as printed by NARA.
+nat-wea,Wea,historical_party,unknown,standard,,Great Lakes,
+nat-kickapoo,Kickapoo,historical_party,unknown,standard,,Great Lakes,
+nat-piankashaw,Piankashaw,historical_party,unknown,standard,,Great Lakes,
+nat-kaskaskia,Kaskaskia,historical_party,unknown,standard,,Great Lakes,
+nat-potawatomi,Potawatomi,historical_party,unknown,standard,nat-anishinaabe,Great Lakes,part_of reflects usage in V004/V011 lists only.
+nat-ottawa,Ottawa,historical_party,unknown,standard,nat-anishinaabe,Great Lakes,
+nat-chippewa-ojibwe,Chippewa (Ojibwe),historical_party,unknown,standard,nat-anishinaabe,Great Lakes,NARA uses Chippewa; seeds also use Ojibwe. Many present-day bands descend from these parties; see successor proposals.
+nat-munsee,Munsee,historical_party,unknown,standard,nat-delaware-lenape,Northeast,
+nat-mohawk,Mohawk,historical_party,unknown,standard,nat-haudenosaunee,Northeast,
+nat-oneida,Oneida,historical_party,unknown,standard,nat-haudenosaunee,Northeast,
+nat-onondaga,Onondaga,historical_party,unknown,standard,nat-haudenosaunee,Northeast,
+nat-cayuga,Cayuga,historical_party,unknown,standard,nat-haudenosaunee,Northeast,
+nat-seneca,Seneca,historical_party,unknown,standard,nat-haudenosaunee,Northeast,
+nat-tuscarora,Tuscarora,historical_party,unknown,standard,nat-haudenosaunee,Northeast,
+nat-stockbridge,Stockbridge,historical_party,unknown,standard,,Northeast,As printed in the 1794 treaty (TLA-T-022).
+nat-cherokee,Cherokee,historical_party,unknown,standard,,Southeast,Treaty-party label. At least three present-day governments claim Cherokee continuity (from memory; not in seeds); only the one named in cases-seed is entered as a proposal.
+nat-choctaw,Choctaw,historical_party,unknown,standard,,Southeast,
+nat-chickasaw,Chickasaw,historical_party,unknown,standard,,Southeast,
+nat-muscogee-creek,Muscogee (Creek),historical_party,unknown,standard,,Southeast,"NARA ""Creeks""; V010 and McGirt-line cases use ""Muscogee (Creek) Nation""."
+nat-seminole,Seminole,historical_party,unknown,standard,,Southeast,
+nat-florida-tribes-1823,Florida Tribes (Moultrie Creek),historical_party,unknown,standard,,Southeast,NARA label for the 1823 parties. Not a single polity.
+nat-sauk,Sauk (Sac),historical_party,unknown,standard,,Great Lakes,
+nat-meskwaki,Meskwaki (Fox),historical_party,unknown,standard,,Great Lakes,"NARA ""Fox""; V005 gives ""Meskwaki (Fox)""."
+nat-menominee,Menominee,historical_party,unknown,standard,,Great Lakes,
+nat-winnebago,Winnebago,historical_party,unknown,standard,,Great Lakes,NARA spelling. Endonym not asserted here; ask the nation.
+nat-iowa,Iowa,historical_party,unknown,standard,,Plains,
+nat-omaha,Omaha,historical_party,unknown,standard,,Plains,
+nat-oto,Oto,historical_party,unknown,standard,,Plains,
+nat-sioux,Sioux (as named in treaty records),historical_party,unknown,standard,nat-oceti-sakowin,Plains,Exonym used by NARA/Kappler. Which bands signed differs per treaty.
+nat-lakota,Lakota,historical_party,unknown,standard,nat-oceti-sakowin,Plains,
+nat-dakota,Dakota,historical_party,unknown,standard,nat-oceti-sakowin,Plains,
+nat-sisseton,Sisseton,historical_party,unknown,standard,nat-oceti-sakowin,Plains,
+nat-wahpeton,Wahpeton,historical_party,unknown,standard,nat-oceti-sakowin,Plains,
+nat-mdewakanton,Mdewakanton,historical_party,unknown,standard,nat-oceti-sakowin,Plains,
+nat-wahpekute,Wahpekute,historical_party,unknown,standard,nat-oceti-sakowin,Plains,NARA spells Wahpahkoota/Wahpacoota.
+nat-yankton,Yankton,historical_party,unknown,standard,nat-oceti-sakowin,Plains,
+nat-cheyenne,Cheyenne,historical_party,unknown,standard,,Plains,
+nat-northern-cheyenne,Northern Cheyenne,historical_party,unknown,standard,nat-cheyenne,Plains,
+nat-arapaho,Arapaho,historical_party,unknown,standard,,Plains,
+nat-northern-arapaho,Northern Arapaho,historical_party,unknown,standard,nat-arapaho,Plains,
+nat-crow,Crow (Apsaalooke),historical_party,unknown,standard,,Plains,Endonym as printed in V034.
+nat-arikara,Arikara,historical_party,unknown,standard,,Plains,
+nat-mandan,Mandan,historical_party,unknown,standard,,Plains,
+nat-hidatsa,Hidatsa,historical_party,unknown,standard,,Plains,
+nat-assiniboine,Assiniboine (Nakoda),historical_party,unknown,standard,,Plains,
+nat-gros-ventre,Gros Ventre (A'aninin),historical_party,unknown,standard,,Plains,
+nat-blackfeet,Blackfeet (Pikuni),historical_party,unknown,standard,,Plains,
+nat-ponca,Ponca,historical_party,unknown,standard,,Plains,
+nat-kaw,Kaw (Kanza),historical_party,unknown,standard,,Plains,
+nat-pawnee,Pawnee,historical_party,unknown,standard,,Plains,
+nat-osage,Osage,historical_party,unknown,standard,,Plains,
+nat-quapaw,Quapaw,historical_party,unknown,standard,,Plains,
+nat-comanche,Comanche,historical_party,unknown,standard,,Plains,
+nat-kiowa,Kiowa,historical_party,unknown,standard,,Plains,
+nat-plains-apache,Plains Apache (Kiowa-Apache),historical_party,unknown,standard,nat-apache,Plains,Label per V022.
+nat-wichita,Wichita,historical_party,unknown,standard,,Plains,
+nat-flathead-salish,Flathead (Salish),historical_party,unknown,standard,,Pacific Northwest,"NARA/Kappler ""Flathead""."
+nat-kootenai,Kootenai (Kutenai),historical_party,unknown,standard,,Pacific Northwest,
+nat-pend-doreille,Pend d'Oreille,historical_party,unknown,standard,,Pacific Northwest,
+nat-nez-perce,Nez Perce (Nimiipuu),historical_party,unknown,standard,,Pacific Northwest,Endonym as printed in V038.
+nat-yakama,Yakama (Yakima),historical_party,unknown,standard,,Pacific Northwest,NARA spells Yakima; treaty name uses Yakama.
+nat-walla-walla,Walla Walla,historical_party,unknown,standard,,Pacific Northwest,
+nat-cayuse,Cayuse,historical_party,unknown,standard,,Pacific Northwest,
+nat-umatilla,Umatilla,historical_party,unknown,standard,,Pacific Northwest,
+nat-wasco,Wasco,historical_party,unknown,standard,,Pacific Northwest,
+nat-quinault,Quinault,historical_party,unknown,standard,,Pacific Northwest,NARA Quinaielt.
+nat-quileute,Quileute,historical_party,unknown,standard,,Pacific Northwest,
+nat-makah,Makah,historical_party,unknown,standard,,Pacific Northwest,
+nat-sklallam,S'Klallam (Clallam),historical_party,unknown,standard,,Pacific Northwest,
+nat-twana,Twana (Skokomish),historical_party,unknown,standard,,Pacific Northwest,NARA Sokokomish/Toanhooch.
+nat-chimakum,Chimakum,historical_party,unknown,standard,,Pacific Northwest,
+nat-puyallup,Puyallup,historical_party,unknown,standard,,Pacific Northwest,
+nat-nisqually,Nisqually,historical_party,unknown,standard,,Pacific Northwest,NARA Nisqualli.
+nat-duwamish,Duwamish,historical_party,per_seed_not_federally_recognized,standard,,Pacific Northwest,NARA Dwamish. Organizations-seed states the tribe says it is not federally recognized.
+nat-suquamish,Suquamish,historical_party,unknown,standard,,Pacific Northwest,
+nat-squaxin-island,Squaxin Island,historical_party,unknown,standard,,Pacific Northwest,Named in V051 only.
+nat-rogue-river,Rogue River,historical_party,unknown,standard,,Pacific Northwest,
+nat-klamath,Klamath,historical_party,unknown,standard,,Pacific Northwest,
+nat-modoc,Modoc,historical_party,unknown,standard,,Pacific Northwest,
+nat-yahooskin-snake,Yahooskin Band of Snake,historical_party,unknown,standard,,Pacific Northwest,
+nat-navajo,Navajo (Diné),historical_party,unknown,standard,,Southwest,NARA Navaho. Endonym as printed in V040.
+nat-ute,Ute,historical_party,unknown,standard,,Great Basin,
+nat-apache,Apache,historical_party,unknown,standard,,Southwest,Umbrella label in NARA; bands differ per treaty.
+nat-chiricahua-apache,Chiricahua Apache,historical_party,unknown,standard,nat-apache,Southwest,Named in V042.
+nat-hopi,Hopi,historical_party,unknown,standard,,Southwest,
+nat-shoshone,Shoshone (Shoshoni),historical_party,unknown,standard,,Great Basin,
+nat-eastern-shoshone,Eastern Shoshone,historical_party,unknown,standard,nat-shoshone,Great Basin,
+nat-western-shoshone,Western Shoshone (Newe),historical_party,unknown,standard,nat-shoshone,Great Basin,Endonym as printed in V035.
+nat-northwestern-shoshone,Northwestern Shoshone,historical_party,unknown,standard,nat-shoshone,Great Basin,
+nat-bannock,Bannock,historical_party,unknown,standard,,Great Basin,
+nat-catawba,Catawba,historical_party,unknown,standard,,Southeast,
+nat-passamaquoddy,Passamaquoddy,historical_party,unknown,standard,nat-wabanaki,Northeast,
+nat-penobscot,Penobscot,historical_party,unknown,standard,nat-wabanaki,Northeast,
+nat-maliseet,Maliseet,historical_party,unknown,standard,nat-wabanaki,Northeast,
+nat-mohican,Mohican (Stockbridge-Munsee),historical_party,unknown,standard,,Northeast,
+nat-wampanoag,Wampanoag,historical_party,unknown,standard,,Northeast,
+nat-hawaiian,Native Hawaiians (Kanaka Maoli),peoples_or_confederacy,not_applicable,distinct_hawaii,,Hawaii,DISTINCT LEGAL CONTEXT. Not a federally recognized tribe. No US treaty with Native Hawaiians exists in the seed.
+nat-hawaiian-kingdom,Hawaiian Kingdom,foreign_state,not_applicable,distinct_hawaii,,Hawaii,Sovereign state party to TLA-X-HI1849. Not a Native nation in the federal-Indian-law sense.
+nat-alaska-native,Alaska Native peoples,peoples_or_confederacy,not_applicable,distinct_alaska_ancsa,,Alaska,DISTINCT LEGAL CONTEXT (ANCSA corporate structure). No US-Native treaties in Alaska in the seed.
+nat-inupiat,Inupiat,peoples_or_confederacy,unknown,distinct_alaska_ancsa,nat-alaska-native,Alaska,
+nat-mexico,Mexico,foreign_state,not_applicable,standard,,Foreign,Party to TLA-X-GH1848. Not a Native nation.
+nat-russia,Russia (Russian Empire),foreign_state,not_applicable,standard,,Foreign,Party to TLA-X-AK1867. Not a Native nation.
+nat-pd-cherokee-nation,Cherokee Nation,present_day_government,per_seed_tribal_government,standard,,Oklahoma,Name as printed in cases-seed. Distinct from other Cherokee governments.
+nat-pd-united-keetoowah-band,United Keetoowah Band of Cherokee Indians,present_day_government,unknown,standard,,Oklahoma,Named in A3 and A1 as a contested successor-in-interest example (OSU record for New Echota). Not asserted as successor.
+nat-pd-muscogee-nation,Muscogee (Creek) Nation,present_day_government,per_seed_tribal_government,standard,,Oklahoma,Name as printed in V010/V047.
+nat-pd-seminole-nation-ok,Seminole Nation of Oklahoma,present_day_government,per_seed_tribal_government,standard,,Oklahoma,Name as printed in V043.
+nat-pd-seminole-tribe-fl,Seminole Tribe of Florida,present_day_government,per_seed_tribal_government,standard,,Florida,Name as printed in cases-seed.
+nat-pd-miccosukee,Miccosukee Tribe of Indians of Florida,present_day_government,per_seed_tribal_government,standard,,Florida,Name as printed in campaigns-seed.
+nat-pd-choctaw-nation,Choctaw Nation,present_day_government,unknown,standard,,Oklahoma,"Name inferred from ""Choctaw Nation v. United States""; confirm."
+nat-pd-ms-choctaw,Mississippi Band of Choctaw Indians,present_day_government,per_seed_tribal_government,standard,,Mississippi,Name as printed in cases-seed.
+nat-pd-seneca-nation,Seneca Nation of Indians,present_day_government,per_seed_tribal_government,standard,nat-haudenosaunee,New York,Name as printed in V012/V017.
+nat-pd-tonawanda-seneca,Tonawanda Band of Seneca,present_day_government,unknown,standard,nat-haudenosaunee,New York,Name as printed in V012.
+nat-pd-tuscarora-nation,Tuscarora Nation,present_day_government,unknown,standard,nat-haudenosaunee,New York,Name as printed in V019.
+nat-pd-cayuga-nation,Cayuga Nation,present_day_government,unknown,standard,nat-haudenosaunee,New York,Cayuga Indian Nation of New York in case title.
+nat-pd-oneida-indian-nation,Oneida Indian Nation,present_day_government,per_seed_tribal_government,standard,nat-haudenosaunee,New York,From org-oneida-indian-nation.
+nat-pd-mille-lacs-band,Mille Lacs Band of Ojibwe,present_day_government,unknown,standard,nat-anishinaabe,Minnesota,Name as printed in V014.
+nat-pd-menominee-tribe,Menominee Indian Tribe of Wisconsin,present_day_government,per_seed_tribal_government,standard,,Wisconsin,From org-menominee-tribe.
+nat-pd-stockbridge-munsee,Stockbridge-Munsee Community,present_day_government,per_seed_tribal_government,standard,,Wisconsin,From org-stockbridge-munsee.
+nat-pd-standing-rock,Standing Rock Sioux Tribe,present_day_government,unknown,standard,nat-oceti-sakowin,North Dakota / South Dakota,Name as printed in V029/V030.
+nat-pd-cheyenne-river,Cheyenne River Sioux Tribe,present_day_government,unknown,standard,nat-oceti-sakowin,South Dakota,Name as printed in tribe-org-map and V029.
+nat-pd-lower-brule,Lower Brule Sioux Tribe,present_day_government,unknown,standard,nat-oceti-sakowin,South Dakota,Name as printed in V029.
+nat-pd-crow-creek,Crow Creek Sioux Tribe,present_day_government,unknown,standard,nat-oceti-sakowin,South Dakota,Name as printed in V029.
+nat-pd-rosebud-sioux,Rosebud Sioux Tribe (Sicangu Oyate),present_day_government,per_seed_tribal_government,standard,nat-oceti-sakowin,South Dakota,From org-rosebud-sioux-tribe.
+nat-pd-sisseton-wahpeton,Sisseton-Wahpeton Oyate,present_day_government,unknown,standard,nat-oceti-sakowin,South Dakota,Name as printed in V032.
+nat-pd-spirit-lake,Spirit Lake Nation,present_day_government,per_seed_tribal_government,standard,nat-oceti-sakowin,North Dakota,From org-spirit-lake-nation.
+nat-pd-yankton-sioux,Yankton Sioux Tribe,present_day_government,unknown,standard,nat-oceti-sakowin,South Dakota,Name as printed in cases-seed.
+nat-pd-cheyenne-arapaho,Cheyenne and Arapaho Tribes,present_day_government,per_seed_tribal_government,standard,,Oklahoma,From org-cheyenne-arapaho-tribes.
+nat-pd-omaha-tribe,Omaha Tribe of Nebraska,present_day_government,unknown,standard,,Nebraska,Name as printed in V033.
+nat-pd-ponca-ne,Ponca Tribe of Nebraska,present_day_government,unknown,standard,,Nebraska,Name as printed in V027.
+nat-pd-ponca-ok,Ponca Tribe of Indians of Oklahoma,present_day_government,unknown,standard,,Oklahoma,Name as printed in V027.
+nat-pd-crow-tribe,Crow Tribe,present_day_government,unknown,standard,,Montana,Name as printed in V034.
+nat-pd-pawnee-nation,Pawnee Nation of Oklahoma,present_day_government,per_seed_tribal_government,standard,,Oklahoma,From org-pawnee-nation.
+nat-pd-kaw-nation,Kaw Nation,present_day_government,unknown,standard,,Oklahoma,Name as printed in V059.
+nat-pd-kiowa-tribe,Kiowa Tribe of Oklahoma,present_day_government,unknown,standard,,Oklahoma,Name as printed in cases-seed.
+nat-pd-cskt,Confederated Salish and Kootenai Tribes,present_day_government,per_seed_tribal_government,standard,,Montana,From org-cskt.
+nat-pd-yakama-nation,Confederated Tribes and Bands of the Yakama Nation,present_day_government,unknown,standard,,Washington,Name as printed in V053.
+nat-pd-puyallup,Puyallup Tribe of Indians,present_day_government,per_seed_tribal_government,standard,,Washington,From org-puyallup-tribe.
+nat-pd-siletz,Confederated Tribes of Siletz Indians,present_day_government,per_seed_tribal_government,standard,,Oregon,From org-siletz-ctsi.
+nat-pd-klamath-tribes,Klamath Tribes,present_day_government,unknown,standard,,Oregon,Name as printed in V056.
+nat-pd-navajo-nation,Navajo Nation (Diné),present_day_government,unknown,standard,,Southwest,Name as printed in V040/V041.
+nat-pd-ute-indian-tribe,Ute Indian Tribe of the Uintah and Ouray Reservation,present_day_government,unknown,standard,,Utah,Name as printed in V062.
+nat-pd-ute-mountain-ute,Ute Mountain Ute Tribe,present_day_government,unknown,standard,,Colorado,Name as printed in V062.
+nat-pd-southern-ute,Southern Ute Indian Tribe,present_day_government,unknown,standard,,Colorado,"Named as ""Southern Ute"" in V039."
+nat-pd-hopi-tribe,Hopi Tribe,present_day_government,unknown,standard,,Arizona,Name as printed in V062.
+nat-pd-mescalero,Mescalero Apache Tribe,present_day_government,unknown,standard,,New Mexico,Name as printed in V042.
+nat-pd-fort-sill-apache,Fort Sill Apache Tribe,present_day_government,unknown,standard,,Oklahoma,Name as printed in V042.
+nat-pd-san-carlos-apache,San Carlos Apache Tribe,present_day_government,unknown,standard,,Arizona,Name as printed in V049.
+nat-pd-taos-pueblo,Taos Pueblo,present_day_government,per_seed_tribal_government,standard,,New Mexico,"From org-taos-pueblo. Seeds also use ""Taos Pueblo (Tiwa)"" and ""Red Willow People""."
+nat-pd-catawba,Catawba Indian Nation,present_day_government,unknown,standard,,South Carolina,Name as printed in V057.
+nat-pd-penobscot,Penobscot Nation,present_day_government,per_seed_tribal_government,standard,nat-wabanaki,Maine,From org-penobscot-nation.
+nat-pd-houlton-maliseet,Houlton Band of Maliseet Indians,present_day_government,per_seed_tribal_government,standard,nat-wabanaki,Maine,From org-houlton-maliseet.
+nat-pd-mikmaq,Mi'kmaq Nation,present_day_government,per_seed_tribal_government,standard,nat-wabanaki,Maine,From org-mikmaq-nation.
+nat-pd-passamaquoddy,Passamaquoddy (Motahkomikuk and Sipayik),present_day_government,unknown,standard,nat-wabanaki,Maine,Label as printed in tribe-org-map.
+nat-pd-mashpee-wampanoag,Mashpee Wampanoag Tribe,present_day_government,per_seed_tribal_government,standard,,Massachusetts,From org-mashpee-wampanoag. Trust status contested per seed.
+nat-pd-pamunkey,Pamunkey Indian Tribe,present_day_government,per_seed_tribal_government,standard,,Virginia,From org-pamunkey.
+nat-pd-yurok,Yurok Tribe,present_day_government,per_seed_tribal_government,standard,,California,From org-yurok-tribe.
+nat-pd-wiyot,Wiyot Tribe,present_day_government,per_seed_tribal_government,standard,,California,From org-wiyot-tribe.
+nat-pd-washoe,Washoe Tribe of Nevada and California,present_day_government,per_seed_tribal_government,standard,,Nevada / California,From org-washoe-tribe.
+nat-pd-tule-river,Tule River Indian Tribe,present_day_government,per_seed_tribal_government,standard,,California,From org-tule-river-tribe.
+nat-pd-southern-sierra-miwuk,Southern Sierra Miwuk Nation,present_day_government,per_seed_tribal_government,standard,,California,From org-southern-sierra-miwuk.
+nat-pd-mechoopda,Mechoopda Indian Tribe of Chico Rancheria,present_day_government,per_seed_tribal_government,standard,,California,From org-mechoopda.
+nat-pd-santa-ynez-chumash,Santa Ynez Band of Chumash Indians,present_day_government,per_seed_tribal_government,standard,,California,From org-santa-ynez-chumash.
+nat-pd-coastal-chumash,Coastal Band of the Chumash Nation,present_day_government,unknown,standard,,California,Named in tribe-org-map only; not researched.
+nat-pd-esselen,Esselen Tribe of Monterey County,present_day_government,unknown,standard,,California,From org-esselen-tribe name; recognition status not read.
+nat-pd-karuk,Karuk Tribe,present_day_government,unknown,standard,,California,Named in tribe-org-map only.
+nat-pd-sherwood-valley,Sherwood Valley Band of Pomo,present_day_government,unknown,standard,,California,Named in tribe-org-map.
+nat-pd-round-valley,Round Valley Indian Tribes,present_day_government,unknown,standard,,California,Named in tribe-org-map.
+nat-pd-coyote-valley,Coyote Valley Band of Pomo,present_day_government,unknown,standard,,California,Named in tribe-org-map.
+nat-pd-lisjan-ohlone,Lisjan Ohlone (Confederated Villages of Lisjan),community_or_band,unknown,standard,,California,Label as printed in organizations-seed.
+nat-pd-amah-mutsun,Amah Mutsun (Mutsun Ohlone),community_or_band,unknown,standard,,California,Label as printed in tribe-org-map.
+nat-pd-mutsun-costanoan,Mutsun Costanoan (Indian Canyon),community_or_band,unknown,standard,,California,Label as printed in tribe-org-map.
+nat-pd-tulalip,Tulalip Tribes,present_day_government,unknown,standard,,Washington,Named in tribe-org-map only; not researched.
+nat-pd-muckleshoot,Muckleshoot Indian Tribe,present_day_government,unknown,standard,,Washington,Named in tribe-org-map only; not researched.
+nat-pd-white-earth,White Earth Nation,present_day_government,unknown,standard,nat-anishinaabe,Minnesota,Label as printed in tribe-org-map.
+nat-pd-lac-du-flambeau,Lac du Flambeau Band of Lake Superior Chippewa,present_day_government,unknown,standard,nat-anishinaabe,Wisconsin,Name as printed in cases-seed.
+nat-pd-bay-mills,Bay Mills Indian Community,present_day_government,unknown,standard,nat-anishinaabe,Michigan,Name as printed in cases-seed.
+nat-pd-colville,Confederated Tribes of the Colville Reservation,present_day_government,unknown,standard,,Washington,Name as printed in cases-seed.
+nat-pd-nana,NANA Regional Corporation shareholders (Inupiat),collective_scope,not_applicable,distinct_alaska_ancsa,nat-inupiat,Alaska,"NANA is an ANCSA corporation. Organizations-seed labels it ""Tribal government""; that label is probably wrong (flagged in build report)."
+nat-pd-nhlc-beneficiaries,Native Hawaiian beneficiaries (DHHL),collective_scope,not_applicable,distinct_hawaii,nat-hawaiian,Hawaii,Placeholder for DHHL context. Not a Nation page.
+nat-pd-delaware-tribe,Delaware Tribe of Indians,present_day_government,unknown,standard,,Oklahoma,Named in violations-seed-notes V001 as holding the historical voice for the Delaware (Lenape).
+nat-pd-delaware-nation,Delaware Nation (Oklahoma),present_day_government,unknown,standard,,Oklahoma,Named in violations-seed-notes V001 as holding the historical voice for the Delaware (Lenape).
+nat-caddo,Caddo,historical_party,unknown,standard,,Plains,Name as printed in NARA parties text (TLA-T-197).
+nat-apalachicola,Apalachicola,historical_party,unknown,standard,,Southeast,Name as printed in NARA parties text.
+nat-umpqua,Umpqua,historical_party,unknown,standard,,Pacific Northwest,Name as printed in NARA parties text.
+nat-kalapuya,Kalapuya,historical_party,unknown,standard,,Pacific Northwest,Name as printed in NARA parties text.
+nat-chasta,Chasta,historical_party,unknown,standard,,Pacific Northwest,Spelling as printed in NARA (TLA-T-278).
+nat-scoton,Scoton,historical_party,unknown,standard,,Pacific Northwest,Spelling as printed in NARA (TLA-T-278); identification not resolved.
+nat-molala,Molala (Molel),historical_party,unknown,standard,,Pacific Northwest,Name as printed in NARA (TLA-T-300).
+nat-middle-oregon-tribes,Confederated Tribes of Middle Oregon,historical_party,unknown,standard,,Pacific Northwest,Treaty-party label (TLA-T-351). Do not equate with a present-day government without review.
+nat-walpapi,Walpapi (Woll-pah-pe) band of Snake,historical_party,unknown,standard,,Pacific Northwest,Label as printed in NARA (TLA-T-337); not the same record as nat-yahooskin-snake.
+nat-seven-nations-canada,Seven Nations of Canada,peoples_or_confederacy,unknown,standard,,Northeast,Label as printed in NARA (TLA-T-024).
+nat-luiseno,Luiseno,historical_party,unknown,standard,,California,Named in the party text of California treaty K.
+nat-cahuilla,Cahuilla,historical_party,unknown,standard,,California,Named in the party text of California treaty K.
+nat-kumeyaay,Kumeyaay (Diegueno),historical_party,unknown,standard,,California,"Label from California treaty L party text; ""Diegueno"" is a period exonym."
+nat-pomo,Pomo,historical_party,unknown,standard,,California,Named in the party text of California treaty P.
+nat-piankeshaw,Piankeshaw,historical_party,unknown,standard,,Great Lakes / Old Northwest,Named in the Johnson v. M'Intosh row [from-memory].
+nat-illinois,Illinois (Confederacy),peoples_or_confederacy,unknown,standard,,Great Lakes / Old Northwest,Named in the Johnson v. M'Intosh row [from-memory].
+nat-hupa,Hupa (Hoopa Valley),historical_party,unknown,standard,,California,Named in the Kagama row [from-memory].
+nat-hualapai,Hualapai (Walapai),historical_party,unknown,standard,,Southwest,Named in the Santa Fe Pacific row.
+nat-tlingit,Tlingit,peoples_or_confederacy,unknown,distinct_alaska_ancsa,,Alaska,Tee-Hit-Ton case row. ALASKA: distinct legal context.
+nat-pd-colorado-river-indian-tribes,Colorado River Indian Tribes,present_day_government,unknown,standard,,Southwest,Named in the Arizona v. California row [from-memory].
+nat-pd-fort-mojave,Fort Mojave (Indian Tribe),present_day_government,unknown,standard,,Southwest,Named in the Arizona v. California row [from-memory].
+nat-pd-chemehuevi,Chemehuevi,present_day_government,unknown,standard,,Southwest,Named in the Arizona v. California row [from-memory].
+nat-pd-quechan,Quechan,present_day_government,unknown,standard,,Southwest,Named in the Arizona v. California row [from-memory].
+nat-pd-cocopah,Cocopah,present_day_government,unknown,standard,,Southwest,Named in the Arizona v. California row [from-memory].
+nat-pd-native-village-of-venetie,Native Village of Venetie (Neets'aii Gwich'in),present_day_government,unknown,distinct_alaska_ancsa,,Alaska,Named in the Venetie case row [from-memory]. ALASKA: distinct legal context.
+nat-pd-santa-clara-pueblo,Santa Clara Pueblo,present_day_government,unknown,standard,,Southwest,Named in the Santa Clara Pueblo v. Martinez row.
+nat-pd-cabazon-band,Cabazon Band,present_day_government,unknown,standard,,California,Named in the Cabazon case row.
+nat-pd-morongo-band,Morongo Band,present_day_government,unknown,standard,,California,Named in the Cabazon case row.
+nat-pd-coeur-dalene-tribe,Coeur d'Alene Tribe (Schitsu'umsh),present_day_government,unknown,standard,,Pacific Northwest,Named in the Idaho v. US row.
+nat-pd-narragansett,Narragansett Indian Tribe,present_day_government,unknown,standard,,Northeast,Named in the Carcieri row.
+nat-pd-ysleta-del-sur-pueblo,Ysleta del Sur Pueblo (Tigua),present_day_government,unknown,standard,,Southwest,Named in the Ysleta del Sur Pueblo v. Texas row.
+nat-pd-chinook-indian-nation,Chinook Indian Nation,present_day_government,unknown,standard,,Pacific Northwest,"Named in the Chinook v. Burgum row, which concerns a federal-recognition claim. The seed does not state a recognition status; none is recorded here."
