@@ -2,6 +2,14 @@
 
 Generated findings from the pipeline (ingest, graph build, validation) plus hand-logged problems. Research-level conflicts are in `docs/04-KNOWN-ISSUES-AND-INCONSISTENCIES.md`.
 
+## Hand notes (2026-10-17)
+
+- **Federal Register count:** 91 FR 4102 says 575 entities in its summary; the list as printed has 573 (348 + 225) plus 4 cross-references. The govinfo and federalregister.gov editions agree.
+- **USFS layer:** 718 polygons; one (objectid 437) has no cession number and is left out. 725 table rows; one (objectid 361) is empty. The seven cessions without geometry are exactly the ones E2 listed (47, 65, 128, 129, 130, 543, 690).
+- **USFS present-day names** use older Federal Register names in places; `crosswalks/usfs-tribe-name-overrides.csv` maps ten of them, each with a reason.
+- **Ratified instruments without a Statutes at Large citation:** 270 (mostly the 277 NARA-only skeleton records). A citation research pass is under way.
+- **Human review list:** `docs/review/nations-and-links-for-human-review.md`.
+
 <!-- generated:start -->
 ### stage: ingest
 0 finding(s).
