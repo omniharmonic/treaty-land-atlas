@@ -42,6 +42,9 @@ jobs:
       - run: node scripts/check-no-nld.mjs public/data
       - run: npm run build
       - run: node scripts/check-no-nld.mjs dist
+      - run: npx playwright install --with-deps chromium
+      - name: Accessibility and map tests (axe WCAG 2.2 AA, keyboard, no NLD requests)
+        run: npm run test:e2e
       - name: Data summary
         if: always()
         run: |
