@@ -14,9 +14,9 @@ Created by Benjamin Life (@omniharmonic).
 
 ## Status in one paragraph
 
-Research and design are complete as drafts. **The build has started (Phase 1: data pipeline).** It will live at **landback.land**. Owner decisions are logged in [docs/governance/decision-log.md](docs/governance/decision-log.md). No Native nation has been contacted or has reviewed anything. No lawyer has reviewed anything. No permission has been requested from Native Land Digital or the Forest Service. All 1,563 graph nodes are marked `not_yet_contacted`, and no edge has been accepted by a human reviewer.
+**Live (early release) at [landback.land](https://landback.land).** The data pipeline, knowledge graph (about 3,400 records: every treaty in the National Archives series, all 724 Royce cessions, every nation on the 2026 federal list plus 104 state-recognized, terminated, petitioning and other documented nations), the map with its time slider and "honored through" view, record pages, search, and four guided stories are built and deployed. No Native nation has reviewed anything yet, and every nation's page can be claimed by that nation. No lawyer has reviewed anything. Links inferred by matching names or dates are shown and labeled "suggested". Owner decisions are in [docs/governance/decision-log.md](docs/governance/decision-log.md); open questions for people are in [docs/review/nations-and-links-for-human-review.md](docs/review/nations-and-links-for-human-review.md).
 
-## What the site would do
+## What the site does
 
 1. Time slider over Royce cession polygons (1784 to 1894), with every polygon tied to its source.
 2. Counterfactual view: "what if treaties had been honored through year X", always paired with a "Legal status today" panel.
