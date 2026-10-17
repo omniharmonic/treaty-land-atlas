@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+build/
+public/data/
+package-lock.json
+# Research and seed files are hand-authored; never reformat them.
+docs/
+seed-data/
+crosswalks/
+verification/
+data/
+*.md
+*.csv

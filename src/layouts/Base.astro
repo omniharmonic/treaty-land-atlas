@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'United States treaty law with Native nations, over time.' } =
+  Astro.props;
+const stage = process.env.SITE_STAGE ?? 'preview';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {stage !== 'production' && <meta name="robots" content="noindex, nofollow" />}
+  </head>
+  <body>
+    {stage !== 'production' && (
+      <p class="stage-banner" role="note">
+        Work in progress, not for citation.
+      </p>
+    )}
+    <main id="main">
+      <slot />
+    </main>
+    <footer>
+      <p>Created by Benjamin Life (@omniharmonic).</p>
+    </footer>
+  </body>
+</html>
