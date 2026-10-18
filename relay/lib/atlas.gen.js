@@ -62,9 +62,7 @@ function supportFor(ix, input, limits = { today: 8, direct: 6, nearby: 4 }) {
     rank(all.flatMap((id) => ix.by_nation[id] ?? []).filter((o) => ix.orgs[o])),
     limits.direct
   );
-  const states = new Set(
-    input.states?.length ? input.states : (input.nations ?? []).flatMap((id) => ix.nation_states[id] ?? [])
-  );
+  const states = new Set(input.states ?? []);
   const nearby = take(
     rank([...states].flatMap((s) => ix.by_state[s] ?? []).filter((o) => ix.orgs[o])),
     limits.nearby
