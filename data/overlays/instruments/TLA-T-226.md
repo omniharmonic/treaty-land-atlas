@@ -6,7 +6,7 @@ headline: "In 1837 the Yankton Sioux released claims to the lands ceded in 1830 
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated release with stated payments, signed by a commissioner and chiefs and delegates, and no coercion is stated."
 confidence: "high"
-cautions: "No acreage is stated. The words \"short release of a claim\" are this entry's plain-English reading of Article 1; the treaty does not use that phrase. Later history is not covered by the sources opened."
+cautions: "No acreage is stated. The words \"short release of a claim\" are a plain-English summary of Article 1, not the treaty's own wording. The cited sources do not describe what happened afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1837-0496", "title": "Treaty with the Yankton Sioux, 1837 (OSU Tribal Treaties Database)", "quote": "cede to the United States all the right and interest in the land ceded by the treaty, concluded with them and other tribes"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1837-0496", "title": "Treaty with the Yankton Sioux, 1837 (OSU Tribal Treaties Database)", "quote": "the United States stipulate to pay them four thousand dollars"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg542.pdf", "title": "Treaty with the Yankton Sioux, 7 Stat. 542 (govinfo)", "quote": "the United States stipulate to pay them four thousand dollars"}]
 verdict: "fixed"
 ---

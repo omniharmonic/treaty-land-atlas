@@ -6,7 +6,7 @@ headline: "In 1818 the Wyandot ceded two Michigan tracts at Brownstown and Magua
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed exchange of two Michigan tracts for a smaller reserved tract, with no mention of coercion."
 confidence: "high"
-cautions: "Single source (treaty text). No account of later history was opened. Royce numbers in the record were not checked. The text states the ceded tracts held not more than 5,000 acres and the new reservation 4,996 acres."
+cautions: "This summary rests on the treaty text alone. The sources cited do not cover later history. The text states the ceded tracts held not more than 5,000 acres and the new reservation 4,996 acres."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-1818-0164", "title": "Treaty with the Wyandot, 1818 (Oklahoma State University Tribal Treaties Database)", "quote": "containing in the whole not more than five thousand acres of land"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-1818-0164", "title": "Treaty with the Wyandot, 1818 (Oklahoma State University Tribal Treaties Database)", "quote": "an act for the relief of certain Alabama and Wyandot Indians"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-1818-0164", "title": "Treaty with the Wyandot, 1818 (Oklahoma State University Tribal Treaties Database)", "quote": "so long as they or their descendants shall occupy the same"}]
 verdict: "fixed"
 ---

@@ -13,6 +13,6 @@ Honor the Earth describes itself as "an Indigenous-led organization" working to 
 
 Its mission page says it protects the lifeways and sovereignty of Indigenous relatives through campaigns, research, training and capacity support. Its campaigns page calls Land Back its "North Star" and defines it as "the political movement of Indigenous Peoples reclaiming sovereignty over homelands from colonial states." The page also lists campaigns against what it calls green colonialism and about data centers.
 
-Honor the Earth works through advocacy, organizing and support to grassroots groups. The sources here describe no land purchased or returned by the organization itself.
+Honor the Earth works through advocacy, organizing and support to grassroots groups. Its pages describe no land bought or returned by the organization itself.
 
 On finances, ProPublica shows revenue of $2,520,162 and expenses of $4,444,992 for the fiscal year ending June 2025, a net loss of about $1.9 million. Revenue for fiscal 2024 was $3,654,595 and for fiscal 2023, $6,228,420. A donor can weigh those figures alongside the leadership change the organization announces on its home page.

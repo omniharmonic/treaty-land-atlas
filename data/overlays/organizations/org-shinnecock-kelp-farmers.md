@@ -15,4 +15,4 @@ Its FAQ says it cultivates sugar kelp in the cold, shallow waters of Shinnecock 
 
 ProPublica Nonprofit Explorer lists Shinnecock Kelp Farmers Incorporated of Southampton, New York, with tax exemption issued in July 2024. It is a very new entity.
 
-This is an ocean and food-sovereignty project, not a land return. The sources here do not describe any land holdings, acreage of kelp, harvest totals or named leaders, and the claims about carbon and nitrogen capture are the group's own statements. A donor should treat this as a description of what the group says it is doing.
+This is an ocean and food-sovereignty project, not a land return. Its pages give no land holdings, acreage of kelp, harvest totals or named leaders, and the claims about carbon and nitrogen capture are the group's own statements. A donor should treat this as a description of what the group says it is doing.

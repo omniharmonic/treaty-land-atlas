@@ -1,6 +1,6 @@
 ---
 import BrandMark from './BrandMark.astro';
-import type { SupportOrg } from '../lib/support';
+import { focusLine, type SupportOrg } from '../lib/support';
 import { href } from '../lib/href';
 interface Props {
   org: SupportOrg;
@@ -23,7 +23,7 @@ const kind = {
   <h3>
     <a href={href(org.path ?? '/support/')}>{org.label}</a>
   </h3>
-  <p>{org.focus.split(/[;]/)[0]}</p>
+  <p>{focusLine(org.focus)}</p>
   <div class="org-actions">
     {org.website && (
       <a href={org.website} rel="noopener">

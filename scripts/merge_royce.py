@@ -29,7 +29,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "crosswalks" / "royce-entry-roles.csv"
-ROLES = {"ceded", "ceded_part", "described_or_recognized", "reserved", "confirmed", "retroceded", "other"}
+ROLES = {"ceded", "ceded_part", "described_or_recognized", "reserved", "confirmed", "retroceded", "us_reserved", "other"}
 FIELDS = ["id", "date", "role", "instrument_id", "quote", "page", "status", "ceded_by", "taken_by",
           "summary", "confidence", "note"]
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")

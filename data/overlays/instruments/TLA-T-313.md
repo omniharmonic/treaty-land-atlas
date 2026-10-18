@@ -6,7 +6,7 @@ headline: "The 1859 Kansa treaty kept a nine-by-fourteen-mile tract for allotmen
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement signed by 27 named chiefs and headmen and states no duress; the Tribal Treaties Database page reproduces it."
 confidence: "high"
-cautions: "Only the treaty text was used; no secondary source on negotiating conditions was opened. No acreage total is stated in the text I read. Input lists no violations or cases."
+cautions: "This account is based on the treaty text alone, so it does not describe the conditions of the negotiation. The treaty states no acreage total. It was signed October 5, 1859, ratified June 27, 1860, and proclaimed November 17, 1860."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-tribe-1859-0800", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Kansa, 1859", "quote": "The Kansas Indians having now more lands than are necessary for their occupation and use"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-tribe-1859-0800", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Kansa, 1859", "quote": "shall be sold, under the direction of the Secretary of the Interior, in parcels not exceeding one hundred and sixty acres each"}]
 verdict: "fixed"
 ---

@@ -5,8 +5,12 @@ import { href } from '../lib/href';
 interface Props {
   edge: Edge;
   other: Node;
+  /** leave out the "suggested" mark (the list says it once) */
+  quiet?: boolean;
+  /** leave out the role note (the group's title says it) */
+  noRole?: boolean;
 }
-const { edge, other } = Astro.props;
+const { edge, other, quiet = false, noRole = false } = Astro.props;
 const path = pathFor(other);
 const y = year(other);
 const disputed =
@@ -14,22 +18,24 @@ const disputed =
 const status = disputed
   ? 'disputed'
   : edge.status === 'proposed'
-    ? 'suggested'
+    ? quiet
+      ? null
+      : 'suggested'
     : edge.status === 'accepted'
       ? 'reviewed'
       : null;
 const role =
   typeof edge.qualifiers?.['role'] === 'string' ? (edge.qualifiers['role'] as string) : null;
 const roleWord: Record<string, string> = {
-  present_day_per_usfs: 'per the Forest Service, under review',
-  named_in_royce_schedule: 'as named in Royce’s Schedule',
+  present_day_per_usfs: 'matched by the Forest Service, under review',
+  named_in_royce_schedule: 'as named in the 1899 record',
 };
 ---
 
 <li class="item">
   {path ? <a href={href(path)}>{other.label}</a> : <span>{other.label}</span>}
   {y && <span class="year">{y}</span>}
-  {role && roleWord[role] && <span class="note">{roleWord[role]}</span>}
+  {!noRole && role && roleWord[role] && <span class="note">{roleWord[role]}</span>}
   {status && (
     <span class:list={['mark', status]} title={edge.basis ?? undefined}>
       {status}

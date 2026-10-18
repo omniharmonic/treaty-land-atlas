@@ -3,11 +3,11 @@ id: "TLA-T-308"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1858 treaty with the Mdewakanton and Wahpekute Dakota ceded their north-bank lands along the Minnesota River and allotted the south bank."
-note: "The $140,000 for debts is Treaties Matter's figure for both 1858 Dakota treaties together; this treaty's text caps payments to chiefs and headmen at $70,000."
+note: "Each of the two 1858 Dakota treaties let the chiefs and headmen authorize up to $70,000 from the land proceeds to pay the bands' just debts and buy goods; Treaties Matter's $140,000 is the two treaties together."
 how: "treaty_under_pressure"
 how_basis: "Treaties Matter says the Dakota delegates were taken to Washington to sign away half their holdings and that proceeds could pay their debts, after the Senate had struck the 1851 reservation."
 confidence: "medium"
-cautions: "The $140,000 for debts is Treaties Matter's description for the pair of 1858 treaties; the OSU text of this treaty caps payments to chiefs and headmen at $70,000 (Article 3). The treaties of 1858 for this band and for the Sisseton-Wahpeton share one history and are described together by Treaties Matter. Royce numbers 413, 414, 440 were not checked."
+cautions: "Treaties Matter's $140,000 for debts covers the pair of 1858 treaties; each treaty's Article 3 allows up to $70,000 of land proceeds for debts and goods. Article 2 did not itself fix a price for the north-bank land: it left the Senate to decide the bands' title and compensation. The treaties of 1858 for these bands and for the Sisseton-Wahpeton share one history and are described together by Treaties Matter. The treaty was ratified March 9, 1859, and proclaimed March 31, 1859."
 sources: [{"url": "https://www.treatiesmatter.org/treaties/land/1858-dakota", "title": "1858 Land Cession Treaties with the Dakota, Treaties Matter", "quote": "Dakota people were taken to Washington to sign away the northern half of their holdings along the Minnesota River"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1858-0781", "title": "Treaty with the Sioux, 1858 (Oklahoma State University Tribal Treaties Database)", "quote": "all of which provisions in said amendment were assented to by said Indians"}, {"url": "https://www.treatiesmatter.org/treaties/land/1858-dakota", "title": "1858 Land Cession Treaties with the Dakota, Treaties Matter", "quote": "the U.S. abrogated all of its treaties with the Dakota, seized the remaining 10-mile wide strip, and exiled them from the State"}]
 verdict: "ok"
 ---

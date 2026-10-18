@@ -6,7 +6,7 @@ headline: "In 1833 an Ottawa band ceded its Lake Erie reserves for $29,440 paid 
 how: "removal"
 how_basis: "The OSU treaty text has the band agree to remove from the ceded lands and applies the payment to its listed debts."
 confidence: "high"
-cautions: "The page does not say how the negotiation was conducted or whether the band faced pressure. No source opened here covers later events."
+cautions: "The page does not say how the negotiation was conducted or whether the band faced pressure. The sources cited do not cover later events."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-1833-0392", "title": "Tribal Treaties Database (OSU)", "quote": "the said Indians agree to remove from all the lands herein ceded"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-1833-0392", "title": "Tribal Treaties Database (OSU)", "quote": "the sum of twenty-nine thousand four hundred and forty dollars, to be, by direction of the said band, applied in extinguishment of their debts"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg420.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Ottawa"}]
 verdict: "fixed"
 ---

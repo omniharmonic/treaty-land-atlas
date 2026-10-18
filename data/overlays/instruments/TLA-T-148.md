@@ -6,7 +6,7 @@ headline: "At Butte des Morts in 1827 the Chippewa, Menominee and Winnebago fixe
 how: "other"
 how_basis: "The Statutes at Large text records a boundary-setting treaty among tribes, with a small acknowledgment of U.S. title to a Green Bay tract, rather than a purchase."
 confidence: "medium"
-cautions: "Only the Statutes at Large text was opened. The Green Bay tract's acreage is not stated. The text does not explain the outrages at Prairie du Chien. Both source entries are from the same Statutes at Large document."
+cautions: "The Green Bay tract's acreage is not stated. The text does not explain the outrages at Prairie du Chien."
 sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg303.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "on a northeasterly course, to a point on Wolf river, equidistant"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg303.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "the jurisdiction and title of which are hereby acknowledged to be in the United States"}]
 verdict: "fixed"
 ---

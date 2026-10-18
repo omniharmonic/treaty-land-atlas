@@ -15,4 +15,4 @@ PPLT's initiatives page lists six lines of work, with a stated purpose of puttin
 
 Other programs include a farmer and land steward support program that offers one-on-one help with grants, business planning and soil health, and an Indigenous Food Sovereignty micro-farming program led by Rocky Johnson, a Narragansett Indian, which PPLT fiscally sponsors.
 
-These are PPLT's own descriptions. Its self-description as tribally led is not confirmed by any outside source here.
+These are PPLT's own descriptions.

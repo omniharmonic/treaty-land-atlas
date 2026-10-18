@@ -13,6 +13,6 @@ The Pamunkey Indian Tribe's website places its reservation on the northern bank 
 
 The Natural Resources page tells of the Tribe's fish hatchery, which it says began indoors in 1918 and has continued in various forms, releasing shad into the Pamunkey River. Its Cultural Resources department, established in February 2020, runs classes and records traditional knowledge only with the full consent of the individuals involved.
 
-The atlas lists a 2026 land return of about 13 acres. A Long & Foster real estate newsroom item dated July 30, 2026 says its agent represented the Tribe in May in a $1.95 million purchase of Windsor Shades, a 13-acre estate on the Pamunkey River in West Point, Virginia, which it says was once the site of a Pamunkey village. It says the Tribe is exploring a center for cultural, educational and economic opportunities.
+A Long & Foster real estate newsroom item dated July 30, 2026 says its agent represented the Tribe in May in a $1.95 million purchase of Windsor Shades, a 13-acre estate on the Pamunkey River in West Point, Virginia, which it says was once the site of a Pamunkey village. It says the Tribe is exploring a center for cultural, educational and economic opportunities.
 
-The wording matters. This was a purchase on the open market, reported by the buyer's agent, not a gift or a government transfer. The Tribe's own pages cited here do not mention it.
+The wording matters. This was a purchase on the open market, reported by the buyer's agent, not a gift or a government transfer. The Tribe's own pages do not mention it.

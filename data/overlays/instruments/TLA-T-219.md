@@ -7,7 +7,7 @@ note: "The treaty states 102,400 acres, but its fifteen listed tracts add up to 
 how: "removal"
 how_basis: "Article 6 of the treaty text has the tribe agree to remove from Michigan once a location is obtained."
 confidence: "medium"
-cautions: "The fifteen listed tracts add up to 99,400 acres by simple addition, not the 102,400 the treaty states. The page's notes mark parts of Articles 4, 5 and 6 as abrogated or revised by a December 1837 treaty, whose terms were not read here. Later history is not covered by the sources opened."
+cautions: "The fifteen listed tracts add up to 99,400 acres by simple addition, not the 102,400 the treaty states. Notes on the OSU page mark parts of Articles 4, 5 and 6 as abrogated or revised by a December 20, 1837 treaty. The cited sources do not describe what happened afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1837-0482", "title": "Treaty with the Chippewa, 1837 (OSU Tribal Treaties Database)", "quote": "The whole containing one hundred and two thousand four hundred acres, be the same more or less"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1837-0482", "title": "Treaty with the Chippewa, 1837 (OSU Tribal Treaties Database)", "quote": "The said tribe agrees to remove from the State of Michigan, as soon as a proper location can be obtained"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg528.pdf", "title": "Treaty with the Chippewa, 7 Stat. 528 (govinfo)", "quote": "The said tribe agrees to remove from the State of Michi"}]
 verdict: "fixed"
 ---

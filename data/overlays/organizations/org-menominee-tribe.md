@@ -15,4 +15,4 @@ WBAY reports that after termination, the tribe sold thousands of acres to reduce
 
 On June 23, 2026, the Wisconsin Supreme Court ruled 4-3 that the Legend Lake Property Owners Association cannot sue to block the tribe from buying back land on its reservation. WBAY says the Court found that Congress had not abrogated the tribe's sovereign immunity and that the tribe had not waived it. Justice Susan Crawford wrote that "Tribal sovereign immunity is the rule, not the exception." The suit began in 2018 after a tribal member, acting for the tribe, bought parcels for transfer to federal trust.
 
-The tribe's own account is not covered here, and the later trust status of the parcels is not confirmed.
+Reports do not say whether the parcels are now held in trust.

@@ -6,7 +6,7 @@ headline: "In 1838 the First Christian and Orchard parties of the Oneida ceded t
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession with per-person reserves and payments, and no coercion is stated."
 confidence: "high"
-cautions: "Acreage: 100 acres for each individual; no total stated. Later history is not covered by the sources opened."
+cautions: "Acreage: 100 acres for each individual; no total stated. The cited sources do not describe what happened afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oneida-1838-0517", "title": "Treaty with the Oneida, 1838 (OSU Tribal Treaties Database)", "quote": "a tract of land containing one hundred (100) acres, for each individual"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oneida-1838-0517", "title": "Treaty with the Oneida, 1838 (OSU Tribal Treaties Database)", "quote": "cede to the United States all their title and interest in the land set apart for them"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg566.pdf", "title": "Treaty with the Oneida, 7 Stat. 566 (govinfo)", "quote": "one hundred (100) acres, for each individual"}]
 verdict: "fixed"
 ---

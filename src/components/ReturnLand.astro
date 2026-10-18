@@ -8,35 +8,17 @@ import { join } from 'node:path';
 import { node, pathFor, type Node } from '../lib/graph';
 import { href } from '../lib/href';
 import { contains } from '../lib/where';
-import { acresText, areaNumber, areaStories } from '../lib/land';
+import { acresText, areaNumber, areaStories, returnLocations } from '../lib/land';
 import LandShape from './LandShape.astro';
 
 interface Props {
   n: Node;
 }
 const { n } = Astro.props;
-type Loc = {
-  lat: string;
-  lng: string;
-  precision: string;
-  place: string;
-  basis_url: string;
-  note: string;
-};
-const csv = readFileSync(join(process.cwd(), 'crosswalks', 'return-locations.csv'), 'utf8');
-const parse = (line: string) =>
-  [...line.matchAll(/("([^"]|"")*"|[^,]*)(,|$)/g)]
-    .map((m) => m[1]!.replace(/^"|"$/g, '').replace(/""/g, '"'))
-    .slice(0, 7);
-const rows = csv.trim().split('\n');
-const head = parse(rows[0]!);
-const loc = rows
-  .slice(1)
-  .map((r) => Object.fromEntries(parse(r).map((v, i) => [head[i], v])) as Loc & { id: string })
-  .find((r) => r.id === n.id);
-const lat = Number(loc?.lat);
-const lng = Number(loc?.lng);
-const placed = !!loc && Number.isFinite(lat) && Number.isFinite(lng) && loc.lat !== '';
+const loc = returnLocations().get(n.id);
+const lat = loc?.lat ?? NaN;
+const lng = loc?.lng ?? NaN;
+const placed = !!loc && loc.lat !== null && loc.lng !== null;
 const exact = placed && ['site', 'locality'].includes(loc!.precision);
 
 type F = {

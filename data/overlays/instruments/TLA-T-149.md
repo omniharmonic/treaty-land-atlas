@@ -6,7 +6,7 @@ headline: "In 1827 the Potawatomi ceded reserved tracts in Michigan Territory an
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated exchange of reserved tracts, though its stated aim is to distance the bands from white settlements."
 confidence: "high"
-cautions: "Acreage in sections only: 99.5 sections ceded, 99 reserved, as the treaty states. Why the bands agreed was not covered by the sources opened."
+cautions: "Acreage in sections only: 99.5 sections ceded, 99 reserved, as the treaty states. The treaty does not say why the bands agreed."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1827-0283", "title": "Tribal Treaties Database (OSU)", "quote": "as far as practicable from the settlements of the Whites"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1827-0283", "title": "Tribal Treaties Database (OSU)", "quote": "which tracts contain in the whole ninety nine sections and one half section of land"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg305.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "A TREATY between the United States and the Potawatamie"}]
 verdict: "fixed"
 ---

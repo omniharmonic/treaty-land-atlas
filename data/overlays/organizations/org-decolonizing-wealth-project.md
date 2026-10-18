@@ -15,4 +15,4 @@ Its California Tribal Land Return project launched in 2025. Its page says it giv
 
 Its Indigenous Earth Fund lists 2026 grantee partners including the Indigenous Environmental Network, Hopi Tutskwa Permaculture Institute and Native Conservancy, and reports $6.3 million granted to organizations and tribes.
 
-The group funds other organizations' work. It does not state that it holds title to land. The acreage figures are its own, and the sources here do not tie them to specific parcels.
+The group funds other organizations' work. It does not state that it holds title to land. The acreage figures are its own, and it does not tie them to specific parcels.

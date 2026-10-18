@@ -6,7 +6,7 @@ headline: "On 12 September 1815 the Great and Little Osage made peace with the U
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed by United States commissioners and the tribe's chiefs and warriors; it describes no pressure or cession."
 confidence: "medium"
-cautions: "The treaty does not name the earlier treaties it confirms. The signature block was not read in full."
+cautions: "The treaty does not name the earlier treaties it confirms."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1815-0119", "title": "Treaty with the Osage, 1815, Tribal Treaties Database", "quote": "Every injury, or act of hostility, by one or either of the contracting parties against the other, shall be mutually forgiven and forgot."}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1815-0119", "title": "Treaty with the Osage, 1815, Tribal Treaties Database", "quote": "the king, chiefs, and warriors of the said tribes or nations"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1815-0119", "title": "Treaty with the Osage, 1815, Tribal Treaties Database", "quote": "recognize, re-establish, and confirm, all and every treaty, contract, and agreement, heretofore concluded between the United States and the said Osage tribes or nations"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1815-0119", "title": "Treaty with the Osage, 1815, Tribal Treaties Database", "quote": "Ratified Dec. 26, 1815."}]
 verdict: "new"
 ---

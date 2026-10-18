@@ -7,7 +7,7 @@ note: "The statement that the Seneca asked for the exchange is the treaty's own.
 how: "removal"
 how_basis: "The OSU treaty text provides for exchange of Ohio lands and removal west of the Mississippi, which it says the Seneca solicited."
 confidence: "high"
-cautions: "The text says the Seneca asked for the exchange; the page does not show how the negotiation was conducted. No source opened describes the western land's later history."
+cautions: "The text says the Seneca asked for the exchange; the page does not show how the negotiation was conducted. The sources cited do not describe the western land's later history."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-1831-0325", "title": "Tribal Treaties Database (OSU)", "quote": "have earnestly solicited the President of the United States to negotiate with them"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-1831-0325", "title": "Tribal Treaties Database (OSU)", "quote": "containing about sixty-seven thousand acres"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg348.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Seneca"}]
 verdict: "fixed"
 ---

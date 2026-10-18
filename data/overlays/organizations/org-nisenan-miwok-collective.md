@@ -15,4 +15,4 @@ The Collective's mission is land and water restoration, land return, food sovere
 
 The site describes Treaty J as unratified and says the Southern Hill Nisenan "remain largely landless" within their ancestral territories. It says it is working, through land return, conservation partnerships and strategic acquisition, to reestablish a permanent presence at culturally significant village sites. It invites direct gifts, tax-deductible donations, and land or estate transfers.
 
-The sources here do not report any completed land transfer, acreage or deed. They describe goals and methods, including native plant restoration and cultural burning. The Collective says the Southern Hill Nisenan Band represents the tribe's people and cultural leadership, while the Collective is the operating entity.
+The Collective reports no completed land transfer, acreage or deed. They describe goals and methods, including native plant restoration and cultural burning. The Collective says the Southern Hill Nisenan Band represents the tribe's people and cultural leadership, while the Collective is the operating entity.

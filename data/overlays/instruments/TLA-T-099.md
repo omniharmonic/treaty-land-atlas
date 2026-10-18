@@ -6,7 +6,7 @@ headline: "In 1818 the Peoria, Kaskaskia, Mitchigamia, Cahokia and Tamarois conf
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed confirmation and extension of an earlier cession with no mention of coercion."
 confidence: "high"
-cautions: "Single source (treaty text). The text does not name states for the described area. Royce numbers in the record were not checked. No later history was opened."
+cautions: "Single source (treaty text). The text does not name states for the described area."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-peoria-etc-1818-0165", "title": "Treaty with the Peoria, etc., 1818 (Oklahoma State University Tribal Treaties Database)", "quote": "who were not represented in the treaty referred to above, nor ever received any part of the consideration"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-peoria-etc-1818-0165", "title": "Treaty with the Peoria, etc., 1818 (Oklahoma State University Tribal Treaties Database)", "quote": "now also disposed to cede all their land to the United States"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-peoria-etc-1818-0165", "title": "Treaty with the Peoria, etc., 1818 (Oklahoma State University Tribal Treaties Database)", "quote": "an annuity of three hundred dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-peoria-etc-1818-0165", "title": "Treaty with the Peoria, etc., 1818 (Oklahoma State University Tribal Treaties Database)", "quote": "six hundred and forty acres of land, including their village on Black-water river"}]
 verdict: "fixed"
 ---

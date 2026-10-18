@@ -15,4 +15,4 @@ CIBA's work is cultural, not a land purchase program. Its own history page says 
 
 The same statement lists working with public agencies, monitoring and discouraging pesticide use in gathering areas, and raising public awareness. The site also carries pages on cultural fire and pesticides.
 
-The sources here describe no land title held or returned by CIBA. Its role in land return, as its pages describe it, is advocating for access and healthy gathering areas. CIBA's board-of-directors page was marked "Under Construction," so its current leadership could not be confirmed.
+CIBA's pages describe no land it holds or has returned. Its role in land return, as its pages describe it, is advocating for access and healthy gathering areas.

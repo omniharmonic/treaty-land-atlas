@@ -15,4 +15,4 @@ The foundation states its mission as preserving Cherokee culture, protecting the
 
 Land-related work appears in its environmental preservation programs. One is Revitalization of Traditional Cherokee Artisan Resources (RTCAR), which it describes as a grantmaking program helping the EBCI restore the traditional balance in using natural resources such as river cane, white oak and clay. Another is Generations Qualla, a program on sustainability and stewardship.
 
-The foundation's Impact Report lists dollar totals awarded by category, including more than $54 million in cultural preservation and more than $10 million in environmental preservation. These are the foundation's own figures, not checked against its tax filings.
+The foundation's Impact Report lists dollar totals awarded by category, including more than $54 million in cultural preservation and more than $10 million in environmental preservation. These are the foundation's own figures.

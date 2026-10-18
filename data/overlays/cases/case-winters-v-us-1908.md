@@ -10,7 +10,7 @@ verdict: "fixed"
 ---
 On May 1, 1888, a tract of land in what was then Montana Territory was reserved "as an Indian reservation as and for a permanent home and abiding place of the Gros Ventre and Assiniboine bands or tribes of Indians." It was designated the Fort Belknap Indian Reservation (25 Stat. 124). The Milk River runs along its boundary. Parts of the reservation were fit for farming but dry and arid, and needed large amounts of water to be productive.
 
-Montana was admitted as a state on February 22, 1889. Later, settlers on the public lands upstream, including Winters and others, built dams and reservoirs on the Milk River and its tributaries. The United States sued to stop them from keeping the water from flowing to the reservation. A court order protected the reservation's use of 5,000 inches of the river's water, and the decree was made permanent.
+On February 22, 1889, Congress passed the act admitting Montana to the Union. Later, settlers on the public lands upstream, including Winters and others, built dams and reservoirs on the Milk River and its tributaries. The United States sued to stop them from keeping the water from flowing to the reservation. A court order protected the reservation's use of 5,000 inches of the river's water, and the decree was made permanent.
 
 On January 6, 1908, the Supreme Court affirmed. It held there was "an implied reservation in the agreement of May 1, 1888 ... of a sufficient amount of water from the Milk River for irrigation purposes," and that Montana's admission to the Union did not affect it. The government has power, the Court said, to reserve the waters of a river flowing through a Territory and exempt them from appropriation under the laws of the State that Territory later becomes.
 

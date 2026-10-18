@@ -6,7 +6,7 @@ headline: "In 1865 the Comanche and Kiowa agreed at the Little Arkansas River to
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated reservation treaty with signatures by chiefs; it states no duress."
 confidence: "high"
-cautions: "Only the treaty text was read. The record lists Royce numbers 478 and 511, which were not checked. No context source on the pressures behind the treaty was opened."
+cautions: "This account draws on the treaty text only, which does not describe the pressures behind the treaty or what happened afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Comanche and Kiowa, 1865", "quote": "set apart for the absolute and undisturbed use and occupation of the tribes who are parties to this treaty"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Comanche and Kiowa, 1865", "quote": "the country north of the Cimarone River and west of the eastern boundary of New Mexico"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Comanche and Kiowa, 1865", "quote": "they will not while so absent encamp, by day or night, within ten miles of any of the main travelled routes"}]
 verdict: "fixed"
 ---

@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1816 the Cherokee ceded a small tract on the Chattooga River to South Carolina for $5,000 paid by the state."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a negotiated cession to a state for a stated payment, conditional on council approval; no source I read describes coercion."
+how_basis: "The OSU text records a negotiated cession to a state for a stated payment, conditional on council approval; the sources cited do not describe coercion."
 confidence: "high"
-cautions: "The cession was to the State of South Carolina, not to the federal government. Only the treaty text was read. No source on Cherokee views or on the council was opened, and no acreage is stated."
+cautions: "The cession was to the State of South Carolina, not to the federal government. This summary rests on the treaty text alone. No cited source describes Cherokee views or the council, and no acreage is stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124", "title": "Treaty with the Cherokee, 1816 (7 Stat. 138) (Oklahoma State University Tribal Treaties Database)", "quote": "to extinguish the claim of the Cherokee nation to that part of their lands which lie within the boundaries of the said State"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124", "title": "Treaty with the Cherokee, 1816 (7 Stat. 138) (Oklahoma State University Tribal Treaties Database)", "quote": "the State of South Carolina shall pay to the Cherokee nation, or its accredited agent, the sum of five thousand dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124", "title": "Treaty with the Cherokee, 1816 (7 Stat. 138) (Oklahoma State University Tribal Treaties Database)", "quote": "the Cherokee nation is disposed to comply with the wishes of their brothers of South Carolina"}]
 verdict: "fixed"
 ---

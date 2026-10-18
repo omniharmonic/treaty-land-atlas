@@ -5,9 +5,9 @@ written_by: "narrative-wave-2026-10"
 headline: "In Washington in 1806 the Cherokee ceded land north of the Tennessee River for $10,000, a mill and a cotton machine."
 note: "The ceded tract had been claimed by both the Cherokee and the Chickasaw since 1794."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a negotiated convention in Washington with named payments and goods; no source I read describes coercion."
+how_basis: "The OSU text records a negotiated convention in Washington with named payments and goods; the sources cited do not describe coercion."
 confidence: "high"
-cautions: "Only the treaty text and its 1807 Elucidation were read. The Elucidation says the ceded tract had been claimed by both the Cherokee and the Chickasaw since 1794. No acreage is stated. No source describing the council or the Cherokee Nation's own account was opened."
+cautions: "The Elucidation says the ceded tract had been claimed by both the Cherokee and the Chickasaw since 1794. No acreage is stated. No cited source describes the council or gives the Cherokee Nation's own account."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1806-0090", "title": "Treaty with the Cherokee, 1806 (Oklahoma State University Tribal Treaties Database)", "quote": "all right, title, interest and claim, which they or their nation have or ever had to all that tract of country"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1806-0090", "title": "Treaty with the Cherokee, 1806 (Oklahoma State University Tribal Treaties Database)", "quote": "the United States will pay to the Cherokee nation two thousand dollars in money as soon as this convention shall be duly ratified"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1806-0090", "title": "Treaty with the Cherokee, 1806 (Oklahoma State University Tribal Treaties Database)", "quote": "that a grist mill shall within one year from the date hereof, be built in the Cherokee country"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1806-0090", "title": "Treaty with the Cherokee, 1806 (Oklahoma State University Tribal Treaties Database)", "quote": "any thing expressed in said convention to the contrary notwithstanding"}]
 verdict: "fixed"
 ---

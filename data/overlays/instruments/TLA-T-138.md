@@ -6,7 +6,7 @@ headline: "In August 1825 the Kansa agreed to a marked road to New Mexico, forev
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "high"
-cautions: "The text sets no width for the road and gives no acreage. The Kansa view of the 'forever free' clause is not in the text. The route as marked was not opened."
+cautions: "The text sets no width for the road and gives no acreage. The text does not record the Kansa view of the 'forever free' clause."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0248", "title": "Treaty with the Kansa, 1825 (Sora Kansas Creek), Tribal Treaties Database", "quote": "to cause a road to be marked out from the Western frontier of Missouri to the confines of New Mexico"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0248", "title": "Treaty with the Kansa, 1825 (Sora Kansas Creek), Tribal Treaties Database", "quote": "shall, when marked, be forever free for the use of the citizens of the United States and of the Mexican Republic"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0248", "title": "Treaty with the Kansa, 1825 (Sora Kansas Creek), Tribal Treaties Database", "quote": "the sum of five hundred dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0248", "title": "Treaty with the Kansa, 1825 (Sora Kansas Creek), Tribal Treaties Database", "quote": "full and complete compensation for every privilege herein granted by said Chiefs"}]
 verdict: "new"
 promises: [{"article": "Art. 5", "promise": "Pay the Kansa $500 in money or merchandise for the road privileges.", "kept": "unknown", "evidence_url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0248", "evidence_quote": "the sum of five hundred dollars"}]
@@ -17,4 +17,4 @@ On 16 August 1825, on Sora Kansas Creek, two hundred and thirty-eight miles sout
 
 In return the United States, through the commissioners, promised five hundred dollars in money or merchandise at the Kansa's option. The chiefs also acknowledged merchandise worth three hundred dollars already received. The text says those two sums are "full and complete compensation" for all privileges granted.
 
-The page lists a proclamation on 3 May 1826. The text gives no road width and no acreage.
+The treaty was proclaimed on 3 May 1826. The text gives no road width and no acreage.

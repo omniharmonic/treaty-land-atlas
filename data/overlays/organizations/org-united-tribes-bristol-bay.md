@@ -15,4 +15,4 @@ UTBB calls itself a political division of its member Tribal governments. It name
 
 Its sovereignty page says that work includes building capacity through education, self-governance tools and traditional justice systems, and describes this work as still developing.
 
-The sources here describe no land purchase or return. ProPublica Nonprofit Explorer returned no listing for the organization's name, so its tax-exempt status could not be confirmed in that registry; its donate page says it is recognized to receive tax-deductible contributions, which is not independently verified.
+Its pages describe no land purchase or return. ProPublica Nonprofit Explorer has no listing under the organization's name. Its donate page says it is recognized to receive tax-deductible contributions.

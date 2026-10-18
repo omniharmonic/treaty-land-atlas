@@ -259,7 +259,7 @@ kumeyaay,nat-kumeyaay,source_label,,
 diegueno,nat-kumeyaay,historical_spelling,,Period exonym.
 dieguino,nat-kumeyaay,historical_spelling,,Period exonym.
 pomo,nat-pomo,source_label,,
-piankeshaw,nat-piankeshaw,source_label,,
+piankeshaw,nat-piankashaw,historical_spelling,,
 illinois,nat-illinois,source_label,case,Only in case rows (otherwise the state name).
 hupa,nat-hupa,source_label,,
 hoopa valley,nat-hupa,source_label,,
@@ -285,3 +285,12 @@ tigua,nat-pd-ysleta-del-sur-pueblo,common_english,,
 chinook indian nation,nat-pd-chinook-indian-nation,source_label,,
 swan creek,NONE,blocker,,"Band name inside Chippewa treaties. Blocks the bare ""creek"" alias (Muscogee Creek) from matching. Not a nation entry yet."
 cow creek,NONE,blocker,,"Umpqua band name. Blocks the bare ""creek"" alias from matching."
+grave creek,NONE,blocker,,"Umpqua band name in Royce's Schedule. Blocks the bare ""creek"" alias from matching."
+hog creek,NONE,blocker,,"Shawnee place name in Royce's Schedule. Blocks the bare ""creek"" alias from matching."
+grouse creek,NONE,blocker,,"Hupa band name in Royce's Schedule. Blocks the bare ""creek"" alias from matching."
+swan-creek,NONE,blocker,,"Chippewa band name as hyphenated in Royce's Schedule. Blocks the bare ""creek"" alias from matching."
+crow creek,NONE,blocker,,"Sioux place name (Crow Creek). Blocks the Crow and Creek aliases from matching inside it."
+cheyenne river,NONE,blocker,,"Sioux place name (Cheyenne River). Blocks the Cheyenne alias from matching inside it."
+lake winnebago,NONE,blocker,,"Place name in Royce's Schedule. Blocks the Winnebago alias from matching inside it."
+miami of lake erie,NONE,blocker,,"River name (the Maumee) in Royce's Schedule. Blocks the Miami alias from matching inside it."
+quil-leh-ute,nat-quileute,historical_spelling,,"Treaty and Royce spelling of Quileute; without it the bare ""ute"" alias matches."

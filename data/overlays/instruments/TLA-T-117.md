@@ -7,7 +7,7 @@ note: "The quoted statement about unfulfilled obligations concerns Michigan trea
 how: "treaty_negotiated"
 how_basis: "The Statutes at Large text records a signed cession with annuities and reservations; the MSU page says treaties generally were pushed by settlers, without describing coercion at Chicago."
 confidence: "medium"
-cautions: "No acreage is given; sources opened here do not state it. The MSU quotation about unfulfilled obligations is about Michigan treaties in general, not a finding about this treaty. The treaty text itself does not describe how it was negotiated."
+cautions: "No acreage is given in the sources cited. The MSU quotation about unfulfilled obligations is about Michigan treaties in general, not a finding about this treaty. The treaty text itself does not describe how it was negotiated."
 sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg218.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "The United States shall have the privilege of making and"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg218.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "pay to the Ottawa nation, one thousand dollars in specie"}, {"url": "https://project.geo.msu.edu/geogmich/Indian_cessions.html", "title": "Indian Cessions in Michigan (Michigan State University)", "quote": "most of the land in the southwestern part of the Lower Peninsula south of the Grand River was acquired"}, {"url": "https://project.geo.msu.edu/geogmich/Indian_cessions.html", "title": "Indian Cessions in Michigan (Michigan State University)", "quote": "In almost every instance, the Government failed to live up to its obligations."}]
 verdict: "fixed"
 ---

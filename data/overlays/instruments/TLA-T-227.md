@@ -6,7 +6,7 @@ headline: "In 1837 the Sac and Fox of Missouri released claims between the Misso
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records negotiated releases with stated payments, signed by a commissioner and chiefs and delegates, and no coercion is stated."
 confidence: "high"
-cautions: "No acreage is stated. The \"September 17th, 1836\" treaty named in Article 1 matches the Fort Leavenworth treaty of that date with the Ioway and the Missouri band of Sac and Fox (a separate entry). Later history is not covered by the sources opened."
+cautions: "No acreage is stated. The \"September 17th, 1836\" treaty named in Article 1 matches the Fort Leavenworth treaty of that date with the Ioway and the Missouri band of Sac and Fox (told separately). The cited sources do not describe what happened afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1837-0497", "title": "Treaty with the Sac and Fox, 1837 (OSU Tribal Treaties Database)", "quote": "Of all right or interest in the country between the Missouri and Mississippi rivers"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1837-0497", "title": "Treaty with the Sac and Fox, 1837 (OSU Tribal Treaties Database)", "quote": "To pay to the said Sacs and Foxes of the Missouri, the sum of one hundred and sixty thousand dollars"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg543.pdf", "title": "Treaty with the Sac and Fox of Missouri, 7 Stat. 543 (govinfo)", "quote": "To pay to the said Sacs and Foxes of the Missouri, the sum"}]
 verdict: "fixed"
 ---

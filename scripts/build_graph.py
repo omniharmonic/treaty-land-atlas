@@ -921,6 +921,12 @@ def area_label(ev, rr, first):
     states = [STATE_NAMES.get(s, s) for s in ev["states"] or []]
     where = f" in {and_list(states)}" if 0 < len(states) <= 3 else (" in several states" if states else "")
     num = ev["cessnum"]
+    # tracts the United States excepted for itself (forts, grants, old French and British posts)
+    if rr and rr.get("role") == "us_reserved":
+        return f"Land kept by the United States{where}, {rr['date'][:4]} (area {num})"
+    # Spanish and Mexican land grants the United States later confirmed (the Pueblo grants)
+    if rr and rr["status"] == "kept" and re.search(r"\bland grant\b|Spanish grant", rr.get("summary", "") + rr.get("quote", "")):
+        return (f"Land grant of the {who}" if who else "Land grant") + f"{where} (area {num})"
     if rr and rr["status"] == "kept":
         return (f"Reservation of the {who}" if who else "Reservation land") + f"{where} (area {num})"
     head = (f"Land of the {who}" if who else "Native land") + where
@@ -953,8 +959,17 @@ def build_geofeatures(cross, alias_index):
     for r in cross.get("royce-entry-roles.csv", []):
         if r["confidence"] in ("high", "medium") and r["status"] != "unclear":
             royce.setdefault(r["id"], r)
+    # per-area corrections to the USFS fields, each with its Royce source (crosswalks/royce-area-overrides.csv)
+    area_fix = defaultdict(dict)
+    for o in cross.get("royce-area-overrides.csv", []):
+        area_fix[o["id"]][o["field"]] = [v.strip() for v in o["value"].split(";") if v.strip()]
     for ev in events:
         gid = ev["id"]
+        for field, value in area_fix.get(gid, {}).items():
+            if field in ("tribes_as_named_in_schedule", "present_day_tribes_per_usfs"):
+                ev[field] = value
+            else:
+                issue("error", "area_override_unknown_field", "royce-area-overrides.csv", gid, field)
         missing = ev["geometry_quality"] == "missing"
         first = ev["dates"][0]["date"] if ev["dates"] else None
         rr = royce.get(gid)

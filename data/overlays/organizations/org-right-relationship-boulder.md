@@ -15,4 +15,4 @@ The Land Group says it collaborates with Indigenous peoples to broaden their acc
 
 A second goal is that the Fort Chambers site in Boulder be developed and managed with guidance from the Arapaho and Cheyenne nations. RRB has published a statement on a decision by the city's Open Space and Mountain Parks department.
 
-The sources here describe no land return or acquisition. The fundraising figure is a goal.
+It describes no land return or acquisition. The fundraising figure is a goal.

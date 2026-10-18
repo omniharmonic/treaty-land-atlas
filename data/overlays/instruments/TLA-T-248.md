@@ -6,7 +6,7 @@ headline: "The 1846 Treaty of Washington settled disputes among Cherokee faction
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated settlement signed by all three delegations and does not describe coercion."
 confidence: "high"
-cautions: "The OSU page shows the treaty ratified Aug. 8, 1846 and proclaimed Aug. 17, 1846, which matches the atlas note on ratification. The sources used here do not describe how the treaty was carried out or its effect on the factions."
+cautions: "The treaty was ratified Aug. 8, 1846 and proclaimed Aug. 17, 1846. The cited sources do not describe how the treaty was carried out or its effect on the factions."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1846-0561", "title": "Treaty of Washington with the Cherokee, 1846 (OSU Tribal Treaties Database)", "quote": "shall be secured to the whole Cherokee people for their common use and benefit"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1846-0561", "title": "Treaty of Washington with the Cherokee, 1846 (OSU Tribal Treaties Database)", "quote": "A general amnesty is hereby declared."}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-9/pdf/STATUTE-9-Pg871.pdf", "title": "Treaty of Washington with the Cherokee, 9 Stat. 871 (govinfo)", "quote": "A general amnesty is hereby declared"}]
 verdict: "fixed"
 ---

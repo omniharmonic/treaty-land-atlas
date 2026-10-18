@@ -15,4 +15,3 @@ The Blue Lake Act, Public Law 91-550, was signed on December 15, 1970. It amende
 
 Taos Pueblo's own website describes the signing. It quotes President Nixon: "in 1906 an injustice was done in which land involved in this bill, 48,000 acres, was taken from the Indians involved, the Taos Pueblo Indians." The Pueblo says the signing "restored Taos Pueblo lands" and set a precedent for self-determination.
 
-The 48,000-acre figure and the 1906 date are from the quoted Nixon remarks on the Pueblo's page; the statute text gives only the trust declaration.

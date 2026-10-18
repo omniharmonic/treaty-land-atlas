@@ -11,7 +11,7 @@ verdict: "new"
 ---
 Thunder Valley Community Development Corporation describes itself as a holistic organization working for the liberation of the Lakota people. Its mailing address is Porcupine, South Dakota, on the Pine Ridge Reservation. Its vision, on its Mission page, is a liberated Lakota Nation through language, life ways and spirituality. Its team page lists Trenton Old Horse as Chief Executive Officer and Beau LeBeaux as Board President.
 
-The organization has eight initiative areas. One, Lakota Land Systems (formerly the Food Sovereignty Initiative), runs small-scale no-till market gardening, a composting program, a geothermal greenhouse and a bison restoration project. The initiative page says the bison restoration is spread across 40,000 acres near Badlands National Park. The sources here do not say who holds title to that land. The land team includes Brandon Big Eagle as Lakota Land Systems Director and Justin Pourier as Bison Restoration Manager.
+The organization has eight initiative areas. One, Lakota Land Systems (formerly the Food Sovereignty Initiative), runs small-scale no-till market gardening, a composting program, a geothermal greenhouse and a bison restoration project. The initiative page says the bison restoration is spread across 40,000 acres near Badlands National Park. The page does not say who holds title to that land. The land team includes Brandon Big Eagle as Lakota Land Systems Director and Justin Pourier as Bison Restoration Manager.
 
 The other initiatives cover language and education, regenerative community development, youth leadership and a Lakota Advocacy Center that trains advocates and conducts climate research.
 

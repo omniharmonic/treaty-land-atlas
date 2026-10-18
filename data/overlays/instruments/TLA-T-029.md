@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Tellico in 1798 the Cherokee ceded a tract in eastern Tennessee for $5,000 in goods and added yearly goods."
 how: "treaty_negotiated"
-how_basis: "The OSU text shows a negotiated cession with payment, following boundary disputes after Holston, and I found no source describing coercion."
+how_basis: "The OSU text shows a negotiated cession with payment, following boundary disputes after Holston, and no cited source describes coercion."
 confidence: "high"
-cautions: "No acreage is given in the sources opened. The four-year gap between signing (1798) and ratification (1802) is recorded in the OSU header but its reason was not investigated. Whether the annual goods and the guarantee were delivered or kept is not shown in the sources opened."
+cautions: "No acreage is given in the sources opened. The reason for the four-year gap between signing (1798) and ratification (1802) is not given. Whether the annual goods and the guarantee were delivered or kept is not shown in the sources opened."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1798-0051", "title": "Treaty with the Cherokee, 1798 (Oklahoma State University Tribal Treaties Database)", "quote": "remedying inconveniences arising to citizens of the United States from the adjustment of the boundary line"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1798-0051", "title": "Treaty with the Cherokee, 1798 (Oklahoma State University Tribal Treaties Database)", "quote": "the Cherokee nation agree, and do hereby relinquish and cede to the United States, all the lands within the following points and lines"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1798-0051", "title": "Treaty with the Cherokee, 1798 (Oklahoma State University Tribal Treaties Database)", "quote": "to the amount of five thousand dollars"}, {"url": "https://tennesseeencyclopedia.net/?p=1797", "title": "Treaties (Tennessee Encyclopedia)", "quote": "It granted land that settlers had entered between the Clinch River and the Cumberland Plateau and between the Tennessee and Little Tennessee rivers."}]
 verdict: "fixed"
 ---

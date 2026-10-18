@@ -15,4 +15,4 @@ The foundation says it serves a population of 7,000 Hopi across 12 villages. Its
 
 Current projects named on its About page include KUYI 88.1 FM Hopi Radio, the HOPI Substance Abuse Prevention Center, the Hopi Leadership Program and the Natwani Coalition. It also makes small community grants.
 
-None of these pages describes buying or returning land. The foundation's connection to land is through farming and sustainability work in Hopi communities, which the sources here do not document in detail.
+None of these pages describes buying or returning land. The foundation's connection to land is through farming and sustainability work in Hopi communities.

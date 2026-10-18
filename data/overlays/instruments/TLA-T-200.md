@@ -6,7 +6,7 @@ headline: "In March 1836 Mesquawbuck's Potawatomi band ceded four reserved secti
 how: "removal"
 how_basis: "Article 4 of the treaty text commits the band to remove west of the Mississippi within two years."
 confidence: "high"
-cautions: "Acreage not stated (four sections). Article 6 was stricken by the Senate and its content is not on the page. Circumstances of signing and later events are not covered by the sources opened."
+cautions: "Acreage not stated (four sections). Article 6 was stricken by the Senate and its content is not on the page. The cited sources do not describe the signing or what happened to the band afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0450", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "agree to yield peaceable possession of the above sections of land and remove to the country west of the Mississippi"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0450", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "the sum of twenty-five hundred and sixty dollars in specie at the next payment of annuity"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg490.pdf", "title": "Treaty with the Potawatomi, 7 Stat. 490 (govinfo)", "quote": "west of the Mississippi provided for the Pottawatamy nation by the United States"}]
 verdict: "fixed"
 ---

@@ -6,7 +6,7 @@ headline: "A July 1861 Delaware agreement secured the railroad company's bonds w
 how: "treaty_negotiated"
 how_basis: "The document records an agreement between the United States and the Delaware tribe with the railroad company as a party to the bond arrangement; no coercion is described in the text."
 confidence: "high"
-cautions: "Only the treaty text was used. The text is long and I read the opening recitals and bond terms, not every article. Outcome of the railroad is not documented in sources opened. Acreage: 100,000 acres (the Delaware land pledged to secure the bonds, per the treaty text)"
+cautions: "This account is based on the treaty text alone and covers its recitals and bond terms; it does not describe what became of the railroad. The treaty says 100,000 acres of Delaware land were pledged to secure the bonds."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1861-0814", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Delawares, 1861", "quote": "156 1/4 sections, or 100,000 acres"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1861-0814", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Delawares, 1861", "quote": "a mortgage of the company on the one hundred thousand acres of Delaware Indian lands"}]
 verdict: "fixed"
 ---

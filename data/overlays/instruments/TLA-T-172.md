@@ -6,7 +6,7 @@ headline: "In 1832 the Potawatomi of the Prairie and Kankakee ceded land between
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession in return for annuities and goods and does not describe coercion."
 confidence: "high"
-cautions: "No acreage is stated. The treaty page does not describe later removals of the Potawatomi; those were not researched here. The claims-against-the-Indians clause may reflect debt, but no source opened says it shaped the cession."
+cautions: "No acreage is stated. The treaty page does not describe later removals of the Potawatomi. The claims-against-the-Indians clause may reflect debt, but no source cited says it shaped the cession."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0353", "title": "Tribal Treaties Database (OSU)", "quote": "The said tribe having been the faithful allies of the United States during the late conflict with the Sacs and Foxes"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0353", "title": "Tribal Treaties Database (OSU)", "quote": "The sum of twenty-eight thousand seven hundred and forty-six dollars, shall be applied to the payment of certain claims against the Indians"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg378.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Potawatamie"}]
 verdict: "fixed"
 ---

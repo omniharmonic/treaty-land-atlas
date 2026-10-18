@@ -3,11 +3,11 @@ id: "TLA-T-186"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1833 the Quapaw, after a failed move to the Red River, were promised 150 sections near the Missouri line."
-note: "The Encyclopedia of Arkansas gives 96,000 acres; the treaty gives 150 sections. The account of why the Red River move failed is the treaty's own."
+note: "The Encyclopedia of Arkansas converts the treaty's 150 sections to 96,000 acres. The account of why the Red River move failed is the treaty's own."
 how: "removal"
 how_basis: "The OSU treaty preamble describes the Quapaw relocation under the 1824 treaty, its hardships, and a further removal to new land with debts paid."
 confidence: "high"
-cautions: "The preamble is the treaty's own account of why the Red River move failed. The Encyclopedia of Arkansas gives 96,000 acres; the treaty gives sections only."
+cautions: "The preamble is the treaty's own account of why the Red River move failed. The treaty gives sections only; the Encyclopedia of Arkansas gives the same 150 sections as 96,000 acres."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-quapaw-1833-0395", "title": "Tribal Treaties Database (OSU)", "quote": "in order to provide a permanent home for their nation"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-quapaw-1833-0395", "title": "Tribal Treaties Database (OSU)", "quote": "as they saw no alternative but to perish if they continued there"}, {"url": "https://encyclopediaofarkansas.net/entries/quapaw-550/", "title": "Quapaw, Encyclopedia of Arkansas", "quote": "Today, most of the Quapaw Nation resides in northeastern Oklahoma"}]
 verdict: "fixed"
 ---

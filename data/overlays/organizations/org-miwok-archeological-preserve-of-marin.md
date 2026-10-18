@@ -15,4 +15,4 @@ MAPOM says it works through programs and cooperative efforts with groups includi
 
 Its home page shows a photo timeline of events at a Coast Miwok cultural site from 1978 to 2023, including roundhouse construction, work days and a Day of Indigenous Skills in 2023.
 
-MAPOM describes itself as an organization that supports Native people. It is listed here as an allied, non-Native nonprofit, and the sources here describe no land purchase or return.
+MAPOM describes itself as an organization that supports Native people. It is listed here as an allied, non-Native nonprofit, and it describes no land purchase or return.

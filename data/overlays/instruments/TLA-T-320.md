@@ -7,7 +7,7 @@ note: "The language about \"civilization\" is the treaty's own wording."
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement with named Ottawa representatives; no duress is described in the text."
 confidence: "high"
-cautions: "Only the treaty text was used. The sentence describing \"civilization\" is the treaty's wording. Outcome of the termination clause is not documented in sources opened; another instrument in the Atlas may cover the 1867 Ottawa agreement. Acreage: 20,000 acres (set apart to endow a school for the Ottawa, per the treaty text)"
+cautions: "This account is based on the treaty text alone, so it does not describe how the termination clause played out; the 1867 Ottawa agreement is a separate instrument. The sentence describing \\\"civilization\\\" is the treaty's wording. The treaty set apart 20,000 acres to endow a school for the Ottawa."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-of-blanchards-fork-and-roche-de-boeuf-1862-0830", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Ottawa of Blanchard's Fork and Roche de Boeuf, 1862", "quote": "their organization, and their relations with the United States as an Indian tribe shall be dissolved and terminated"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-of-blanchards-fork-and-roche-de-boeuf-1862-0830", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Ottawa of Blanchard's Fork and Roche de Boeuf, 1862", "quote": "twenty thousand acres of average lands for the purpose of endowing a school"}]
 verdict: "fixed"
 ---

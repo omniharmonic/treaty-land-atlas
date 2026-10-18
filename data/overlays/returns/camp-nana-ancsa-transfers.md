@@ -15,4 +15,4 @@ On July 16, 2025, the Department of the Interior announced the conveyance of nea
 
 Interior framed the transfer as support for Alaska resource development, citing Secretary Doug Burgum's statement that putting land into Alaska Native hands advances opportunity while reducing federal barriers to resource development. It noted that while initial land selections were completed in the early 1970s, the Bureau of Land Management continues to work on complex conveyances like this one.
 
-High Country News reported in February 2026 that the transfer actually began with the 1971 settlement act and that over 700,000 acres have been returned to Alaska Natives since then. The sources here do not state NANA's own plans for the land.
+High Country News reported in February 2026 that the transfer actually began with the 1971 settlement act and that over 700,000 acres have been returned to Alaska Natives since then.

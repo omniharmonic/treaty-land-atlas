@@ -6,7 +6,7 @@ headline: "In 1832 the Kickapoo ceded their Missouri claims and agreed to move t
 how: "removal"
 how_basis: "The OSU treaty text exchanges Missouri land for a western reservation and requires removal with little delay, and directs annuity money to pay tribal debts."
 confidence: "high"
-cautions: "The treaty page does not describe the circumstances of the negotiation. The supplemental article is included on the same page. No source opened describes the later history of the reservation."
+cautions: "The treaty page does not describe the circumstances of the negotiation. The supplemental article is included on the same page. The sources cited do not describe the later history of the reservation."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1832-0365", "title": "Tribal Treaties Database (OSU)", "quote": "The said Indians agree to remove with as little delay as possible, to the land hereby ceded to them."}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1832-0365", "title": "Tribal Treaties Database (OSU)", "quote": "so as to include in the lands assigned the Kickapoos, at least twelve hundred square miles"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg391.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Kickapoo"}]
 verdict: "fixed"
 ---

@@ -15,4 +15,4 @@ In Lyng v. Northwest Indian Cemetery Protective Association (1988), the Forest S
 
 A RFRA challenge to the Oak Flat land exchange also failed. The en banc Ninth Circuit held the plan did "not impose a substantial burden on religious exercise," as Justice Gorsuch quoted it when dissenting from the Supreme Court's May 27, 2025 denial of review. He wrote that Oak Flat is a place where tribal members hold "religious ceremonies that cannot take place elsewhere."
 
-Sacred-site protection therefore rests mostly on process laws and executive policy; see the sacred sites record.
+Protection for sacred places on federal land comes mostly from consultation laws and executive policy, described in the sacred sites record.

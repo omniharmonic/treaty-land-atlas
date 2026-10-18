@@ -15,4 +15,4 @@ Its mission page says it supports coastal and bayou lowlands, honoring residents
 
 Its staff and board page lists Theresa Dardar, a tribal member of the Pointe-au-Chien Indian Tribe, as board president. A team biography there says a staff member worked with the Lowlander Center on coastal community resettlement. The organization describes itself as supporting, rather than being, the tribal communities it works with; the vetting notes classify it as allied and not Native-led.
 
-The sources here do not describe a completed land purchase or return, and they name no specific resettlement project, tribe or acreage. Lowlander's role, as it describes it, is research, training and advocacy on resilience and resettlement.
+Its pages describe no completed land purchase or return, and name no specific resettlement project, tribe or acreage. Lowlander's role, as it describes it, is research, training and advocacy on resilience and resettlement.

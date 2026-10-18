@@ -14,4 +14,4 @@ The purposes section says the Act provides a statutory basis for tribal gaming, 
 
 Land is central, because the Act applies only on "Indian lands." The definition covers all lands within the limits of any Indian reservation, and lands held in trust by the United States, or held by a tribe or individual subject to a federal restriction against alienation, "over which an Indian tribe exercises governmental power."
 
-For the biggest casino-style games, Class III, Section 2710(d) says they are lawful on Indian lands only if the tribe's ordinance is approved by the Chairman of the Commission, the State permits such gaming for any purpose by any person, and the games are run under a Tribal-State compact in effect. How courts have read "Indian lands," and later cases, were not reviewed for this story.
+For the biggest casino-style games, Class III, Section 2710(d) says they are lawful on Indian lands only if the tribe's ordinance is approved by the Chairman of the Commission, the State permits such gaming for any purpose by any person, and the games are run under a Tribal-State compact in effect.

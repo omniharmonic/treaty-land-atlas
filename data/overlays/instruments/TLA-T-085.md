@@ -6,7 +6,7 @@ headline: "In 1816 the Choctaw ceded land east of a Tombigbee River line for $6,
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for stated annual payments and merchandise, with no mention of coercion."
 confidence: "high"
-cautions: "Single source (treaty text). No acreage is stated and the location is described only by river and treaty boundaries. The record's description of the land as in Mississippi and Alabama is not stated in the text."
+cautions: "This summary rests on the treaty text alone. No acreage is stated and the location is described only by river and treaty boundaries. The text does not name the states where the land lies."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137", "title": "Treaty with the Choctaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "cede to the United States all their title and claim to lands lying east of the following boundary"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137", "title": "Treaty with the Choctaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "the sum of six thousand dollars annually, for twenty years"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137", "title": "Treaty with the Choctaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "Mount Dexter, on the 16th November, 1805"}]
 verdict: "fixed"
 ---

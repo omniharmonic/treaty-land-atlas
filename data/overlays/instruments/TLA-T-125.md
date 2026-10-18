@@ -2,7 +2,7 @@
 id: "TLA-T-125"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The 1825 Indian Springs treaty ceded all Creek land in Georgia and part of Alabama; a 1826 treaty declared it null and void."
+headline: "The 1825 Indian Springs treaty ceded all Creek land in Georgia and part of Alabama; an 1826 treaty declared it null and void."
 note: "The claim that about half the $400,000 would go to McIntosh and his friends, and the three million acre Alabama figure, come from the Encyclopedia of Alabama, not the treaty."
 how: "treaty_under_pressure"
 how_basis: "The Encyclopedia of Alabama describes bribery of McIntosh and a majority of chiefs objecting to his authority, and the 1826 treaty text says the 1825 treaty was signed by persons without sufficient authority."
@@ -10,7 +10,7 @@ confidence: "high"
 cautions: "The Encyclopedia of Alabama gives April 30, 1825 for the killings and says about half the $400,000 would go to McIntosh and his friends; the treaty text does not say this. The Encyclopedia says three million acres in Alabama; the treaty gives boundaries only. The 1826 treaty's own ceded land and payments are not detailed here."
 sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg237.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "those of Tokaubatchee excepted"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg286.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "is hereby declared to be null and void, to every intent and purpose whatsoever"}, {"url": "https://encyclopediaofalabama.org/article/treaty-of-indian-springs-1825/", "title": "Treaty of Indian Springs (1825), Encyclopedia of Alabama", "quote": "He had accepted bribes in the past, and the commissioners found him disposed to do so again."}, {"url": "https://encyclopediaofalabama.org/article/treaty-of-indian-springs-1825/", "title": "Treaty of Indian Springs (1825), Encyclopedia of Alabama", "quote": "A large majority of chiefs and warriors objected that McIntosh did not have sufficient authority to sign treaties or cede territory"}]
 verdict: "rewritten"
-promises: [{"article": "Art. 2", "promise": "Land west of the Mississippi on the Arkansas River, acre for acre, in exchange for the ceded land.", "kept": "broken", "evidence_url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg286.pdf", "evidence_quote": "is hereby declared to be null and void, to every intent and purpose whatsoever"}]
+promises: [{"article": "Art. 2", "promise": "Land west of the Mississippi on the Arkansas River, acre for acre, in exchange for the ceded land.", "kept": "unknown", "evidence_url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg286.pdf", "evidence_quote": "is hereby declared to be null and void, to every intent and purpose whatsoever"}]
 ---
 On February 12, 1825, commissioners Duncan G. Campbell and James Meriwether signed a convention at Indian Springs with "the Chiefs of the Creek Nation." The preamble says the commissioners told the Creeks it was U.S. policy that tribes inside states should move west of the Mississippi. It says the chiefs of the Creek towns agreed, "those of Tokaubatchee excepted."
 

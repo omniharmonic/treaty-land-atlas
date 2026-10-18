@@ -6,7 +6,7 @@ headline: "In 1831 the Shawnee at Wapaghkonnetta and Hog Creek ceded 145 square 
 how: "removal"
 how_basis: "The OSU treaty text says it implements the 1830 removal act, with Ohio land exchanged for western land and removal."
 confidence: "high"
-cautions: "The treaty page does not show the conditions under which the band agreed. No source opened describes later events or the western land."
+cautions: "The treaty page does not show the conditions under which the band agreed. The sources cited do not describe later events or the western land."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1831-0331", "title": "Tribal Treaties Database (OSU)", "quote": "have expressed their perfect assent to the conditions of the said act"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1831-0331", "title": "Tribal Treaties Database (OSU)", "quote": "a tract of land to contain one hundred thousand acres"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg355.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "James B. Gardiner"}]
 verdict: "fixed"
 ---

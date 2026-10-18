@@ -15,4 +15,4 @@ Its stated mission is "to uplift and sustain the lifeways and economies of Nativ
 
 On land, its Stewarding Native Lands program began in 2020. The program page says First Nations supports tribes and Native communities in "regaining and restoring their lands" through five focus areas, and lists a Tribal Lands Conservation Fund. The program is directed by Jacque Demko (Mandan, Hidatsa, and Arikara Nation). Grants shown on the page include support for a Northern Cheyenne Tribe buffalo program.
 
-First Nations also describes ratings from charity watchdogs on its About page. Those are its own claims, not confirmed with the raters. The organization funds land work; it does not itself hold land for return.
+First Nations also describes ratings from charity watchdogs on its About page. Those are its own claims. The organization funds land work; it does not itself hold land for return.

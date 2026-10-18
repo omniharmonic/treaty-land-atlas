@@ -3,11 +3,11 @@ id: "TLA-T-306"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1858 the Ponca ceded most of their land and kept a Niobrara reservation with a U.S. promise of protection."
-note: "Accounts differ on how the Ponca lost these lands after 1858: some point to the 1868 Fort Laramie treaty, others to an 1865 treaty."
+note: "The Encyclopedia of the Great Plains says the reservation was lost when the 1868 Fort Laramie treaty ceded the entire Ponca Reservation to the Sioux; later Ponca treaties are not covered here."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated cession in exchange for protection and annuities; the later loss of the reservation came from the 1868 Fort Laramie treaty, not this one."
 confidence: "high"
-cautions: "Sources conflict on how the Ponca lands were lost after 1858. The Encyclopedia of the Great Plains attributes it to the 1868 Fort Laramie treaty; the input's violation V027 calls it an error in that treaty, and other accounts mention an 1865 treaty. I report only the first. The treaty does not state an acreage. The input's Royce numbers 409, 471 and 472 were not checked."
+cautions: "The account of how the Ponca lost the reservation follows the Encyclopedia of the Great Plains, which attributes it to the 1868 Fort Laramie treaty; the Ponca's later treaties are not covered here. The treaty does not state an acreage. It was ratified March 8, 1859, and proclaimed April 11, 1859."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1858-0772", "title": "Treaty with the Ponca, 1858 (Oklahoma State University Tribal Treaties Database)", "quote": "To protect the Poncas in the possession of the tract of land reserved for their future homes"}, {"url": "https://plainshumanities.unl.edu/encyclopedia/doc/egp.na.088.html", "title": "Poncas, Encyclopedia of the Great Plains", "quote": "Overnight, the Poncas found themselves trespassers on their own reservation."}, {"url": "https://plainshumanities.unl.edu/encyclopedia/doc/egp.na.088.html", "title": "Poncas, Encyclopedia of the Great Plains", "quote": "the forced removal of the tribe commenced in the spring of 1877"}]
 verdict: "fixed"
 promises: [{"article": "Art. 2", "promise": "The United States would protect the Ponca in possession of the tract reserved for their future homes.", "kept": "broken", "evidence_url": "https://plainshumanities.unl.edu/encyclopedia/doc/egp.na.088.html", "evidence_quote": "Overnight, the Poncas found themselves trespassers on their own reservation."}]

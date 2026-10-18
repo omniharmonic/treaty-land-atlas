@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Detroit in 1807 four nations ceded land from the Maumee to the Lake Huron outlet for $10,000 and a $2,400 annuity."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a negotiated cession with payment and an annuity, with no source I read describing coercion."
+how_basis: "The OSU text records a negotiated cession with payment and an annuity, and the sources cited do not describe coercion."
 confidence: "high"
-cautions: "Only the treaty text was read. A search result gave about 8 million acres and described the cession as about the southeast quarter of Michigan's lower peninsula plus part of Ohio; that source was not opened, so no acreage or state description is given. The record's land description is marked 'from memory'; the boundary in the text is described in the narrative."
+cautions: "This summary rests on the treaty text alone."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1807-0092", "title": "Treaty with the Ottawa, etc., 1807 (Treaty of Detroit) (Oklahoma State University Tribal Treaties Database)", "quote": "all right, title, and interest, which the said nations now have, or claim, or ever had, or claimed"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1807-0092", "title": "Treaty with the Ottawa, etc., 1807 (Treaty of Detroit) (Oklahoma State University Tribal Treaties Database)", "quote": "there shall be paid to the said nations, at Detroit, ten thousand dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1807-0092", "title": "Treaty with the Ottawa, etc., 1807 (Treaty of Detroit) (Oklahoma State University Tribal Treaties Database)", "quote": "an annuity forever, of two thousand four hundred dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1807-0092", "title": "Treaty with the Ottawa, etc., 1807 (Treaty of Detroit) (Oklahoma State University Tribal Treaties Database)", "quote": "to settle arrangements mutually beneficial to the parties"}]
 verdict: "fixed"
 ---

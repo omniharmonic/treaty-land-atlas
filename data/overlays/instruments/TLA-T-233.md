@@ -6,7 +6,7 @@ headline: "In 1838 the Iowa ceded their claims between the Missouri and Mississi
 how: "treaty_negotiated"
 how_basis: "The text records articles made between agent John Dougherty and the chiefs and headmen of the Ioway, who signed with marks."
 confidence: "high"
-cautions: "Only the treaty text was used; it does not say what happened afterward, so this story stops at the signed terms. The page's own header spells the citation '7. Stat., 568'; this matches the record."
+cautions: "The treaty text does not say what happened afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1838-0518", "title": "Tribal Treaties Database (Oklahoma State University): Iowa at Great Nemaha Subagency (1838)", "quote": "All right or interest in the country between the Missouri and Mississippi rivers"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1838-0518", "title": "Tribal Treaties Database (Oklahoma State University): Iowa at Great Nemaha Subagency (1838)", "quote": "To pay to the said Ioway tribe of Indians the sum of one hundred and fifty-seven thousand five hundred ($157,500) dollars."}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1838-0518", "title": "Tribal Treaties Database (Oklahoma State University): Iowa at Great Nemaha Subagency (1838)", "quote": "guaranty them an annual income of not less than five per cent. thereon during the existence of their tribe"}]
 verdict: "new"
 ---

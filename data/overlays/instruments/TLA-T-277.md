@@ -6,7 +6,7 @@ headline: "In 1854 the Rogue River tribe agreed to share the Table Rock reserve 
 how: "treaty_negotiated"
 how_basis: "The text records an agreement between Superintendent Joel Palmer and the chiefs and headmen of the Rogue River tribe, who signed with marks."
 confidence: "high"
-cautions: "Only the treaty text was used; it does not say what happened afterward, so this story stops at the signed terms."
+cautions: "The treaty text is the only source cited; it does not say what happened afterward, so this story stops at the signed terms."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1854-0654", "title": "Tribal Treaties Database (Oklahoma State University): Rogue River at Even's Creek on the Table Rock Reserve, Oregon Territory (1854)", "quote": "shall be possessed and occupied jointly by said tribe and such other tribes and bands of Indians as the United States shall agree with"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1854-0654", "title": "Tribal Treaties Database (Oklahoma State University): Rogue River at Even's Creek on the Table Rock Reserve, Oregon Territory (1854)", "quote": "the right to make such roads, highways, and railroads through said reserve as the public good may from time to time require"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1854-0654", "title": "Tribal Treaties Database (Oklahoma State University): Rogue River at Even's Creek on the Table Rock Reserve, Oregon Territory (1854)", "quote": "two thousand one hundred and fifty dollars, in the following articles: twelve horses."}]
 verdict: "new"
 ---

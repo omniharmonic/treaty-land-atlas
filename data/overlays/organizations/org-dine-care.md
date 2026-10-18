@@ -15,4 +15,4 @@ The group's own history says it began in 1988 as a small community organization 
 
 Its mission statement says it advocates for traditional teachings by protecting life within the Four Sacred Mountains and promotes sustainable use of natural resources. The group says it is a membership organization by and for the Diné, and that its work is mostly paid for by foundation grants.
 
-Diné C.A.R.E. defends land from harm. The sources here describe no purchase or return of land by the organization, and it is not a land-return group.
+Diné C.A.R.E. defends land from harm. It is not a land-return group, and its pages describe no land it has bought or returned.

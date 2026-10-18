@@ -6,7 +6,7 @@ headline: "In September 1836 two Potawatomi chiefs and their band ceded ten rese
 how: "removal"
 how_basis: "Article 3 of the treaty text commits the band to remove west of the Mississippi within two years."
 confidence: "high"
-cautions: "Acreage not stated (ten sections). Circumstances and later history are not covered by the sources opened."
+cautions: "Acreage not stated (ten sections). The cited sources do not describe the signing or what happened to the band afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0470", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "agree to remove to the country west of the Mississippi river, provided for the Patawattimie nation by the United States, within two years"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0470", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "the sum of eight thousand dollars on or before the first day of May next"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg513.pdf", "title": "Treaty with the Potawatomi, 7 Stat. 513 (govinfo)", "quote": "on or before the first day of May next"}]
 verdict: "fixed"
 ---

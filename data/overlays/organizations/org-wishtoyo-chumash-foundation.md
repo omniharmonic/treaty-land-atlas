@@ -15,4 +15,4 @@ Its Conservancy page describes a 67-acre land base in unincorporated Ventura Cou
 
 Its Legal Cases page lists advocacy results in its own words, including the October 2014 passage of California's AB 52, which it says enhanced protection of tribal cultural resources under state environmental review, and a Los Angeles County Superior Court ruling that upheld endangered-species protection for Southern California steelhead after Wishtoyo intervened with allies.
 
-Donors should also know that Wishtoyo's website carries a statement about a December 2019 Los Angeles Times article that challenged Waiya's Chumash identity. Wishtoyo disputes the article. The atlas does not judge the matter.
+Donors should also know that Wishtoyo's website carries a statement about a December 2019 Los Angeles Times article that challenged Waiya's Chumash identity. Wishtoyo disputes the article.

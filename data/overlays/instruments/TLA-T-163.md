@@ -6,7 +6,7 @@ headline: "In 1831 a mixed Seneca and Shawnee band at Lewistown, Ohio, ceded its
 how: "removal"
 how_basis: "The OSU treaty text says the treaty carries out the 1830 removal act and exchanges Ohio land for land west of the Mississippi."
 confidence: "high"
-cautions: "The treaty page does not show the conditions under which the band agreed. Acreage: 48 square miles (30,720 acres, by arithmetic) plus 8,960 acres, about 39,680 in total; the treaty does not state the sum. No source opened describes later events."
+cautions: "The treaty page does not show the conditions under which the band agreed. Acreage: 48 square miles (30,720 acres, by arithmetic) plus 8,960 acres, about 39,680 in total; the treaty does not state the sum. The sources cited do not describe later events."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-etc-1831-0327", "title": "Tribal Treaties Database (OSU)", "quote": "have expressed their perfect assent to the conditions of said act, and their willingness and anxiety to remove west of the Mississippi river"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-etc-1831-0327", "title": "Tribal Treaties Database (OSU)", "quote": "to contain sixty thousand acres"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg351.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "James B. Gardiner"}]
 verdict: "fixed"
 ---

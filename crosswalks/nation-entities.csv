@@ -181,7 +181,7 @@ nat-pd-sherwood-valley,Sherwood Valley Band of Pomo,present_day_government,unkno
 nat-pd-round-valley,Round Valley Indian Tribes,present_day_government,unknown,standard,,California,Named in tribe-org-map.
 nat-pd-coyote-valley,Coyote Valley Band of Pomo,present_day_government,unknown,standard,,California,Named in tribe-org-map.
 nat-pd-lisjan-ohlone,Lisjan Ohlone (Confederated Villages of Lisjan),community_or_band,unknown,standard,,California,Label as printed in organizations-seed.
-nat-pd-amah-mutsun,Amah Mutsun (Mutsun Ohlone),community_or_band,unknown,standard,,California,Label as printed in tribe-org-map.
+nat-pd-amah-mutsun,Amah Mutsun Tribal Band,community_or_band,unknown,standard,,California,Label as printed in tribe-org-map.
 nat-pd-mutsun-costanoan,Mutsun Costanoan (Indian Canyon),community_or_band,unknown,standard,,California,Label as printed in tribe-org-map.
 nat-pd-tulalip,Tulalip Tribes,present_day_government,unknown,standard,,Washington,Named in tribe-org-map only; not researched.
 nat-pd-muckleshoot,Muckleshoot Indian Tribe,present_day_government,unknown,standard,,Washington,Named in tribe-org-map only; not researched.
@@ -207,7 +207,6 @@ nat-luiseno,Luiseno,historical_party,unknown,standard,,California,Named in the p
 nat-cahuilla,Cahuilla,historical_party,unknown,standard,,California,Named in the party text of California treaty K.
 nat-kumeyaay,Kumeyaay (Diegueno),historical_party,unknown,standard,,California,"Label from California treaty L party text; ""Diegueno"" is a period exonym."
 nat-pomo,Pomo,historical_party,unknown,standard,,California,Named in the party text of California treaty P.
-nat-piankeshaw,Piankeshaw,historical_party,unknown,standard,,Great Lakes / Old Northwest,Named in the Johnson v. M'Intosh row [from-memory].
 nat-illinois,Illinois (Confederacy),peoples_or_confederacy,unknown,standard,,Great Lakes / Old Northwest,Named in the Johnson v. M'Intosh row [from-memory].
 nat-hupa,Hupa (Hoopa Valley),historical_party,unknown,standard,,California,Named in the Kagama row [from-memory].
 nat-hualapai,Hualapai (Walapai),historical_party,unknown,standard,,Southwest,Named in the Santa Fe Pacific row.
@@ -217,7 +216,7 @@ nat-pd-fort-mojave,Fort Mojave (Indian Tribe),present_day_government,unknown,sta
 nat-pd-chemehuevi,Chemehuevi,present_day_government,unknown,standard,,Southwest,Named in the Arizona v. California row [from-memory].
 nat-pd-quechan,Quechan,present_day_government,unknown,standard,,Southwest,Named in the Arizona v. California row [from-memory].
 nat-pd-cocopah,Cocopah,present_day_government,unknown,standard,,Southwest,Named in the Arizona v. California row [from-memory].
-nat-pd-native-village-of-venetie,Native Village of Venetie (Neets'aii Gwich'in),present_day_government,unknown,distinct_alaska_ancsa,,Alaska,Named in the Venetie case row [from-memory]. ALASKA: distinct legal context.
+nat-pd-native-village-of-venetie,Native Village of Venetie Tribal Government,present_day_government,unknown,distinct_alaska_ancsa,,Alaska,Named in the Venetie case row [from-memory]. ALASKA: distinct legal context.
 nat-pd-santa-clara-pueblo,Santa Clara Pueblo,present_day_government,unknown,standard,,Southwest,Named in the Santa Clara Pueblo v. Martinez row.
 nat-pd-cabazon-band,Cabazon Band,present_day_government,unknown,standard,,California,Named in the Cabazon case row.
 nat-pd-morongo-band,Morongo Band,present_day_government,unknown,standard,,California,Named in the Cabazon case row.

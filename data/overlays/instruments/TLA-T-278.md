@@ -6,7 +6,7 @@ headline: "In November 1854 Chasta, Scoton and Grave Creek Umpqua bands ceded th
 how: "treaty_under_pressure"
 how_basis: "The Siletz tribes' history says their ancestors were 'forced to sign' seven western Oregon treaties and were later removed after open warfare."
 confidence: "medium"
-cautions: "The Siletz history does not discuss this specific treaty; its removal account is for the Rogue Valley and neighboring peoples generally, and the exact fate of the Chasta, Scoton and Grave Creek bands is not confirmed here. The treaty states no acreage. The OSU page lists the signers' band names as printed."
+cautions: "The Siletz history does not discuss this specific treaty; its removal account is for the Rogue Valley and neighboring peoples generally, and the cited sources do not trace the later history of the Chasta, Scoton and Grave Creek bands. The treaty states no acreage. The OSU page lists the signers' band names as printed."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chasta-etc-1854-0655", "title": "Treaty with the Chasta, etc., 1854 (Oklahoma State University Tribal Treaties Database)", "quote": "they will remove to such portion of the Table Rock reserve as may be assigned them"}, {"url": "https://ctsi.nsn.us/the-western-oregon-treaties-of-1853-1855/", "title": "The Western Oregon Treaties of 1853-1855, Confederated Tribes of Siletz Indians", "quote": "our ancestors would be forced to sign a total of seven treaties"}, {"url": "https://ctsi.nsn.us/the-end-of-wars-removal/", "title": "The End of Wars & Removal, Confederated Tribes of Siletz Indians", "quote": "the Rogue Valley Tribes would have to remove to Siletz also"}]
 verdict: "fixed"
 ---

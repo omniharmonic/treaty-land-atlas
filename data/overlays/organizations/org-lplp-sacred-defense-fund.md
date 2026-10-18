@@ -15,4 +15,4 @@ The About page says the project started when grandmothers in Lakota Country aske
 
 On land, the About page says the project supported tribal members' resistance to pipelines and mining on traditional homelands in Nevada and the Black Hills. It says it undertook a defense of its director, Chase Iron Eyes, who had been arrested during the #NoDAPL movement. Its home page lists a campaign called Return the Sacred and says it has filed or is preparing federal lawsuits over a mining permit.
 
-These are the organization's own accounts. The lawsuits and outcomes it describes are not confirmed from court records.
+These are the organization's own accounts.

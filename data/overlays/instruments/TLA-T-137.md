@@ -6,7 +6,7 @@ headline: "In August 1825 the Osage agreed to a marked road to New Mexico, forev
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "high"
-cautions: "The text sets no width for the road and gives no acreage; it says the road extends 'a reasonable distance on either side'. The Osage view of the 'forever free' clause is not in the text. The route as actually marked was not opened."
+cautions: "The text sets no width for the road and gives no acreage; it says the road extends 'a reasonable distance on either side'. The text does not record the Osage view of the 'forever free' clause."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-great-and-little-osage-1825-0246", "title": "Treaty with the Great and Little Osage, 1825 (Council Grove), Tribal Treaties Database", "quote": "to cause a road to be marked out from the Western frontier of Missouri to the confines of New Mexico"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-great-and-little-osage-1825-0246", "title": "Treaty with the Great and Little Osage, 1825 (Council Grove), Tribal Treaties Database", "quote": "shall, when marked, be forever free for the use of the citizens of the United States and of the Mexican Republic"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-great-and-little-osage-1825-0246", "title": "Treaty with the Great and Little Osage, 1825 (Council Grove), Tribal Treaties Database", "quote": "the sum of five hundred dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-great-and-little-osage-1825-0246", "title": "Treaty with the Great and Little Osage, 1825 (Council Grove), Tribal Treaties Database", "quote": "full and complete compensation for every privilege herein granted by said Chiefs"}]
 verdict: "new"
 promises: [{"article": "Art. 5", "promise": "Pay the Osage $500 in money or goods for the road privileges.", "kept": "unknown", "evidence_url": "https://treaties.okstate.edu/treaties/treaty-with-the-great-and-little-osage-1825-0246", "evidence_quote": "the sum of five hundred dollars"}]
@@ -17,4 +17,4 @@ On 10 August 1825, at Council Grove on the Neosho River, one hundred and sixty m
 
 For these privileges the commissioners promised five hundred dollars, in money or goods at the Osage's option. They also acknowledged goods already given worth three hundred dollars. The text says these sums are "full and complete compensation" for every privilege granted.
 
-The page lists a proclamation on 3 May 1826. The text sets no road width and gives no acreage.
+The treaty was proclaimed on 3 May 1826. The text sets no road width and gives no acreage.

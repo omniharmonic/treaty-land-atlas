@@ -6,7 +6,7 @@ headline: "In 1836 the Sac and Fox ceded their interest in the land between Miss
 how: "treaty_negotiated"
 how_basis: "The text records a convention between Henry Dodge and the chiefs, braves and principal men, who signed with marks; no source shows pressure."
 confidence: "high"
-cautions: "Only the treaty text was used; it does not say what happened to the land or people afterward, so this story stops at the signed terms. The page shows no payment or presents in this treaty."
+cautions: "The treaty text does not say what happened to the land or the people afterward. The page shows no payment or presents in this treaty."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-fox-tribe-1836-0473", "title": "Tribal Treaties Database (Oklahoma State University): Sauk and Fox (1836)", "quote": "forever cede, relinquish, and quit claim to the United States, all our right, title, and interest of whatsoever nature"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-fox-tribe-1836-0473", "title": "Tribal Treaties Database (Oklahoma State University): Sauk and Fox (1836)", "quote": "fully authorizing the United States to do with the same whatever shall seem expedient or necessary"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-fox-tribe-1836-0473", "title": "Tribal Treaties Database (Oklahoma State University): Sauk and Fox (1836)", "quote": "Sept. 27, 1836. | 7 Stat., 516. | Proclamation, Feb. 15, 1837."}]
 verdict: "new"
 ---

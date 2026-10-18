@@ -6,7 +6,7 @@ headline: "The Chickasaw ceded land north of the Tennessee River and part south 
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed agreement with annuities and reservations; it does not mention coercion."
 confidence: "high"
-cautions: "Single source (treaty text). No acreage is stated. The text spells the river 'Tombigby' and the reservations are described only by landmarks."
+cautions: "This summary rests on the treaty text alone. No acreage is stated. The text spells the river 'Tombigby' and the reservations are described only by landmarks."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1816-0135", "title": "Treaty with the Chickasaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "to settle all territorial controversies"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1816-0135", "title": "Treaty with the Chickasaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "The Chickasaw nation cede to the United States (with the exception of such reservations as shall hereafter be specified) all right or title"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1816-0135", "title": "Treaty with the Chickasaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "twelve thousand dollars per annum for ten successive years"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1816-0135", "title": "Treaty with the Chickasaw, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "shall revert to the United States as a portion of that territory ceded"}]
 verdict: "fixed"
 ---

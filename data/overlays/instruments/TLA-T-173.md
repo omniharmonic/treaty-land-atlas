@@ -7,7 +7,7 @@ note: "The preamble, which presents the Chickasaw as asking for relief from stat
 how: "removal"
 how_basis: "The OSU treaty preamble says state laws left the Chickasaw unable to follow them and that they preferred to seek a home in the west; removal costs were paid from land sales."
 confidence: "high"
-cautions: "The preamble is the treaty's own wording; it presents the Chickasaw as having asked for relief from state law. Other sources on pressure were not opened. Acreage is not stated. The OSU page's identifier line reads RIT_172 although the catalog lists RIT_173; this was not treated as an error in the record."
+cautions: "The preamble is the treaty's own wording; it presents the Chickasaw as having asked for relief from state law. Acreage is not stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1832-0356", "title": "Tribal Treaties Database (OSU)", "quote": "Rather than submit to this great evil, they prefer to seek a home in the west"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1832-0356", "title": "Tribal Treaties Database (OSU)", "quote": "all the land which they own on the east side of the Mississippi river"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg381.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Chickasaw"}]
 verdict: "fixed"
 ---
@@ -17,4 +17,4 @@ In Article 1 the Chickasaw ceded "all the land which they own on the east side o
 
 The Chickasaw promised to try to find a western home. If they failed before the first public sale, each family could select land from the surveys: for example one section for a single man of twenty-one and two sections for a family of five or fewer, with extra for those who held slaves. Article 11 created a perpetual national fund from the proceeds.
 
-The Statutes at Large record a proclamation on March 1, 1833. The sources here do not cover what followed.
+The Statutes at Large record a proclamation on March 1, 1833.

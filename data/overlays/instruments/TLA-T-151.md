@@ -6,7 +6,7 @@ headline: "In 1828 the Eel River Miami ceded a ten-mile-square reservation on Su
 how: "removal"
 how_basis: "The Oklahoma State treaty text requires the party to leave the ceded reservation for a smaller one and ties payments to ratification and to the tribe's annuity."
 confidence: "high"
-cautions: "The treaty describes the new reservation only as \"the five mile reservation on Eel River\"; its acreage is not given. No opened source says how the move went."
+cautions: "The treaty describes the new reservation only as \"the five mile reservation on Eel River\"; its acreage is not given. The sources cited do not say how the move went."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-miami-1828-0286", "title": "Tribal Treaties Database (OSU)", "quote": "remove to the five mile reservation on Eel River by the fifteenth day of October next"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-miami-1828-0286", "title": "Tribal Treaties Database (OSU)", "quote": "that said party agree to pay for the goods this day received, two thousand dollars, to be deducted from their annuity for this present year"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg309.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Eel River"}]
 verdict: "fixed"
 ---

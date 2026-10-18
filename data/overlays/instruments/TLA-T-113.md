@@ -6,7 +6,7 @@ headline: "In 1820 the Wea ceded the lands reserved in their 1818 treaty for $5,
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for a stated payment; the tribe is described as contemplating removal, with no mention of coercion."
 confidence: "high"
-cautions: "Acreage is not stated. The 1818 treaty was not opened, so what was reserved is described only as the treaty here describes it."
+cautions: "Acreage is not stated. What was reserved is described only as this treaty describes it; the 1818 treaty has its own entry."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wea-1820-0190", "title": "Tribal Treaties Database (OSU)", "quote": "it is contemplated by the said Tribe, to remove from the Wabash"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg209.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "is considered by the parties a full compensation for the cession and relinquishment above mentioned"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wea-1820-0190", "title": "Tribal Treaties Database (OSU)", "quote": "Proclamation, Jan. 8, 1821"}]
 verdict: "fixed"
 ---

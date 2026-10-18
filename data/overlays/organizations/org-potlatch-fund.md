@@ -15,4 +15,4 @@ It is a grantmaker, not a land trust. Its programs page lists two grant programs
 
 The About page names its board, with tribal affiliations given. It lists Jordann Lankford (A'aniiih and Anishinaabe) as President, Meredith Parker (Makah) as Vice President, and tai simpson (Nimiipuu) as Secretary.
 
-ProPublica Nonprofit Explorer lists Potlatch Fund of Seattle as a 501(c)(3) with tax exemption issued in October 2004. A donor should know that a gift supports a grantmaking program for Native communities generally. The sources here do not describe any land acquisition or return by Potlatch Fund.
+ProPublica Nonprofit Explorer lists Potlatch Fund of Seattle as a 501(c)(3) with tax exemption issued in October 2004. A donor should know that a gift supports a grantmaking program for Native communities generally. Potlatch Fund describes no land acquisition or return of its own.

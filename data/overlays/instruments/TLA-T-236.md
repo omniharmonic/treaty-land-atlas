@@ -6,7 +6,7 @@ headline: "In 1839 the Osage gave up claims to reserves inside other tribes' lan
 how: "treaty_negotiated"
 how_basis: "The text records articles concluded at Fort Gibson between General Arbuckle and the chiefs, headmen and warriors of the Great and Little Osage."
 confidence: "medium"
-cautions: "Only the treaty text was used; it does not say what happened afterward, so this story stops at the signed terms. Only the first articles shown on the page were read closely; later articles (if any) are not described."
+cautions: "The treaty text does not say what happened afterward. Article 2 also repaid $3,000 taken from the 1825 annuity and $3,000 of the 1829 annuity that the government agent wrongly withheld from Clermont's band."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1839-0525", "title": "Tribal Treaties Database (Oklahoma State University): Osage at Fort Gibson, West of Arkansas (1839)", "quote": "Of all titles or interest in any reservation heretofore claimed by them within the limits of any other tribe"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1839-0525", "title": "Tribal Treaties Database (Oklahoma State University): Osage at Fort Gibson, West of Arkansas (1839)", "quote": "an annuity of twenty thousand dollars to be paid in the Osage nation, twelve thousand in money and eight thousand in goods"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1839-0525", "title": "Tribal Treaties Database (Oklahoma State University): Osage at Fort Gibson, West of Arkansas (1839)", "quote": "To purchase the reservations provided for individuals in the fifth article of the treaty of June second, one thousand eight hundred and twenty-five"}]
 verdict: "new"
 ---

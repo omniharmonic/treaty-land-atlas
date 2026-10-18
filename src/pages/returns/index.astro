@@ -1,11 +1,28 @@
 ---
+// Every documented land return on one map, then listed in two groups: land that has changed
+// hands, and campaigns, programs and claims where it has not (yet).
 import Base from '../../layouts/Base.astro';
-import IndexList from '../../components/IndexList.astro';
-import { byType, year } from '../../lib/graph';
+import { byType, cleanTags, pathFor, year, type Node } from '../../lib/graph';
 import { href } from '../../lib/href';
+import { RETURN_STATUS, returnLocations } from '../../lib/land';
+import { locatorMap, projectPoint } from '../../lib/svgmap';
 
 const all = byType('Campaign').sort((a, b) => (year(b) ?? 0) - (year(a) ?? 0));
-const statusWord = (s: unknown) => String(s ?? '').replace(/-/g, ' ');
+const status = (n: Node) =>
+  RETURN_STATUS[String(n['campaign_status'])] ?? { word: 'Under way', done: false };
+const returned = all.filter((n) => status(n).done);
+const underway = all.filter((n) => !status(n).done);
+const locs = returnLocations();
+const frame = locatorMap([]);
+const dots = all.flatMap((n) => {
+  const l = locs.get(n.id);
+  if (l?.lat == null || l.lng == null) return [];
+  const [x, y] = projectPoint(l.lng, l.lat);
+  // Alaska and Hawaii fall outside the lower-48 map; their pages still have the text
+  if (x < 0 || y < 0 || x > frame.width || y > frame.height) return [];
+  return [{ n, x, y, done: status(n).done, place: l.place }];
+});
+const who = (n: Node) => cleanTags(n['nation_text']).text.replace(/\s*\([^)]*inferred[^)]*\)/i, '');
 ---
 
 <Base
@@ -14,23 +31,154 @@ const statusWord = (s: unknown) => String(s ?? '').replace(/-/g, ' ');
 >
   <div class="intro">
     <h1>Land returns</h1>
-    <p class="lede">{all.length} documented returns and campaigns, most recent first.</p>
-    <p>
-      “Land Back” means different things to different people; we describe each return in the words
-      of its sources. To support a return, see <a href={href('/support/')}>how to help</a>.
+    <p class="lede">
+      Land is coming back to Native nations through purchases, transfers and settlements. Each entry
+      describes a return in the words of its sources.
     </p>
   </div>
-  <IndexList
-    items={all}
-    dated
-    note={(n) =>
-      `${n['nation_text'] ?? ''}${n['acres'] ? `, ${Number(n['acres']).toLocaleString('en-US')} acres` : ''} (${statusWord(n['campaign_status'])})`
-    }
-  />
+
+  <figure class="returns-map">
+    <svg
+      viewBox={`0 0 ${frame.width} ${frame.height}`}
+      role="group"
+      aria-label={`Map of ${dots.length} land returns and campaigns in the lower 48 states.`}
+    >
+      <image href={href('/map/base.svg')} width={frame.width} height={frame.height} />
+      {dots.map((d) => (
+        <a href={href(pathFor(d.n) ?? '/returns/')} aria-label={`${d.n.label}, ${d.place}`}>
+          <circle class:list={[{ done: d.done }]} cx={d.x} cy={d.y} r="7" />
+        </a>
+      ))}
+    </svg>
+    <figcaption class="sans">
+      <span>
+        <i class="k done" />
+        Land returned
+      </span>
+      <span>
+        <i class="k" />
+        Campaign or program
+      </span>
+      <span class="muted">Places are approximate; sacred places are shown only by county.</span>
+    </figcaption>
+  </figure>
+
+  <section aria-labelledby="returned-h">
+    <h2 id="returned-h">Land returned</h2>
+    <p class="muted sans small">
+      Land whose title or trust status changed hands. Settlements such as the 1971 Alaska Native
+      Claims Settlement Act are different in kind; each page explains what moved and to whom.
+    </p>
+    <ul class="returns">
+      {returned.map((n) => (
+        <li>
+          <span class="y sans">{year(n) ?? ''}</span>
+          <span>
+            <a href={href(pathFor(n) ?? '/returns/')}>{n.label}</a>
+            <span class="note sans">
+              {who(n)}
+              {n['acres'] ? `, ${Number(n['acres']).toLocaleString('en-US')} acres` : ''}
+              {status(n).word !== 'Returned' ? ` (${status(n).word.toLowerCase()})` : ''}
+            </span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="underway-h">
+    <h2 id="underway-h">Campaigns, programs and claims</h2>
+    <p class="muted sans small">Work where the land has not changed hands, or not all of it.</p>
+    <ul class="returns">
+      {underway.map((n) => (
+        <li>
+          <span class="y sans">{year(n) ?? ''}</span>
+          <span>
+            <a href={href(pathFor(n) ?? '/returns/')}>{n.label}</a>
+            <span class="note sans">
+              {status(n).word}
+              {who(n) ? `, ${who(n)}` : ''}
+            </span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <p class="sans small">
+    To support this work, see <a href={href('/support/')}>how to help</a>.
+  </p>
 </Base>
 
 <style>
   .intro {
     padding-top: var(--space-6);
+  }
+  .returns-map {
+    margin: var(--space-5) 0 var(--space-6);
+    background: var(--sage);
+    border-radius: 14px;
+    padding: var(--space-3);
+    max-width: 60rem;
+  }
+  .returns-map svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  circle {
+    fill: var(--sheet);
+    stroke: var(--data-return);
+    stroke-width: 3;
+  }
+  circle.done {
+    fill: var(--data-return);
+    stroke: var(--sheet);
+    stroke-width: 2;
+  }
+  a:hover circle,
+  a:focus-visible circle {
+    stroke: var(--ink);
+    stroke-width: 4;
+  }
+  figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-4);
+    font-size: var(--s-1);
+    padding: var(--space-2) var(--space-2) 0;
+  }
+  .k {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    margin-right: var(--space-1);
+    vertical-align: -0.05rem;
+    border: 2px solid var(--data-return);
+    background: var(--sheet);
+  }
+  .k.done {
+    background: var(--data-return);
+  }
+  .returns {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6);
+  }
+  .returns li {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: var(--space-3);
+    padding: 4px 0;
+  }
+  .y {
+    color: var(--ink-3);
+    font-size: var(--s-1);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .note {
+    display: block;
+    font-size: var(--s-2);
+    color: var(--ink-3);
   }
 </style>

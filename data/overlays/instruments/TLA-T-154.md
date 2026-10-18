@@ -6,7 +6,7 @@ headline: "In 1828 the Potawatomi ceded two tracts near the St. Joseph River and
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession with annuities and goods; no source cited describes coercion."
 confidence: "high"
-cautions: "Acreage is not stated. Later articles granting land to named individuals were not summarized."
+cautions: "Acreage is not stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1828-0294", "title": "Tribal Treaties Database (OSU)", "quote": "an additional permanent annuity of two thousand dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1828-0294", "title": "Tribal Treaties Database (OSU)", "quote": "One thousand dollars per annum shall be applied for the purposes of education"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg317.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Potowatami tribe of Indians"}]
 verdict: "fixed"
 ---

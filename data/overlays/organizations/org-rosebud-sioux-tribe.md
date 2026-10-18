@@ -2,7 +2,7 @@
 id: "org-rosebud-sioux-tribe"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Rosebud Sioux Tribe runs a Tribal Land Enterprise and was one of three tribes that bought Pe' Sla for $9 million in 2012."
+headline: "The Rosebud Sioux Tribe runs a Tribal Land Enterprise and was one of the tribes that bought Pe' Sla for $9 million in 2012."
 note: "A tribal government. Pe' Sla was bought jointly by three tribes, not by Rosebud alone; sources give the size as about 1,940 to nearly 2,000 acres."
 confidence: "medium"
 cautions: "The Pe' Sla purchase was made by three tribes together, not by Rosebud alone; Rosebud's share of the $9 million is not public. The acreage differs by source (the record says 1,942; AP says nearly 2,000; one 2012 report says more than 1,940). The Tribe's own pages read do not mention Pe' Sla. The Tribe's website donation link concerns an older COVID relief fund; no land fund was found. The ownership arrangement after purchase was not read."

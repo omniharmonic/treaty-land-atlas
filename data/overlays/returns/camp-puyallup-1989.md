@@ -15,4 +15,4 @@ The Act approves, ratifies and confirms an agreement between the Tribe and non-I
 
 The settlement lands go into federal trust for the Tribe. The Act lists parcels of roughly 43.4, 85.2, 72.9 and 5.9 acres, among others, and about 600 acres of open space, forest and cultural lands to be bought with settlement cash. It also directs $24 million into an annuity fund for individual members and $22 million into a permanent trust fund, to the extent provided by appropriations or other parties.
 
-The atlas record cites a total of about $162 million to $163 million from Wikipedia. That figure was not found in the Act, which lists federal appropriations authorizations separately.
+The Act lists its federal sums separately and gives no single total.

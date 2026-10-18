@@ -13,6 +13,6 @@ Kuaʻāina Ulu ʻAuamo (KUA) calls itself "a backbone organization that supports
 
 KUA's approach is community-based natural resources management, not land ownership. Its home page describes three networks: E Alu Pū, which it says links more than 32 communities from around Hawaiʻi; Hui Mālama Loko Iʻa, a network of fishpond practitioners and organizations; and the Limu Hui, a network of elders and community members who gather and restore native limu (seaweed).
 
-KUA also tracks state law. Its blog describes Act 203 as creating explicit legal authority for the state Board of Land and Natural Resources to enter long-term community co-management agreements with community-based organizations, and notes bill HB 2218 on community co-management agreements as having passed. These are KUA's descriptions of the law, not a reading of the statute itself.
+KUA also tracks state law. Its blog describes Act 203 as creating explicit legal authority for the state Board of Land and Natural Resources to enter long-term community co-management agreements with community-based organizations, and notes bill HB 2218 on community co-management agreements as having passed. These are KUA's descriptions of the law.
 
-KUA's pages cited here do not state that it is Native Hawaiian-led, and they document no land purchase or return.
+KUA's pages do not say that it is Native Hawaiian-led, and they describe no land purchase or return.

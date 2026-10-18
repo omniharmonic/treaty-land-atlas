@@ -5,7 +5,7 @@ written_by: "narrative-wave-2026-10"
 headline: "The Fox tribe confirmed the 1804 St. Louis treaty at Portage des Sioux in 1815 and re-established peace with the United States."
 note: "The Fox are also called the Meskwaki."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a peace treaty confirming an earlier cession, with no source I read describing coercion."
+how_basis: "The OSU text records a peace treaty confirming an earlier cession, and the sources cited do not describe coercion."
 confidence: "high"
 cautions: "Before Knox's statement is about the 1804 treaty in general and names Meskwaki and Sauk (the Meskwaki are also called the Fox); it does not address this 1815 council. The 1804 text does not say how the Fox were represented. No acreage is involved."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-foxes-1815-0121", "title": "Treaty with the Foxes, 1815 (Oklahoma State University Tribal Treaties Database)", "quote": "re-establishing peace and friendship between the United States and the said tribe or nation"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-foxes-1815-0121", "title": "Treaty with the Foxes, 1815 (Oklahoma State University Tribal Treaties Database)", "quote": "assent to, recognize, re-establish, and confirm, the treaty of St. Louis"}, {"url": "https://www.beforeknox.com/the-united-states-context/the-black-hawk-war-and-treaties", "title": "The Black Hawk War and Treaties (Before Knox)", "quote": "was signed in the absence of important leaders and without the consent of the Tribal Council"}]

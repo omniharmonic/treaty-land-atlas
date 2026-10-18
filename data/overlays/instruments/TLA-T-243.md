@@ -6,7 +6,7 @@ headline: "In 1842 the Sac and Fox ceded all their claims west of the Mississipp
 how: "removal"
 how_basis: "Article III of the treaty text commits the tribes to move west of the line by May 1 and later to land assigned on the Missouri River."
 confidence: "high"
-cautions: "No acreage is stated. The tribes' later move to the assigned land is not described by the sources opened here."
+cautions: "No acreage is stated. The cited sources do not describe the tribes' later move to the assigned land."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1842-0546", "title": "Treaty with the Sac and Fox, 1842 (OSU Tribal Treaties Database)", "quote": "cede to the United States, forever, all the lands west of the Mississippi river, to which they have any claim or title"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1842-0546", "title": "Treaty with the Sac and Fox, 1842 (OSU Tribal Treaties Database)", "quote": "if they do not remove before the expiration of the term of three years, they will then remove at their own expense"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg596.pdf", "title": "Treaty with the Sac and Fox, 7 Stat. 596 (govinfo)", "quote": "painted or red rocks"}]
 verdict: "fixed"
 ---

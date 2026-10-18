@@ -6,7 +6,7 @@ headline: "An 1864 treaty had the Mississippi, Pillager and Winnibigoshish Chipp
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement signed at Washington with named Chippewa leaders; claims for 1862 depredations are paid under it, but the text does not describe duress."
 confidence: "high"
-cautions: "Only the treaty text was read, and only the first articles. No secondary source on why the United States sought it. The 1862 events (the U.S.-Dakota War period) are not discussed in any source opened, so the narrative does not interpret them."
+cautions: "The treaty text does not explain why the United States sought it, and it names the 1862 events only as \\\"depredations\\\"; this account does not interpret them."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-mississippi-and-pillager-and-lake-winnibigoshish-bands-1864-0862", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa, Mississippi, and Pillager and Lake Winnibigoshish Bands, 1864", "quote": "are hereby ceded to the United States, excepting one half section of land, including the mission buildings at Gull Lake"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-mississippi-and-pillager-and-lake-winnibigoshish-bands-1864-0862", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa, Mississippi, and Pillager and Lake Winnibigoshish Bands, 1864", "quote": "the claims for depredations committed by said Indians in 1862, the sum of twenty thousand dollars"}]
 verdict: "fixed"
 ---

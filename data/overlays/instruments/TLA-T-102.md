@@ -16,4 +16,4 @@ In Article 1 the Wea agreed "to cede to the United State all the lands claimed a
 
 In Article 4 the Wea sanctioned the Kickapoo cession made in the second article of the Kickapoo treaty of December 9, 1809. In Article 5 the United States agreed to pay $1,850 a year, added to a former annuity of $1,150, a total of $3,000 a year in silver, paid on the reservation.
 
-A Myaamia Center blog says the Wea treaty was one of four linked negotiations at St. Mary's in autumn 1818, with the Delaware, Potawatomi and Miami. The sources here do not describe the Wea council or later events.
+A Myaamia Center blog says the Wea treaty was one of four linked negotiations at St. Mary's in autumn 1818, with the Delaware, Potawatomi and Miami.

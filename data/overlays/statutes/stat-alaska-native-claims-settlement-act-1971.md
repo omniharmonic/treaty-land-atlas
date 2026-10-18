@@ -15,4 +15,4 @@ Section 4 (43 U.S.C. 1603) is the extinguishment clause: "All aboriginal titles,
 
 In return, the Supreme Court's summary in Alaska v. Native Village of Venetie (1998) says ANCSA revoked the Venetie Reservation and all but one of the other Native reserves, and authorized transferring $962.5 million and about 44 million acres of land to state-chartered private business corporations formed by Alaska Natives. Those corporations received fee simple title, with no federal restrictions on later transfers.
 
-That structure mattered later. In Venetie the Court held that the Tribe's ANCSA land, which had been conveyed to its corporations, was not "Indian country," so the Tribe could not tax a non-member contractor.
+That structure mattered later. In Venetie the Court held that the Tribe's former reservation land, which ANCSA conveyed to its corporations and they then transferred to the Tribe, was not "Indian country," so the Tribe could not tax a non-member contractor.

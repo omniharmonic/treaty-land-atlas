@@ -40,37 +40,58 @@ const sorted = [...groups.entries()]
     return { title: phrase(type, dir), type, rows: unique };
   })
   .sort((a, b) => b.rows.length - a.rows.length);
+// when every link here is an automatic match, say so once instead of marking each one
+const rowsAll = sorted.flatMap((g) => g.rows);
+const allSuggested = rowsAll.length > 0 && rowsAll.every((r) => r.edge.status === 'proposed');
+const someSuggested = rowsAll.some((r) => r.edge.status === 'proposed');
+// a qualifier every row in a group shares goes once, beside the group's title
+const ROLE_NOTE: Record<string, string> = {
+  present_day_per_usfs: 'matched by the Forest Service, under review',
+  named_in_royce_schedule: 'as named in the 1899 record',
+};
+const sharedRole = (rows: Row[]) => {
+  const roles = new Set(rows.map((r) => r.edge.qualifiers?.['role']));
+  const only = roles.size === 1 ? [...roles][0] : null;
+  return typeof only === 'string' ? only : null;
+};
 ---
 
 {sorted.length > 0 && (
   <section class="connections" aria-labelledby={`conn-${id}`}>
     <h2 id={`conn-${id}`}>Connections</h2>
-    <p class="small muted sans">
-      Links marked “suggested” were inferred from matching names or dates and have not been reviewed
-      by a person.
-    </p>
-    {sorted.map((g) => (
-      <section class="group">
-        <h3>
-          {g.title} <span class="count">{g.rows.length}</span>
-        </h3>
-        <ul>
-          {g.rows.slice(0, limit).map((r) => (
-            <RelatedItem edge={r.edge} other={r.other} />
-          ))}
-        </ul>
-        {g.rows.length > limit && (
-          <details>
-            <summary class="sans">Show all {g.rows.length}</summary>
-            <ul>
-              {g.rows.slice(limit).map((r) => (
-                <RelatedItem edge={r.edge} other={r.other} />
-              ))}
-            </ul>
-          </details>
-        )}
-      </section>
-    ))}
+    {someSuggested && (
+      <p class="small muted sans">
+        {allSuggested
+          ? 'These links were matched automatically by name or date and have not yet been reviewed by a person.'
+          : 'Links marked “suggested” were matched automatically by name or date and have not yet been reviewed by a person.'}
+      </p>
+    )}
+    {sorted.map((g) => {
+      const role = sharedRole(g.rows);
+      return (
+        <section class="group">
+          <h3>
+            {g.title} <span class="count">{g.rows.length}</span>
+            {role && ROLE_NOTE[role] && <span class="count">, {ROLE_NOTE[role]}</span>}
+          </h3>
+          <ul>
+            {g.rows.slice(0, limit).map((r) => (
+              <RelatedItem edge={r.edge} other={r.other} quiet={allSuggested} noRole={!!role} />
+            ))}
+          </ul>
+          {g.rows.length > limit && (
+            <details>
+              <summary class="sans">Show all {g.rows.length}</summary>
+              <ul>
+                {g.rows.slice(limit).map((r) => (
+                  <RelatedItem edge={r.edge} other={r.other} quiet={allSuggested} noRole={!!role} />
+                ))}
+              </ul>
+            </details>
+          )}
+        </section>
+      );
+    })}
   </section>
 )}
 

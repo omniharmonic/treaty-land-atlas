@@ -15,4 +15,4 @@ Its Land Back page says Land Back is "at the heart of who we are." It says it bu
 
 Examples on that page include a participant profile of the Indigenous Creatives Collective, whose land it describes as a protected natural resource area serving as a gathering space in urban Seattle, and a Native Neighborhood Community Study led by an Indigenous planning group to envision an urban Native neighborhood in Seattle.
 
-NIF is a funder and intermediary. It does not state that it holds title to land, and the sources here attribute no acreage or completed transfer to it.
+NIF is a funder and intermediary. It does not state that it holds title to land, or name any acreage or completed transfer of its own.

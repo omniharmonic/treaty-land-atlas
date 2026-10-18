@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In Washington in 1805 the Creek ceded land between the Oconee and Ocmulgee rivers and granted a horse path, for payments over eighteen years."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a negotiated convention in Washington with named payments; I found no source describing coercion."
+how_basis: "The OSU text records a negotiated convention in Washington with named payments; The sources cited do not describe coercion."
 confidence: "high"
-cautions: "The reason the Creek agreed in 1805 after refusing in 1796 is not shown in the sources opened, and no motive is claimed. The Charlton County source is an early local history, quoted as written; it records the 1796 refusal as made to Georgia. No acreage is stated."
+cautions: "The reason the Creek agreed in 1805 after refusing in 1796 is not shown in the sources cited, and no motive is claimed. The Charlton County source is an early local history, quoted as written; it records the 1796 refusal as made to Georgia. No acreage is stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1805-0085", "title": "Treaty with the Creeks, 1805 (Oklahoma State University Tribal Treaties Database)", "quote": "cede, relinquish, and forever quit claim unto the United States all right, title, and interest"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1805-0085", "title": "Treaty with the Creeks, 1805 (Oklahoma State University Tribal Treaties Database)", "quote": "paid annually to the Creek nation, by the United States for the term of eight years, twelve thousand dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1805-0085", "title": "Treaty with the Creeks, 1805 (Oklahoma State University Tribal Treaties Database)", "quote": "a right to a horse path, through the Creek country, from the Ocmulgee to the Mobile"}, {"url": "https://www.charltoncountyhistoricalsociety.org/colerain", "title": "Colerain (Charlton County Historical Society)", "quote": "they positively refused to cede any of the territory between the Oconee and the Ocmulgee rivers to Georgia"}]
 verdict: "fixed"
 ---

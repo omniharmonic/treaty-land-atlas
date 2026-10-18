@@ -15,4 +15,4 @@ The state's Wildfire and Forest Resilience Task Force page says that in May 2024
 
 One result is in Butte County. Hoodline, citing local station Action News Now, reports that the Mechoopda Indian Tribe of Chico Rancheria acquired about 450 acres in the Big Chico Creek watershed in 2026, with state programs supporting the closings. A real estate firm that worked on the deal says a program grant funds the tribe's cultural and environmental restoration crew.
 
-The Mechoopda detail rests on secondary reports, not on CNRA's own press release. The program's current funding is not described here.
+The Mechoopda detail comes from news reports.

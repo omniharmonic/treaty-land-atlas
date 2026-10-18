@@ -6,7 +6,7 @@ headline: "The 1836 Treaty of Washington had the Ottawa and Chippewa cede a larg
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records an agreement signed by a commissioner and the chiefs and delegates, with a cession paid for by annuities; it does not describe pressure."
 confidence: "high"
-cautions: "The page gives no total acreage for the cession. The Senate's amendments and the contested acceptance of them, and later uses of the treaty in court, are not covered by the sources opened here, so this entry does not describe them. The OSU page also shows a supplementary article signed March 31, 1836."
+cautions: "The page gives no total acreage for the cession. The cited sources do not describe the Senate's changes to the treaty or its later use in court. The OSU page also shows a supplementary article signed March 31, 1836."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1836-0450", "title": "Treaty of Washington with the Ottawa and Chippewa, 1836 (OSU Tribal Treaties Database)", "quote": "for the term of five years from the date of the ratification of this treaty, and no longer"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1836-0450", "title": "Treaty of Washington with the Ottawa and Chippewa, 1836 (OSU Tribal Treaties Database)", "quote": "The Indians stipulate for the right of hunting on the lands ceded"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg491.pdf", "title": "Treaty of Washington, 7 Stat. 491 (govinfo)", "quote": "one tract of twenty thousand acres to be located on the north shore of Grand Traverse bay"}]
 verdict: "fixed"
 ---

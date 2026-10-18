@@ -7,7 +7,7 @@ note: "Treaties Matter says nearly a dozen nations took part, while the treaty n
 how: "other"
 how_basis: "The statute text records a multinational peace and boundary treaty with no direct cession; Treaties Matter says it made later single-nation purchases easier."
 confidence: "medium"
-cautions: "Treaties Matter says nearly a dozen nations took part; the treaty names eight groups. The page is a summary and its author is not named in the text opened. The treaty cedes no land. Boundaries with some bands were left to later treaties."
+cautions: "Treaties Matter says nearly a dozen nations took part; the treaty names eight groups. The Treaties Matter page is an unsigned summary. The treaty cedes no land. Boundaries with some bands were left to later treaties."
 sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg272.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "to promote peace among these tribes, and to establish boundaries among them and the other tribes who live in their vicinity"}, {"url": "https://www.treatiesmatter.org/treaties/land/1825-1830-Multinational", "title": "Multinational Treaties at Prairie du Chien (Treaties Matter, Minnesota Historical Society)", "quote": "Within 3 years, the U.S. was purchasing land within the boundaries set in 1825."}]
 verdict: "fixed"
 ---

@@ -2,12 +2,12 @@
 id: "TLA-U-CA-L"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Santa Ysabel in 1852, the Dieguino nation accepted U.S. sovereignty and a reserved district; the Senate never ratified it."
+headline: "At Santa Ysabel in 1852, the nation the treaty calls the Dieguino Indians accepted U.S. sovereignty and a reserved district; the Senate never ratified it."
 note: "Sources give July 2 or July 8, 1852 as the date the Senate rejected it."
 how: "unratified"
 how_basis: "The OSU treaty page marks it Unratified, and Prologue says the Senate rejected all 18 California treaties."
 confidence: "high"
-cautions: "Prologue gives July 2, 1852 for the Senate's rejection; OSU cites the Senate Executive Journal of July 8, 1852, so only 'in 1852' is stated. Only the treaty text and the Prologue article were read; no tribal source was opened and the signers' present-day nations are not identified. The treaty text gives no acreage."
+cautions: "Prologue gives July 2, 1852 for the Senate's rejection; OSU cites the Senate Executive Journal of July 8, 1852, so only 'in 1852' is stated. The cited sources do not identify the signers' present-day nations. The treaty text gives no acreage."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-dieguino-1852-21849", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Dieguino, 1852", "quote": "shall be and is hereby set apart forever, for the sole use and occupancy of the aforesaid nation of Indians"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-dieguino-1852-21849", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Dieguino, 1852", "quote": "that they will never claim any other lands within the boundaries of the United States"}, {"url": "https://www.archives.gov/publications/prologue/2013/fall-winter/treaties.pdf", "title": "National Archives, Prologue: The Secret Treaties With California's Indians (Larisa K. Miller, 2013)", "quote": "the Senate rejected the treaties and, following Senate rules, imposed an injunction of secrecy on them"}, {"url": "https://www.archives.gov/publications/prologue/2013/fall-winter/treaties.pdf", "title": "National Archives, Prologue: The Secret Treaties With California's Indians (Larisa K. Miller, 2013)", "quote": "The case was decided in favor of the Indians."}]
 verdict: "fixed"
 ---

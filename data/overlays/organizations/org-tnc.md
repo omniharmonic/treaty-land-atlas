@@ -15,4 +15,4 @@ Several land returns involve TNC as a funder or donor, not as the lead. In Octob
 
 In March 2026 TNC announced that, with its assistance and funding, the Six Nations Iroquois Cultural Center purchased about 600 acres from Paul Smith's College for $1.1 million. TNC's New York director called it the first land return by TNC in New York.
 
-In Maine, TNC's Maine chapter is named as one of the partners in the Tributary Land Returns with the five Wabanaki tribes. TNC's own formal Indigenous land-return policy page could not be found. A gift to TNC is a gift to TNC, not to any tribe.
+In Maine, TNC's Maine chapter is named as one of the partners in the Tributary Land Returns with the five Wabanaki tribes. A gift to TNC is a gift to TNC, not to any tribe.

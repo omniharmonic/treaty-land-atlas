@@ -10,7 +10,7 @@ verdict: "new"
 ---
 The question is when a state's laws and courts reach into Indian country, the land within and around reservations. Three decisions mark the arc.
 
-Worcester v. Georgia (1832) arose after Georgia extended its laws over Cherokee territory. Samuel Worcester, a white missionary licensed by the federal government, was targeted by the state for refusing to leave. Chief Justice Marshall held that Georgia's assertion of power was invalid, writing that the Cherokee nation is a distinct community in which the laws of Georgia can have no force.
+Worcester v. Georgia (1832) arose after Georgia extended its laws over Cherokee territory. Samuel Worcester, a white missionary licensed by the federal government, was convicted in a Georgia court for residing in the Cherokee nation without a state license. Chief Justice Marshall held that Georgia's assertion of power was invalid, writing that the Cherokee nation is a distinct community in which the laws of Georgia can have no force.
 
 In Williams v. Lee (1959), a non-Indian storekeeper sued a Navajo couple in Arizona state court over goods bought on credit at his store on the Navajo Reservation. The Court reversed. It said allowing state jurisdiction would undermine tribal courts and infringe the right of the Indians to govern themselves, and that any change was for Congress. The test it described: whether state action infringed on the right of reservation Indians to make their own laws and be ruled by them.
 

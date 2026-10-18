@@ -15,4 +15,4 @@ REACH says it operated under an outside fiscal sponsor for years before incorpor
 
 Its board page lists Passamaquoddy and other Wabanaki members, including one who has worked for the Passamaquoddy Tribe and Maine Coast Heritage Trust on land return. A blog post on its site describes a land purchase made by Niweskok, a separate Wabanaki group, free of a conservation easement. That land belongs to Niweskok, not REACH.
 
-REACH's own programs are educational and healing programs, a Wabanaki Studies institute and truth-seeking work. The sources here show no land acquisitions by REACH itself.
+REACH's own programs are educational and healing programs, a Wabanaki Studies institute and truth-seeking work. REACH describes no land acquisitions of its own.

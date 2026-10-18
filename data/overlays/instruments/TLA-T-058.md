@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Wea consented to the 1809 Fort Wayne treaty for an added annuity and $1,500 in goods, at Vincennes."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a consent treaty with payment; no source I read describes coercion."
+how_basis: "The OSU text records a consent treaty with payment; the sources cited do not describe coercion."
 confidence: "high"
-cautions: "Only the treaty texts were read. The Wea were the tribe whose consent the Fort Wayne treaty made necessary; the text says they consented 'freely' but no independent source on that was opened. No source shows whether the $100 annuity was paid after Kickapoo consent."
+cautions: "This summary rests on the treaty texts alone. The Wea were the tribe whose consent the Fort Wayne treaty made necessary; the text says they consented 'freely' but no independent source on that is cited. No source shows whether the $100 annuity was paid after Kickapoo consent."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wea-1809-0103", "title": "Treaty with the Wea, 1809 (Oklahoma State University Tribal Treaties Database)", "quote": "hereby declare their full and free consent to the treaty concluded at fort Wayne"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wea-1809-0103", "title": "Treaty with the Wea, 1809 (Oklahoma State University Tribal Treaties Database)", "quote": "an additional annuity of three hundred dollars, and a present sum of fifteen hundred dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wea-1809-0103", "title": "Treaty with the Wea, 1809 (Oklahoma State University Tribal Treaties Database)", "quote": "as soon as the Kickapoos can be brought to give their consent to the ninth article of said treaty"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1809-0104", "title": "Treaty with the Kickapoo, 1809 (Oklahoma State University Tribal Treaties Database)", "quote": "the cession it containes is hereby agreed to by the Kickapoos"}]
 verdict: "fixed"
 ---

@@ -15,4 +15,4 @@ Its Wolak̇ota page says the 28,000-acre Wolak̇ota Buffalo Range is home to ove
 
 A second project, Keya Wakpala Woiċaġeyapi, is a planned 590-plus acre community of culturally relevant homes and businesses for Siċaŋġu Lak̇ota people. The page invites enrolled Rosebud Sioux Tribe members to take a housing survey.
 
-The sources here do not say who holds title to the buffalo range land. A gift to the nonprofit is a gift to the nonprofit, not to the Tribe's government.
+Its pages do not say who holds title to the buffalo range land. A gift to the nonprofit is a gift to the nonprofit, not to the Tribe's government.

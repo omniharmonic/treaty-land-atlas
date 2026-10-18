@@ -13,6 +13,6 @@ Rematriation describes itself as a movement led by Indigenous women. Its team pa
 
 The organization's own mission statement is narrower than land return. It says Rematriation is a non-profit dedicated to supporting the movement of Rematriation across Turtle Island by uplifting Indigenous women's voices and raising consciousness toward living in balance with Mother Earth. It describes its work as connect, represent and educate: women-led gatherings, online women-only spaces, video series, podcasts and public screenings.
 
-The sources here do not describe any land purchase, transfer or acreage. They include a story about a seed rematriation ceremony told by a Tyendinaga Mohawk seedkeeper, which is an account of seeds, not land.
+Its pages describe no land purchase, transfer or acreage. They include a story about a seed rematriation ceremony told by a Tyendinaga Mohawk seedkeeper, which is an account of seeds, not land.
 
 ProPublica Nonprofit Explorer lists a Rematriation Inc in Syracuse, New York, as a 501(c)(3) with exemption issued June 2020 and reports revenue of $530,450 for its latest year shown. The Rematriation site does not print an EIN or address, so that match rests on the name and city.

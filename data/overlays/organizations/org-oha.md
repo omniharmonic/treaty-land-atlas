@@ -11,7 +11,7 @@ verdict: "new"
 ---
 The Office of Hawaiian Affairs (OHA) is not a tribal government and is not a charity. Its own website calls it a semi-autonomous state agency responsible for improving the wellbeing of all Native Hawaiians, regardless of blood quantum. A Board of Trustees of nine members sets policy. The site says trustees are elected in public elections open to all State of Hawaiʻi voters, to four-year terms.
 
-OHA's history page says it grew out of organized efforts in the 1970s to right past wrongs suffered by Native Hawaiians. Grassroots leaders proposed that income from land taken in the illegal overthrow of the Hawaiian Kingdom be used to benefit Hawaiians. After voters agreed, OHA was born in 1978, from the state constitutional convention of that year. The phrase "ceded lands" does not appear on the site pages cited here.
+OHA's history page says it grew out of organized efforts in the 1970s to right past wrongs suffered by Native Hawaiians. Grassroots leaders proposed that income from land taken in the illegal overthrow of the Hawaiian Kingdom be used to benefit Hawaiians. After voters agreed, OHA was born in 1978, from the state constitutional convention of that year.
 
 OHA says it works through advocacy, research, community engagement, land management and funding community programs. Its What We Do page says it awards more than $9 million in grants each year to community organizations and, as the state's 13th largest landowner, manages more than 27,000 acres set aside largely for cultural and agricultural purposes. These are OHA's own figures.
 

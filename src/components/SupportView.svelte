@@ -1,7 +1,7 @@
 <script lang="ts">
   // "Who is doing the work": the nations today, then the organizations restoring land and law
   // connected to this part of the graph. Rendered statically on record pages and live in the map.
-  import type { SupportIndex, SupportResult } from '../lib/support';
+  import { focusLine, type SupportIndex, type SupportResult } from '../lib/support';
 
   let {
     base = '',
@@ -31,10 +31,14 @@
     native: 'Native-led',
     ally: 'Allied land trust',
   };
-  const short = (t: string) => (t.length > 120 ? `${t.slice(0, 117).replace(/\s+\S*$/, '')}…` : t);
 </script>
 
-<section class="support sans" class:compact aria-labelledby="support-h">
+<section
+  class="support sans"
+  class:compact
+  id={compact ? undefined : 'support'}
+  aria-labelledby="support-h"
+>
   <h2 id="support-h" class:visually-hidden={!titled}>Who is doing the work</h2>
   {#if result.today.length}
     <p class="lead">This history belongs to living nations. Start with them:</p>
@@ -56,7 +60,7 @@
             >{#if o.path}<a href={link(o.path)}>{o.label}</a>{:else}{o.label}{/if}</span
           >
           <span class="kind">{KIND_WORD[o.kind]}</span>
-          {#if !compact && o.focus}<span class="focus">{short(o.focus)}</span>{/if}
+          {#if !compact && o.focus}<span class="focus">{focusLine(o.focus)}</span>{/if}
           <span class="acts">
             {#if o.donate}<a class="give" href={o.donate} rel="noopener">Give on their site</a>{/if}
             {#if o.website && o.website !== o.donate}<a href={o.website} rel="noopener">Website</a

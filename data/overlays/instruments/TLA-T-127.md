@@ -6,7 +6,7 @@ headline: "In 1825 the Kansa ceded their Missouri lands and a wide area west, ke
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession in St. Louis with annuities, with no mention of coercion."
 confidence: "high"
-cautions: "Acreage is not stated in the treaty. What happened to the reservation and annuities afterward was not researched in the sources opened here."
+cautions: "Acreage is not stated in the treaty. The sources cited do not say what happened to the reservation and annuities afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0222", "title": "Tribal Treaties Database (OSU)", "quote": "The Kansas do hereby cede to the United States all the lands lying within the State of Missouri"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg244.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Kansas Nation of Indians, duly authorized and empow-"}]
 verdict: "fixed"
 ---

@@ -15,4 +15,4 @@ This is stewardship, not land return. The About page says Paepae o He'eia works 
 
 Its staff page lists Angela Hi'ilei Kawelo as Founder and Executive Director, and Keli'i Kotubetey as Founder and Assistant Executive Director. The site describes an 'Āina Momona program that aims to restore the fertility of the fishpond and share its bounty with the community. It also offers school field trips, tours and a year-round internship. A related network page says the group helped organize Hui Mālama Loko I'a, an association of fishpond practitioners, whose first statewide consortium met at He'eia State Park in 2004.
 
-ProPublica Nonprofit Explorer lists Paepae O Heeia of Kaneohe as a 501(c)(3), tax exemption issued in January 2005. The sources here give no acreage or restoration totals, so only the organization's role and programs are described, not measured results.
+ProPublica Nonprofit Explorer lists Paepae O Heeia of Kaneohe as a 501(c)(3), tax exemption issued in January 2005. It gives no acreage or restoration totals.

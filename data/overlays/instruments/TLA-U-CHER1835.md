@@ -7,7 +7,7 @@ note: "Not to be confused with the Treaty of New Echota, also made in 1835. The 
 how: "unratified"
 how_basis: "The Oklahoma State University database records the agreement as Unratified, and its own preamble says it would be invalid until approved by the Cherokee people."
 confidence: "medium"
-cautions: "The old text's statement that the Cherokee council rejected the proposal in October 1835 rests on a search summary and was removed. The Cherokee Nation's own account of the March 1835 proposal was not opened, and no source opened links this proposal to the Treaty of New Echota beyond sharing the year. The seven million and 800,000 acre figures are the text's own."
+cautions: "The cited sources do not say how the Cherokee people responded to this March proposal or link it directly to the Treaty of New Echota. The seven million and 800,000 acre figures are the text's own."
 sources: [{"url": "https://treaties.okstate.edu/treaties/agreement-with-the-cherokee-1835-1041", "title": "Tribal Treaties Database (Oklahoma State University): Agreement with the Cherokee, 1835", "quote": "to be utterly invalid until approved by them"}, {"url": "https://treaties.okstate.edu/treaties/agreement-with-the-cherokee-1835-1041", "title": "Tribal Treaties Database (Oklahoma State University): Agreement with the Cherokee, 1835", "quote": "that a majority of the people are in favor of the treaty"}, {"url": "https://treaties.okstate.edu/treaties/agreement-with-the-cherokee-1835-1041", "title": "Tribal Treaties Database (Oklahoma State University): Agreement with the Cherokee, 1835", "quote": "March 14, 1835. | Unratified."}, {"url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/cherokee-removal/", "title": "New Georgia Encyclopedia: Cherokee Removal", "quote": "signed the Treaty of New Echota at the Cherokee capital without the authority of Principal Chief Ross or the Cherokee government"}]
 verdict: "fixed"
 ---
@@ -17,4 +17,4 @@ In Article 2 the Cherokee Nation would cede all its lands east of the Mississipp
 
 Article 1 provided that the people would meet at New Echota, and if a majority favored the treaty it would be considered approved. Article 19 also required approval by a majority of the chiefs, headmen and warriors and ratification by the President and Senate. The database records the agreement as unratified.
 
-The Georgia Encyclopedia says that in 1835 the Treaty Party, led by Major Ridge, John Ridge and Elias Boudinot, signed the Treaty of New Echota "without the authority of Principal Chief Ross or the Cherokee government." The sources here do not say how the Cherokee people responded to this March proposal.
+The Georgia Encyclopedia says that in 1835 the Treaty Party, led by Major Ridge, John Ridge and Elias Boudinot, signed the Treaty of New Echota "without the authority of Principal Chief Ross or the Cherokee government."

@@ -6,7 +6,7 @@ headline: "In 1839 the Stockbridge and Munsee ceded the east half of their Lake 
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a sale at a stated price with separate terms for those emigrating and those staying; no coercion is stated."
 confidence: "high"
-cautions: "The treaty text says 46,080 acres, while the ceded half is \"to contain\" 23,040 acres. Later history is not covered by the sources opened."
+cautions: "The treaty text says 46,080 acres, while the ceded half is \"to contain\" 23,040 acres. The cited sources do not describe what happened afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-stockbridge-and-munsee-1839-0529", "title": "Treaty with the Stockbridge and Munsee, 1839 (OSU Tribal Treaties Database)", "quote": "hereby cede and relinquish to the United States, the east half of the tract of forty-six thousand and eighty acres of land"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-stockbridge-and-munsee-1839-0529", "title": "Treaty with the Stockbridge and Munsee, 1839 (OSU Tribal Treaties Database)", "quote": "a portion of said tribes, according to a census or roll taken, and hereunto annexed, are desirous to remove west and the others to remain"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg580.pdf", "title": "Treaty with the Stockbridge and Munsee, 7 Stat. 580 (govinfo)", "quote": "east half of the tract of forty-six thousand"}]
 verdict: "fixed"
 ---

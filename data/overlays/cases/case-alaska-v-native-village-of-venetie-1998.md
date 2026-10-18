@@ -15,4 +15,4 @@ The Venetie and Arctic Village corporations chose a different path. In 1973 they
 
 In 1986 Alaska entered a joint venture with a private contractor to build a public school in Venetie. When the contractor and the State refused the tribe's demand for about $161,000 in taxes, a dispute over the tribe's power to tax followed. The Supreme Court held the land is not "Indian country" because it is not a "dependent Indian community": it was not set aside by the federal government for Indian use, and ANCSA ended federal superintendence of it.
 
-The ruling means that Alaska Native corporation land held in fee under ANCSA falls outside the Indian-country framework that supports tribal taxing power.
+The ruling means that land held in fee under ANCSA, like Venetie's, is not Indian country unless it meets the Court's test for a dependent Indian community. The opinion notes that the Annette Island Reserve survived ANCSA and that allotments can still be Indian country.

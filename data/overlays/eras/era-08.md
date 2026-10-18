@@ -4,7 +4,7 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Congress added tribal self-governance, a federal repatriation law and trust-fund reform, and a class action over Indian trust accounts began."
 confidence: "medium"
-cautions: "The 1988 amendments in the seed were not verified. The statement that the era brought no large land changes reflects only the sources read, not a survey of all land transfers."
+cautions: "The 1988 amendments to the self-determination law were not verified. Land transfers in this period are not surveyed here."
 sources: [{"url": "https://www.law.cornell.edu/uscode/text/25/5363", "title": "25 U.S.C. 5363 - Funding agreements, Cornell LII", "quote": "The Secretary shall, on the request of any Indian Tribe or Tribal organization, negotiate and enter into a written funding agreement"}, {"url": "https://www.law.cornell.edu/uscode/text/25/5301", "title": "25 U.S.C. 5301 note (short titles), Cornell LII", "quote": "may be cited as the ‘ Tribal Self-Governance Act of 1994 ’"}, {"url": "https://www.law.cornell.edu/uscode/text/25/3002", "title": "25 U.S.C. 3002 - Ownership (NAGPRA), Cornell LII", "quote": "in the case of Native American human remains and associated funerary objects , in the lineal descendants of the Native American"}, {"url": "https://www.everycrsreport.com/files/2026-03-06_IF13173_333a3ec0948e330dd67fe43d9e3d3a081dab563c.html", "title": "Federal Management of Tribal Trust Funds (CRS IF13173)", "quote": "Congress became concerned with federal mismanagement of tribal trust funds and IIM accounts in the late 1980s"}, {"url": "https://www.everycrsreport.com/files/2026-03-06_IF13173_333a3ec0948e330dd67fe43d9e3d3a081dab563c.html", "title": "Federal Management of Tribal Trust Funds (CRS IF13173)", "quote": "in 1996, a class of 300,000 IIM account holders sued DOI and Treasury"}]
 verdict: "new"
 ---
@@ -13,5 +13,3 @@ The self-governance era built on the 1975 self-determination law. Instead of the
 Congress also dealt with the dead. The Native American Graves Protection and Repatriation Act, Pub. L. 101-601, Nov. 16, 1990, sets who owns or controls Native American human remains and cultural items found on federal or tribal land after that date. Lineal descendants come first; if none can be found, ownership goes in priority order to the tribe on whose land the items were found or the tribe with the closest cultural affiliation.
 
 The era also surfaced a trust-fund crisis. The Congressional Research Service says Congress became concerned about mismanagement of tribal trust funds and Individual Indian Money accounts in the late 1980s. In 1994 it enacted the American Indian Trust Fund Management Reform Act and created the Office of the Special Trustee for American Indians. In 1996 a class of 300,000 account holders sued; Congress settled that case, Cobell v. Salazar, in 2010.
-
-This era did not involve large changes in land ownership in the sources read.

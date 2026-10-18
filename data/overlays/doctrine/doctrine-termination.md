@@ -13,6 +13,6 @@ Termination was a federal policy aimed at ending federal supervision over Americ
 
 The Archives explains what that meant in practice. Termination ended federal recognition of affected tribes, along with the aid and services that came with it. It also ended federal trust status for affected reservations. In many cases it moved criminal and civil jurisdiction on reservations to the states. House Concurrent Resolution 108 named California, Florida, New York and Texas tribes, and specific tribes including the Klamath, the Menominee and the Flathead. Public Law 280, enacted August 15, 1953, gave state authorities jurisdiction in several states.
 
-The Archives counts 60 separate termination proceedings from 1953 until 1970, with over three million acres of tribal lands relinquished. It says the Nixon administration repudiated the policy in 1970.
+The Archives counts 60 separate termination proceedings from 1953 until 1970, with over three million acres of tribal lands relinquished. It says the Nixon administration repudiated the policy in 1970, but that "the effect of termination was nevertheless devastating for many tribes."
 
 Menominee Tribe v. United States (decided May 27, 1968) tested what termination left behind. Wisconsin prosecuted Menominee people for hunting and fishing, arguing the Menominee Termination Act of 1954 had ended their treaty rights. The Court disagreed, writing that it declined to construe the Act as a backhanded way of abrogating those rights.

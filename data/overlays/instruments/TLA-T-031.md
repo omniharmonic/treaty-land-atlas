@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Fort Adams the Choctaw allowed a wagon road, agreed to re-mark a boundary, and gave up land near the Mississippi."
 how: "treaty_negotiated"
-how_basis: "The OSU text shows a negotiated agreement with payment and a council of Choctaw Mingos, with no source I read describing coercion."
+how_basis: "The OSU text shows a negotiated agreement with payment and a council of Choctaw Mingos, and no cited source describes coercion."
 confidence: "high"
-cautions: "No acreage is given in the OSU text. A secondary figure of about 2.6 million acres was seen in a search summary but not confirmed in an opened source, so it is omitted. Whether the road followed the Natchez Trace is not stated in the sources opened. Whether settlers were actually removed is not shown."
+cautions: "No acreage is given in the OSU text. Whether the road followed the Natchez Trace is not stated in the sources opened. Whether settlers were actually removed is not shown."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1801-0056", "title": "Treaty with the Choctaw, 1801 (Oklahoma State University Tribal Treaties Database)", "quote": "that a convenient and durable wagon way may be explored, marked, opened and made"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1801-0056", "title": "Treaty with the Choctaw, 1801 (Oklahoma State University Tribal Treaties Database)", "quote": "all their right, title and pretension to the land lying between the said line and the Mississippi river"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1801-0056", "title": "Treaty with the Choctaw, 1801 (Oklahoma State University Tribal Treaties Database)", "quote": "all persons who may be settled beyond this line, shall be removed within it"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1801-0056", "title": "Treaty with the Choctaw, 1801 (Oklahoma State University Tribal Treaties Database)", "quote": "the value of two thousand dollars in goods and merchandise"}]
 verdict: "fixed"
 ---

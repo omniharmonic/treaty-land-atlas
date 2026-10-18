@@ -603,7 +603,7 @@ cessnum,date_n,cession_date,instrument_id,status,match_keys,nations_overlap,basi
 420,2,1859-10-05,TLA-T-313,proposed,date+nation,nat-kaw,Royce Schedule date 1859-10-05 equals date signed; shared nation(s) nat-kaw,,,
 421,1,1846-01-14,TLA-T-245,proposed,date+nation,nat-kaw,Royce Schedule date 1846-01-14 equals date signed; shared nation(s) nat-kaw,,,
 421,2,1859-10-05,TLA-T-313,proposed,date+nation,nat-kaw,Royce Schedule date 1859-10-05 equals date signed; shared nation(s) nat-kaw,,,
-422,1,1859-10-05,TLA-T-313,candidate,date,,Royce Schedule date 1859-10-05 equals date signed; only instrument signed that day,,,
+422,1,1859-10-05,TLA-T-313,rejected,date,,Royce Schedule date 1859-10-05 equals date signed; only instrument signed that day,,,
 425,1,1854-05-06,TLA-T-267,proposed,date+nation,nat-delaware-lenape,Royce Schedule date 1854-05-06 equals date signed; shared nation(s) nat-delaware-lenape,,,
 425,2,1860-05-30,TLA-T-314,proposed,date+nation,nat-delaware-lenape,Royce Schedule date 1860-05-30 equals date signed; shared nation(s) nat-delaware-lenape,,,
 425,3,1861-07-02,TLA-T-317,candidate,date,,Royce Schedule date 1861-07-02 equals date signed; only instrument signed that day,,,

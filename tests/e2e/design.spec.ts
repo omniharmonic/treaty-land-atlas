@@ -18,21 +18,15 @@ test('home timeline is still with reduced motion and can be explored by keyboard
   await expect(page.locator('#land')).not.toHaveClass(/show-today/);
 });
 
-test('support opens in one action and Escape returns focus to its control', async ({ page }) => {
+test("the support button goes to the page's own list of who is doing the work", async ({
+  page,
+}) => {
   await page.goto('/treaties/tla-t-369/');
-  const control = page.locator('.support-dock summary');
-  await control.click();
-  await expect(page.locator('.dock-org').first()).toBeVisible();
-  await expect(page.locator('.dock-org').first()).toContainText('Cheyenne and Arapaho Tribes');
-  await expect(page.locator('.dock-org').first()).toHaveAttribute(
-    'href',
-    '/organizations/cheyenne-arapaho-tribes/',
-  );
-  await page.keyboard.press('Tab');
-  await expect(page.locator('.dock-org').first()).toBeFocused();
-  await page.keyboard.press('Escape');
-  await expect(page.locator('.support-dock')).not.toHaveAttribute('open');
-  await expect(control).toBeFocused();
+  await page.locator('.header-support').click();
+  await expect(page).toHaveURL(/#support$/);
+  await expect(page.locator('#support')).toBeInViewport();
+  await page.goto('/about/');
+  await expect(page.locator('.header-support')).toHaveAttribute('href', '/organizations/');
 });
 
 test('organization directory offers direct engagement with Native-led work', async ({ page }) => {

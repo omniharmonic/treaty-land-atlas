@@ -7,7 +7,7 @@ note: "The Seminole Nation Museum's account and the treaty text differ on what t
 how: "treaty_under_pressure"
 how_basis: "The Seminole Nation Museum says many chiefs denied committing to removal and some said they were pressured; the treaty ties removal to settling slave and property claims."
 confidence: "medium"
-cautions: "The museum's account and the treaty text differ on what the chiefs understood. The museum is a local museum page, not the nation's own governmental site. The treaty text states no acreage. Britannica and other accounts were not opened."
+cautions: "The museum's account and the treaty text differ on what the chiefs understood. The museum is a local museum page, not the nation's own governmental site. The treaty text states no acreage."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seminole-1832-0344", "title": "Tribal Treaties Database (OSU)", "quote": "relinquish to the United States, all claim to the lands they at present occupy in the Territory of Florida"}, {"url": "https://seminolenationmuseum.org/history-seminole-nation-the-seminole-wars/", "title": "The Seminole Wars (Seminole Nation Museum)", "quote": "Many of the chiefs stated that they had not committed to moving their people to the new territory"}, {"url": "https://seminolenationmuseum.org/history-seminole-nation-the-seminole-wars/", "title": "The Seminole Wars (Seminole Nation Museum)", "quote": "coerced through force and misinterpretation into signing"}]
 verdict: "fixed"
 ---

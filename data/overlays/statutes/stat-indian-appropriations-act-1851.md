@@ -13,5 +13,3 @@ The act approved on February 27, 1851, is titled "An Act making Appropriations f
 The act also changed how Indian affairs were run. Section 2 repealed the old laws on superintendents for tribes east of the Rocky Mountains and north of New Mexico and Texas. It authorized the President, with Senate consent, to appoint three superintendents at $2,000 a year each. Section 3 says that from then on all Indian treaties "shall be negotiated by such officers and agents of the Indian department" as the President designates. Section 4 replaced the twenty-three agents and sub-agents with eleven agents at $1,500 and six at $1,000.
 
 Section 5 added four agents for New Mexico and one for Utah. Section 7 extended the laws regulating trade and intercourse with Indian tribes over the tribes of New Mexico and Utah Territories.
-
-The act's text does not say that it appropriated funds to concentrate tribes on reservations. Other sources may tie reservations to later 1850s policy; this story does not.

@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1854 the united Kaskaskia, Peoria, Piankeshaw and Wea ceded their Kansas lands, keeping 160 acres per person for $66,000."
 how: "treaty_negotiated"
-how_basis: "The OSU treaty text records a negotiated union, cession and allotment; no source I read describes coercion."
+how_basis: "The OSU treaty text records a negotiated union, cession and allotment; the cited sources do not describe coercion."
 confidence: "high"
-cautions: "The Kansas Historical Society page is general and does not name these tribes. The sources I read do not trace later removals of the Peoria and associated tribes. Royce numbers 326, 327 and 328 were not checked. Acreage: The treaty reserves 160 acres for each person in the united tribe, ten additional sections held in common, and one section for a mission association."
+cautions: "The Kansas Historical Society page is general and does not name these tribes. The cited sources do not trace later removals of the Peoria and associated tribes. The treaty reserves 160 acres for each person in the united tribe, ten additional sections held in common, and one section for a mission association."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kaskaskia-peoria-etc-1854-0636", "title": "Treaty with the Kaskaskia, Peoria, etc., 1854 (Oklahoma State University Tribal Treaties Database)", "quote": "a quantity of land equal to one hundred and sixty acres for each soul in said united tribe"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kaskaskia-peoria-etc-1854-0636", "title": "Treaty with the Kaskaskia, Peoria, etc., 1854 (Oklahoma State University Tribal Treaties Database)", "quote": "the sum of sixty-six thousand dollars, in six annual instalments"}, {"url": "https://www.kansashistory.gov/kansapedia/kansas-territory-map/17368", "title": "Kansas Territory map, Kansapedia (Kansas Historical Society)", "quote": "convincing 11 Kansas tribes between March and June of 1854 to cede nearly 13 million acres"}]
 verdict: "fixed"
 ---

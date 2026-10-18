@@ -2,7 +2,7 @@
 id: "org-mikmaq-nation"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Mi'kmaq Nation took title in June 2026 to nearly 3,400 acres near Bridgewater, Maine, more than doubling its land holdings."
+headline: "The Mi'kmaq Nation obtained nearly 3,400 acres in June 2026 near Bridgewater, Maine, more than doubling its land holdings."
 note: "A tribal government, not a place to donate. Reports put the price at $1.9 million or $2 million."
 confidence: "medium"
 cautions: "Maine Public and the Bangor Daily News are the sources; the Nation's own release was not read. Price: Maine Public says $1.9 million; the Bangor Daily News says \"the recent $2 million Bridgewater transaction\". The acreage is given as \"nearly 3,400\" and \"3,400\". The Nation's website was not checked. Tribal government, not a donation channel."

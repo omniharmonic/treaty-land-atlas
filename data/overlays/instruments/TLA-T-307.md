@@ -3,11 +3,11 @@ id: "TLA-T-307"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1858 the Yankton Sioux ceded more than 11 million acres of eastern South Dakota and kept a 400,000-acre reservation."
-note: "Figures differ: the treaty and Supreme Court give more than 11 million acres ceded and 400,000 kept; the National Park Service gives about 11.5 million and 475,000."
+note: "Figures differ: the treaty reserves 400,000 acres and the Supreme Court says more than 11 million acres were given up; the National Park Service gives about 11.5 million and 475,000."
 how: "treaty_under_pressure"
 how_basis: "The National Park Service quotes Struck-by-the-Ree telling his people that resistance was useless because white settlers were arriving in great numbers."
 confidence: "medium"
-cautions: "Acreage differs by source: the treaty text says 400,000 acres; the Park Service says 475,000; the input suggests about 430,000 and 11 million. The Park Service page also dates the treaty confusingly in one place. The Park Service attribution of the leader's quotation is to the tribe's own account as the monument reports it. The 1998 case is about the 1894 Act, not the 1858 treaty itself. Acreage: The Supreme Court says more than 11 million acres were renounced, with 400,000 acres retained; the National Park Service says about 11.5 million acres and a 475,000-acre reservation."
+cautions: "Acreage differs by source: the Supreme Court says more than 11 million acres were renounced, with 400,000 acres retained; the National Park Service says about 11.5 million acres and a 475,000-acre reservation. The monument inscription quoted on the Park Service page gives the date as April 18, 1856, but the treaty was signed April 19, 1858. The quotation from Struck-by-the-Ree is as the Park Service reports it. The 1998 case is about the 1894 Act, not the 1858 treaty itself."
 sources: [{"url": "https://www.law.cornell.edu/supct/html/96-1581.ZO.html", "title": "South Dakota v. Yankton Sioux Tribe, 522 U.S. 329 (1998), Legal Information Institute", "quote": "In 1858, the Yanktons entered into a treaty with the United States renouncing their claim to more than 11 million acres of their aboriginal lands"}, {"url": "https://www.nps.gov/mnrr/learn/historyculture/yankton-sioux-treaty-monument.htm", "title": "Yankton Sioux Treaty Monument, National Park Service", "quote": "The white men are coming in like maggots. It is useless to resist them."}, {"url": "https://www.law.cornell.edu/supct/html/96-1581.ZO.html", "title": "South Dakota v. Yankton Sioux Tribe, 522 U.S. 329 (1998), Legal Information Institute", "quote": "we hold that Congress intended to diminish the Yankton Reservation"}]
 verdict: "ok"
 ---

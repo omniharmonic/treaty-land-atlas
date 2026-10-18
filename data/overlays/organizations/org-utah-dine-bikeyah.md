@@ -13,4 +13,4 @@ Utah Diné Bikéyah (UDB) says it was first established in 2012 and became a 501
 
 Its timeline page tells the story of the Bears Ears proposal. UDB says it began in 2010 by listening to elders and asking each Utah Navajo Chapter House for permission to do land planning. In 2013, it says, the Navajo Nation and UDB unveiled the Bears Ears proposal. In 2015 the Bears Ears Inter-Tribal Coalition formed, uniting five Tribes: Ute Mountain Ute, Uintah Ouray Ute, Hopi, Zuni and Navajo, and the National Congress of American Indians endorsed the proposal. The page says Bears Ears National Monument was restored in October 2021 and that UDB continues to support tribes working with the federal government.
 
-UDB describes its present work as finding and funding Indigenous grassroots groups, building networks and strengthening communities. The timeline is UDB's own account, not checked against federal documents on the designations.
+UDB describes its present work as finding and funding Indigenous grassroots groups, building networks and strengthening communities. The timeline is UDB's own account.

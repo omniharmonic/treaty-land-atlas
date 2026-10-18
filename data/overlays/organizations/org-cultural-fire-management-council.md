@@ -15,4 +15,4 @@ CFMC's stated mission is "to facilitate the practice of cultural burning on the 
 
 The site lists programs including family burns, a Training Exchange (TREX), a fuels reduction program, cooperative burns, plant studies and workshops. It also links to a "Yurok Cultural Fire Stewardship Plan." A notice on the site says Sudden Oak Death on the upper reservation means no fall Training Exchange this year, and that CAL FIRE suspended burning in Humboldt County as of June 15, 2026.
 
-CFMC works on stewardship and land management, not title. The sources here describe no land returned to or acquired by CFMC.
+CFMC works on stewardship and land management, not title.

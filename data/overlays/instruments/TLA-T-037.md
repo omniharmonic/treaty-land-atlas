@@ -6,7 +6,7 @@ headline: "In 1803 at Vincennes, five Indian groups agreed to let the United Sta
 how: "treaty_negotiated"
 how_basis: "The text describes a council at which the chiefs and warriors 'give their free and full consent'; no pressure is described."
 confidence: "high"
-cautions: "The Fort Wayne treaty of 7 June 1803 was not opened. The text names no payment or exact location. Whether the Kickapoo representatives held authority for their people is not discussed."
+cautions: "The text names no payment or exact location. Whether the Kickapoo representatives held authority for their people is not discussed."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-eel-river-etc-1803-0066", "title": "Treaty with the Eel River, etc., 1803, Tribal Treaties Database", "quote": "the privilege and right of locating three several tracts of land of one mile square each, on the road leading from Vincennes to Kaskaskia"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-eel-river-etc-1803-0066", "title": "Treaty with the Eel River, etc., 1803, Tribal Treaties Database", "quote": "establishment of houses of entertainment for the accommodation of travellers"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-eel-river-etc-1803-0066", "title": "Treaty with the Eel River, etc., 1803, Tribal Treaties Database", "quote": "The fourth article of the treaty holden and concluded at Fort Wayne, on the seventh day of June, one thousand eight hundred and three"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-eel-river-etc-1803-0066", "title": "Treaty with the Eel River, etc., 1803, Tribal Treaties Database", "quote": "also the tribe of the Kikapoes, by their representatives, the chiefs of the Eel River nation"}]
 verdict: "new"
 ---
@@ -16,4 +16,4 @@ The paper deals with the fourth article of a treaty made at Fort Wayne on 7 June
 
 The tracts were to go in places that best suited the convenience and interest of the United States. Their stated purpose was to set up houses of entertainment, meaning inns, for travellers.
 
-The page lists a proclamation on 23 December 1803. The text names no payment and gives no exact tract locations. The other terms of the Fort Wayne treaty, whose fourth article this confirms, are not described here.
+It was proclaimed on 23 December 1803. The text names no payment and gives no exact tract locations.

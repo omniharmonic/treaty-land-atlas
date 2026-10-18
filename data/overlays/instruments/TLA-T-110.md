@@ -6,7 +6,7 @@ headline: "In 1820 the Chippewa ceded sixteen square miles at the St. Marys Rive
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for goods and a reserved fishing right, with no mention of coercion."
 confidence: "high"
-cautions: "The treaty names no price for the goods. Whether the fishing right was honored over time was not researched; no source opened here covers it."
+cautions: "The treaty names no price for the goods. The sources cited do not say whether the fishing right was honored over time."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1820-0187", "title": "Tribal Treaties Database (OSU)", "quote": "The United States will secure to the Indians a perpetual right of fishing at the falls of St. Mary's"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg206.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "so as to include sixteen square miles of land"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1820-0187", "title": "Tribal Treaties Database (OSU)", "quote": "Proclamation, Mar. 2, 1821"}]
 verdict: "fixed"
 ---

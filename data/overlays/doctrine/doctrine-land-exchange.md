@@ -13,6 +13,5 @@ A land exchange swaps federal land for private land by act of Congress. The best
 
 The statute includes process steps for tribes. It directs the Secretary to "engage in government-to-government consultation with affected Indian tribes" and to seek mutually acceptable measures to address their concerns. It also requires an environmental impact statement that assesses effects on cultural and archeological resources.
 
-Apache Stronghold, a nonprofit, sued under the Religious Freedom Restoration Act. The en banc Ninth Circuit rejected the challenge in 2024. The Supreme Court denied certiorari on May 27, 2025. Justice Gorsuch, joined by Justice Thomas, dissented, writing that the government's plan will "permanently destroy the Apaches' historical place of worship"; he called the Court's refusal to hear the case "a grave mistake."
+Apache Stronghold, a nonprofit, sued under the Religious Freedom Restoration Act. The en banc Ninth Circuit rejected the challenge in 2024. The Supreme Court denied certiorari on May 27, 2025. Justice Gorsuch, joined by Justice Thomas, dissented, writing that "It is undisputed" that the government's plan will permanently "destroy the Apaches' historical place of worship"; he called the Court's refusal to hear the case "a grave mistake."
 
-The Apaches' own legal arguments are in the case record, not summarized here. Other lawsuits continue; this story does not trace them.

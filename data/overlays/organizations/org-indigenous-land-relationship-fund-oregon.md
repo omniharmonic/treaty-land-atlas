@@ -15,4 +15,4 @@ The project states its mission as promoting "Indigenous stewardship, land access
 
 The fund's donation page says the ILRF "backs Indigenous-led projects that reclaim culture, reconnect to traditional landscapes, and restore First Foods." It says it was created by Oregon land trusts in solidarity with Tribal and Indigenous communities, and that all donations go directly to the fund and are not used for COLT's operating expenses. It lists example uses: cultural camps, tribal expenses for land return and stewardship, and tours of ceded lands.
 
-The sources here do not report completed land returns or grant totals, so no outcomes are documented.
+The fund does not report completed land returns or grant totals.

@@ -6,7 +6,7 @@ headline: "At Fort Gibson in 1833 the Creeks and Cherokees settled their boundar
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text describes boundary lines acknowledged in open council and an assignment of land with payment for improvements, with no coercion described."
 confidence: "high"
-cautions: "The treaty gives no acreage or price. McGirt is cited from the Court's syllabus; the Court's full reasoning was not summarized here. The Creek Nation's own account was not consulted."
+cautions: "The treaty gives no acreage or price. McGirt is cited from the Court's syllabus."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1833-0388", "title": "Tribal Treaties Database (OSU)", "quote": "a fair and reasonable price paid for the same by the United States"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1833-0388", "title": "Tribal Treaties Database (OSU)", "quote": "acknowledged, in open council, this day, to be mutually satisfactory to both nations"}, {"url": "https://www.supremecourt.gov/opinions/19pdf/18-9526_9okb.pdf", "title": "McGirt v. Oklahoma, 591 U.S. ___ (2020) (Supreme Court)", "quote": "An 1833 Treaty fixed borders for a “permanent home to the whole Creek Nation of Indians,”"}]
 verdict: "rewritten"
 promises: [{"article": "Art. 3", "promise": "A patent in fee simple for the assigned Creek country, kept as long as the nation exists and occupies it.", "kept": "partly", "evidence_url": "https://www.supremecourt.gov/opinions/19pdf/18-9526_9okb.pdf", "evidence_quote": "Congress has since broken more than a few promises to the Tribe. Nevertheless, the Creek Reservation persists today."}]

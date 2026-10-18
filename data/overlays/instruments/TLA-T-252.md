@@ -6,7 +6,7 @@ headline: "In 1848 four Pawnee bands ceded a strip along the Platte near Grand I
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records an agreement signed with a military officer and paid in goods on the spot, with no coercion described."
 confidence: "high"
-cautions: "The treaty was signed by a military officer of volunteers, not a civilian commissioner. No source opened describes pressure, so the entry makes no claim either way. No acreage is stated."
+cautions: "The treaty was signed by a military officer of volunteers, not a civilian commissioner. The cited sources do not describe pressure at this council, so no claim is made either way. No acreage is stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-grand-loups-republicans-etc-1848-0571", "title": "Treaty with the Pawnee, 1848 (OSU Tribal Treaties Database)", "quote": "hereby cede and relinquish to the United States all their right, title, and interest in and to all that tract of land"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-grand-loups-republicans-etc-1848-0571", "title": "Treaty with the Pawnee, 1848 (OSU Tribal Treaties Database)", "quote": "the United States has this day paid"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-9/pdf/STATUTE-9-Pg949.pdf", "title": "Treaty with the Pawnee, 9 Stat. 949 (govinfo)", "quote": "Ludwell E. Powell"}]
 verdict: "fixed"
 ---

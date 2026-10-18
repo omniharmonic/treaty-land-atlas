@@ -6,7 +6,7 @@ headline: "In 1826 the Miami ceded their claims north and west of the Wabash and
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession; the clause making the Miami repay goods from their annuity if the treaty failed is noted in cautions."
 confidence: "high"
-cautions: "Acreage is not stated. Later history of the reservations was not researched here."
+cautions: "Acreage is not stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-miami-1826-0278", "title": "Tribal Treaties Database (OSU)", "quote": "payment for these goods shall be made by the Miami tribe out of their annuity, if this treaty be not ratified by the United States"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-miami-1826-0278", "title": "Tribal Treaties Database (OSU)", "quote": "a permanent annuity of twenty-five thousand dollars shall be paid to them, as long as they exist together as a tribe"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg300.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Chiefs and Warriors of the Miami Tribe of Indians"}]
 verdict: "fixed"
 ---

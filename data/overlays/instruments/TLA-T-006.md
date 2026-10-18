@@ -14,8 +14,8 @@ promises: [{"article": "Speech", "promise": "No Indian land adjoining the forts 
 ---
 This is a colonial record from 1760. It predates the United States, and it comes from the war between Britain and France. The National Archives series includes colonial treaties because United States treaty-making followed a custom set by Great Britain and the colonial governments.
 
-On 12 August 1760, British Brigadier General Robert Monckton held a conference at the camp before Pittsburgh with chiefs of the Six Nations, Delaware, Shawnee, Wyandot, Miami (Twightwees), Ottawa and Potawatomi. The page counts hundreds of warriors, women and children present.
+On 12 August 1760, British Brigadier General Robert Monckton held a conference at the camp before Pittsburgh with chiefs of the Six Nations, Delaware, Shawnee, Wyandot, Miami (Twightwees), Ottawa and Potawatomi. The record counts hundreds of warriors, women and children present.
 
 Monckton opened with a speech signed by the commander-in-chief, Jeffery Amherst. It said the King had not sent him to deprive any of them of their lands. It said the British must build forts to protect trade, that land near the forts would not be taken, and that the Indians could fix the limits of any ground set aside to raise corn, for a payment agreed with them.
 
-A Delaware speaker answered that he could not say on the ground question, since the Delaware lived on land that belonged to the Six Nations. The Delaware also returned prisoners. The Six Nations and others renewed what they called the chain of friendship. The conference ended with the King's presents delivered. The page does not say whether British forts later respected these assurances.
+A Delaware speaker answered that he could not say on the ground question, since the Delaware lived on land that belonged to the Six Nations. The Delaware also returned prisoners. The Six Nations and others renewed what they called the chain of friendship. The conference ended with the King's presents delivered. The record does not say whether the British later kept these assurances.

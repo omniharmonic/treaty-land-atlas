@@ -15,4 +15,4 @@ PFT's own blog reports a land return. The nearly 900-acre Henness Ridge property
 
 The post quotes Sandra Chapman, Tribal Council Chair of the Nation, calling the land "a sanctuary for our people." PFT says it supports the Nation's effort to gain federal recognition, which PFT says the Nation has pursued since 1982.
 
-The sources here do not say whether the transfer was a gift or a sale to the Nation, or what the Nation paid.
+PFT does not say whether the transfer was a gift or a sale to the Nation, or what the Nation paid.

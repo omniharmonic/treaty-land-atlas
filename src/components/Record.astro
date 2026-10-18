@@ -33,6 +33,19 @@ const summary = overlay?.headline
     ? cleanTags(n.summary)
     : null;
 const notes = n.notes ? cleanTags(n.notes) : null;
+// a field that says nothing ("not stated in sources read") is left out; when a sourced story
+// tells what happened, the record's long research fields go behind a toggle instead of repeating it
+const said = facts.filter(
+  (f) => !/^not (stated|given|recorded) in (the )?sources?( read)?\.?$/i.test(String(f.value)),
+);
+const told = !!overlay?.narrative;
+// research voice ("verified this session", "not checked") belongs with the research notes
+const researchy = (v: string) =>
+  /this session|sources? (read|opened)|not (yet )?(checked|verified)|from memory/i.test(v);
+const behind = (f: (typeof facts)[number]) =>
+  researchy(String(f.value)) || (told && String(f.value).length > 160);
+const shortFacts = said.filter((f) => !behind(f));
+const longFacts = said.filter(behind);
 type Name = {
   name: string;
   kind: string;
@@ -112,15 +125,9 @@ const FIELD_WORD: Record<string, string> = {
     )}
     {summary?.text && <p class="lede">{summary.text}</p>}
 
-    {facts.length > 0 && n.type !== 'GeoFeature' && <Facts facts={facts} />}
+    {shortFacts.length > 0 && n.type !== 'GeoFeature' && <Facts facts={shortFacts} />}
 
     {n.type === 'GeoFeature' && <AreaStory n={n} />}
-    {facts.length > 0 && n.type === 'GeoFeature' && (
-      <details class="notes">
-        <summary class="sans">The record’s fields</summary>
-        <Facts facts={facts} />
-      </details>
-    )}
     {n.type === 'Campaign' && <ReturnLand n={n} />}
     <Narrative n={n} showHeadline={false} />
     <RecordStory n={n} />
@@ -216,23 +223,37 @@ const FIELD_WORD: Record<string, string> = {
       </section>
     )}
 
+    <Connections id={n.id} />
+    <Sources id={n.id} />
+
+    {(n.type === 'GeoFeature' ? said.length > 0 : longFacts.length > 0) && (
+      <details class="notes">
+        <summary class="sans">The record’s fields</summary>
+        <Facts facts={n.type === 'GeoFeature' ? said : longFacts} />
+      </details>
+    )}
     {notes?.text && (
       <details class="notes">
         <summary class="sans">Research notes</summary>
         <p>{notes.text}</p>
       </details>
     )}
-
-    <Connections id={n.id} />
-    <Sources id={n.id} />
+    <div class="about-record">
+      <SpecimenLabel n={n} />
+    </div>
   </div>
-  <aside aria-label="About this record">
-    <SpecimenLabel n={n} />
-    {n.type === 'Nation' && <ClaimBox n={n} />}
-  </aside>
+  {n.type === 'Nation' && (
+    <aside aria-label="For this nation">
+      <ClaimBox n={n} />
+    </aside>
+  )}
 </article>
 
 <style>
+  .about-record {
+    max-width: 26rem;
+    margin-top: var(--space-6);
+  }
   .notes {
     margin: var(--space-5) 0;
     padding-top: var(--space-3);

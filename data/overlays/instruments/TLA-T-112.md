@@ -6,7 +6,7 @@ headline: "A 1820 supplement to the Edwardsville treaty rewrote Article 6, resta
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed supplementary agreement amending one article."
 confidence: "high"
-cautions: "Acreage is not stated. The 1819 Edwardsville treaty itself was not opened, so this story describes only what the 1820 amendment says."
+cautions: "Acreage is not stated. This story describes only what the 1820 amendment says; the 1819 Edwardsville treaty has its own entry."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1820-0189", "title": "Tribal Treaties Database (OSU)", "quote": "supplementary to, and amendatory of, the Treaty made and concluded at Edwardsville"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg208.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Made and concluded by, and between, Auguste Chouteau and"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1820-0189", "title": "Tribal Treaties Database (OSU)", "quote": "Proclamation, Jan. 13, 1821"}]
 verdict: "fixed"
 ---

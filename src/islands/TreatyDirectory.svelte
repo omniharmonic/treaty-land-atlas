@@ -46,7 +46,7 @@
         ? 'Ratified with amendments'
         : s === 'unratified'
           ? 'Never ratified'
-          : 'Agreement or other instrument';
+          : '';
   function readUrl() {
     const params = new URLSearchParams(location.search);
     query = params.get('q') ?? '';
@@ -141,9 +141,9 @@
     {#each filtered.slice(0, limit) as entry (entry.id)}
       <article class="agreement">
         <div class="agreement-meta">
-          <span>{entry.date || 'Date not recorded'}</span><span
-            >{entry.region || 'Region not recorded'}</span
-          >
+          <span>{entry.date || 'Date not recorded'}</span>{#if entry.region}<span
+              >{entry.region}</span
+            >{/if}
         </div>
         <h3>
           <a href={`${base}${entry.path}`}
@@ -156,8 +156,7 @@
             'Open this agreement to explore its terms, linked records, and sources.'}
         </p>
         <div class="agreement-footer">
-          <span class:unratified={entry.status === 'unratified'}>{statusText(entry.status)}</span
-          ><span>{entry.events} linked {entry.events === 1 ? 'entry' : 'entries'}</span>
+          <span class:unratified={entry.status === 'unratified'}>{statusText(entry.status)}</span>
         </div>
       </article>
     {/each}

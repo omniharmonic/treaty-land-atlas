@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Vincennes in 1805 the Piankashaw ceded land between the Wabash and the 1803 Kaskaskia cession for an annuity and $1,100."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a negotiated cession for an annuity and goods; no source I read describes coercion."
+how_basis: "The OSU text records a negotiated cession for an annuity and goods; the sources cited do not describe coercion."
 confidence: "high"
-cautions: "Only the treaty text was read. No total acreage, negotiation detail or later events appear in the sources opened. The text does not locate the cession by state."
+cautions: "This summary rests on the treaty text alone. No total acreage, negotiation detail or later events appear in the sources cited. The text does not locate the cession by state."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-piankashaw-1805-0089", "title": "Treaty with the Piankashaw, 1805 (Oklahoma State University Tribal Treaties Database)", "quote": "The Piankishaw tribe cedes and relinquishes to the United States for ever, all that tract of country"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-piankashaw-1805-0089", "title": "Treaty with the Piankashaw, 1805 (Oklahoma State University Tribal Treaties Database)", "quote": "The United States take the Piankishaw tribe under their immediate care and patronage"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-piankashaw-1805-0089", "title": "Treaty with the Piankashaw, 1805 (Oklahoma State University Tribal Treaties Database)", "quote": "is considered a full compensation for the cession and relinquishment above mentioned"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-piankashaw-1805-0089", "title": "Treaty with the Piankashaw, 1805 (Oklahoma State University Tribal Treaties Database)", "quote": "the said tribe shall have the privilege of living and hunting upon them"}]
 verdict: "fixed"
 ---

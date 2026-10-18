@@ -14,4 +14,4 @@ The treaties, signed in the 1850s, each contained wording substantially identica
 
 Judge George Boldt ruled that "in common with" means "sharing equally the opportunity to take fish at 'usual and accustomed grounds and stations'." Non-treaty fishermen, he wrote, "shall have the opportunity to take up to 50% of the harvestable number of fish," and treaty fishermen "shall have the opportunity to take up to the same percentage."
 
-He also wrote that off-reservation fishing by other citizens is "not a right but merely a privilege," and that the tribes cannot rescind the agreement or limit non-Indian fishing under it. The opinion recognized that "precise mathematical equality must give way to more practical measures."
+He also wrote that off-reservation fishing by other citizens is "not a right but merely a privilege," and that the tribes cannot rescind the agreement or limit non-Indian fishing under it. The opinion recognized that "precise mathematical equality must give way to more practical means of determining and allocating the harvestable resource."

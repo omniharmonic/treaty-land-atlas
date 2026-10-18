@@ -15,4 +15,4 @@ Its stated mission is to create community-based solutions to pass knowledge to f
 
 Its Regional Food Hub page lists work on culturally significant food, traditional seeds, restoring local watersheds and foodsheds, sustainable housing, renewable energy and "supporting regional Land Stewardship." It also runs a Land Steward Fellowship, which it says offers training to land stewards from across the Indigenous Southwest who work within their traditional territories, and has announced a first cohort of fellows.
 
-This is stewardship and food-system work, not land acquisition. The sources here describe no purchase or return of land, and no acreage. The Decolonizing Wealth Project lists the Institute as a 2026 Indigenous Earth Fund grantee partner.
+This is stewardship and food-system work, not land acquisition. The Decolonizing Wealth Project lists the Institute as a 2026 Indigenous Earth Fund grantee partner.

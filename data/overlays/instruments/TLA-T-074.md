@@ -6,7 +6,7 @@ headline: "On 16 September 1815 at Portage des Sioux, the Iowa made peace with t
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed by United States commissioners and the tribe's chiefs and warriors; it describes no pressure or cession."
 confidence: "high"
-cautions: "The earlier treaties it confirms were not opened."
+cautions: "The treaty does not restate the earlier treaties it confirms."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1815-0122", "title": "Treaty with the Iowa, 1815, Tribal Treaties Database", "quote": "Every injury, or act of hostility, by one or either of the contracting parties against the other shall be mutually forgiven and forgot."}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1815-0122", "title": "Treaty with the Iowa, 1815, Tribal Treaties Database", "quote": "to the officer commanding at St. Louis"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1815-0122", "title": "Treaty with the Iowa, 1815, Tribal Treaties Database", "quote": "recognize, re-establish, and confirm, all and every treaty, contract, and agreement, heretofore concluded between the United States and the said Iaway tribe or nation"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1815-0122", "title": "Treaty with the Iowa, 1815, Tribal Treaties Database", "quote": "Ratified Dec. 26, 1815."}]
 verdict: "new"
 ---

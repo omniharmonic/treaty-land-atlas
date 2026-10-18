@@ -15,4 +15,4 @@ Its story about 'O Rew, written by a freelance writer and posted on its site on 
 
 The Yurok Tribe's own home page also announces the land transfer, quoting Chairman Joseph L. James and Mr. Mietz. The tribe's page gives the date of conveyance as June 30, 2026.
 
-The sources here do not state a sale price or whether the Tribe paid for the land.
+The announcement does not state a sale price or whether the Tribe paid for the land.

@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Wea and Kickapoo, in 1816 at Fort Harrison, reaffirmed Greenville and confirmed a boundary and the Kickapoo cession."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a confirmation treaty with no new cession; no source I read describes coercion."
+how_basis: "The OSU text records a confirmation treaty with no new cession; the sources cited do not describe coercion."
 confidence: "high"
-cautions: "Only the treaty text was read. It does not say why the confirmations were requested or how the Wea and Kickapoo themselves viewed the 1809 cession. No acreage is stated."
+cautions: "This summary rests on the treaty text alone. It does not say why the confirmations were requested or how the Wea and Kickapoo themselves viewed the 1809 cession. No acreage is stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wea-and-kickapoo-1816-0131", "title": "Treaty with the Wea and Kickapoo, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "acknowledge the validity of, and declare their determination to adhere to, the treaty of Greenville"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wea-and-kickapoo-1816-0131", "title": "Treaty with the Wea and Kickapoo, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "the said tribes do hereby explicitly recognize and confirm, as having been executed conformably to the several treaties they have made with the United States"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wea-and-kickapoo-1816-0131", "title": "Treaty with the Wea and Kickapoo, 1816 (Oklahoma State University Tribal Treaties Database)", "quote": "The chiefs and warriors of the said tribe of the Kickapoos acknowledge that they have ceded to the United States all that tract of country"}]
 verdict: "fixed"
 ---

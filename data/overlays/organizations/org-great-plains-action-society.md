@@ -15,4 +15,4 @@ The About page names Sikowis Nobiss (Nehiyaw/Saulteaux, George Gordon First Nati
 
 GPAS describes four initiatives: protecting the sacred, land defense (climate and environment), representation, and civic engagement. Its home page says its mission is to build Indigenous power and presence in Iowa and eastern Nebraska "through reMatriation, healing justice and a regenerative economy." The About page says Iowa "needs to reMatriate prairie."
 
-GPAS lists a land and healing steward and a land defense organizer among its staff. Its tactics include mutual aid, art, education and non-violent direct action.  The sources here describe no completed land acquisition or return by GPAS. Its documented work is advocacy, organizing and land defense.
+GPAS lists a land and healing steward and a land defense organizer among its staff. Its tactics include mutual aid, art, education and non-violent direct action. Its documented work is advocacy, organizing and land defense.

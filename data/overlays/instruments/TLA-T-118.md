@@ -17,4 +17,4 @@ It deals with one promise from the treaty signed at Fort Clark on 10 November 18
 
 In 1822 the chiefs, warriors and head men, on behalf of their tribes, accepted two thousand three hundred and twenty-nine dollars and forty cents, paid to them in merchandise from the factory. In exchange they exonerated, released and forever discharged the United States from that obligation. The text says Article 2 of the 1808 treaty is, from the date of this agreement, "abrogated and of no effect."
 
-The paper cedes no land. The page lists a proclamation on 13 February 1823. It does not say why the store was being given up, or what the Osage thought of the arrangement.
+The paper cedes no land. The treaty was proclaimed on 13 February 1823. It does not say why the store was being given up.

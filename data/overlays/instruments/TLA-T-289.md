@@ -3,11 +3,11 @@ id: "TLA-T-289"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At the 1855 Walla Walla council the Walla Walla, Cayuse and Umatilla ceded their country, kept a reservation, and reserved off-reservation rights."
-note: "Figures differ: about 45,000 square miles is given for this cession, while the National Park Service gives 60,000 square miles for all three Walla Walla Council treaties combined. The treaty states neither."
+note: "The National Park Service gives 60,000 square miles for all three Walla Walla Council treaties combined; the treaty itself states no area, and other estimates for this cession alone (about 45,000 square miles) are not from a cited source."
 how: "treaty_under_pressure"
 how_basis: "The National Park Service says Stevens and Palmer cajoled and threatened the delegates, and HistoryLink says Stevens used promised gifts and threats of force."
 confidence: "medium"
-cautions: "The input cites about 45,000 square miles for the cession (from Wikipedia); the National Park Service gives 60,000 square miles for the three Walla Walla Council treaties combined, and neither number is in the treaty. I did not open the Confederated Tribes of the Umatilla Indian Reservation's own history. Sohappy v. Smith (linked in the input) was not read."
+cautions: "Area figures differ: about 45,000 square miles is sometimes given for this cession, while the National Park Service gives 60,000 square miles for the three Walla Walla Council treaties combined; neither number is in the treaty. This account does not draw on the Confederated Tribes of the Umatilla Indian Reservation's own published history. The treaty was ratified March 8, 1859, and proclaimed April 11, 1859."
 sources: [{"url": "https://www.nps.gov/articles/000/walla-walla-council-1855.htm", "title": "Walla Walla Council (1855), National Park Service", "quote": "Stevens and Palmer undermined this unity by cajoling and threatening the delegates."}, {"url": "https://historylink.org/File/5188", "title": "Isaac Stevens convenes the First Walla Walla Council, May 29, 1855 (HistoryLink Essay 5188)", "quote": "a combination of promised gifts and threats of force."}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wallawalla-cayuse-etc-1855-0694", "title": "Treaty with the Wallawalla, Cayuse, etc., 1855 (Oklahoma State University Tribal Treaties Database)", "quote": "The above-named confederated bands of Indians cede to the United States all their right, title, and claim"}]
 verdict: "ok"
 ---

@@ -15,4 +15,4 @@ On its About page, the Trust says it supports the rights of the region's Native 
 
 Its stated support includes collaborative stewardship by tribes and federal agencies at places such as Bears Ears and the Grand Canyon region, and a partnership with Change Labs to support Native entrepreneurs. The page quotes Jim Enote, board chair, saying conservation on the Plateau cannot be done without involving tribes.
 
-The sources here describe no completed land return carried out by the Trust. Its land role is advocacy, partnerships and funding support, as the Trust describes them.
+The Trust describes no completed land return of its own. Its land role is advocacy, partnerships and funding support, as the Trust describes them.

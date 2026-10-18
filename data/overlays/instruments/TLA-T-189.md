@@ -5,9 +5,9 @@ written_by: "narrative-wave-2026-10"
 headline: "In 1833 the united Chippewa, Ottawa and Potawatomi ceded about five million acres by Lake Michigan and agreed to move west."
 note: "The five million acre figure is the treaty's own estimate."
 how: "removal"
-how_basis: "The OSU treaty text requires removal west of the Mississippi and pays $175,000 of claims against the nation, which the Senate later ordered reviewed."
+how_basis: "The OSU treaty text requires removal west of the Mississippi and pays claims against the nation that it admitted as justly due, which the Senate later ordered reviewed."
 confidence: "high"
-cautions: "Acreage is the treaty's own estimate. The page does not describe the negotiation. The Senate's changes were made in 1834; the final western boundary was not traced here. The nation's own account was not consulted. Figures in the story are those stated in the text."
+cautions: "Acreage is the treaty's own estimate. The page does not describe the negotiation. The Senate's changes were made in 1834; figures are those stated in the text."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1833-0402", "title": "Tribal Treaties Database (OSU)", "quote": "supposed to contain about five millions of acres"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1833-0402", "title": "Tribal Treaties Database (OSU)", "quote": "to be not less in quantity than five millions of acres"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg431.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "supposed to contain about five millions of acres"}]
 verdict: "fixed"
 ---

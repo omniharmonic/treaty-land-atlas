@@ -15,4 +15,4 @@ Its Land Holdings page says the Conservancy holds title to more than 295 acres a
 
 The Conservancy describes its work as rescuing land through donation or title purchase, upholding conservation easements and tending to the land's needs, alongside cultural preservation. It also invites land donations and lists tax benefits to donors.
 
-The acreage listed for the individual parcels adds to somewhat less than 295 (about 267 acres in Massachusetts, with one entry giving no acreage), so the headline figure is the Conservancy's own rounding and could not be reconciled. The page does not say which tribal nation each holding serves.
+The acreage listed for the individual parcels adds to somewhat less than 295 (about 267 acres in Massachusetts, with one entry giving no acreage), so the larger figure is the Conservancy's own total. The page does not say which tribal nation each holding serves.

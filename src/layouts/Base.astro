@@ -6,13 +6,8 @@ import '@fontsource/noto-sans-osage/400.css';
 import '../styles/global.css';
 import BrandMark from '../components/BrandMark.astro';
 import { href } from '../lib/href';
-import { graph, pathFor, outgoing, incoming, type Node } from '../lib/graph';
-import { concerns, supportFor, supportIndex, type SupportIndex } from '../lib/support';
+import { graph, pathFor, type Node } from '../lib/graph';
 const supportGraph = graph();
-const support = ((globalThis as { __supportIx?: SupportIndex }).__supportIx ??= supportIndex(
-  [...supportGraph.nodes.values()],
-  supportGraph.edges,
-));
 const recordsByPath = ((globalThis as { __recordsByPath?: Map<string, Node> }).__recordsByPath ??=
   new Map(
     [...supportGraph.nodes.values()].flatMap((n) => {
@@ -21,13 +16,9 @@ const recordsByPath = ((globalThis as { __recordsByPath?: Map<string, Node> })._
     }),
   ));
 const currentRecord = recordsByPath.get(Astro.url.pathname);
-const related = currentRecord
-  ? supportFor(support, concerns(currentRecord.id, currentRecord.type, outgoing, incoming))
-  : null;
-const connected = related ? [...related.direct, ...related.nearby] : [];
-const supportOrgs = [...new Set([...connected, ...support.national])]
-  .slice(0, 4)
-  .map((id) => support.orgs[id]!);
+// on a record page the header button goes to that page's own "Who is doing the work" section
+const supportHref =
+  currentRecord && currentRecord.type !== 'Organization' ? '#support' : href('/organizations/');
 
 interface Props {
   title: string;
@@ -106,7 +97,7 @@ const here = Astro.url.pathname;
             ))}
           </ul>
         </nav>
-        <a class="header-support" href={href('/organizations/')}>
+        <a class="header-support" href={supportHref} data-fallback={href('/organizations/')}>
           Support land rights <span aria-hidden="true">↗</span>
         </a>
       </div>
@@ -122,32 +113,6 @@ const here = Astro.url.pathname;
     <main id="main" class={bleed ? '' : 'frame'}>
       <slot />
     </main>
-    <details class="support-dock">
-      <summary>
-        Support land rights <span aria-hidden="true">+</span>
-      </summary>
-      <div class="support-popover">
-        <p class="dock-title">History is still being made.</p>
-        <p>
-          {connected.length
-            ? 'Organizations connected to this record, followed by national Native-led defense.'
-            : 'Support Native-led land and legal defense.'}{' '}
-          Visit each organization to learn what support it asks for.
-        </p>
-        {supportOrgs.map((o) => (
-          <a class="dock-org" href={o.website ?? href(o.path ?? '/support/')} rel="noopener">
-            <span>{o.label}</span>
-            <span aria-hidden="true">↗</span>
-          </a>
-        ))}
-        <a class="dock-local" href={href('/where/')}>
-          Find the organizations connected to your place
-        </a>
-        <a class="dock-local" href={href('/organizations/')}>
-          Explore all organizations
-        </a>
-      </div>
-    </details>
     {!bleed && (
       <footer class="site-footer">
         <div class="frame">
@@ -209,17 +174,9 @@ const here = Astro.url.pathname;
 </html>
 
 <script>
-  const dock = document.querySelector<HTMLDetailsElement>('.support-dock');
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && dock?.open) {
-      dock.open = false;
-      dock.querySelector('summary')?.focus();
-    }
-  });
-  document.addEventListener('click', (event) => {
-    if (dock?.open && event.target instanceof Node && !dock.contains(event.target))
-      dock.open = false;
-  });
+  // a record page without its own support section sends the button to the directory instead
+  const support = document.querySelector<HTMLAnchorElement>('a.header-support[href="#support"]');
+  if (support && !document.getElementById('support')) support.href = support.dataset.fallback!;
 </script>
 
 <style>
@@ -314,71 +271,6 @@ const here = Astro.url.pathname;
   .header-support:hover {
     background: var(--moss-deep);
   }
-  .support-dock {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 30;
-    font-size: 0.9rem;
-  }
-  .support-dock summary {
-    list-style: none;
-    background: var(--moss);
-    color: var(--on-moss);
-    padding: 14px 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 24px #454b3526;
-    cursor: pointer;
-    display: flex;
-    gap: 24px;
-    align-items: center;
-  }
-  .support-dock summary::-webkit-details-marker {
-    display: none;
-  }
-  .support-dock summary span {
-    font-size: 1.3rem;
-    line-height: 1;
-  }
-  .support-dock[open] summary span {
-    transform: rotate(45deg);
-  }
-  .support-popover {
-    position: absolute;
-    bottom: 64px;
-    right: 0;
-    width: min(390px, calc(100vw - 32px));
-    padding: 28px;
-    border: 1px solid var(--rule);
-    border-radius: 16px;
-    background: var(--sheet);
-    box-shadow: 0 12px 50px #454b3520;
-    max-height: 70vh;
-    overflow: auto;
-  }
-  .support-popover > p {
-    font-size: 0.85rem;
-    color: var(--ink-2);
-  }
-  .support-popover .dock-title {
-    font-size: 1.7rem;
-    line-height: 1.15;
-    color: var(--ink);
-    letter-spacing: -0.03em;
-  }
-  .dock-org {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 16px 0;
-    border-top: 1px solid var(--rule);
-    text-decoration: none;
-  }
-  .dock-local {
-    display: block;
-    margin-top: 16px;
-    font-size: 0.8rem;
-  }
   .footer-intro {
     display: flex;
     justify-content: space-between;
@@ -442,10 +334,6 @@ const here = Astro.url.pathname;
     .bar {
       padding-top: 16px;
       padding-bottom: 12px;
-    }
-    .support-dock {
-      right: 16px;
-      bottom: 16px;
     }
     .footer-intro {
       align-items: flex-start;

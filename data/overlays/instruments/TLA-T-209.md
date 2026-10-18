@@ -7,7 +7,7 @@ note: "The four million acres is the treaty's own estimate."
 how: "removal"
 how_basis: "Article 4 of the treaty text has the nation agree to remove from the ceded country within one year after ratification."
 confidence: "high"
-cautions: "Four million acres is the treaty's own estimate. Article 4 says the removal clause applies within one year of ratification; whether and how it was carried out is not covered by the sources opened."
+cautions: "Four million acres is the treaty's own estimate. Article 4 set removal within one year of ratification; the cited sources do not say whether or how it was carried out."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1836-0463", "title": "Treaty with the Menominee, 1836 (OSU Tribal Treaties Database)", "quote": "the quantity of land contained in the tract hereby ceded, being estimated at about four millions of acres"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1836-0463", "title": "Treaty with the Menominee, 1836 (OSU Tribal Treaties Database)", "quote": "agree to remove from the country ceded, within one year after the ratification of this treaty"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg506.pdf", "title": "Treaty with the Menominee, 7 Stat. 506 (govinfo)", "quote": "being estimated at about four millions of acres"}]
 verdict: "fixed"
 ---

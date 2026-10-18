@@ -6,7 +6,7 @@ headline: "On 2 September 1815 at Portage des Sioux, Kickapoo chiefs and deputie
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed by United States commissioners and the tribe's chiefs and warriors; it describes no pressure or cession."
 confidence: "high"
-cautions: "Which Kickapoo bands were represented is not stated. The treaties it confirms were not opened."
+cautions: "Which Kickapoo bands were represented is not stated. The treaty does not restate the earlier treaties it confirms."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1815-0116", "title": "Treaty with the Kickapoo, 1815, Tribal Treaties Database", "quote": "Every injury or act of hostility by one or either of the contracting parties towards the other, shall be mutually forgiven and forgot."}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1815-0116", "title": "Treaty with the Kickapoo, 1815, Tribal Treaties Database", "quote": "to the officer commanding at Fort Clarke, on the Illinois river"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1815-0116", "title": "Treaty with the Kickapoo, 1815, Tribal Treaties Database", "quote": "recognize, re-establish, and confirm, all and every treaty, contract, and agreement, heretofore concluded between the United States and the Kickapoo tribe or nation"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1815-0116", "title": "Treaty with the Kickapoo, 1815, Tribal Treaties Database", "quote": "Ratified Dec. 26, 1815."}]
 verdict: "new"
 ---

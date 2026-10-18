@@ -11,8 +11,8 @@ verdict: "new"
 ---
 The United Houma Nation (UHN) describes itself as a state recognized tribe of approximately 19,000 tribal members living in a six-parish service area of 4,570 square miles along southeastern Louisiana's coast. The parishes are Terrebonne, Lafourche, Jefferson, St. Mary, St. Bernard and Plaquemines. It is not federally recognized, which its own pages do not dispute.
 
-Its About page says the tribe is committed to preserving its culture and way of life "when the land is disappearing from underneath our feet." That is the tribe's description of coastal land loss. Its government page describes a Tribal Council with members from the tribal communities in the service area and a Principal Chief elected by the entire Tribe. The Council sets legislative and policy positions and interprets the tribal constitution; the Principal Chief oversees day-to-day administration. The site's menu also lists community programs, citizen enrollment, a tribal census, a heritage archivist, and pages on tribal properties and renovations that were not readable during this review.
+Its About page says the tribe is committed to preserving its culture and way of life "when the land is disappearing from underneath our feet." That is the tribe's description of coastal land loss. Its government page describes a Tribal Council with members from the tribal communities in the service area and a Principal Chief elected by the entire Tribe. The Council sets legislative and policy positions and interprets the tribal constitution; the Principal Chief oversees day-to-day administration. The site's menu also lists community programs, citizen enrollment, a tribal census, a heritage archivist, and pages on tribal properties and renovations.
 
-The sources here do not describe any land return, land purchase or acreage. A donation to the tribe's 501(c)(3) is general support, not a land fund.
+Its pages describe no land return, land purchase or acreage. A donation to the tribe's 501(c)(3) is general support, not a land fund.
 
 ProPublica Nonprofit Explorer lists United Houma Nation Inc of Houma, Louisiana, as a 501(c)(3), exemption issued June 1992.

@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1863 Old Crossing treaty had the Red Lake and Pembina Chippewa cede land in Minnesota and Dakota Territory for $20,000 yearly."
 how: "treaty_negotiated"
-how_basis: "The treaty text records a negotiated cession for payment; it also ties part of the payment to debts and claims against the bands, which I treat as context, not coercion."
+how_basis: "The treaty text records a negotiated cession for payment; it also ties part of the payment to debts and claims against the bands; the text itself does not describe pressure on the bands to sign."
 confidence: "high"
-cautions: "The treaty text states no acreage ceded. Jones v. Meehan was used only to confirm it concerned the Moose Dung tract; I did not summarize its holding. No Red Lake or Pembina nation source was opened."
+cautions: "The treaty text states no acreage for the land ceded. Jones v. Meehan is cited only to show that it concerned the Moose Dung tract; its holding is not summarized here."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-red-lake-and-pembina-bands-1863-0853", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa-Red Lake and Pembina Bands, 1863", "quote": "Twenty thousand dollars per annum for twenty years"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-red-lake-and-pembina-bands-1863-0853", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Chippewa-Red Lake and Pembina Bands, 1863", "quote": "to enable them to pay their just debts, the United States agree to appropriate the sum of one hundred thousand dollars"}, {"url": "https://www.law.cornell.edu/supremecourt/text/175/1", "title": "Jones v. Meehan, 175 U.S. 1 (1899) (Cornell LII)", "quote": "reservation of six hundred and forty acres near the mouth of the Thief river for the chief Moose Dung"}]
 verdict: "fixed"
 ---

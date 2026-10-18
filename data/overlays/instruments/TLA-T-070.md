@@ -5,9 +5,9 @@ written_by: "narrative-wave-2026-10"
 headline: "At Spring Wells, tribes allied with Britain in the War of 1812 were restored to their 1811 status and confirmed earlier treaties."
 note: "The language of \"repentance\" and \"pardon\" is the treaty's own, written by the U.S. commissioners."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a peace treaty with pardons and confirmations, not a new cession; I found no source describing coercion."
+how_basis: "The OSU text records a peace treaty with pardons and confirmations, not a new cession; The sources cited do not describe coercion."
 confidence: "high"
-cautions: "Only the treaty text was read. Whether the confirmations were freely given is not described in any source opened. The text's wording about 'repentance' and 'pardon' is the treaty's own, written by the U.S. commissioners. The treaty restores 1811 'possessions, rights, and privileges' without listing them."
+cautions: "This summary rests on the treaty text alone. Whether the confirmations were freely given is not described in any source cited. The text's wording about 'repentance' and 'pardon' is the treaty's own, written by the U.S. commissioners. The treaty restores 1811 'possessions, rights, and privileges' without listing them."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1815-0117", "title": "Treaty with the Wyandot, etc., 1815 (Treaty of Spring Wells) (Oklahoma State University Tribal Treaties Database)", "quote": "were associated with Great Britain in the late war between the United States and that power"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1815-0117", "title": "Treaty with the Wyandot, etc., 1815 (Treaty of Spring Wells) (Oklahoma State University Tribal Treaties Database)", "quote": "all the possessions, rights, and priviledges, which they enjoyed, or were entitled to, in the year one thousand eight hundred and eleven"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1815-0117", "title": "Treaty with the Wyandot, etc., 1815 (Treaty of Spring Wells) (Oklahoma State University Tribal Treaties Database)", "quote": "agree to renew and confirm the treaty of Greenville, made in the year one thousand seven hundred and ninety-five"}]
 verdict: "fixed"
 ---

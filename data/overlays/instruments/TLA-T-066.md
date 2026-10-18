@@ -7,7 +7,7 @@ note: "The text does not say which present-day bands \"the Siouxs of the river S
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed by United States commissioners and the tribe's chiefs and warriors; it describes no pressure or cession."
 confidence: "medium"
-cautions: "The text names only 'the Siouxs of the river St. Peter's'; the sources opened do not say which present-day bands that means."
+cautions: "The text names only 'the Siouxs of the river St. Peter's'; the sources cited do not say which present-day bands that means."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-of-st-peters-river-1815-0114", "title": "Treaty with the Sioux of St. Peter's River, 1815, Tribal Treaties Database", "quote": "Every injury or act of hostility committed by one or either of the contracting parties against the other, shall be mutually forgiven and forgot."}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-of-st-peters-river-1815-0114", "title": "Treaty with the Sioux of St. Peter's River, 1815, Tribal Treaties Database", "quote": "the late war between the United States and Great Britain"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-of-st-peters-river-1815-0114", "title": "Treaty with the Sioux of St. Peter's River, 1815, Tribal Treaties Database", "quote": "and of no other power, nation, or sovereign, whatsoever"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-of-st-peters-river-1815-0114", "title": "Treaty with the Sioux of St. Peter's River, 1815, Tribal Treaties Database", "quote": "Ratified Dec. 26, 1815."}]
 verdict: "new"
 ---

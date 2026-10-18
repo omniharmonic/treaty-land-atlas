@@ -15,4 +15,3 @@ The National Historic Preservation Act adds a process duty. Property of traditio
 
 Courts have been less protective. In Lyng v. Northwest Indian Cemetery Protective Association (1988), the Court held the Free Exercise Clause did not bar a road through an area used for religious purposes by the Yurok, Karok and Tolowa, and that the American Indian Religious Freedom Act "does not create any enforceable legal right." In 2025 the Supreme Court denied review in the Oak Flat case; Justice Gorsuch, dissenting, wrote that it is undisputed the plan will permanently "destroy the Apaches' historical place of worship."
 
-This story gives no locations of sacred sites beyond places named in public court records.

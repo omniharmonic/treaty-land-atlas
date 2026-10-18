@@ -179,12 +179,9 @@ export function supportFor(
     rank(all.flatMap((id) => ix.by_nation[id] ?? []).filter((o) => ix.orgs[o])),
     limits.direct,
   );
-  // a place's own states when known; otherwise every state where the nations' cessions lie
-  const states = new Set(
-    input.states?.length
-      ? input.states
-      : (input.nations ?? []).flatMap((id) => ix.nation_states[id] ?? []),
-  );
+  // only a place's own states: the states where a nation's land was once ceded are history, and
+  // groups there are often working with other nations, so they are not "nearby" for a nation page
+  const states = new Set(input.states ?? []);
   const nearby = take(
     rank([...states].flatMap((s) => ix.by_state[s] ?? []).filter((o) => ix.orgs[o])),
     limits.nearby,
@@ -230,4 +227,29 @@ export function concerns(
   if (type === 'Instrument') parties(id);
   for (const e of inc(id)) if (e.type === 'violated_by') parties(e.source);
   return { nations: [...nations], states: [...states] };
+}
+
+/** An organization's focus in one short line: its first clause, never cut inside parentheses. */
+export function focusLine(text: string, max = 120): string {
+  let depth = 0;
+  let end = text.length;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === '(') depth++;
+    else if (c === ')') depth = Math.max(0, depth - 1);
+    else if (c === ';' && depth === 0) {
+      end = i;
+      break;
+    }
+  }
+  let s = text.slice(0, end).trim();
+  if (s.length > max) s = `${s.slice(0, max - 3).replace(/\s+\S*$/, '')}…`;
+  // an aside the cut left open is dropped rather than shown half-finished
+  const open = s.lastIndexOf('(');
+  if (open > s.lastIndexOf(')'))
+    s = s
+      .slice(0, open)
+      .trim()
+      .replace(/[,;:]$/, '');
+  return s;
 }

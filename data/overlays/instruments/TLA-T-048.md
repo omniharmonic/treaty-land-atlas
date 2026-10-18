@@ -2,12 +2,12 @@
 id: "TLA-T-048"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Tellico in October 1805 the Cherokee ceded land north of Duck River to the Tennessee for $14,000 and a $3,000 annuity."
+headline: "At Tellico in October 1805 the Cherokee ceded to the United States land north of the Duck River, east to the Tennessee River, for $14,000 and a $3,000 annuity."
 note: "The Tennessee Encyclopedia calls this the \"third treaty of Tellico\"."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession for $14,000 and an annuity, and the Tennessee Encyclopedia describes it without noting coercion."
 confidence: "high"
-cautions: "The Tennessee Encyclopedia calls this the 'third treaty of Tellico' (1805). No source describing Cherokee views or the negotiation was opened. No acreage appears in the sources read."
+cautions: "The Tennessee Encyclopedia calls this the 'third treaty of Tellico' (1805). No cited source describes Cherokee views or the negotiation. No acreage appears in the sources cited."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1805-0082", "title": "Treaty with the Cherokee, 1805 (Oct. 25) (Oklahoma State University Tribal Treaties Database)", "quote": "The Cherokees quit claim and cede to the United States, all the land which they have heretofore claimed"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1805-0082", "title": "Treaty with the Cherokee, 1805 (Oct. 25) (Oklahoma State University Tribal Treaties Database)", "quote": "the United States agree to pay immediately three thousand dollars in valuable merchandise, and eleven thousand dollars within ninety days"}, {"url": "https://tennesseeencyclopedia.net/?p=1797", "title": "Treaties (Tennessee Encyclopedia)", "quote": "Indian Agent Return J. Meigs and Daniel Smith obtained from the Cherokees all land north of the Duck River"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1805-0082", "title": "Treaty with the Cherokee, 1805 (Oct. 25) (Oklahoma State University Tribal Treaties Database)", "quote": "free and unmolested use and enjoyment of the two following described roads"}]
 verdict: "fixed"
 ---

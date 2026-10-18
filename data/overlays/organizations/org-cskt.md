@@ -14,5 +14,3 @@ The Confederated Salish and Kootenai Tribes (CSKT) govern the Flathead Indian Re
 The best-documented return is the National Bison Range. On June 23, 2021, the Department of the Interior announced the transfer of all lands of the Range, approximately 18,800.22 acres, to the Bureau of Indian Affairs to be held in trust for the CSKT. The lands lie completely within the reservation boundaries and came from the U.S. Fish and Wildlife Service.
 
 How it happened matters. Interior says the Consolidated Appropriations Act, 2021 (Public Law 116-260) approved the transfer by repealing the statute that created the Range, and set a two-year transition of management from the Fish and Wildlife Service to the Tribes. Interior's Bryan Newland said creating the Range "reduced the Salish and Kootenai peoples' homeland by thousands of acres."
-
-How the tribes themselves describe their plans for the Bison Range land is not covered here.

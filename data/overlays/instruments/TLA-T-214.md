@@ -6,7 +6,7 @@ headline: "In September 1836 the Potawatomi of the Wabash ceded 42 reserved sect
 how: "removal"
 how_basis: "Article 3 of the treaty text commits the chiefs, warriors and headmen to remove west of the Mississippi within two years."
 confidence: "high"
-cautions: "The treaty names no acreage; it gives only the sections per band and a per-acre price. Circumstances and later history are not covered by the sources opened."
+cautions: "The treaty names no acreage; it gives only the sections per band and a per-acre price. The cited sources do not describe the signing or what happened to the bands afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0471a", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "agree to remove to the country west of the Mississippi river, provided for the Potawattimie nation by the United States within two years"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0471a", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "one dollar and twenty-five cents per acre or thirty-three thousand six hundred dollars"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg515.pdf", "title": "Treaty with the Potawatomi, 7 Stat. 515 (govinfo)", "quote": "agree to remove to the country west of the"}]
 verdict: "fixed"
 ---

@@ -6,7 +6,7 @@ headline: "In 1832 the Sandusky Seneca and the Lewistown Seneca-Shawnee united o
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records an exchange of lands at the tribes' own stated wish to unite, referring to the earlier removal from Ohio."
 confidence: "high"
-cautions: "The treaty states sixty thousand acres exclusive of the Sandusky Senecas' existing land. The page describes no coercion. Later history of the combined nation was not researched."
+cautions: "The treaty states sixty thousand acres exclusive of the Sandusky Senecas' existing land. The page describes no coercion."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-and-shawnee-1832-0383", "title": "Tribal Treaties Database (OSU)", "quote": "have lately formed a confederacy, and have expressed their anxiety to unite as one Tribe or Nation"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-and-shawnee-1832-0383", "title": "Tribal Treaties Database (OSU)", "quote": "the lands shall not be sold or ceded without the consent of the United States"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg411.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Seneca and Shawnee"}]
 verdict: "fixed"
 ---

@@ -2,8 +2,8 @@
 // Where this record's land is: its cessions on a quiet map of all of Royce's cessions, colored by
 // how each was taken. Static SVG; the base map is one shared file.
 import { incoming, outgoing, type Node } from '../lib/graph';
-import { href } from '../lib/href';
 import { locatorMap } from '../lib/svgmap';
+import LandShape from './LandShape.astro';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { HOW_LABEL, HOW_ORDER, type How } from '../islands/map/how';
@@ -46,75 +46,41 @@ if (n.type === 'Case')
     .forEach((e) => ofInstrument(e.target));
 const m = ids.size ? locatorMap(ids) : null;
 const used = HOW_ORDER.filter((h) => m?.hi.some((x) => stories[x.id]?.how === h));
-const base = href('/map/base.svg');
 ---
 
 {m && m.hi.length > 0 && (
-  <figure class="locator">
-    <div
-      class="frame-map"
-      style={`background-image: url(${base}); aspect-ratio: ${m.width} / ${m.height}`}
-    >
-      <svg
-        viewBox={`0 0 ${m.width} ${m.height}`}
-        role="group"
-        aria-label={`Map of the lower 48 states showing ${m.hi.length} cession${m.hi.length === 1 ? '' : 's'} connected to this record.`}
-      >
-        {m.hi.map((x) => (
-          <a
-            href={href(`/cessions/${x.id.replace('geo-royce-', '')}/`)}
-            aria-label={`Royce cession ${x.id.replace('geo-royce-', '')}`}
-          >
-            <path d={x.d} style={`fill: var(--how-${stories[x.id]?.how ?? 'unknown'})`} />
-          </a>
-        ))}
-      </svg>
-    </div>
-    <figcaption class="sans">
+  <LandShape
+    class="locator"
+    ids={m.hi.map((x) => x.id)}
+    fills={Object.fromEntries(
+      m.hi.map((x) => [x.id, `var(--how-${stories[x.id]?.how ?? 'unknown'})`]),
+    )}
+    label={`Map of the ${m.hi.length === 1 ? 'land area' : `${m.hi.length} land areas`} connected to this record, colored by how the land was taken.`}
+  >
+    <figcaption>
       {used.map((h) => (
         <span class="key">
           <i style={`background: var(--how-${h})`} />
           {HOW_LABEL[h]}
         </span>
       ))}
-      <span class="note">Royce’s cession shapes (1899): approximate, not legal boundaries.</span>
+      <span class="note">
+        Shapes from the 1899 federal record: approximate, not legal boundaries.
+      </span>
     </figcaption>
-  </figure>
+  </LandShape>
 )}
 
 <style>
-  .locator {
+  :global(.land.locator) {
     margin: var(--space-5) 0;
-    max-width: 44rem;
-  }
-  .frame-map {
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
-  svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  path {
-    fill-opacity: 0.8;
-    stroke: var(--ink);
-    stroke-width: 0.5;
-    stroke-opacity: 0.55;
-  }
-  a:hover path,
-  a:focus-visible path {
-    fill-opacity: 1;
-    stroke-width: 1.4;
-    stroke-opacity: 1;
+    max-width: 34rem;
   }
   figcaption {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-1) var(--space-4);
-    font-size: var(--s-1);
-    color: var(--ink-2);
-    margin-top: var(--space-2);
+    padding-top: var(--space-2);
   }
   .key i {
     display: inline-block;
@@ -126,6 +92,5 @@ const base = href('/map/base.svg');
   }
   .note {
     flex-basis: 100%;
-    font-size: var(--s-2);
   }
 </style>

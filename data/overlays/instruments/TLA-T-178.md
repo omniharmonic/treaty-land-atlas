@@ -6,7 +6,7 @@ headline: "In 1832 the Kaskaskia and Peoria and allied bands gave up Illinois an
 how: "removal"
 how_basis: "The OSU treaty text arranges a move west of Missouri in exchange for ceded claims and annuities, and records the Peoria dispute over the 1818 treaty."
 confidence: "high"
-cautions: "The treaty page does not describe coercion. No source opened covers what happened to the Osage River lands. Acreage: 150 sections, about 350 acres reserved at Kaskaskia."
+cautions: "The treaty page does not describe coercion. The sources cited do not say what happened to the Osage River lands. Acreage: 150 sections, about 350 acres reserved at Kaskaskia."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kaskaskia-etc-1832-0376", "title": "Tribal Treaties Database (OSU)", "quote": "and now demand an equivalent for those claims"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kaskaskia-etc-1832-0376", "title": "Tribal Treaties Database (OSU)", "quote": "one hundred and fifty sections of land forever, or as long as they live upon it as a tribe"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg403.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Kaskaskia"}]
 verdict: "fixed"
 ---

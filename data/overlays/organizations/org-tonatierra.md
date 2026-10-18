@@ -14,4 +14,4 @@ Its History page says the families of Tonatierra develop decolonization strategi
 
 The home page describes a continental effort it calls Superseding the Doctrine of Discovery, tied to a 2013 conference at Arizona State University West and a Continental Commission Abya Yala. The site says it organizes community life through a Calpolli, a kinship system of extended families.
 
-The sources here do not describe any land purchase, return or acreage, and they do not name current leaders. This account therefore covers sovereignty and advocacy work rather than land results.
+Its pages describe no land purchase, return or acreage, and name no current leaders.

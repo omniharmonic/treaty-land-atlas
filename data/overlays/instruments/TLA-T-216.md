@@ -7,7 +7,7 @@ note: "Not to be confused with the separate September 17, 1836 Fort Leavenworth 
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession by the confederated tribes in general council for annuities and debt payments, with a removal date; no coercion is described."
 confidence: "high"
-cautions: "The treaty states 400 sections, not an acreage. The 1837 Sac and Fox of Missouri treaty (7 Stat. 543) refers to a treaty of \"September 17th, 1836\", which matches the Fort Leavenworth treaty with the Ioway and the Missouri band of Sac and Fox, a separate entry, not this one. Later Sac and Fox cessions are separate entries and are not described here."
+cautions: "The treaty states 400 sections, not an acreage. This is a different treaty from the September 17, 1836 Fort Leavenworth treaty with the Ioway and the Missouri band of Sac and Fox. Later Sac and Fox cessions are told separately."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1836-0474", "title": "Treaty with the Sac and Fox, 1836 (OSU Tribal Treaties Database)", "quote": "being desirous of obtaining additional means of support, and to pay their just creditors"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1836-0474", "title": "Treaty with the Sac and Fox, 1836 (OSU Tribal Treaties Database)", "quote": "by the first day of November next ensuing the date hereof"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg517.pdf", "title": "Treaty with the Sac and Fox, 7 Stat. 517 (govinfo)", "quote": "a reservation of four hundred sections of land was made to the Sac and Fox Indians"}]
 verdict: "fixed"
 ---

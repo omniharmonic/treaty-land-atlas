@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Kickapoo agreed to the 1809 Fort Wayne cession and ceded a further Wabash strip for added annuities and goods."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a negotiated cession for added annuities and goods; no source I read describes coercion."
+how_basis: "The OSU text records a negotiated cession for added annuities and goods; the sources cited do not describe coercion."
 confidence: "high"
-cautions: "Only the treaty texts were read. No source opened addresses how the Kickapoo reached their decision or their own account of it. No acreage is stated."
+cautions: "This summary rests on the treaty texts alone. No cited source addresses how the Kickapoo reached their decision or their own account of it. No acreage is stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1809-0104", "title": "Treaty with the Kickapoo, 1809 (Oklahoma State University Tribal Treaties Database)", "quote": "the cession it containes is hereby agreed to by the Kickapoos"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1809-0104", "title": "Treaty with the Kickapoo, 1809 (Oklahoma State University Tribal Treaties Database)", "quote": "The said tribe further agrees to cede to the United States all that tract of land"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1809-0101", "title": "Treaty with the Delawares, etc., 1809 (Oklahoma State University Tribal Treaties Database)", "quote": "But this article is to have no effect unless the Kickapoos will agree to it."}]
 verdict: "fixed"
 ---

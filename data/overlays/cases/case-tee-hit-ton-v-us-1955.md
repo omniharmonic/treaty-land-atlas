@@ -15,4 +15,4 @@ No treaty was involved. The Court found that neither the Organic Act for Alaska 
 
 On February 7, 1955, Justice Reed wrote for the Court that "Permissive Indian occupancy may be extinguished by Congress in its own discretion without compensation," relying on Johnson v. McIntosh and other cases. The Court held that "Indian occupancy, not specifically recognized as ownership by action authorized by Congress, may be extinguished by the Government without compensation."
 
-It rejected the argument that the group's stage of civilization, its concept of property ownership or Russia's treatment of Natives took it out of the rule that applies to Indians in the States. The Court of Claims judgment was affirmed. Justice Douglas dissented.
+It rejected the argument that the group's "stage of civilization," its concept of property ownership or Russia's treatment of Natives took it out of the rule that applies to Indians in the States. The Court of Claims judgment was affirmed. Justice Douglas dissented.

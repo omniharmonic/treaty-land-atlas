@@ -7,7 +7,7 @@ note: "This treaty ceded no land."
 how: "treaty_negotiated"
 how_basis: "The text records a treaty made by U.S. commissioners with the band's chiefs and head-men, 'read, interpreted, and explained' to them and signed with marks; no source shows pressure."
 confidence: "high"
-cautions: "Only the treaty text was used; it does not say what happened afterward (including later treaties), so this story stops at the signed terms. The text shows no cession of land."
+cautions: "This account covers the signed terms only; the treaty text does not say what happened afterward, including later treaties. The text shows no cession of land."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-miniconjou-band-1865-0883", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Miniconjou) at Fort Sully, Dakota Territory (1865)", "quote": "hereby acknowledge themselves to be subject to the exclusive jurisdiction and authority of the United States"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-miniconjou-band-1865-0883", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Miniconjou) at Fort Sully, Dakota Territory (1865)", "quote": "shall withdraw from the routes overland already established or hereafter to be established through their country"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-miniconjou-band-1865-0883", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Miniconjou) at Fort Sully, Dakota Territory (1865)", "quote": "the sum of ten thousand dollars annually for twenty years, in such articles as the Secretary of the Interior may direct"}]
 verdict: "new"
 ---

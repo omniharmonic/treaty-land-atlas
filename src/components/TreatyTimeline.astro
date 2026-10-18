@@ -42,6 +42,8 @@ const sentence = (s: LandStep) => {
       return `Part of the land ceded${who ? ` by the ${who}` : ''}`;
     case 'retroceded':
       return `${land} of reservation taken back by the United States`;
+    case 'us_reserved':
+      return `${land} kept by the United States for itself`;
     default:
       return `${land} named in the record`;
   }

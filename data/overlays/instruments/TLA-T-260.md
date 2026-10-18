@@ -6,7 +6,7 @@ headline: "The 1852 Chickasaw treaty had the United States keep the tribe's fund
 how: "treaty_negotiated"
 how_basis: "The text records articles concluded in Washington between a U.S. commissioner and three Chickasaw commissioners 'duly appointed'."
 confidence: "medium"
-cautions: "Only the treaty text was used; it does not say what happened afterward, so this story stops at the signed terms. Articles after Article 8 were not read. Article 3's Sandy River reservation question: the page does not show the Secretary's decision."
+cautions: "The treaty text is the only source cited; it does not say what happened afterward, so this story stops at the signed terms. The articles after Article 8 are not summarized here. The treaty left the Sandy River reservation claim to the Secretary of the Interior; his decision is not shown."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1852-0596", "title": "Tribal Treaties Database (Oklahoma State University): Chickasaw at Washington, DC (1852)", "quote": "acknowledge themselves to be under the guardianship of the United States"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1852-0596", "title": "Tribal Treaties Database (Oklahoma State University): Chickasaw at Washington, DC (1852)", "quote": "the United States shall continue to hold said fund, in trust as aforesaid"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chickasaw-1852-0596", "title": "Tribal Treaties Database (Oklahoma State University): Chickasaw at Washington, DC (1852)", "quote": "No claim or account shall hereafter be paid by the Government of the United States out of the Chickasaw fund"}]
 verdict: "new"
 ---

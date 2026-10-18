@@ -6,7 +6,7 @@ headline: "On 4 December 1834 Chief Comoza's Potawatomi band ceded two reserved 
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "high"
-cautions: "The 1832 Tippecanoe treaty was not opened. The treaty states no reasons."
+cautions: "The treaty states no reasons."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0428", "title": "Treaty with the Potawatomi, 1834 (Comoza's band), Tribal Treaties Database", "quote": "The above named chief and his band hereby cede to the United States, the two sections of land reserved for them"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0428", "title": "Treaty with the Potawatomi, 1834 (Comoza's band), Tribal Treaties Database", "quote": "yield peaceable possession of said sections within three years from the date of the ratification"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0428", "title": "Treaty with the Potawatomi, 1834 (Comoza's band), Tribal Treaties Database", "quote": "the sum of four hundred dollars in goods at the signing of this treaty, and an annuity of four hundred dollars for one year"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0428", "title": "Treaty with the Potawatomi, 1834 (Comoza's band), Tribal Treaties Database", "quote": "Com-o-za, a Chief of the Potawattimie tribe of Indians and his band"}]
 verdict: "new"
 ---
@@ -20,4 +20,4 @@ In Article 3 the United States agreed to pay the chief and his band four hundred
 
 Article 4 made the treaty binding once the President and Senate ratified it. The page lists a proclamation on 16 March 1835.
 
-The reserve's origin and any other terms of the 1832 treaty it modifies are not described here. The text does not say where the band went or why it agreed to cede.
+The text does not say where the band went or why it agreed to cede.

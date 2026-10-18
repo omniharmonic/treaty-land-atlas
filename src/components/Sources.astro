@@ -68,9 +68,11 @@ const rows = sourcesOf(id).filter(({ source }) =>
             source.label
           )}
           <span class="tier sans">{tierWord[String(source['source_tier'])] ?? ''}</span>
-          {edge.basis && edge.basis.length < 400 && (
-            <blockquote class="small">{edge.basis}</blockquote>
-          )}
+          {edge.basis &&
+            edge.basis.length < 400 &&
+            edge.basis !== 'URL listed in the seed row.' && (
+              <blockquote class="small">{edge.basis}</blockquote>
+            )}
         </li>
       ))}
       {extraUnique.map((x) => (

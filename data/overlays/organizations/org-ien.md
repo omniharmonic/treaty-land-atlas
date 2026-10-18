@@ -15,4 +15,4 @@ IEN's About page lists its activities as building the capacity of Indigenous com
 
 Its website currently features a monthly "Keep It In The Ground" report, a campaign against a pipeline permit, a report on banking and climate, and mapping tools for oil, gas and petrochemical threats. It also lists a news item on tribal nations seeking protection of a sacred pipestone site.
 
-IEN is an advocacy and organizing network. The sources here describe no land bought or returned by IEN. They do not name its leadership.
+IEN is an advocacy and organizing network. Its pages describe no land bought or returned by IEN, and do not name its leaders.

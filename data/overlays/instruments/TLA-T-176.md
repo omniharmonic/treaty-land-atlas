@@ -6,7 +6,7 @@ headline: "In 1832 Delaware and Shawnee bands formerly of Cape Girardeau ceded t
 how: "removal"
 how_basis: "The OSU treaty text makes Shawnee payments contingent on removal and pays $12,000 of Delaware money toward tribal debts."
 confidence: "high"
-cautions: "The text does not state acreage. It describes no threats, and no source opened here covers later events."
+cautions: "The text does not state acreage. It describes no threats, and the sources cited do not cover later events."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-etc-1832-0370", "title": "Tribal Treaties Database (OSU)", "quote": "hereby cede and relinquish to the United States all their lands within the State of Missouri"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-etc-1832-0370", "title": "Tribal Treaties Database (OSU)", "quote": "to indemnify the said Delawares for all losses and injuries by them sustained in consequence of such removal"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg397.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Shawnoes and Delawares"}]
 verdict: "fixed"
 ---

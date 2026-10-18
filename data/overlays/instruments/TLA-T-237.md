@@ -6,7 +6,7 @@ headline: "In February 1839 the Saginaw Chippewa agreed to sell a lighthouse sit
 how: "treaty_negotiated"
 how_basis: "The text records a compact signed by an acting superintendent and the tribe's chiefs, subject to approval by the President and Senate."
 confidence: "high"
-cautions: "Only the treaty text was used; it does not say what happened afterward, so this story stops at the signed terms. Article 1's 'one sixteenth of a section' (40 acres) and the supplement's 'forty acres' agree."
+cautions: "The treaty text does not say whether the lighthouse was built here or what happened afterward. Article 1's 'one sixteenth of a section' (40 acres) and the supplement's 'forty acres' agree."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1839-0528", "title": "Tribal Treaties Database (Oklahoma State University): Chippewa of Saginaw at Lower Saginaw, Michigan (1839)", "quote": "it is required by a subsequent law of Congress, to erect a light-house on one of said reserves"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1839-0528", "title": "Tribal Treaties Database (Oklahoma State University): Chippewa of Saginaw at Lower Saginaw, Michigan (1839)", "quote": "for, and in consideration of the sum of eight dollars per acre, one sixteenth of a section of said tract"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1839-0528", "title": "Tribal Treaties Database (Oklahoma State University): Chippewa of Saginaw at Lower Saginaw, Michigan (1839)", "quote": "he is fully authorized by these presents to change the location from the Na-bo-bish tract, to the said forty thousand acre reservation"}]
 verdict: "new"
 ---

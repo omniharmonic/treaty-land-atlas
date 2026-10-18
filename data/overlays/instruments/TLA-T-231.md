@@ -6,7 +6,7 @@ headline: "A January 1838 Saginaw Chippewa treaty set a minimum price of five do
 how: "treaty_negotiated"
 how_basis: "The text records articles concluded between the United States commissioner and the Saginaw bands' leaders, who signed with marks."
 confidence: "high"
-cautions: "Only the treaty text was used; it does not say what happened afterward, so this story stops at the signed terms. The 1837 treaty it refers to was not opened."
+cautions: "The treaty text does not say what the lands actually sold for or what happened afterward. The January 14, 1837 cession it refers to is described separately."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1838-0516", "title": "Tribal Treaties Database (Oklahoma State University): Chippewa of Saginaw at Saginaw, Michigan (1838)", "quote": "combinations of purchasers may be formed, at the sale of their lands for the purpose of keeping down the price thereof"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1838-0516", "title": "Tribal Treaties Database (Oklahoma State University): Chippewa of Saginaw at Saginaw, Michigan (1838)", "quote": "shall be put up for sale by the register and receiver of the respective land office, at five dollars per acre"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1838-0516", "title": "Tribal Treaties Database (Oklahoma State University): Chippewa of Saginaw at Saginaw, Michigan (1838)", "quote": "no such sale shall be made for less than seventy-five cents per acre"}]
 verdict: "new"
 ---

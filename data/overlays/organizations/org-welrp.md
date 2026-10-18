@@ -13,6 +13,6 @@ The White Earth Land Recovery Project (WELRP) is a nonprofit in Callaway, Minnes
 
 WELRP's stated mission is to facilitate the recovery of the original land base of the White Earth Indian Reservation while preserving and restoring traditional stewardship practices, language fluency, community development and cultural heritage. Its listed work includes a food sovereignty program, the Great Lakes Indigenous Farming Conference, Indigenous farm-to-school curricula, an Indigenous seed library, an energy justice effort, a Native Harvest store and a community radio station.
 
-The sources here do not state how many acres WELRP has recovered or who holds title, and its own site shows no acreage figure. Its published Forms 990 are linked from its reports page.
+WELRP's site does not say how many acres it has recovered or who holds title. Its published Forms 990 are linked from its reports page.
 
 ProPublica Nonprofit Explorer lists the project in Callaway, Minnesota, as a 501(c)(3). It shows the exemption as issued in November 2021 even though filings from earlier years exist, an unexplained oddity of the registry.

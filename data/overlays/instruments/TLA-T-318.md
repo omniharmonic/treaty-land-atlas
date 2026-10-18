@@ -7,7 +7,7 @@ note: "The 576,000 acres is the size of the whole reservation, not the amount so
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement signed by a commissioner and Potawatomi leaders and states no duress."
 confidence: "high"
-cautions: "Only the treaty text was used. The 576,000 figure is the size of the whole reservation, not the amount sold. Outcomes are not documented in sources opened. Acreage: 576,000 acres (the size of the Kansas reservation the treaty says the tribe proposed to dispose of in part)"
+cautions: "This account is based on the treaty text alone, so it does not describe what happened afterward. The 576,000 acres is the size of the whole Kansas reservation, not the amount sold."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1861-0824", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Potawatomi, 1861", "quote": "consisting of five hundred and seventy-six thousand acres"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1861-0824", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Potawatomi, 1861", "quote": "at the rate of one dollar and twenty-five cents per acre"}]
 verdict: "fixed"
 ---

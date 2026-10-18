@@ -6,7 +6,7 @@ headline: "In 1832 the Apalachicola Band surrendered its river reservation in Fl
 how: "removal"
 how_basis: "The OSU treaty text provides for surrender of the reservation and emigration west of the Mississippi, with payment for removal expenses."
 confidence: "high"
-cautions: "The page states no acreage and does not describe threats or pressure. Wider context of the Seminole removal was not checked here."
+cautions: "The page states no acreage and does not describe threats or pressure."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-appalachicola-band-1832-0352", "title": "Tribal Treaties Database (OSU)", "quote": "surrender to the United States, all their right, title and interest to a reservation of land"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-appalachicola-band-1832-0352", "title": "Tribal Treaties Database (OSU)", "quote": "to meet the charges of a party to explore immediately the country west in search of a home more suitable to their habits"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg377.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "TREATY WITH THE APPALACHICOLA BAND"}]
 verdict: "fixed"
 ---

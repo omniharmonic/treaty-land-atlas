@@ -15,4 +15,4 @@ On land, the tribe's Our Land page says the reservation lies in present-day King
 
 The site's Donate link goes to a Zeffy page for the Mattaponi Cultural Foundation, not the tribe itself. ProPublica lists that foundation in West Point, Virginia, under EIN 92-1042421, with tax exemption issued in November 2022. A donor should know the foundation is a separate legal entity from the tribal government.
 
-The sources here describe no land return or purchase by the tribe.
+The tribe's pages describe no land return or purchase.

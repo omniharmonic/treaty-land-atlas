@@ -14,5 +14,3 @@ The Mashpee Wampanoag Tribe's website says the tribe, also known as the People o
 The reservation's status was contested. In a December 22, 2021 statement, Chairman Brian Weeden said Assistant Secretary for Indian Affairs Bryan Newland had issued a decision confirming the reservation, and that the land had remained in federally protected trust status since it was first placed in trust on November 10, 2015. Weeden said the decision "allows us to reclaim and protect our cherished Land."
 
 Courthouse News reported on October 31, 2023 that a First Circuit panel upheld a federal judge's ruling that the government could take more than 300 acres into trust for the tribe under the Indian Reorganization Act of 1934, rejecting a challenge by East Taunton residents. The panel reasoned somewhat differently from the lower court.
-
-Whether further appeals or other developments have occurred since 2023 is not covered here.

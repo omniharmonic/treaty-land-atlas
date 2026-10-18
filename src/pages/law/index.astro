@@ -1,13 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
 import IndexList from '../../components/IndexList.astro';
-import { byType, year, type Node } from '../../lib/graph';
+import { byType, overlayFor, year, type Node } from '../../lib/graph';
+import { href } from '../../lib/href';
 
 const chrono = (xs: Node[]) =>
   xs.sort((a, b) => (year(a) ?? 0) - (year(b) ?? 0) || a.label.localeCompare(b.label));
 const cases = chrono(byType('Case'));
 const statutes = chrono(byType('Statute'));
 const doctrines = byType('Doctrine').sort((a, b) => a.label.localeCompare(b.label));
+// one plain sentence on what each did, when there is a sourced one; the citation otherwise
+const said = (n: Node, fallback: unknown) =>
+  overlayFor(n)?.headline ?? (fallback as string) ?? null;
 const eras = byType('PolicyEra').sort((a, b) => Number(a['start_year']) - Number(b['start_year']));
 ---
 
@@ -22,18 +26,31 @@ const eras = byType('PolicyEra').sort((a, b) => Number(a['start_year']) - Number
       statutes, and the doctrines they built.
     </p>
   </div>
-  <h2>Policy eras</h2>
-  <IndexList items={eras} dated />
-  <h2>Court cases</h2>
-  <IndexList items={cases} dated note={(n) => (n['full_citation'] as string) ?? null} />
-  <h2>Statutes</h2>
-  <IndexList items={statutes} dated note={(n) => (n['citation'] as string) ?? null} />
-  <h2>Doctrines</h2>
-  <IndexList items={doctrines} />
+  <nav class="jump sans" aria-label="On this page">
+    <a href={href('/law/#eras')}>Policy eras</a>
+    <a href={href('/law/#cases')}>Court cases</a>
+    <a href={href('/law/#statutes')}>Statutes</a>
+    <a href={href('/law/#doctrines')}>Doctrines</a>
+  </nav>
+  <h2 id="eras">Policy eras</h2>
+  <IndexList items={eras} dated note={(n) => said(n, null)} />
+  <h2 id="cases">Court cases</h2>
+  <IndexList items={cases} dated note={(n) => said(n, n['full_citation'])} />
+  <h2 id="statutes">Statutes</h2>
+  <IndexList items={statutes} dated note={(n) => said(n, n['citation'])} />
+  <h2 id="doctrines">Doctrines</h2>
+  <IndexList items={doctrines} note={(n) => said(n, null)} />
 </Base>
 
 <style>
   .intro {
     padding-top: var(--space-6);
+  }
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    margin: var(--space-4) 0 var(--space-5);
+    font-size: var(--s-1);
   }
 </style>

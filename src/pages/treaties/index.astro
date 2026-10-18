@@ -42,18 +42,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 >
   <section class="directory-intro">
     <div>
-      <p class="intro-note">Agreements that still shape the present</p>
-      <h1>
-        The promise.
-        <br />
-        The living record.
-      </h1>
+      <h1>Treaties and agreements</h1>
     </div>
     <div class="intro-copy">
-      <p class="lede">A treaty is more than a date in history.</p>
+      <p class="lede">
+        The United States made hundreds of agreements with Native nations. Many traded land for
+        promises.
+      </p>
       <p>
-        Follow what was agreed, what happened to the land, and how those promises are being defended
-        today. Every connection leads back to the record.
+        Each page shows what was agreed, what happened to the land, which promises were broken, and
+        who is defending those rights today.
       </p>
       <a href={href('/where/')}>
         Begin with where you live <span aria-hidden="true">↗</span>
@@ -63,7 +61,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="featured-section" aria-labelledby="featured-h">
     <div class="featured-heading">
       <h2 id="featured-h">A few places to begin</h2>
-      <span>Explore a connected history</span>
     </div>
     <div class="featured-grid">
       {featured.map((entry, i) => (
@@ -80,7 +77,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </svg>
           <h3>{entry.label}</h3>
           <div class="featured-bottom">
-            <span>{entry.events} connected entries</span>
+            <span>Read what happened</span>
             <span aria-hidden="true">↗</span>
           </div>
         </a>
@@ -88,10 +85,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
   </section>
   <section class="all-agreements" aria-labelledby="agreements-h">
-    <h2 id="agreements-h">Find a thread to follow.</h2>
+    <h2 id="agreements-h">Find a treaty</h2>
     <p class="directory-description">
-      Search {all.length} treaties, agreements, and related instruments. Ratification and source
-      coverage vary; each record shows what is known.
+      Search {all.length} treaties and agreements by name, nation, place or year.
     </p>
     <TreatyDirectory client:load {entries} {base} />
     <noscript>

@@ -13,4 +13,4 @@ The Confederated Tribes of Siletz Indians' website calls the Tribes the most div
 
 In October 2026 Underscore Native News, republished by OPB, reported on a coastal parcel outside Yachats. The report says the Tribes bought a nearly seven-acre parcel. Joanne Kittel of View the Future said that, with support from McKenzie River Trust and The Nature Conservancy, the land was appraised and purchased for $120,000, of which her group contributed $55,000. CTSI Natural Resources Director Angela Sondenaa said the land was part of the Tribes' ancestral territory and the coast reservation. McKenzie River Trust's conservation director said the funding was flexible so there would be no restriction on the title.
 
-The article is the source for this purchase; the Tribes' own pages cited here do not mention it. It describes the parcel as on its way to being returned, so the transfer may not be complete.
+The Tribes' own pages do not mention the purchase. The article describes the parcel as on its way to being returned, so the transfer may not be complete.

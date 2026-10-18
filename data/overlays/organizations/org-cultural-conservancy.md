@@ -15,4 +15,4 @@ TCC's team page lists Caesare Assad (Kickapoo, Assyrian, Irish-British) as execu
 
 TCC's history page lists land-related work from its first 30 years. It says that through "land acquisition support, cultural conservation easements, and conservation partnerships" it helped protect traditional lands and gathering sites, and helped create Hui Aina o Hana, a Native Hawaiian land trust on Maui. It also says it helped California tribes and communities not federally recognized with land access and protection.
 
-Its stated mission is "to protect and restore Indigenous cultures, empowering them in the direct application of traditional knowledge and practices on their ancestral lands." TCC also runs a regranting program and a farm, per its site. These are TCC's descriptions; the specific projects are not independently verified.
+Its stated mission is "to protect and restore Indigenous cultures, empowering them in the direct application of traditional knowledge and practices on their ancestral lands." TCC also runs a regranting program and a farm, per its site. These are TCC's own descriptions.

@@ -47,58 +47,62 @@ const stroke = fit ? Math.max(0.6, fit.w / 500) : 1;
 
 {(m.hi.length > 0 || pt) && (
   <figure class:list={['land', size, tone, cls]}>
-    <svg
-      viewBox={view}
-      role={links && size === 'card' && m.hi.length ? 'group' : 'img'}
-      aria-label={label}
-      style={`--sw: ${stroke}px`}
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <image href={base} width={m.width} height={m.height} />
-      {m.hi.map((h) =>
-        links && size === 'card' ? (
-          <a
-            href={href(`/cessions/${areaNumber(h.id)}/`)}
-            aria-label={`Land area ${areaNumber(h.id)}`}
-          >
+    <div class="frame">
+      <svg
+        viewBox={view}
+        role={links && size === 'card' && m.hi.length ? 'group' : 'img'}
+        aria-label={label}
+        style={`--sw: ${stroke}px`}
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <image href={base} width={m.width} height={m.height} />
+        {m.hi.map((h) =>
+          links && size === 'card' ? (
+            <a
+              href={href(`/cessions/${areaNumber(h.id)}/`)}
+              aria-label={`Land area ${areaNumber(h.id)}`}
+            >
+              <path
+                d={h.d}
+                style={fills[h.id] ? `fill: ${fills[h.id]}; fill-opacity: 0.82` : undefined}
+              />
+            </a>
+          ) : (
             <path
               d={h.d}
               style={fills[h.id] ? `fill: ${fills[h.id]}; fill-opacity: 0.82` : undefined}
             />
-          </a>
-        ) : (
-          <path
-            d={h.d}
-            style={fills[h.id] ? `fill: ${fills[h.id]}; fill-opacity: 0.82` : undefined}
-          />
-        ),
-      )}
-      {pt && (
-        <g class="pt">
-          <circle cx={pt[0]} cy={pt[1]} r={fit ? fit.w / 40 : 9} />
-          <circle class="core" cx={pt[0]} cy={pt[1]} r={fit ? fit.w / 110 : 3.5} />
-        </g>
-      )}
-    </svg>
-    {inset && (
-      <svg class="inset" viewBox={`0 0 ${m.width} ${m.height}`} aria-hidden="true">
-        <image href={base} width={m.width} height={m.height} />
-        <rect x={fit!.x} y={fit!.y} width={fit!.w} height={fit!.h} />
+          ),
+        )}
+        {pt && (
+          <g class="pt">
+            <circle cx={pt[0]} cy={pt[1]} r={fit ? fit.w / 40 : 9} />
+            <circle class="core" cx={pt[0]} cy={pt[1]} r={fit ? fit.w / 110 : 3.5} />
+          </g>
+        )}
       </svg>
-    )}
+      {inset && (
+        <svg class="inset" viewBox={`0 0 ${m.width} ${m.height}`} aria-hidden="true">
+          <image href={base} width={m.width} height={m.height} />
+          <rect x={fit!.x} y={fit!.y} width={fit!.w} height={fit!.h} />
+        </svg>
+      )}
+    </div>
     <slot />
   </figure>
 )}
 
 <style>
   .land {
-    position: relative;
     margin: 0;
     background: var(--sage);
     border-radius: 14px;
     overflow: hidden;
   }
-  .land > svg:first-child {
+  .frame {
+    position: relative;
+  }
+  .frame > svg:first-child {
     display: block;
     width: 100%;
     aspect-ratio: 27 / 20;

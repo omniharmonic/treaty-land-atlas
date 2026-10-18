@@ -10,7 +10,7 @@ verdict: "new"
 ---
 Many treaties in which Native nations gave up land kept the right to fish, hunt and gather. Three Supreme Court decisions explain how courts read those promises.
 
-United States v. Winans (decided May 15, 1905) was a suit to stop the Winans brothers from obstructing Indians of the Yakima Nation from fishing on the Columbia River. The brothers held state licenses for fish wheels there. The 1859 treaty secured the right to take fish at all usual and accustomed places. The Court said the treaty was not a grant of rights to the Indians, but a grant of right from them, a reservation of those not granted.
+United States v. Winans (decided May 15, 1905) was a suit to stop the Winans brothers from obstructing Yakama Indians from fishing on the Columbia River. The brothers held state licenses for fish wheels there. The treaty, signed in 1855 and ratified in 1859, secured the right to take fish at all usual and accustomed places. The Court said the treaty was not a grant of rights to the Indians, but a grant of right from them, a reservation of those not granted.
 
 Washington v. Washington State Commercial Passenger Fishing Vessel Association (decided July 2, 1979) concerned treaties from 1854 and 1855 guaranteeing a right of taking fish at usual and accustomed grounds in common with all citizens of the Territory. The Court held the language secured to the tribes a right to harvest a share of each run of salmon passing through tribal fishing areas. It said the share secures so much as, but no more than, is necessary to provide a livelihood, a moderate living, with a maximum of 50 percent.
 

@@ -6,7 +6,7 @@ headline: "In 1835 the Caddo ceded their land between the Sabine and Red rivers 
 how: "removal"
 how_basis: "Article II of the treaty text requires the Caddo to remove out of the boundaries of the United States within one year."
 confidence: "high"
-cautions: "The treaty gives no acreage. The sources used here do not describe how the negotiation was conducted or what happened after the Caddo left. The Caddo Nation's own account was not consulted."
+cautions: "The treaty gives no acreage. The sources used here do not describe how the negotiation was conducted or what happened after the Caddo left."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-caddo-1835-0432", "title": "Treaty with the Caddo, 1835 (OSU Tribal Treaties Database)", "quote": "promise to remove at their own expense out of the boundaries of the United States"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-caddo-1835-0432", "title": "Treaty with the Caddo, 1835 (OSU Tribal Treaties Database)", "quote": "Thirty thousand dollars to be paid in goods, and horses"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg470.pdf", "title": "Treaty with the Caddo, 7 Stat. 470 (govinfo)", "quote": "Ten thousand dollars in money to be paid within one year"}]
 verdict: "rewritten"
 ---

@@ -6,7 +6,7 @@ headline: "In April 1836 the Potawatomi bands of Nas-waw-kee and Quash-quaw cede
 how: "removal"
 how_basis: "Article 3 of the treaty text commits the bands to remove west of the Mississippi within two years."
 confidence: "high"
-cautions: "Acreage not stated (three sections). Article 4 was struck out by the Senate and is not shown. The atlas records a Royce number shared with TLA-T-204 (210)."
+cautions: "Acreage not stated (three sections). Article 4 was struck out by the Senate and is not shown."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0459", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "agree to give possession of the aforesaid three sections of land, and remove to the country west of the Mississippi river"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0459", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "nineteen hundred and twenty dollars at the first payment of annuity after the ratification of this treaty"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg501.pdf", "title": "Treaty with the Potawatomi, 7 Stat. 501 (govinfo)", "quote": "give possession of the aforesaid three sections of land"}]
 verdict: "fixed"
 ---

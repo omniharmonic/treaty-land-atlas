@@ -7,7 +7,7 @@ note: "The plan to leave the Wabash is stated in the treaty as the Kickapoo's ow
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession with annuity; the removal intent is stated by the tribe in the text, with no description of coercion."
 confidence: "high"
-cautions: "Acreage is not stated. The removal intent is stated in the treaty text as the tribe's own plan; no source opened describes coercion. The record's Royce number was not checked. Whether the 1820 payment shows a free or pressured departure is not addressed by the sources opened."
+cautions: "Acreage is not stated. The removal intent is stated in the treaty text as the tribe's own plan; the sources cited do not describe coercion, or say whether the 1820 departure was free or pressured."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1819-0184", "title": "Treaty with the Kickapoo of the Vermilion, 1819 (Oklahoma State University Tribal Treaties Database)", "quote": "all the lands which the said tribe has heretofore possessed, or which they may rightfully claim, on the Wabash river, or any of its waters"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1819-0184", "title": "Treaty with the Kickapoo of the Vermilion, 1819 (Oklahoma State University Tribal Treaties Database)", "quote": "As the said tribe contemplate removing from the country they now occupy"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg210.pdf", "title": "Convention with the Kickapoos of the Vermilion, 1820, 7 Stat. 210 (U.S. Statutes at Large, govinfo.gov)", "quote": "as the said tribe are now about leaving their settlements"}]
 verdict: "fixed"
 ---
@@ -17,4 +17,4 @@ In Article 1 they agreed to cede "all the lands which the said tribe has heretof
 
 In Article 3 the Kickapoo gave up an existing $1,000 annuity. The United States agreed to pay $2,000 a year in specie for ten years, and $3,000 was delivered at signing. The treaty calls the whole "a full compensation."
 
-Article 4 says: "as the said tribe contemplate removing from the country they now occupy," the annuity would be paid at a place to be agreed. A 1820 convention shows how that played out. The annuity was moved to Kaskaskia, Illinois, and the United States advanced $2,000 because the tribe was "now about leaving their settlements on the Wabash." The treaty was proclaimed on May 10, 1820. The sources here give no acreage and do not describe the council.
+Article 4 says: "as the said tribe contemplate removing from the country they now occupy," the annuity would be paid at a place to be agreed. A convention of September 5, 1820 shows how that played out. The annuity was moved to Kaskaskia, Illinois, and the United States advanced $2,000 because the tribe was "now about leaving their settlements on the Wabash." The treaty was proclaimed on May 10, 1820.

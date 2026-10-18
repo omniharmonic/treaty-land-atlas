@@ -190,7 +190,13 @@ export function cleanTags(text: unknown): { text: string; flags: string[] } {
   const out = s
     .replace(/\[([^\]]*)\]/g, (whole, inner: string) => {
       const m = /^(verified|from-memory|disputed|unverified)\b\s*[:;]?\s*(.*)$/i.exec(inner.trim());
-      if (!m) return whole;
+      if (!m) {
+        // a tag at the end ("[enforcement history from-memory]") flags the claim; the note goes
+        const tail = /\b(verified|from-memory|disputed|unverified)\s*$/i.exec(inner.trim());
+        if (!tail) return whole;
+        flags.add(tail[1]!.toLowerCase());
+        return '';
+      }
       flags.add(m[1]!.toLowerCase());
       const rest = m[2]!.replace(/^(from-memory|unverified|disputed|verified)\s*;?\s*/i, '').trim();
       return rest ? `(${rest})` : '';

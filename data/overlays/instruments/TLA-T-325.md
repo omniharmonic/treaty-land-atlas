@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1863 Box Elder treaty brought peace with the Northwestern Shoshone; in 1945 the Supreme Court rejected a land claim based on it."
 how: "treaty_negotiated"
-how_basis: "The treaty text records a negotiated agreement signed by a general, a governor and named chiefs; it describes the bands as destitute from war but no coercion is stated beyond that."
+how_basis: "The treaty text records a negotiated agreement signed by a general, a governor and named chiefs; it describes the bands as reduced by the war to utter destitution, and says nothing more about the circumstances of signing."
 confidence: "high"
-cautions: "Input gives only \"Peace and right-of-way; annuities\". The treaty is largely a peace and right-of-way agreement. I read the key passages, not the whole opinion; the page shows the judgment was affirmed, with Justice Roberts in favor of reversal; the project summary also lists Douglas, Frankfurter and Murphy as dissenting, which I did not verify. Fighting before the treaty was not documented in pages opened."
+cautions: "The treaty is mainly a peace and right-of-way agreement. It says the bands had been reduced \\\"by the war\\\" to destitution but does not describe that war. The 1945 Supreme Court decision affirmed the lower court; this account summarizes the majority holding only."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shoshoni-northwestern-bands-1863-0850", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Shoshoni-Northwestern Bands, 1863", "quote": "the said bands having been reduced by the war to a state of utter destitution"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shoshoni-northwestern-bands-1863-0850", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Shoshoni-Northwestern Bands, 1863", "quote": "Nothing herein contained shall be construed or taken to admit any other or greater title or interest"}, {"url": "https://www.law.cornell.edu/supremecourt/text/324/335", "title": "Northwestern Bands of Shoshone Indians v. United States, 324 U.S. 335 (1945) (Cornell LII)", "quote": "suit is authorized only for rights acknowledged by the treaty"}]
 verdict: "fixed"
 ---

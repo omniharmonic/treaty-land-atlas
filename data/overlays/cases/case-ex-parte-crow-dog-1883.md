@@ -14,4 +14,4 @@ The question was whether the 1868 treaty with the Sioux, or an 1877 agreement em
 
 The Court said courts do not favor repeals of statutes by implication, and that a court of limited jurisdiction should not take a case involving human life through an implied repeal of a statute denying it, when the words relied on are general and inconclusive.
 
-Congress acted two years later. Section 9 of the Indian Appropriation Act of March 3, 1885 made Indians who commit murder, manslaughter, rape, assault with intent to kill, arson, burglary or larceny against another Indian or other person in a Territory subject to the laws of that Territory. The Court upheld that section in United States v. Kagama (1886).
+Congress acted two years later. Section 9 of the Indian Appropriation Act of March 3, 1885 gave territorial courts jurisdiction over seven named crimes (murder, manslaughter, rape, assault with intent to kill, arson, burglary and larceny) committed by Indians in the Territories, and gave federal courts jurisdiction over the same crimes committed on an Indian reservation within a State. The Court upheld that section in United States v. Kagama (1886).

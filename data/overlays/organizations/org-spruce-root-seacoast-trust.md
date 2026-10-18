@@ -13,6 +13,6 @@ Spruce Root is headquartered in Juneau, Alaska, and describes itself as a Native
 
 Its work is business lending and coaching, workforce and financial-wellness programs, and two connected efforts. The Sustainable Southeast Partnership is a network of Tribal governments, organizations and businesses for which Spruce Root provides coordination. The Seacoast Trust is described as a funding source in which annual earnings fund conservation grounded in Indigenous values. Spruce Root is its fiscal sponsor, and its investment committee is appointed by the Spruce Root board.
 
-The sources here do not describe any land purchase or return by Spruce Root. Gifts to the Seacoast Trust go through Spruce Root.
+Spruce Root describes no land purchase or return of its own. Gifts to the Seacoast Trust go through Spruce Root.
 
 ProPublica Nonprofit Explorer lists Spruce Root Inc of Juneau as a 501(c)(3) with exemption issued February 2013.

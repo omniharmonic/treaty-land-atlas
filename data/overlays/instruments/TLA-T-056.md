@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Brownstown five nations ceded a road corridor from the Maumee rapids toward Ohio, with a mile of land on each side."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a negotiated cession for a road, with a preamble giving the US reason; no source I read describes coercion."
+how_basis: "The OSU text records a negotiated cession for a road, with a preamble giving the US reason; the sources cited do not describe coercion."
 confidence: "high"
-cautions: "The treaty text, as read, states no payment for the cession; a separate payment record was not searched for. The statement that the road benefits the nations is the treaty's own framing. No acreage is stated. Only the treaty text was read."
+cautions: "The treaty text states no payment for the cession. The statement that the road benefits the nations is the treaty's own framing. No acreage is stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1808-0099", "title": "Treaty with the Chippewa, etc., 1808 (Oklahoma State University Tribal Treaties Database)", "quote": "cannot, of right, open and maintain a convenient road from the settlements in the state of Ohio"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1808-0099", "title": "Treaty with the Chippewa, etc., 1808 (Oklahoma State University Tribal Treaties Database)", "quote": "all the land within one mile of the said road, on each side thereof, for the purpose of establishing settlements along the same"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1808-0099", "title": "Treaty with the Chippewa, etc., 1808 (Oklahoma State University Tribal Treaties Database)", "quote": "retain the privilege of hunting and fishing on the lands given and ceded"}]
 verdict: "fixed"
 ---

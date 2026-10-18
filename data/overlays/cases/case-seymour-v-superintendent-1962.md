@@ -2,7 +2,7 @@
 id: "case-seymour-v-superintendent-1962"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "An 1906 act opening Colville land to settlement did not dissolve the reservation, so Washington could not try a tribal member there."
+headline: "A 1906 act opening Colville land to settlement did not dissolve the reservation, so Washington could not try a tribal member there."
 confidence: "high"
 cautions: "The atlas page calls this the \"first of the modern diminishment cases\" and lists \"executive-order and agreement history\" as the treaty; neither is supported by the opinion, which rests on the 1906 Act."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep368/usrep368351/usrep368351.pdf", "title": "Seymour v. Superintendent of Washington State Penitentiary, 368 U.S. 351 (1962) (U.S. Reports, Library of Congress)", "quote": "The Colville Indian Reservation is still in existence"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep368/usrep368351/usrep368351.pdf", "title": "Seymour v. Superintendent of Washington State Penitentiary, 368 U.S. 351 (1962) (U.S. Reports, Library of Congress)", "quote": "all land within the limits of any Indian reservation"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep368/usrep368351/usrep368351.pdf", "title": "Seymour v. Superintendent of Washington State Penitentiary, 368 U.S. 351 (1962) (U.S. Reports, Library of Congress)", "quote": "did not dissolve that Reservation, and it is still in existence"}]

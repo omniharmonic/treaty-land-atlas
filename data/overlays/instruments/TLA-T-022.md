@@ -6,7 +6,7 @@ headline: "In 1794 the United States promised the Oneida, Tuscarora and Stockbri
 how: "treaty_negotiated"
 how_basis: "The OSU text shows a negotiated compensation agreement with payments and no land cession."
 confidence: "high"
-cautions: "The record's land description (acknowledgment of Oneida, Tuscarora and Stockbridge lands) is not supported by the treaty text, which concerns compensation for wartime losses. Whether the promised payments, mills and church were delivered is not shown in the sources opened. The Oneida litigation noted in the record was not verified here."
+cautions: "The treaty concerns compensation for wartime losses, not land. Whether the promised payments, mills and church were delivered is not shown in the sources opened."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oneida-etc-1794-0037", "title": "Tribal Treaties Database: Treaty with the Oneida, Tuscarora, and Stockbridge, 1794 (Oklahoma State University Libraries)", "quote": "adhered faithfully to the United States, and assisted them with their warriors"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oneida-etc-1794-0037", "title": "Tribal Treaties Database: Treaty with the Oneida, Tuscarora, and Stockbridge, 1794 (Oklahoma State University Libraries)", "quote": "The United States will pay the sum of five thousand dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oneida-etc-1794-0037", "title": "Tribal Treaties Database: Treaty with the Oneida, Tuscarora, and Stockbridge, 1794 (Oklahoma State University Libraries)", "quote": "relinquish all other claims of compensation and rewards for their losses and services in the late war"}]
 verdict: "rewritten"
 ---

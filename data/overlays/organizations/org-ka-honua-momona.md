@@ -15,4 +15,4 @@ The IRS-linked name differs from the site name. ProPublica lists EIN 20-0987319 
 
 KHM's programs include a Live Smart microgrid energy system, a breastfeeding education program, and education work. Its leadership page says that from 2010 to 2015 it piloted a women's shared leadership model, and that during that time it accomplished "increasingly healthy fishponds" and a new office building. Its home page lists its address as the Aliʻi Fishpond on Kamehameha V Highway.
 
-The sources here describe no land purchase or return.
+Its pages describe no land purchase or return.

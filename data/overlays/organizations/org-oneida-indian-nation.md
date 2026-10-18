@@ -15,4 +15,4 @@ On land, the Nation's Governance page says that on May 16, 2013 the Nation, the 
 
 A federal source confirms a recent trust decision. In a Federal Register notice published March 1, 2023, the Assistant Secretary for Indian Affairs made a final determination on February 17, 2023 to acquire 269.543 acres within the Nation's reservation in Madison and Oneida counties in trust for the Nation for gaming and other purposes.
 
-The Nation's own pages give no total of its trust or fee acreage. Figures of 18,000 and 25,000 acres conflict and are not confirmed here.
+The Nation's own pages give no total of its trust or fee acreage. Figures of 18,000 and 25,000 acres have both been given.

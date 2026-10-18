@@ -15,4 +15,4 @@ Its mission statement says it is "dedicated to building people power, rooted in 
 
 Its land role is advocacy, not buying or returning land. Posts on its site include a call to submit a public comment to protect the Yukon Flats and a post headed "Yukon Flats Not For Sale." Its donate page says gifts support its programs and its Community Affiliate Collective, and that donors can name a project in the check memo.
 
-ProPublica Nonprofit Explorer lists Native Movement of Fairbanks as a 501(c)(3), with its tax exemption issued in June 2007. This account reflects what the organization publishes about itself and does not assess outcomes of its campaigns.
+ProPublica Nonprofit Explorer lists Native Movement of Fairbanks as a 501(c)(3), with its tax exemption issued in June 2007. These details are what the organization publishes about itself.

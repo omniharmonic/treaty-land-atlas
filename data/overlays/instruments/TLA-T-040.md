@@ -5,9 +5,9 @@ written_by: "narrative-wave-2026-10"
 headline: "The Delaware ceded land between the Ohio and Wabash rivers for an added annuity and farming help."
 note: "The reasons in the preamble, an annuity too small and a country too large, are the treaty's own framing."
 how: "treaty_negotiated"
-how_basis: "The OSU text shows a negotiated cession for annuity and goods; the preamble gives the US motive but I found no account of coercion."
+how_basis: "The OSU text shows a negotiated cession for annuity and goods; the preamble gives the US motive but no cited source describes coercion."
 confidence: "high"
-cautions: "The preamble's reasons (annuity too small, country too large) are the treaty's own framing, not independent evidence. Only the treaty text was read. Whether the Piankeshaw objection voided any promise is not shown in the sources opened. OSU lists ratification Jan. 21, 1805 and proclamation Feb. 14, 1805."
+cautions: "The preamble's reasons (annuity too small, country too large) are the treaty's own framing, not independent evidence. OSU lists ratification Jan. 21, 1805 and proclamation Feb. 14, 1805."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1804-0070", "title": "Treaty with the Delawares, 1804 (Oklahoma State University Tribal Treaties Database)", "quote": "relinquishes to the United States forever, all their right and title to the tract of country which lies between the Ohio and Wabash rivers"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1804-0070", "title": "Treaty with the Delawares, 1804 (Oklahoma State University Tribal Treaties Database)", "quote": "the United States being desirous to connect their settlements on the Wabash with the state of Kentucky"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1804-0070", "title": "Treaty with the Delawares, 1804 (Oklahoma State University Tribal Treaties Database)", "quote": "the said United States will in future consider the Delawares as the rightful owners"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1804-0070", "title": "Treaty with the Delawares, 1804 (Oklahoma State University Tribal Treaties Database)", "quote": "the Piankishaw tribe have hitherto obstinately persisted in refusing to recognize the title of the Delawares"}]
 verdict: "fixed"
 ---

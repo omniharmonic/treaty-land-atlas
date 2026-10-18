@@ -6,7 +6,7 @@ headline: "In 1837 the Ioway released any claim to the land ceded in 1830 for $2
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a small negotiated release with a stated payment; no coercion is stated."
 confidence: "high"
-cautions: "No acreage is stated. \"A release of a claim\" is this entry's plain-English reading of Article 1. Later history is not covered by the sources opened."
+cautions: "No acreage is stated. \"A release of a claim\" is a plain-English summary of Article 1, not the treaty's own wording. The cited sources do not describe what happened afterward."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1837-0500", "title": "Treaty with the Ioway, 1837 (OSU Tribal Treaties Database)", "quote": "THE Ioway Indians cede to the United States all the right and interest in the land ceded by the treaty"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1837-0500", "title": "Treaty with the Ioway, 1837 (OSU Tribal Treaties Database)", "quote": "the United States stipulate to pay them two thousand five hundred dollars ($2,500) in horses, goods and presents"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg547.pdf", "title": "Treaty with the Ioway, 7 Stat. 547 (govinfo)", "quote": "in horses, goods and presents, upon their signing this treaty in the city of Saint Louis"}]
 verdict: "fixed"
 ---

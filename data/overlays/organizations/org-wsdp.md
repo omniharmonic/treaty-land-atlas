@@ -15,4 +15,4 @@ The library describes the Project's mission as affirming Western Shoshone jurisd
 
 The Supreme Court case was United States v. Dann, decided February 20, 1985. The Court held that "payment" of the Indian Claims Commission award occurred when the funds were placed by the United States into a Treasury account for the Tribe.
 
-The web address wsdp.org serves an unrelated site. No working official site, tax status or donation path was confirmed.
+The web address wsdp.org serves an unrelated site. The Project has no known working website, tax status or donation path.

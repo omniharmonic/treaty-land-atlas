@@ -7,7 +7,7 @@ note: "The 157,000 acres is the treaty's own estimate for both cessions together
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated cession with payment, debt settlement and a new reservation; it does not describe duress."
 confidence: "high"
-cautions: "Only the treaty text was read. Whether the relocation was voluntary or pressured is not addressed in sources opened; a reader could reasonably call it removal. The 157,000 acres is the treaty's own estimate for both cessions together."
+cautions: "This account draws on the treaty text only, which does not say whether the move south of Kansas was freely chosen; it can reasonably be read as a removal. The 157,000 acres is the treaty's own estimate for both cessions together."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1867-0951", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Sauk and Foxes, 1867", "quote": "being about one hundred and fifty-seven thousand acres of land, less the amount of land set apart for individuals"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1867-0951", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Sauk and Foxes, 1867", "quote": "a tract of land in the Indian country south of Kansas"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1867-0951", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Sauk and Foxes, 1867", "quote": "containing about eighty-six thousand and four hundred acres"}]
 verdict: "fixed"
 ---

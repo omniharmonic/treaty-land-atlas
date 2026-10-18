@@ -13,4 +13,4 @@ Tewa Women United (TWU) says it started in 1989 as a support group for women fro
 
 TWU's stated purpose is ending all forms of violence against Native women and girls and Mother Earth, and promoting peace in New Mexico. Its programs include reproductive justice, with doula and birth support, and an Environmental Justice Program. The program page says it works on nuclear abolition, human rights and the rights of the Earth Mother and Sky Father. Its news page lists items on the Frijoles Fire, a Plutonium Pit PEIS toolkit, and Area G and its effects, which are hazards issues rather than land-return work.
 
-The sources here describe no land purchase, return or acreage. The land connection is advocacy on environmental harms and food and healing programs. The board page says a board member is from Kewa Pueblo.
+Its pages describe no land purchase, return or acreage. The land connection is advocacy on environmental harms and food and healing programs. The board page says a board member is from Kewa Pueblo.

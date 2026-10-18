@@ -6,7 +6,7 @@ headline: "In 1825 the Choctaw ceded the eastern part of their 1820 Arkansas lan
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated boundary adjustment prompted by U.S. settlers on the land already granted; no source cited describes duress."
 confidence: "high"
-cautions: "The text does not state the acreage. Whether the United States removed the settlers from the west side of the line was not found in the sources opened here. The Choctaw Nation's own account was not consulted."
+cautions: "The text does not state the acreage. The sources cited do not say whether the United States removed the settlers from the west side of the line."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1825-0211", "title": "Tribal Treaties Database (OSU)", "quote": "it being ascertained that the cession aforesaid embraces a large number of settlers, citizens of the United States"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1825-0211", "title": "Tribal Treaties Database (OSU)", "quote": "this line shall constitute, and remain, the permanent boundary between the United States and the Choctaws"}, {"url": "https://okhistory.org/publications/enc/entry?entry=CH047", "title": "Choctaw (tribe), Encyclopedia of Oklahoma History and Culture", "quote": "Funding for these institutions came from annuity payments for land ceded in an 1825 treaty."}]
 verdict: "fixed"
 ---

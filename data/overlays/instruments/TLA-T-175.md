@@ -6,7 +6,7 @@ headline: "In 1832 Potawatomi bands ceded Indiana land on the Tippecanoe River, 
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession for annuities, goods, reservations and payment of listed debts, with no coercion described."
 confidence: "high"
-cautions: "No acreage is stated for the cession. The treaty page does not describe pressure or later removal, and no source opened here does. Reservation total (80 sections) is the sum of the figures listed in Article 2."
+cautions: "No acreage is stated for the cession. The treaty page does not describe pressure or later removal. Reservation total (80 sections) is the sum of the figures listed in Article 2."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0367", "title": "Tribal Treaties Database (OSU)", "quote": "The United States agree to pay the debts due by the Pottawatimies, agreeably to a schedule hereunto annexed"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0367", "title": "Tribal Treaties Database (OSU)", "quote": "agree to cede to the United States their title and interest to lands in the State of Indiana"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg394.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Pottawatimie"}]
 verdict: "fixed"
 ---

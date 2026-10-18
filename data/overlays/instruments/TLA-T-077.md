@@ -4,9 +4,9 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "A Cherokee convention in 1816 fixed a boundary with former Creek land, allowed U.S. roads and waterways, and promised indemnity."
 how: "treaty_negotiated"
-how_basis: "The OSU text records a boundary convention with road rights and indemnity; no source I read describes coercion."
+how_basis: "The OSU text records a boundary convention with road rights and indemnity; the sources cited do not describe coercion."
 confidence: "high"
-cautions: "Only the treaty text was read. This is mainly a boundary and road convention, so no acreage is involved. The $25,500 indemnity figure is the amount the treaty says U.S. agents ascertained; whether it was paid is not shown in the sources opened."
+cautions: "This summary rests on the treaty text alone. This is mainly a boundary and road convention, so no acreage is involved. The $25,500 indemnity figure is the amount the treaty says U.S. agents ascertained; whether it was paid is not shown in the sources cited."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0125", "title": "Treaty with the Cherokee, 1816 (7 Stat. 139) (Oklahoma State University Tribal Treaties Database)", "quote": "a line shall be run from a point on the west bank of the Coosa river"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0125", "title": "Treaty with the Cherokee, 1816 (7 Stat. 139) (Oklahoma State University Tribal Treaties Database)", "quote": "the citizens of the United States shall freely navigate and use as a highway, all the rivers and waters within the Cherokee nation"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0125", "title": "Treaty with the Cherokee, 1816 (7 Stat. 139) (Oklahoma State University Tribal Treaties Database)", "quote": "The United States agree to indemnify the individuals of the Cherokee nation for losses sustained by them"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0125", "title": "Treaty with the Cherokee, 1816 (7 Stat. 139) (Oklahoma State University Tribal Treaties Database)", "quote": "which losses have been ascertained by the agents of the United States to the amount of twenty-five thousand five hundred dollars"}]
 verdict: "fixed"
 ---

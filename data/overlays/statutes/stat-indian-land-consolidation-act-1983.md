@@ -10,7 +10,7 @@ verdict: "new"
 ---
 Title II of Public Law 97-459, signed January 12, 1983, is the Indian Land Consolidation Act. Its target was fractionation: allotments created under the 1887 Dawes Act had been passed to many heirs over generations, until single parcels were split into tiny shares owned by large numbers of people.
 
-Section 207 was the central rule. It said that "no undivided fractional interest in any tract of trust or restricted land" within a tribe's reservation or jurisdiction "shall descent by intestacy or devise but shall escheat to that tribe" if the interest was 2 percent or less of the tract's acreage and had earned its owner less than $100 in the preceding year. (The Statutes at Large scan spells the word "descedent".) The section provided no payment to the owner.
+Section 207 was the central rule. It said that no "undivided fractional interest in any tract of trust or restricted land" within a tribe's reservation or jurisdiction could pass to heirs by inheritance or will. Instead it "shall escheat to that tribe" if the interest was 2 percent or less of the tract's acreage and had earned its owner less than $100 in the preceding year. The section provided no payment to the owner.
 
 The Supreme Court struck this down in Hodel v. Irving (1987). The case was brought by members of the Oglala Sioux Tribe who were heirs of owners of such interests. The Court held that the original section 207 took property without just compensation, in violation of the Fifth Amendment. Congress then amended section 207. In Babbitt v. Youpee (1997), the Court held that "Amended § 207 does not cure the constitutional deficiency" it had found in the original.
 

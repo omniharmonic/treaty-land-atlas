@@ -6,7 +6,7 @@ headline: "In 1832 the Piankeshaw and Wea ceded their Missouri and Illinois clai
 how: "removal"
 how_basis: "The OSU treaty text exchanges ceded Missouri and Illinois claims for western land and pays for improvements left behind and relocation losses."
 confidence: "high"
-cautions: "The treaty page describes no coercion. Acreage is not stated, only the number of sections. No source opened covers what followed."
+cautions: "The treaty page describes no coercion. Acreage is not stated, only the number of sections. The sources cited do not cover what followed."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-piankashaw-and-wea-1832-0382", "title": "Tribal Treaties Database (OSU)", "quote": "As a full equivalent to the said Piankeshaw tribe for their claim for salt annuities"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-piankashaw-and-wea-1832-0382", "title": "Tribal Treaties Database (OSU)", "quote": "two hundred and fiftv sections of land within the limits of the survey of the lands set apart for the Piankeshaws, Weas, and Peorias"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg410.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Piankeshaw and Wea"}]
 verdict: "fixed"
 ---

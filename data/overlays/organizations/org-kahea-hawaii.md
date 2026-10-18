@@ -15,4 +15,4 @@ KAHEA calls itself "a community-based organization working to improve the qualit
 
 Its site organizes its work under headings such as Sacred Summits, Ocean Protection, Environmental Justice, Land and Cultural Rights, and Functioning Food Systems. The land and cultural rights section covers topics such as natural area reserves and conservation lands.
 
-KAHEA's work is advocacy, not land ownership. The site pages cited here do not say who sits on its board, and its accomplishments page was a placeholder, so no concrete results are documented.
+KAHEA's work is advocacy, not land ownership. Its site does not say who sits on its board, and its accomplishments page is a placeholder.

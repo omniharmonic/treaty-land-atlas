@@ -68,6 +68,7 @@ export const ROLE_PHRASE: Record<string, string> = {
   ceded: 'ceded to the United States',
   ceded_part: 'partly ceded to the United States',
   retroceded: 'taken back by the United States',
+  us_reserved: 'kept by the United States for itself',
   other: 'named in the record',
 };
 /** The kind of change, for color and grouping: did the land stay with the nation or leave it? */
@@ -78,6 +79,7 @@ export const ROLE_KIND: Record<string, 'kept' | 'lost' | 'other'> = {
   ceded: 'lost',
   ceded_part: 'lost',
   retroceded: 'lost',
+  us_reserved: 'lost',
   other: 'other',
 };
 
@@ -188,3 +190,56 @@ export function landTotals(areas: Area[]) {
     all: sum(() => true),
   };
 }
+
+export interface ReturnLocation {
+  id: string;
+  lat: number | null;
+  lng: number | null;
+  /** site, locality, county, region or none: sacred places are placed only at county level */
+  precision: string;
+  place: string;
+  basis_url: string;
+  note: string;
+}
+
+/** Where each land return is (crosswalks/return-locations.csv, one sourced row per return). */
+export function returnLocations(): Map<string, ReturnLocation> {
+  const g = globalThis as { __returnLocations?: Map<string, ReturnLocation> };
+  if (g.__returnLocations) return g.__returnLocations;
+  const csv = readFileSync(join(process.cwd(), 'crosswalks', 'return-locations.csv'), 'utf8');
+  const parse = (line: string) =>
+    [...line.matchAll(/("([^"]|"")*"|[^,]*)(,|$)/g)]
+      .map((m) => m[1]!.replace(/^"|"$/g, '').replace(/""/g, '"'))
+      .slice(0, 7);
+  const [head, ...rows] = csv.trim().split('\n');
+  const keys = parse(head!);
+  const num = (v: string) => (v !== '' && Number.isFinite(Number(v)) ? Number(v) : null);
+  const out = new Map<string, ReturnLocation>();
+  for (const r of rows) {
+    const o = Object.fromEntries(parse(r).map((v, i) => [keys[i], v])) as Record<string, string>;
+    out.set(o['id']!, {
+      id: o['id']!,
+      lat: num(o['lat'] ?? ''),
+      lng: num(o['lng'] ?? ''),
+      precision: o['precision'] ?? 'none',
+      place: o['place'] ?? '',
+      basis_url: o['basis_url'] ?? '',
+      note: o['note'] ?? '',
+    });
+  }
+  return (g.__returnLocations = out);
+}
+
+/** Plain status of a land return or campaign, and whether land has actually changed hands. */
+export const RETURN_STATUS: Record<string, { word: string; done: boolean }> = {
+  completed: { word: 'Returned', done: true },
+  'completed-pending-deed': { word: 'Returned, deed pending', done: true },
+  'program-concluded': { word: 'Program ended', done: true },
+  'in-progress': { word: 'Under way', done: false },
+  pending: { word: 'Under way', done: false },
+  'program-ongoing': { word: 'Ongoing program', done: false },
+  'ongoing-claim': { word: 'Claim, not returned', done: false },
+  contested: { word: 'Contested', done: false },
+  blocked: { word: 'Blocked', done: false },
+  'headline-only': { word: 'Reported, not yet confirmed', done: false },
+};

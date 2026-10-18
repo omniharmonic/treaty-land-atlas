@@ -6,7 +6,7 @@ headline: "In 1831 the Menominee set aside land for New York tribes and ceded ab
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated exchange of land for payments, though it also notes Menominee protest over the New York claims."
 confidence: "high"
-cautions: "Acreage figures are the treaty's own estimates. No secondary source was opened to describe later events. The Menominee nation's own account was not consulted."
+cautions: "Acreage figures are the treaty's own estimates."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1831-0319", "title": "Tribal Treaties Database (OSU)", "quote": "they neither sold nor received any value, for the land claimed by these tribes"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1831-0319", "title": "Tribal Treaties Database (OSU)", "quote": "the whole comprising by estimation, two million five hundred thousand acres"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg342.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Menomonee"}]
 verdict: "fixed"
 ---

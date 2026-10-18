@@ -15,4 +15,4 @@ A 1997 Senate Committee on Indian Affairs report shows what followed for one nat
 
 The report says Congress later passed separate laws. The Three Affiliated Tribes and Standing Rock Sioux Tribe Equitable Compensation Act of 1992 set up trust funds of $149.2 million and $90.6 million, and the Crow Creek Sioux Tribe act of 1996 set one of $27.5 million. In each case, it says, Congress found earlier compensation "significantly less than the value of the actual damages."
 
-North Dakota's State Historical Society says tribes "had fewer options" and were paid for their lands, with some substitute lands offered.
+North Dakota's State Historical Society says tribes "had fewer options": they relied on treaty rights and the government's trust duty, but the federal government "did not help the tribes avoid the taking." Instead they were paid for their lands, with some substitute lands offered.

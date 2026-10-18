@@ -13,5 +13,3 @@ The end of treaty-making came as a proviso inside a spending bill. In the Indian
 A second proviso protects the past: nothing in the Act should "invalidate or impair the obligation of any treaty heretofore lawfully made and ratified with any such Indian nation or tribe." The provision is codified as 25 U.S.C. 71. A later amendment in 1988 added a sentence about state taxes on income from treaty-secured fishing rights.
 
 The National Archives says that before 1871, treaties with tribes were subject to Senate approval, like treaties with foreign governments, and that the Act "ended formal treaty making with American Indian nations and the Senate's role in ratifying those treaties." It adds that in 1871 "the House of Representatives ceased recognition of individual tribes" as independent nations with whom the United States could contract by treaty. After 1871, the Archives says, the United States made agreements with tribes through Acts of Congress, Executive Orders, and Executive Agreements.
-
-The statute does not say why Congress added the rider, and this story does not explain its motives.

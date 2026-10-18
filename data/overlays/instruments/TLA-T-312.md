@@ -7,7 +7,7 @@ note: "The speech quoted comes from an older translation recorded by a local cou
 how: "treaty_under_pressure"
 how_basis: "The Franklin County history portal says the U.S. government initiated the treaty to shrink the reservation and records a Sac and Fox leader stating he would be compelled to sign under protest; the treaty also provides for paying the Indians' debts from land sales."
 confidence: "medium"
-cautions: "The speech is recorded by a local county history portal from an older translation, and I did not see its original source. Royce numbers 419 and 494 were not checked. Acreage: The treaty estimates the retained part at about 153,600 acres."
+cautions: "The speech is recorded by a local county history portal, which says it was translated by John Goodell; the portal does not name an original published source. The treaty estimates the retained part at about 153,600 acres."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1859-0796", "title": "Treaty with the Sauk and Foxes, 1859 (Oklahoma State University Tribal Treaties Database)", "quote": "to contain about one hundred and fifty-three thousand and six hundred acres"}, {"url": "https://www.franklincokshistory.org/?p=439", "title": "Native Americans in Franklin County area: Emigrants, Franklin County Kansas History Portal", "quote": "initiated by the US Government to decrease the size of the Sac and Fox reservation"}, {"url": "https://www.franklincokshistory.org/?p=439", "title": "Native Americans in Franklin County area: Emigrants, Franklin County Kansas History Portal", "quote": "I sign under protest, knowing in my own heart that there is no good in it for the Indians."}]
 verdict: "ok"
 ---

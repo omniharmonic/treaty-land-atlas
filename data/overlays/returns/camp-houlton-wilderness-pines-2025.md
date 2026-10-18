@@ -11,7 +11,7 @@ verdict: "new"
 ---
 The Houlton Band of Maliseet Indians has acquired a 1,327-acre parcel along the North Branch of the Meduxnekeag River in Monticello, Maine. The County, an Aroostook County newspaper, reported on February 21, 2025 that the land was returned to the Maliseet people after a two-year combined effort by the tribe and several conservancy groups. The tribe's real estate director, Susan Young, said in a release that the parcel significantly adds to the tribe's holdings and is the largest of its woodlots.
 
-The tribe worked for two years with First Light Learning Journey, The Nature Conservancy and The Conservation Fund. The County says the purchase is part of a larger effort in Maine to restore access and ownership of tribal lands to the Wabanaki people. The Bangor Daily News later counted it among the Tributary Land Returns, an eight-year effort to return 50,000 acres to the Wabanaki tribes. The price was not stated in the sources read.
+The tribe worked for two years with First Light Learning Journey, The Nature Conservancy and The Conservation Fund. The County says the purchase is part of a larger effort in Maine to restore access and ownership of tribal lands to the Wabanaki people. The Bangor Daily News later counted it among the Tributary Land Returns, an eight-year effort to return 50,000 acres to the Wabanaki tribes.
 
 The Band says what it plans. Initial plans are to make the parcel available for more hunting, gathering and cultural activities for tribal citizens, and to give its campground access to wild, undeveloped areas. Long-term plans include timber management for forest health and potentially tribal income. The tribe plans to apply to the Bureau of Indian Affairs to convert the parcel to trust land.
 
