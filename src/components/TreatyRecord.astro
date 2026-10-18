@@ -69,7 +69,10 @@ const heroFills = Object.fromEntries(
     .filter((a) => a.role)
     .map((a) => [a.id, ROLE_KIND[a.role!] === 'lost' ? '#9d6b4b' : '#6f8a5a']),
 );
-const law = experience.related.filter((l) => lawKinds[l.type]);
+// cases, laws and agreements with a date already sit in "What happened next"; this section keeps
+// what the timeline does not show (the legal doctrines, and anything without a year)
+const inTimeline = new Set(experience.events.map((e) => e.id));
+const law = experience.related.filter((l) => lawKinds[l.type] && !inTimeline.has(l.id));
 const notes = cleanTags(n.notes);
 const suggested = experience.nations.some((x) => x.suggested);
 const fullMap = areas[0] ? `/map/#sel=${encodeURIComponent(areas[0].id)}` : '/map/';
@@ -125,7 +128,7 @@ const landLabel = `Map of the land in this treaty’s record: ${areas.length} ar
     <a href="#story">What happened</a>
     {areas.length > 0 && <a href="#land">The land</a>}
     <a href="#after">What happened next</a>
-    {law.length > 0 && <a href="#law">Courts and laws</a>}
+    {law.length > 0 && <a href="#law">The law behind it</a>}
     <a href="#work">Who is doing the work</a>
     <a href="#evidence">Sources</a>
   </nav>
@@ -223,7 +226,11 @@ const landLabel = `Map of the land in this treaty’s record: ${areas.length} ar
 
   {law.length > 0 && (
     <section id="law" class="law-section" aria-labelledby="law-h">
-      <h2 id="law-h">Courts and laws</h2>
+      <h2 id="law-h">The law behind it</h2>
+      <p class="section-lede">
+        The legal ideas behind the decisions, and related records without a date. Court cases and
+        laws with a date are in what happened next, above.
+      </p>
       <ul class="law">
         {law.map((l) => (
           <li>
@@ -248,7 +255,7 @@ const landLabel = `Map of the land in this treaty’s record: ${areas.length} ar
   <section id="evidence" class="evidence" aria-labelledby="evidence-h">
     <div>
       <h2 id="evidence-h">Sources</h2>
-      <Sources id={n.id} />
+      <Sources id={n.id} titled={false} />
       <RecordCorrections {n} />
       {notes.text && (
         <details>
@@ -486,6 +493,34 @@ const landLabel = `Map of the land in this treaty’s record: ${areas.length} ar
   }
   .areas li :global(.land) {
     border-radius: 0;
+  }
+  @media (max-width: 600px) {
+    .areas {
+      gap: 12px;
+    }
+    .areas li {
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr);
+      align-items: start;
+    }
+    .areas li :global(.land) {
+      height: 100%;
+    }
+    .areas li :global(.inset) {
+      display: none;
+    }
+    .areas li > div {
+      padding: 12px 14px;
+    }
+    .areas .sum {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .law li {
+      padding: 14px 16px;
+    }
   }
   .areas li > div {
     padding: 16px 18px 18px;

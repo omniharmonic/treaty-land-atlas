@@ -311,23 +311,41 @@ const here = Astro.url.pathname;
     .wordmark :global(.brand-icon) {
       width: 24px;
     }
+    /* one row that scrolls sideways, edge to edge, instead of wrapping onto a second line */
+    nav {
+      margin: 0 calc(var(--gutter, 16px) * -1);
+      -webkit-mask-image: linear-gradient(to right, #000 85%, transparent);
+      mask-image: linear-gradient(to right, #000 85%, transparent);
+    }
     nav ul {
-      gap: 0 16px;
+      flex-wrap: nowrap;
+      gap: 0 18px;
       justify-content: flex-start;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0 calc(var(--gutter, 16px) + 24px) 0 var(--gutter, 16px);
+    }
+    nav ul::-webkit-scrollbar {
+      display: none;
+    }
+    nav li {
+      flex: none;
     }
     nav a {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
+      padding: 10px 0;
     }
     .bar {
-      padding-top: 16px;
-      padding-bottom: 12px;
+      padding-top: 12px;
+      padding-bottom: 4px;
+      row-gap: 4px;
     }
     .footer-intro {
       align-items: flex-start;
       flex-direction: column;
     }
     .site-footer {
-      padding-bottom: 110px;
+      padding-bottom: 40px;
     }
   }
   .bleed .stage-note {

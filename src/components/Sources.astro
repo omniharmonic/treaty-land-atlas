@@ -3,8 +3,10 @@ import { node, sourcesOf } from '../lib/graph';
 
 interface Props {
   id: string;
+  /** false when the page already has its own "Sources" heading */
+  titled?: boolean;
 }
-const { id } = Astro.props;
+const { id, titled = true } = Astro.props;
 const tierWord: Record<string, string> = {
   primary_record: 'primary record',
   authoritative_secondary: 'reference work',
@@ -58,7 +60,9 @@ const rows = sourcesOf(id).filter(({ source }) =>
 
 {rows.length + extraUnique.length > 0 ? (
   <section aria-labelledby={`src-${id}`}>
-    <h2 id={`src-${id}`}>Sources</h2>
+    <h2 id={`src-${id}`} class:list={[{ 'visually-hidden': !titled }]}>
+      Sources
+    </h2>
     <ol class="sources">
       {rows.map(({ edge, source }) => (
         <li>
@@ -85,7 +89,7 @@ const rows = sourcesOf(id).filter(({ source }) =>
   </section>
 ) : (
   <section>
-    <h2>Sources</h2>
+    <h2 class:list={[{ 'visually-hidden': !titled }]}>Sources</h2>
     <p class="muted">
       No source is linked to this record yet. That is a gap we are working to close.
     </p>
@@ -101,6 +105,7 @@ const rows = sourcesOf(id).filter(({ source }) =>
     overflow-wrap: anywhere;
   }
   .tier {
+    white-space: nowrap;
     font-size: var(--s-2);
     color: var(--ink-3);
     margin-left: var(--space-2);

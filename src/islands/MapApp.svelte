@@ -552,13 +552,20 @@
         map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
         map.addControl(
           new AttributionControl({
-            compact: false,
+            // on a phone the credits fold behind the (i) button instead of covering the map
+            compact: window.innerWidth < 720,
             customAttribution:
               'Early release, <a href="/about/">not yet reviewed</a> by Native nations or legal counsel. Cessions: USDA Forest Service after C. C. Royce (1899), modified. Territories: <a href="https://native-land.ca">Native Land Digital</a>, live, not stored. Today: US Census Bureau. Basemap: <a href="https://openfreemap.org">OpenFreeMap</a> © <a href="https://openmaptiles.org">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
           }),
         );
         map.on('load', () => {
           if (!map) return;
+          // a compact attribution starts unfolded; on a phone keep it folded until asked
+          if (window.innerWidth < 720)
+            container?.querySelectorAll('.maplibregl-ctrl-attrib').forEach((el) => {
+              el.classList.remove('maplibregl-compact-show');
+              el.removeAttribute('open');
+            });
           applyState(map);
           map.addSource('cessions', { type: 'geojson', data: cessions, promoteId: 'id' });
           map.addSource('today', { type: 'geojson', data: today });
@@ -1107,6 +1114,13 @@
     border-radius: 10px;
     margin-bottom: 16px;
   }
+  /* the map is right above on a phone: the outline only needs to say which shape */
+  @media (max-width: 899px) {
+    .outline {
+      aspect-ratio: 5 / 2;
+      margin-bottom: 12px;
+    }
+  }
   .outline path {
     stroke-width: var(--sw);
     stroke-linejoin: round;
@@ -1458,7 +1472,7 @@
       bottom: auto;
     }
     .year {
-      font-size: clamp(2.6rem, 14vw, 4rem);
+      font-size: clamp(2.2rem, 11vw, 3.2rem);
     }
     .chapter-title {
       font-size: var(--s0);

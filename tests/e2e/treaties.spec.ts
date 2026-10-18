@@ -134,13 +134,19 @@ test('reader notes show, research notes wait behind a toggle, and corrections ke
   await expect(page.locator('.record-corrections q').first()).toBeVisible();
 });
 
-test('courts and laws connected to a treaty are listed with what each did', async ({ page }) => {
+test('courts and laws connected to a treaty are listed once, with what each did', async ({
+  page,
+}) => {
   await page.goto('/treaties/tla-t-369/');
-  const law = page.locator('#law');
+  const after = page.locator('#after');
+  const sioux = after.getByRole('link', {
+    name: 'United States v. Sioux Nation of Indians',
+    exact: true,
+  });
+  await expect(sioux).toBeVisible();
   await expect(
-    law.getByRole('link', { name: 'United States v. Sioux Nation of Indians', exact: true }),
-  ).toBeVisible();
-  await expect(law.locator('li').first().locator('p').last()).not.toBeEmpty();
+    page.locator('#law').getByText('United States v. Sioux Nation of Indians'),
+  ).toHaveCount(0);
 });
 
 test('older event links still land on their step, on a phone', async ({ page }) => {

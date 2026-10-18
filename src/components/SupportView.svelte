@@ -143,6 +143,42 @@
     border-radius: 10px;
     background: var(--ground);
   }
+  /* on a phone the organizations read as a list, not a stack of boxes */
+  @media (max-width: 600px) {
+    .support:not(.compact) {
+      padding: 20px 18px;
+    }
+    .orgs {
+      gap: 0;
+    }
+    .orgs li {
+      gap: 4px;
+      padding: 14px 0;
+      border: 0;
+      border-bottom: 1px solid var(--rule);
+      border-radius: 0;
+      background: none;
+    }
+    .orgs li:last-child {
+      border-bottom: 0;
+    }
+    .name {
+      font-size: var(--s0);
+    }
+    .focus {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .today li {
+      padding: 4px 12px;
+      font-size: var(--s-1);
+    }
+    h3 {
+      margin: 20px 0 4px;
+    }
+  }
   .name {
     font-size: var(--s1);
     line-height: 1.25;
