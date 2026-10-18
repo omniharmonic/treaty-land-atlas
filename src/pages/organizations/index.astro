@@ -1,11 +1,18 @@
 ---
 import Base from '../../layouts/Base.astro';
 import IndexList from '../../components/IndexList.astro';
+import OrganizationCard from '../../components/OrganizationCard.astro';
+import { graph } from '../../lib/graph';
+import { supportIndex } from '../../lib/support';
 import { byType } from '../../lib/graph';
 import { href } from '../../lib/href';
 
 const all = byType('Organization').sort((a, b) => a.label.localeCompare(b.label));
 const listed = all.filter((n) => n.confidence !== 'low' && n['display_eligible'] !== false);
+const g = graph();
+const ix = supportIndex([...g.nodes.values()], g.edges);
+const actionable = listed.filter((n) => ix.orgs[n.id]);
+const additional = listed.filter((n) => !ix.orgs[n.id]);
 const other = all.filter((n) => !listed.includes(n));
 ---
 
@@ -14,7 +21,8 @@ const other = all.filter((n) => !listed.includes(n));
   description="Native-led land trusts, tribal programs and allied groups working on land return."
 >
   <div class="intro">
-    <h1>Organizations</h1>
+    <p class="eyebrow">People moving the work forward</p>
+    <h1>Land. Rights. Futures.</h1>
     <p class="lede">
       Tribal programs, Native-led land trusts and allied groups working on land return.
     </p>
@@ -24,14 +32,73 @@ const other = all.filter((n) => !listed.includes(n));
       <a href={href('/support/policy/')}>donation integrity policy</a>.
     </p>
   </div>
-  <h2>Checked ({listed.length})</h2>
-  <IndexList items={listed} note={(n) => (n['focus'] as string)?.slice(0, 110) ?? null} />
+  <div class="directory-heading">
+    <h2>Connect with the work</h2>
+    <a href={href('/where/')}>
+      Find organizations near you <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <div class="org-grid">
+    {actionable.map((n) => (
+      <OrganizationCard org={ix.orgs[n.id]!} />
+    ))}
+  </div>
+  {additional.length > 0 && (
+    <>
+      <h2>Other checked organizations and programs</h2>
+      <IndexList items={additional} note={(n) => (n['focus'] as string)?.slice(0, 110) ?? null} />
+    </>
+  )}
   <h2>Not yet checked well enough to link ({other.length})</h2>
   <IndexList items={other} />
 </Base>
 
 <style>
   .intro {
-    padding-top: var(--space-6);
+    padding: 64px 0 24px;
+  }
+  .intro h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    letter-spacing: -0.06em;
+  }
+  .intro > p {
+    max-width: 65ch;
+  }
+  .eyebrow {
+    font-size: 0.85rem;
+    color: var(--moss);
+  }
+  .directory-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .directory-heading h2 {
+    margin: 0;
+    letter-spacing: -0.035em;
+  }
+  .directory-heading a {
+    font-size: 0.85rem;
+  }
+  .org-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  @media (max-width: 1000px) {
+    .org-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 650px) {
+    .org-grid {
+      grid-template-columns: 1fr;
+    }
+    .directory-heading {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 </style>

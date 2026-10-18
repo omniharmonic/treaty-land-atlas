@@ -1,4 +1,4 @@
-// MCP server for the Treaty Land Atlas: lets an AI assistant talk with someone about the land where
+// MCP server for the Living Law, Living Land: lets an AI assistant talk with someone about the land where
 // they live, the treaties that took it, the promises broken, and the people restoring it.
 // Read-only. It reads the atlas's published data (public, CC BY 4.0) and, for homelands, asks
 // Native Land Digital live; nothing a user sends is stored or logged.
@@ -129,12 +129,12 @@ function describe(
     );
   lines.push(`Full page: ${SITE}/where/#at=${r.lat},${r.lng}`);
   lines.push(
-    'Source: Treaty Land Atlas (landback.land), CC BY 4.0. Early release; not reviewed by nations or lawyers; not legal advice.',
+    'Source: Living Law, Living Land (landback.land), CC BY 4.0. Early release; not reviewed by nations or lawyers; not legal advice.',
   );
   return lines.join('\n');
 }
 
-export const INSTRUCTIONS = `The Treaty Land Atlas (landback.land) is a public, sourced record of United States treaties with Native nations, the land the United States recorded as ceded (C. C. Royce's 1899 maps), treaty violations, court cases, Native lands today, and the organizations restoring land and law.
+export const INSTRUCTIONS = `Living Law, Living Land (landback.land) is a public, sourced record of United States treaties with Native nations, the land the United States recorded as ceded (C. C. Royce's 1899 maps), treaty violations, court cases, Native lands today, and the organizations restoring land and law.
 
 When someone asks about where they live:
 1. Call whose_land. Lead with learning: whose homelands these are, how and when the land was taken, the promises broken. Quote the atlas's wording and give its links; do not add facts the tools did not return.

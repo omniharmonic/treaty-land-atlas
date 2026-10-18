@@ -4,7 +4,30 @@ import '@fontsource/atkinson-hyperlegible-next/600.css';
 import '@fontsource/noto-sans-cherokee/400.css';
 import '@fontsource/noto-sans-osage/400.css';
 import '../styles/global.css';
+import BrandMark from '../components/BrandMark.astro';
 import { href } from '../lib/href';
+import { graph, pathFor, outgoing, incoming, type Node } from '../lib/graph';
+import { concerns, supportFor, supportIndex, type SupportIndex } from '../lib/support';
+const supportGraph = graph();
+const support = ((globalThis as { __supportIx?: SupportIndex }).__supportIx ??= supportIndex(
+  [...supportGraph.nodes.values()],
+  supportGraph.edges,
+));
+const recordsByPath = ((globalThis as { __recordsByPath?: Map<string, Node> }).__recordsByPath ??=
+  new Map(
+    [...supportGraph.nodes.values()].flatMap((n) => {
+      const path = pathFor(n);
+      return path ? [[href(path), n] as [string, Node]] : [];
+    }),
+  ));
+const currentRecord = recordsByPath.get(Astro.url.pathname);
+const related = currentRecord
+  ? supportFor(support, concerns(currentRecord.id, currentRecord.type, outgoing, incoming))
+  : null;
+const connected = related ? [...related.direct, ...related.nearby] : [];
+const supportOrgs = [...new Set([...connected, ...support.national])]
+  .slice(0, 4)
+  .map((id) => support.orgs[id]!);
 
 interface Props {
   title: string;
@@ -20,15 +43,13 @@ const {
   noindex = false,
 } = Astro.props;
 const stage = process.env.SITE_STAGE ?? 'preview';
-const pageTitle = title === 'Treaty Land Atlas' ? title : `${title}, Treaty Land Atlas`;
+const pageTitle = title === 'Living Law, Living Land' ? title : `${title}, Living Law, Living Land`;
 const nav = [
   ['/where/', 'Where you live'],
   ['/map/', 'Map'],
   ['/nations/', 'Nations'],
   ['/treaties/', 'Treaties'],
-  ['/law/', 'Law'],
   ['/returns/', 'Land returns'],
-  ['/story/', 'The story'],
   ['/search/', 'Search'],
 ];
 const here = Astro.url.pathname;
@@ -53,8 +74,8 @@ const here = Astro.url.pathname;
     <link rel="icon" href={href('/favicon.svg')} type="image/svg+xml" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta name="theme-color" content="#edf0e8" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#141c17" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: dark)" />
     <slot name="head" />
   </head>
   <body class={bleed ? 'bleed' : ''}>
@@ -64,7 +85,12 @@ const here = Astro.url.pathname;
     <header class="site-header">
       <div class="frame bar">
         <a class="wordmark" href={href('/')}>
-          Treaty Land Atlas
+          <BrandMark class="brand-icon" />
+          <span class="brand-name">
+            Living Law,
+            <br />
+            Living Land
+          </span>
         </a>
         <nav aria-label="Main">
           <ul>
@@ -80,25 +106,80 @@ const here = Astro.url.pathname;
             ))}
           </ul>
         </nav>
+        <a class="header-support" href={href('/organizations/')}>
+          Support land rights <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </header>
-    <div class={bleed ? 'frame bleed-note' : 'frame'}>
-      <p class="stage-note sans">
-        Early release. Nothing here has been reviewed by a Native nation or a lawyer yet. Every
-        record shows its sources and how sure we are. <a href={href('/about/')}>What that means</a>
+    <div class="release-strip frame">
+      <p>
+        Independent research, open to correction.{' '}
+        <a href={href('/about/')}>
+          Early release · Not yet reviewed by Native nations or legal counsel
+        </a>
       </p>
     </div>
     <main id="main" class={bleed ? '' : 'frame'}>
       <slot />
     </main>
+    <details class="support-dock">
+      <summary>
+        Support land rights <span aria-hidden="true">+</span>
+      </summary>
+      <div class="support-popover">
+        <p class="dock-title">History is still being made.</p>
+        <p>
+          {connected.length
+            ? 'Organizations connected to this record, followed by national Native-led defense.'
+            : 'Support Native-led land and legal defense.'}{' '}
+          Visit each organization to learn what support it asks for.
+        </p>
+        {supportOrgs.map((o) => (
+          <a class="dock-org" href={o.website ?? href(o.path ?? '/support/')} rel="noopener">
+            <span>{o.label}</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        ))}
+        <a class="dock-local" href={href('/where/')}>
+          Find the organizations connected to your place
+        </a>
+        <a class="dock-local" href={href('/organizations/')}>
+          Explore all organizations
+        </a>
+      </div>
+    </details>
     {!bleed && (
       <footer class="site-footer">
         <div class="frame">
+          <div class="footer-intro">
+            <p class="footer-title">
+              The record matters.
+              <br />
+              What happens next does, too.
+            </p>
+            <a href={href('/where/')}>
+              Start with where you live <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p class="stage-note sans">
+            Early release. Nothing here has been reviewed by a Native nation or a lawyer yet. Every
+            record shows its sources and how sure we are.{' '}
+            <a href={href('/about/')}>What that means</a>
+          </p>
           <p>
             Created by Benjamin Life (@omniharmonic). Text and data CC BY 4.0, code MIT.{' '}
             <a href={href('/methods/sources/')}>Sources and credits</a>.
           </p>
           <ul class="footer-links sans">
+            <li>
+              <a href={href('/law/')}>Treaty law</a>
+            </li>
+            <li>
+              <a href={href('/story/')}>The story</a>
+            </li>
+            <li>
+              <a href={href('/organizations/')}>Organizations</a>
+            </li>
             <li>
               <a href={href('/claim/')}>For Native nations: claim or correct a page</a>
             </li>
@@ -127,25 +208,47 @@ const here = Astro.url.pathname;
   </body>
 </html>
 
+<script>
+  const dock = document.querySelector<HTMLDetailsElement>('.support-dock');
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && dock?.open) {
+      dock.open = false;
+      dock.querySelector('summary')?.focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (dock?.open && event.target instanceof Node && !dock.contains(event.target))
+      dock.open = false;
+  });
+</script>
+
 <style>
   .site-header {
     border-bottom: 1px solid var(--rule);
   }
+  .site-header {
+    background: var(--sheet);
+  }
   .bar {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: var(--space-2) var(--space-5);
-    padding-top: var(--space-4);
-    padding-bottom: var(--space-3);
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   .wordmark {
-    font-family: var(--serif);
-    font-size: var(--s1);
+    font-family: var(--sans);
+    font-size: 1rem;
     color: var(--ink);
     text-decoration: none;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.035em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    font-weight: 600;
   }
   nav ul {
     display: flex;
@@ -179,6 +282,117 @@ const here = Astro.url.pathname;
     margin-bottom: 0;
     max-width: none;
   }
+  .release-strip p {
+    max-width: none;
+    font-size: 0.7rem;
+    margin: 10px 0;
+    color: var(--ink-2);
+  }
+  .release-strip a {
+    color: var(--ink-2);
+  }
+  .brand-name {
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  .wordmark :global(.brand-icon) {
+    width: 32px;
+    height: 32px;
+    color: var(--moss);
+  }
+  .header-support {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 16px;
+    background: var(--moss);
+    color: var(--on-moss);
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 0.85rem;
+  }
+  .header-support:hover {
+    background: var(--moss-deep);
+  }
+  .support-dock {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 30;
+    font-size: 0.9rem;
+  }
+  .support-dock summary {
+    list-style: none;
+    background: var(--moss);
+    color: var(--on-moss);
+    padding: 14px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 24px #454b3526;
+    cursor: pointer;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .support-dock summary::-webkit-details-marker {
+    display: none;
+  }
+  .support-dock summary span {
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+  .support-dock[open] summary span {
+    transform: rotate(45deg);
+  }
+  .support-popover {
+    position: absolute;
+    bottom: 64px;
+    right: 0;
+    width: min(390px, calc(100vw - 32px));
+    padding: 28px;
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    background: var(--sheet);
+    box-shadow: 0 12px 50px #454b3520;
+    max-height: 70vh;
+    overflow: auto;
+  }
+  .support-popover > p {
+    font-size: 0.85rem;
+    color: var(--ink-2);
+  }
+  .support-popover .dock-title {
+    font-size: 1.7rem;
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+  }
+  .dock-org {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+    text-decoration: none;
+  }
+  .dock-local {
+    display: block;
+    margin-top: 16px;
+    font-size: 0.8rem;
+  }
+  .footer-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+  .footer-title {
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0;
+  }
   .site-footer {
     margin-top: var(--space-8);
     padding: var(--space-6) 0 var(--space-7);
@@ -192,6 +406,54 @@ const here = Astro.url.pathname;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2) var(--space-5);
+  }
+  @media (max-width: 1100px) {
+    .bar {
+      gap: 12px 24px;
+    }
+    nav {
+      order: 3;
+      width: 100%;
+    }
+    nav ul {
+      justify-content: space-between;
+    }
+  }
+  @media (max-width: 600px) {
+    .header-support {
+      font-size: 0.75rem;
+      padding: 8px 10px;
+      gap: 8px;
+    }
+    .wordmark {
+      font-size: 0.95rem;
+      gap: 8px;
+    }
+    .wordmark :global(.brand-icon) {
+      width: 24px;
+    }
+    nav ul {
+      gap: 0 16px;
+      justify-content: flex-start;
+    }
+    nav a {
+      font-size: 0.8rem;
+    }
+    .bar {
+      padding-top: 16px;
+      padding-bottom: 12px;
+    }
+    .support-dock {
+      right: 16px;
+      bottom: 16px;
+    }
+    .footer-intro {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .site-footer {
+      padding-bottom: 110px;
+    }
   }
   .bleed .stage-note {
     margin: var(--space-1) 0;

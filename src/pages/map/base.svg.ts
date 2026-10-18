@@ -4,6 +4,6 @@ import { locatorMap } from '../../lib/svgmap';
 
 export function GET() {
   const { width, height, base } = locatorMap([]);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}"><path d="${base}" fill="none" stroke="#8f9c88" stroke-width="0.6" stroke-linejoin="round"/></svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}"><path d="${base}" fill="none" stroke="#9d9f8e" stroke-width="0.6" stroke-linejoin="round"/></svg>`;
   return new Response(svg, { headers: { 'content-type': 'image/svg+xml' } });
 }

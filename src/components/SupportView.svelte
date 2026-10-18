@@ -71,28 +71,35 @@
 
 <style>
   .support {
-    margin: var(--space-6) 0 0;
-    padding: var(--space-4) var(--space-4) var(--space-3);
-    background: color-mix(in srgb, var(--held) 10%, var(--sheet));
-    border-left: 4px solid var(--held);
+    margin: 48px 0 0;
+    padding: 30px;
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    background: var(--sheet);
   }
   h2 {
-    font-family: var(--serif);
-    font-size: var(--s2);
-    margin: 0 0 var(--space-2);
+    font-family: var(--sans);
+    font-size: var(--s3);
+    letter-spacing: -0.035em;
+    margin: 0 0 16px;
+  }
+  .compact {
+    padding: 20px;
+    margin-top: 24px;
   }
   .compact h2 {
     font-size: var(--s1);
   }
   h3 {
     font-size: var(--s-1);
-    font-weight: 600;
+    font-weight: 400;
     color: var(--ink-2);
-    margin: var(--space-4) 0 var(--space-1);
+    margin: 28px 0 12px;
   }
   .lead {
-    margin: 0 0 var(--space-1);
+    margin: 0 0 12px;
     font-size: var(--s-1);
+    color: var(--ink-2);
   }
   ul {
     list-style: none;
@@ -102,29 +109,53 @@
   .today {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-1) var(--space-4);
-    font-size: var(--s0);
+    gap: 8px 16px;
+    font-size: var(--s-1);
+  }
+  .orgs {
+    display: grid;
+    gap: 12px;
   }
   .orgs li {
     display: grid;
-    gap: 1px;
-    padding: var(--space-2) 0;
-    border-top: 1px solid color-mix(in srgb, var(--held) 30%, transparent);
+    gap: 7px;
+    padding: 20px;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    background: var(--ground);
   }
   .name {
-    font-size: var(--s0);
-    font-weight: 600;
+    font-size: var(--s1);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
   }
-  .kind,
-  .focus {
+  .name a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .name a:hover {
+    color: var(--moss);
+    text-decoration: underline;
+  }
+  .kind {
     font-size: var(--s-2);
+    color: var(--moss);
+  }
+  .focus {
+    font-size: var(--s-1);
     color: var(--ink-2);
   }
   .acts {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-1) var(--space-4);
+    gap: 8px 20px;
     font-size: var(--s-1);
+    margin-top: 8px;
+  }
+  .acts a {
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
   }
   .give {
     font-weight: 600;
@@ -133,6 +164,17 @@
   .fine {
     font-size: var(--s-2);
     color: var(--ink-2);
-    margin: var(--space-3) 0 0;
+    margin: 24px 0 0;
+  }
+  .compact .name {
+    font-size: var(--s0);
+  }
+  .compact .orgs li {
+    padding: 14px;
+  }
+  @media (max-width: 600px) {
+    .support {
+      padding: 20px;
+    }
   }
 </style>

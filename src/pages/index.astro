@@ -1,474 +1,804 @@
 ---
 import Base from '../layouts/Base.astro';
+import OrganizationCard from '../components/OrganizationCard.astro';
 import { byType, graph, pathFor, year } from '../lib/graph';
 import { href } from '../lib/href';
 import { homeMap } from '../lib/svgmap';
 import { supportIndex } from '../lib/support';
-
 const art = homeMap();
-const SPAN = 8000; // ms for 1784 to 1894
-const cessions = byType('GeoFeature').length;
-const nations = byType('Nation').length;
 const treaties = byType('Instrument').length;
+const nations = byType('Nation').length;
 const returns = byType('Campaign')
   .filter((n) => String(n['campaign_status']).startsWith('completed') && n.confidence !== 'low')
   .sort((a, b) => (year(b) ?? 0) - (year(a) ?? 0))
-  .slice(0, 4);
-const acres = (n: (typeof returns)[number]) =>
-  n['acres'] ? `${Number(n['acres']).toLocaleString('en-US')} acres` : null;
+  .slice(0, 3);
 const g = graph();
 const ix = supportIndex([...g.nodes.values()], g.edges);
 const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
 ---
 
 <Base
-  title="Treaty Land Atlas"
-  description="Type an address and learn whose homelands you live on, how the United States took that land, the treaty promises broken, and who is working to restore it."
+  title="Living Law, Living Land"
+  description="Find the treaty history of where you live, follow the record of land loss, and connect with organizations working for Indigenous land rights today."
 >
   <section class="hero" aria-labelledby="ask">
-    <h1 id="ask">Whose land are you on?</h1>
-    <figure class="land" id="land" aria-labelledby="land-cap">
-      <div class="stage">
-        <svg
-          viewBox={`0 0 ${art.width} ${art.height}`}
-          role="img"
-          aria-label={`Map of the lower 48 states. Green land still held by Native nations drains year by year as ${cessions} cessions are recorded, 1784 to 1894; then today's reservations and trust lands appear.`}
-        >
-          {art.years.map(({ y, d }) => (
-            <path
-              class="yr"
-              d={d}
-              style={`--d: ${Math.round(((Math.min(y, 1895) - 1784) / (1894 - 1784)) * SPAN)}ms`}
-            />
-          ))}
-          <path class="today" d={art.lands} />
-        </svg>
-        <p class="clock" aria-hidden="true">
-          <span id="clock-year">1784</span>
-        </p>
-      </div>
-      <figcaption id="land-cap" class="sans">
-        <span class="key">
-          <i class="k-held"></i>Held by Native nations, by the United States’ own record
-        </span>
-        <span class="key">
-          <i class="k-ceded"></i>Recorded as ceded, 1784 to 1894 (Royce)
-        </span>
-        <span class="key">
-          <i class="k-today"></i>Native lands today
-        </span>
-        <span class="note">
-          Royce’s record begins in 1784; most of the East was taken earlier, by colonies and states.
-        </span>
-        <button type="button" class="replay" id="replay">
-          Play it again
-        </button>
-      </figcaption>
-    </figure>
-    <div class="copy">
-      <p class="lede">
-        Every place in the United States has a treaty history. Find yours: whose homeland it is, how
-        it was taken and when, which promises were broken, and who is working to restore land and
-        law there now.
+    <div class="hero-copy">
+      <p class="intro-line">
+        <span aria-hidden="true"></span> The land holds a history. You’re part of its future.
       </p>
-      <form class="ask sans" id="ask-form" role="search" aria-label="Look up a place">
-        <label for="home-q">Your address, town or ZIP code</label>
-        <div class="row">
+      <h1 id="ask">
+        Every place
+        <br />
+        has a promise.
+      </h1>
+      <p class="hero-description">
+        Discover whose homeland you live on, what was promised, and who is working to restore land
+        and rights today.
+      </p>
+      <form id="ask-form" role="search" aria-label="Look up a place">
+        <label for="home-q">Start with where you are</label>
+        <div class="search-field">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.5" />
+            <path d="m15 15 5 5" stroke="currentColor" stroke-width="1.5" />
+          </svg>
           <input
             id="home-q"
             name="q"
             type="text"
+            placeholder="Address, town or ZIP code"
+            aria-label="Your address, town or ZIP code"
             autocomplete="street-address"
             required
             minlength="3"
           />
-          <button type="submit">Look it up</button>
+          <button type="submit" aria-label="Look it up">
+            <span aria-hidden="true">↗</span>
+          </button>
         </div>
-        <p class="fine">
-          Nothing is stored or tracked. <a href={href('/where/#loc')}>Use my location instead</a>
+        <p class="privacy">
+          <a href={href('/where/#loc')}>Use my location</a>
+          <span>Your location is never stored.</span>
         </p>
       </form>
       <noscript>
-        <p class="sans">
-          The lookup needs JavaScript. <a href={href('/places/')}>Choose your state</a> instead.
+        <p>
+          <a href={href('/places/')}>Choose your state</a> to explore without JavaScript.
         </p>
       </noscript>
+      <a class="quiet-link" href={href('/map/')}>
+        Or explore the full atlas <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <figure class="land" id="land" aria-labelledby="land-cap">
+      <div class="map-heading">
+        <span>A record of changing borders</span>
+        <a href={href('/map/')}>
+          Open atlas <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="stage">
+        <svg
+          viewBox={`0 0 ${art.width} ${art.height}`}
+          role="img"
+          aria-label="Recorded cessions in the lower 48, 1784–1894, and present-day Native lands. This is a historical record, not a map of all Indigenous homelands."
+        >
+          {art.years.map(({ y, d }) => (
+            <path class="yr" d={d} data-year={y} />
+          ))}
+          <path class="today" d={art.lands} />
+        </svg>
+        <p class="map-year" id="clock-year">
+          1784
+        </p>
+        <span class="map-context" id="map-context">
+          The recorded cessions begin
+        </span>
+      </div>
+      <div class="time-controls">
+        <button type="button" id="replay" aria-label="Play land history">
+          ▶
+        </button>
+        <div class="scrubber">
+          <label class="visually-hidden" for="home-year">
+            Year of recorded cessions
+          </label>
+          <input
+            id="home-year"
+            type="range"
+            min="1784"
+            max="1895"
+            value="1784"
+            aria-valuetext="1784"
+          />
+          <div class="time-labels">
+            <span>1784</span>
+            <span>1830</span>
+            <span>1894</span>
+            <span>Today</span>
+          </div>
+        </div>
+      </div>
+      <figcaption id="land-cap">
+        <div class="keys">
+          <span>
+            <i class="k-held"></i>Before recorded cession
+          </span>
+          <span>
+            <i class="k-today"></i>Native lands today
+          </span>
+        </div>
+        <p>
+          Royce’s record, 1784–1894. Much of the East was taken earlier. Boundaries are historical
+          evidence, not the limits of belonging.{' '}
+          <a href={href('/methods/sources/')}>About the sources</a>
+        </p>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="pathways" aria-label="Explore the record">
+    <a href={href('/map/')}>
+      <span class="path-icon" aria-hidden="true">
+        ⌁
+      </span>
+      <span>
+        <strong>Follow the changing land</strong>
+        <small>Explore the map through time</small>
+      </span>
+      <span aria-hidden="true">↗</span>
+    </a>
+    <a href={href('/treaties/')}>
+      <span class="path-icon" aria-hidden="true">
+        ≋
+      </span>
+      <span>
+        <strong>Read the promises</strong>
+        <small>{treaties} treaties and agreements</small>
+      </span>
+      <span aria-hidden="true">↗</span>
+    </a>
+    <a href={href('/nations/')}>
+      <span class="path-icon" aria-hidden="true">
+        ⊞
+      </span>
+      <span>
+        <strong>Know the nations</strong>
+        <small>{nations} nations and peoples in the record</small>
+      </span>
+      <span aria-hidden="true">↗</span>
+    </a>
+  </section>
+  <section class="action-section" aria-labelledby="support">
+    <div class="section-heading">
+      <div>
+        <p class="section-note">Living nations. Ongoing work.</p>
+        <h2 id="support">
+          Understanding is a start.
+          <br />
+          Connection is what comes next.
+        </h2>
+      </div>
+      <p>
+        Indigenous-led organizations are defending treaty rights, restoring land, and building
+        futures. Meet the people moving this work forward.
+      </p>
+    </div>
+    <div class="org-grid">
+      {national.map((org) => (
+        <OrganizationCard {org} />
+      ))}
+    </div>
+    <div class="action-bottom">
+      <p>Support goes directly to each organization. This atlas takes nothing.</p>
+      <a href={href('/organizations/')}>
+        Find your connection <span aria-hidden="true">↗</span>
+      </a>
     </div>
   </section>
-
-  <section class="learn" aria-labelledby="learn">
-    <h2 id="learn">Keep learning</h2>
-    <dl>
-      <div>
-        <dt>
-          <a href={href('/map/')}>Watch the land change hands</a>
-        </dt>
-        <dd>
-          Play the years from 1784 to 1894, colored by how each piece was taken: treaty, pressure,
-          removal, Congress or executive order. Follow one nation through its losses.
-        </dd>
-      </div>
-      <div>
-        <dt>
-          <a href={href('/treaties/')}>Read what was promised</a>
-        </dt>
-        <dd>
-          {treaties} treaties and agreements, each with a plain reading of its sources, the land it
-          took, the promises broken and the cases fought over it.
-        </dd>
-      </div>
-      <div>
-        <dt>
-          <a href={href('/nations/')}>Meet the nations</a>
-        </dt>
-        <dd>
-          {nations} nations and peoples, in the treaty records and today, with their own names where
-          a source gives them, including communities the federal list leaves out.
-        </dd>
-      </div>
-    </dl>
-  </section>
-
-  <section class="support" aria-labelledby="support">
-    <h2 id="support">Then, support the people doing the work</h2>
-    <p>
-      Your lookup shows the nations and groups tied to your place. These work across the country on
-      treaty rights, Native law and land return:
-    </p>
-    <ul class="orgs">
-      {national.map((o) => (
-        <li>
-          <a href={href(o.path ?? '/support/')}>{o.label}</a>
-          <span class="sans meta">{o.focus.split(/[;.]/)[0]}</span>
-          {o.donate && (
-            <a class="give sans" href={o.donate} rel="noopener">
-              Give on their site
-            </a>
-          )}
-        </li>
-      ))}
-    </ul>
-    <h3>Land is coming back</h3>
-    <ul class="returns">
+  <section class="returns-section" aria-labelledby="return-h">
+    <div class="return-intro">
+      <p class="section-note">The story continues</p>
+      <h2 id="return-h">
+        Land is
+        <br />
+        coming back.
+      </h2>
+      <p>
+        Return is happening through the work of nations, communities, and land trusts. Explore
+        documented returns and the people behind them.
+      </p>
+      <a href={href('/returns/')}>
+        Explore land returns <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="return-list">
       {returns.map((r) => (
-        <li>
-          <a href={href(pathFor(r)!)}>{r.label}</a>
-          <span class="sans meta">
-            {year(r)}
-            {acres(r) && `, ${acres(r)}`}
+        <a href={href(pathFor(r)!)}>
+          <span class="return-year">{year(r)}</span>
+          <span class="return-name">
+            {r.label}
+            <small>
+              {r['acres']
+                ? `${Number(r['acres']).toLocaleString('en-US')} acres`
+                : 'Documented land return'}
+            </small>
           </span>
-        </li>
+          <span aria-hidden="true">↗</span>
+        </a>
       ))}
-    </ul>
-    <p class="sans">
-      <a href={href('/returns/')}>All documented land returns</a> ·{' '}
-      <a href={href('/support/')}>Every listed organization, and how they are checked</a>
-    </p>
+    </div>
   </section>
-
-  <section class="claim-note" aria-labelledby="claim-h">
-    <h2 id="claim-h">For Native nations</h2>
-    <p>
-      Nothing here speaks for your nation, and nothing has been reviewed by a nation yet. Every
-      nation’s page can be claimed: corrected, told in your own words, or taken down. A removal
-      request is honored first and discussed second.
-    </p>
-    <p class="sans">
-      <a href={href('/claim/')}>Claim or correct a page</a>
-    </p>
+  <section class="claim-note">
+    <div>
+      <h2>
+        A record open to correction.
+        <br />A history that belongs to you.
+      </h2>
+      <p>
+        For Native nations: this atlas does not speak for you. No nation has reviewed it yet. Claim
+        your nation’s page, tell it in your own words, correct it, or ask us to remove it. Removal
+        requests are honored first.
+      </p>
+    </div>
+    <a href={href('/claim/')}>
+      Claim or correct a page <span aria-hidden="true">↗</span>
+    </a>
   </section>
 </Base>
-
 <script>
-  // The land drains year by year (CSS, one path per year); this keeps the year in step and
-  // replays on request. Reduced motion: the final state is shown and the clock reads "Today".
   const fig = document.getElementById('land');
   const clock = document.getElementById('clock-year');
-  const SPAN = 8000;
-  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const context = document.getElementById('map-context');
+  const slider = document.getElementById('home-year') as HTMLInputElement | null;
+  const playButton = document.getElementById('replay');
+  const paths = Array.from(fig?.querySelectorAll<SVGPathElement>('.yr') ?? []);
+  let frame = 0;
+  let playing = false;
+  function render(y: number) {
+    if (!slider || !clock || !context || !fig) return;
+    slider.value = String(y);
+    slider.setAttribute('aria-valuetext', y === 1895 ? 'Native lands today' : String(y));
+    clock.textContent = y === 1895 ? 'Today' : String(y);
+    context.textContent =
+      y === 1895 ? 'Reservations and trust lands today' : 'The historical record of land cessions';
+    fig.classList.toggle('show-today', y === 1895);
+    paths.forEach((p) => p.classList.toggle('ceded', Number(p.dataset.year) <= y));
+  }
+  function stop() {
+    cancelAnimationFrame(frame);
+    playing = false;
+    if (playButton) {
+      playButton.textContent = '▶';
+      playButton.setAttribute('aria-label', 'Play land history');
+    }
+  }
   function play() {
-    if (!fig || !clock) return;
-    if (still) {
-      clock.textContent = 'Today';
+    if (playing) {
+      stop();
       return;
     }
-    fig.classList.remove('play');
-    void fig.getBoundingClientRect(); // restart the CSS animations
-    fig.classList.add('play');
+    const start = Number(slider?.value ?? 1784) >= 1895 ? 1784 : Number(slider?.value ?? 1784);
     const t0 = performance.now();
+    playing = true;
+    if (playButton) {
+      playButton.textContent = 'Ⅱ';
+      playButton.setAttribute('aria-label', 'Pause land history');
+    }
     const tick = (t: number) => {
-      const k = (t - t0) / SPAN;
-      clock.textContent = k >= 1 ? 'Today' : String(1784 + Math.floor(k * 110));
-      if (k < 1) requestAnimationFrame(tick);
+      const y = Math.min(1895, start + Math.floor((t - t0) / 100));
+      render(y);
+      if (y < 1895) frame = requestAnimationFrame(tick);
+      else stop();
     };
-    requestAnimationFrame(tick);
+    frame = requestAnimationFrame(tick);
   }
-  play();
-  document.getElementById('replay')?.addEventListener('click', play);
-
-  // The address goes in the hash of /where/, which browsers never send to a server.
+  render(1784);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) play();
+  playButton?.addEventListener('click', play);
+  slider?.addEventListener('input', () => {
+    stop();
+    render(Number(slider.value));
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+  });
   const form = document.getElementById('ask-form') as HTMLFormElement | null;
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     const q = (form.elements.namedItem('q') as HTMLInputElement).value.trim();
     if (q.length < 3) return;
-    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-    location.href = `${base}/where/#q=${encodeURIComponent(q)}`;
+    location.href = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/where/#q=${encodeURIComponent(q)}`;
   });
 </script>
-
 <style>
   .hero {
     display: grid;
-    grid-template-areas: 'q' 'land' 'copy';
-    gap: var(--space-4);
-    padding: var(--space-5) 0 var(--space-7);
+    grid-template-columns: 1fr 1.13fr;
+    gap: 4%;
+    align-items: center;
+    padding: 68px 0 64px;
   }
-  .hero h1 {
-    grid-area: q;
+  .intro-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink-2);
+    font-size: 0.78rem;
+    margin: 0 0 30px;
   }
-  .land {
-    grid-area: land;
-  }
-  .copy {
-    grid-area: copy;
-  }
-  @media (min-width: 980px) {
-    .hero {
-      grid-template-areas: 'q land' 'copy land';
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.45fr);
-      grid-template-rows: auto 1fr;
-      align-items: start;
-      gap: var(--space-4) var(--space-7);
-      padding-top: var(--space-6);
-    }
-    .land {
-      align-self: center;
-    }
+  .intro-line > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--moss);
+    flex: none;
   }
   h1 {
-    font-size: clamp(2.6rem, 7.4vw, 5.4rem);
-    line-height: 0.98;
-    letter-spacing: -0.015em;
-    margin: 0 0 var(--space-4);
-    max-width: 9ch;
+    font-size: clamp(3.7rem, 6.8vw, 6.5rem);
+    letter-spacing: -0.065em;
+    line-height: 1.01;
+    margin: 0 0 28px;
   }
-  .lede {
-    max-width: 34rem;
+  .hero-description {
+    color: var(--ink-2);
+    max-width: 36ch;
+    font-size: 1.12rem;
+    line-height: 1.65;
+    margin-bottom: 32px;
   }
-  .ask {
-    margin-top: var(--space-5);
-    max-width: 34rem;
+  form {
+    max-width: 440px;
   }
-  .ask label {
+  form label {
     display: block;
-    font-weight: 600;
-    margin-bottom: var(--space-2);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
   }
-  .row {
+  .search-field {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-  input {
-    flex: 1 1 14rem;
-    min-width: 0;
-    min-height: 3.25rem;
-    font: inherit;
-    font-size: var(--s1);
-    padding: var(--space-2) var(--space-3);
-    border: 2px solid var(--ink);
-    border-radius: var(--radius);
+    align-items: center;
     background: var(--sheet);
-    color: var(--ink);
+    border: 1px solid #c6c7b6;
+    border-radius: 9px;
+    padding: 6px;
+    gap: 10px;
+    box-shadow: 0 4px 20px #454b3506;
   }
-  button {
-    min-height: 3.25rem;
-    padding: 0 var(--space-5);
-    font: inherit;
-    font-weight: 600;
+  .search-field > svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    color: var(--ink-2);
+    flex: none;
+  }
+  .search-field input {
+    min-width: 0;
+    width: 100%;
+    background: none;
+    border: 0;
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+  .search-field input::placeholder {
+    color: var(--ink-3);
+    opacity: 1;
+  }
+  .search-field button {
     background: var(--moss);
     color: var(--on-moss);
     border: 0;
-    border-radius: var(--radius);
+    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    flex: none;
     cursor: pointer;
+    font-size: 1.45rem;
   }
-  button:hover {
-    background: var(--moss-deep);
+  .privacy {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    margin-top: 12px;
   }
-  .fine {
-    font-size: var(--s-1);
-    color: var(--ink-2);
-    margin-top: var(--space-2);
+  .privacy a {
+    text-decoration: none;
+  }
+  .quiet-link {
+    display: inline-flex;
+    gap: 24px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-top: 25px;
   }
   .land {
+    background: #e4e9db;
+    border: 1px solid #d4dcc9;
+    border-radius: 20px;
     margin: 0;
+    padding: 24px;
+    min-width: 0;
   }
-  .note {
-    flex-basis: 100%;
-    font-size: var(--s-2);
+  .map-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 0.75rem;
+    color: var(--ink-2);
   }
-  .land svg {
+  .map-heading a {
+    text-decoration: none;
+  }
+  .stage {
+    position: relative;
+    padding: 38px 0 92px;
+  }
+  .stage svg {
     width: 100%;
     height: auto;
     display: block;
     overflow: visible;
   }
   .yr {
-    fill: var(--held);
-    fill-opacity: 0;
-    stroke: var(--ink-3);
-    stroke-width: 0.5;
-    stroke-opacity: 0.45;
+    fill: #a6b397;
+    fill-opacity: 0.7;
+    stroke: #859574;
+    stroke-width: 0.55;
     stroke-linejoin: round;
+    transition: fill-opacity 300ms;
+  }
+  .yr.ceded {
+    fill-opacity: 0.07;
+    stroke-opacity: 0.45;
   }
   .today {
-    fill: var(--moss-deep);
-    stroke: var(--moss-deep);
-    stroke-width: 0.6;
+    fill: #485d3f;
+    stroke: #485d3f;
+    stroke-width: 0.5;
+    opacity: 0;
+    transition: opacity 600ms;
   }
-  .play .yr {
-    animation: cede 700ms ease-out var(--d) both;
+  .show-today .yr {
+    fill-opacity: 0.03;
   }
-  .play .today {
-    animation: rise 1800ms ease-out 8200ms both;
+  .show-today .today {
+    opacity: 1;
   }
-  @keyframes cede {
-    from {
-      fill-opacity: 0.66;
-      stroke: var(--held);
-      stroke-opacity: 0.9;
-    }
-    to {
-      fill-opacity: 0;
-      stroke: var(--ink-3);
-      stroke-opacity: 0.45;
-    }
-  }
-  @keyframes rise {
-    from {
-      opacity: 0;
-      transform: scale(0.985);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  .stage {
-    position: relative;
-  }
-  .clock {
+  .map-year {
     position: absolute;
-    left: 1%;
-    bottom: 2%;
+    bottom: 25px;
+    left: 0;
     margin: 0;
-    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    font-size: 3.5rem;
     line-height: 1;
-    color: var(--ink);
+    letter-spacing: -0.06em;
+    color: #48553e;
     font-variant-numeric: lining-nums tabular-nums;
-    pointer-events: none;
   }
-  figcaption {
+  .map-context {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    font-size: 0.7rem;
+    color: #59664f;
+  }
+  .time-controls {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-5);
-    align-items: center;
-    font-size: var(--s-1);
-    color: var(--ink-2);
-    margin-top: var(--space-3);
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-top: 1px solid #c9d2bc;
   }
-  .key i {
-    display: inline-block;
-    width: 0.9rem;
-    height: 0.9rem;
-    margin-right: var(--space-2);
-    vertical-align: -0.1rem;
-    border-radius: 2px;
+  .time-controls button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #bfcbb3;
+    background: transparent;
+    color: #475c3c;
+    border-radius: 50%;
+    cursor: pointer;
+    flex: none;
   }
-  .k-held {
-    background: color-mix(in srgb, var(--held) 66%, var(--ground));
+  .scrubber {
+    flex: 1;
+    padding-top: 5px;
   }
-  .k-ceded {
-    border: 1px solid var(--ink-3);
-  }
-  .k-today {
-    background: var(--moss-deep);
-  }
-  .replay {
-    background: none;
-    border: 0;
-    padding: var(--space-1) 0;
-    min-height: var(--tap);
-    font: inherit;
-    color: var(--moss);
-    text-decoration: underline;
+  .scrubber input {
+    width: 100%;
+    height: 10px;
+    margin: 0;
+    accent-color: #485d3f;
     cursor: pointer;
   }
-  .learn,
-  .support {
-    padding: var(--space-6) 0;
-    border-top: 1px solid var(--rule);
+  .time-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: #59664f;
+    margin-top: 8px;
   }
-  .learn dl {
+  figcaption {
+    border-top: 1px solid #c9d2bc;
+    padding-top: 16px;
+  }
+  .keys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    font-size: 0.65rem;
+    color: #59664f;
+  }
+  .keys i {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 7px;
+  }
+  .k-held {
+    background: #8b9d78;
+  }
+  .k-today {
+    background: #485d3f;
+  }
+  figcaption p {
+    font-size: 0.65rem;
+    line-height: 1.6;
+    color: #59664f;
+    margin: 10px 0 0;
+  }
+  .pathways {
     display: grid;
-    gap: var(--space-5) var(--space-7);
-    margin: 0;
-  }
-  @media (min-width: 760px) {
-    .learn dl {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  .learn dt {
-    font-size: var(--s1);
-    margin-bottom: var(--space-1);
-  }
-  .learn dd {
-    margin: 0;
-    color: var(--ink-2);
-  }
-  .support > p {
-    max-width: 40rem;
-  }
-  .orgs,
-  .returns {
-    list-style: none;
-    padding: 0;
-    max-width: 40rem;
-  }
-  .orgs li,
-  .returns li {
-    padding: var(--space-3) 0;
+    grid-template-columns: repeat(3, 1fr);
     border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 26px 0;
+    gap: 32px;
   }
-  .orgs li {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 0 var(--space-4);
-    align-items: baseline;
+  .pathways > a {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: var(--ink);
   }
-  .orgs .meta {
-    grid-column: 1;
-  }
-  .give {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    font-weight: 600;
+  .pathways > a > span:last-child {
+    margin-left: auto;
     color: var(--moss);
   }
-  .meta {
+  .path-icon {
+    font-size: 2rem;
+    color: #83916f;
+    width: 32px;
+    flex: none;
+  }
+  .pathways strong {
     display: block;
-    font-size: var(--s-1);
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  .pathways small {
+    display: block;
+    color: var(--ink-2);
+    font-size: 0.75rem;
+    margin-top: 4px;
+  }
+  .action-section {
+    padding: 88px 0 24px;
+  }
+  .section-heading {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 10%;
+    align-items: end;
+    margin-bottom: 36px;
+  }
+  .section-note {
+    font-size: 0.8rem;
+    color: var(--moss);
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: clamp(2rem, 3.4vw, 3.1rem);
+    letter-spacing: -0.045em;
+    line-height: 1.12;
+    margin: 0;
+  }
+  .section-heading > p {
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    margin: 0 0 4px;
+  }
+  .org-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .action-bottom {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    font-size: 0.8rem;
+  }
+  .action-bottom p {
     color: var(--ink-3);
+    margin: 0;
+  }
+  .action-bottom a {
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .returns-section {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 10%;
+    padding: 76px 0;
+  }
+  .return-intro h2 {
+    font-size: clamp(2.5rem, 4.5vw, 4.4rem);
+    margin-bottom: 20px;
+  }
+  .return-intro > p:not(.section-note) {
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    max-width: 35ch;
+  }
+  .return-intro > a {
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .return-list {
+    align-self: center;
+  }
+  .return-list > a {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .return-list > a:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  .return-year {
+    color: var(--moss);
+    font-size: 0.85rem;
+  }
+  .return-name {
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+  .return-name small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    margin-top: 10px;
+  }
+  .return-list > a > span:last-child {
+    margin-left: auto;
+    color: var(--moss);
   }
   .claim-note {
-    margin-top: var(--space-6);
-    padding: var(--space-5) var(--space-5) var(--space-3);
-    border-left: 3px solid var(--moss);
-    background: var(--sheet);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    background: #eee1d6;
+    border-radius: 16px;
+    padding: 40px;
   }
   .claim-note h2 {
-    margin-top: 0;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  .claim-note p {
+    font-size: 0.85rem;
+    color: var(--ink-2);
+    max-width: 65ch;
+    margin: 0;
+  }
+  .claim-note > a {
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+  @media (min-width: 1440px) {
+    .hero {
+      gap: 6%;
+    }
+  }
+  @media (max-width: 1000px) {
+    .hero {
+      gap: 24px;
+      padding-top: 40px;
+    }
+    h1 {
+      font-size: 4.3rem;
+    }
+    .intro-line {
+      font-size: 0.7rem;
+    }
+    .land {
+      padding: 18px;
+    }
+    .org-grid {
+      gap: 12px;
+    }
+    .pathways {
+      gap: 16px;
+    }
+    .path-icon {
+      display: none;
+    }
+  }
+  @media (max-width: 760px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 32px 0;
+    }
+    h1 {
+      font-size: clamp(3.7rem, 12vw, 5.4rem);
+    }
+    .hero-description {
+      max-width: 40ch;
+    }
+    .intro-line {
+      margin-bottom: 24px;
+    }
+    .land {
+      padding: 22px;
+    }
+    .stage {
+      padding-top: 24px;
+    }
+    .pathways {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 8px 0;
+    }
+    .pathways > a {
+      padding: 16px 0;
+    }
+    .path-icon {
+      display: block;
+    }
+    .pathways > a + a {
+      border-top: 1px solid var(--rule);
+    }
+    .section-heading {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .action-section {
+      padding-top: 56px;
+    }
+    .org-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .action-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .returns-section {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 56px 0;
+    }
+    .claim-note {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 28px;
+    }
+    .privacy {
+      font-size: 0.65rem;
+    }
   }
 </style>

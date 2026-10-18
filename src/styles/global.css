@@ -1,24 +1,27 @@
-/* Treaty Land Atlas: the record, pressed and labeled, with living growth over it.
- * Palette: lichen ground, spruce ink, moss for what lives now. Map data keeps the
- * Okabe-Ito hues (colorblind-safe) and never relies on hue alone. */
+/* Quiet atlas surfaces: oat, umber, sage, clay, and ochre.
+ * Historical map categories retain their colorblind-safe hues and line patterns. */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
-  --ground: #edf0e8;
-  --sheet: #f6f8f2;
-  --sheet-2: #e3e8dc;
-  --ink: #1d2a22;
-  --ink-2: #4a5a4f;
-  --ink-3: #5f6d63;
-  --rule: #cdd5c4;
-  --rule-strong: #8f9c88;
-  --moss: #3f6b3f;
-  --moss-deep: #2f532f;
-  --lichen: #b7c4a3;
-  --river: #4e6e7e;
-  --focus: #1d2a22;
-  --on-moss: #f6f8f2;
+  --ground: #f5f1e8;
+  --sheet: #fdfbf6;
+  --sheet-2: #e9e6db;
+  --ink: #302f28;
+  --ink-2: #585a4c;
+  --ink-3: #686a5b;
+  --rule: #dcd9cd;
+  --rule-strong: #9d9f8e;
+  --moss: #485d3f;
+  --moss-deep: #35462f;
+  --lichen: #d8dfca;
+  --river: #6c755e;
+  --focus: #302f28;
+  --on-moss: #fdfbf6;
+  --sage: #dfe7d6;
+  --clay: #eddcd3;
+  --ochre: #eee2bd;
+  --rose: #e9d7d2;
   --warn: #8a4b0f;
 
   /* map data (Okabe-Ito) */
@@ -27,7 +30,7 @@
   --data-reservation: #0072b2;
   --data-return: #009e73;
   --data-violation: #d55e00;
-  --data-today: #1d2a22;
+  --data-today: #302f28;
 
   /* how land was taken (Okabe-Ito; every cause also has a line pattern and a label) */
   --how-treaty: #e69f00;
@@ -37,13 +40,13 @@
   --how-congress: #0072b2;
   --how-executive: #56b4e9;
   --how-unknown: #8a8f86;
-  --held: #4f7a43;
+  --held: #9aa888;
 
   --serif:
     'Charis', Charter, 'Iowan Old Style', Georgia, 'Noto Sans Cherokee', 'Noto Sans Osage', serif;
   --sans:
     'Atkinson Hyperlegible Next', system-ui, -apple-system, 'Segoe UI', 'Noto Sans Cherokee',
-    'Noto Sans Osage', sans-serif;
+    'Noto Sans Osage', 'Charis', sans-serif;
 
   /* A modular scale on a 1.2 ratio from 17px (Bringhurst-style restraint). */
   --s-2: 0.75rem;
@@ -66,43 +69,9 @@
   --space-6: 36px;
   --space-7: 56px;
   --space-8: 88px;
-  --radius: 2px;
+  --radius: 8px;
   --tap: 44px;
   --ease: cubic-bezier(0.2, 0, 0, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --ground: #141c17;
-    --sheet: #19231d;
-    --sheet-2: #213026;
-    --ink: #e3e9df;
-    --ink-2: #b2bfb4;
-    --ink-3: #98a69b;
-    --rule: #2e3d33;
-    --rule-strong: #5f7064;
-    --moss: #8db27e;
-    --moss-deep: #a9c99b;
-    --lichen: #4a5c45;
-    --river: #8fb0bf;
-    --focus: #e3e9df;
-    --on-moss: #141c17;
-    --warn: #f0a868;
-    --data-cession: #f2c14e;
-    --data-cession-line: #f2c14e;
-    --data-reservation: #56b4e9;
-    --data-return: #3fc79a;
-    --data-violation: #f0794a;
-    --data-today: #e3e9df;
-    --how-treaty: #f0b429;
-    --how-pressure: #f07a3f;
-    --how-removal: #e095c2;
-    --how-congress: #3d9be0;
-    --how-executive: #8fd0f5;
-    --how-unratified: #f0e442;
-    --how-unknown: #8f978b;
-    --held: #6f9a5f;
-  }
 }
 
 *,
@@ -120,7 +89,7 @@ body {
   margin: 0;
   background: var(--ground);
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: var(--s0);
   line-height: 1.6;
   font-kerning: normal;
@@ -132,7 +101,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-weight: 700;
   line-height: 1.18;
   margin: 0 0 var(--space-4);
@@ -140,7 +109,7 @@ h4 {
 }
 h1 {
   font-size: var(--s5);
-  letter-spacing: -0.012em;
+  letter-spacing: -0.045em;
   font-weight: 400;
 }
 h2 {
@@ -227,7 +196,7 @@ select {
 /* page frame */
 .frame {
   width: 100%;
-  max-width: 76rem;
+  max-width: 90rem;
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
@@ -316,5 +285,50 @@ th {
   body {
     background: #fff;
     color: #000;
+  }
+}
+
+/* Shared reading surfaces retain the same quiet hierarchy as the atlas. */
+::selection {
+  background: #dfe7d6;
+  color: #302f28;
+}
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+input,
+select,
+textarea {
+  accent-color: var(--moss);
+}
+.record {
+  padding-top: 64px;
+}
+.record h1 {
+  max-width: 21ch;
+}
+.record h2 {
+  letter-spacing: -0.025em;
+}
+.record > aside {
+  border-radius: 14px;
+}
+.index a {
+  text-decoration: none;
+}
+.index a:hover {
+  text-decoration: underline;
+}
+.index li {
+  padding: 12px 0;
+}
+main > div > h1:first-child {
+  margin-top: 64px;
+}
+@media (max-width: 600px) {
+  .record {
+    padding-top: 36px;
   }
 }

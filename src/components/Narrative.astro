@@ -7,8 +7,9 @@ import { href } from '../lib/href';
 
 interface Props {
   n: Node;
+  showHeadline?: boolean;
 }
-const { n } = Astro.props;
+const { n, showHeadline = true } = Astro.props;
 const o = overlayFor(n);
 const paras = (o?.narrative ?? '')
   .split(/\n\s*\n/)
@@ -39,7 +40,7 @@ const CONF: Record<string, string> = {
 {o && (
   <section class="narrative" aria-labelledby="what-happened">
     <h2 id="what-happened">What happened</h2>
-    {o.headline && <p class="headline">{o.headline}</p>}
+    {showHeadline && o.headline && <p class="headline">{o.headline}</p>}
     {paras.map((p) => (
       <p>{p}</p>
     ))}

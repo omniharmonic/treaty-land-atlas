@@ -1,5 +1,5 @@
 ---
-// The record's label, like a herbarium sheet: what this is, where it came from, how sure we are.
+// The record's label, in the atlas: what this is, where it came from, how sure we are.
 import { REVIEW_WORD, TYPE_NAME, type Node } from '../lib/graph';
 import { CONFIDENCE_WORD } from '../lib/facts';
 import { href } from '../lib/href';
@@ -75,7 +75,8 @@ const sourceFile = n.provenance?.source_file;
   .label {
     background: var(--sheet);
     border: 1px solid var(--rule);
-    padding: var(--space-4);
+    padding: var(--space-5);
+    border-radius: 12px;
     font-size: var(--s-2);
     line-height: 1.5;
     color: var(--ink-2);

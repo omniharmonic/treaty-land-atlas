@@ -1,49 +1,281 @@
 ---
 import Base from '../../layouts/Base.astro';
-import IndexList from '../../components/IndexList.astro';
-import { byType, year } from '../../lib/graph';
-
+import TreatyDirectory from '../../islands/TreatyDirectory.svelte';
+import { byType, year, graph, overlayFor, pathFor, cleanTags } from '../../lib/graph';
+import { treatyExperience } from '../../lib/treaty';
+import { locatorMap } from '../../lib/svgmap';
+import { href } from '../../lib/href';
+const g = graph();
+const nodes = [...g.nodes.values()];
 const all = byType('Instrument').sort(
-  (a, b) => (year(a) ?? 0) - (year(b) ?? 0) || a.id.localeCompare(b.id),
+  (a, b) => (year(a) ?? 9999) - (year(b) ?? 9999) || a.id.localeCompare(b.id),
 );
-const ratified = all.filter((n) => n['ratification_status'] === 'ratified').length;
-const unratified = all.filter((n) => n['ratification_status'] === 'unratified').length;
-const parties = (n: (typeof all)[number]) => {
-  const t = (n['parties_text'] as string) ?? null;
-  return t && !n.label.startsWith(t) ? t : null;
-};
+const entries = all.map((n) => {
+  const experience = treatyExperience(n, nodes, g.edges);
+  return {
+    id: n.id,
+    label: n.label,
+    path: pathFor(n)!,
+    date: String(n['date_signed'] ?? ''),
+    year: year(n),
+    region: String(n['region'] ?? ''),
+    status: String(n['ratification_status'] ?? ''),
+    parties: cleanTags(n['parties_text']).text,
+    headline: overlayFor(n)?.headline ?? '',
+    events: experience.events.filter((e) => !['signed', 'ratified'].includes(e.id)).length,
+    nations: experience.nations.length,
+  };
+});
+const featured = ['TLA-T-369', 'TLA-T-283', 'TLA-T-021'].flatMap((id) => {
+  const n = g.nodes.get(id);
+  const entry = entries.find((e) => e.id === id);
+  if (!n || !entry) return [];
+  const ids = treatyExperience(n, nodes, g.edges).geometryIds;
+  return [{ ...entry, map: locatorMap(ids) }];
+});
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Base
   title="Treaties and agreements"
-  description="Every treaty, agreement and related instrument in the atlas, in date order."
+  description="Explore treaty promises, the land and nations they concern, what followed, and the people defending those rights today."
 >
-  <div class="intro">
-    <h1>Treaties and agreements</h1>
-    <p class="lede">
-      {all.length} instruments, in the order they were signed: {ratified} ratified, {unratified}{' '}
-      never ratified, and the agreements, statutes and orders that worked like them.
-    </p>
-    <details class="sans small">
-      <summary>Why there is no single count of treaties</summary>
+  <section class="directory-intro">
+    <div>
+      <p class="intro-note">Agreements that still shape the present</p>
+      <h1>
+        The promise.
+        <br />
+        The living record.
+      </h1>
+    </div>
+    <div class="intro-copy">
+      <p class="lede">A treaty is more than a date in history.</p>
       <p>
-        The National Archives series of ratified Indian treaties holds 368 federal-era treaties (375
-        counting seven British-era items); “about 370” is common in government writing. Other counts
-        (377, 389, 418) include different kinds of documents. We show each record with its source
-        rather than one number.
+        Follow what was agreed, what happened to the land, and how those promises are being defended
+        today. Every connection leads back to the record.
       </p>
-    </details>
-  </div>
-  <IndexList items={all} dated note={parties} />
+      <a href={href('/where/')}>
+        Begin with where you live <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+  <section class="featured-section" aria-labelledby="featured-h">
+    <div class="featured-heading">
+      <h2 id="featured-h">A few places to begin</h2>
+      <span>Explore a connected history</span>
+    </div>
+    <div class="featured-grid">
+      {featured.map((entry, i) => (
+        <a class:list={['featured', `tone-${i}`]} href={href(entry.path)}>
+          <div class="featured-meta">
+            <span>{entry.year}</span>
+            <span>{entry.region}</span>
+          </div>
+          <svg viewBox={`0 0 ${entry.map.width} ${entry.map.height}`} aria-hidden="true">
+            <image href={href('/map/base.svg')} width={entry.map.width} height={entry.map.height} />
+            {entry.map.hi.map((shape) => (
+              <path d={shape.d} />
+            ))}
+          </svg>
+          <h3>{entry.label}</h3>
+          <div class="featured-bottom">
+            <span>{entry.events} connected entries</span>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+  <section class="all-agreements" aria-labelledby="agreements-h">
+    <h2 id="agreements-h">Find a thread to follow.</h2>
+    <p class="directory-description">
+      Search {all.length} treaties, agreements, and related instruments. Ratification and source
+      coverage vary; each record shows what is known.
+    </p>
+    <TreatyDirectory client:load {entries} {base} />
+    <noscript>
+      <p>Search and filters need JavaScript. Browse every agreement below.</p>
+      <ul>
+        {entries.map((e) => (
+          <li>
+            <a href={href(e.path)}>
+              {e.date} {e.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </noscript>
+  </section>
+  <details class="count-note">
+    <summary>Why there is no single count of treaties</summary>
+    <p>
+      The National Archives series of ratified Indian treaties holds 368 federal-era treaties (375
+      counting seven British-era items). Other counts include different kinds of documents. This
+      collection includes treaties, unratified instruments, agreements, and orders, each with its
+      own status and sources.
+    </p>
+  </details>
 </Base>
-
 <style>
-  .intro {
-    padding-top: var(--space-6);
-    margin-bottom: var(--space-6);
+  .directory-intro {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 10%;
+    align-items: end;
+    padding: 64px 0 56px;
   }
-  details summary {
-    cursor: pointer;
+  .intro-note {
     color: var(--moss);
+    font-size: 0.8rem;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-size: clamp(3rem, 6.8vw, 6rem);
+    line-height: 1.03;
+    letter-spacing: -0.06em;
+    margin: 0;
+  }
+  .intro-copy > p:not(.lede) {
+    font-size: 1rem;
+    color: var(--ink-2);
+    max-width: 42ch;
+  }
+  .intro-copy > a {
+    font-size: 0.85rem;
+  }
+  .featured-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .featured-heading h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    letter-spacing: -0.025em;
+  }
+  .featured-heading > span {
+    font-size: 0.8rem;
+    color: var(--ink-2);
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .featured {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    border-radius: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    background: var(--sage);
+    min-width: 0;
+  }
+  .tone-1 {
+    background: var(--clay);
+  }
+  .tone-2 {
+    background: var(--ochre);
+  }
+  .featured:hover h3 {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .featured-meta,
+  .featured-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 0.8rem;
+  }
+  .featured svg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.9;
+    margin: 20px 0;
+  }
+  .featured path {
+    fill: var(--moss);
+    fill-opacity: 0.7;
+    stroke: var(--moss-deep);
+    stroke-width: 1;
+  }
+  .featured h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin: 0 0 24px;
+  }
+  .featured-bottom {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  }
+  .all-agreements {
+    padding-top: 72px;
+  }
+  .all-agreements > h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.04em;
+    margin: 0 0 16px;
+  }
+  .directory-description {
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    max-width: 68ch;
+    margin-bottom: 32px;
+  }
+  .count-note {
+    margin-top: 48px;
+    font-size: 0.85rem;
+    color: var(--ink-2);
+  }
+  .count-note summary {
+    color: var(--moss);
+    cursor: pointer;
+    min-height: 32px;
+  }
+  .count-note p {
+    margin-top: 16px;
+  }
+  @media (max-width: 760px) {
+    .directory-intro {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 36px 0;
+    }
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 24px;
+    }
+    .featured-meta,
+    .featured-bottom {
+      grid-column: 1/-1;
+    }
+    .featured svg {
+      margin: 0;
+      align-self: center;
+    }
+    .featured h3 {
+      font-size: 1.3rem;
+      margin: 0;
+      align-self: center;
+    }
+    .featured-heading > span {
+      display: none;
+    }
+    .all-agreements {
+      padding-top: 48px;
+    }
   }
 </style>

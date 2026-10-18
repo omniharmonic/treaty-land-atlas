@@ -1,0 +1,62 @@
+---
+import type { Node } from '../lib/graph';
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+type Correction = {
+  field: string;
+  as_listed: unknown;
+  source_url: string;
+  evidence_quote?: string | null;
+};
+const corrections = ((n['corrections'] as Correction[]) ?? []).filter((c) => c.source_url);
+const fields: Record<string, string> = {
+  date_signed: 'The signing date',
+  label: 'The title',
+  land_description: 'The land description',
+  summary: 'The summary',
+  notes: 'A note',
+  start_year: 'The year',
+  website: 'The website',
+  indigenous_led: 'Native leadership',
+  holding_summary: 'The holding',
+  treaty_at_issue_text: 'The treaty at issue',
+};
+---
+
+{corrections.length > 0 && (
+  <section class="record-corrections" aria-labelledby="corrections-h">
+    <h2 id="corrections-h">Corrections to this record</h2>
+    <ul>
+      {corrections.map((c) => (
+        <li>
+          {fields[c.field] ?? c.field.replace(/_/g, ' ')} was listed as “{String(c.as_listed ?? '')}
+          ”; corrected from{' '}
+          <a href={c.source_url}>{new URL(c.source_url).hostname.replace(/^www\./, '')}</a>
+          {c.evidence_quote && <q>{c.evidence_quote}</q>}
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+<style>
+  .record-corrections {
+    margin-top: 32px;
+  }
+  .record-corrections ul {
+    padding-left: 20px;
+    font-size: 0.875rem;
+  }
+  .record-corrections li {
+    margin-bottom: 16px;
+    overflow-wrap: anywhere;
+  }
+  .record-corrections q {
+    display: block;
+    margin-top: 8px;
+    padding-left: 16px;
+    border-left: 2px solid var(--rule-strong);
+    color: var(--ink-2);
+  }
+</style>

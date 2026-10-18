@@ -9,7 +9,7 @@ const CENSUS =
   'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?benchmark=Public_AR_Current&format=json&address=';
 const NOMINATIM =
   'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&addressdetails=1&q=';
-const UA = 'landback.land Treaty Land Atlas (https://landback.land/privacy/)';
+const UA = 'landback.land Living Law, Living Land (https://landback.land/privacy/)';
 
 const json = (status: number, body: unknown, extra: Record<string, string> = {}) =>
   new Response(JSON.stringify(body), {

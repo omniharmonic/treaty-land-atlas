@@ -139,13 +139,13 @@ sources:
     gate: G-11
 
   - id: project-own
-    name: 'Treaty Land Atlas text and compiled data'
+    name: 'Living Law, Living Land text and compiled data'
     used_in: [site/content, data]
     license_stated: 'Code MIT; text and data CC BY 4.0'
     conflict: false
     status: cleared
     evidence: docs/governance/decision-log.md
-    attribution_text: 'Treaty Land Atlas, by Benjamin Life (@omniharmonic). Code: MIT. Text and data: CC BY 4.0.'
+    attribution_text: 'Living Law, Living Land, by Benjamin Life (@omniharmonic). Code: MIT. Text and data: CC BY 4.0.'
     required_notices: []
     gate: G-13
 

@@ -1,12 +1,12 @@
 ---
-title: Treaty Land Atlas (working title)
+title: Living Law, Living Land
 author: Benjamin Life (@omniharmonic)
 date: 2026-10-16
 status: draft
 confidence: medium
 ---
 
-# Treaty Land Atlas (working title)
+# Living Law, Living Land
 
 A planned, free, educational website: an interactive, time-aware map and knowledge graph of United States treaty law with Native nations. Its purpose is to point attention and resources toward Land Back, with factual claims that can be checked.
 

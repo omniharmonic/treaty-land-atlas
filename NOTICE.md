@@ -72,9 +72,9 @@ Software: see the package licenses listed in NOTICE.md.
 - Terms as stated: MIT, BSD-3-Clause, ISC, Apache-2.0; MPL-2.0 for build tooling only
 - Status: pending
 
-## Treaty Land Atlas text and compiled data
+## Living Law, Living Land text and compiled data
 
-Treaty Land Atlas, by Benjamin Life (@omniharmonic). Code: MIT. Text and data: CC BY 4.0.
+Living Law, Living Land, by Benjamin Life (@omniharmonic). Code: MIT. Text and data: CC BY 4.0.
 
 - Terms as stated: Code MIT; text and data CC BY 4.0
 - Status: cleared
