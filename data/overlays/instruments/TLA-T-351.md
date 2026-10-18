@@ -3,9 +3,9 @@ id: "TLA-T-351"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1865 Middle Oregon treaty took away off-reservation fishing and hunting rights; Congress nullified it in 2020."
-note: "The finding that the treaty was obtained by fraud is the Forest Service's, as reported by a Senate committee."
-how: "treaty_negotiated"
-how_basis: "The OSU page records articles signed at the Warm Springs Agency; the Senate report cites a 1997 Forest Service finding of fraudulent signatures, so the how is disputed."
+note: "A Senate committee report says a 1997 Forest Service review found the tribal signatures were obtained by fraud."
+how: "treaty_under_pressure"
+how_basis: "A Senate committee report cites a 1997 Forest Service finding that the tribal signatures were obtained by fraud."
 confidence: "high"
 cautions: "The fraud finding is the Forest Service's, as reported by the Senate committee in 2019, before the bill passed. The 2020 nullification is reported here from the Oklahoma State University treaty database. The Senate report records that a member of the Warm Springs tribal council testified in favor of the bill; the tribes' own published account is not quoted here."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-middle-oregon-tribes-1865-0908", "title": "Tribal Treaties Database (Oklahoma State University): Confederated Tribes of Middle Oregon at Warm Springs Agency, Oregon (1865)", "quote": "the right to take fish, erect houses, hunt game, gather roots and berries, and pasture animals upon lands without the reservation"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-middle-oregon-tribes-1865-0908", "title": "Tribal Treaties Database (Oklahoma State University): Confederated Tribes of Middle Oregon at Warm Springs Agency, Oregon (1865)", "quote": "Treaty was nullified by the 116th Congress in 2020"}, {"url": "https://govinfo.gov/content/pkg/CRPT-116srpt45/html/CRPT-116srpt45.htm", "title": "Senate Report 116-45, To Nullify the Supplemental Treaty (govinfo.gov)", "quote": "the tribal leaders' signatures on the Supplemental 1865 Treaty were obtained by fraudulent means"}, {"url": "https://govinfo.gov/content/pkg/CRPT-116srpt45/html/CRPT-116srpt45.htm", "title": "Senate Report 116-45, To Nullify the Supplemental Treaty (govinfo.gov)", "quote": "S. 832 will repeal and nullify the Supplemental 1865 Treaty"}]

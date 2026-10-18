@@ -3,11 +3,11 @@ id: "TLA-T-230"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1838 Treaty of Buffalo Creek set aside 1,824,000 acres in Kansas for New York tribes; the Tonawanda Seneca later challenged it in court."
-note: "Fraud and coercion have been alleged in this treaty; the page describes the dispute through the Tonawanda Seneca court challenge."
-how: "treaty_under_pressure"
-how_basis: "The Historical Society of the New York Courts records the Tonawanda Seneca asserting the treaty was invalid because their Sachem was not a party; an earlier summary alleged fraud and coercion, which no cited source confirms."
+note: "The Tonawanda Seneca said the treaty did not bind them because their sachem was not a party to it, and took the dispute to court."
+how: "other"
+how_basis: "The Historical Society of the New York Courts records the Tonawanda Seneca's position that the treaty was invalid because their sachem was not a party to it."
 confidence: "medium"
-cautions: "The page-level note in the atlas record alleges fraud and coercion in the treaty; no source opened here documents that directly, so this entry reports the Tonawanda Seneca challenge as the Historical Society of the New York Courts describes it. That page gives no year for the final settlement. The OSU page also records Cayuga, Tuscarora and other special provisions, including a $400,000 appropriation, which are not described here."
+cautions: "The Historical Society of the New York Courts gives no year for the final settlement. The OSU page also records Cayuga, Tuscarora and other special provisions, including a $400,000 appropriation, which are not described here."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-new-york-indians-1838-0502", "title": "Treaty with the New York Indians, 1838 (OSU Tribal Treaties Database)", "quote": "cede and relinquish to the United States all their right, title and interest to the lands secured to them at Green Bay"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-new-york-indians-1838-0502", "title": "Treaty with the New York Indians, 1838 (OSU Tribal Treaties Database)", "quote": "shall forfeit all interest in the lands so set apart, to the United States"}, {"url": "https://history.nycourts.gov/case/cutler-v-dibble/", "title": "New York ex rel. Cutler v. Dibble, 1858 (Historical Society of the New York Courts)", "quote": "The Seneca on the Tonawanda Reservation asserted that the treaty was invalid with regard to the Tonawanda lands"}, {"url": "https://history.nycourts.gov/case/cutler-v-dibble/", "title": "New York ex rel. Cutler v. Dibble, 1858 (Historical Society of the New York Courts)", "quote": "the Seneca gave up their rights under the Buffalo Creek treaty to the lands in Kansas"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg550.pdf", "title": "Treaty with the New York Indians, 7 Stat. 550 (govinfo)", "quote": "three hundred and twenty acres for each soul of said Indians"}]
 verdict: "rewritten"
 ---
