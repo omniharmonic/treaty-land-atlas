@@ -14,6 +14,33 @@ const suggested = g.edges.filter((e) => e.status === 'proposed').length;
   title="About"
   lede="A free, public record of United States treaty law with Native nations, built to point attention and support toward Land Back."
 >
+  <h2>Why I made this</h2>
+  <p>
+    The Constitution names treaties, along with itself and federal law, as{' '}
+    <a href="https://www.archives.gov/founding-docs/constitution-transcript">
+      “the supreme Law of the Land.”
+    </a>{' '}
+    The treaties the United States made with Native nations are a contract, and the record of how
+    that contract was broken is public. The Doctrine of Discovery, the end of treaty-making in 1871,{' '}
+    <em>Lone Wolf v. Hitchcock</em> and the long fight over the Black Hills are all part of it. I
+    wrote about this in an essay,{' '}
+    <a href="https://omniharmonic.substack.com/p/the-law-of-the-land">The Law of the Land</a>.
+  </p>
+  <p>
+    Its argument is that any honest politics of land on this continent begins with that record:
+    truth before terms. That means a public reckoning, treaty by treaty and case by case, not as a
+    ritual of guilt but as the truth and reconciliation this country has never had the courage to
+    attempt. There is no clean place to begin. We can only start in the middle.
+  </p>
+  <p>
+    This site is one small piece of that middle. It is meant to make the contract readable, and to
+    route attention and resources to the people doing the repair. If you take one thing from it,
+    take a moment to be with{' '}
+    <a href={href('/where/')}>the broken treaty for the ground under your feet</a>, and then support
+    a <a href={href('/support/')}>Native-led land back organization</a> working to heal the wounds
+    of broken promises that are still open.
+  </p>
+  <p class="sign">Benjamin Life (@omniharmonic)</p>
   <h2>Who made this</h2>
   <p>
     Living Law, Living Land was created by Benjamin Life (@omniharmonic). It is not Indigenous-led.
@@ -54,3 +81,11 @@ const suggested = g.edges.filter((e) => e.status === 'proposed').length;
     <a href={href('/support/')}>how to help</a>.
   </p>
 </Page>
+
+<style>
+  .sign {
+    font-family: var(--sans);
+    font-size: var(--s-1);
+    color: var(--ink-2);
+  }
+</style>
