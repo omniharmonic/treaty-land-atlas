@@ -5,7 +5,19 @@ import { byType, graph, pathFor, year } from '../lib/graph';
 import { href } from '../lib/href';
 import { homeMap } from '../lib/svgmap';
 import { supportIndex } from '../lib/support';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 const art = homeMap();
+// the story's chapters as one ribbon from 1784 to today, each as wide as the years it covers
+const story = JSON.parse(
+  readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'story.json'), 'utf8'),
+) as { chapters: { start_year: number; end_year: number; title: string }[] };
+const chapters = [...story.chapters]
+  .sort((a, b) => a.start_year - b.start_year)
+  .map((c, i) => ({ n: i + 1, from: c.start_year, to: c.end_year, title: c.title }));
+const span = (c: { from: number; to: number }) => c.to - c.from + 1;
+const cases = byType('Case').length;
+const statutes = byType('Statute').length;
 const treaties = byType('Instrument').length;
 const nations = byType('Nation').length;
 const returns = byType('Campaign')
@@ -66,84 +78,118 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
           <a href={href('/places/')}>Choose your state</a> to explore without JavaScript.
         </p>
       </noscript>
-      <a class="quiet-link" href={href('/map/')}>
-        Or explore the full atlas <span aria-hidden="true">↗</span>
-      </a>
     </div>
-    <figure class="land" id="land" aria-labelledby="land-cap">
-      <div class="map-heading">
-        <span>A record of changing borders</span>
-        <a href={href('/map/')}>
-          Open atlas <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <div class="stage">
-        <svg
-          viewBox={`0 0 ${art.width} ${art.height}`}
-          role="img"
-          aria-label="Recorded cessions in the lower 48, 1784–1894, and present-day Native lands. This is a historical record, not a map of all Indigenous homelands."
-        >
-          {art.years.map(({ y, d }) => (
-            <path class="yr" d={d} data-year={y} />
-          ))}
-          <path class="today" d={art.lands} />
-        </svg>
-        <p class="map-year" id="clock-year">
-          1784
-        </p>
-        <span class="map-context" id="map-context">
-          The recorded cessions begin
-        </span>
-      </div>
-      <div class="time-controls">
-        <button type="button" id="replay" aria-label="Play land history">
-          ▶
-        </button>
-        <div class="scrubber">
-          <label class="visually-hidden" for="home-year">
-            Year of recorded cessions
-          </label>
-          <input
-            id="home-year"
-            type="range"
-            min="1784"
-            max="1895"
-            value="1784"
-            aria-valuetext="1784"
-          />
-          <div class="time-labels">
-            <span>1784</span>
-            <span>1830</span>
-            <span>1894</span>
-            <span>Today</span>
+    <div class="land-col">
+      <figure class="land" id="land" aria-labelledby="land-cap">
+        <div class="map-heading">
+          <span>A record of changing borders</span>
+        </div>
+        <div class="stage">
+          <svg
+            viewBox={`0 0 ${art.width} ${art.height}`}
+            role="img"
+            aria-label="Recorded cessions in the lower 48, 1784–1894, and present-day Native lands. This is a historical record, not a map of all Indigenous homelands."
+          >
+            {art.years.map(({ y, d }) => (
+              <path class="yr" d={d} data-year={y} />
+            ))}
+            <path class="today" d={art.lands} />
+          </svg>
+          <p class="map-year" id="clock-year">
+            1784
+          </p>
+          <span class="map-context" id="map-context">
+            The recorded cessions begin
+          </span>
+        </div>
+        <div class="time-controls">
+          <button type="button" id="replay" aria-label="Play land history">
+            ▶
+          </button>
+          <div class="scrubber">
+            <label class="visually-hidden" for="home-year">
+              Year of recorded cessions
+            </label>
+            <input
+              id="home-year"
+              type="range"
+              min="1784"
+              max="1895"
+              value="1784"
+              aria-valuetext="1784"
+            />
+            <div class="time-labels">
+              <span>1784</span>
+              <span>1830</span>
+              <span>1894</span>
+              <span>Today</span>
+            </div>
           </div>
         </div>
-      </div>
-      <figcaption id="land-cap">
-        <div class="keys">
-          <span>
-            <i class="k-held"></i>Before recorded cession
-          </span>
-          <span>
-            <i class="k-today"></i>Native lands today
-          </span>
+        <figcaption id="land-cap">
+          <div class="keys">
+            <span>
+              <i class="k-held"></i>Before recorded cession
+            </span>
+            <span>
+              <i class="k-today"></i>Native lands today
+            </span>
+          </div>
+          <p>
+            Royce’s record, 1784–1894. Much of the East was taken earlier. Boundaries are historical
+            evidence, not the limits of belonging.{' '}
+            <a href={href('/methods/sources/')}>About the sources</a>
+          </p>
+        </figcaption>
+      </figure>
+      <nav class="read-on" aria-label="Go deeper">
+        <div class="read-actions">
+          <a class="ra ra-map" href={href('/map/')}>
+            Explore the map
+          </a>
+          <a class="ra ra-story" href={href('/story/')}>
+            Read the story
+          </a>
         </div>
-        <p>
-          Royce’s record, 1784–1894. Much of the East was taken earlier. Boundaries are historical
-          evidence, not the limits of belonging.{' '}
-          <a href={href('/methods/sources/')}>About the sources</a>
+        <ol class="ribbon" aria-label="The story in twelve chapters, 1784 to today">
+          {chapters.map((c) => (
+            <li style={`flex: ${span(c)} 1 0`}>
+              <a
+                href={href(`/story/#ch-${c.n}`)}
+                data-from={c.from}
+                data-to={c.to}
+                data-label={`Chapter ${c.n}: ${c.title}, ${c.from}–${c.to === 2026 ? 'today' : c.to}`}
+                aria-label={`Chapter ${c.n}: ${c.title}, ${c.from} to ${c.to === 2026 ? 'today' : c.to}`}
+              >
+                <span class="seg" />
+              </a>
+            </li>
+          ))}
+        </ol>
+        <p class="ribbon-ends" aria-hidden="true">
+          <span>1784</span>
+          <span>today</span>
         </p>
-      </figcaption>
-    </figure>
+        <p class="ribbon-now">
+          <span id="ribbon-now">Chapter 1: {chapters[0]!.title}, 1784–1794</span>
+        </p>
+      </nav>
+    </div>
   </section>
+  <p class="release sans">
+    Independent research, open to correction.{' '}
+    <a href={href('/about/')}>Early release: not yet reviewed by Native nations or legal counsel</a>
+  </p>
   <section class="pathways" aria-label="Explore the record">
-    <a href={href('/map/')}>
+    <a href={href('/law/')}>
       <span class="path-icon" aria-hidden="true">
         ⌁
       </span>
       <span>
-        <strong>Follow the changing land</strong>
-        <small>Explore the map through time</small>
+        <strong>See what the courts did</strong>
+        <small>
+          {cases} court cases and {statutes} laws
+        </small>
       </span>
       <span aria-hidden="true">↗</span>
     </a>
@@ -252,6 +298,32 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
   const slider = document.getElementById('home-year') as HTMLInputElement | null;
   const playButton = document.getElementById('replay');
   const paths = Array.from(fig?.querySelectorAll<SVGPathElement>('.yr') ?? []);
+  const segs = Array.from(document.querySelectorAll<HTMLAnchorElement>('.ribbon a'));
+  const now = document.getElementById('ribbon-now');
+  let pinned: HTMLAnchorElement | null = null;
+  function light(a: HTMLAnchorElement | undefined) {
+    if (!a) return;
+    segs.forEach((s) => s.classList.toggle('on', s === a));
+    if (now) now.textContent = a.dataset.label ?? '';
+  }
+  function showChapter(y: number) {
+    if (pinned) return;
+    light(segs.find((s) => Number(s.dataset.from) <= y && y <= Number(s.dataset.to)));
+  }
+  segs.forEach((a) => {
+    const hold = () => {
+      pinned = a;
+      light(a);
+    };
+    const release = () => {
+      pinned = null;
+      showChapter(Number(slider?.value ?? 1784) === 1895 ? 2026 : Number(slider?.value ?? 1784));
+    };
+    a.addEventListener('mouseenter', hold);
+    a.addEventListener('focus', hold);
+    a.addEventListener('mouseleave', release);
+    a.addEventListener('blur', release);
+  });
   let frame = 0;
   let playing = false;
   function render(y: number) {
@@ -262,6 +334,8 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     context.textContent =
       y === 1895 ? 'Reservations and trust lands today' : 'The historical record of land cessions';
     fig.classList.toggle('show-today', y === 1895);
+    // the slider's "Today" stop belongs to the last chapter
+    showChapter(y === 1895 ? 2026 : y);
     paths.forEach((p) => p.classList.toggle('ceded', Number(p.dataset.year) <= y));
   }
   function stop() {
@@ -405,13 +479,6 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
   .privacy a {
     text-decoration: none;
   }
-  .quiet-link {
-    display: inline-flex;
-    gap: 24px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin-top: 25px;
-  }
   .land {
     background: #e4e9db;
     border: 1px solid #d4dcc9;
@@ -547,6 +614,106 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     line-height: 1.6;
     color: #59664f;
     margin: 10px 0 0;
+  }
+  .land-col {
+    min-width: 0;
+  }
+  .read-on {
+    margin-top: 16px;
+  }
+  .read-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .ra {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid #485d3f;
+  }
+  .ra-map {
+    background: #485d3f;
+    color: #f6f7f1;
+  }
+  .ra-story {
+    color: #364a2f;
+  }
+  .ra:hover {
+    background: #364a2f;
+    border-color: #364a2f;
+    color: #f6f7f1;
+  }
+  .ribbon {
+    display: flex;
+    gap: 3px;
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+  }
+  .ribbon li {
+    min-width: 24px;
+  }
+  /* twelve 24px targets need about 320px; below that the story button stands in for the ribbon */
+  @media (max-width: 359px) {
+    .ribbon,
+    .ribbon-ends,
+    .ribbon-now {
+      display: none;
+    }
+  }
+  @media (max-width: 1000px) {
+    .release {
+      margin-top: 24px;
+    }
+  }
+  .ribbon a {
+    display: flex;
+    align-items: center;
+    height: 24px;
+  }
+  .seg {
+    display: block;
+    width: 100%;
+    height: 8px;
+    border-radius: 2px;
+    background: #b9c5ab;
+    transition:
+      height 150ms,
+      background-color 150ms;
+  }
+  .ribbon li:nth-child(even) .seg {
+    background: #a6b397;
+  }
+  .ribbon a.on .seg,
+  .ribbon a:hover .seg,
+  .ribbon a:focus-visible .seg {
+    height: 16px;
+    background: #485d3f;
+  }
+  .ribbon-ends {
+    max-width: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 4px 0 0;
+    font-size: 0.7rem;
+    color: #59664f;
+  }
+  .ribbon-now {
+    margin: 6px 0 0;
+    font-size: 0.85rem;
+    color: #364a2f;
+  }
+  .release {
+    max-width: none;
+    margin: -24px 0 40px;
+    font-size: 0.72rem;
+    color: var(--ink-3);
   }
   .pathways {
     display: grid;

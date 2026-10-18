@@ -554,7 +554,7 @@
           new AttributionControl({
             compact: false,
             customAttribution:
-              'Cessions: USDA Forest Service after C. C. Royce (1899), modified. Territories: <a href="https://native-land.ca">Native Land Digital</a>, live, not stored. Today: US Census Bureau. Basemap: <a href="https://openfreemap.org">OpenFreeMap</a> © <a href="https://openmaptiles.org">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              'Early release, <a href="/about/">not yet reviewed</a> by Native nations or legal counsel. Cessions: USDA Forest Service after C. C. Royce (1899), modified. Territories: <a href="https://native-land.ca">Native Land Digital</a>, live, not stored. Today: US Census Bureau. Basemap: <a href="https://openfreemap.org">OpenFreeMap</a> © <a href="https://openmaptiles.org">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
           }),
         );
         map.on('load', () => {

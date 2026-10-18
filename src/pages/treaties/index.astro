@@ -53,9 +53,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         Each page shows what was agreed, what happened to the land, which promises were broken, and
         who is defending those rights today.
       </p>
-      <a href={href('/where/')}>
-        Begin with where you live <span aria-hidden="true">↗</span>
-      </a>
+      <p class="intro-links">
+        <a href={href('/where/')}>
+          Begin with where you live <span aria-hidden="true">↗</span>
+        </a>
+        <a href={href('/law/')}>
+          What courts and Congress did with them <span aria-hidden="true">↗</span>
+        </a>
+      </p>
     </div>
   </section>
   <section class="featured-section" aria-labelledby="featured-h">
@@ -103,6 +108,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </ul>
     </noscript>
   </section>
+  <section class="law-link" aria-labelledby="law-h">
+    <h2 id="law-h">After the treaties, the law</h2>
+    <p>
+      Courts and Congress decided what these promises came to mean: when a treaty right still holds,
+      when Congress could override it, and what is owed when land is taken. The law pages explain{' '}
+      {byType('Case').length} court cases, {byType('Statute').length} laws and the doctrines they
+      built, each in plain words.
+    </p>
+    <a class="law-cta" href={href('/law/')}>
+      Read the law
+    </a>
+  </section>
   <details class="count-note">
     <summary>Why there is no single count of treaties</summary>
     <p>
@@ -120,6 +137,38 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     gap: 10%;
     align-items: end;
     padding: 64px 0 56px;
+  }
+  .intro-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+  }
+  .law-link {
+    margin: 64px 0 32px;
+    padding: 32px;
+    border-radius: 20px;
+    background: #e4e9db;
+    border: 1px solid #d4dcc9;
+    max-width: 52rem;
+  }
+  .law-link h2 {
+    margin-top: 0;
+  }
+  .law-link p {
+    max-width: 60ch;
+  }
+  .law-cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 999px;
+    background: #485d3f;
+    color: #f6f7f1;
+    text-decoration: none;
+  }
+  .law-cta:hover {
+    background: #364a2f;
   }
   .intro-note {
     color: var(--moss);

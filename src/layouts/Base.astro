@@ -102,14 +102,6 @@ const here = Astro.url.pathname;
         </a>
       </div>
     </header>
-    <div class="release-strip frame">
-      <p>
-        Independent research, open to correction.{' '}
-        <a href={href('/about/')}>
-          Early release · Not yet reviewed by Native nations or legal counsel
-        </a>
-      </p>
-    </div>
     <main id="main" class={bleed ? '' : 'frame'}>
       <slot />
     </main>
@@ -191,9 +183,13 @@ const here = Astro.url.pathname;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-2) var(--space-5);
-    padding-top: 24px;
-    padding-bottom: 24px;
+    gap: var(--space-2) var(--space-6);
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  /* the nav sits beside the wordmark; the support button holds the far edge */
+  .bar nav {
+    margin-right: auto;
   }
   .wordmark {
     font-family: var(--sans);
@@ -210,7 +206,7 @@ const here = Astro.url.pathname;
   nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 var(--space-4);
+    gap: 0 18px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -239,15 +235,6 @@ const here = Astro.url.pathname;
     margin-bottom: 0;
     max-width: none;
   }
-  .release-strip p {
-    max-width: none;
-    font-size: 0.7rem;
-    margin: 10px 0;
-    color: var(--ink-2);
-  }
-  .release-strip a {
-    color: var(--ink-2);
-  }
   .brand-name {
     line-height: 1.05;
     letter-spacing: -0.025em;
@@ -260,8 +247,8 @@ const here = Astro.url.pathname;
   .header-support {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 10px 16px;
+    gap: 10px;
+    padding: 9px 16px;
     background: var(--moss);
     color: var(--on-moss);
     text-decoration: none;
