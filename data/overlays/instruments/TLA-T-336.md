@@ -3,6 +3,7 @@ id: "TLA-T-336"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1865 the Ponca ceded about 30,000 acres of their reservation and received other land back; an 1868 Sioux treaty later overlapped it."
+note: "NET Nebraska Studies gives 96,000 acres for the 1865 reservation, a figure not in the treaty; its explanation of the 1868 overlap is its own inference."
 how: "treaty_negotiated"
 how_basis: "The treaty text records an exchange of land between the Ponca and the United States, with no coercion stated; NET Nebraska Studies describes the later 1868 overlap as a separate event."
 confidence: "medium"
@@ -15,4 +16,4 @@ On March 10, 1865, in Washington, the Ponca tribe ceded to the United States the
 
 In exchange, the United States ceded to the Ponca several townships, some of them fractional, including land south of Ponca Creek, and the Niobrara River islands in front of those lands. The treaty gives two reasons: "rewarding them for their constant fidelity" to the government and citizens, and "returning to the said tribe of Ponca Indians their old burying-grounds and corn-fields." The United States would not pay settlers' claims for improvements on this land. The Ponca had to pay any such claims from their own funds.
 
-NET Nebraska Studies, a Nebraska educational site, adds that a third reason was "to move the Ponca away from the Sioux who were attacking from the West." It reports that the 1868 Fort Laramie treaty with the Sioux then covered part of the land reserved for the Ponca in 1865. It says that was "most likely" because the 1868 commissioners had forgotten the 1865 treaty. The same page says this "set the stage" for the Ponca "Trail of Tears." The pages opened here do not describe the removal itself or the Standing Bear case.
+NET Nebraska Studies, a Nebraska educational site, adds that a third reason was "to move the Ponca away from the Sioux who were attacking from the West." It reports that the 1868 Fort Laramie treaty with the Sioux then covered part of the land reserved for the Ponca in 1865. It says that was "most likely" because the 1868 commissioners had forgotten the 1865 treaty. The same page says this "set the stage" for the Ponca "Trail of Tears." The sources here do not describe the removal itself or the Standing Bear case.

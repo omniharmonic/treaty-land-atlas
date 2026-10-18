@@ -3,6 +3,7 @@ id: "case-elk-v-wilkins-1884"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Court held that an Indian born into a tribe, who then left it, was not a citizen under the Fourteenth Amendment."
+note: "The Court's reasoning about tribal allegiance reflects the 1884 opinion, not current law, which is set by statute."
 confidence: "high"
 cautions: "The 1924 statute's printed text is in two columns; the quote above is a fragment of the extracted text. The Court's words about tribes owing allegiance reflect the 1884 opinion's reasoning, not current law, which is set by statute. Our data says no treaty or land is at issue, which matches the opinion."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep112/usrep112094/usrep112094.pdf", "title": "Elk v. Wilkins, 112 U.S. 94 (1884) (U.S. Reports, Library of Congress)", "quote": "but who has not been naturalized, or taxed, or recognized as a citizen, either by the United States or by the State"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep112/usrep112094/usrep112094.pdf", "title": "Elk v. Wilkins, 112 U.S. 94 (1884) (U.S. Reports, Library of Congress)", "quote": "but completely subject to their political jurisdiction, and owing them direct and immediate allegiance"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-43/pdf/STATUTE-43-Pg253.pdf", "title": "Act of June 2, 1924, 43 Stat. 253 (Indian citizenship), U.S. Statutes at Large (govinfo)", "quote": "they are hereby, declared to be citizens of the united"}]

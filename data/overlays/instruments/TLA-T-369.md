@@ -3,6 +3,7 @@ id: "TLA-T-369"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1868 Fort Laramie treaty set apart the Great Sioux Reservation, promised closure of Bozeman Trail forts, and required three-fourths consent to any cession."
+note: "Calling the 1877 Act an \"agreement\" is the Supreme Court's wording."
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement and the Supreme Court describes it as concluded at the culmination of the Powder River War; the later taking is a separate act."
 confidence: "high"

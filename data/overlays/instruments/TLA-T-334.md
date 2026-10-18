@@ -17,4 +17,4 @@ The treaty is open about the purpose. It says "the object of the Government in p
 
 The United States agreed to pay $50,000 on ratification, to be spent on goods, provisions, cattle, horses, buildings, farming tools and other improvements. It also agreed to pay $7,000 for damages from the Winnebago's temporary stay on Omaha land and their use and destruction of timber.
 
-The Omaha also agreed to divide the rest of the reservation among tribe members in severalty, meaning individual tracts, citing a wish to promote "settled habits of industry and enterprise." Two days later, the United States set the ceded tract apart as a home for the Winnebago. The pages opened here do not give the Omaha account or later events.
+The Omaha also agreed to divide the rest of the reservation among tribe members in severalty, meaning individual tracts, citing a wish to promote "settled habits of industry and enterprise." Two days later, the United States set the ceded tract apart as a home for the Winnebago. The sources here do not give the Omaha account or later events.

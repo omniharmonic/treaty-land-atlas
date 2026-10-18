@@ -4,7 +4,7 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1829 the Winnebago ceded land between the Rock and Wisconsin rivers for $18,000 a year for thirty years plus goods."
 how: "treaty_negotiated"
-how_basis: "The Oklahoma State treaty text records a negotiated cession for annuities; payment of claims against the Winnebago is noted, but no opened source states coercion."
+how_basis: "The Oklahoma State treaty text records a negotiated cession for annuities; payment of claims against the Winnebago is noted, but no source cited states coercion."
 confidence: "high"
 cautions: "Acreage is not stated. The treaty's phrase \"the mineral country\" appears only in Article 5, so this story does not call the ceded land a lead-mining region. No opened source says the debt payments shaped the cession."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1829-0300", "title": "Tribal Treaties Database (OSU)", "quote": "the sum of eighteen thousand dollars in specie, annually, for the period of thirty years"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1829-0300", "title": "Tribal Treaties Database (OSU)", "quote": "in full satisfaction of the claims brought by said persons against said Indians, and by them acknowledged to be justly due"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg323.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Winnebaygo"}]

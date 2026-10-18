@@ -3,6 +3,7 @@ id: "TLA-U-CA-C"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Camp Burton in 1851, four tribes agreed to districts near Tulare and Kern lakes and gave up claims; the Senate never ratified it."
+note: "Sources give July 2 or July 8, 1852 as the date the Senate rejected it."
 how: "unratified"
 how_basis: "The OSU treaty page marks it Unratified, and Prologue says the Senate rejected all 18 California treaties."
 confidence: "high"

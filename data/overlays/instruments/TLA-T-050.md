@@ -16,4 +16,4 @@ In Article I the chiefs agreed, "in consideration of certain sums of money and g
 
 Article II gave the United States the right to a horse path through the Creek country from the Ocmulgee to the Mobile. The Creek chiefs would keep boats at the rivers and houses of entertainment for travelers.
 
-The United States agreed to pay $12,000 a year for eight years, then $11,000 a year for ten more, eighteen payments in all, and to supply two blacksmiths and two strikers for eight years. The Charlton County Historical Society says that in 1796 at Colerain the Creek "positively refused to cede" this territory to Georgia. The sources opened do not explain what changed.
+The United States agreed to pay $12,000 a year for eight years, then $11,000 a year for ten more, eighteen payments in all, and to supply two blacksmiths and two strikers for eight years. The Charlton County Historical Society says that in 1796 at Colerain the Creek "positively refused to cede" this territory to Georgia. The sources here do not explain what changed.

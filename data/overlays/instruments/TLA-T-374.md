@@ -17,4 +17,4 @@ Article 1 said farmable land inside the 1863 reservation would be surveyed and a
 
 Article 2 annulled the 1863 clause that let the United States use reservation timber to maintain forts or garrisons. It said the military would help protect the timber. No timber could be cut without the written consent of the head chief, the agent and the superintendent of Indian affairs. Article 3 said money due for schools and teachers, which had been "used for other purposes" since 1864, was to be repaid by Congress, invested in bonds and held in trust.
 
-In 1871 Congress provided that no tribe would be recognized as a nation with which the United States could contract by treaty. The pages opened here do not describe the non-treaty bands' view or later events.
+In 1871 Congress provided that no tribe would be recognized as a nation with which the United States could contract by treaty. The sources here do not describe the non-treaty bands' view or later events.

@@ -18,4 +18,4 @@ In Article 2 the United States agreed to pay the Potawatomi seven hundred dollar
 
 In Article 3 the miller provided for in the third article of the Potawatomi treaty of 16 October 1826 was no longer to be supported by the United States, and would stop from the signing.
 
-Article 4 made the treaty binding once the President and Senate ratified it. The page lists a proclamation on 16 March 1835. The schedule of debts is not shown. The 1826 and 1832 treaties were not opened.
+Article 4 made the treaty binding once the President and Senate ratified it. The page lists a proclamation on 16 March 1835. The schedule of debts is not shown.

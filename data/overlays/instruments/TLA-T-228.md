@@ -3,6 +3,7 @@ id: "TLA-T-228"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1837 the Winnebago (Ho-Chunk) ceded all land east of the Mississippi and agreed to move to the neutral ground within eight months."
+note: "Some accounts describe the signing as coerced; the sources cited here do not address how the treaty was negotiated."
 how: "removal"
 how_basis: "Article 3 of the treaty text requires removal within eight months of ratification, and MNopedia describes the move to Iowa and later to Long Prairie."
 confidence: "high"

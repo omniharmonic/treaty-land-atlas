@@ -3,6 +3,7 @@ id: "TLA-T-106"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1819 the Cherokee ceded land north and east of a line, settling the 1817 treaty, with family reservations and a school fund."
+note: "The treaty's account of the Cherokee wish to remain in the east is the document's own framing."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a convention negotiated in Washington with Cherokee chiefs to settle the 1817 treaty, with no description of duress."
 confidence: "high"
@@ -16,4 +17,4 @@ The preamble says "a greater part of the Cherokee nation have expressed an earne
 
 Article 1 ceded all Cherokee lands north and east of a line. It starts on the Tennessee River at the boundary of Madison County, Alabama Territory, follows the Hiwassee and the Blue Ridge, and ends at the Chestatee and Chattahoochee rivers and the Creek boundary. A tract twelve miles square was ceded to the United States in trust, to be sold for a Cherokee school fund. Article 2 promised pay for improvements and 640 acres to each head of a family who chose to become a citizen. Article 3 granted 640-acre fee-simple reservations to persons on an annexed list.
 
-Article 6 divided the annuity two-thirds to the Cherokee east of the Mississippi and one-third to those west of it. The sources opened give no acreage and do not describe the council.
+Article 6 divided the annuity two-thirds to the Cherokee east of the Mississippi and one-third to those west of it. The sources here give no acreage and do not describe the council.

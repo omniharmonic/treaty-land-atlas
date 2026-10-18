@@ -3,6 +3,7 @@ id: "org-dream-of-wild-health"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Dream of Wild Health, a Native-led Minneapolis nonprofit, farms 30 acres in Hugo, Minnesota, tripling its farm in 2020 with a 20-acre purchase."
+note: "The farm land was bought by the nonprofit, not returned to a tribe. Online gifts may go through givemn.org; checks are payable to \"Dream of Wild Health\"."
 confidence: "medium"
 cautions: "Land purchased by a nonprofit for a farm; no tribal-government title or federal transfer. Pounds and campaign details are the organization's own. Online gifts route through givemn.org per the record's vetting notes; confirm payee (its donate page lists \"Dream of Wild Health\" for checks)."
 sources: [{"url": "https://dreamofwildhealth.org/about/", "title": "Dream of Wild Health - About", "quote": "DWH owns a 30-acre farm in Hugo, MN"}, {"url": "https://dreamofwildhealth.org/our-farm/", "title": "Dream of Wild Health - Our Farm", "quote": "In 2020, we purchased land, expanding our acreage from 10 acres to 30 acres."}, {"url": "https://dreamofwildhealth.org/capital-campaign/", "title": "Dream of Wild Health - Capital Campaign", "quote": "20-acre property purchased"}, {"url": "https://dreamofwildhealth.org/staff-page-2/", "title": "Dream of Wild Health - Staff & Board", "quote": "Neely Snyder Executive Director St Croix Ojibwe"}, {"url": "https://projects.propublica.org/nonprofits/organizations/411632662", "title": "ProPublica Nonprofit Explorer - Dream Of Wild Health", "quote": "Tax exemption issued: Aug. 1989"}]

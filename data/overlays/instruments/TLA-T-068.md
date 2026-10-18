@@ -3,6 +3,7 @@ id: "TLA-T-068"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 20 July 1815, a people the text calls the Mahas made peace with the United States and accepted its protection."
+note: "Some databases list this as a treaty with the Makah, but the text names the Mahas; whether these are the same people is unresolved."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed by United States commissioners and the tribe's chiefs and warriors; it describes no pressure or cession."
 confidence: "medium"
@@ -16,4 +17,4 @@ The preamble says both sides wanted to re-establish peace and friendship and to 
 
 In Article 3 the chiefs and warriors acknowledge themselves and their tribe to be under the protection of the United States and of no other nation, power or sovereign.
 
-The treaty cedes no land and sets no boundary. The page lists ratification on 26 December 1815. The page ties the treaty to the Makah and the Makah Indian Tribe of the Makah Indian Reservation, and the sources opened do not settle that identification.
+The treaty cedes no land and sets no boundary. The page lists ratification on 26 December 1815. The page ties the treaty to the Makah and the Makah Indian Tribe of the Makah Indian Reservation, and the sources here do not settle that identification.

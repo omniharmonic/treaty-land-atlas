@@ -3,6 +3,7 @@ id: "TLA-T-043"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Sauk and Fox chiefs ceded land along the Mississippi in 1804; many Sauk and Meskwaki, including Black Hawk, later called the treaty void."
+note: "Whether the 1804 signers had authority to cede the land is disputed; the \"under pressure\" description rests on that dispute, not on any account of force or threats."
 how: "treaty_under_pressure"
 how_basis: "Before Knox, a college-linked history, says many Sauk and Meskwaki considered the treaty void because important leaders and the tribal council were absent, which makes the signers' authority disputed."
 confidence: "high"

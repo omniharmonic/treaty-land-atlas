@@ -14,4 +14,4 @@ The page tells the Blue Lake story in the Pueblo's words. It says that in 1906 t
 
 The federal law is Public Law 91-550, enacted in December 1970. Its first section amends an Act of May 31, 1933 and provides that described lands "upon which said Indians depend and have depended since time immemorial for water supply, forage for their domestic livestock, wood and timber for their personal use, and as the scene of certain religious ceremonials" are declared to be held by the United States in trust for the Pueblo de Taos.
 
-The text read here did not state acreage, so this entry does not repeat the record's 48,000 acres. The Pueblo's site is inconsistent on when Taos became a National Historic Landmark (1960 on one page, 1965 on another).
+The statute page quoted here does not state acreage, so a 48,000-acre figure is not confirmed. The Pueblo's site is inconsistent on when Taos became a National Historic Landmark (1960 on one page, 1965 on another).

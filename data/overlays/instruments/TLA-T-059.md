@@ -16,4 +16,4 @@ In Article 1 the Kickapoo agreed. The text says the cession in the ninth article
 
 In Article 2 the Kickapoo ceded a further tract between that land, the Wabash, the Vermilion River, and a line meeting the Vermilion twenty miles from its mouth. The text gives a further annuity of $100 and $700 in goods as full compensation. If the Miami did not approve this second cession, and the United States chose not to take the land without their consent, the United States would be released from paying the $100.
 
-Article 3 applied the Greenville treaty's rules for paying annuities and the right to hunt on the land. The OSU record shows the treaty was ratified on March 5, 1810. The sources opened give no acreage and do not describe the council.
+Article 3 applied the Greenville treaty's rules for paying annuities and the right to hunt on the land. The OSU record shows the treaty was ratified on March 5, 1810. The sources here give no acreage and do not describe the council.

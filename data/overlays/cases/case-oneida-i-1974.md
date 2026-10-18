@@ -3,6 +3,7 @@ id: "case-oneida-i-1974"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1974 the Supreme Court unanimously held that the Oneidas' claim to land ceded to New York in 1795 arises under federal law."
+note: "This ruling decided only that the claim belonged in federal court; the merits came later."
 confidence: "high"
 cautions: "The syllabus refers to treaties of the 1780s and 1790s generally; the atlas page lists the 1784 Fort Stanwix and 1794 Canandaigua treaties, which were not checked here. The opinion decides federal jurisdiction only; the merits came later."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep414/usrep414661/usrep414661.pdf", "title": "Oneida Indian Nation of New York v. County of Oneida, 414 U.S. 661 (1974) (U.S. Reports, Library of Congress)", "quote": "Indian title is a matter of federal law and can be extinguished only with federal consent"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep414/usrep414661/usrep414661.pdf", "title": "Oneida Indian Nation of New York v. County of Oneida, 414 U.S. 661 (1974) (U.S. Reports, Library of Congress)", "quote": "delivered the opinion for a unanimous Court."}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep414/usrep414661/usrep414661.pdf", "title": "Oneida Indian Nation of New York v. County of Oneida, 414 U.S. 661 (1974) (U.S. Reports, Library of Congress)", "quote": "various treaties with the United States had confirmed their right to possession of the land until purchased by the United States"}]

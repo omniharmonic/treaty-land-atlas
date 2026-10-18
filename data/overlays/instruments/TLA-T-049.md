@@ -3,6 +3,7 @@ id: "TLA-T-049"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Two days after the Duck River cession, the Cherokee ceded the South West Point tract and a mail road for $1,600."
+note: "Phrases such as \"spirit of conciliation\" are the treaty's own framing, not a record of Cherokee views."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession for a stated payment, with the stated aim of a site for the Tennessee legislature, and no source I read describes coercion."
 confidence: "high"

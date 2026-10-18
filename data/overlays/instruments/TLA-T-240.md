@@ -3,6 +3,7 @@ id: "TLA-T-240"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1842 the Wyandot ceded their last Ohio and Michigan lands for a perpetual annuity and a 148,000-acre tract west of the Mississippi."
+note: "The account of the 1841 killings is the Wyandot Nation of Kansas's own; the treaty text does not mention them. The treaty did not fix where the 148,000-acre tract would be."
 how: "removal"
 how_basis: "Article 13 of the treaty text commits the chiefs to remove their whole people west of the Mississippi, and the Wyandot Nation of Kansas describes the removal that followed in 1843."
 confidence: "medium"

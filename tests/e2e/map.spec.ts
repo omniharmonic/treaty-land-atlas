@@ -17,11 +17,12 @@ test('selecting a row opens the record and the list matches the summary count', 
 }) => {
   await page.goto('/map/#y=1851');
   await page.locator('.record-browser > summary').click();
-  const count = Number((await page.locator('#inview').innerText()).match(/\((\d+)\)/)![1]);
+  const count = Number(await page.locator('.record-browser > summary span').innerText());
   await expect(page.locator('.summary')).toContainText(`${count} cession`);
   await page.locator('.table button').first().click();
-  await expect(page.locator('#detail h2')).not.toContainText('Royce cession');
-  await expect(page.locator('#detail .record-reference')).toContainText('No.');
+  await expect(page.locator('#detail h2')).toContainText('(area ');
+  await expect(page.locator('#detail h2')).not.toContainText('Royce');
+  await expect(page.locator('#detail .record-reference')).toContainText('Full record of area');
 });
 
 test('honored-through view shows the legal status panel', async ({ page }) => {
@@ -43,8 +44,8 @@ test('a selected area is the first visible sidebar content, including after scro
 }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto('/map/#y=1868&sel=geo-royce-261');
-  await expect(page.locator('#detail h2')).toHaveText('Treaty of La Pointe (1842)');
-  await expect(page.locator('#detail .record-reference')).toContainText('261');
+  await expect(page.locator('#detail h2')).toContainText('(area 261)');
+  await expect(page.getByRole('link', { name: /Treaty of La Pointe/ }).first()).toBeVisible();
   const inSidebar = () =>
     page.evaluate(() => {
       const detail = document.querySelector('#detail')!.getBoundingClientRect();
@@ -81,8 +82,7 @@ test('clicking the actual map reveals a land record without hunting through cont
   const detail = await page.locator('#detail').boundingBox();
   const sidebar = await page.locator('.rail').boundingBox();
   expect(detail!.y).toBeLessThan(sidebar!.y + 120);
-  await expect(page.locator('.history-context')).not.toHaveAttribute('open');
-  await page.getByRole('button', { name: 'Back to map', exact: true }).click();
+  await page.getByRole('button', { name: 'Back to the map' }).click();
   await expect(page.locator('#detail')).toHaveCount(0);
   await expect(page.locator('.map-hint')).toBeVisible();
   await expect(page.locator('#year')).toBeVisible();
@@ -98,7 +98,7 @@ test('mobile selection brings the record into view and can return to the map', a
       return !!box && box.y >= -1 && box.y < 100;
     })
     .toBe(true);
-  await page.getByRole('button', { name: 'Back to map', exact: true }).click();
+  await page.getByRole('button', { name: 'Back to the map' }).click();
   await expect(page.locator('#detail')).toHaveCount(0);
   await expect
     .poll(async () => {
@@ -115,6 +115,8 @@ test('failed detail requests still show the selected land and a full record link
   await page.goto('/map/#y=1868&sel=geo-royce-261');
   await expect(page.locator('#detail .record-reference')).toContainText('261');
   await expect(page.locator('#detail .record-status')).toContainText('could not load');
+  await expect(page.locator('#detail .plain')).toBeVisible();
+  await expect(page.locator('#detail .plain')).toBeVisible();
   await expect(page.locator('#detail h2')).toContainText('Chippewa');
   await expect(page.locator('#detail h2')).not.toContainText('Royce');
   await expect(page.locator('#detail a[href="/cessions/261/"]')).toBeVisible();

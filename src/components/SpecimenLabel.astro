@@ -8,7 +8,6 @@ interface Props {
   n: Node;
 }
 const { n } = Astro.props;
-const repo = 'https://github.com/omniharmonic/treaty-land-atlas';
 const flagWord: Record<string, string> = {
   text_has_from_memory_tag: 'Some details not yet checked against a source',
   text_has_disputed_tag: 'Some details are disputed',
@@ -18,17 +17,10 @@ const flagWord: Record<string, string> = {
   geometry_missing: 'No shape in the source',
   context_row_not_a_treaty: 'Context record, not a treaty',
 };
-const sourceFile = n.provenance?.source_file;
 ---
 
 <div class="label sans">
   <dl>
-    <div>
-      <dt>Record</dt>
-      <dd>
-        <code>{n.id}</code>
-      </dd>
-    </div>
     <div>
       <dt>Kind</dt>
       <dd>{TYPE_NAME[n.type]?.[0] ?? n.type}</dd>
@@ -54,14 +46,6 @@ const sourceFile = n.provenance?.source_file;
               <li>{flagWord[f] ?? f.replace(/_/g, ' ')}</li>
             ))}
           </ul>
-        </dd>
-      </div>
-    )}
-    {sourceFile && (
-      <div>
-        <dt>From</dt>
-        <dd>
-          <a href={`${repo}/blob/main/${sourceFile}`}>{sourceFile.split('/').pop()}</a>
         </dd>
       </div>
     )}

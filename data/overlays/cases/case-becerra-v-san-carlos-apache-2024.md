@@ -3,6 +3,7 @@ id: "case-becerra-v-san-carlos-apache-2024"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Indian Health Service must pay contract support costs when tribes spend insurance 'program income' on health care they took over."
+note: "The case was decided together with Becerra v. Northern Arapaho Tribe."
 confidence: "high"
 cautions: "The slip opinion is marked 602 U.S. ____; the page number 222 in our data was not shown on it and I did not open the bound volume. The case was consolidated with Becerra v. Northern Arapaho Tribe (No. 23-253)."
 sources: [{"url": "https://www.supremecourt.gov/opinions/23pdf/23-250_2dp3.pdf", "title": "Becerra v. San Carlos Apache Tribe, No. 23-250 (U.S. June 6, 2024) (supremecourt.gov slip opinion)", "quote": "ISDA requires IHS to pay the contract support costs that a tribe incurs when it collects and spends program income"}, {"url": "https://www.supremecourt.gov/opinions/23pdf/23-250_2dp3.pdf", "title": "Becerra v. San Carlos Apache Tribe, No. 23-250 (U.S. June 6, 2024) (supremecourt.gov slip opinion)", "quote": "a contracting tribe can collect revenue from third-party payers like Medicare, Medicaid, and private insurers"}, {"url": "https://www.supremecourt.gov/opinions/23pdf/23-250_2dp3.pdf", "title": "Becerra v. San Carlos Apache Tribe, No. 23-250 (U.S. June 6, 2024) (supremecourt.gov slip opinion)", "quote": "a penalty for pursuing self-determination"}]

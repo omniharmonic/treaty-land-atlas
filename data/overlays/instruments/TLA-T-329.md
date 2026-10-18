@@ -3,6 +3,7 @@ id: "TLA-T-329"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1863 Tuilla Valley treaty opened Goship Shoshone country to travel, mining and settlement in exchange for annuities."
+note: "The treaty text contains no express cession of land."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated peace treaty; I found no statement of duress in the text."
 confidence: "high"

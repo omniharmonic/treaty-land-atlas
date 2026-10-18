@@ -3,6 +3,7 @@ id: "TLA-T-083"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1816 the Cherokee delegates agreed to a western boundary and ceded land beyond it for a $6,000 annuity and $5,000 for improvements."
+note: "The treaty allowed a failure to appear to count as Cherokee ratification, but the text records an actual council ratification on October 4, 1816."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text shows a signed, ratified-in-council agreement with stated payments; it does not describe duress, though its tacit-ratification clause is noted in cautions."
 confidence: "high"
@@ -16,4 +17,4 @@ In Article 2 the Cherokee nation acknowledged a western boundary south of the Te
 
 Article 5 set a council at Turkey's Town on September 28. If the Cherokee did not assemble, the commissioners could report that as "a tacit ratification." A note at the end records that the treaty was "ratified at Turkey Town, by the whole Cherokee nation in council assembled," with a signing date of October 4, 1816.
 
-The sources opened give no acreage and do not describe the council or later events.
+The sources here give no acreage and do not describe the council or later events.

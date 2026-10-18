@@ -3,8 +3,9 @@ id: "TLA-T-120"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1823 the Florida tribes ceded their claim to Florida except a central district, with twenty years of U.S. support promised."
+note: "The four million acre figure comes from a historical marker; the treaty describes boundaries, not acreage."
 how: "treaty_negotiated"
-how_basis: "The treaty text and Florida marker describe a negotiated cession and confinement to a reservation; neither opened source states duress, though the confinement terms and later war are noted in cautions."
+how_basis: "The treaty text and Florida marker describe a negotiated cession and confinement to a reservation; neither source states duress, though the confinement terms and later war are noted in cautions."
 confidence: "medium"
 cautions: "The treaty confines the tribes to a reservation; the text records objections about land quality (Article 9) but does not otherwise describe the pressure involved. Which bands were present was not researched. The marker gives four million acres; the treaty gives boundaries, not acreage. Later removal was not researched beyond the marker."
 sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg224.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "The Florida tribes of Indians will hereafter be concen-"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg224.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "cede and re- linquish all claim or title which they may have to the whole territory of Florida"}, {"url": "https://markers.flheritage.com/home/details/311", "title": "Treaty Park historical marker (Florida Department of State)", "quote": "Failure on both sides to comply with the terms of this and later treaties led to the Second Seminole War (1835-1842)."}, {"url": "https://markers.flheritage.com/home/details/311", "title": "Treaty Park historical marker (Florida Department of State)", "quote": "The tribes were to occupy a four million acre reservation of the interior peninsula extending roughly from Lake George to the Everglades."}]

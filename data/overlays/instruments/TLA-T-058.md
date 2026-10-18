@@ -16,4 +16,4 @@ The Wea declared "their full and free consent" to the Fort Wayne treaty with the
 
 In return, "in consideration of the relinquishment made in the first article" of the Fort Wayne treaty, Harrison agreed for the United States to an added annuity of $300 and a present sum of $1,500. He also agreed to a further permanent annuity of $100 "as soon as the Kickapoos can be brought to give their consent to the ninth article" of the Fort Wayne treaty.
 
-The Kickapoo gave that consent on December 9, 1809, in a separate treaty at Vincennes. The OSU record shows this Wea convention was ratified on January 2, 1810, and proclaimed January 25, 1810. The sources opened give no acreage and do not describe the council.
+The Kickapoo gave that consent on December 9, 1809, in a separate treaty at Vincennes. The OSU record shows this Wea convention was ratified on January 2, 1810, and proclaimed January 25, 1810. The sources here give no acreage and do not describe the council.

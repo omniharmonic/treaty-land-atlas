@@ -3,6 +3,7 @@ id: "TLA-T-308"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1858 treaty with the Mdewakanton and Wahpekute Dakota ceded their north-bank lands along the Minnesota River and allotted the south bank."
+note: "The $140,000 for debts is Treaties Matter's figure for both 1858 Dakota treaties together; this treaty's text caps payments to chiefs and headmen at $70,000."
 how: "treaty_under_pressure"
 how_basis: "Treaties Matter says the Dakota delegates were taken to Washington to sign away half their holdings and that proceeds could pay their debts, after the Senate had struck the 1851 reservation."
 confidence: "medium"

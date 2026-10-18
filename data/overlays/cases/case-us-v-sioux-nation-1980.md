@@ -3,6 +3,7 @@ id: "case-us-v-sioux-nation-1980"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1980 the Supreme Court held the 1877 Act took the Black Hills from the Sioux Nation, requiring just compensation with interest."
+note: "The remedy was money only."
 confidence: "high"
 cautions: "The remedy was money only. The atlas page says the Sioux have declined payment and continue to seek return of land; no opened source states this, so it is not asserted here. The \"ripe and rank\" quotation is from the Court of Claims as quoted in the Supreme Court opinion."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep448/usrep448371/usrep448371.pdf", "title": "United States v. Sioux Nation of Indians, 448 U.S. 371 (1980) (U.S. Reports, Library of Congress)", "quote": "effected a taking of tribal property which had been set aside by the Fort Laramie Treaty for the Sioux' exclusive occupation"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep448/usrep448371/usrep448371.pdf", "title": "United States v. Sioux Nation of Indians, 448 U.S. 371 (1980) (U.S. Reports, Library of Congress)", "quote": "signed by only 10% of the adult male Sioux population"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep448/usrep448371/usrep448371.pdf", "title": "United States v. Sioux Nation of Indians, 448 U.S. 371 (1980) (U.S. Reports, Library of Congress)", "quote": "A more ripe and rank case of dishonorable dealings will never, in all probability, be found in our history"}]

@@ -16,4 +16,4 @@ The paper deals with the fourth article of a treaty made at Fort Wayne on 7 June
 
 The tracts were to go in places that best suited the convenience and interest of the United States. Their stated purpose was to set up houses of entertainment, meaning inns, for travellers.
 
-The page lists a proclamation on 23 December 1803. The text names no payment and gives no exact tract locations. The Fort Wayne treaty, whose fourth article this confirms, was not opened, so its other terms are not described here.
+The page lists a proclamation on 23 December 1803. The text names no payment and gives no exact tract locations. The other terms of the Fort Wayne treaty, whose fourth article this confirms, are not described here.

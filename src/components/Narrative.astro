@@ -72,22 +72,20 @@ const CONF: Record<string, string> = {
         </ul>
       </section>
     )}
-    <p class="label sans">
-      A summary of the sources, written with AI assistance and checked against the quotes below. It
-      has not yet been reviewed by a historian or by the nations involved.{' '}
-      {o.confidence && CONF[o.confidence]}{' '}
-      <a href={href(`/corrections/?record=${encodeURIComponent(n.id)}`)}>Report an error</a>.
-    </p>
-    {o.cautions && (
-      <p class="cautions sans">
-        <strong>Cautions.</strong> {o.cautions}
+    {o.note && (
+      <p class="note sans">
+        <strong>Good to know.</strong> {o.note}
       </p>
     )}
-    {sources.length > 0 && (
+    <p class="label sans">
+      Summarized with AI assistance from {sources.length} source{sources.length === 1 ? '' : 's'}{' '}
+      and checked against their words; not yet reviewed by historians or by the nations.{' '}
+      <a href={href(`/corrections/?record=${encodeURIComponent(n.id)}`)}>Report an error</a>
+    </p>
+    {(sources.length > 0 || o.cautions) && (
       <details class="quotes sans">
-        <summary>
-          What the sources say ({sources.length} source{sources.length === 1 ? '' : 's'})
-        </summary>
+        <summary>What the sources say, and how this was checked</summary>
+        {o.confidence && <p class="conf">{CONF[o.confidence]}</p>}
         <ol>
           {sources.map((s) => (
             <li>
@@ -98,6 +96,11 @@ const CONF: Record<string, string> = {
             </li>
           ))}
         </ol>
+        {o.cautions && (
+          <p class="cautions">
+            <strong>Research notes.</strong> {o.cautions}
+          </p>
+        )}
       </details>
     )}
   </section>
@@ -154,6 +157,17 @@ const CONF: Record<string, string> = {
   .headline {
     font-size: var(--s1);
     line-height: 1.35;
+  }
+  .note {
+    font-size: var(--s-1);
+    background: var(--ochre);
+    border-radius: 10px;
+    padding: var(--space-3) var(--space-4);
+    max-width: none;
+  }
+  .conf {
+    font-size: var(--s-1);
+    color: var(--ink-2);
   }
   .label,
   .cautions {

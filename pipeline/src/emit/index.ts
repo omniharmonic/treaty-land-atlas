@@ -101,6 +101,7 @@ export function projectNode(n: GraphNode, overlay?: Overlay): Record<string, unk
       narrative: allowed ? overlay.body : null,
       sources: allowed ? overlay.sources : [],
       cautions: allowed ? (overlay.cautions ?? null) : null,
+      note: allowed ? (overlay.note ?? null) : null,
       confidence: allowed ? (overlay.confidence ?? null) : null,
       promises: allowed ? (overlay.promises ?? []) : [],
     };

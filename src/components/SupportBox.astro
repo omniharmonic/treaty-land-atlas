@@ -7,8 +7,9 @@ import SupportView from './SupportView.svelte';
 
 interface Props {
   n: Node;
+  titled?: boolean;
 }
-const { n } = Astro.props;
+const { n, titled = true } = Astro.props;
 const g = graph();
 const ix: SupportIndex = ((globalThis as { __supportIx?: SupportIndex }).__supportIx ??=
   supportIndex([...g.nodes.values()], g.edges));
@@ -16,4 +17,4 @@ const result = supportFor(ix, concerns(n.id, n.type, outgoing, incoming));
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-{n.type !== 'Organization' && <SupportView {base} {ix} {result} />}
+{n.type !== 'Organization' && <SupportView {base} {ix} {result} {titled} />}

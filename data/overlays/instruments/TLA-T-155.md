@@ -4,7 +4,7 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1829 the united Chippewa, Ottawa and Potawatomi ceded two tracts near the Rock River and Lake Michigan for $16,000 a year forever."
 how: "treaty_negotiated"
-how_basis: "The Oklahoma State treaty text records a negotiated cession for a perpetual annuity and goods; no opened source describes coercion."
+how_basis: "The Oklahoma State treaty text records a negotiated cession for a perpetual annuity and goods; no source cited describes coercion."
 confidence: "high"
 cautions: "Acreage is not stated. The headline avoids state names because the treaty text names only rivers and landmarks."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1829-0297", "title": "Tribal Treaties Database (OSU)", "quote": "the sum of sixteen thousand dollars, annually, forever, in specie"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1829-0297", "title": "Tribal Treaties Database (OSU)", "quote": "about twelve miles north of Chicago"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg320.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Chippewa, Ottawa, and Potawatamie"}]

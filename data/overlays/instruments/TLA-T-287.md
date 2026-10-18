@@ -3,6 +3,7 @@ id: "TLA-T-287"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 treaty with Mississippi, Pillager and Lake Winnibigoshish Chippewa ceded much of north-central Minnesota and created reservations."
+note: "Sources differ on the signing date, giving February 22 or January 22, 1855."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text and Treaties Matter describe a negotiated cession for reservations and annuities; no source I read describes coercion at this treaty, though the treaty set aside $50,000 to settle the bands' debts."
 confidence: "high"

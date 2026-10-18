@@ -3,6 +3,7 @@ id: "TLA-T-357"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1866 the Delaware agreed to leave Kansas for Indian Territory and let the Interior Secretary sell their remaining reservation, mainly to a railroad."
+note: "That the Delawares \"expressed a wish\" to move is the treaty's own wording."
 how: "removal"
 how_basis: "The preamble says Congress made it the President's duty to provide by treaty for the removal of Kansas tribes, and the articles provide for the Delawares' removal."
 confidence: "high"
@@ -15,4 +16,4 @@ On July 4, 1866, at the Delaware Agency in Kansas, U.S. officials Thomas Murphy,
 
 Article 2 let the Secretary of the Interior sell the rest of the reservation to that company, or other responsible buyers, for not less than $2.50 an acre, not counting improvements. Adult Delawares who had allotments could choose, "free from all restraint," to dissolve their tribal relations and become U.S. citizens, and their lands were held out of the sale.
 
-Article 4 had the United States sell the Delawares land in the Indian country, ceded by the Choctaw and Chickasaw, Creek or Seminole, up to 160 acres for each person who moved. The Delawares were to pay for it from the Kansas sale proceeds. Article 5 guaranteed them peaceable possession and protection from hostile Indians. Article 1 also required the United States to secure the full value of land already sold to the Leavenworth, Pawnee and Western Railroad. The pages opened here do not give the Delawares' own account or events after removal.
+Article 4 had the United States sell the Delawares land in the Indian country, ceded by the Choctaw and Chickasaw, Creek or Seminole, up to 160 acres for each person who moved. The Delawares were to pay for it from the Kansas sale proceeds. Article 5 guaranteed them peaceable possession and protection from hostile Indians. Article 1 also required the United States to secure the full value of land already sold to the Leavenworth, Pawnee and Western Railroad. The sources here do not give the Delawares' own account or events after removal.

@@ -3,6 +3,7 @@ id: "TLA-T-291"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 Nez Perce treaty ceded most Nez Perce territory for a reservation and $200,000; an 1863 treaty cut the reservation sharply."
+note: "Sources disagree: Encyclopedia.com says 7.5 million acres remained a reservation, while others describe 7.5 million acres as the ceded area. Figures for the 1863 reservation range from 750,000 to 780,000 acres."
 how: "treaty_under_pressure"
 how_basis: "HistoryLink says Stevens used promised gifts and threats of force, and refused the Indians' request for a delay."
 confidence: "medium"

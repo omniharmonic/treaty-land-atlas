@@ -3,6 +3,7 @@ id: "TLA-T-051"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Mount Dexter in 1805 the Choctaw ceded a large area, and the United States paid $48,000 toward their debts to traders."
+note: "The \"under pressure\" description rests on the $48,000 paid toward Choctaw debts to traders, which shows a debt-driven cession but not that anyone was coerced."
 how: "treaty_under_pressure"
 how_basis: "The treaty text itself ties the payment to discharging the Choctaw's debts to merchants and traders, a debt-driven cession."
 confidence: "high"

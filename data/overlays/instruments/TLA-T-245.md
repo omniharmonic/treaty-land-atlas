@@ -3,6 +3,7 @@ id: "TLA-T-245"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1846 the Kansa (Kaw) ceded two million acres on the east of their country for $202,000, most of it funded at five percent."
+note: "The 256,000-acre figure and the account of later moves come from the Kaw Nation's own page."
 how: "treaty_under_pressure"
 how_basis: "The Kaw Nation's own history describes undelivered annuities and land speculators coveting the land; the treaty text itself records a negotiated cession with a payment."
 confidence: "medium"

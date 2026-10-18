@@ -3,6 +3,7 @@ id: "TLA-T-194"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In December 1834 a Potawatomi chief, Muck Rose, and his band ceded six reserved sections on the Tippecanoe River."
+note: "Sources conflict on the annuity: one printing says $1,000 for two years, while the Statutes at Large reads $400 for one year."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a cession of reserved sections for goods and an annuity, signed by a commissioner and a chief, and no coercion is described."
 confidence: "medium"

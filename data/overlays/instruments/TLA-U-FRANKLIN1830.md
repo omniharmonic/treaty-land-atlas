@@ -3,6 +3,7 @@ id: "TLA-U-FRANKLIN1830"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The unratified 1830 Franklin treaty would have ceded northern Chickasaw lands for a western country that was never found."
+note: "The \"forced to cede\" wording comes from the Chickasaw Nation's own site, not the treaty text."
 how: "unratified"
 how_basis: "OSU records the treaty as unratified, and the Chickasaw Nation's page says the Senate never ratified it, so it became void."
 confidence: "high"

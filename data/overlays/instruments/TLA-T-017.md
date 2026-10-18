@@ -3,6 +3,7 @@ id: "TLA-T-017"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In New York in 1790 the Creek accepted U.S. protection and a Georgia boundary and ceded Oconee land; six articles were kept secret."
+note: "McGillivray spoke for a select group of chiefs, so how far the signers represented the whole Creek Nation is an open question."
 how: "treaty_negotiated"
 how_basis: "The Encyclopedia of Alabama describes a treaty negotiated between Knox and a select group of Creek chiefs led by McGillivray; the OSU text shows Senate advice and consent and a proclamation."
 confidence: "high"

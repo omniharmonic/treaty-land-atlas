@@ -3,6 +3,7 @@ id: "TLA-T-261"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1852 Santa Fe treaty made peace with Apache chiefs, placed them under U.S. jurisdiction and promised to set their boundaries later."
+note: "The account of what followed comes from a dissenting opinion in a later court case."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a peace treaty signed by seven Apache chiefs and two United States officers, and the Ninth Circuit dissent says the Apache leaders signed to make peace; neither describes coercion in the signing."
 confidence: "medium"

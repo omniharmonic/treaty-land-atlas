@@ -3,6 +3,7 @@ id: "TLA-T-246"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1846 the Comanche, Caddo, Wichita and others in Texas accepted United States protection and trade control at Council Springs."
+note: "This treaty contains no land cession."
 how: "treaty_negotiated"
 how_basis: "The text records a treaty concluded at a council between commissioners and the named chiefs, counsellors and warriors, who signed with marks."
 confidence: "medium"

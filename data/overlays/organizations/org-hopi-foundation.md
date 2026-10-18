@@ -3,6 +3,7 @@ id: "org-hopi-foundation"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Hopi Foundation, founded in 1985 by Hopi residents, runs community projects on the Hopi Reservation; its link to land return is indirect."
+note: "Its official registered name is The Hopi Foundation Lomasuminagwtukwsiumani. Its pages describe community projects, not buying or returning land."
 confidence: "medium"
 cautions: "The vetting note says the ProPublica search by name returned unrelated hits; searching by EIN here found the matching Kykotsmovi record (name \"The Hopi Foundation Lomasuminagwtukwsiumani\"). Land return is not a documented activity. Payee not checked."
 sources: [{"url": "https://www.hopifoundation.org/about", "title": "The Hopi Foundation - About", "quote": "The Hopi Foundation was established in 1985 by local Hopis who wanted to promote self-sufficiency"}, {"url": "https://www.hopifoundation.org/about", "title": "The Hopi Foundation - About", "quote": "We serve a population of 7,000 Hopi across 12 villages on the Hopi Reservation"}, {"url": "https://www.hopifoundation.org/staff", "title": "The Hopi Foundation - Staff Directory", "quote": "Monica Nuvamsa Interim Executive Director"}, {"url": "https://projects.propublica.org/nonprofits/organizations/742488628", "title": "ProPublica Nonprofit Explorer - The Hopi Foundation", "quote": "Tax exemption issued: May 1988"}]
@@ -14,4 +15,4 @@ The foundation says it serves a population of 7,000 Hopi across 12 villages. Its
 
 Current projects named on its About page include KUYI 88.1 FM Hopi Radio, the HOPI Substance Abuse Prevention Center, the Hopi Leadership Program and the Natwani Coalition. It also makes small community grants.
 
-None of these pages describes buying or returning land. The foundation's connection to land is through farming and sustainability work in Hopi communities, which this record could not document in detail.
+None of these pages describes buying or returning land. The foundation's connection to land is through farming and sustainability work in Hopi communities, which the sources here do not document in detail.

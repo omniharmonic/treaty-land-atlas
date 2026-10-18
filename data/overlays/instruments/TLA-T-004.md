@@ -3,6 +3,7 @@ id: "TLA-T-004"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Logstown in June 1752, Ohio-country Indian leaders confirmed the 1744 Lancaster deed and promised not to molest British settlers southeast of the Ohio."
+note: "Some listings date this to 1 June 1752, but the text gives 13 June as the signing date. The Half King's words come from English-language minutes kept by Virginia's side."
 how: "other"
 how_basis: "The text is a colonial-era instrument between Virginia's commissioners and Ohio-country sachems, not a United States treaty."
 confidence: "medium"

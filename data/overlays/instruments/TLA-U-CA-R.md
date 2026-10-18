@@ -3,6 +3,7 @@ id: "TLA-U-CA-R"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Scott's Valley in 1851, Upper Klamath, Shasta and Scott's River peoples gave up land claims for a reservation; the Senate never ratified it."
+note: "Sources give July 2 or July 8, 1852 as the date the Senate rejected it."
 how: "unratified"
 how_basis: "The OSU treaty page marks it Unratified, and Prologue says the Senate rejected all 18 California treaties."
 confidence: "high"

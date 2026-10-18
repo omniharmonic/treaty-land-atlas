@@ -3,6 +3,7 @@ id: "TLA-T-320"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1862 Ottawa treaty set allotments and ended the tribe's federal relationship after five years."
+note: "The language about \"civilization\" is the treaty's own wording."
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement with named Ottawa representatives; no duress is described in the text."
 confidence: "high"

@@ -3,6 +3,7 @@ id: "TLA-T-011"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Hopewell in 1785 the Cherokee accepted U.S. protection and a boundary for their hunting grounds, but settlers soon moved into that land."
+note: "The treaty sets a boundary for Cherokee hunting grounds and does not use the word cession, though the Tennessee Encyclopedia describes it as ceding land south of the Cumberland River."
 how: "treaty_negotiated"
 how_basis: "The OSU text and the Mississippi Encyclopedia show a council with a large Cherokee delegation, though some Cherokee leaders protested."
 confidence: "high"

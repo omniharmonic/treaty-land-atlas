@@ -3,6 +3,7 @@ id: "TLA-T-162"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1831 the Sandusky River Seneca ceded 40,000 acres in Ohio for about 67,000 acres west of the Mississippi."
+note: "The statement that the Seneca asked for the exchange is the treaty's own."
 how: "removal"
 how_basis: "The OSU treaty text provides for exchange of Ohio lands and removal west of the Mississippi, which it says the Seneca solicited."
 confidence: "high"

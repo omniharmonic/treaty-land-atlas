@@ -16,4 +16,4 @@ In Article I the nations ceded all their "right, title, and interest" in a tract
 
 In Article II the United States agreed to pay $10,000, at Detroit, in money, goods, tools or animals. The shares were $3,333.33 each for the Ottawa and Chippewa and $1,666.67 each for the Wyandot and Potawatomi. It also set an annuity "forever" of $2,400. Article IV promised two blacksmiths for ten years, and Article V let the nations hunt on the ceded land.
 
-The sources opened give no acreage and do not describe the council or any pressure. The Brownstown treaty of 1808, also in the atlas, followed with a road cession.
+The sources here give no acreage and do not describe the council or any pressure. The Brownstown treaty of 1808, also in the atlas, followed with a road cession.

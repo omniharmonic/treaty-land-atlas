@@ -8,11 +8,14 @@
     ix,
     result,
     compact = false,
+    titled = true,
   }: {
     base?: string;
     ix: Pick<SupportIndex, 'orgs'>;
     result: SupportResult;
     compact?: boolean;
+    /** false when the page already gives the section its heading */
+    titled?: boolean;
   } = $props();
 
   const link = (p: string | null) => (p ? `${base}${p}` : null);
@@ -32,7 +35,7 @@
 </script>
 
 <section class="support sans" class:compact aria-labelledby="support-h">
-  <h2 id="support-h">Who is doing the work</h2>
+  <h2 id="support-h" class:visually-hidden={!titled}>Who is doing the work</h2>
   {#if result.today.length}
     <p class="lead">This history belongs to living nations. Start with them:</p>
     <ul class="today">
@@ -109,12 +112,24 @@
   .today {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 16px;
+    gap: 8px;
     font-size: var(--s-1);
+  }
+  .today li {
+    background: var(--sage);
+    border-radius: 30px;
+    padding: 6px 14px;
+  }
+  .today a {
+    color: var(--moss-deep);
   }
   .orgs {
     display: grid;
     gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  }
+  .compact .orgs {
+    grid-template-columns: 1fr;
   }
   .orgs li {
     display: grid;

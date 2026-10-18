@@ -3,6 +3,7 @@ id: "TLA-T-159"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1830 the Sauk, Fox, Sioux, Omaha, Ioway, Oto and Missouria ceded a large tract and two strips, with ten years of annuities."
+note: "The pressure described comes from Treaties Matter, not the treaty text, which also does not call the strip a \"neutral ground\"."
 how: "treaty_under_pressure"
 how_basis: "Treaties Matter says the U.S. threatened a military invasion and trade embargo before insisting on land cessions at the 1830 Prairie du Chien council."
 confidence: "medium"

@@ -3,6 +3,7 @@ id: "TLA-T-306"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1858 the Ponca ceded most of their land and kept a Niobrara reservation with a U.S. promise of protection."
+note: "Accounts differ on how the Ponca lost these lands after 1858: some point to the 1868 Fort Laramie treaty, others to an 1865 treaty."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated cession in exchange for protection and annuities; the later loss of the reservation came from the 1868 Fort Laramie treaty, not this one."
 confidence: "high"

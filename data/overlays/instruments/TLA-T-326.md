@@ -3,6 +3,7 @@ id: "TLA-T-326"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1863 Ruby Valley treaty gave the United States travel, mining and settlement access in Western Shoshone country and states no cession."
+note: "The treaty text contains no cession of land, and the Supreme Court did not decide whether Western Shoshone title was actually extinguished."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated peace treaty signed by commissioners and Western Shoshone chiefs; no cession is stated in the text."
 confidence: "high"

@@ -3,6 +3,7 @@ id: "TLA-T-173"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1832 the Chickasaw ceded all land east of the Mississippi to be sold by the United States, with net proceeds paid to them."
+note: "The preamble, which presents the Chickasaw as asking for relief from state law, is the treaty's own wording."
 how: "removal"
 how_basis: "The OSU treaty preamble says state laws left the Chickasaw unable to follow them and that they preferred to seek a home in the west; removal costs were paid from land sales."
 confidence: "high"
@@ -16,4 +17,4 @@ In Article 1 the Chickasaw ceded "all the land which they own on the east side o
 
 The Chickasaw promised to try to find a western home. If they failed before the first public sale, each family could select land from the surveys: for example one section for a single man of twenty-one and two sections for a family of five or fewer, with extra for those who held slaves. Article 11 created a perpetual national fund from the proceeds.
 
-The Statutes at Large record a proclamation on March 1, 1833. The sources opened here do not cover what followed.
+The Statutes at Large record a proclamation on March 1, 1833. The sources here do not cover what followed.

@@ -3,6 +3,7 @@ id: "TLA-T-117"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1821 the Ottawa, Chippewa and Potawatomi ceded a large tract around the St. Joseph and Grand rivers, keeping reservations."
+note: "The quoted statement about unfulfilled obligations concerns Michigan treaties in general, not this treaty in particular."
 how: "treaty_negotiated"
 how_basis: "The Statutes at Large text records a signed cession with annuities and reservations; the MSU page says treaties generally were pushed by settlers, without describing coercion at Chicago."
 confidence: "medium"

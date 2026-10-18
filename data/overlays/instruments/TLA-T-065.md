@@ -3,6 +3,7 @@ id: "TLA-T-065"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 19 July 1815 at Portage des Sioux, the Sioux of the Lakes made peace with the United States and accepted its protection."
+note: "The text does not explain which Sioux bands \"the Sioux of the Lakes\" refers to."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed by United States commissioners and the tribe's chiefs and warriors; it describes no pressure or cession."
 confidence: "high"

@@ -3,6 +3,7 @@ id: "TLA-T-364"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1867 Medicine Lodge treaty set a Kiowa and Comanche reservation; the Supreme Court later held Congress could override its three-fourths consent rule."
+note: "The fraud described by the Court was the tribes' allegation, not a court finding."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a peace and reservation agreement signed by chiefs and headmen; the Oklahoma Historical Society places it amid conflict on the plains, but the text states no coercion."
 confidence: "high"

@@ -3,6 +3,7 @@ id: "TLA-T-028"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1798 the Oneida ceded much of their New York reservation to the state for $500 plus $700 a year."
+note: "Though labeled a convention, this was a sale to New York State held under United States authority."
 how: "treaty_negotiated"
 how_basis: "The text says the Oneida themselves proposed the cession to the governor in March, then agreed at a treaty held at their village."
 confidence: "high"

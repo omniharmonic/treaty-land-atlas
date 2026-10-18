@@ -3,6 +3,7 @@ id: "TLA-T-224"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1837 a Sioux delegation in Washington ceded all land east of the Mississippi and its islands for invested funds, debts and annuities."
+note: "The words \"pressured\" and \"deceived\" come from a Minnesota Historical Society biography of the chief Wacouta I; the second is Wacouta's own claim as reported there."
 how: "treaty_under_pressure"
 how_basis: "The MNHS MNopedia biography of Wacouta I says the Dakota delegation was pressured in Washington and that a chief later said the whites deceived the leaders."
 confidence: "medium"

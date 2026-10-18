@@ -3,6 +3,7 @@ id: "TLA-T-290"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 Yakama treaty confederated fourteen tribes and bands, ceded their lands for a reservation and $200,000, and reserved fishing rights."
+note: "The treaty states no acreage for the cession."
 how: "treaty_under_pressure"
 how_basis: "The National Park Service says Stevens and Palmer cajoled and threatened the delegates, and HistoryLink says Stevens used gifts and threats of force."
 confidence: "medium"

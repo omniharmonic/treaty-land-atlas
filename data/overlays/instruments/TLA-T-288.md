@@ -3,6 +3,7 @@ id: "TLA-T-288"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 Winnebago treaty traded the Ho-Chunk's Long Prairie land in Minnesota for a Blue Earth River reservation."
+note: "The 200,000-acre size of the Blue Earth reservation is MNopedia's figure; the treaty estimates the ceded tract at about 897,900 acres."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text and MNopedia describe an exchange of one tract for another at the government's initiative; no source describes coercion at the 1855 signing itself, though the Ho-Chunk later faced settler hostility."
 confidence: "high"

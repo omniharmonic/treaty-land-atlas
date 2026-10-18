@@ -3,6 +3,7 @@ id: "TLA-T-185"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1833 at Fort Gibson Seminole delegates approved western land on the Canadian River; the Seminole Nation Museum says chiefs later disputed it."
+note: "The treaty records the delegates' satisfaction; the Seminole Nation Museum's account of coercion is a secondhand summary."
 how: "treaty_under_pressure"
 how_basis: "The Seminole Nation Museum says many chiefs said they had not committed to removal and some said they were pressured, while the treaty records the delegation's satisfaction."
 confidence: "medium"

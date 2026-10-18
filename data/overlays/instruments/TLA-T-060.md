@@ -3,6 +3,7 @@ id: "TLA-T-060"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1814 at Greenville, Ohio, five nations made peace with the United States, pledged to fight Britain, and were promised pre-war boundaries."
+note: "This was a peace treaty and ceded no land; the promise of pre-war boundaries depended on the nations keeping its terms."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed at Greenville by commissioners and head men; the war context is stated in Article II."
 confidence: "high"

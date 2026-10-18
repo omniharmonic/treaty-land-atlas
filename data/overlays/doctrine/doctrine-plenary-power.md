@@ -14,4 +14,4 @@ The Court has located the power in the Indian Commerce Clause, the Treaty Clause
 
 The doctrine has critics inside the Court. Justice Thomas, concurring in the judgment in Lara, wrote: "the time has come to reexamine the premises and logic of our tribal sovereignty cases." He said he could not agree that the Constitution grants Congress plenary power to calibrate the "metes and bounds of tribal sovereignty."
 
-Plenary power cuts both ways. It underlay Lone Wolf's holding that Congress could override treaty terms, and it supports laws that restore tribal powers, such as VAWA, which Lara's reasoning allows.
+Plenary power cuts both ways. It underlay Lone Wolf's holding that Congress could override treaty terms, and in United States v. Lara the Court relied on it to uphold a law that restored tribal powers.

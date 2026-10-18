@@ -16,4 +16,4 @@ In Article 1 the Kickapoo ceded "all their land on the southeast side of the Wab
 
 In return the United States paid $3,000 in merchandise and ceded them a tract in Missouri Territory beginning at the junction of the Pommes de Terre and Osage rivers. They could never sell it without the President's consent. It also promised $2,000 a year in silver for fifteen years, paid at their town on the Osage River. In Article 7 the United States promised to guarantee them peaceable possession and to keep white people from hunting, settling or intruding. Article 8 provided two boats to carry their property from the Illinois River.
 
-The sources opened do not describe the council, give an acreage, or show whether the guarantee held. The OSU record shows the treaty proclaimed on January 13, 1821.
+The sources here do not describe the council, give an acreage, or show whether the guarantee held. The OSU record shows the treaty proclaimed on January 13, 1821.

@@ -3,6 +3,7 @@ id: "TLA-T-075"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 28 October 1815 at St. Louis, the Kansa made peace with the United States and accepted its protection; no land was ceded."
+note: "The listed ratification year, 1818, differs from the 1815 date given for the other treaties in this series and may be a typo."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed by United States commissioners and the tribe's chiefs and warriors; it describes no pressure or cession."
 confidence: "medium"

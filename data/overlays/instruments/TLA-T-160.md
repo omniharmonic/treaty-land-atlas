@@ -3,6 +3,7 @@ id: "TLA-T-160"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Dancing Rabbit Creek in 1830 the Choctaw ceded all their land east of the Mississippi, the first treaty after the Indian Removal Act."
+note: "The Encyclopedia of Alabama puts the cession at more than 10 million acres and dates Senate ratification to February 25, 1831; the statute lists a proclamation on February 24, 1831."
 how: "removal"
 how_basis: "The OSU treaty preamble cites Mississippi's extension of state law over the Choctaw, and the Encyclopedia of Alabama describes rejected terms, secret meetings and removal."
 confidence: "high"

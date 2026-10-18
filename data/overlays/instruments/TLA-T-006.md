@@ -3,6 +3,7 @@ id: "TLA-T-006"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Fort Pitt in 1760, a British general told the Six Nations and others he would not take their lands, only build forts."
+note: "This was a conference with several nations, not a treaty giving up land, and it survives only in an English record kept by British officers."
 how: "other"
 how_basis: "The record is a conference between a British general and chiefs of several nations at Fort Pitt, a colonial-era instrument, not a United States treaty."
 confidence: "medium"

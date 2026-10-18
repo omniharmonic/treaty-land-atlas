@@ -3,6 +3,7 @@ id: "TLA-T-134"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 30 July 1825 at the Lower Mandan Village, Minnetaree leaders promised peace after reported attacks and acknowledged United States supremacy."
+note: "The promised protection and benefits were left to what the President found \"convenient\" and \"just and proper\". The reported attacks are described only in the preamble, without details."
 how: "treaty_negotiated"
 how_basis: "The text says the treaty was made to perpetuate friendship and regulate trade; it describes no pressure beyond the stated hostilities."
 confidence: "high"

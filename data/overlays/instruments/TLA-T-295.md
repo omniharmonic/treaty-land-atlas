@@ -3,6 +3,7 @@ id: "TLA-T-295"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 Hellgate Treaty ceded most of western Montana from the Flathead, Kootenay and Pend d'Oreille and created the Flathead Reservation."
+note: "The treaty was made in what was then Washington Territory; the lands are in present Montana."
 how: "treaty_under_pressure"
 how_basis: "Char-Koosta News (the Salish and Kootenai tribal newspaper) describes pressure from U.S. officials and misunderstandings from language differences."
 confidence: "medium"

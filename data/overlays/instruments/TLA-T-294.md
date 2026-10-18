@@ -3,6 +3,7 @@ id: "TLA-T-294"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Treaty of Olympia obtained the Olympic coast from the Quinault and Quileute for $25,000 and reservations to be chosen later."
+note: "HistoryLink says the Quinault signed on July 1, 1855, and the Hoh and Quileute on January 25, 1856."
 how: "treaty_negotiated"
 how_basis: "The treaty text and HistoryLink record a treaty signed in two sessions; no source I read describes coercion here, though the National Park Service describes pressure in Stevens's treaties generally."
 confidence: "high"

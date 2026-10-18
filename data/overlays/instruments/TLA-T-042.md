@@ -16,4 +16,4 @@ In Article 1 the Cherokee nation "relinquish and cede" a tract along the boundar
 
 In Article 2 the United States agreed to deliver $5,000 in goods, or that sum in money at the Cherokee's option, when the treaty was signed. It also promised $1,000 a year in goods or money, in addition to the annuity already agreed. The text says these were "for, and in consideration of" the cession.
 
-The OSU database lists a proclamation date of May 17, 1824, about twenty years after signing. The sources opened do not explain that gap, give an acreage, or describe any pressure on the Cherokee.
+The OSU database lists a proclamation date of May 17, 1824, about twenty years after signing. The sources here do not explain that gap, give an acreage, or describe any pressure on the Cherokee.

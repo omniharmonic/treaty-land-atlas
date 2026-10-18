@@ -3,6 +3,7 @@ id: "TLA-T-089"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1817 the Cherokee ceded eastern lands in exchange for acreage on the Arkansas and White rivers for those moving west."
+note: "The Encyclopedia of Arkansas calls this the Turkeytown Treaty, though the text says it was concluded at the Cherokee Agency."
 how: "treaty_under_pressure"
 how_basis: "The Encyclopedia of Arkansas says increasing federal and state pressure on the Cherokee led to the 1817 treaty; the treaty text itself presents it as an exchange for those wishing to remove."
 confidence: "high"

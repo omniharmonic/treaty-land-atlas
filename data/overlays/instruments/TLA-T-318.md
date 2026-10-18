@@ -3,6 +3,7 @@ id: "TLA-T-318"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1861 Potawatomi treaty allotted part of the Kansas reservation and set the rest for sale, with a railroad purchase option."
+note: "The 576,000 acres is the size of the whole reservation, not the amount sold."
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement signed by a commissioner and Potawatomi leaders and states no duress."
 confidence: "high"

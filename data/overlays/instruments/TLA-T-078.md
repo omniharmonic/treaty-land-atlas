@@ -3,6 +3,7 @@ id: "TLA-T-078"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Sauk of Rock River made peace in 1816 and unconditionally confirmed the 1804 St. Louis cession."
+note: "The \"under pressure\" description rests on the treaty's own threats of punishment and annuity forfeiture; its \"repented\" and \"imploring mercy\" language is the U.S. commissioners' framing."
 how: "treaty_under_pressure"
 how_basis: "The treaty text says the Rock River Sacs had continued hostilities and 'would have justified' severe punishment, and it makes their return to pre-war status conditional on surrendering property."
 confidence: "high"
@@ -12,7 +13,7 @@ verdict: "fixed"
 ---
 On May 13, 1816, commissioners William Clark, Ninian Edwards and Auguste Chouteau signed a treaty of peace and friendship at St. Louis with chiefs and warriors of the Sacs of Rock River and the adjacent country. The preamble starts from the Treaty of Ghent, whose ninth article called on the United States and Britain to end hostilities with Indian tribes and put them on their pre-war footing if they stopped fighting.
 
-The commissioners' version of events, as written in the treaty, is that they invited the Rock River Sacs to meet at Portage des Sioux, but the Sacs "declined that friendly overture" and kept up hostilities and depredations. That, it says, "would have justified the infliction of the severest chastisement." The treaty adds that the Sacs "earnestly repented" and were "imploring mercy." That wording comes from the U.S. side. No Sauk account of the council appears in the sources opened.
+The commissioners' version of events, as written in the treaty, is that they invited the Rock River Sacs to meet at Portage des Sioux, but the Sacs "declined that friendly overture" and kept up hostilities and depredations. That, it says, "would have justified the infliction of the severest chastisement." The treaty adds that the Sacs "earnestly repented" and were "imploring mercy." That wording comes from the U.S. side. No Sauk account of the council appears in the sources here.
 
 In Article 1 the Rock River Sacs "unconditionally assent to recognize, re-establish, and confirm" the 1804 Treaty of St. Louis and all other contracts with the Sac nation. In Article 2 the United States agreed to put them back on their pre-war footing if they delivered up plundered property to the officer at Cantonment Davis by July 1. Article 3 said failing to do so would forfeit their share of the 1804 annuities.
 

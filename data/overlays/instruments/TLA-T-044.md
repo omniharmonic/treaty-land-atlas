@@ -3,6 +3,7 @@ id: "TLA-T-044"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Fort Industry in 1805 several nations ceded land in northern Ohio east of a north-south line, for annuities and company payments."
+note: "The atlas lists this July 4, 1805 Fort Industry treaty twice; both entries describe the same agreement."
 how: "treaty_negotiated"
 how_basis: "The OSU text shows a council with named annuities and payments from the Connecticut land companies, with no source I read describing coercion."
 confidence: "high"
@@ -16,4 +17,4 @@ Article II set a new boundary: a north-south line from a point on the south shor
 
 The United States promised the Wyandot, Munsee and Delaware, and the Shawnee and Seneca who live with the Wyandot, $1,000 every year "forever," paid at Detroit. Of that, $175 was secured by the Connecticut Land Company and the owners of the "Sufferer's Land," a half-million-acre tract south of Lake Erie. Article V records that the Ottawa, Chippewa and some Potawatomi had received $4,000 from those companies, with another $12,000 held in trust for them.
 
-The nations could fish and hunt on the ceded land as long as they behaved peaceably. The text states no acreage, and the sources opened do not describe the negotiation.
+The nations could fish and hunt on the ceded land as long as they behaved peaceably. The text states no acreage, and the sources here do not describe the negotiation.

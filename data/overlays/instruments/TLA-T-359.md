@@ -3,6 +3,7 @@ id: "TLA-T-359"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1867 the Sac and Fox ceded about 157,000 acres in Kansas at $1 an acre for a new reservation south of Kansas."
+note: "The 157,000 acres is the treaty's own estimate for both cessions together."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated cession with payment, debt settlement and a new reservation; it does not describe duress."
 confidence: "high"
@@ -14,4 +15,4 @@ On February 18, 1867, in Washington, the Sacs and Foxes of the Mississippi signe
 
 In Article 1 the tribes ceded the unsold part of their diminished Kansas reserve, which the treaty says held about 86,400 acres. In Article 2 they ceded the unsold part of their old reservation that was to be sold for their benefit under the 1860 treaty. The United States agreed in Article 3 to pay one dollar an acre for the whole, "about one hundred and fifty-seven thousand acres," less land set apart for individuals. It also agreed to pay the tribe's outstanding scrip debt of $26,574, plus interest. After deducting removal, subsistence and settlement costs, the money was to be added to the tribe's invested funds at five percent interest.
 
-In Article 6 the United States agreed, "in consideration of the improvements upon the said reservation," to give the tribes a new home in the Indian country south of Kansas and south of the Cherokee lands, up to 750 square miles. A commission appointed by the Interior Secretary was to select it with delegations from the tribes. The pages opened here do not describe the move itself or the tribes' own account.
+In Article 6 the United States agreed, "in consideration of the improvements upon the said reservation," to give the tribes a new home in the Indian country south of Kansas and south of the Cherokee lands, up to 750 square miles. A commission appointed by the Interior Secretary was to select it with delegations from the tribes. The sources here do not describe the move itself or the tribes' own account.

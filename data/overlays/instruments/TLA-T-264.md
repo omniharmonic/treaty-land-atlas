@@ -3,6 +3,7 @@ id: "TLA-T-264"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1853 the Cow Creek band of the Umpqua ceded their country for $12,000 and a temporary reserve on Cow Creek."
+note: "The Siletz history quoted here is another nation's account of the western Oregon treaties and is not specific to the Cow Creek band."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated cession with a temporary reserve and payments; the Siletz history does not describe the Cow Creek council, so no coercion is claimed."
 confidence: "medium"

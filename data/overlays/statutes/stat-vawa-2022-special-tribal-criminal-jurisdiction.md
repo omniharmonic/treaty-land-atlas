@@ -14,4 +14,4 @@ The codified definition lists nine covered crimes: assault of tribal justice per
 
 The law also pays for it. It authorizes $25,000,000 for each of fiscal years 2023 through 2027, for reimbursements to tribes and for training, technical assistance, data collection and evaluation of the criminal justice systems of participating tribes. Of that sum, not more than 40 percent may go to reimbursements.
 
-The Act also made Alaska tribes designated under a separate pilot (subtitle B of title VIII) eligible for reimbursement of their costs. The text opened for this story does not describe how many tribes have used the new authority.
+The Act also made Alaska tribes designated under a separate pilot (subtitle B of title VIII) eligible for reimbursement of their costs. The sources here do not say how many tribes have used the new authority.

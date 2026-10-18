@@ -14,4 +14,4 @@ The Park Service explains why Congress acted. The 1906 Antiquities Act set a per
 
 ARPA defines "archeological resource," requires a permit from the federal land manager to excavate or remove one from public lands or Indian lands, lists prohibited acts, and sets criminal and civil penalties. A permit holder must be qualified and act "for the purpose of furthering archaeological knowledge in the public interest," and resources taken from public lands stay the property of the United States. On Indian lands, a permit "may be granted only after obtaining the consent of the Indian or Indian tribe owning or having jurisdiction over such lands." If a permit may harm a site of religious or cultural importance, the manager must also notify any Indian tribe that may consider it important, and that notice is not treated as public disclosure. The Park Service adds that ARPA prohibits public disclosure of the nature and location of archeological resources.
 
-The sources opened do not report convictions or numbers of permits.
+The sources here do not report convictions or numbers of permits.

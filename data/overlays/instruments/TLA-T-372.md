@@ -3,6 +3,7 @@ id: "TLA-T-372"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1868 Fort Sumner treaty ended the Navajo captivity at Bosque Redondo and set a reservation on the Navajo homeland."
+note: "The 17 million acres is the Supreme Court's description of the reservation today, not a figure in the 1868 treaty."
 how: "treaty_under_pressure"
 how_basis: "The Supreme Court states that the United States forcibly moved many Navajos to Bosque Redondo before the 1868 treaty was agreed to end the war."
 confidence: "high"

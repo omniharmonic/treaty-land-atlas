@@ -3,6 +3,7 @@ id: "TLA-T-222"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1837 Fort Gibson treaty was the first the Kiowa, Kataka and Tawakaro made with the United States, and it traded peace for presents."
+note: "This treaty contains no land cession."
 how: "treaty_negotiated"
 how_basis: "The text describes a treaty of peace and friendship made by commissioners with chiefs and headmen, with presents and 'nothing being asked' except peace."
 confidence: "high"

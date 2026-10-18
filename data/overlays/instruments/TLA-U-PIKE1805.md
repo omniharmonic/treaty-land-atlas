@@ -3,6 +3,7 @@ id: "TLA-U-PIKE1805"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1805 Lieutenant Zebulon Pike obtained Sioux grants for military posts at the St. Croix and St. Anthony Falls; the Senate consented in 1808."
+note: "The Senate consented in 1808, but the President never proclaimed the treaty."
 how: "other"
 how_basis: "An Army lieutenant signed as agent; the OSU note says the Senate consented in 1808 but no presidential proclamation is found."
 confidence: "high"
@@ -15,4 +16,4 @@ On September 23, 1805, at the mouth of the St. Peters River, First Lieutenant Z.
 
 In Article 1 the Sioux Nation granted the United States, "for the purpose of the establishment of military posts," nine miles square at the mouth of the St. Croix River. It also granted land from below the meeting of the Mississippi and St. Peters rivers up the Mississippi, to include the Falls of St. Anthony, nine miles on each side. The text also gives the United States "the full sovereignty and power over said districts forever." Article 2 left the payment blank. Article 3 promised the Sioux could still "pass, repass, hunt or make other uses of the said districts, as they have formerly done."
 
-A note in the database says the Senate committee filled in $2,000 in goods or money, and the Senate advised and consented to ratification on April 16, 1808. It also says State Department records show no proclamation by the President. Yet more than twenty-five years later War Department correspondence treated the cessions "as an accomplished fact." The pages opened here do not give the Dakota account of the council.
+A note in the database says the Senate committee filled in $2,000 in goods or money, and the Senate advised and consented to ratification on April 16, 1808. It also says State Department records show no proclamation by the President. Yet more than twenty-five years later War Department correspondence treated the cessions "as an accomplished fact." The sources here do not give the Dakota account of the council.

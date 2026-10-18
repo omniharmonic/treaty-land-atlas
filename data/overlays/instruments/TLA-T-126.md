@@ -3,6 +3,7 @@ id: "TLA-T-126"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1825 the Great and Little Osage ceded lands in Missouri, Arkansas Territory and the plains, keeping a reserved tract, for annuities."
+note: "The Kansas Historical Society statement covers all Osage cessions from 1825 to 1839, not this treaty alone."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession in St. Louis; the Kansapedia article describes the Osage losing land through repeated treaties but does not call this one coerced."
 confidence: "medium"

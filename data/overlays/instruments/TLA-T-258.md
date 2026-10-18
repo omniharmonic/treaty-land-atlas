@@ -3,6 +3,7 @@ id: "TLA-T-258"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1851 Treaty of Traverse des Sioux ceded Sisseton and Wahpeton lands in Iowa and Minnesota; a separate traders' paper was not read aloud."
+note: "MNopedia's twenty-four million acres covers both 1851 Dakota treaties together. The statement that little of the payment was received comes from Why Treaties Matter."
 how: "treaty_under_pressure"
 how_basis: "MNopedia says the Dakota were in a weak bargaining position and that traders' debts shaped the negotiations; Why Treaties Matter says traders pushed the negotiations."
 confidence: "medium"

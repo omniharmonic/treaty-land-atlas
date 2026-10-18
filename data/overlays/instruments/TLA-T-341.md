@@ -3,6 +3,7 @@ id: "TLA-T-341"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1865 the Cheyenne and Arapaho signed the Little Arkansas treaty, which set a reservation and repudiated the 1864 Sand Creek attack."
+note: "The statement that the tribes \"never relinquished\" certain lands records their claim as written in the treaty."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated reservation and reparations after the Sand Creek attack; the text states no coercion."
 confidence: "high"
@@ -16,4 +17,4 @@ Article 2 set apart a district along the Arkansas and Cimarron rivers for the tr
 
 Article 6 records the United States' wish "to express its condemnation of, and, as far as may be, repudiate the gross and wanton out-rages" at Sand Creek, Colorado Territory, on November 29, 1864. It offers 320 acres to each named chief, including Black Kettle, and 160 acres to each widow or person who lost a parent. It also promised payment for property destroyed or taken.
 
-Article 9 abrogated all former treaties. The treaty also promised forty years of annual spending for the tribes. A later treaty, signed at Medicine Lodge in 1867, refers back to this one. The pages opened here do not say what happened to these grants.
+Article 9 abrogated all former treaties. The treaty also promised forty years of annual spending for the tribes. A later treaty, signed at Medicine Lodge in 1867, refers back to this one. The sources here do not say what happened to these grants.

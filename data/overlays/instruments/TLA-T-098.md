@@ -16,4 +16,4 @@ In Article 1 the Wyandot ceded "all the right reserved to them" in two tracts. O
 
 In Article 2, "in consideration of the preceding cession," the United States agreed to reserve for the Wyandot a set of numbered sections on the south side of the Huron River, in the fourth township south of the base line. The text gives their total as 4,996 acres. The Wyandot and their descendants would hold the land on the terms the 1809 act set for the Alabama Indians, except that they would keep it only as long as they or their descendants occupied it.
 
-The treaty has two articles. The sources opened do not describe the negotiation or later history of the Huron River reservation.
+The treaty has two articles. The sources here do not describe the negotiation or later history of the Huron River reservation.

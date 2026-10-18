@@ -3,6 +3,7 @@ id: "TLA-T-342"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "A supplement signed on October 17, 1865 united the Apache with the Cheyenne and Arapaho and extended the Little Arkansas treaty to them."
+note: "The text says \"Apache\" without stating which Apache people."
 how: "treaty_negotiated"
 how_basis: "The text records an agreement among U.S. commissioners and the chiefs and head-men of the three tribes, who say they are united by consent."
 confidence: "medium"
@@ -16,4 +17,4 @@ The preamble explains that the Apache, who had been "confederated with the Kiowa
 
 Article 1 unites the three and says the United States "will hereafter recognize" them as the confederated bands or tribes of Cheyenne, Arrapahoe and Apache. Article 2 says everything the October 14 treaty required of the United States or of the Cheyenne and Arapaho would now apply to the three confederated tribes, as if the treaty had been made with all of them.
 
-The page does not repeat the terms of the October 14 treaty, which was not opened. This agreement was ratified May 22, 1866, and proclaimed May 26, 1866. Chiefs of each tribe signed with marks, including Black Kettle and Little Raven.
+The page does not repeat the terms of the October 14 treaty, and they are not described here. This agreement was ratified May 22, 1866, and proclaimed May 26, 1866. Chiefs of each tribe signed with marks, including Black Kettle and Little Raven.

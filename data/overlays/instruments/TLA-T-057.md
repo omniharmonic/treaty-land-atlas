@@ -3,6 +3,7 @@ id: "TLA-T-057"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Fort Wayne in 1809 four nations ceded a large Indiana tract, though Tecumseh disputed the signers' authority to sell it."
+note: "The National Library of Medicine puts the cession at 3 million acres; the treaty gives no figure. The \"under pressure\" description rests on the disputed authority of the signers, not on any account of force."
 how: "treaty_under_pressure"
 how_basis: "The National Library of Medicine's timeline reports that Tecumseh disputed the signers' authority to sell the land, a case of disputed signatories."
 confidence: "high"

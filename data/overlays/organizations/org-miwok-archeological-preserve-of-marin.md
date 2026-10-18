@@ -3,6 +3,7 @@ id: "org-miwok-archeological-preserve-of-marin"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Miwok Archeological Preserve of Marin, a Fairfax nonprofit working since 1970, promotes knowledge of the Coast Miwok; it holds no returned land."
+note: "An allied, non-Native group that supports Coast Miwok people through education; it holds no returned land."
 confidence: "medium"
 cautions: "Allied, non-Native per the record; the pages read do not state who leads it. No completed land return is documented. ProPublica shows exemption issued July 2019 although the organization says it began in 1970 (possibly a reinstatement; not checked)."
 sources: [{"url": "https://www.mapom.org/", "title": "MAPOM - Home", "quote": "Since 1970, The Miwok Archeological Preserve of Marin (MAPOM) has been working to promote accurate knowledge of the Coast Miwok Indians"}, {"url": "https://www.mapom.org/", "title": "MAPOM - Home", "quote": "MAPOM was founded as a result of community involvement in the excavation of a Coast Miwok village site"}, {"url": "https://www.mapom.org/support.html", "title": "MAPOM - Support", "quote": "MAPOM is a 501(c)3 non-profit organization."}, {"url": "https://projects.propublica.org/nonprofits/organizations/237100329", "title": "ProPublica Nonprofit Explorer - Miwok Archeological Preserve Of Marin", "quote": "Tax exemption issued: July 2019"}]
@@ -14,4 +15,4 @@ MAPOM says it works through programs and cooperative efforts with groups includi
 
 Its home page shows a photo timeline of events at a Coast Miwok cultural site from 1978 to 2023, including roundhouse construction, work days and a Day of Indigenous Skills in 2023.
 
-MAPOM describes itself as an organization that supports Native people. The record's vetting notes classify it as an allied, non-Native nonprofit, and this record found no land purchase or return.
+MAPOM describes itself as an organization that supports Native people. It is listed here as an allied, non-Native nonprofit, and the sources here describe no land purchase or return.

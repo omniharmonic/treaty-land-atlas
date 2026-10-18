@@ -16,4 +16,4 @@ In Article 2 the Chickasaw ceded all right or title to lands on the north side o
 
 In Article 3 the commissioners agreed to pay $12,000 a year for ten years and $4,500 within sixty days after ratification, paid to Levi Colbert, as compensation for improvements. In Article 4 the treaty reserved tracts for named individuals, including George Colbert and Appassan Tubby. They would remain Chickasaw land only while occupied or used by the present holders or their heirs. If abandoned, each tract would "revert to the United States."
 
-The sources opened give no acreage and do not describe the council. A further Chickasaw cession in 1818 has its own record in the atlas.
+The sources here give no acreage and do not describe the council. A further Chickasaw cession in 1818 has its own record in the atlas.

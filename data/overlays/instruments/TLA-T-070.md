@@ -3,6 +3,7 @@ id: "TLA-T-070"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Spring Wells, tribes allied with Britain in the War of 1812 were restored to their 1811 status and confirmed earlier treaties."
+note: "The language of \"repentance\" and \"pardon\" is the treaty's own, written by the U.S. commissioners."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a peace treaty with pardons and confirmations, not a new cession; I found no source describing coercion."
 confidence: "high"
@@ -16,4 +17,4 @@ The preamble says the Chippewa, Ottawa and Potawatomi, together with certain ban
 
 Article 3 pardoned chiefs and warriors of the Wyandot, Delaware, Seneca and Shawnee who had kept fighting until the war ended. It cited the fidelity of others in those nations and the "repentance" of the Miami, shown by placing themselves under U.S. protection in 1814. In Article 4 all eight nations agreed to "renew and confirm the treaty of Greenville" of 1795 and all later treaties to which they were parties.
 
-This was a peace treaty, not a new cession. The sources opened do not describe the council. The OSU record shows ratification on December 26, 1815.
+This was a peace treaty, not a new cession. The sources here do not describe the council. The OSU record shows ratification on December 26, 1815.

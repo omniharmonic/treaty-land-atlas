@@ -3,6 +3,7 @@ id: "TLA-T-079"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 1 June 1816 at St. Louis, eight Sioux bands made peace with the United States and confirmed earlier cessions to other powers."
+note: "The treaty does not describe the earlier cessions to Britain, France and Spain that it confirms, so which land they covered is unclear."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "medium"

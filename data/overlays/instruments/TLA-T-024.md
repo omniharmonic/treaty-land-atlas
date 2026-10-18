@@ -3,6 +3,7 @@ id: "TLA-T-024"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Seven Nations of Canada ceded their New York land claims to the state, keeping the St. Regis tract and annual payments."
+note: "This was a sale to New York State held under a U.S. commissioner, not a transfer to the United States. The payments depended on a minimum number of deputies attending each payment date."
 how: "treaty_negotiated"
 how_basis: "The OSU text describes a negotiated cession to New York State with payments, held before a United States commissioner."
 confidence: "high"

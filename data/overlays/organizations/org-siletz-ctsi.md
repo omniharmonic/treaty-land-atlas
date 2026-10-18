@@ -2,7 +2,8 @@
 id: "org-siletz-ctsi"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Confederated Tribes of Siletz Indians regained recognition in 1977 and bought a nearly seven-acre coastal parcel in 2026 for $120,000 with nonprofit help."
+headline: "The Confederated Tribes of Siletz Indians regained recognition in 1977 and in 2026 a nearly seven-acre coastal parcel was on its way to being returned to them, bought for $120,000 with nonprofit help."
+note: "The Yachats parcel was described as on its way to being returned, so the purchase may not have closed yet."
 confidence: "medium"
 cautions: "One news report is the source for the 2026 parcel and it says the parcel is 'on its way to being returned', so title may not yet have passed. The article says no agency oversight or title restriction is planned. The Tribes' own pages read give no land program details beyond Forestry and Fish & Wildlife menu entries. The record described the purchase as 'pending'."
 sources: [{"url": "https://www.ctsi.nsn.us/", "title": "Confederated Tribes of Siletz Indians", "quote": "In 1977 our lobbying of Congress to repeal our Termination was successful"}, {"url": "https://ctsi.nsn.us/tribal-government/", "title": "Tribal Government - CTSI", "quote": "The Legislative branch of the government is seated with the Siletz Tribal Council, a nine-member board elected by the membership at large."}, {"url": "https://opb.org/article/2026/10/05/siletz-tribe-reclaim-ceded-land/", "title": "After more than 170 years, Siletz Tribe to reclaim ceded land (OPB / Underscore Native News)", "quote": "the tribe has purchased a nearly seven-acre parcel outside Yachats"}, {"url": "https://opb.org/article/2026/10/05/siletz-tribe-reclaim-ceded-land/", "title": "After more than 170 years, Siletz Tribe to reclaim ceded land (OPB / Underscore Native News)", "quote": "the land was appraised and purchased for $120,000"}]
@@ -12,4 +13,4 @@ The Confederated Tribes of Siletz Indians' website calls the Tribes the most div
 
 In October 2026 Underscore Native News, republished by OPB, reported on a coastal parcel outside Yachats. The report says the Tribes bought a nearly seven-acre parcel. Joanne Kittel of View the Future said that, with support from McKenzie River Trust and The Nature Conservancy, the land was appraised and purchased for $120,000, of which her group contributed $55,000. CTSI Natural Resources Director Angela Sondenaa said the land was part of the Tribes' ancestral territory and the coast reservation. McKenzie River Trust's conservation director said the funding was flexible so there would be no restriction on the title.
 
-The article is the source for this purchase; the Tribes' own pages read do not mention it. It describes the parcel as on its way to being returned, so the transfer may not be complete.
+The article is the source for this purchase; the Tribes' own pages cited here do not mention it. It describes the parcel as on its way to being returned, so the transfer may not be complete.

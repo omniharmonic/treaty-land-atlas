@@ -3,6 +3,7 @@ id: "TLA-T-030"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1801 the Chickasaw allowed a United States wagon road through their land and received $700 in goods and a pledge of protection."
+note: "This granted a right of way for a road, not a sale of land, and the President alone judged who counted as \"unjust neighbors\" under the protection promise."
 how: "treaty_negotiated"
 how_basis: "The text says the Chickasaw gave leave for the road in a treaty 'of reciprocal advantages'; no coercion is described."
 confidence: "high"

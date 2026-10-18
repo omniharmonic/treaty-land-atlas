@@ -19,6 +19,7 @@ interface CessionStory {
   status?: 'ceded' | 'taken' | 'kept' | 'unchecked';
   entries?: { date: string; role: string; instrument: string | null; quote: string }[];
   royce_summary?: string;
+  plain?: string;
 }
 
 let tables: {
@@ -40,7 +41,7 @@ export const HOW_PHRASE: Record<string, string> = {
   unratified: 'treaties the Senate never ratified',
   congress: 'acts of Congress',
   executive: 'executive orders',
-  unknown: 'means Royce does not state',
+  unknown: 'means the record does not state',
 };
 const HOW_ONE: Record<string, string> = {
   treaty: 'a treaty or agreement',
@@ -49,15 +50,6 @@ const HOW_ONE: Record<string, string> = {
   unratified: 'a treaty the Senate never ratified',
   congress: 'an act of Congress',
   executive: 'an executive order',
-};
-const ROLE_WORD: Record<string, string> = {
-  ceded: 'ceded it',
-  ceded_part: 'ceded part of it',
-  described_or_recognized: 'described or recognized it as Native land',
-  reserved: 'reserved part of it',
-  confirmed: 'confirmed an earlier cession',
-  retroceded: 'restored reservation land to the public domain (taking it from the nation)',
-  other: 'is also listed',
 };
 
 const link = (id: string): Part => {
@@ -224,39 +216,32 @@ export function cessionStory(g: Node): Paragraph[] {
   const states = ((g['states'] as string[]) ?? []).map(stateName);
   const out: Paragraph[] = [];
   out.push([
-    `Royce cession ${g['royce_cession_number'] ?? ''} covers ${acresText(s.acres)}`,
+    s.plain ?? s.royce_summary ?? '',
+    s.plain || s.royce_summary ? ' ' : '',
+    `The area covers ${acresText(s.acres)}`,
     states.length
       ? ` in what is now ${states.length > 1 ? `${states.slice(0, -1).join(', ')} and ${states.at(-1)}` : states[0]}`
       : '',
-    s.nations.length ? '. Royce’s schedule names ' : '.',
-    ...(s.nations.length ? [...list(s.nations, 5), ' as the people it was taken from.'] : []),
+    '.',
   ]);
+  if (s.nations.length)
+    out.push(['The 1899 record names ', ...list(s.nations, 5), ' as the people of this land.']);
   if (s.status === 'kept')
     out.push([
-      'This area is not a cession. Royce’s schedule records it as a reservation the nation kept, as of his record’s end in 1894; it is shown on the map as land still held.',
+      'This area was not ceded. The 1899 record shows it as a reservation the nation kept, at least until the record ends in 1894.',
     ]);
-  if (s.entries?.length) {
-    const p: Paragraph = [s.royce_summary ? `${s.royce_summary} ` : '', 'In Royce’s schedule: '];
-    s.entries.forEach((e, i) => {
-      if (i > 0) p.push('; ');
-      p.push(e.instrument ? link(e.instrument) : e.date, ` ${ROLE_WORD[e.role] ?? e.role}`);
-    });
-    p.push('.');
-    out.push(p);
-  } else if (s.instruments.length > 1) {
-    const p: Paragraph = [`Royce ties this land to ${s.instruments.length} instruments: `];
+  else if (!s.entries?.length && s.instruments.length > 1) {
+    const p: Paragraph = [`The record ties this land to ${s.instruments.length} agreements: `];
     s.instruments.forEach((x, i) => {
       if (i > 0) p.push(i === s.instruments.length - 1 ? ' and ' : ', ');
       p.push(link(x.id));
     });
-    p.push(
-      '. Which of them ceded it has not yet been checked against the schedule, so the map dates it by the first.',
-    );
+    p.push('. Which one ceded it has not been checked yet, so the map dates it by the first.');
     out.push(p);
   }
-  if (s.instrument)
+  if (s.instrument && s.status !== 'kept')
     out.push([
-      'How it happened, in the record: ',
+      'How it was taken: ',
       `${HOW_ONE[s.how] ?? 'not stated'}. `,
       s.how_basis ? `${s.how_basis.replace(/\.?$/, '.')}` : '',
     ]);

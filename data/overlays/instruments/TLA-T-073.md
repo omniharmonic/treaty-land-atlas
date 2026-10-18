@@ -3,6 +3,7 @@ id: "TLA-T-073"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Fox tribe confirmed the 1804 St. Louis treaty at Portage des Sioux in 1815 and re-established peace with the United States."
+note: "The Fox are also called the Meskwaki."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a peace treaty confirming an earlier cession, with no source I read describing coercion."
 confidence: "high"
@@ -16,4 +17,4 @@ The first three articles were the terms of peace. Every injury or act of hostili
 
 In Article 4 the Fox "assent to, recognize, re-establish, and confirm" the Treaty of St. Louis of November 3, 1804, "to the full extent of their interest in the same." The United States promised to fulfill all that treaty's stipulations in favor of the Fox. This was a confirmation, not a new cession.
 
-A history from Before Knox reports that many Meskwaki and Sauk considered the 1804 treaty void because it was "signed in the absence of important leaders and without the consent of the Tribal Council." The sources opened do not describe the Fox council or say what the Fox themselves said at Portage des Sioux.
+A history from Before Knox reports that many Meskwaki and Sauk considered the 1804 treaty void because it was "signed in the absence of important leaders and without the consent of the Tribal Council." The sources here do not describe the Fox council or say what the Fox themselves said at Portage des Sioux.

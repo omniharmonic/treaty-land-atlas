@@ -3,8 +3,9 @@ id: "TLA-T-121"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1824 the Sauk and Fox ceded their Missouri land claims; a tract by the Des Moines River was set aside for mixed-ancestry relatives."
+note: "The 119,000-acre figure and the 1834 repeal come from one history blog. The blog calls this the first cession of Iowa lands, though the treaty itself concerns Missouri."
 how: "treaty_negotiated"
-how_basis: "The Oklahoma State treaty text records a negotiated cession in Washington with stated payments; no opened source describes coercion in 1824."
+how_basis: "The Oklahoma State treaty text records a negotiated cession in Washington with stated payments; no source cited describes coercion in 1824."
 confidence: "medium"
 cautions: "The 119,000-acre figure and the 1834 repeal come from a blog by Kevin T. Mason (Notes on Iowa); no state archive page was opened to confirm them. The blog calls this the first cession of lands in Iowa, while the treaty text itself concerns Missouri. Acreage of the Missouri cession is not stated."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1824-0207", "title": "Tribal Treaties Database (OSU)", "quote": "none of their tribes shall be permitted to settle or hunt upon any part of it, after the first day of January, 1826"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1824-0207", "title": "Tribal Treaties Database (OSU)", "quote": "is intended for the use of the half-breeds belonging to the Sock and Fox nations"}, {"url": "https://www.notesoniowa.com/post/iowa-history-daily-august-4-the-first-treaty", "title": "Iowa History Daily: August 4 - The First Treaty (Notes on Iowa)", "quote": "In 1834, the US Congress repealed the portion of the treaty providing for the “Half-Breed Tract”"}]

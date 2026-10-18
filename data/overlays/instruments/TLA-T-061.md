@@ -3,6 +3,7 @@ id: "TLA-T-061"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "After the Creek War, Andrew Jackson dictated terms at Fort Jackson, taking nearly 22 million acres from the Creek Nation."
+note: "Sources differ on the land taken: the National Park Service says nearly 22 million acres, the Encyclopedia of Alabama more than 21 million. The treaty was made with the Creek National Council, a U.S. ally, and took towns that stayed friendly."
 how: "treaty_under_pressure"
 how_basis: "The treaty is styled a capitulation after military victory, and the Encyclopedia of Alabama and National Park Service describe Jackson dictating terms and allied Creeks objecting."
 confidence: "high"

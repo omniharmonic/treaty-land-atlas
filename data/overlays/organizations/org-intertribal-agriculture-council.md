@@ -3,6 +3,7 @@ id: "org-intertribal-agriculture-council"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Intertribal Agriculture Council, formed in 1987 by federally recognized tribes, supports Native farmers and ranchers and works to protect and grow trust lands."
+note: "Supports Native farmers and ranchers through advocacy and technical help; it does not buy or hold land. The 56-million-acre figure is the Council's own."
 confidence: "medium"
 cautions: "Advocacy and technical assistance for agriculture; not a land holder. \"Tribally governed\" rests on the IAC's own description of its membership. The 56-million-acre figure is the IAC's. Charity Navigator not checked; donate page offers online giving (payee not checked)."
 sources: [{"url": "https://www.indianag.org/history", "title": "IAC - History", "quote": "was formed by a coalition of federally recognized Tribes in 1987"}, {"url": "https://www.indianag.org/", "title": "IAC - Home", "quote": "pursue and promote the conservation, development, and sustainable use of agricultural resources"}, {"url": "https://www.indianag.org/board-members", "title": "IAC - Board Members", "quote": "The IAC Board of Directors comprises one member delegate from each of the twelve IAC regions"}, {"url": "https://projects.propublica.org/nonprofits/organizations/363886772", "title": "ProPublica Nonprofit Explorer - Intertribal Agriculture Council Inc", "quote": "Tax exemption issued: May 1994"}]
@@ -14,4 +15,4 @@ The IAC is a 501(c)(3) whose general membership is made up of federally recogniz
 
 Its mission is "to pursue and promote the conservation, development, and sustainable use of agricultural resources" of tribes. The home page says that strengthening agricultural resources through technical assistance includes training producers, expanding market access, reducing financial risk, and "protects and grows trust lands." The IAC says it advances tribal agricultural priorities across more than 56 million acres under tribal jurisdiction.  Featured work includes a regenerative-agriculture research project with the Environmental Defense Fund, the American Indian Foods trademark certification program, a youth program, and a USDA technical assistance program for Native producers.
 
-The IAC's role is policy advocacy and technical help for agriculture. It does not buy or return land, and this record found no land transfers by the IAC.
+The IAC's role is policy advocacy and technical help for agriculture. It does not buy or return land, and the sources here describe no land transfers by the IAC.

@@ -3,6 +3,7 @@ id: "TLA-T-014"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1786 the Shawnee gave hostages, acknowledged U.S. sovereignty over British-ceded lands, and were allotted land to live and hunt on."
+note: "The \"under pressure\" description rests on the treaty's hostage and war-party clauses, not on an account of the negotiation."
 how: "treaty_under_pressure"
 how_basis: "The treaty text requires hostages and says a nation that withheld warnings of war plans \"shall be considered as parties in such war, and be punished accordingly.\""
 confidence: "medium"

@@ -14,4 +14,4 @@ Congress concluded that a uniform federal probate code "would likely reduce the 
 
 AIPRA amended Section 207 of the Indian Land Consolidation Act. That section is the one the Supreme Court had twice found unconstitutional in earlier cases. The new rules include a "single heir rule" for small interests: an interest of less than 5 percent of the whole parcel that is not disposed of by a valid will descends to one heir, after any life estate for a surviving spouse living on the parcel. The Act also lets people renounce or disclaim an inherited interest, and lets the Secretary approve voluntary consolidation agreements among heirs during probate.
 
-The number of fractionated interests and the Act's actual results were not found in a source opened for this story.
+The sources here do not give the number of fractionated interests or the Act's results.

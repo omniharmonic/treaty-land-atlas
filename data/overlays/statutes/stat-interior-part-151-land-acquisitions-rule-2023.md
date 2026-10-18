@@ -14,4 +14,4 @@ The Bureau's summary says it had developed extensive experience since the regula
 
 The rule itself gives the reason. It says the average time to receive a final fee-to-trust decision was then about 985 days. It also created a new category, the "initial Indian acquisition," meant to support tribes that do not currently have land held in trust. And it kept the IRA's central limit: the rule explains how the Bureau judges whether a tribe was under federal jurisdiction in 1934, using conclusive, presumptive and probative evidence.
 
-This record rests on the 2023 rule text only. Rules can be revised by later administrations, and no source opened for this story shows what the current status is.
+This account rests on the 2023 rule text only. Rules can be revised by later administrations, and the sources here do not show the current status.

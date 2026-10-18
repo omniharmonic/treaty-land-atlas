@@ -3,6 +3,7 @@ id: "TLA-T-259"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1851 Treaty of Mendota ceded Mdewakanton and Wahpekute lands in Minnesota and Iowa for $1,410,000; leaders later signed traders' papers."
+note: "Sources give the date as August 5 or August 6, 1851. MNopedia's bribery statement is hedged (\"Some sources suggest\")."
 how: "treaty_under_pressure"
 how_basis: "MNopedia says the commissioners warned the lower bands they would be surrounded and eventually forced to give up their land, and describes trader influence and possible bribery over the traders' papers."
 confidence: "medium"

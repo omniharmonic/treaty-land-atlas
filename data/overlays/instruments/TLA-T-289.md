@@ -3,6 +3,7 @@ id: "TLA-T-289"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At the 1855 Walla Walla council the Walla Walla, Cayuse and Umatilla ceded their country, kept a reservation, and reserved off-reservation rights."
+note: "Figures differ: about 45,000 square miles is given for this cession, while the National Park Service gives 60,000 square miles for all three Walla Walla Council treaties combined. The treaty states neither."
 how: "treaty_under_pressure"
 how_basis: "The National Park Service says Stevens and Palmer cajoled and threatened the delegates, and HistoryLink says Stevens used promised gifts and threats of force."
 confidence: "medium"

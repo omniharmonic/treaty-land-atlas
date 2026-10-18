@@ -3,6 +3,7 @@ id: "TLA-T-048"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Tellico in October 1805 the Cherokee ceded land north of Duck River to the Tennessee for $14,000 and a $3,000 annuity."
+note: "The Tennessee Encyclopedia calls this the \"third treaty of Tellico\"."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession for $14,000 and an annuity, and the Tennessee Encyclopedia describes it without noting coercion."
 confidence: "high"
@@ -16,4 +17,4 @@ In Article II the Cherokee "quit claim and cede to the United States, all the la
 
 In Article III the United States agreed to pay $3,000 in merchandise at once, $11,000 within ninety days of ratification, and an annuity of $3,000. Article IV gave U.S. citizens free use of two more roads through Cherokee country. Two days later the commissioners made a second Tellico treaty, which is recorded separately in the atlas.
 
-The sources opened give no acreage and no account of the council.
+The sources here give no acreage and no account of the council.

@@ -3,6 +3,7 @@ id: "case-tulee-v-washington-1942"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1942 the Court held Washington could impose conservation rules on Yakima treaty fishing but could not charge them state license fees."
+note: "The opinion spells the nation 'Yakima'; this site uses 'Yakama.'"
 confidence: "high"
 cautions: "The treaty is called the Treaty of May 29, 1855 in the opinion; the atlas page lists it as the 1855 treaty with the Yakama (spelled Yakima in the opinion)."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep315/usrep315681/usrep315681.pdf", "title": "Tulee v. Washington, 315 U.S. 681 (1942) (U.S. Reports, Library of Congress)", "quote": "it can not require them to pay license fees that are both regulatory and revenue-producing"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep315/usrep315681/usrep315681.pdf", "title": "Tulee v. Washington, 315 U.S. 681 (1942) (U.S. Reports, Library of Congress)", "quote": "the Government agreed to pay $200,000"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep315/usrep315681/usrep315681.pdf", "title": "Tulee v. Washington, 315 U.S. 681 (1942) (U.S. Reports, Library of Congress)", "quote": "convicted in the Superior Court for Klickitat County, Washington, on a charge of catching salmon with a net"}]

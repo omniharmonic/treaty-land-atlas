@@ -3,6 +3,7 @@ id: "TLA-T-108"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Kickapoo of the Vermilion ceded their claimed lands on the Wabash River for an annuity, saying they planned to leave."
+note: "The plan to leave the Wabash is stated in the treaty as the Kickapoo's own."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession with annuity; the removal intent is stated by the tribe in the text, with no description of coercion."
 confidence: "high"
@@ -16,4 +17,4 @@ In Article 1 they agreed to cede "all the lands which the said tribe has heretof
 
 In Article 3 the Kickapoo gave up an existing $1,000 annuity. The United States agreed to pay $2,000 a year in specie for ten years, and $3,000 was delivered at signing. The treaty calls the whole "a full compensation."
 
-Article 4 says: "as the said tribe contemplate removing from the country they now occupy," the annuity would be paid at a place to be agreed. A 1820 convention shows how that played out. The annuity was moved to Kaskaskia, Illinois, and the United States advanced $2,000 because the tribe was "now about leaving their settlements on the Wabash." The treaty was proclaimed on May 10, 1820. The sources opened give no acreage and do not describe the council.
+Article 4 says: "as the said tribe contemplate removing from the country they now occupy," the annuity would be paid at a place to be agreed. A 1820 convention shows how that played out. The annuity was moved to Kaskaskia, Illinois, and the United States advanced $2,000 because the tribe was "now about leaving their settlements on the Wabash." The treaty was proclaimed on May 10, 1820. The sources here give no acreage and do not describe the council.

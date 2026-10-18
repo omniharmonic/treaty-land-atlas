@@ -14,4 +14,4 @@ The act also changed how Indian affairs were run. Section 2 repealed the old law
 
 Section 5 added four agents for New Mexico and one for Utah. Section 7 extended the laws regulating trade and intercourse with Indian tribes over the tribes of New Mexico and Utah Territories.
 
-This record's earlier summary said the act appropriated funds to concentrate tribes on reservations. The act text read for this story does not say that, so the claim is not repeated here. Other sources may tie reservations to later 1850s policy; this story does not.
+The act's text does not say that it appropriated funds to concentrate tribes on reservations. Other sources may tie reservations to later 1850s policy; this story does not.

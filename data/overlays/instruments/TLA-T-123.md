@@ -3,6 +3,7 @@ id: "TLA-T-123"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1824 the Quapaw ceded their Arkansas reservation and agreed to join the Caddo on the Red River; the move went badly."
+note: "Sources differ on the annuity: the Encyclopedia of Arkansas says $2,000 a year for eleven years, while the treaty says $1,000 a year for eleven years on top of the existing annuity."
 how: "removal"
 how_basis: "The treaty text requires the Quapaw to move to the Caddo district, and the Encyclopedia of Arkansas describes settler and official pressure and a disastrous move."
 confidence: "medium"

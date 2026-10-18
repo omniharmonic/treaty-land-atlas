@@ -3,6 +3,7 @@ id: "doctrine-subsistence"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1980 Congress put a priority for subsistence hunting and fishing by rural Alaska residents, Native and non-Native, into Title VIII of ANILCA."
+note: "The priority is for rural Alaska residents, Native and non-Native, and how it is applied has been contested in court."
 confidence: "high"
 cautions: "Only the statute's text is summarized. How the priority is enforced (federal versus state management, who counts as rural, which waters are covered) has been contested in court and is not covered here."
 sources: [{"url": "https://www.law.cornell.edu/uscode/text/16/3111", "title": "16 U.S.C. 3111 (ANILCA sec. 801)", "quote": "is essential to Native physical, economic, traditional, and cultural existence and to non-Native physical, economic, traditional, and social existence"}, {"url": "https://www.law.cornell.edu/uscode/text/16/3111", "title": "16 U.S.C. 3111 (ANILCA sec. 801)", "quote": "in order to fulfill the policies and purposes of the Alaska Native Claims Settlement Act"}, {"url": "https://www.law.cornell.edu/uscode/text/16/3114", "title": "16 U.S.C. 3114 (ANILCA sec. 804)", "quote": "the taking on public lands of fish and wildlife for nonwasteful subsistence uses shall be accorded priority over the taking on such lands"}]

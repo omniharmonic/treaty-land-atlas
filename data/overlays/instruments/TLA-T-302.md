@@ -3,6 +3,7 @@ id: "TLA-T-302"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1856 the Menominee ceded up to two townships of their reservation at 60 cents an acre to settle the Stockbridge-Munsee."
+note: "The statement that the Menominee had \"no objection\" is the treaty's own wording."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a council agreement to sell land for a stated price per acre; the preamble says the Menominee had no objection to the new neighbors."
 confidence: "high"

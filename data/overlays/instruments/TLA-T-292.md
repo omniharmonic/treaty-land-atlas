@@ -3,6 +3,7 @@ id: "TLA-T-292"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 treaty separated the Chickasaw District from the Choctaw Nation and leased the western Choctaw and Chickasaw lands for Wichita settlement."
+note: "The treaty settled matters between the Choctaw and Chickasaw themselves, not only with the United States."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text and the Wichita State article describe delegations negotiating in Washington; the article calls the Choctaw position weak but does not describe coercion."
 confidence: "high"

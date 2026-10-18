@@ -3,6 +3,7 @@ id: "TLA-T-021"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Canandaigua the United States acknowledged Six Nations land in New York, with Seneca boundaries, a road right and annual goods."
+note: "Ganondagan's statement that the treaty \"has never been broken\" is its own view; the same source says there have been violations."
 how: "treaty_negotiated"
 how_basis: "The OSU text and Ganondagan describe a negotiated treaty in which the United States acknowledged Six Nations lands and paid goods and annual sums."
 confidence: "high"

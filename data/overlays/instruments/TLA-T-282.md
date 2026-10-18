@@ -3,6 +3,7 @@ id: "TLA-T-282"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1855 Willamette Valley chiefs ceded their country between the Columbia River and the Calapooia Mountains for annuities and a promised home."
+note: "The page header dates the treaty January 22, 1855, but its closing clause says it was signed January 4, with assents dated January 9 and 10."
 how: "treaty_negotiated"
 how_basis: "The text records articles made between Superintendent Palmer and chiefs 'duly authorized thereto by their respective bands'; the page shows assents by further bands."
 confidence: "high"

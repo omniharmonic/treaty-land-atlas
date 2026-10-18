@@ -4,7 +4,7 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1821 the Creek Nation ceded Georgia land east of the Flint River; the United States agreed to pay Creek debts to Georgians."
 how: "treaty_negotiated"
-how_basis: "The Statutes at Large text records a signed cession with payments; the payment of Creek debts to Georgia citizens is noted but no opened source describes coercion in 1821."
+how_basis: "The Statutes at Large text records a signed cession with payments; the payment of Creek debts to Georgia citizens is noted but no source cited describes coercion in 1821."
 confidence: "high"
 cautions: "Acreage is not stated in the treaty. This story does not cover later Creek treaties."
 sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg215.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "one thousand acres, to be laid off in a square, so as to include the Indian Spring in the centre thereof"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg215.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "making, in the whole, fourteen payments in fourteen successive years"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg218.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "release, exonerate, and discharge, the said Creek nation from all and every claim and claims"}]

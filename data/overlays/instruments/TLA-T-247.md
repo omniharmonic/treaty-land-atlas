@@ -3,6 +3,7 @@ id: "TLA-T-247"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1846 the Potawatomi, Chippewa and Ottawa bands sold their Iowa and Osage River lands for $850,000 and agreed to move to Kansas."
+note: "Sources list both June 5 and June 17, 1846; June 5 is treated as the signing date."
 how: "removal"
 how_basis: "Article 6 of the treaty text requires removal to the Kansas River within two years."
 confidence: "high"

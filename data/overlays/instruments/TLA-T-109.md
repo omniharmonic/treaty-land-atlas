@@ -2,7 +2,8 @@
 id: "TLA-T-109"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Chippewa ceded some six million acres in central Michigan's Saginaw region, keeping reservations, for cash, annuities and services."
+headline: "The Chippewa ceded a large part of central Michigan's Saginaw region, keeping reservations, for cash, annuities and services."
+note: "The six million acre figure is the amount Lewis Cass proposed to buy, according to a 1977 Michigan State atlas; the treaty itself states no total."
 how: "treaty_negotiated"
 how_basis: "The statute text and the MSU geography page describe a negotiated treaty, though the MSU page notes that liquor and soldiers were part of the negotiation setting."
 confidence: "high"

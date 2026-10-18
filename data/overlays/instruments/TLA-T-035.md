@@ -3,6 +3,7 @@ id: "TLA-T-035"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Choctaw agreed to re-mark a boundary line in the south and released land between it and the Mobile and Tombigbee rivers."
+note: "The words \"freely, voluntarily, and without constraint\" are the document's own, not independent evidence. Its listed ratification and proclamation dates appear to be reversed."
 how: "treaty_negotiated"
 how_basis: "The OSU text states the convention was made 'freely, voluntarily, and without constraint', though the payment was one dollar and I have no independent account of the council."
 confidence: "high"
@@ -16,4 +17,4 @@ Article I let the President retrace and re-mark the old line of limits set betwe
 
 Article II fixed the line as the boundary. For "one dollar" paid by the United States, the Choctaw released all the land bounded by that line on the north, the Chickasawhay River on the west, the Tombigbee and Mobile rivers on the east, and the U.S. boundary on the south.
 
-Article III let the chiefs of the upper towns alter the old boundary near the mouth of the Yazoo River if it could be done without injury to the nation. The convention took effect only when ratified. The OSU header gives June 20, 1803 for ratification and January 20, 1803 for proclamation, which appear reversed. The sources opened do not say why the United States wanted this land or describe the council.
+Article III let the chiefs of the upper towns alter the old boundary near the mouth of the Yazoo River if it could be done without injury to the nation. The convention took effect only when ratified. The OSU header gives June 20, 1803 for ratification and January 20, 1803 for proclamation, which appear reversed. The sources here do not say why the United States wanted this land or describe the council.

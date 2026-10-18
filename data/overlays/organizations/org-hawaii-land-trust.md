@@ -3,6 +3,7 @@ id: "org-hawaii-land-trust"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Hawaii Land Trust, a Honolulu land conservation nonprofit formed in 2011 from four island land trusts, protects land by purchase and conservation easement."
+note: "A conservation land trust, not described as Native Hawaiian-led; its work is not a return of land to a Native Hawaiian nation."
 confidence: "medium"
 cautions: "Not described as Native-led. The record's \"formerly Hawaiian Islands Land Trust\" rests on the EIN match (the site itself does not state a former name). Payee name on checks was not checked. Protected-acreage totals were not read."
 sources: [{"url": "https://www.hilt.org/about", "title": "Hawaii Land Trust - About", "quote": "In 2011, they united to become a single, stronger organization"}, {"url": "https://www.hilt.org/about", "title": "Hawaii Land Trust - About", "quote": "To protect, steward, and cultivate reciprocal relationships between people and ‘āina that sustain Hawaiʻi."}, {"url": "https://www.hilt.org/active-aina-transactions", "title": "Hawaii Land Trust - Active Aina Transactions", "quote": "by fee purchase or Conservation Easement"}, {"url": "https://www.hilt.org/staff", "title": "Hawaii Land Trust - Staff", "quote": "ʻOLU CAMPBELL PRESIDENT & CHIEF EXECUTIVE OFFICER"}, {"url": "https://projects.propublica.org/nonprofits/organizations/990353223", "title": "ProPublica Nonprofit Explorer - Hawaiian Islands Land Trust", "quote": "Tax exemption issued: March 2001"}]

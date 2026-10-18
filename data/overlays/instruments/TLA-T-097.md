@@ -16,4 +16,4 @@ Article 1 changed what the 1817 treaty had promised. That treaty had said the Un
 
 The treaty also added reservations: 55,680 acres and 160 acres for the Wyandot, 16,000 acres for the Wyandot at Solomon's Town and Blanchard's Fork, 12,800 acres for the Shawnee, 8,960 acres for the Shawnee and Seneca at Lewistown, and 10,000 acres for the Seneca. Article 3 barred the named persons from conveying their granted tracts without the President's permission.
 
-Article 4 added annuities forever: $500 to the Wyandot, $1,000 to the Shawnee and the Lewistown Seneca, $500 to the Seneca, and $1,500 to the Ottawa. The sources opened do not describe later removals.
+Article 4 added annuities forever: $500 to the Wyandot, $1,000 to the Shawnee and the Lewistown Seneca, $500 to the Seneca, and $1,500 to the Ottawa. The sources here do not describe later removals.

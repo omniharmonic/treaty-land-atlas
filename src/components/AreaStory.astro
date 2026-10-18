@@ -1,0 +1,99 @@
+---
+// One land area: its shape, and each dated step the 1899 federal record lists for it (recognized,
+// set aside, ceded, taken back), with the agreement that did it.
+import type { Node } from '../lib/graph';
+import { node, pathFor } from '../lib/graph';
+import { href } from '../lib/href';
+import { areaStories, ROLE_KIND, ROLE_PHRASE } from '../lib/land';
+import LandShape from './LandShape.astro';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+const s = areaStories()[n.id];
+const steps = (s?.entries ?? []).map((e) => {
+  const by = e.instrument ? node(e.instrument) : null;
+  return {
+    year: e.date.slice(0, 4),
+    what: ROLE_PHRASE[e.role] ?? e.role,
+    kind: ROLE_KIND[e.role] ?? 'other',
+    by: by ? { label: by.label, href: pathFor(by) } : null,
+    quote: e.quote,
+  };
+});
+const kept = s?.status === 'kept';
+---
+
+<section class="area" aria-label="The land">
+  <LandShape ids={[n.id]} tone={kept ? 'kept' : 'lost'} label={`Map of ${n.label}`} links={false}>
+    <figcaption>
+      Shape traced from the 1899 maps; approximate.{' '}
+      <a href={href(`/map/#sel=${encodeURIComponent(n.id)}`)}>Open on the map</a>
+    </figcaption>
+  </LandShape>
+  {steps.length > 0 && (
+    <ol class="steps">
+      {steps.map((x) => (
+        <li class={x.kind}>
+          <span class="y">{x.year}</span>
+          <div>
+            <p class="what">{x.what[0]!.toUpperCase() + x.what.slice(1)}</p>
+            {x.by ? (
+              <p class="by">
+                By {x.by.href ? <a href={href(x.by.href)}>{x.by.label}</a> : x.by.label}
+              </p>
+            ) : (
+              x.quote && <p class="by">The 1899 record: “{x.quote.replace(/[.;,]$/, '')}”</p>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+  )}
+</section>
+
+<style>
+  .area {
+    display: grid;
+    gap: var(--space-5);
+    margin: var(--space-6) 0;
+    align-items: start;
+  }
+  @media (min-width: 760px) {
+    .area {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    }
+  }
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .steps li {
+    display: grid;
+    grid-template-columns: 3.4rem minmax(0, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-3) 0 var(--space-3) var(--space-3);
+    border-left: 3px solid var(--rule);
+  }
+  .steps li.kept {
+    border-left-color: #6f8a5a;
+  }
+  .steps li.lost {
+    border-left-color: #9d6b4b;
+  }
+  .y {
+    font-family: var(--sans);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .what {
+    margin: 0;
+    font-weight: 600;
+  }
+  .by {
+    margin: 2px 0 0;
+    font-size: var(--s-1);
+    color: var(--ink-2);
+  }
+</style>

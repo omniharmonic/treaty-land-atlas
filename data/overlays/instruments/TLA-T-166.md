@@ -3,6 +3,7 @@ id: "TLA-T-166"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In January 1832 the Big Spring band of Wyandots sold their 16,000-acre Ohio reservation for $1.25 an acre as lands were sold."
+note: "Some listings date this to 29 January 1832, but the text says it was concluded 19 January 1832. The band's stated reasons come from the commissioner's English-language text."
 how: "treaty_negotiated"
 how_basis: "The text says the band understood the government was willing to purchase, and that they refused removal west when it was offered in a first draft."
 confidence: "high"

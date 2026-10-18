@@ -3,8 +3,9 @@ id: "TLA-T-146"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1826 the Potawatomi ceded land in northern Indiana and a road strip for a 22-year annuity and goods."
+note: "The words about the tribe's attachment and liberality are the treaty's own wording, not a statement by the nation."
 how: "treaty_negotiated"
-how_basis: "The Oklahoma State treaty text records a negotiated cession with annuities and goods; no opened source describes coercion."
+how_basis: "The Oklahoma State treaty text records a negotiated cession with annuities and goods; no source cited describes coercion."
 confidence: "high"
 cautions: "Acreage is not stated. The treaty's words about the tribe's attachment and liberality are the treaty's wording, not a statement by the nation. What happened to the road lands was not researched."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1826-0273", "title": "Tribal Treaties Database (OSU)", "quote": "payment for all these goods shall be made by the Potawatamie tribe out of their annuity"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg295.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Commissioners on the part of the United States"}]

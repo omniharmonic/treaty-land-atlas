@@ -20,4 +20,4 @@ In Article 3 the United States agreed to pay the chief and his band four hundred
 
 Article 4 made the treaty binding once the President and Senate ratified it. The page lists a proclamation on 16 March 1835.
 
-The 1832 treaty it modifies was not opened here, so the reserve's origin and any other terms are not described. The text does not say where the band went or why it agreed to cede.
+The reserve's origin and any other terms of the 1832 treaty it modifies are not described here. The text does not say where the band went or why it agreed to cede.

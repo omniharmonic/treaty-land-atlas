@@ -3,6 +3,7 @@ id: "org-mid-klamath-watershed-council"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Mid Klamath Watershed Council, an Orleans, California community nonprofit working with the Karuk Tribe, does river restoration, prescribed burns and youth stewardship programs."
+note: "A community restoration group that works alongside the Karuk Tribe; it is not described as Native-led and does not hold or return land."
 confidence: "medium"
 cautions: "Not Native-led per the record; land-return role is not shown. FY2024 revenue on ProPublica is large for a local nonprofit (about $7.9 million), mostly grant funded. Donations via PayPal, Facebook or check payable to MKWC per the site; payee not re-checked."
 sources: [{"url": "https://www.mkwc.org/", "title": "Mid Klamath Watershed Council - Home", "quote": "collaboratively coordinate ecosystem restoration, promote innovative policy and community vitality, and involve people in land stewardship"}, {"url": "https://www.mkwc.org/", "title": "Mid Klamath Watershed Council - Home", "quote": "completed 25 prescribed burns over 17 burn days this summer"}, {"url": "https://www.mkwc.org/", "title": "Mid Klamath Watershed Council - Home", "quote": "in partnership with the Karuk Tribe and the Klamath National Forest, completed the East Fork Elk Creek Fish Passage Project"}, {"url": "https://projects.propublica.org/nonprofits/organizations/201501256", "title": "ProPublica Nonprofit Explorer - Mid Klamath Watershed Council", "quote": "Tax exemption issued: Nov. 2004"}]

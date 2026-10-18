@@ -14,4 +14,4 @@ The statute turns that into a duty. When cultural affiliation with a particular 
 
 In December 2023 the Interior Department published new regulations, effective January 12, 2024, to carry out the law. They require museums and federal agencies to defer to the Native American traditional knowledge of lineal descendants, tribes and Native Hawaiian organizations, and they gave museums and agencies five years, rather than two as first proposed, to consult and update inventories.
 
-How many items have been returned, and the pace of returns, are not stated in the sources opened for this record.
+How many items have been returned, and the pace of returns, are not stated in the sources here.

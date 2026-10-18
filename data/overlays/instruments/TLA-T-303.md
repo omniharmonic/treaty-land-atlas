@@ -3,6 +3,7 @@ id: "TLA-T-303"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1856 treaty ceded Creek land to the Seminole, defined both nations' boundaries, and sought to bring Florida Seminoles west."
+note: "The treaty text calls the western boundary the \"one hundredth parallel of west longitude\"; the Seminole Nation Museum calls the same line the 100th meridian."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a convention negotiated with commissioners from both tribes; the preamble describes a U.S. aim of inducing Florida Seminoles to emigrate, but no source describes coercion at signing."
 confidence: "high"

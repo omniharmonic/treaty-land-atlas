@@ -3,6 +3,7 @@ id: "TLA-T-002"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1726 at Albany, three Five Nations groups granted the British king their beaver-hunting land and a 60-mile strip, asking his protection."
+note: "The deed is often labeled as made by the Five Nations, but it names only the Seneca, Cayuga and Onondaga."
 how: "other"
 how_basis: "The deed itself is an instrument signed by three nations' sachems and addressed to the British king (a colonial-era deed in trust, not a United States treaty)."
 confidence: "medium"
@@ -17,4 +18,4 @@ On 14 September 1726, at Albany, New York, sachems (leaders) of the Seneca, Cayu
 
 It also granted the king a strip of land sixty English miles deep, running inland from the water along Lake Ontario and the Niagara River. The strip began at a creek on the lake the deed calls Oswego. The deed says it took in the Castles (the main towns) of the three nations.
 
-The key term is the trust. Both grants are written as land to be protected and defended by the king, for the use of the three nations and their heirs. The deed was recorded in New York's secretary's office on 9 November 1726. The page does not say how the British government later used the grant, and this record does not settle how later parties read it.
+The key term is the trust. Both grants are written as land to be protected and defended by the king, for the use of the three nations and their heirs. The deed was recorded in New York's secretary's office on 9 November 1726. The page does not say how the British government later used the grant, and how later parties read it is not settled here.

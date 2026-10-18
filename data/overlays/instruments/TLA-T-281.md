@@ -3,6 +3,7 @@ id: "TLA-T-281"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Medicine Creek in 1854, Stevens obtained the first Puget Sound cession: about 2.5 million acres, small reservations and fishing rights."
+note: "Estimates of the ceded area differ: HistoryLink says some 2.5 million acres, while another estimate is about 2.24 million acres."
 how: "treaty_under_pressure"
 how_basis: "HistoryLink says the 62 signatures are disputed and the treaty was explained only in Chinook Jargon, and the National Park Service says Stevens pressured Puget Sound tribes into the 1854-55 treaties."
 confidence: "medium"

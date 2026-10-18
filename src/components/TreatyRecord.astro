@@ -1,271 +1,271 @@
 ---
+// A treaty, told in the order a newcomer needs it: what it was and what happened, the nations, what
+// it did to the land, what happened to that land afterwards, the courts and laws that followed, who
+// is doing the work today, and the evidence. Every sentence comes from the linked records.
 import type { Node } from '../lib/graph';
 import { graph, overlayFor, cleanTags } from '../lib/graph';
 import { treatyExperience } from '../lib/treaty';
-import { locatorMap } from '../lib/svgmap';
+import { acresText, landTotals, ROLE_KIND, ROLE_PHRASE, treatyLand } from '../lib/land';
 import { href } from '../lib/href';
-import TreatyJourney from '../islands/TreatyJourney.svelte';
 import Narrative from './Narrative.astro';
 import Sources from './Sources.astro';
 import SupportBox from './SupportBox.astro';
 import SpecimenLabel from './SpecimenLabel.astro';
-import BrandMark from './BrandMark.astro';
 import RecordCorrections from './RecordCorrections.astro';
+import LandShape from './LandShape.astro';
+import TreatyTimeline from './TreatyTimeline.astro';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
 interface Props {
   n: Node;
 }
 const { n } = Astro.props;
 const g = graph();
 const experience = treatyExperience(n, [...g.nodes.values()], g.edges);
-const geometryIds = [
-  ...new Set([...experience.geometryIds, ...experience.events.flatMap((e) => e.geometryIds)]),
-];
-const map = locatorMap(geometryIds);
+const { areas, steps } = treatyLand(n);
+const totals = landTotals(areas);
 const overlay = overlayFor(n);
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const headlines = JSON.parse(
+  readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'headlines.json'), 'utf8'),
+) as Record<string, string>;
 const status = String(n['ratification_status'] ?? 'unknown');
-const statuses: Record<string, string> = {
-  ratified: 'Ratified',
-  ratified_with_amendments: 'Ratified with amendments',
-  unratified: 'Never ratified',
-  not_applicable: 'Ratification not applicable',
+const MONTHS =
+  'January February March April May June July August September October November December'.split(
+    ' ',
+  );
+const fmt = (d: unknown) => {
+  const m = String(d ?? '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? `${MONTHS[Number(m[2]) - 1]} ${Number(m[3])}, ${m[1]}` : d ? String(d) : null;
 };
-const kindNames: Record<string, string> = {
-  Case: 'Court decision',
-  Statute: 'Legislation',
-  Doctrine: 'Legal principle',
-  Campaign: 'Land return',
+const promises = overlay?.promises ?? [];
+const broken = promises.filter((p) => p.kept === 'broken' || p.kept === 'partly').length;
+const glance: [string, string][] = [
+  ['Signed', fmt(n['date_signed']) ?? 'Date not recorded'],
+  [
+    'Senate',
+    status === 'unratified'
+      ? 'Never ratified'
+      : n['date_ratified']
+        ? `Ratified ${fmt(n['date_ratified'])}`
+        : status.startsWith('ratified')
+          ? 'Ratified'
+          : 'Not recorded',
+  ],
+];
+if (totals.lost) glance.push(['Land given up', acresText(totals.lost)]);
+if (totals.kept) glance.push(['Land set aside for the nations', acresText(totals.kept)]);
+if (promises.length)
+  glance.push(['Promises', `${broken} of ${promises.length} broken or only partly kept`]);
+const lawKinds: Record<string, string> = {
+  Case: 'Court case',
+  Statute: 'Law',
+  Doctrine: 'Legal doctrine',
   Instrument: 'Related agreement',
-  Violation: 'Related history',
 };
+// the hero map colors each area by what this treaty did to it: given up, or kept
+const heroFills = Object.fromEntries(
+  areas
+    .filter((a) => a.role)
+    .map((a) => [a.id, ROLE_KIND[a.role!] === 'lost' ? '#9d6b4b' : '#6f8a5a']),
+);
+const law = experience.related.filter((l) => lawKinds[l.type]);
 const notes = cleanTags(n.notes);
-const fullMap = experience.geometryIds[0]
-  ? `/map/#sel=${encodeURIComponent(experience.geometryIds[0])}`
-  : '/map/';
+const suggested = experience.nations.some((x) => x.suggested);
+const fullMap = areas[0] ? `/map/#sel=${encodeURIComponent(areas[0].id)}` : '/map/';
+const who = experience.nations.map((x) => x.label);
+const landLabel = `Map of the land in this treaty’s record: ${areas.length} area${areas.length === 1 ? '' : 's'}${who.length ? ` connected to ${who.slice(0, 3).join(', ')}` : ''}.`;
 ---
 
 <article class="treaty-record" data-pagefind-body>
   <a class="back-link" href={href('/treaties/')}>
     <span aria-hidden="true">←</span> All treaties and agreements
   </a>
-  <header class="treaty-hero">
-    <div>
-      <div class="treaty-meta">
-        <span>{n['date_signed'] ? String(n['date_signed']) : 'Date not recorded'}</span>
-        <span>{String(n['region'] ?? 'Region not recorded')}</span>
-        <span class:list={['ratification', { unratified: status === 'unratified' }]}>
-          {statuses[status] ?? 'Ratification not recorded'}
+  <header class:list={['hero', { 'with-land': areas.length > 0 }]}>
+    <div class="hero-text">
+      <p class="meta">
+        <span>{String(n['region'] ?? '')}</span>
+        <span class:list={['pill', { unratified: status === 'unratified' }]}>
+          {status === 'unratified' ? 'Never ratified' : 'Treaty'}
         </span>
-      </div>
+      </p>
       <h1>{n.label}</h1>
-      <p class="hero-description">
-        {overlay?.headline ??
-          'Explore this agreement through its recorded terms, the people and land it concerns, and the history linked to it.'}
-      </p>
+      {overlay?.headline && <p class="headline">{overlay.headline}</p>}
+      <dl class="glance">
+        {glance.map(([k, v]) => (
+          <div>
+            <dt>{k}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
-    <div class="hero-aside">
-      <BrandMark class="record-mark" />
-      <p>
-        Written into law.
-        <br />
-        Still present in the land.
-      </p>
-      <a href="#take-action">
-        Connect with the work <span aria-hidden="true">↗</span>
-      </a>
-    </div>
+    {areas.length > 0 && (
+      <LandShape
+        ids={areas.map((a) => a.id)}
+        fills={heroFills}
+        tone="quiet"
+        label={landLabel}
+        class="hero-land"
+      >
+        <figcaption>
+          The land in this treaty’s record. <a href={href(fullMap)}>Open on the map</a>
+        </figcaption>
+      </LandShape>
+    )}
   </header>
   {status === 'unratified' && (
     <p class="unratified-note">
-      This instrument was never ratified. Signing and ratification are different; its presence here
-      does not mean it became a ratified U.S. treaty.
+      The Senate never ratified this treaty, so under U.S. law it never took effect, even when the
+      government acted on it.
     </p>
   )}
-  <nav class="record-nav" aria-label="On this treaty page">
-    <a href="#the-promise">The agreement</a>
-    <a href="#history">
-      What followed <span>{experience.events.length}</span>
-    </a>
-    <a href="#connections">Connected histories</a>
-    <a href="#take-action">The work today</a>
-    <a href="#evidence">Sources and record</a>
+
+  <nav class="record-nav" aria-label="On this page">
+    <a href="#story">What happened</a>
+    {areas.length > 0 && <a href="#land">The land</a>}
+    <a href="#after">What happened next</a>
+    {law.length > 0 && <a href="#law">Courts and laws</a>}
+    <a href="#work">Who is doing the work</a>
+    <a href="#evidence">Sources</a>
   </nav>
-  <section id="the-promise" class="promise-section" aria-labelledby="promise-title">
-    <div class="reading-column">
-      <p class="section-note">The agreement</p>
-      <h2 id="promise-title">Begin with the promise.</h2>
+
+  <section id="story" class="story" aria-labelledby="story-h">
+    <div class="reading">
+      <h2 id="story-h" class="visually-hidden">
+        What happened
+      </h2>
       {overlay ? (
         <Narrative {n} showHeadline={false} />
       ) : (
-        <div class="research-gap">
-          <h3>A fuller reading is still to come.</h3>
-          <p>
-            This agreement does not yet have a published narrative or article-by-article account.
-            Explore the recorded terms and dates in the timeline, and consult the sources below.
-          </p>
-          <p>We do not treat missing research as evidence that a promise was kept or broken.</p>
-        </div>
-      )}
-      <details class="parties-record">
-        <summary>Parties as named in the original record</summary>
-        <p>{cleanTags(n['parties_text']).text || 'The parties have not been recorded here yet.'}</p>
-        <p class="small muted">
-          Historical labels can differ from a nation’s own name and from present-day governments.
-          The linked nation records show those distinctions.
+        <p class="gap">
+          The story of this treaty has not been written up yet. Its dates, its land and what came
+          after are below, with the sources.
         </p>
-      </details>
+      )}
     </div>
-    <aside class="people-aside" aria-labelledby="nations-h">
-      <p class="section-note">The people in the record</p>
-      <h3 id="nations-h">
-        Living nations.
-        <br />
-        Continuing histories.
-      </h3>
+    <aside class="people" aria-labelledby="nations-h">
+      <h2 id="nations-h">The nations</h2>
       {experience.nations.length ? (
-        <ul class="nation-links">
+        <ul>
           {experience.nations.map((nation) => (
-            <li>
-              {nation.path ? (
-                <a href={href(nation.path)}>
-                  {nation.label}
-                  <span aria-hidden="true">↗</span>
-                </a>
-              ) : (
-                <span>{nation.label}</span>
-              )}
-              {nation.suggested && <small>Suggested name match; not reviewed by the nation.</small>}
-            </li>
+            <li>{nation.path ? <a href={href(nation.path)}>{nation.label}</a> : nation.label}</li>
           ))}
         </ul>
       ) : (
-        <p class="small muted">
-          Nation connections have not been established for this agreement yet. Consult the parties
-          as recorded.
-        </p>
+        <p class="small">Not yet linked to a present-day nation.</p>
       )}
-      <p class="small muted">
-        This account draws on public records. It does not speak for the nations involved and has not
-        been reviewed by them.
+      <p class="small">
+        As named in the treaty: {cleanTags(n['parties_text']).text || 'not recorded'}.
       </p>
-      <a class="small" href={href('/claim/')}>
-        For nations: review or correct this account
-      </a>
+      <p class="small">
+        {suggested &&
+          'Some links between treaty names and present-day nations are matched by name and not yet confirmed. '}
+        This page draws on public records and has not been reviewed by the nations.{' '}
+        <a href={href('/claim/')}>Nations can review or correct it</a>.
+      </p>
     </aside>
   </section>
-  <section id="history" class="history-section" aria-labelledby="history-title">
-    <div class="section-heading">
-      <div>
-        <p class="section-note">The record unfolds</p>
-        <h2 id="history-title">What followed.</h2>
-      </div>
-      <p>
-        Move between the agreement, land records, and legal history. Explore each connection on its
-        own terms.
+
+  {areas.length > 0 && (
+    <section id="land" class="land-section" aria-labelledby="land-h">
+      <h2 id="land-h">What the treaty did to the land</h2>
+      <p class="section-lede">
+        {totals.lost > 0 && <>{acresText(totals.lost).replace(/^about/, 'About')} given up. </>}
+        {totals.kept > 0 && (
+          <>
+            {acresText(totals.kept).replace(/^about/, totals.lost ? 'about' : 'About')} recognized,
+            kept or set aside for the nations.{' '}
+          </>
+        )}
+        Each shape is a numbered area in the federal government’s 1899 record of land cessions.
       </p>
-    </div>
-    <TreatyJourney client:load events={experience.events} {map} {base} />
-    <noscript>
-      <p>The interactive timeline needs JavaScript. Every linked entry remains available here:</p>
-      <ul>
-        {experience.events
-          .filter((e) => e.path && e.id !== 'signed' && e.id !== 'ratified')
-          .map((e) => (
-            <li>
-              <a href={href(e.path!)}>
-                {e.date}: {e.label}
-              </a>
-              {e.suggested ? ' (suggested connection)' : ''}
-              {e.context ? ' (related context)' : ''}
-            </li>
-          ))}
-      </ul>
-    </noscript>
-  </section>
-  <section id="connections" class="connections-section" aria-labelledby="connections-title">
-    <div class="section-heading">
-      <div>
-        <p class="section-note">Follow another thread</p>
-        <h2 id="connections-title">No agreement stands alone.</h2>
-      </div>
-      <p>
-        Courts, legislation, and related histories help explain what a treaty has meant over time. A
-        connection is an invitation to examine the evidence.
-      </p>
-    </div>
-    {experience.related.length ? (
-      <div class="related-grid">
-        {experience.related.map((link) => (
-          <article class="related-card">
-            <p class="related-kind">
-              {kindNames[link.type] ?? link.type}
-              {link.context ? ' · context' : ''}
-            </p>
-            <h3>
-              {link.path ? (
-                <a href={href(link.path)}>
-                  {link.label}
-                  <span aria-hidden="true">↗</span>
-                </a>
-              ) : (
-                link.label
-              )}
-            </h3>
-            {link.suggested && <p class="related-note">Suggested connection</p>}
-          </article>
+      <ul class="areas">
+        {areas.map((a) => (
+          <li>
+            <LandShape
+              ids={[a.id]}
+              tone={
+                a.role && ['ceded', 'ceded_part', 'retroceded'].includes(a.role)
+                  ? 'lost'
+                  : a.role
+                    ? 'kept'
+                    : 'quiet'
+              }
+              label={`Outline of ${a.label}`}
+              links={false}
+            />
+            <div>
+              <p class="role">
+                {a.role ? ROLE_PHRASE[a.role] : 'Linked to this treaty'}
+                {a.acres > 0 && <span>{acresText(a.acres)}</span>}
+              </p>
+              <h3>
+                <a href={a.href ? href(a.href) : undefined}>{a.label}</a>
+              </h3>
+              {a.summary && <p class="sum">{a.summary}</p>}
+            </div>
+          </li>
         ))}
-      </div>
-    ) : (
-      <p class="research-gap">
-        No additional histories are linked here yet. That is a research gap, not a conclusion about
-        the agreement.
-      </p>
-    )}
+      </ul>
+    </section>
+  )}
+
+  <section id="after" class="after-section" aria-labelledby="after-h">
+    <h2 id="after-h">What happened next</h2>
+    <p class="section-lede">
+      Everything the record holds about this land and this treaty, in order: what earlier agreements
+      said, what this one did, and what the United States, the courts and the nations did
+      afterwards.
+    </p>
+    <TreatyTimeline {n} {areas} {steps} events={experience.events} />
   </section>
-  <section id="take-action" class="action-section" aria-labelledby="action-title">
-    <div class="action-intro">
-      <p class="section-note">Carry this understanding forward</p>
-      <h2 id="action-title">
-        The history is ongoing.
-        <br />
-        So is the work.
-      </h2>
-      <p>
-        Start with the nations connected to this history, then the organizations supporting land
-        rights and return. Support goes directly to them.
-      </p>
-      <a href={href('/where/')}>
-        Find the work connected to your place <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-    <SupportBox {n} />
+
+  {law.length > 0 && (
+    <section id="law" class="law-section" aria-labelledby="law-h">
+      <h2 id="law-h">Courts and laws</h2>
+      <ul class="law">
+        {law.map((l) => (
+          <li>
+            <p class="kind">{lawKinds[l.type]}</p>
+            <h3>{l.path ? <a href={href(l.path)}>{l.label}</a> : l.label}</h3>
+            {headlines[l.id] && <p>{headlines[l.id]}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section id="work" class="work-section" aria-labelledby="work-h">
+    <h2 id="work-h">Who is doing the work today</h2>
+    <p class="section-lede">
+      The nations connected to this treaty come first, then groups returning land and defending
+      treaty rights. Support goes directly to them.
+    </p>
+    <SupportBox {n} titled={false} />
   </section>
-  <section id="evidence" class="evidence-section" aria-labelledby="evidence-title">
-    <div class="evidence-main">
-      <p class="section-note">Keep the evidence close</p>
-      <h2 id="evidence-title">Read, question, trace.</h2>
+
+  <section id="evidence" class="evidence" aria-labelledby="evidence-h">
+    <div>
+      <h2 id="evidence-h">Sources</h2>
       <Sources id={n.id} />
       <RecordCorrections {n} />
       {notes.text && (
-        <details class="research-notes">
-          <summary>Research notes and unresolved questions</summary>
+        <details>
+          <summary>Research notes</summary>
           <p>{notes.text}</p>
-          {notes.flags.length > 0 && <p class="small">Flags: {notes.flags.join(', ')}</p>}
         </details>
       )}
-      <a class="full-map" href={href(fullMap)}>
-        Explore linked land records on the full map <span aria-hidden="true">↗</span>
-      </a>
-      <p class="small muted">
-        Historical geometry is approximate. Nothing here is a legal description of land, title, or
-        jurisdiction.
+      <p class="small">
+        Shapes are approximate and are not legal descriptions of land, title or jurisdiction.
       </p>
     </div>
-    <aside aria-label="About this treaty record">
+    <aside aria-label="About this record">
       <SpecimenLabel {n} />
     </aside>
   </section>
 </article>
+
 <style>
   .treaty-record {
     padding-top: 32px;
@@ -276,77 +276,85 @@ const fullMap = experience.geometryIds[0]
     font-size: 0.8rem;
     text-decoration: none;
   }
-  .treaty-hero {
+  .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 240px;
-    gap: 8%;
+    gap: 48px;
     align-items: center;
-    padding: 48px 0;
+    padding: 40px 0 48px;
   }
-  .treaty-meta {
+  @media (min-width: 900px) {
+    .hero.with-land {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    }
+  }
+  .meta {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 12px 24px;
+    gap: 12px 20px;
     font-size: 0.8rem;
     color: var(--ink-2);
-    margin-bottom: 24px;
+    margin: 0 0 20px;
   }
-  .ratification {
+  .meta span:empty {
+    display: none;
+  }
+  .pill {
     background: var(--sage);
     border-radius: 30px;
-    padding: 5px 12px;
+    padding: 4px 12px;
     color: var(--moss-deep);
   }
-  .ratification.unratified {
+  .pill.unratified {
     background: var(--clay);
     color: #774e35;
   }
   h1 {
-    font-size: clamp(2.5rem, 4.5vw, 4.4rem);
+    font-size: clamp(2.3rem, 4.5vw, 4rem);
     line-height: 1.05;
-    letter-spacing: -0.05em;
-    margin-bottom: 24px;
-    max-width: 30ch;
+    letter-spacing: -0.045em;
+    margin: 0 0 20px;
+    max-width: 22ch;
   }
-  .hero-description {
-    max-width: 62ch;
-    font-size: 1.1rem;
+  .headline {
+    max-width: 58ch;
+    font-size: 1.15rem;
+    line-height: 1.6;
     color: var(--ink-2);
-    line-height: 1.65;
     margin: 0;
   }
-  .hero-aside {
-    padding-left: 32px;
-    border-left: 1px solid var(--rule);
+  .glance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 36px;
+    margin: 32px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
   }
-  .hero-aside :global(.record-mark) {
-    display: block;
-    width: 100px;
-    height: 100px;
-    color: #899575;
-    margin-bottom: 24px;
+  .glance dt {
+    font-family: var(--sans);
+    font-size: var(--s-2);
+    color: var(--ink-2);
   }
-  .hero-aside p {
-    font-size: 1.2rem;
-    line-height: 1.35;
-    letter-spacing: -0.02em;
+  .glance dd {
+    margin: 2px 0 0;
+    font-size: var(--s0);
   }
-  .hero-aside > a {
-    font-size: 0.8rem;
+  .hero :global(.hero-land) {
+    align-self: stretch;
   }
   .unratified-note {
-    padding: 18px 24px;
+    padding: 16px 22px;
     background: var(--ochre);
     border-radius: 10px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     max-width: none;
   }
   .record-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 32px;
-    padding: 20px 0;
+    gap: 8px 28px;
+    padding: 16px 0;
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
@@ -354,63 +362,56 @@ const fullMap = experience.geometryIds[0]
     min-height: 28px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
     font-size: 0.85rem;
     text-decoration: none;
   }
   .record-nav a:hover {
     text-decoration: underline;
   }
-  .record-nav span {
-    font-size: 0.7rem;
-    background: var(--sheet-2);
-    padding: 1px 7px;
-    border-radius: 30px;
-    color: var(--ink-2);
-  }
   section[id] {
     scroll-margin-top: 24px;
   }
-  .promise-section {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 8%;
-    padding: 64px 0;
-  }
-  .section-note {
-    font-size: 0.8rem;
-    color: var(--moss);
-    margin-bottom: 16px;
-  }
   h2 {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    letter-spacing: -0.04em;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    letter-spacing: -0.035em;
     line-height: 1.1;
-    margin: 0 0 24px;
+    margin: 0 0 16px;
   }
-  .reading-column {
+  .section-lede {
+    color: var(--ink-2);
+    max-width: 62ch;
+    margin: 0 0 32px;
+  }
+  .story {
+    display: grid;
+    gap: 48px;
+    padding: 56px 0;
+  }
+  @media (min-width: 900px) {
+    .story {
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 8%;
+    }
+  }
+  .reading {
     min-width: 0;
   }
-  .reading-column :global(.narrative) {
-    margin-top: 28px;
+  .reading :global(.narrative > h2) {
+    display: none;
   }
-  .reading-column :global(.narrative > h2) {
-    font-size: 1.3rem;
+  .reading :global(.narrative p:first-of-type) {
     margin-top: 0;
   }
-  .reading-column :global(.headline) {
-    font-size: 1.15rem;
-  }
-  .reading-column :global(.promises li) {
+  .reading :global(.promises li) {
     grid-template-columns: 1fr;
     gap: 10px;
-    padding: 22px;
+    padding: 20px;
     background: var(--sheet);
     border: 1px solid var(--rule);
     border-radius: 12px;
     margin-top: 12px;
   }
-  .reading-column :global(.mark) {
+  .reading :global(.mark) {
     font-weight: 400;
     border: 0;
     padding: 4px 10px;
@@ -418,255 +419,172 @@ const fullMap = experience.geometryIds[0]
     border-radius: 20px;
     background: var(--sheet-2);
   }
-  .reading-column :global(.broken .mark) {
+  .reading :global(.broken .mark) {
     background: var(--clay);
     color: #774e35;
   }
-  .reading-column :global(.kept .mark) {
+  .reading :global(.kept .mark) {
     background: var(--sage);
     color: var(--moss-deep);
   }
-  .reading-column :global(.partly .mark) {
+  .reading :global(.partly .mark) {
     background: var(--ochre);
     color: #6c572b;
   }
-  .people-aside {
+  .gap {
+    background: var(--sheet-2);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .people {
     background: var(--sheet-2);
     border-radius: 16px;
-    padding: 28px;
+    padding: 24px 28px;
     align-self: start;
   }
-  .people-aside h3 {
-    font-size: 1.6rem;
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    margin: 0 0 24px;
+  .people h2 {
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
   }
-  .nation-links {
+  .people ul {
     list-style: none;
     padding: 0;
+    margin: 0 0 16px;
   }
-  .nation-links li {
+  .people li {
     border-top: 1px solid var(--rule-strong);
-    padding: 16px 0;
+    padding: 12px 0;
   }
-  .nation-links a {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  .nation-links small {
-    display: block;
-    font-size: 0.7rem;
+  .small {
+    font-family: var(--sans);
+    font-size: var(--s-2);
     color: var(--ink-2);
-    margin-top: 7px;
+    line-height: 1.55;
   }
-  .parties-record,
-  .research-notes {
-    font-size: 0.85rem;
-    padding: 18px 0;
+  .land-section,
+  .after-section,
+  .law-section,
+  .work-section {
+    padding: 56px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .areas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .areas li {
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: none;
+  }
+  .areas li :global(.land) {
+    border-radius: 0;
+  }
+  .areas li > div {
+    padding: 16px 18px 18px;
+  }
+  .role {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 12px;
+    font-family: var(--sans);
+    font-size: var(--s-2);
+    color: var(--moss);
+    margin: 0 0 6px;
+  }
+  .role span {
+    color: var(--ink-2);
+  }
+  .areas h3 {
+    font-size: var(--s0);
+    line-height: 1.35;
+    margin: 0;
+  }
+  .areas h3 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .areas h3 a:hover {
+    text-decoration: underline;
+  }
+  .sum {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    line-height: 1.5;
+    margin: 8px 0 0;
+  }
+  .law {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .law li {
+    max-width: none;
+    padding: 20px 22px;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    background: var(--sheet);
+  }
+  .law .kind {
+    font-family: var(--sans);
+    font-size: var(--s-2);
+    color: var(--moss);
+    margin: 0 0 6px;
+  }
+  .law h3 {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 0;
+  }
+  .law h3 a {
+    color: var(--ink);
+  }
+  .law li > p:last-child:not(.kind) {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin: 8px 0 0;
+  }
+  .work-section :global(.support) {
+    margin-top: 0;
+  }
+  .evidence {
+    display: grid;
+    gap: 40px;
+    padding: 56px 0 0;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 900px) {
+    .evidence {
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 8%;
+    }
+  }
+  .evidence > div {
+    min-width: 0;
+  }
+  .evidence :global(h2:not(#evidence-h)) {
+    font-size: 1.2rem;
+    margin-top: 28px;
+  }
+  details {
+    font-size: 0.9rem;
+    padding: 14px 0;
     border-top: 1px solid var(--rule);
   }
   summary {
     color: var(--moss);
     cursor: pointer;
     min-height: 28px;
-  }
-  details > p {
-    margin-top: 14px;
-  }
-  .research-gap {
-    background: var(--sheet-2);
-    border-radius: 12px;
-    padding: 24px;
-    margin: 28px 0;
-  }
-  .research-gap h3 {
-    font-size: 1.2rem;
-    margin: 0 0 16px;
-  }
-  .research-gap p {
-    font-size: 0.95rem;
-    color: var(--ink-2);
-  }
-  .section-heading {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 10%;
-    align-items: end;
-    margin-bottom: 36px;
-  }
-  .section-heading h2 {
-    margin: 0;
-  }
-  .section-heading > p {
-    color: var(--ink-2);
-    font-size: 0.95rem;
-    margin: 0;
-  }
-  .history-section,
-  .connections-section {
-    padding: 64px 0;
-    border-top: 1px solid var(--rule);
-  }
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-  }
-  .related-card {
-    position: relative;
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid var(--rule);
-    background: var(--sheet);
-    min-width: 0;
-  }
-  .related-card:focus-within {
-    outline: 2px solid var(--moss);
-    outline-offset: 3px;
-  }
-  .related-kind {
-    font-size: 0.75rem;
-    color: var(--moss);
-    margin-bottom: 20px;
-  }
-  .related-card h3 {
-    font-size: 1.15rem;
-    line-height: 1.3;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    margin: 0 0 20px;
-    padding-right: 16px;
-  }
-  .related-card h3 a {
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .related-card h3 a::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 12px;
-  }
-  .related-card h3 span {
-    position: absolute;
-    right: 20px;
-    top: 56px;
-    color: var(--moss);
-  }
-  .related-note {
-    font-size: 0.7rem;
-    color: var(--ink-2);
-    margin: 0;
-  }
-  .action-section {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 8%;
-    padding: 48px;
-    background: var(--clay);
-    border-radius: 20px;
-    align-items: start;
-  }
-  .action-intro {
-    position: sticky;
-    top: 24px;
-  }
-  .action-intro > p:not(.section-note) {
-    font-size: 0.95rem;
-    color: var(--ink-2);
-  }
-  .action-intro > a {
-    font-size: 0.85rem;
-  }
-  .action-section :global(.support) {
-    margin-top: 0;
-  }
-  .evidence-section {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 8%;
-    padding: 72px 0 0;
-  }
-  .evidence-main {
-    min-width: 0;
-  }
-  .evidence-main :global(h2:not(#evidence-title)) {
-    font-size: 1.3rem;
-    margin-top: 32px;
-  }
-  .evidence-main :global(.sources) {
-    font-size: 0.9rem;
-  }
-  .full-map {
-    display: inline-flex;
-    gap: 16px;
-    font-size: 0.85rem;
-    margin: 24px 0;
-  }
-  @media (max-width: 1000px) {
-    .treaty-hero {
-      grid-template-columns: 1fr 190px;
-      gap: 32px;
-    }
-    .promise-section,
-    .evidence-section {
-      grid-template-columns: minmax(0, 1fr) 250px;
-      gap: 32px;
-    }
-    .related-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .action-section {
-      padding: 28px;
-      gap: 28px;
-    }
-  }
-  @media (max-width: 760px) {
-    .treaty-hero {
-      grid-template-columns: 1fr;
-      padding: 32px 0;
-    }
-    .hero-aside {
-      display: none;
-    }
-    .record-nav {
-      gap: 12px 24px;
-    }
-    .promise-section,
-    .evidence-section {
-      grid-template-columns: 1fr;
-      gap: 32px;
-      padding-top: 40px;
-    }
-    .promise-section {
-      padding-bottom: 40px;
-    }
-    .section-heading {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    .history-section,
-    .connections-section {
-      padding: 40px 0;
-    }
-    .action-section {
-      grid-template-columns: 1fr;
-      padding: 24px;
-    }
-    .action-intro {
-      position: static;
-    }
-  }
-  @media (max-width: 500px) {
-    .related-grid {
-      grid-template-columns: 1fr;
-    }
-    .action-section {
-      padding: 20px;
-    }
   }
 </style>

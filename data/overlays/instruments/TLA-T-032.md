@@ -16,4 +16,4 @@ In Article I the Creek "cede to the United States" all the "tract and tracts of 
 
 The United States agreed to pay the Creek $3,000 every year, plus $1,000 a year for ten years to the chiefs who administer the government. It also agreed to pay $25,000: $10,000 in goods, $10,000 to satisfy debts owed to the U.S. trading factory, and $5,000 for claims over property taken from U.S. citizens after the Treaty of Colerain. Two sets of blacksmith's tools, and men to work them, were promised for three years.
 
-Article III said garrisons for the frontier would be placed on Creek land "in the manner and on the terms established by the treaty of Colerain." The text does not state why the land was wanted, and the sources opened do not describe the council or later events.
+Article III said garrisons for the frontier would be placed on Creek land "in the manner and on the terms established by the treaty of Colerain." The text does not state why the land was wanted, and the sources here do not describe the council or later events.

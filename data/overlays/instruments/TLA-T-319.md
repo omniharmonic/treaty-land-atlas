@@ -3,6 +3,7 @@ id: "TLA-T-319"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "A March 1862 Kansa supplement set how settlers on the Kansa diminished reserve would be paid with tribal certificates of indebtedness."
+note: "This supplement involved no Kansa land cession."
 how: "treaty_negotiated"
 how_basis: "The text records an agreement between commissioner H. W. Farnsworth and the chiefs and headmen of the Kansas tribe, who signed with marks and later assented to Senate amendments."
 confidence: "high"

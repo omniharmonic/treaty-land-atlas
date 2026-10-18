@@ -9,6 +9,8 @@ const pages = [
   '/treaties/',
   '/treaties/tla-t-369/',
   '/cessions/517/',
+  '/returns/bison-range-2020/',
+  '/treaties/tla-t-299/',
   '/law/',
   '/cases/mcgirt-v-oklahoma-2020/',
   '/returns/',

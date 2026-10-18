@@ -16,4 +16,4 @@ In this treaty the Chippewas released the Saginaw Bay townships to the United St
 
 In return, the United States agreed to set apart, for the exclusive use of the Chippewas, all the unsold land in the six Isabella County townships named in the 1855 treaty. Anyone who had picked land on Saginaw Bay could choose the same amount at Isabella. Each chief who signed received eighty more acres, and each headman forty, with fee-simple patents (full private title).
 
-The database record lists the treaty as ratified May 22, 1866, and proclaimed August 16, 1866. The treaty text does not say why the bands agreed. The pages opened here do not trace what followed, so later events are not covered.
+The database record lists the treaty as ratified May 22, 1866, and proclaimed August 16, 1866. The treaty text does not say why the bands agreed. The sources here do not trace what followed, so later events are not covered.

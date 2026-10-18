@@ -3,6 +3,7 @@ id: "TLA-T-299"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 Lame Bull Treaty made peace among the Blackfoot, Flathead and Nez Perce and set a shared hunting ground."
+note: "This was a peace and boundary treaty and ceded no land. The \"Nebraska Territory\" it names is now Montana."
 how: "treaty_negotiated"
 how_basis: "The treaty text and the Great Falls history site describe a council and signed peace treaty; neither describes coercion, though the site notes the parties' limited understanding."
 confidence: "high"

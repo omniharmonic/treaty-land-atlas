@@ -4,7 +4,7 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1824 the Ioway ceded their claims in Missouri for $500 and ten yearly $500 payments, and acknowledged U.S. protection."
 how: "treaty_negotiated"
-how_basis: "The Oklahoma State treaty text records a negotiated cession for stated payments; no opened source describes coercion in 1824."
+how_basis: "The Oklahoma State treaty text records a negotiated cession for stated payments; no source cited describes coercion in 1824."
 confidence: "high"
 cautions: "Acreage is not stated. The treaty text does not describe the negotiation beyond the signing."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-1824-0208", "title": "Tribal Treaties Database (OSU)", "quote": "do acknowledge themselves and the said Ioway Tribe, to be under the protection of the United States of America, and of no other sovereign whatsoever"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg231.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "between William Clark, Superintendent of Indian Affairs"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg231.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Jan. 18, 1825"}]

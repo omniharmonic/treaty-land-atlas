@@ -3,6 +3,7 @@ id: "TLA-T-351"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1865 Middle Oregon treaty took away off-reservation fishing and hunting rights; Congress nullified it in 2020."
+note: "The finding that the treaty was obtained by fraud is the Forest Service's, as reported by a Senate committee."
 how: "treaty_negotiated"
 how_basis: "The OSU page records articles signed at the Warm Springs Agency; the Senate report cites a 1997 Forest Service finding of fraudulent signatures, so the how is disputed."
 confidence: "high"

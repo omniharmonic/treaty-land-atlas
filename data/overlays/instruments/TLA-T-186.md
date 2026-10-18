@@ -3,6 +3,7 @@ id: "TLA-T-186"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1833 the Quapaw, after a failed move to the Red River, were promised 150 sections near the Missouri line."
+note: "The Encyclopedia of Arkansas gives 96,000 acres; the treaty gives 150 sections. The account of why the Red River move failed is the treaty's own."
 how: "removal"
 how_basis: "The OSU treaty preamble describes the Quapaw relocation under the 1824 treaty, its hardships, and a further removal to new land with debts paid."
 confidence: "high"

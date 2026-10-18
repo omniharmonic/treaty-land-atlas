@@ -3,6 +3,7 @@ id: "TLA-T-015"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Fort Harmar in 1789 several nations renewed the Fort McIntosh boundary after Governor St. Clair reportedly threatened to attack them."
+note: "Figures differ: a news feature says $3,000 in presents, while the treaty records goods worth $6,000; they may be different payments. St. Clair's threat is reported only by that news feature."
 how: "treaty_under_pressure"
 how_basis: "Richland Source reports St. Clair told the nations he would attack if they refused the Fort McIntosh boundary, and many nations said the signers did not speak for them."
 confidence: "medium"

@@ -16,4 +16,4 @@ The preamble says doubts had existed about the northern edge of the Creek lands 
 
 In Article 2 the Cherokee agreed the United States could open roads through the part of the Cherokee nation north of that line, for travel between Tennessee, Georgia and the Mississippi Territory. U.S. citizens could "freely navigate and use as a highway, all the rivers and waters within the Cherokee nation." The Cherokee agreed to keep up ferries and public houses on those roads. Articles 3 and 4 had Cherokee commissioners help run the boundary and mark the roads, paid by the United States.
 
-In Article 5 the United States agreed to indemnify individual Cherokee for losses caused by "the march of the militia and other troops" through their nation, which agents had put at $25,500. The sources opened do not give acreage or describe the council.
+In Article 5 the United States agreed to indemnify individual Cherokee for losses caused by "the march of the militia and other troops" through their nation, which agents had put at $25,500. The sources here do not give acreage or describe the council.

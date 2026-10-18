@@ -101,7 +101,7 @@ export function nationSlug(id: string): string {
 export const TYPE_NAME: Record<string, [string, string]> = {
   Instrument: ['Treaty or agreement', 'Treaties and agreements'],
   Nation: ['Nation', 'Nations'],
-  GeoFeature: ['Royce cession', 'Royce cessions'],
+  GeoFeature: ['Land area', 'Land areas'],
   Violation: ['Violation', 'Violations'],
   Case: ['Court case', 'Court cases'],
   Statute: ['Statute', 'Statutes'],
@@ -126,7 +126,7 @@ const PHRASE: Record<string, [string, string]> = {
   cedes: ['Land the US recorded as ceded', 'Recorded as ceded by'],
   reserves: ['Land reserved', 'Reserved by'],
   located_in: ['Located in', 'Contains'],
-  depicts: ['The instrument this cession comes from', 'Royce cessions drawn from this instrument'],
+  depicts: ['Agreements recorded for this land', 'Land this agreement affected'],
   derived_from: ['Drawn from', 'Source of'],
   part_of: ['Part of', 'Includes'],
   successor_of: [
@@ -145,10 +145,7 @@ const PHRASE: Record<string, [string, string]> = {
   overrules_in_effect: ['Overruled in effect', 'Overruled in effect by'],
   responds_to: ['Responds to', 'Answered by'],
   cites: ['Cites', 'Cited by'],
-  attributed_to_nation: [
-    'Nations associated with this cession',
-    'Royce cessions associated with this nation',
-  ],
+  attributed_to_nation: ['Nations named for this land', 'Land recorded in this nation’s name'],
 };
 
 export function phrase(type: string, direction: 'out' | 'in'): string {
@@ -212,6 +209,7 @@ export interface PublicOverlay {
   narrative: string | null;
   sources: (string | { url: string; title?: string; quote?: string })[];
   cautions: string | null;
+  note?: string | null;
   confidence: 'high' | 'medium' | 'low' | null;
   promises?: {
     article?: string;

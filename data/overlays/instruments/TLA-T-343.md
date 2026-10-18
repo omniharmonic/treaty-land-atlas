@@ -16,4 +16,4 @@ Article 2 set apart a district of the southern plains for the tribes' "absolute 
 
 The tribes agreed to move there when the President directed. They agreed to carry written permission when away to hunt, and not to camp within ten miles of main roads, military posts, towns or villages. They gave up all claims outside the reservation, naming "the country north of the Cimarone River and west of the eastern boundary of New Mexico."
 
-The United States kept the right to build roads and military posts through the reservation, with compensation for injury set by Congress. Article 5 promised annual spending for forty years. The pages opened here do not trace later events.
+The United States kept the right to build roads and military posts through the reservation, with compensation for injury set by Congress. Article 5 promised annual spending for forty years. The sources here do not trace later events.

@@ -18,4 +18,4 @@ The preamble to Article 2 says the tribe was about leaving its settlements on th
 
 So the practical effect, according to the text, was that the tribe received two thousand dollars in 1820 in place of its 1821 annuity, and later annuities would be paid at Kaskaskia. The page lists a proclamation on 8 January 1821.
 
-The 1819 treaty was not opened, so its terms, including the size of the annuity and the land it concerned, are not described here.
+The terms of the 1819 treaty, including the size of the annuity and the land it concerned, are not described here.

@@ -3,6 +3,7 @@ id: "TLA-U-CA-P"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Camp Fernando Feliz in 1851, four Russian River peoples agreed to move to Clear Lake; the Senate never ratified it."
+note: "Sources give July 2 or July 8, 1852 as the date the Senate rejected it."
 how: "unratified"
 how_basis: "The OSU treaty page marks it Unratified, and Prologue says the Senate rejected all 18 California treaties."
 confidence: "high"

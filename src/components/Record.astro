@@ -12,6 +12,10 @@ import Narrative from './Narrative.astro';
 import RecordStory from './RecordStory.astro';
 import LocatorMap from './LocatorMap.astro';
 import NationTimeline from './NationTimeline.astro';
+import ReturnLand from './ReturnLand.astro';
+import AreaStory from './AreaStory.astro';
+import Facts from './Facts.astro';
+import { overlayFor } from '../lib/graph';
 
 interface Props {
   n: Node;
@@ -21,7 +25,13 @@ const { n, kicker } = Astro.props;
 const facts = factsFor(n);
 const isNationSpecific = n.tribal_review?.scope === 'nation_specific';
 const status = n.tribal_review?.status ?? 'not_yet_contacted';
-const summary = n.summary ? cleanTags(n.summary) : null;
+const overlay = overlayFor(n);
+// a sourced headline, when there is one, says it better than the research summary
+const summary = overlay?.headline
+  ? { text: overlay.headline, flags: [] }
+  : n.summary
+    ? cleanTags(n.summary)
+    : null;
 const notes = n.notes ? cleanTags(n.notes) : null;
 type Name = {
   name: string;
@@ -84,11 +94,6 @@ const FIELD_WORD: Record<string, string> = {
   holding_summary: 'The holding',
   treaty_at_issue_text: 'The treaty at issue',
 };
-const flagText: Record<string, string> = {
-  'from-memory': 'not yet checked against a source',
-  unverified: 'unverified',
-  disputed: 'disputed',
-};
 ---
 
 <article class="record" data-pagefind-body>
@@ -107,26 +112,20 @@ const flagText: Record<string, string> = {
     )}
     {summary?.text && <p class="lede">{summary.text}</p>}
 
-    <Narrative n={n} />
-    <RecordStory n={n} />
-    <LocatorMap n={n} />
-    {n.type === 'Nation' && <NationTimeline n={n} />}
+    {facts.length > 0 && n.type !== 'GeoFeature' && <Facts facts={facts} />}
 
-    {facts.length > 0 && (
-      <dl class="facts">
-        {facts.map((fct) => (
-          <div>
-            <dt class="sans">{fct.label}</dt>
-            <dd>
-              {fct.href ? <a href={fct.href}>{fct.value}</a> : fct.value}
-              {(fct.flags ?? []).map((fl) => (
-                <span class="flag sans">{flagText[fl] ?? fl}</span>
-              ))}
-            </dd>
-          </div>
-        ))}
-      </dl>
+    {n.type === 'GeoFeature' && <AreaStory n={n} />}
+    {facts.length > 0 && n.type === 'GeoFeature' && (
+      <details class="notes">
+        <summary class="sans">The record’s fields</summary>
+        <Facts facts={facts} />
+      </details>
     )}
+    {n.type === 'Campaign' && <ReturnLand n={n} />}
+    <Narrative n={n} showHeadline={false} />
+    <RecordStory n={n} />
+    {n.type !== 'GeoFeature' && <LocatorMap n={n} />}
+    {n.type === 'Nation' && <NationTimeline n={n} />}
 
     {n.type === 'Nation' && names.length > 0 && (
       <section aria-labelledby="names">
@@ -218,10 +217,10 @@ const flagText: Record<string, string> = {
     )}
 
     {notes?.text && (
-      <section>
-        <h2>Research notes</h2>
+      <details class="notes">
+        <summary class="sans">Research notes</summary>
         <p>{notes.text}</p>
-      </section>
+      </details>
     )}
 
     <Connections id={n.id} />
@@ -234,6 +233,16 @@ const flagText: Record<string, string> = {
 </article>
 
 <style>
+  .notes {
+    margin: var(--space-5) 0;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--rule);
+  }
+  .notes summary {
+    cursor: pointer;
+    color: var(--moss);
+    font-size: var(--s-1);
+  }
   .record > div {
     min-width: 0;
   }
@@ -251,36 +260,6 @@ const flagText: Record<string, string> = {
   .review-note.reviewed,
   .review-note.co_authored {
     border-left-color: var(--moss);
-  }
-  .facts {
-    display: grid;
-    gap: var(--space-3);
-    margin: var(--space-5) 0;
-  }
-  .facts > div {
-    display: grid;
-    gap: var(--space-1) var(--space-5);
-  }
-  @media (min-width: 640px) {
-    .facts > div {
-      grid-template-columns: 11rem minmax(0, 1fr);
-    }
-  }
-  .facts dt {
-    font-size: var(--s-1);
-    color: var(--ink-3);
-    padding-top: 0.15em;
-  }
-  .facts dd {
-    margin: 0;
-    max-width: var(--measure);
-  }
-  .flag {
-    display: inline-block;
-    margin-left: var(--space-2);
-    font-size: var(--s-2);
-    color: var(--warn);
-    border-bottom: 1px dotted currentColor;
   }
   .names h3 {
     font-family: var(--sans);

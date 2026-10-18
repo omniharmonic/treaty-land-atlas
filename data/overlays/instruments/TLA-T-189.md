@@ -3,6 +3,7 @@ id: "TLA-T-189"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1833 the united Chippewa, Ottawa and Potawatomi ceded about five million acres by Lake Michigan and agreed to move west."
+note: "The five million acre figure is the treaty's own estimate."
 how: "removal"
 how_basis: "The OSU treaty text requires removal west of the Mississippi and pays $175,000 of claims against the nation, which the Senate later ordered reviewed."
 confidence: "high"

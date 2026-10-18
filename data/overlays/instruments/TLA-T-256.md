@@ -3,6 +3,7 @@ id: "TLA-T-256"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "A 1849 treaty at Abiquiu had the Ute acknowledge U.S. jurisdiction, annexed their territory to New Mexico, and left boundaries to the United States."
+note: "The treaty cedes no named tract of land."
 how: "treaty_under_pressure"
 how_basis: "Article I of the treaty text has the Utah tribe \"unconditionally submit\" to United States authority; the text does not otherwise describe the circumstances of signing."
 confidence: "high"

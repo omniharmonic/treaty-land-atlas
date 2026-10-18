@@ -3,6 +3,7 @@ id: "TLA-T-314"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1860 Delaware treaty allotted 80 acres per person and let a railroad company buy the remaining reservation land."
+note: "That the Delawares \"expressed a desire\" for the railroad sale is the treaty's own wording."
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement between a federal commissioner and Delaware chiefs; the Tribal Treaties Database text states no duress."
 confidence: "high"

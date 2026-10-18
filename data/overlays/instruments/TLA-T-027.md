@@ -3,6 +3,7 @@ id: "TLA-T-027"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1797 the Seneca sold land in western New York to Robert Morris for $100,000 in bank stock, keeping named reservations."
+note: "This was a private sale to Robert Morris under U.S. supervision; the National Archives calls it an agreement, and one database marks it \"not ratified\"."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a sale under a presidential commissioner's supervision, with a stated price and reservations; I found no source describing coercion."
 confidence: "high"
@@ -16,4 +17,4 @@ Morris held something narrower than ownership. Massachusetts had sold him the pr
 
 The Seneca excepted several tracts from the sale. They kept two square miles each at Canawaugas and Big Tree and a parcel at Gardeau. They also kept 200 square miles to be laid off partly at Buffalo and partly at Tonnawanta creeks. They reserved the privilege of fishing and hunting on the land they sold.
 
-The Oklahoma State University treaty database tags this document "not ratified" under key provisions. It reproduces the contract as printed at 7 Stat. 601. The sources opened do not describe the negotiation or later disputes.
+The Oklahoma State University treaty database tags this document "not ratified" under key provisions. It reproduces the contract as printed at 7 Stat. 601. The sources here do not describe the negotiation or later disputes.

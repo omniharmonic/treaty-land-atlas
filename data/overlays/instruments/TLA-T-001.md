@@ -3,6 +3,7 @@ id: "TLA-T-001"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1722 at Albany, New York, Virginia and the Five Nations agreed to a Potomac and Blue Ridge boundary for travel and war parties."
+note: "Some listings date this to 14 August 1722 at Fort George, but the minutes show council meetings at Albany from 27 August to mid-September 1722, with no single formal signing date."
 how: "other"
 how_basis: "The Oklahoma State transcript shows a council of colonial governors and the Five Nations at Albany, not a United States treaty."
 confidence: "medium"

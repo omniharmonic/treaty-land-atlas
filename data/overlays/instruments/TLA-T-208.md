@@ -3,8 +3,9 @@ id: "TLA-T-208"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "A 1836 Potawatomi treaty ceded 22 reserved sections near Yellow River; an editor's note says named chiefs protested they never signed."
+note: "The claim that named chiefs never signed comes from an editor's note on the Forest County Potawatomi Community page, not from the treaty itself."
 how: "other"
-how_basis: "The treaty text shows a cession and removal clause, and the Forest County Potawatomi editor's note records a dispute over who signed; no source opened states coercion."
+how_basis: "The treaty text shows a cession and removal clause, and the Forest County Potawatomi editor's note records a dispute over who signed; no source states coercion."
 confidence: "medium"
 cautions: "The protest claim comes from an editor's note on the Forest County Potawatomi Community page, not from the treaty; the protest letters themselves were not opened. The sources used here do not say how the treaty was negotiated or its later effect. Acreage not stated (22 sections)."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0462", "title": "Treaty with the Potawatomi, 1836 (OSU Tribal Treaties Database)", "quote": "agree to remove to the country west of the Mississippi river, provided for the Potawattimie nation by the United States within two years"}, {"url": "https://www.fcpotawatomi.com/cultural-preservation/treaties/august-5-1836/", "title": "August 5, 1836 treaty (Forest County Potawatomi Community)", "quote": "wrote at least three letters protesting that none of them had attended the council or signed the treaty and that the treaty was invalid"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg505.pdf", "title": "Treaty with the Potawatomi, 7 Stat. 505 (govinfo)", "quote": "twenty-two sections of land reserved"}]

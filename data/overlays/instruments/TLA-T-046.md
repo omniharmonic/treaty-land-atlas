@@ -3,6 +3,7 @@ id: "TLA-T-046"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1805 the Chickasaw, in debt to traders, ceded hunting land for $20,000, which the nation says came to 2.25 million acres."
+note: "The 2.25 million acre figure is the Chickasaw Nation's; the treaty states no acreage. Its page says the agent \"discovered or revealed\" the debts, leaving unclear whether he found or arranged them."
 how: "treaty_under_pressure"
 how_basis: "The treaty's own first article cites heavy debts to traders, and the Chickasaw Nation's history says the nation first said it had no land to sell until the debts were raised."
 confidence: "high"

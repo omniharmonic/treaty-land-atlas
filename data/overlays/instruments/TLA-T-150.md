@@ -4,7 +4,7 @@ ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1827 the Creeks ceded their remaining Georgia land, after the President urged them to extend the 1826 lines, for $27,491 and $15,000."
 how: "treaty_negotiated"
-how_basis: "The agreement text says the President urged the extension and that the chiefs were desirous of complying, and it requires council sanction; no opened source shows coercion."
+how_basis: "The agreement text says the President urged the extension and that the chiefs were desirous of complying, and it requires council sanction; no source cited shows coercion."
 confidence: "medium"
 cautions: "The agreement says the President \"urged\" the extension; no opened source describes further pressure, so it is classed as negotiated. Acreage is not stated. Whether the Creek council sanctioned it was not researched."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1827-0284", "title": "Tribal Treaties Database (OSU)", "quote": "the President of the United States having urged the Creek Nation further to extend the limits"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1827-0284", "title": "Tribal Treaties Database (OSU)", "quote": "as shall constitute it the act of the Creek Nation"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg307.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "Thomas L. McKenney"}]

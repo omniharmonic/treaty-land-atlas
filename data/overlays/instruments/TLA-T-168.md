@@ -3,6 +3,7 @@ id: "TLA-T-168"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Payne's Landing in 1832 Seminole chiefs agreed to move west if satisfied with the land; the Seminole Nation Museum says many disputed it."
+note: "The Seminole Nation Museum's account and the treaty text differ on what the chiefs understood they had agreed to."
 how: "treaty_under_pressure"
 how_basis: "The Seminole Nation Museum says many chiefs denied committing to removal and some said they were pressured; the treaty ties removal to settling slave and property claims."
 confidence: "medium"

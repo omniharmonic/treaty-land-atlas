@@ -14,4 +14,4 @@ In Arizona v. California (1963), the Court held that enough water was reserved t
 
 The rule was restated in Arizona v. Navajo Nation (2023): "The Federal Government's reservation of land for an Indian tribe implicitly reserves the right to use needed water." But the Court held that the 1868 treaty "reserved necessary water to accomplish the purpose of the Navajo Reservation but did not require the United States to take affirmative steps to secure water for the Tribe."
 
-The right exists, but securing and quantifying it can take years of separate litigation, a point the sources opened here do not detail.
+The right exists, but securing and quantifying it can take years of separate litigation, a point the sources here do not detail.

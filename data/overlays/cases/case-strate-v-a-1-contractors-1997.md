@@ -3,6 +3,7 @@ id: "case-strate-v-a-1-contractors-1997"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1997 a unanimous Court held a tribal court could not hear a crash suit between non-members on a state highway crossing the reservation."
+note: "The holding is limited to a state-maintained highway right-of-way."
 confidence: "high"
 cautions: "The syllabus calls the reservation the Fort Berthold Indian Reservation and the Tribes the Three Affiliated Tribes; the atlas page also names Mandan, Hidatsa and Arikara, which the syllabus does not. The holding is limited to a state-maintained highway right-of-way."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep520/usrep520438/usrep520438.pdf", "title": "Strate v. A-1 Contractors, 520 U.S. 438 (1997) (U.S. Reports, Library of Congress)", "quote": "absent a statute or treaty authorizing the tribe to govern the conduct of nonmembers driving on the State's highway"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep520/usrep520438/usrep520438.pdf", "title": "Strate v. A-1 Contractors, 520 U.S. 438 (1997) (U.S. Reports, Library of Congress)", "quote": "a tribe's adjudicative jurisdiction does not exceed its legislative jurisdiction"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep520/usrep520438/usrep520438.pdf", "title": "Strate v. A-1 Contractors, 520 U.S. 438 (1997) (U.S. Reports, Library of Congress)", "quote": "GINSBURG, J., delivered the opinion for a unanimous Court."}]

@@ -21,7 +21,6 @@
   } from './map/state';
   import { HOW_DASH, HOW_HELP, HOW_LABEL, HOW_ORDER, type How } from './map/how';
   import LegalStatus from './map/LegalStatus.svelte';
-  import TerritoryLookup from './map/TerritoryLookup.svelte';
   import LandMeter from './map/LandMeter.svelte';
   import OrgPanel from './map/OrgPanel.svelte';
 
@@ -40,6 +39,7 @@
     how_basis: string;
     instrument: string | null;
     nations: string[];
+    plain?: string;
   }
   interface Series {
     total: number[];
@@ -99,8 +99,17 @@
   let announce = $state('');
   let playing = $state(false);
   let reducedMotion = $state(false);
-  let territories = $state<{ name: string; url: string | null }[]>([]);
-  let territoryStatus = $state<'idle' | 'loading' | 'done' | 'unavailable'>('idle');
+  // Native homelands from Native Land Digital, loaded live through the relay and never stored
+  interface Homeland {
+    name: string;
+    url: string | null;
+    color: string;
+    geometry: { type: string; coordinates: unknown };
+  }
+  let homelands = $state<Homeland[]>([]);
+  let homeStatus = $state<'idle' | 'loading' | 'done' | 'unavailable' | 'error'>('idle');
+  let homeFor = $state<'selection' | 'center' | 'nation' | null>(null);
+  let homeRequest = 0;
   let container: HTMLDivElement;
   let rail: HTMLElement;
   let recordLoading = $state(false);
@@ -109,6 +118,8 @@
   let mapReady = $state(false);
   // eslint-disable-next-line svelte/prefer-svelte-reactivity -- lookup cache, not UI state
   let bboxes = new Map<string, [number, number, number, number]>();
+  // eslint-disable-next-line svelte/prefer-svelte-reactivity -- geometry cache, not UI state
+  let shapes = new Map<string, { type: string; coordinates: unknown }>();
 
   const url = (p: string) => `${base}${p}`;
   const slider = $derived(Math.min(s.year, YEAR_MAX));
@@ -234,56 +245,162 @@
     });
   });
 
-  // Native Land Digital territories for a followed nation: loaded live through the relay, never stored.
-  $effect(() => {
-    const id = follow;
-    const f = followed;
-    territories = [];
-    if (map && mapReady)
-      (map.getSource('nld') as GeoJSONSource | undefined)?.setData({
-        type: 'FeatureCollection',
-        features: [],
-      });
-    if (!id || !f || !relay) {
-      territoryStatus = 'idle';
+  function showHomelands(list: Homeland[]) {
+    if (!map || !mapReady) return;
+    (map.getSource('nld') as GeoJSONSource | undefined)?.setData({
+      type: 'FeatureCollection',
+      features: list.map((h) => ({
+        type: 'Feature',
+        properties: { Name: h.name, color: h.color },
+        geometry: h.geometry,
+      })) as never,
+    });
+  }
+  /** Native Land Digital territories at these points (lat, lng), drawn on the map in NLD's colors. */
+  async function loadHomelands(points: [number, number][], why: 'selection' | 'center' | 'nation') {
+    const req = ++homeRequest;
+    homeFor = why;
+    homelands = [];
+    showHomelands([]);
+    if (!relay || !points.length) {
+      homeStatus = 'unavailable';
       return;
     }
-    territoryStatus = 'loading';
-    const points = f.cessions
-      .map((c) => bboxes.get(c))
-      .filter((b): b is [number, number, number, number] => !!b)
-      .slice(0, 4)
-      .map((b) => [(b[1] + b[3]) / 2, (b[0] + b[2]) / 2] as [number, number]);
-    Promise.all(
-      points.map((p) =>
-        relayFetch(relay, `/api/lookup?lat=${p[0]}&lng=${p[1]}&maps=territories`)
-          .then((r) => (r.ok ? r.json() : r.status === 503 ? 'unavailable' : []))
-          .catch(() => []),
+    homeStatus = 'loading';
+    const results = await Promise.all(
+      points.map(([lat, lng]) =>
+        relayFetch(
+          relay,
+          `/api/lookup?lat=${lat.toFixed(3)}&lng=${lng.toFixed(3)}&maps=territories`,
+        )
+          .then((r) =>
+            r.ok ? r.json() : [503, 410, 403].includes(r.status) ? 'unavailable' : 'error',
+          )
+          .catch(() => 'error'),
       ),
-    ).then((results) => {
-      if (follow !== id) return;
-      if (results.some((r) => r === 'unavailable')) {
-        territoryStatus = 'unavailable';
-        return;
-      }
-      // eslint-disable-next-line svelte/prefer-svelte-reactivity -- local dedupe, not state
-      const seen = new Set<string>();
-      const feats = (
-        results.flat() as { properties: { Name?: string; description?: string; Slug?: string } }[]
-      ).filter(
+    );
+    if (req !== homeRequest) return;
+    if (results.every((r) => r === 'unavailable' || r === 'error')) {
+      homeStatus = results.includes('unavailable') ? 'unavailable' : 'error';
+      return;
+    }
+    // eslint-disable-next-line svelte/prefer-svelte-reactivity -- local dedupe, not state
+    const seen = new Set<string>();
+    homelands = (
+      results.filter(Array.isArray).flat() as {
+        properties: { Name?: string; description?: string; Slug?: string; color?: string };
+        geometry: Homeland['geometry'];
+      }[]
+    )
+      .filter(
         (x) => x?.properties?.Slug && !seen.has(x.properties.Slug) && seen.add(x.properties.Slug),
-      );
-      territories = feats.map((x) => ({
+      )
+      .map((x) => ({
         name: x.properties.Name ?? '',
-        url: x.properties.description ?? null,
+        url: x.properties.description?.startsWith('https://native-land.ca/')
+          ? x.properties.description
+          : null,
+        color: /^#[0-9a-f]{6}$/i.test(x.properties.color ?? '') ? x.properties.color! : '#35462f',
+        geometry: x.geometry,
       }));
-      if (map && mapReady)
-        (map.getSource('nld') as GeoJSONSource | undefined)?.setData({
-          type: 'FeatureCollection',
-          features: feats as never,
-        });
-      territoryStatus = 'done';
-    });
+    homeStatus = 'done';
+    showHomelands(homelands);
+  }
+  function clearHomelands() {
+    homeRequest++;
+    homelands = [];
+    homeStatus = 'idle';
+    homeFor = null;
+    showHomelands([]);
+  }
+  function homelandsHere() {
+    if (!map) return;
+    const c = map.getCenter();
+    loadHomelands([[c.lat, c.lng]], 'center');
+  }
+
+  /** A point inside a land area: its bounding-box center if that falls inside, else a vertex mean. */
+  function insidePoint(id: string): [number, number] | null {
+    const b = bboxes.get(id);
+    const g = shapes.get(id);
+    if (!b || !g) return null;
+    const polys = (g.type === 'Polygon' ? [g.coordinates] : g.coordinates) as [
+      number,
+      number,
+    ][][][];
+    const inRing = (x: number, y: number, r: [number, number][]) => {
+      let inside = false;
+      for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
+        const [xi, yi] = r[i]!;
+        const [xj, yj] = r[j]!;
+        if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+      }
+      return inside;
+    };
+    const cx = (b[0] + b[2]) / 2;
+    const cy = (b[1] + b[3]) / 2;
+    if (polys.some((p) => inRing(cx, cy, p[0]!))) return [cy, cx];
+    const ring = polys[0]![0]!;
+    const mx = ring.reduce((s, v) => s + v[0], 0) / ring.length;
+    const my = ring.reduce((s, v) => s + v[1], 0) / ring.length;
+    return [my, mx];
+  }
+
+  // a selected area: whose homelands it lies in
+  $effect(() => {
+    const id = selectedEvent?.id;
+    if (!id || !mapReady) return;
+    const pt = insidePoint(id);
+    if (pt) loadHomelands([pt], 'selection');
+  });
+  // a followed nation: homelands around the land recorded in its name
+  $effect(() => {
+    const f = followed;
+    if (!f || !mapReady || s.sel) return;
+    const pts = f.cessions
+      .map((c) => insidePoint(c))
+      .filter((p): p is [number, number] => !!p)
+      .slice(0, 4);
+    loadHomelands(pts, 'nation');
+  });
+
+  /** The selected area's outline, with the homelands around it, for the panel. */
+  const outline = $derived.by(() => {
+    const id = selectedEvent?.id;
+    const g = id ? shapes.get(id) : null;
+    const b = id ? bboxes.get(id) : null;
+    if (!g || !b) return null;
+    const k = Math.cos((((b[1] + b[3]) / 2) * Math.PI) / 180);
+    const w = (b[2] - b[0]) * k;
+    const h = b[3] - b[1];
+    const size = Math.max(w, h, 0.2) * 1.5;
+    const cx = ((b[0] + b[2]) / 2) * k;
+    const cy = -(b[1] + b[3]) / 2;
+    const toPath = (geom: { type: string; coordinates: unknown }) =>
+      (
+        (geom.type === 'Polygon'
+          ? [geom.coordinates]
+          : geom.type === 'MultiPolygon'
+            ? geom.coordinates
+            : []) as [number, number][][][]
+      )
+        .flat()
+        .map(
+          (r) =>
+            r
+              .map(([x, y], i) => `${i ? 'L' : 'M'}${(x * k).toFixed(3)} ${(-y).toFixed(3)}`)
+              .join('') + 'Z',
+        )
+        .join('');
+    return {
+      view: `${cx - size * 0.7} ${cy - size / 2} ${size * 1.4} ${size}`,
+      stroke: size / 160,
+      area: toPath(g),
+      lands:
+        homeFor === 'selection'
+          ? homelands.map((hl) => ({ d: toPath(hl.geometry), color: hl.color }))
+          : [],
+    };
   });
 
   function select(id: string | null, fly = false) {
@@ -410,7 +527,10 @@
         chapters = story.chapters ?? [];
         moments = story.moments ?? [];
         headlines = hl;
-        for (const f of cessions.features) bboxes.set(f.properties.id, bbox(f.geometry));
+        for (const f of cessions.features) {
+          bboxes.set(f.properties.id, bbox(f.geometry));
+          shapes.set(f.properties.id, f.geometry);
+        }
 
         if (!document.createElement('canvas').getContext('webgl2')) {
           webglMissing = true;
@@ -573,10 +693,20 @@
             paint: { 'line-color': v('--river'), 'line-width': 1, 'line-dasharray': [0.5, 2] },
           });
           map.addLayer({
+            id: 'nld-fill',
+            type: 'fill',
+            source: 'nld',
+            paint: { 'fill-color': ['get', 'color'] as never, 'fill-opacity': 0.14 },
+          });
+          map.addLayer({
             id: 'nld-line',
             type: 'line',
             source: 'nld',
-            paint: { 'line-color': v('--moss-deep'), 'line-width': 2, 'line-dasharray': [2, 2] },
+            paint: {
+              'line-color': ['get', 'color'] as never,
+              'line-width': 2.2,
+              'line-opacity': 0.9,
+            },
           });
           map.addLayer({
             id: 'nld-label',
@@ -585,10 +715,11 @@
             layout: {
               'text-field': ['get', 'Name'],
               'text-font': ['Noto Sans Regular'],
-              'text-size': 12,
+              'text-size': 13,
+              'symbol-placement': 'point',
             },
             paint: {
-              'text-color': v('--moss-deep'),
+              'text-color': v('--ink'),
               'text-halo-color': v('--ground'),
               'text-halo-width': 1.5,
             },
@@ -652,160 +783,89 @@
   </div>
 
   <aside class="rail" bind:this={rail} aria-label="Map explorer">
-    <div class="rail-heading">
-      <h2>{selectedEvent ? 'Explore this place' : 'Explore the land'}</h2>
-      {#if selectedEvent}<button type="button" class="back-map" onclick={() => select(null)}
-          >Back to map</button
-        >{:else}<a href={url('/where/')}>Find your place</a>{/if}
-    </div>
     {#if selectedEvent}
-      <section id="detail" class="detail" tabindex="-1" aria-label="Selected land record">
-        <p class="selected-label">
-          {selectedAgreement ? 'Linked agreement' : 'Selected land record'}
-        </p>
-        <h2>{selectionTitle}</h2>
+      <div class="rail-heading">
+        <button type="button" class="back-map" onclick={() => select(null)}
+          ><span aria-hidden="true">←</span> Back to the map</button
+        >
+      </div>
+      <section id="detail" class="detail" tabindex="-1" aria-labelledby="detail-h">
+        {#if outline}
+          <svg
+            class="outline"
+            viewBox={outline.view}
+            aria-hidden="true"
+            style={`--sw: ${outline.stroke}`}
+          >
+            {#each outline.lands as l, i (i)}<path
+                class="hl"
+                d={l.d}
+                style={`--c: ${l.color}`}
+              />{/each}
+            <path
+              class="ar"
+              d={outline.area}
+              style={`--c: var(--how-${selectedStory?.how ?? 'unknown'})`}
+            />
+          </svg>
+        {/if}
+        <h2 id="detail-h">{selected?.node.label ?? selectionTitle}</h2>
+        {#if selectedStory?.plain}<p class="plain">{selectedStory.plain}</p>{/if}
         <p class="how sans">
           <span class="sw" style={`background: var(--how-${selectedStory?.how ?? 'unknown'})`}
-          ></span>{HOW_LABEL[selectedStory?.how ?? 'unknown']}
+          ></span><span
+            ><strong>{HOW_LABEL[selectedStory?.how ?? 'unknown']}.</strong>
+            {selectedStory?.how_basis ?? ''}</span
+          >
         </p>
-        <p class="sans small">
-          {selectedEvent.dates.map((d) => d.date).join(', ')}, {selectedEvent.tribes_as_named_in_schedule.join(
-            ', ',
-          ) || 'tribes not listed'}
-        </p>
-        {#if selectedStory?.instrument && headlines[selectedStory.instrument]}<p class="hl-big">
-            {headlines[selectedStory.instrument]}
-          </p>{/if}
-        {#if recordLoading}<p class="record-status" role="status">
-            Loading this record’s treaty connections…
-          </p>{/if}
+        {#if recordLoading}<p class="record-status" role="status">Finding its treaties…</p>{/if}
         {#if recordError}<p class="record-status" role="status">
-            The detailed connections could not load. You can still open the full land record below.
+            The treaty connections could not load. The full record has them.
           </p>{/if}
         {#if selected}
           {@const insts = (selected.edges.out['depicts'] ?? [])
             .map((e) => selected?.neighbors[e.target])
-            .filter(Boolean)}
-          {#if insts.length}
-            <div class="treaty-links">
-              <h3>Explore the agreement</h3>
-              {#each insts as n, i (i)}
-                {#if n?.path}<a class="treaty-open" href={url(n.path)}
-                    ><span>{n.label}<small>Promises, linked history, and sources</small></span><span
-                      aria-hidden="true">↗</span
-                    ></a
-                  >{/if}
-              {/each}
-              <p class="small">
-                Connections may be suggested; each agreement shows its research status.
-              </p>
-            </div>
-          {:else if selectedStory?.instrument}
-            <a
-              class="treaty-open"
-              href={url(`/treaties/${selectedStory.instrument.toLowerCase()}/`)}
-              >Explore the linked agreement <span aria-hidden="true">↗</span></a
+            .filter((x) => x?.path)}
+          {#each insts as n, i (i)}
+            <a class="treaty-open" href={url(n!.path!)}
+              ><span
+                ><small
+                  >{selectedStory?.instrument && n!.label === selectedAgreement?.label
+                    ? 'The agreement that took it'
+                    : 'Agreement in its record'}</small
+                >{n!
+                  .label}{#if selectedStory?.instrument && headlines[selectedStory.instrument] && n!.label === selectedAgreement?.label}<em
+                    >{headlines[selectedStory.instrument]}</em
+                  >{/if}</span
+              ><span aria-hidden="true">→</span></a
             >
-          {/if}
+          {/each}
         {/if}
-        {#if selectedStory?.how_basis}<details class="cause-details">
-            <summary>Why this land is shown this way</summary>
-            <p>{selectedStory.how_basis}</p>
-          </details>{/if}
-        <p class="sans small">
+        <p class="record-reference">
           <a href={url(`/cessions/${selectedEvent.cessnum.toLowerCase()}/`)}
-            >Read the full land record and sources</a
-          >
+            >Full record of area {selectedEvent.cessnum}</a
+          >, with its sources
         </p>
-        <p class="record-reference">Royce’s historical land record · No. {selectedEvent.cessnum}</p>
       </section>
-
       <p class="visually-hidden" aria-live="polite">
-        Selected {selectionTitle}. Its land record and treaty connections are at the beginning of
-        the sidebar.
+        Selected {selected?.node.label ?? selectionTitle}.
       </p>
-    {/if}
-    {#if !selectedEvent}<p class="map-hint">
-        Choose an area on the map to see its land record, treaty, and the people doing the work
-        today.
-      </p>{/if}
-    {#if orgNations.length}<details class="context-section selected-support">
-        <summary>People doing the work</summary><OrgPanel {base} nations={orgNations} />
-      </details>{/if}
-    <details class="context-section time-section" open={!selectedEvent}>
-      <summary>Time and map controls <span>{slider}</span></summary>
-      <section class="controls sans" aria-label="Time">
-        <div class="slider-row">
-          <button type="button" onclick={() => step(-1)} aria-label="Previous year">‹</button>
-          <label class="visually-hidden" for="year">Year</label>
-          <input
-            id="year"
-            type="range"
-            min={YEAR_MIN}
-            max={YEAR_MAX}
-            step="1"
-            bind:value={s.year}
-            aria-valuetext={`${slider}`}
-          />
-          <button type="button" onclick={() => step(1)} aria-label="Next year">›</button>
-        </div>
-        <div class="ticks" aria-hidden="true">
-          <span>{YEAR_MIN}</span><span>1830</span><span>1860</span><span>{YEAR_MAX}</span>
-        </div>
-        <div class="row">
-          <button
-            type="button"
-            class="play"
-            onclick={togglePlay}
-            disabled={reducedMotion}
-            aria-pressed={playing}
-          >
-            {playing ? 'Pause' : slider >= YEAR_MAX ? 'Play again from 1784' : 'Play the years'}
-          </button>
-          <div class="view-toggle" role="radiogroup" aria-label="View">
-            <label
-              ><input type="radio" name="view" value="record" bind:group={s.view} /> As it happened</label
-            >
-            <label
-              ><input type="radio" name="view" value="honored" bind:group={s.view} /> Honored through…</label
-            >
-          </div>
-        </div>
-        {#if s.view === 'honored'}
-          <fieldset class="chips">
-            <legend>Stop the clock in</legend>
-            {#each CUT_POINTS as c (c)}
-              <label class="chip"
-                ><input type="radio" name="cut" value={c} bind:group={s.cut} /> {c}</label
-              >
-            {/each}
-          </fieldset>
-        {/if}
-        <label class="follow">
-          Follow a nation
-          <select
-            value={follow ?? ''}
-            onchange={(e) => followNation((e.currentTarget as HTMLSelectElement).value || null)}
-          >
-            <option value="">All nations</option>
-            {#each nationOptions as o (o.id)}<option value={o.id}>{o.label}</option>{/each}
-          </select>
-        </label>
-        <p class="summary">{summary()}</p>
-        <p class="visually-hidden" aria-live="polite">{announce}</p>
-      </section>
-    </details>
-    {#if s.view === 'honored'}<LegalStatus {base} />{/if}
-
-    <details class="context-section history-context">
-      <summary>History around {slider}</summary>
-      {#if chapter}
-        <section class="chapter" aria-labelledby="chapter-h">
-          <p class="span sans">{chapter.start_year}–{chapter.end_year}</p>
-          <h2 id="chapter-h">{chapter.title}</h2>
-          <p class="lede">{chapter.lede}</p>
-          <details>
-            <summary class="sans">Read this chapter</summary>
+    {:else}
+      <section class="now" aria-labelledby="now-h">
+        <p class="now-years sans">
+          {chapter ? `${chapter.start_year}–${chapter.end_year}` : slider}
+        </p>
+        <h2 id="now-h">{chapter?.title ?? 'Explore the land'}</h2>
+        {#if chapter}<p class="lede">{chapter.lede}</p>{/if}
+        {#each nearMoments.slice(0, 2) as m, i (i)}
+          <p class="moment">
+            <span class="m-year sans">{m.year}</span> <strong>{m.title}.</strong>
+            {m.text}
+          </p>
+        {/each}
+        {#if chapter}
+          <details class="more">
+            <summary class="sans">Read the chapter</summary>
             {#each chapter.narrative.split(/\n\n+/) as para, i (i)}<p>{para}</p>{/each}
             {#if chapter.sources?.length}
               <p class="srcs sans">
@@ -815,100 +875,178 @@
               </p>
             {/if}
           </details>
-        </section>
-      {/if}
-
-      {#if nearMoments.length || thisYear.length}
-        <section class="moments" aria-label="What happened">
-          {#each nearMoments as m, i (i)}
-            <article class="moment">
-              <p class="m-year sans">{m.year}</p>
-              <h3>{m.title}</h3>
-              <p>{m.text}</p>
-            </article>
-          {/each}
-          {#if thisYear.length}
-            <h3 class="sans this-year">Recorded as ceded in {slider}</h3>
-            <ul class="this-year-list">
-              {#each thisYear as e (e.id)}
-                {@const st = stories[e.id]}
-                <li>
-                  <button type="button" onclick={() => select(e.id, true)}>
-                    <span class="sw" style={`background: var(--how-${st?.how ?? 'unknown'})`}
-                    ></span>
-                    <span>
-                      <strong
-                        >{e.tribes_as_named_in_schedule.join(', ') ||
-                          `Cession ${e.cessnum}`}</strong
-                      >
-                      {#if st?.instrument && headlines[st.instrument]}<span class="hl"
-                          >{headlines[st.instrument]}</span
-                        >{/if}
-                    </span>
-                  </button>
-                </li>
-              {/each}
-            </ul>
-          {/if}
-        </section>
-      {/if}
-    </details>
-    <details class="context-section">
-      <summary>{followed ? `${followed.label}: land over time` : 'Land over time'}</summary>
-      {#if loss}
-        {#if followed}
-          <LandMeter
-            years={loss.years}
-            total={followed.total}
-            byHow={followed.by_how}
-            year={slider}
-            label={followed.label}
-          />
-          <p class="sans small">
-            {#if followed.path}<a href={url(followed.path)}>{followed.label}: full record</a> ·
-            {/if}<button type="button" class="link" onclick={() => followNation(null)}
-              >Back to all nations</button
-            >
-          </p>
-          <section class="nld sans" aria-label="Territory from Native Land Digital">
-            {#if territoryStatus === 'loading'}<p class="small">
-                Loading territories from Native Land Digital…
-              </p>{/if}
-            {#if territoryStatus === 'done' && territories.length}
-              <p class="small">
-                Dashed green on the map: territories in this region as communities describe them,
-                from <a href="https://native-land.ca/">Native Land Digital</a> (loaded live, not stored;
-                not legal boundaries):
-              </p>
-              <ul class="small">
-                {#each territories as t, i (i)}<li>
-                    {#if t.url}<a href={t.url}>{t.name}</a>{:else}{t.name}{/if}
-                  </li>{/each}
-              </ul>
-            {/if}
-            {#if territoryStatus === 'unavailable'}<p class="small">
-                Territory maps are not available right now; see <a href="https://native-land.ca/"
-                  >native-land.ca</a
-                >.
-              </p>{/if}
-          </section>
-        {:else}
-          <LandMeter
-            years={loss.years}
-            total={loss.all.total}
-            byHow={loss.all.by_how}
-            year={slider}
-          />
         {/if}
+        <p class="map-hint sans">Choose any shape on the map to see what happened to that land.</p>
+      </section>
+    {/if}
+
+    <section class="homelands sans" aria-labelledby="home-h">
+      <div class="home-head">
+        <h2 id="home-h">
+          {homeFor === 'selection'
+            ? 'Whose homelands these are'
+            : homeFor === 'nation' && followed
+              ? `Homelands around ${followed.label}’s land`
+              : 'Native homelands'}
+        </h2>
+        {#if homeStatus === 'done' && homeFor !== 'selection'}<button
+            type="button"
+            class="link"
+            onclick={clearHomelands}>Hide</button
+          >{/if}
+      </div>
+      {#if homeStatus === 'loading'}
+        <p class="small" role="status">Asking Native Land Digital…</p>
+      {:else if homeStatus === 'done' && homelands.length}
+        <ul class="chips">
+          {#each homelands as h, i (i)}
+            <li style={`--c: ${h.color}`}>
+              {#if h.url}<a href={h.url} rel="noopener">{h.name}</a>{:else}{h.name}{/if}
+            </li>
+          {/each}
+        </ul>
+        <p class="small">
+          Outlined on the map in their colors: territories as communities describe them, from
+          <a href="https://native-land.ca/">Native Land Digital</a>. Loaded live, not stored, and
+          not legal boundaries.
+        </p>
+      {:else if homeStatus === 'done'}
+        <p class="small">Native Land Digital has no territory mapped at this spot.</p>
+      {:else if homeStatus === 'unavailable' || homeStatus === 'error'}
+        <p class="small">
+          The homelands lookup did not answer.
+          <button type="button" class="link" onclick={homelandsHere}>Try again</button> or visit
+          <a href="https://native-land.ca/">native-land.ca</a>.
+        </p>
+      {/if}
+      {#if !selectedEvent && homeStatus !== 'loading'}
+        <button type="button" class="pill-btn" onclick={homelandsHere}
+          >{homeStatus === 'done' && homeFor === 'center'
+            ? 'Show homelands at the new map center'
+            : 'Show the homelands at the map’s center'}</button
+        >
+      {/if}
+    </section>
+
+    {#if orgNations.length}
+      <section class="work" aria-label="People doing the work">
+        <OrgPanel {base} nations={orgNations} />
+      </section>
+    {/if}
+
+    <section class="controls sans" aria-label="Time and view">
+      <div class="slider-row">
+        <button type="button" onclick={() => step(-1)} aria-label="Previous year">‹</button>
+        <label class="visually-hidden" for="year">Year</label>
+        <input
+          id="year"
+          type="range"
+          min={YEAR_MIN}
+          max={YEAR_MAX}
+          step="1"
+          bind:value={s.year}
+          aria-valuetext={`${slider}`}
+        />
+        <button type="button" onclick={() => step(1)} aria-label="Next year">›</button>
+      </div>
+      <div class="ticks" aria-hidden="true">
+        <span>{YEAR_MIN}</span><span>1830</span><span>1860</span><span>{YEAR_MAX}</span>
+      </div>
+      <div class="row">
+        <button
+          type="button"
+          class="play"
+          onclick={togglePlay}
+          disabled={reducedMotion}
+          aria-pressed={playing}
+        >
+          {playing ? 'Pause' : slider >= YEAR_MAX ? 'Play again from 1784' : 'Play the years'}
+        </button>
+        <label class="follow">
+          <span class="visually-hidden">Follow a nation</span>
+          <select
+            value={follow ?? ''}
+            onchange={(e) => followNation((e.currentTarget as HTMLSelectElement).value || null)}
+          >
+            <option value="">Follow a nation…</option>
+            {#each nationOptions as o (o.id)}<option value={o.id}>{o.label}</option>{/each}
+          </select>
+        </label>
+      </div>
+      <p class="summary">{summary()}</p>
+      <ul class="key" aria-label="Colors on the map">
+        <li><span class="sw held"></span>Still held</li>
+        {#each HOW_ORDER.filter((h) => h !== 'unknown') as h (h)}
+          <li><span class="sw" style={`background: var(--how-${h})`}></span>{HOW_LABEL[h]}</li>
+        {/each}
+      </ul>
+      <p class="visually-hidden" aria-live="polite">{announce}</p>
+    </section>
+
+    {#if followed && loss}
+      <section class="follow-meter sans" aria-label={`${followed.label}: land over time`}>
+        <LandMeter
+          years={loss.years}
+          total={followed.total}
+          byHow={followed.by_how}
+          year={slider}
+          label={followed.label}
+        />
+        <p class="small">
+          {#if followed.path}<a href={url(followed.path)}>{followed.label}: full record</a> ·
+          {/if}<button type="button" class="link" onclick={() => followNation(null)}
+            >Back to all nations</button
+          >
+        </p>
+      </section>
+    {/if}
+
+    <details class="context-section more-views" open={s.view === 'honored'}>
+      <summary>More ways to look</summary>
+      <div class="view-toggle sans" role="radiogroup" aria-label="View">
+        <label
+          ><input type="radio" name="view" value="record" bind:group={s.view} /> As it happened</label
+        >
+        <label
+          ><input type="radio" name="view" value="honored" bind:group={s.view} /> If the treaties had
+          been honored</label
+        >
+      </div>
+      {#if s.view === 'honored'}
+        <fieldset class="chips-cut sans">
+          <legend>Stop the clock in</legend>
+          {#each CUT_POINTS as c (c)}
+            <label class="chip"
+              ><input type="radio" name="cut" value={c} bind:group={s.cut} /> {c}</label
+            >
+          {/each}
+        </fieldset>
+        <LegalStatus {base} />
+      {/if}
+      <label class="today sans"
+        ><input
+          type="checkbox"
+          checked={s.layers.has('today') || s.year > YEAR_MAX}
+          onchange={toggleToday}
+        /> Show reservations and trust lands today</label
+      >
+      {#if loss && !followed}
+        <LandMeter
+          years={loss.years}
+          total={loss.all.total}
+          byHow={loss.all.by_how}
+          year={slider}
+        />
       {/if}
     </details>
+
     <details class="legend sans context-section">
       <summary>How to read the map</summary>
       <ul>
         <li>
           <span class="sw held"></span><span
-            ><strong>Still held</strong> in that year: land Royce records as ceded only later. Watch it
-            shrink.</span
+            ><strong>Still held</strong> in that year: land the 1899 record shows as ceded only later.
+            Watch it shrink.</span
           >
         </li>
         {#each HOW_ORDER as h (h)}
@@ -924,43 +1062,27 @@
           >
         </li>
       </ul>
-      <label class="today"
-        ><input
-          type="checkbox"
-          checked={s.layers.has('today') || s.year > YEAR_MAX}
-          onchange={toggleToday}
-        /> Show reservations and trust lands today</label
-      >
       <p class="small">
-        Shapes are approximate (about 1:2,000,000) and are not legal boundaries. Royce recorded what
-        the government treated as ceded, not any nation’s homeland, and his record ends in 1894. How
-        each cession happened comes from its treaty record and sourced research; open a shape to see
-        why.
+        Each shape is a numbered area in Charles Royce’s 1899 federal record of land cessions,
+        traced by the US Forest Service. Shapes are approximate, not legal boundaries, and show what
+        the government recorded, not any nation’s homeland. The record ends in 1894.
       </p>
     </details>
 
-    <details class="context-section">
-      <summary>Whose homelands are here?</summary>
-      <TerritoryLookup
-        {relay}
-        getCenter={() => (map ? [map.getCenter().lat, map.getCenter().lng] : null)}
-      />
-    </details>
     <details class="context-section record-browser">
-      <summary>Browse land records <span>{visible.length}</span></summary>
-      <section class="table sans" aria-labelledby="inview">
-        <h2 id="inview">Cessions recorded by {slider} ({visible.length})</h2>
+      <summary>Every land area recorded by {slider} <span>{visible.length}</span></summary>
+      <section class="table sans" aria-label="Land areas">
         <ul>
           {#each visible.slice(0, 200) as e (e.id)}
             <li>
               <button type="button" class:on={s.sel === e.id} onclick={() => select(e.id, true)}>
-                <span class="d">{e.dates[0]?.date ?? ''}</span>
+                <span class="d">{e.dates[0]?.date.slice(0, 4) ?? ''}</span>
                 <span
                   ><span
                     class="sw"
                     style={`background: var(--how-${stories[e.id]?.how ?? 'unknown'})`}
-                  ></span>Cession {e.cessnum}:
-                  {e.tribes_as_named_in_schedule.join(', ') || 'tribes not listed'}</span
+                  ></span>{e.tribes_as_named_in_schedule.join(', ') || 'Peoples not listed'}
+                  <small>area {e.cessnum}</small></span
                 >
               </button>
             </li>
@@ -968,7 +1090,7 @@
         </ul>
         {#if visible.length > 200}<p class="small muted">
             Showing the 200 most recent. All are in the <a href={url('/cessions/')}
-              >cessions index</a
+              >index of land areas</a
             >.
           </p>{/if}
       </section>
@@ -977,6 +1099,190 @@
 </div>
 
 <style>
+  .outline {
+    display: block;
+    width: 100%;
+    aspect-ratio: 7 / 5;
+    background: var(--sage);
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+  .outline path {
+    stroke-width: var(--sw);
+    stroke-linejoin: round;
+  }
+  .outline .ar {
+    fill: var(--c);
+    fill-opacity: 0.75;
+    stroke: var(--ink);
+  }
+  .outline .hl {
+    fill: var(--c);
+    fill-opacity: 0.12;
+    stroke: var(--c);
+    stroke-width: calc(var(--sw) * 1.6);
+  }
+  .detail .how {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .plain {
+    font-size: var(--s0);
+    line-height: 1.5;
+    margin: 0 0 12px;
+  }
+  .how span:last-child {
+    color: var(--ink-2);
+  }
+  .treaty-open em {
+    display: block;
+    font-style: normal;
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin-top: 6px;
+  }
+  .treaty-open small {
+    margin: 0 0 4px;
+    color: var(--moss);
+  }
+  .now {
+    margin-bottom: 20px;
+  }
+  .now-years {
+    font-size: var(--s-1);
+    color: var(--moss);
+    margin: 0 0 4px;
+  }
+  .now h2 {
+    font-size: var(--s2);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 12px;
+  }
+  .now .lede {
+    font-size: var(--s0);
+    line-height: 1.5;
+  }
+  .now .moment {
+    border-left: 3px solid var(--lichen);
+    padding-left: 12px;
+    font-size: var(--s-1);
+    margin: 12px 0;
+  }
+  .more summary {
+    cursor: pointer;
+    color: var(--moss);
+    font-size: var(--s-1);
+    min-height: 28px;
+  }
+  .map-hint {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin: 16px 0 0;
+  }
+  .homelands {
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 0 0 20px;
+  }
+  .home-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .homelands h2 {
+    font-size: var(--s0);
+    margin: 0 0 10px;
+  }
+  .chips {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chips li {
+    border: 2px solid var(--c);
+    background: color-mix(in srgb, var(--c) 10%, var(--sheet));
+    border-radius: 30px;
+    padding: 4px 12px;
+    font-size: var(--s-1);
+  }
+  .chips a {
+    color: var(--ink);
+  }
+  .pill-btn {
+    margin-top: 6px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 30px;
+    background: var(--sage);
+    color: var(--moss-deep);
+    padding: 9px 14px;
+    font: inherit;
+    font-size: var(--s-1);
+    cursor: pointer;
+    min-height: 40px;
+  }
+  .pill-btn:hover {
+    background: var(--lichen);
+  }
+  .work {
+    margin: 0 0 20px;
+  }
+  .work :global(.support) {
+    margin: 0;
+  }
+  .controls {
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+    margin-bottom: 8px;
+  }
+  .row .follow {
+    margin: 0;
+    flex: 1 1 10rem;
+  }
+  .follow select {
+    width: 100%;
+  }
+  .key {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-size: var(--s-2);
+    color: var(--ink-2);
+  }
+  .key li {
+    display: inline-flex;
+    align-items: center;
+  }
+  .key .sw {
+    margin-top: 0;
+    margin-right: 5px;
+  }
+  .follow-meter {
+    margin-bottom: 8px;
+  }
+  .chips-cut {
+    border: 0;
+    padding: 0;
+    margin: 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: var(--s-1);
+  }
+  .table small {
+    color: var(--ink-3);
+    margin-left: 6px;
+  }
   .rail-heading {
     display: flex;
     justify-content: space-between;

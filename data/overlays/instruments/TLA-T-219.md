@@ -3,6 +3,7 @@ id: "TLA-T-219"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1837 the Saginaw Chippewa ceded tracts the treaty puts at 102,400 acres and agreed to leave Michigan once a new home was found."
+note: "The treaty states 102,400 acres, but its fifteen listed tracts add up to 99,400 acres."
 how: "removal"
 how_basis: "Article 6 of the treaty text has the tribe agree to remove from Michigan once a location is obtained."
 confidence: "medium"

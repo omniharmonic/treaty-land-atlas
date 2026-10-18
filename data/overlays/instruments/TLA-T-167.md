@@ -3,6 +3,7 @@ id: "TLA-T-167"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1832 the Creeks ceded all land east of the Mississippi; the treaty guaranteed their western country, cited by the Supreme Court in 2020."
+note: "The 2020 Supreme Court case cited this treaty, but its holding concerned the Major Crimes Act and the Creek Reservation."
 how: "removal"
 how_basis: "The OSU treaty text exchanges all Creek land east of the Mississippi for removal costs, western guarantees and allotments; it states no Creek could be compelled to emigrate."
 confidence: "high"

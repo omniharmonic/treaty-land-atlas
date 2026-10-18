@@ -3,6 +3,7 @@ id: "TLA-U-CA-B"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Camp Keyes in 1851, seven tribes agreed to two tracts and gave up other land claims; the Senate never ratified it."
+note: "The treaty text opens with the date May 13, 1851, while its heading gives May 30. Sources give July 2 or July 8, 1852 for the Senate's rejection."
 how: "unratified"
 how_basis: "The OSU treaty page marks it Unratified, and Prologue says the Senate rejected all 18 California treaties."
 confidence: "high"

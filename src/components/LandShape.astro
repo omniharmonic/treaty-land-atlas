@@ -1,0 +1,166 @@
+---
+// The land itself: one or more Royce areas outlined on a faint map of all the others, zoomed to
+// the land with a small map of the lower 48 for orientation. A point (a land return) can be added.
+// Used wherever a page talks about territory. Static SVG; the faint base map is one shared file.
+import { frameAround, locatorMap, projectPoint } from '../lib/svgmap';
+import { href } from '../lib/href';
+import { areaNumber } from '../lib/land';
+
+interface Props {
+  ids: string[];
+  /** css color per area id; areas without one use the tone */
+  fills?: Record<string, string>;
+  tone?: 'lost' | 'kept' | 'quiet';
+  point?: { lon: number; lat: number; label: string } | null;
+  /** the whole lower 48 instead of zooming to the land */
+  wide?: boolean;
+  label: string;
+  links?: boolean;
+  size?: 'card' | 'thumb';
+  class?: string;
+}
+const {
+  ids,
+  fills = {},
+  tone = 'lost',
+  point = null,
+  wide = false,
+  label,
+  links = true,
+  size = 'card',
+  class: cls,
+} = Astro.props;
+const m = locatorMap(ids);
+const pt = point ? projectPoint(point.lon, point.lat) : null;
+const fit = wide
+  ? null
+  : frameAround(
+      m.hi.map((h) => h.d),
+      pt ? [pt] : [],
+      size === 'thumb' ? 40 : 70,
+    );
+const view = fit ? `${fit.x} ${fit.y} ${fit.w} ${fit.h}` : `0 0 ${m.width} ${m.height}`;
+const inset = !!fit && size === 'card' && fit.w < m.width * 0.6;
+const base = href('/map/base.svg');
+const stroke = fit ? Math.max(0.6, fit.w / 500) : 1;
+---
+
+{(m.hi.length > 0 || pt) && (
+  <figure class:list={['land', size, tone, cls]}>
+    <svg
+      viewBox={view}
+      role={links && size === 'card' && m.hi.length ? 'group' : 'img'}
+      aria-label={label}
+      style={`--sw: ${stroke}px`}
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <image href={base} width={m.width} height={m.height} />
+      {m.hi.map((h) =>
+        links && size === 'card' ? (
+          <a
+            href={href(`/cessions/${areaNumber(h.id)}/`)}
+            aria-label={`Land area ${areaNumber(h.id)}`}
+          >
+            <path
+              d={h.d}
+              style={fills[h.id] ? `fill: ${fills[h.id]}; fill-opacity: 0.82` : undefined}
+            />
+          </a>
+        ) : (
+          <path
+            d={h.d}
+            style={fills[h.id] ? `fill: ${fills[h.id]}; fill-opacity: 0.82` : undefined}
+          />
+        ),
+      )}
+      {pt && (
+        <g class="pt">
+          <circle cx={pt[0]} cy={pt[1]} r={fit ? fit.w / 40 : 9} />
+          <circle class="core" cx={pt[0]} cy={pt[1]} r={fit ? fit.w / 110 : 3.5} />
+        </g>
+      )}
+    </svg>
+    {inset && (
+      <svg class="inset" viewBox={`0 0 ${m.width} ${m.height}`} aria-hidden="true">
+        <image href={base} width={m.width} height={m.height} />
+        <rect x={fit!.x} y={fit!.y} width={fit!.w} height={fit!.h} />
+      </svg>
+    )}
+    <slot />
+  </figure>
+)}
+
+<style>
+  .land {
+    position: relative;
+    margin: 0;
+    background: var(--sage);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .land > svg:first-child {
+    display: block;
+    width: 100%;
+    aspect-ratio: 27 / 20;
+    height: auto;
+  }
+  .land.thumb {
+    border-radius: 8px;
+  }
+  path {
+    fill: #9d6b4b;
+    fill-opacity: 0.82;
+    stroke: #5e3f28;
+    stroke-width: var(--sw);
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .kept path {
+    fill: #6f8a5a;
+    stroke: var(--moss-deep);
+  }
+  .quiet path {
+    fill: #a3af8d;
+    stroke: #4d603c;
+    fill-opacity: 0.6;
+  }
+  a:hover path,
+  a:focus-visible path {
+    fill-opacity: 1;
+    stroke-width: calc(var(--sw) * 2.4);
+  }
+  .pt circle {
+    fill: var(--data-return);
+    fill-opacity: 0.28;
+    stroke: none;
+  }
+  .pt .core {
+    fill: #00664a;
+    fill-opacity: 1;
+    stroke: var(--sheet);
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .inset {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 26%;
+    max-width: 120px;
+    height: auto;
+    background: color-mix(in srgb, var(--sheet) 80%, transparent);
+    border-radius: 6px;
+  }
+  .inset rect {
+    fill: #9d6b4b;
+    fill-opacity: 0.35;
+    stroke: #5e3f28;
+    stroke-width: 6;
+  }
+  .land :global(figcaption) {
+    padding: 0 16px 14px;
+    font-family: var(--sans);
+    font-size: var(--s-2);
+    color: var(--ink-2);
+  }
+</style>

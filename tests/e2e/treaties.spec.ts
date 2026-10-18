@@ -22,7 +22,7 @@ test('find an agreement, open it, and return to the same search and region', asy
   await expect(page).toHaveURL(/q=Point\+Elliott.*region=Pacific/);
   await page.locator('.agreement h3 a').click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Treaty of Point Elliott, 1855');
-  await expect(page.getByRole('navigation', { name: 'On this treaty page' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
   await page.goBack();
   await expect(search).toHaveValue('Point Elliott');
   await expect(page.getByLabel('Region', { exact: true })).toHaveValue('Pacific Northwest');
@@ -43,39 +43,31 @@ test('search supports empty results, reset, and unratified instruments', async (
   await expect(page.locator('.unratified-note')).toContainText('never ratified');
 });
 
-test('timeline keeps date ranges, contextual history, evidence, and browser history', async ({
-  page,
-}) => {
+test('what happened next tells the land and the records in order, with links', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/treaties/tla-t-369/#event=V024');
-  await expect(page.locator('#event-title')).toContainText('Black Hills');
-  await expect(page.locator('.detail-meta')).toContainText('1874-1877');
-  await expect(page.locator('.record-link')).toHaveAttribute('href', '/violations/v024/');
-  await expect(page.locator('.event-map figcaption')).toContainText('No event-specific geometry');
-  await page.locator('#event-V030').click();
-  await expect(page.locator('#event-title')).toContainText('Dakota Access Pipeline');
-  await expect(page.locator('.context-note')).toContainText('not itself a finding');
-  await expect(page).toHaveURL(/#event=V030$/);
-  await page.goBack();
-  await expect(page.locator('#event-title')).toContainText('Black Hills');
-  await page.locator('#event-V024').focus();
-  await page.keyboard.press('Home');
-  await expect(page.locator('#event-signed')).toBeFocused();
-  await expect(page.locator('#event-signed')).toHaveAttribute('aria-pressed', 'true');
+  await page.goto('/treaties/tla-t-369/');
+  const rows = page.locator('#after .tl-row');
+  const years = await rows.evaluateAll((els) =>
+    els.map((e) => Number(e.querySelector('.tl-year')!.textContent)).filter((y) => y > 0),
+  );
+  expect(years).toEqual([...years].sort((a, b) => a - b));
+  await expect(page.locator('#after .tl-row.anchor')).toContainText('This treaty');
+  const black = page.locator('[data-key="V024"]');
+  await expect(black).toContainText('Black Hills');
+  await expect(black.locator('a').first()).toHaveAttribute('href', '/violations/v024/');
+  await expect(page.locator('[data-key="V030"] .tl-tag')).toHaveText('Related history');
+  await expect(page.locator('#after')).not.toContainText('Royce');
 });
 
-test('land entries highlight their own geometry and the map can focus and reset', async ({
-  page,
-}) => {
-  await page.goto('/treaties/tla-t-369/#event=geo-royce-516');
-  await expect(page.locator('.shape.current')).toHaveCount(1);
-  const map = page.locator('.event-map svg');
-  const original = await map.getAttribute('viewBox');
-  await page.getByRole('button', { name: 'Focus on land' }).click();
-  await expect(map).not.toHaveAttribute('viewBox', original!);
-  await page.getByRole('button', { name: 'Show wider map' }).click();
-  await expect(map).toHaveAttribute('viewBox', original!);
-  await expect(page.locator('.event-map a').first()).toHaveAttribute('href', /\/cessions\//);
+test('stepping through the timeline lights the land it concerns', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/treaties/tla-t-299/');
+  const row = page.locator('#after .tl-row').filter({ hasText: 'set aside' }).first();
+  await row.hover();
+  await expect(page.locator('#after .tl-map path.on').first()).toBeVisible();
+  await expect(page.locator('#after .tl-map path.kept').first()).toBeVisible();
+  await expect(page.locator('#land .areas li').first()).toBeVisible();
+  await expect(page.locator('#land .areas a').first()).toHaveAttribute('href', /\/cessions\//);
 });
 
 test('the full map offers an obvious way into the linked treaty', async ({ page }) => {
@@ -83,7 +75,7 @@ test('the full map offers an obvious way into the linked treaty', async ({ page 
   await expect(page.locator('.treaty-open').first()).toBeVisible();
   await page.locator('.treaty-open').first().click();
   await expect(page).toHaveURL(/\/treaties\//);
-  await expect(page.getByRole('navigation', { name: 'On this treaty page' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
 });
 
 for (const path of ['/treaties/', '/treaties/tla-t-369/#event=V030', '/treaties/tla-u-ca-a/']) {
@@ -122,16 +114,17 @@ test('treaty reading and evidence remain available without JavaScript', async ({
   await page.goto('/treaties/tla-t-369/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Fort Laramie');
   await expect(page.locator('.promises')).toContainText('three-fourths');
-  await expect(page.locator('noscript a').first()).toHaveAttribute('href', /^\//);
+  await expect(page.locator('#after .tl-row a').first()).toHaveAttribute('href', /^\//);
   await expect(page.locator('#evidence .sources a').first()).toBeVisible();
   await context.close();
 });
 
-test('entry confidence and original correction evidence remain visible', async ({ page }) => {
-  await page.goto('/treaties/tla-t-369/#event=V030');
-  await expect(page.locator('.entry-confidence')).toContainText('Source confidence: Medium');
-  await page.goto('/treaties/tla-t-281/#event=camp-puyallup-1989');
-  await expect(page.locator('.entry-confidence')).toContainText('Low. Thinly sourced');
+test('reader notes show, research notes wait behind a toggle, and corrections keep evidence', async ({
+  page,
+}) => {
+  await page.goto('/treaties/tla-t-299/');
+  await expect(page.locator('#story .note')).toContainText('ceded no land');
+  await expect(page.locator('#story .cautions')).toBeHidden();
   await page.goto('/treaties/tla-t-004/');
   await expect(page.getByRole('heading', { name: 'Corrections to this record' })).toBeVisible();
   await expect(page.locator('.record-corrections a').first()).toHaveAttribute(
@@ -141,35 +134,18 @@ test('entry confidence and original correction evidence remain visible', async (
   await expect(page.locator('.record-corrections q').first()).toBeVisible();
 });
 
-test('connected events stay in the treaty and section navigation preserves the selection', async ({
-  page,
-}) => {
-  await page.goto('/treaties/tla-t-369/#event=V024');
-  await page.locator('.event-connections summary').click();
-  await page
-    .locator('.event-connections')
-    .getByRole('link', { name: 'United States v. Sioux Nation of Indians', exact: true })
-    .click();
-  await expect(page).toHaveURL(/\/treaties\/tla-t-369\/#event=case-us-v-sioux-nation-1980/);
-  await expect(page.locator('#event-title')).toHaveText('United States v. Sioux Nation of Indians');
-  await page
-    .getByRole('navigation', { name: 'On this treaty page' })
-    .getByRole('link', { name: 'Sources and record' })
-    .click();
-  await expect(page.locator('#event-title')).toHaveText('United States v. Sioux Nation of Indians');
+test('courts and laws connected to a treaty are listed with what each did', async ({ page }) => {
+  await page.goto('/treaties/tla-t-369/');
+  const law = page.locator('#law');
+  await expect(
+    law.getByRole('link', { name: 'United States v. Sioux Nation of Indians', exact: true }),
+  ).toBeVisible();
+  await expect(law.locator('li').first().locator('p').last()).not.toBeEmpty();
 });
 
-test('mobile event permalinks reveal the selected card in the chronology', async ({ page }) => {
+test('older event links still land on their step, on a phone', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/treaties/tla-t-369/#event=V024');
-  await expect(page.locator('#event-V024')).toHaveAttribute('aria-pressed', 'true');
-  await expect
-    .poll(async () => {
-      const list = await page.locator('.event-list').boundingBox();
-      const card = await page.locator('#event-V024').boundingBox();
-      return (
-        !!list && !!card && card.x >= list.x - 1 && card.x + card.width <= list.x + list.width + 1
-      );
-    })
-    .toBe(true);
+  await expect(page.locator('[data-key="V024"]')).toHaveClass(/\bon\b/);
+  await expect(page.locator('[data-key="V024"]')).toBeInViewport();
 });

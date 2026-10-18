@@ -3,6 +3,7 @@ id: "TLA-T-153"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In August 1828 at Green Bay, Winnebago and three allied tribes declined to sell mining land but agreed to a temporary boundary and $20,000."
+note: "The treaty called the boundary provisional and the whole arrangement temporary, pending a later cession treaty."
 how: "treaty_under_pressure"
 how_basis: "The preamble says the Indians declined to cede land, and the arrangement lets the United States occupy the disputed mining country meanwhile."
 confidence: "high"

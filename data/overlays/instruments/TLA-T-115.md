@@ -3,8 +3,9 @@ id: "TLA-T-115"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Doak's Stand in 1820 the Choctaw ceded Mississippi land for a tract between the Arkansas and Red rivers."
+note: "The Oklahoma Historical Society gives about thirteen million acres for the western lands; the treaty describes boundaries, not acreage."
 how: "treaty_negotiated"
-how_basis: "The treaty text says the Choctaw entered it freely and voluntarily; the opened secondary sources describe an exchange, not coercion, though other accounts (not opened here) mention pressure."
+how_basis: "The treaty text says the Choctaw entered it freely and voluntarily; the secondary sources cited describe an exchange, not coercion, though other accounts mention pressure."
 confidence: "medium"
 cautions: "The Choctaw leaders signed the 1830 Dancing Rabbit Creek treaty, so the end of the Article 4 boundary came by a later treaty, not unilateral action. Some accounts not opened here describe pressure on Choctaw leaders in 1820; this was not confirmed. The Oklahoma Historical Society gives about thirteen million acres for the western lands; the treaty text gives boundaries, not acreage."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1820-0191", "title": "Tribal Treaties Database (OSU)", "quote": "exchanging, for a small part of their land here, a country beyond the Mississippi River"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1820-0191", "title": "Tribal Treaties Database (OSU)", "quote": "shall remain without alteration until the period at which said nation shall become so civilized and enlightened"}, {"url": "https://okhistory.org/publications/enc/entry?entry=CH047", "title": "Choctaw (tribe), Encyclopedia of Oklahoma History and Culture", "quote": "Although some families moved into the new land, the majority did not until Andrew Jackson pushed his Indian Removal Act through Congress in 1830."}]

@@ -3,6 +3,7 @@ id: "TLA-T-244"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1845 the Creek and Seminole agreed that Seminoles would live in the Creek country, under Creek council control."
+note: "The Seminoles' reasons are given in the United States commissioners' words, not the Seminoles' own."
 how: "treaty_negotiated"
 how_basis: "The text records articles made by U.S. commissioners with the Creek and Seminole tribes; the preamble describes the problem it was meant to settle."
 confidence: "high"

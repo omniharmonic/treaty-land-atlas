@@ -3,6 +3,7 @@ id: "org-yurok-tribe"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Yurok Tribe's website reports regaining Blue Creek in 2025 and the 125-acre 'O Rew from Save the Redwoods League in 2026."
+note: "A tribal government with no donation page; gifts to Western Rivers Conservancy or Save the Redwoods League do not go to the Tribe. Sources date the 'O Rew transfer June 29 or June 30, 2026."
 confidence: "high"
 cautions: "The Tribe's pages give headlines, not terms, for Blue Creek; acreage and the 2009 and 2025 dates are Western Rivers Conservancy's. Save the Redwoods League's story dates the 'O Rew transfer June 29, 2026; the tribe's page says June 30. No donation page on yuroktribe.org; the yuroktribalfund.org link is an event link and was not vetted."
 sources: [{"url": "https://www.yuroktribe.org/about-us", "title": "About Us - Yurok Tribe", "quote": "The mission of the Yurok Tribe is to exercise the aboriginal and sovereign rights of the Yurok People"}, {"url": "https://www.yuroktribe.org/tribal-newsletter", "title": "Tribal Newsletter - Yurok Tribe", "quote": "Tribe Regains Ownership of Blue Creek"}, {"url": "https://www.westernrivers.org/projects/ca/klamath-river-blue-creek", "title": "Klamath River Blue Creek - Western Rivers Conservancy", "quote": "completed the largest single “land back” deal in California history"}, {"url": "https://www.yuroktribe.org/", "title": "Yurok Tribe", "quote": "Save the Redwoods conveyed the property to the Yurok Tribe on June 30, 2026."}, {"url": "https://www.yuroktribe.org/", "title": "Yurok Tribe", "quote": "Save the Redwoods League transferred 125 acres of land in the heart of Yurok ancestral territory back to the Yurok Tribe"}]
@@ -14,4 +15,4 @@ Its newsletter archive lists land headlines. The June 2025 edition carries "Trib
 
 The tribe's home page also announces a 2026 transfer. A July 28, 2026 press release says Save the Redwoods League transferred 125 acres in the heart of Yurok ancestral territory back to the Tribe, and that the property was conveyed on June 30, 2026. The 'O Rew Redwoods Gateway is a tribally owned and operated recreation area at the southern end of Redwood National and State Parks, open to the public from August 1, 2026.
 
-The Tribe's own pages read show no donation page. A gift to Western Rivers Conservancy or Save the Redwoods League does not go to the Tribe.
+No donation page is listed on the Tribe's website. A gift to Western Rivers Conservancy or Save the Redwoods League does not go to the Tribe.

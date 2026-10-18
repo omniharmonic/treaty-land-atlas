@@ -3,6 +3,7 @@ id: "TLA-T-005"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At the 1754 Albany Congress, colonial delegates met the Six Nations and debated a union of colonies; Indian speakers raised land complaints."
+note: "The minutes run from 19 June to 11 July 1754 and include speeches by the River Indians and Schaghticoke as well as the Six Nations."
 how: "other"
 how_basis: "The minutes show a congress of colonial commissioners meeting Indian leaders at Albany, not a United States treaty."
 confidence: "medium"
@@ -16,4 +17,4 @@ New York's lieutenant governor, James De Lancey, hosted commissioners from New H
 
 A separate speech from the River Indians recalled the friendship of their ancestors and the land they gave the first settlers. A speech copied into the minutes says white people said they wanted only the low lands, but now settled the hills too, and asks that the Indians be paid for their lands. The governor answered that if an inquiry showed injury, he would try to get redress.
 
-The delegates also voted to form a plan of union of the colonies, to be established by an Act of Parliament. The pages opened here show the plan debated, but do not show what came of it.
+The delegates also voted to form a plan of union of the colonies, to be established by an Act of Parliament. The sources here show the plan debated, but do not show what came of it.

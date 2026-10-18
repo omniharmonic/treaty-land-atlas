@@ -3,6 +3,7 @@ id: "TLA-T-019A"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "A 1793 National Archives item copies New York's Six Nations land deeds, including an 1785 Oneida and Tuscarora sale of about 300,000 acres."
+note: "This is a bundle of land deeds to New York State; 1793 is when it was compiled or sent, while the Oneida and Tuscarora sale it includes dates from 1785."
 how: "other"
 how_basis: "The National Archives describes it as an exemplification (certified copy) of New York deeds, not a new treaty."
 confidence: "low"
@@ -16,4 +17,4 @@ According to the National Archives Foundation's teaching page, New York Governor
 
 In that 1785 treaty, the page says, the Oneida and Tuscarora relinquished to New York State some 300,000 acres in present-day Broome and Chenango Counties. In exchange they received $11,500, food and rum.
 
-The same page says state and federal officials had promised the Oneida and Tuscarora, who had fought for the patriot cause, that their land rights were inviolable, but that New Yorkers wanted the land and promises withered under pressure. The treatment is an educational summary. The full deeds were not read for this entry.
+The same page says state and federal officials had promised the Oneida and Tuscarora, who had fought for the patriot cause, that their land rights were inviolable, but that New Yorkers wanted the land and promises withered under pressure. The treatment is an educational summary. This account draws on that summary, not on the full deeds.

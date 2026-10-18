@@ -3,6 +3,7 @@ id: "org-iltf"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Indian Land Tenure Foundation, in Little Canada, Minnesota, supports tribes and Native landowners working to recover and control their homelands."
+note: "An independent audit for the year ending December 2024 found a material weakness in internal controls, which is not a finding of misuse. To be safe, reach the donate page by typing iltf.org directly."
 confidence: "medium"
 cautions: "Donor note: ProPublica reports that an independent audit for the fiscal year ending December 2024 identified a material weakness in internal controls; it is a finding, not a finding of misuse, and this record did not read the audit. The vetting note also says a fetched homepage once contained an unrelated spam link; the page fetched this session did not, but confirm the donate link by visiting iltf.org directly. Annual reports and grant results were not read."
 sources: [{"url": "https://iltf.org/about-us/mission/", "title": "ILTF - Mission", "quote": "a national, community-based organization serving American Indian nations and people in the recovery and control of their rightful homelands"}, {"url": "https://iltf.org/about-us/mission/", "title": "ILTF - Mission", "quote": "As a community foundation, ILTF accepts contributions from organizations and individuals to support its grantmaking and program initiatives."}, {"url": "https://iltf.org/about-us/leadership/", "title": "ILTF - Leadership", "quote": "has returned to Indian Land Tenure Foundation in 2025 to serve as President"}, {"url": "https://projects.propublica.org/nonprofits/organizations/412014273", "title": "ProPublica Nonprofit Explorer - Indian Land Tenure Foundation", "quote": "Material weakness in internal controls"}]
@@ -14,4 +15,4 @@ ILTF's stated mission is that land within the original boundaries of every reser
 
 As a community foundation, ILTF accepts contributions to support grantmaking and program initiatives. It publishes educational materials, estate-planning resources for landowners and annual reports.
 
-ILTF funds and supports land recovery by others; this record did not find parcels ILTF itself holds. Its results are described by the organization in annual reports, which this record did not read.
+ILTF funds and supports land recovery by others; it is not known to hold land itself. Its results are described by the organization in its annual reports.

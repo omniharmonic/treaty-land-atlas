@@ -14,4 +14,4 @@ It explained that "The tradition of Indian sovereignty over the reservation and 
 
 California v. Cabazon Band (1987) restated the test: "State jurisdiction is pre-empted if it interferes or is incompatible with federal and tribal interests reflected in federal law, unless the state interests at stake are sufficient to justify the assertion of state authority."
 
-The test is case-by-case, and it sometimes favors states. Congress can also decide the matter directly, as in the Maine Indian Claims Settlement Act of 1980, which makes state civil and criminal jurisdiction apply to many Indians and lands in Maine.
+The test is case-by-case. Congress can also decide the matter directly, as in the Maine Indian Claims Settlement Act of 1980, which makes state civil and criminal jurisdiction apply to many Indians and lands in Maine.

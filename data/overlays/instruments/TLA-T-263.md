@@ -3,6 +3,7 @@ id: "TLA-T-263"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1853 the Rogue River tribe ceded the upper Rogue Valley at Table Rock for $60,000 and a temporary reserve."
+note: "The Siletz history's \"forced to sign\" wording and its 15 million acre figure refer to all seven treaties it describes, not this one alone."
 how: "treaty_under_pressure"
 how_basis: "The Confederated Tribes of Siletz Indians' history describes a cease-fire after open warfare and says its ancestors were \"forced to sign\" seven treaties."
 confidence: "medium"

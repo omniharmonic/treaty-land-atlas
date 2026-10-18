@@ -3,6 +3,7 @@ id: "TLA-T-257"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1850 the Wyandot released their claim to the 148,000 acres promised in 1842, which they said they never received, for $185,000."
+note: "The statement that the Wyandot were \"forced to purchase\" land from the Delawares is the treaty's own wording."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated release for payment, signed by a commissioner and the Wyandot head chief and deputies; the preamble records the earlier failure to deliver the land."
 confidence: "high"

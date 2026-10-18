@@ -14,4 +14,4 @@ Congress changed the rule by statute. The Act of June 2, 1924 provided that "all
 
 The rule is now in the Immigration and Nationality Act. Today's 8 U.S.C. 1401(b) lists, among those who are citizens at birth, a person born in the United States to a member of an Indian, Eskimo, Aleutian, or other aboriginal tribe, with the same protection for tribal property.
 
-American Indian citizenship is therefore separate from tribal citizenship, which each nation decides for itself. Nothing in the sources opened describes how states responded to the 1924 Act.
+American Indian citizenship is therefore separate from tribal citizenship, which each nation decides for itself. Nothing in the sources here describes how states responded to the 1924 Act.

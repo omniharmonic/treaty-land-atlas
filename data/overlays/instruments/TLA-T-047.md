@@ -3,6 +3,7 @@ id: "TLA-T-047"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Grouseland the Miami, Eel River and Wea ceded land after the Delaware gave up a claim the Miami disputed."
+note: "The Miami objection to the Delaware claim is the treaty's own statement, not an independent account."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession with annuities and a dispute resolved among the tribes, with no source I read describing coercion."
 confidence: "high"

@@ -3,6 +3,7 @@ id: "case-mattz-v-arnett-1973"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "An 1892 act opening the Klamath River Reservation to homesteaders did not end the reservation, so the land remained Indian country."
+note: "The opinion calls Mattz a Klamath River Indian; the syllabus calls him Yurok."
 confidence: "high"
 cautions: "The old quote 'the land within the reservation boundaries is still Indian country' was shortened after it failed to match; the page's printed text has OCR errors (for example 'Executie'). The opinion uses 'Klamath River Indian' for Mattz; our data calls him Yurok, which the syllabus also says. The old claim that Mattz 'shaped the later Solem v. Bartlett test' is not in the sources I opened and was removed."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep412/usrep412481/usrep412481.pdf", "title": "Mattz v. Arnett, 412 U.S. 481 (1973) (U.S. Reports, Library of Congress)", "quote": "is completely consistent with continued reservation status"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep412/usrep412481/usrep412481.pdf", "title": "Mattz v. Arnett, 412 U.S. 481 (1973) (U.S. Reports, Library of Congress)", "quote": "delivered the opinion for a unanimous Court"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep420/usrep420425/usrep420425.pdf", "title": "Decoteau v. District County Court, 420 U.S. 425 (1975) (U.S. Reports, Library of Congress)", "quote": "Mattz v. Arnett, 412 U. S. 481"}]

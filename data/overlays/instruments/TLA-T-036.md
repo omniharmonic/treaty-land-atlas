@@ -16,4 +16,4 @@ The first article started from the 1795 Treaty of Greenville, which had reserved
 
 Article 3 had the tribes "relinquish and cede" the great salt spring on Saline Creek, with land around it not exceeding four miles square. The United States promised each year a quantity of salt for the tribes, not above 150 bushels, to be divided as their general council decided. Article 4 gave the United States the right to locate three tracts on the road between Vincennes and Kaskaskia, and one between Vincennes and Clarksville, for houses where travelers could stay, once the Kickapoo, Eel River, Wea, Piankashaw and Kaskaskia agreed.
 
-Article 5 said that if settlers' claims fell inside the Indian side of the line, the line would be moved to include them, and an equal quantity of land would be given to the tribes at either end of the tract. The sources opened do not give acreage or describe pressures.
+Article 5 said that if settlers' claims fell inside the Indian side of the line, the line would be moved to include them, and an equal quantity of land would be given to the tribes at either end of the tract. The sources here do not give acreage or describe pressures.

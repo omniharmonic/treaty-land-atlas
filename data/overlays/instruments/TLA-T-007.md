@@ -3,6 +3,7 @@ id: "TLA-T-007"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In November 1768 the Six Nations granted the British Crown a large tract, fixing a new colonial boundary at Fort Stanwix."
+note: "This was a British colonial agreement, not a United States treaty. Whether the Six Nations could cede the Ohio Valley is contested; the Lenape and Shawnee, who hunted there, objected."
 how: "treaty_negotiated"
 how_basis: "The OSU record of proceedings shows a council at which the Six Nations and others \"granted bargained sold\" a tract to the Crown for goods; Encyclopedia Virginia describes the negotiated terms and payments."
 confidence: "medium"

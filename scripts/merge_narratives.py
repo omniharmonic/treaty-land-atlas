@@ -17,6 +17,7 @@ Run:  python3 scripts/merge_narratives.py <dir with out-*.jsonl and out-story.js
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -58,6 +59,7 @@ def main(src):
             if path.exists() and not ours(path):
                 skipped.append((f.name, rid, "hand-written overlay kept"))
                 continue
+            kept_note = re.search(r'^note: (.*)$', path.read_text(encoding="utf-8"), re.M) if path.exists() else None
             cautions = " ".join(x for x in [o.get("cautions") or "", o.get("acres_text") and f"Acreage: {o['acres_text']}"] if x)
             meta = {
                 "id": rid,
@@ -68,6 +70,7 @@ def main(src):
                 "how_basis": o.get("how_basis") or None,
                 "confidence": o.get("confidence") if o.get("confidence") in ("high", "medium", "low") else None,
                 "cautions": cautions.strip() or None,
+                "note": json.loads(kept_note.group(1)) if kept_note else None,
                 "sources": [{k: s[k] for k in ("url", "title", "quote") if s.get(k)} for s in sources],
                 "verdict": o.get("verdict") or None,
                 "promises": [

@@ -3,6 +3,7 @@ id: "TLA-T-266"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1854 the Omaha ceded lands south of a line, keeping a northern homeland whose boundaries Nebraska v. Parker later upheld."
+note: "Nebraska v. Parker (2016) concerned an 1882 act of Congress, not the 1854 treaty itself."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text and the Supreme Court's opinion describe a negotiated sale by a destitute tribe; neither describes coercion at signing."
 confidence: "high"

@@ -3,6 +3,7 @@ id: "TLA-T-199"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1835 Treaty of New Echota, signed by twenty Cherokee men who held no elected office, ceded all Cherokee land east of the Mississippi."
+note: "That the promised $5 million was never paid is the National Park Service's statement."
 how: "removal"
 how_basis: "Article 16 of the treaty text requires removal within two years, and the NPS page says federal troops forced Cherokee into camps in 1838."
 confidence: "high"

@@ -3,6 +3,7 @@ id: "doctrine-statehood"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Court once said a state's admission ended a tribe's treaty hunting right; Mille Lacs (1999) and Herrera (2019) rejected that reasoning."
+note: "Herrera held the forest is not categorically 'occupied,' not that every area in it is unoccupied, and left open whether Wyoming may regulate the right for conservation."
 confidence: "medium"
 cautions: "The Herrera Court limited its ruling: it held the forest is not categorically occupied, not that every area in it is unoccupied, and left open whether Wyoming may regulate the right for conservation."
 sources: [{"url": "https://www.law.cornell.edu/supremecourt/text/163/504", "title": "Ward v. Race Horse, 163 U.S. 504 (1896)", "quote": "the repeal results from the conflict between the treaty and the act admitting that state into the Union"}, {"url": "https://www.law.cornell.edu/supremecourt/text/526/172", "title": "Minnesota v. Mille Lacs Band of Chippewa Indians, 526 U.S. 172 (1999)", "quote": "it provides no clue that Congress considered the reserved rights of the Chi"}, {"url": "https://www.law.cornell.edu/supremecourt/text/17-532", "title": "Herrera v. Wyoming (2019)", "quote": "The Crow Tribe’s hunting rights under the 1868 Treaty did not expire upon Wyoming’s statehood."}, {"url": "https://www.law.cornell.edu/supremecourt/text/17-532", "title": "Herrera v. Wyoming (2019)", "quote": "is repudiated to the extent it held that treaty rights can be impliedly extinguished at statehood"}]

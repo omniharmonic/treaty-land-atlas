@@ -3,6 +3,7 @@ id: "TLA-T-285"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 Wyandot treaty ended the Wyandot's tribal relations, made members citizens, and divided their Kansas land among individuals."
+note: "Not every Wyandot became a citizen: the treaty let members apply to be exempt."
 how: "other"
 how_basis: "The OSU treaty text dissolves the tribal relationship and grants citizenship by agreement, which fits none of the standard categories; no source I read describes coercion."
 confidence: "high"

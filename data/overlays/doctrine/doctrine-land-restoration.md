@@ -3,6 +3,7 @@ id: "doctrine-land-restoration"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Congress can return land to tribal ownership by statute; the 1970 Blue Lake Act restored 48,000 acres to Taos Pueblo, according to the Pueblo."
+note: "The 48,000-acre figure comes from a statement by President Nixon quoted on Taos Pueblo's website."
 confidence: "medium"
 cautions: "The statute's next page, where the trust declaration is completed, could not be fetched, so the narrative relies on the first page's text and the Pueblo's page for the outcome. The acreage and 1906 date come only from a quotation attributed to President Nixon on the Pueblo's website. The IRA section 3 summary rests on its heading and the Act's first page; its full text was not quoted. Other land returns (for example by agency transfer or settlement) are not covered. No locations of sacred sites are given."
 sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-48/pdf/STATUTE-48-Pg984.pdf", "title": "Indian Reorganization Act, 48 Stat. 984, section 3", "quote": "is hereby authorized to restore to tribal ownership the remaining surplus lands of any Indian reservation"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-84/pdf/STATUTE-84-Pg1437.pdf", "title": "Public Law 91-550 (Blue Lake Act), 84 Stat. 1437 (Dec. 15, 1970), Statutes at Large", "quote": "upon which said Indians depend and have depended since time immemorial for water supply"}, {"url": "https://www.taospueblo.com/blue-lake", "title": "The Return of Blue Lake, Taos Pueblo (tribal website)", "quote": "in 1906 an injustice was done in which land involved in this bill, 48,000 acres, was taken from the Indians involved"}, {"url": "https://www.taospueblo.com/blue-lake", "title": "The Return of Blue Lake, Taos Pueblo (tribal website)", "quote": "On December 15, 1970, former President Richard M. Nixon signed into affect Public Law 91-550"}]
@@ -14,4 +15,4 @@ The Blue Lake Act, Public Law 91-550, was signed on December 15, 1970. It amende
 
 Taos Pueblo's own website describes the signing. It quotes President Nixon: "in 1906 an injustice was done in which land involved in this bill, 48,000 acres, was taken from the Indians involved, the Taos Pueblo Indians." The Pueblo says the signing "restored Taos Pueblo lands" and set a precedent for self-determination.
 
-The 48,000-acre figure and the 1906 date are from the quoted Nixon remarks on the Pueblo's page; the statute text opened gives only the trust declaration.
+The 48,000-acre figure and the 1906 date are from the quoted Nixon remarks on the Pueblo's page; the statute text gives only the trust declaration.

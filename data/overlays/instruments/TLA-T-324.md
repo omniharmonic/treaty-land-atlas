@@ -3,6 +3,7 @@ id: "TLA-T-324"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1863 Fort Bridger treaty guaranteed travel routes, telegraph, stage and railway access through Eastern Shoshone country in return for annuities."
+note: "The treaty was ratified March 7, 1864 and proclaimed June 7, 1869; 1869 is sometimes given as the ratification date."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated peace and right-of-way agreement with named terms; no cession of title or duress is stated in the text."
 confidence: "high"

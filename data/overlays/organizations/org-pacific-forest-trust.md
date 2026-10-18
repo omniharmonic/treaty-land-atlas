@@ -3,6 +3,7 @@ id: "org-pacific-forest-trust"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Pacific Forest Trust, a non-Indigenous land trust, says it returned nearly 900 acres near Yosemite to the Southern Sierra Miwuk Nation in 2025."
+note: "A non-Indigenous land trust; the return is its own report, and it does not say whether the land was a gift or a sale."
 confidence: "medium"
 cautions: "The return is reported by PFT itself; no outside document was read. Whether the transfer was a gift or a sale is not stated. The record's figure of '20 years' of PFT stewardship was not confirmed. The record dates the return December 2025; PFT's post (dated Dec 18, 2025) says the transfer was completed in November 2025."
 sources: [{"url": "https://www.pacificforest.org/returning-yosemite-to-ssmn/", "title": "Returning a piece of Yosemite to the Southern Sierra Miwuk Nation", "quote": "the nearly 900-acre property has now been returned to the Southern Sierra Miwuk Nation"}, {"url": "https://www.pacificforest.org/returning-yosemite-to-ssmn/", "title": "Returning a piece of Yosemite to the Southern Sierra Miwuk Nation", "quote": "This transfer, completed in November 2025 with funding from the California Natural Resources Agency Tribal Nature-Based Solutions Program"}, {"url": "https://www.pacificforest.org/pft-partners-with-the-southern-sierra-miwuk-nation/", "title": "PFT Partners with the Southern Sierra Miwuk Nation", "quote": "an ongoing pursuit since 1982"}, {"url": "https://www.pacificforest.org/about-us/staff/", "title": "Pacific Forest Trust Staff", "quote": "Laurie A. Wayburn , Co-founder and President"}, {"url": "https://projects.propublica.org/nonprofits/organizations/680292509", "title": "ProPublica Nonprofit Explorer: Pacific Forest Trust", "quote": "Tax exemption issued: Sept. 1993 EIN: 68-0292509"}]
@@ -14,4 +15,4 @@ PFT's own blog reports a land return. The nearly 900-acre Henness Ridge property
 
 The post quotes Sandra Chapman, Tribal Council Chair of the Nation, calling the land "a sanctuary for our people." PFT says it supports the Nation's effort to gain federal recognition, which PFT says the Nation has pursued since 1982.
 
-The pages read do not say whether the transfer was a gift or a sale to the Nation, or what the Nation paid.
+The sources here do not say whether the transfer was a gift or a sale to the Nation, or what the Nation paid.

@@ -16,6 +16,19 @@ const f = (label: string, raw: unknown, extra: Partial<Fact> = {}): Fact | null 
   return text ? { label, value: text, flags, ...extra } : null;
 };
 
+const CAMPAIGN_STATUS: Record<string, string> = {
+  completed: 'Returned',
+  'completed-pending-deed': 'Returned; deed pending',
+  'in-progress': 'In progress',
+  pending: 'Pending',
+  blocked: 'Blocked',
+  contested: 'Contested',
+  'ongoing-claim': 'Claim ongoing',
+  'program-ongoing': 'Ongoing program',
+  'program-concluded': 'Program ended',
+  'headline-only': 'Reported; details thin',
+};
+
 const RATIFIED: Record<string, string> = {
   ratified: 'Ratified',
   unratified: 'Not ratified',
@@ -89,17 +102,17 @@ export function factsFor(n: Node): Fact[] {
       ].filter(Boolean) as Fact[];
     case 'GeoFeature':
       return [
-        f('Royce cession number', n['royce_cession_number']),
+        f('Area number in the 1899 record', n['royce_cession_number']),
         f(
-          'Dates in Royce’s Schedule',
+          'Dates in the 1899 record',
           ((n['dates'] as { date: string }[]) ?? []).map((d) => d.date),
         ),
         f('Kind of instrument', LEGAL_TYPE[String(n['legal_type'])]),
-        f('Tribes as named by Royce', n['tribes_as_named_in_schedule']),
+        f('Peoples as named in the 1899 record', n['tribes_as_named_in_schedule']),
         f('States', n['states']),
         f('Counties', n['counties']),
         f(
-          'Royce map sheets',
+          'Map sheets in the 1899 record',
           ((n['maps'] as { name: string }[]) ?? []).map((m) => m.name),
         ),
         f(
@@ -149,9 +162,18 @@ export function factsFor(n: Node): Fact[] {
       return [
         f('Nation', n['nation_text']),
         f('Where', n['location_text']),
-        f('Acres', n['acres']),
+        f(
+          'Acres',
+          typeof n['acres'] === 'number'
+            ? Math.round(n['acres']).toLocaleString('en-US')
+            : n['acres'],
+        ),
         f('Began', n['start_year']),
-        f('Status', String(n['campaign_status'] ?? '').replace(/-/g, ' ')),
+        f(
+          'Status',
+          CAMPAIGN_STATUS[String(n['campaign_status'])] ??
+            String(n['campaign_status'] ?? '').replace(/-/g, ' '),
+        ),
       ].filter(Boolean) as Fact[];
     case 'PolicyEra':
       return [

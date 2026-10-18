@@ -3,6 +3,7 @@ id: "TLA-T-211"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1836 the Ioway and Missouri Sac and Fox ceded the strip between Missouri and the Missouri River for $7,500 and a 400-section tract."
+note: "The treaty itself states no acreage; the figure of about 3,150 square miles comes from ICT News."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession for a money present and an assigned tract, signed by Clark and the chiefs, warriors and counsellors, with no coercion stated."
 confidence: "medium"

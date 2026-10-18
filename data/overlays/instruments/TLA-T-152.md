@@ -3,6 +3,7 @@ id: "TLA-T-152"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1828 the Western Cherokee gave up their Arkansas lands for seven million acres farther west, a guaranteed outlet and payments."
+note: "The reasons given, an unfavorable location and avoiding future removal costs, are the treaty's own framing."
 how: "removal"
 how_basis: "Article 7 has the Cherokee surrender their Arkansas lands and leave within fourteen months in exchange for land farther west, so it sets a removal."
 confidence: "high"

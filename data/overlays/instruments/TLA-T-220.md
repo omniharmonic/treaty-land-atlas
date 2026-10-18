@@ -3,6 +3,7 @@ id: "TLA-T-220"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1837 the Chickasaw agreed with the Choctaw to form a district within the Choctaw Nation, paying $530,000."
+note: "This was an agreement between the Chickasaw and Choctaw nations, not a cession of land to the United States."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a convention agreed between Choctaw commissioners and a Chickasaw delegation, with payment by the Chickasaws and no coercion stated."
 confidence: "medium"

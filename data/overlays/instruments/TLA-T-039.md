@@ -3,6 +3,7 @@ id: "TLA-T-039"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1803 the Choctaw and the United States fixed the line between ceded and unceded land near the Tombigbee River."
+note: "The goods receipt was signed by Choctaw leaders living on the Tombigbee, not by the whole nation."
 how: "treaty_negotiated"
 how_basis: "The text records both sides' commissioners fixing a line and a signed receipt for goods; it describes no pressure."
 confidence: "medium"
@@ -16,4 +17,4 @@ The commissioners ratified and confirmed the line as the boundary between the la
 
 A second receipt is signed by Choctaw commissioners and chiefs who live on the Tombigby. It acknowledges receiving from the United States, by General Wilkinson, "a consideration in full" for confirming the concession: fifteen pieces of strouds, three rifles, 150 blankets, 250 pounds of powder, 250 pounds of lead, a bridle, a man's saddle and a black silk handkerchief.
 
-The page lists a proclamation on 26 December 1803. The earlier Fort Confederation convention was not opened, and neither the acreage nor the Choctaw view of the line is stated.
+The page lists a proclamation on 26 December 1803. The terms of the earlier Fort Confederation convention are not described here, and neither the acreage nor the Choctaw view of the line is stated.

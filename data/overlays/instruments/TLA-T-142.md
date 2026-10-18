@@ -3,6 +3,7 @@ id: "TLA-T-142"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 6 October 1825 at Fort Atkinson, a tribe the text calls the Maha acknowledged United States supremacy and agreed to licensed trade."
+note: "Some databases label this a treaty with the Makah, but the text names the Maha tribe; which present-day nation is meant is unresolved."
 how: "treaty_negotiated"
 how_basis: "The text says the treaty was made to perpetuate friendship and regulate trade; it describes no pressure beyond the stated hostilities."
 confidence: "medium"

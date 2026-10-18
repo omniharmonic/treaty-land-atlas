@@ -3,6 +3,7 @@ id: "org-cultural-fire-management-council"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Cultural Fire Management Council, a Yurok community nonprofit, organizes cultural burning on the Yurok Reservation and ancestral lands in northern California."
+note: "This group organizes cultural burning and does not hold land title. Its Donate button goes to Every.org, a third-party platform, so check the payee there."
 confidence: "medium"
 cautions: "Stewardship and cultural fire, not land title. ProPublica lists Hoopa, CA while the site header says Weitchpec; not reconciled. The Donate button goes to Every.org, a third-party platform, and its payee was not confirmed. Described as Yurok-focused; whether staff and board are Yurok citizens was not stated on the pages read."
 sources: [{"url": "https://www.culturalfire.org/", "title": "Cultural Fire Management Council - Home", "quote": "The mission of the Cultural Fire Management Council (CFMC) is to facilitate the practice of cultural burning on the Yurok Reservation and Ancestral lands"}, {"url": "https://www.culturalfire.org/about", "title": "Cultural Fire Management Council - About", "quote": "Margo Robbins, Executive Director"}, {"url": "https://www.culturalfire.org/about", "title": "Cultural Fire Management Council - About", "quote": "Ron Reed President"}, {"url": "https://www.culturalfire.org/", "title": "Cultural Fire Management Council - Home", "quote": "CALFIRE has suspended burning in Humboldt county as of June 15, 2026."}, {"url": "https://projects.propublica.org/nonprofits/organizations/475001679", "title": "ProPublica Nonprofit Explorer - Cultural Fire Management Council", "quote": "Tax exemption issued: Sept. 2015"}]
@@ -14,4 +15,4 @@ CFMC's stated mission is "to facilitate the practice of cultural burning on the 
 
 The site lists programs including family burns, a Training Exchange (TREX), a fuels reduction program, cooperative burns, plant studies and workshops. It also links to a "Yurok Cultural Fire Stewardship Plan." A notice on the site says Sudden Oak Death on the upper reservation means no fall Training Exchange this year, and that CAL FIRE suspended burning in Humboldt County as of June 15, 2026.
 
-CFMC works on stewardship and land management, not title. This record found no land returned to or acquired by CFMC.
+CFMC works on stewardship and land management, not title. The sources here describe no land returned to or acquired by CFMC.

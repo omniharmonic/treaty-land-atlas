@@ -81,6 +81,8 @@ export interface CessionStory {
   /** what each of Royce's entries did, from the Schedule (crosswalks/royce-entry-roles.csv) */
   entries?: { date: string; role: string; instrument: string | null; quote: string }[];
   royce_summary?: string;
+  /** the same summary in plain words for readers (crosswalks/royce-area-plain.csv) */
+  plain?: string;
 }
 
 interface RoyceRole {
@@ -113,6 +115,12 @@ export function cessionStories(
   const byId = new Map(graph.nodes.map((n) => [n.id, n]));
   const out = new Map<string, CessionStory>();
   const roles = royceRoles();
+  const plainFile = join(DATA_DIR, '..', 'crosswalks', 'royce-area-plain.csv');
+  const plain = new Map(
+    existsSync(plainFile)
+      ? readCsv(plainFile).rows.map((x) => [String(x.record['id']), String(x.record['plain'])])
+      : [],
+  );
   const cells = JSON.parse(
     readFileSync(join(DATA_DIR, 'derived', 'cession-cells.json'), 'utf8'),
   ) as Cells;
@@ -175,6 +183,7 @@ export function cessionStories(
               quote: r.quote,
             })),
             royce_summary: roleRows[0]!.summary,
+            ...(plain.get(g.id) ? { plain: plain.get(g.id) } : {}),
           }
         : {}),
     });

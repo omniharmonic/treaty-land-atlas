@@ -3,6 +3,7 @@ id: "TLA-T-249"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1846 the Winnebago ceded all lands they claimed for $190,000 and a promised home of at least 800,000 acres."
+note: "MNopedia calls October 13, 1846 the ratification date, but that is the signing date; the treaty was proclaimed February 4, 1847. The 800,000-acre home was promised only if land could be had on just and reasonable terms."
 how: "removal"
 how_basis: "Article 5 of the treaty text requires removal to the new home, and MNopedia records the 1848 removal to Long Prairie."
 confidence: "high"

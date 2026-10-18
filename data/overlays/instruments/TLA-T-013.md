@@ -3,6 +3,7 @@ id: "TLA-T-013"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Hopewell in 1786 the Chickasaw accepted U.S. protection and a boundary for their lands, with one trading post reserved at Muscle Shoals."
+note: "The boundary follows lands the Chickasaw claimed on November 29, 1782, so the exact line is hard to map from the text alone."
 how: "treaty_negotiated"
 how_basis: "The OSU text lists Chickasaw leaders as commissioners plenipotentiary and the Mississippi Encyclopedia describes a council in which the three leaders presented tokens of friendship and made their marks."
 confidence: "medium"

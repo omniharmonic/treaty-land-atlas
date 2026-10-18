@@ -3,6 +3,7 @@ id: "org-bears-ears-partnership"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Bears Ears Partnership, a Bluff, Utah nonprofit formerly called Friends of Cedar Mesa, runs conservation, education and visitor-ethics programs in the Bears Ears region."
+note: "An allied conservation group that holds and returns no land. Its legal name is Friends of Cedar Mesa, which is the name to use for donor-advised fund gifts."
 confidence: "medium"
 cautions: "This is an allied (not described as Native-led) organization; it holds and returns no land. The legal name on IRS records is Friends of Cedar Mesa, which matches the site. Staff and board tribal affiliations were not stated on the pages read. Donor advised fund gifts should name \"Friends of Cedar Mesa, DBA Bears Ears Partnership\"."
 sources: [{"url": "https://www.bearsearspartnership.org/about-us/mission-and-work", "title": "Bears Ears Partnership - Mission and Work", "quote": "Bears Ears Partnership cultivates durable and effective partnerships to protect the cultural and ecological resources of the Bears Ears region."}, {"url": "https://www.bearsearspartnership.org/about-us/mission-and-work", "title": "Bears Ears Partnership - Mission and Work", "quote": "Supporting Indigenous collaborative management through technical expertise, local knowledge, and visitation to cultural sites"}, {"url": "https://www.bearsearspartnership.org/about-us/staff-board", "title": "Bears Ears Partnership - Staff and Board", "quote": "Joe Neuhof Executive Director"}, {"url": "https://www.bearsearspartnership.org/donate-now", "title": "Bears Ears Partnership - Donate", "quote": "Bears Ears Partnership is a registered 501(c)3 nonprofit corporation. Our EIN is 35-2426283."}, {"url": "https://projects.propublica.org/nonprofits/organizations/352426283", "title": "ProPublica Nonprofit Explorer - Friends Of Cedar Mesa", "quote": "Tax exemption issued: Dec. 2012"}]
@@ -14,4 +15,4 @@ BEP says its mission is to "cultivate durable and effective partnerships to prot
 
 BEP does not claim to hold or return land. Its own text says it supports Indigenous collaborative management through technical expertise, local knowledge and visitation to cultural sites. Its staff and board pages list Carleton Bowekaty as senior policy director and Joe Neuhof as executive director. The pages do not say whether the leadership is Native-led.
 
-BEP's news page lists a post titled "What Comes After Bears Ears Monument Reduction," dated July 31, 2026. This record did not read it.
+BEP's news page lists a post titled "What Comes After Bears Ears Monument Reduction," dated July 31, 2026.

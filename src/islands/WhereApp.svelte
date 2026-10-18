@@ -151,7 +151,7 @@
     unratified: 'under a treaty the Senate never ratified',
     congress: 'by act of Congress',
     executive: 'by executive order',
-    unknown: 'by means Royce does not state',
+    unknown: 'by means the record does not state',
   };
   // the earliest taking here; areas Royce records as kept reservations are told separately
   const first = $derived(report?.cessions.find((c) => c.status !== 'kept') ?? null);
@@ -194,7 +194,7 @@
           )}{firstNations ? `, taken from the ${firstNations}` : ''}.
         {:else if first}
           The United States recorded this land as ceded in {first.year}, {HOW_PHRASE[first.how] ??
-            'by means Royce does not state'}{firstNations ? `, from the ${firstNations}` : ''}.
+            'by means the record does not state'}{firstNations ? `, from the ${firstNations}` : ''}.
         {:else}
           Royce’s maps of cessions do not cover this place.
         {/if}

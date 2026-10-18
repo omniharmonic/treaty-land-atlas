@@ -16,4 +16,4 @@ In Article 1 they ceded "their title and interest to lands in the States of Indi
 
 In Article 4 the United States agreed to pay $15,000 a year for twelve years, and $32,000 in goods soon after signing. It also agreed to pay $10,000 in goods the next spring at Notta-wa-si-pa, to be paid to that band and used to pay their just debts. Those debts, listed in a schedule, amounted to $20,721. It promised $2,000 a year for educating Indian youths for as long as Congress thought proper.
 
-The Statutes at Large record a proclamation on January 21, 1833. The treaty page does not describe the negotiation, and no source opened here covers later events.
+The Statutes at Large record a proclamation on January 21, 1833. The treaty page does not describe the negotiation, and no source here here covers later events.

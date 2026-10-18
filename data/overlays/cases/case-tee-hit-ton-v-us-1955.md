@@ -3,6 +3,7 @@ id: "case-tee-hit-ton-v-us-1955"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1955 the Court held that Alaska Natives' unrecognized land occupancy could be taken without Fifth Amendment compensation."
+note: "The acreage is the Tee-Hit-Tons' claim, not a court finding."
 confidence: "high"
 cautions: "The page says Justices Warren and Frankfurter joined the dissent; the opened pages confirm a dissent by Justice Douglas but this was not checked for joiners. The claimed acreage is the Tee-Hit-Tons' claim, not a finding."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep348/usrep348272/usrep348272.pdf", "title": "Tee-Hit-Ton Indians v. United States, 348 U.S. 272 (1955) (U.S. Reports, Library of Congress)", "quote": "Permissive Indian occupancy may be extinguished by Congress in its own discretion without compensation."}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep348/usrep348272/usrep348272.pdf", "title": "Tee-Hit-Ton Indians v. United States, 348 U.S. 272 (1955) (U.S. Reports, Library of Congress)", "quote": "Indian occupancy, not specifically recognized as ownership by action authorized by Congress, may be extinguished by the Government without compensation."}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep348/usrep348272/usrep348272.pdf", "title": "Tee-Hit-Ton Indians v. United States, 348 U.S. 272 (1955) (U.S. Reports, Library of Congress)", "quote": "an identifiable group of American Indians belonging to the Tlingit Tribe of Alaskan Indians"}]

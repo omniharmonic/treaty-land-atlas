@@ -1,0 +1,245 @@
+---
+// Where a land return is, on the map of the land taken: the returned land's approximate location
+// (crosswalks/return-locations.csv, sourced), the recorded cession it falls inside, and the two
+// sizes side by side. The "inside" claim is made only when the location is the site itself or its
+// town; county- and region-level points (used to keep sacred places unmarked) only place a dot.
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { node, pathFor, type Node } from '../lib/graph';
+import { href } from '../lib/href';
+import { contains } from '../lib/where';
+import { acresText, areaNumber, areaStories } from '../lib/land';
+import LandShape from './LandShape.astro';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+type Loc = {
+  lat: string;
+  lng: string;
+  precision: string;
+  place: string;
+  basis_url: string;
+  note: string;
+};
+const csv = readFileSync(join(process.cwd(), 'crosswalks', 'return-locations.csv'), 'utf8');
+const parse = (line: string) =>
+  [...line.matchAll(/("([^"]|"")*"|[^,]*)(,|$)/g)]
+    .map((m) => m[1]!.replace(/^"|"$/g, '').replace(/""/g, '"'))
+    .slice(0, 7);
+const rows = csv.trim().split('\n');
+const head = parse(rows[0]!);
+const loc = rows
+  .slice(1)
+  .map((r) => Object.fromEntries(parse(r).map((v, i) => [head[i], v])) as Loc & { id: string })
+  .find((r) => r.id === n.id);
+const lat = Number(loc?.lat);
+const lng = Number(loc?.lng);
+const placed = !!loc && Number.isFinite(lat) && Number.isFinite(lng) && loc.lat !== '';
+const exact = placed && ['site', 'locality'].includes(loc!.precision);
+
+type F = {
+  properties: { id: string };
+  geometry: { type: 'Polygon' | 'MultiPolygon'; coordinates: never };
+};
+const stories = areaStories();
+let within: {
+  id: string;
+  year: number | null;
+  status: string;
+  acres: number;
+  by: string | null;
+}[] = [];
+if (exact) {
+  const fc = JSON.parse(
+    readFileSync(join(process.cwd(), 'data', 'derived', 'cessions.json'), 'utf8'),
+  ) as { features: F[] };
+  within = fc.features
+    .filter((f) => contains(f as never, lng, lat))
+    .map((f) => {
+      const s = stories[f.properties.id];
+      return {
+        id: f.properties.id,
+        year: s?.ceded_year ?? null,
+        status: s?.status ?? 'unchecked',
+        acres: s?.acres ?? 0,
+        by: s?.instrument ?? null,
+      };
+    })
+    .sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999));
+}
+// the most recent taking is the one a return answers; a kept reservation around it matters too
+const taken = [...within].reverse().find((w) => w.status !== 'kept' && w.year) ?? null;
+const keptArea = within.find((w) => w.status === 'kept');
+const keptNode = keptArea ? node(keptArea.id) : null;
+const unratified = taken ? stories[taken.id]?.how === 'unratified' : false;
+const takenNode = taken ? node(taken.id) : null;
+const byNode = taken?.by ? node(taken.by) : null;
+const acres = Number(n['acres'] ?? 0);
+const done = ['completed', 'completed-pending-deed'].includes(String(n['campaign_status']));
+// side of each square in the size comparison, in percent of the larger
+const side = taken?.acres && acres ? Math.max(0.6, Math.sqrt(acres / taken.acres) * 100) : null;
+---
+
+{placed && (
+  <section class="return-land" aria-labelledby="rl-h">
+    <h2 id="rl-h">Where the land is</h2>
+    <div class="rl-grid">
+      <LandShape
+        ids={[taken?.id, keptArea?.id].filter((x): x is string => !!x)}
+        fills={keptArea ? { [keptArea.id]: '#6f8a5a' } : {}}
+        tone="lost"
+        point={{ lon: lng, lat, label: loc!.place }}
+        label={`Map: ${loc!.place}${takenNode ? `, inside ${takenNode.label}` : ''}.`}
+      >
+        <figcaption>
+          {loc!.place}. {exact ? 'Location approximate.' : 'Only the general area is shown.'}
+        </figcaption>
+      </LandShape>
+      <div class="rl-text">
+        {taken && takenNode ? (
+          <p class="big">
+            {done ? 'This land was returned' : 'This land is'} inside{' '}
+            <a href={href(pathFor(takenNode) ?? '/')}>{takenNode.label}</a>
+            {byNode && unratified ? (
+              <>
+                , which the United States treated as ceded under{' '}
+                <a href={href(pathFor(byNode) ?? '/')}>{byNode.label}</a>, a treaty the Senate never
+                ratified.
+              </>
+            ) : byNode ? (
+              <>
+                ,{' '}
+                {taken.status === 'unchecked'
+                  ? 'recorded as ceded by'
+                  : 'which left Native hands by'}{' '}
+                <a href={href(pathFor(byNode) ?? '/')}>{byNode.label}</a>.
+              </>
+            ) : (
+              '.'
+            )}
+            {keptNode && (
+              <>
+                {' '}
+                It also lies inside <a href={href(pathFor(keptNode) ?? '/')}>{keptNode.label}</a>,
+                land the 1899 record shows the nation kept.
+              </>
+            )}
+          </p>
+        ) : exact ? (
+          <p class="big">
+            This land lies outside the 1899 federal record of land cessions, which begins in 1784.
+            Much of the land in the East was taken earlier, by colonies and states.
+          </p>
+        ) : (
+          <p class="big">
+            The map marks only the general area, so this page does not say which recorded cession
+            the land falls in.
+          </p>
+        )}
+        {side && taken && (
+          <figure
+            class="scale"
+            aria-label={`Size comparison: ${acresText(acres)} ${done ? 'returned' : 'sought'}, against ${acresText(taken.acres)} recorded as ceded in area ${areaNumber(taken.id)}.`}
+          >
+            <div class="squares">
+              <span class="sq big-sq" />
+              <span class="sq small-sq" style={`width: ${side}%; height: ${side}%`} />
+            </div>
+            <figcaption>
+              <span>
+                <i class="k-ret" />
+                {acresText(acres)} {done ? 'returned' : 'sought'}
+              </span>
+              <span>
+                <i class="k-ced" />
+                {acresText(taken.acres)} ceded in {taken.year}
+              </span>
+            </figcaption>
+          </figure>
+        )}
+        <p class="src">
+          Location from{' '}
+          <a href={loc!.basis_url} rel="noopener">
+            {new URL(loc!.basis_url).hostname.replace(/^www\./, '')}
+          </a>
+          {loc!.note && !/sacred|burial/i.test(loc!.note) ? `; ${loc!.note}` : ''}.
+        </p>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .return-land {
+    margin: var(--space-6) 0;
+  }
+  .rl-grid {
+    display: grid;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  @media (min-width: 720px) {
+    .rl-grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    }
+  }
+  .big {
+    font-size: var(--s1);
+    line-height: 1.4;
+    margin-top: 0;
+  }
+  .scale {
+    margin: var(--space-5) 0;
+  }
+  .squares {
+    position: relative;
+    width: min(100%, 220px);
+    aspect-ratio: 1;
+  }
+  .sq {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+  }
+  .big-sq {
+    width: 100%;
+    height: 100%;
+    background: #9d6b4b;
+    opacity: 0.8;
+  }
+  .small-sq {
+    background: var(--data-return);
+    outline: 2px solid var(--sheet);
+    min-width: 4px;
+    min-height: 4px;
+  }
+  .scale figcaption {
+    display: grid;
+    gap: 4px;
+    margin-top: var(--space-3);
+    font-family: var(--sans);
+    font-size: var(--s-1);
+  }
+  .scale i {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: -0.05rem;
+  }
+  .k-ret {
+    background: var(--data-return);
+  }
+  .k-ced {
+    background: #9d6b4b;
+  }
+  .src {
+    font-family: var(--sans);
+    font-size: var(--s-2);
+    color: var(--ink-2);
+  }
+</style>

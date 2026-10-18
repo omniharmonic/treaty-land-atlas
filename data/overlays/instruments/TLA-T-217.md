@@ -3,8 +3,9 @@ id: "TLA-T-217"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Bellevue in 1836, the Oto, Missouria, Omaha and two Sioux bands ceded land south of a line west from Missouri's northwest corner."
+note: "The treaty page's side heading says $4,500, but the text of Article 2 says $4,520."
 how: "treaty_negotiated"
-how_basis: "The text records a convention with the named chiefs and head men, signed with marks; no source opened shows pressure."
+how_basis: "The text records a convention with the named chiefs and head men, signed with marks; no source shows pressure."
 confidence: "high"
 cautions: "Only the treaty text was used; it does not say what happened to the land or people afterward, so this story stops at the signed terms. The page's side heading says $4,500 but Article 2's text says $4,520; the text was followed. The article numbering on the page skips from Article 3 to Article 5."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oto-etc-1836-0479", "title": "Tribal Treaties Database (Oklahoma State University): Oto, Missouri, Omaha, and Sioux (Yankton and Santee Bands) at Bellevue, Upper Missouri (1836)", "quote": "for ever cede relinquish and quit claim to the United States all our right title and interest of whatsoever nature"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oto-etc-1836-0479", "title": "Tribal Treaties Database (Oklahoma State University): Oto, Missouri, Omaha, and Sioux (Yankton and Santee Bands) at Bellevue, Upper Missouri (1836)", "quote": "the sum of four thousand five hundred and twenty dollars in merchandise"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oto-etc-1836-0479", "title": "Tribal Treaties Database (Oklahoma State University): Oto, Missouri, Omaha, and Sioux (Yankton and Santee Bands) at Bellevue, Upper Missouri (1836)", "quote": "shall be furnished at the expense of the United States with five hundred bushels of corn"}]

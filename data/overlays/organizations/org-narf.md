@@ -3,6 +3,7 @@ id: "org-narf"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Native American Rights Fund, a nonprofit law firm in Boulder, Colorado, has litigated tribal sovereignty, treaty and resource cases since 1970."
+note: "A nonprofit law firm, not a land-return group. Its description of its case record is its own."
 confidence: "medium"
 cautions: "Case results are NARF's own descriptions; its \"hundreds of major cases\" is a self-description. The online giving form (secure.narf.org) returned no readable content to the record's earlier check; confirm it directly. The Executive Director's title is shown in a photo caption on the board page. Not a land-return organization."
 sources: [{"url": "https://narf.org/about-us/", "title": "NARF - About Us", "quote": "Since 1970, the Native American Rights Fund (NARF) has provided legal assistance to Native American Tribal Nations"}, {"url": "https://narf.org/about-us/", "title": "NARF - About Us", "quote": "NARF is governed by a volunteer board of directors composed of 13 Native Americans from different Tribes"}, {"url": "https://narf.org/about-us/board-of-directors/", "title": "NARF - Board of Directors", "quote": "Board Chair: Rebecca Crooks-Stratton"}, {"url": "https://narf.org/cases/", "title": "NARF - Cases and Projects", "quote": "Bay Mills Indian Community fights a proposed oil pipeline tunnel"}, {"url": "https://projects.propublica.org/nonprofits/organizations/840611876", "title": "ProPublica Nonprofit Explorer - Native American Rights Fund", "quote": "Tax exemption issued: July 1971"}]

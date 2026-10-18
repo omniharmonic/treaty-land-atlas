@@ -3,6 +3,7 @@ id: "TLA-T-088"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 25 June 1817 at St. Louis, Ponca leaders made peace with the United States and accepted its protection."
+note: "The proclamation date printed as 1877 is very likely a typo for 1817, the date given for other treaties in the same series."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "medium"

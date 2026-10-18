@@ -16,4 +16,4 @@ The preamble says "a serious dispute" had for some time existed over the right t
 
 In Article 2 the United States delivered "a considerable quantity of merchandise" and agreed to pay goods worth $1,000 a year for twelve years. It also relinquished "to the said tribes" the part of the 1804 Sauk and Fox cession north of that line. It excepted three leagues square at the mouth of the Wisconsin River and other tracts of up to five leagues square in all.
 
-The treaty text does not say how the dispute was resolved beyond these terms. The sources opened give no acreage and describe no later events.
+The treaty text does not say how the dispute was resolved beyond these terms. The sources here give no acreage and describe no later events.

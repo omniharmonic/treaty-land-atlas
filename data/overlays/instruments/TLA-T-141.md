@@ -3,6 +3,7 @@ id: "TLA-T-141"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 30 September 1825 at Fort Atkinson, Pawnee leaders acknowledged United States supremacy and agreed to licensed trade."
+note: "The promised protection and benefits were left to what the President found \"convenient\" and \"just and proper\", and the text gives only the U.S. commissioners' view."
 how: "treaty_negotiated"
 how_basis: "The text says the treaty was made to perpetuate friendship and regulate trade; it describes no pressure beyond the stated hostilities."
 confidence: "high"

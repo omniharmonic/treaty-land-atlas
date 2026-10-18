@@ -3,6 +3,7 @@ id: "TLA-T-086"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 30 March 1817 at St. Louis, the Menominee made peace with the United States and confirmed earlier cessions to Britain, France and Spain."
+note: "The treaty does not describe the earlier cessions to Britain, France and Spain that it confirms."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "high"

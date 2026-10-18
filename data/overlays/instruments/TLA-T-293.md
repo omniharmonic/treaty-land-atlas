@@ -3,6 +3,7 @@ id: "TLA-T-293"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In June 1855 the Warm Springs and Wasco bands ceded their Columbia River country for a reservation, now 644,000 acres."
+note: "The 644,000 acres is the reservation's present size. Other sources give 578,000 acres for the original reservation and a ratification date of March 8 or April 18, 1859."
 how: "treaty_negotiated"
 how_basis: "The treaty text and the Oregon Blue Book describe a negotiated cession for a reservation and payment; no source I read describes coercion at this treaty."
 confidence: "high"

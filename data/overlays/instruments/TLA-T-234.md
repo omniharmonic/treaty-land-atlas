@@ -3,6 +3,7 @@ id: "TLA-T-234"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1838 the Miami ceded land south of the Wabash and four reservations for $335,680; a Miami blog notes rising pressure."
+note: "The account of rising pressure is the Myaamia Center's, a Miami community source. The 1838 treaty itself does not require removal."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated cession with payments and debt provisions at the tribe's request; the Myaamia Center blog describes growing pressure but not coercion at the 1838 signing."
 confidence: "medium"

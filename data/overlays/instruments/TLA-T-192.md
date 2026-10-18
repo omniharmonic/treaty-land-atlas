@@ -3,6 +3,7 @@ id: "TLA-T-192"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1834 the Miami ceded several Indiana reserves for $208,000, of which $50,000 went to pay the tribe's debts."
+note: "The payment schedule follows a printing that combines the 1834 text with the 1837 Senate amendment and Miami assent; the original statute words the payment terms differently."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession for a stated payment and improvements, signed by a commissioner and the chiefs and warriors, with no coercion described."
 confidence: "high"

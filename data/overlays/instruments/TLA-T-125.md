@@ -3,6 +3,7 @@ id: "TLA-T-125"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1825 Indian Springs treaty ceded all Creek land in Georgia and part of Alabama; a 1826 treaty declared it null and void."
+note: "The claim that about half the $400,000 would go to McIntosh and his friends, and the three million acre Alabama figure, come from the Encyclopedia of Alabama, not the treaty."
 how: "treaty_under_pressure"
 how_basis: "The Encyclopedia of Alabama describes bribery of McIntosh and a majority of chiefs objecting to his authority, and the 1826 treaty text says the 1825 treaty was signed by persons without sufficient authority."
 confidence: "high"

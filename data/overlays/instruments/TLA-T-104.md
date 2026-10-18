@@ -3,6 +3,7 @@ id: "TLA-T-104"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At St. Mary's in 1818 the Miami ceded a large tract, kept reservations, and were promised a perpetual $15,000 annuity and mills."
+note: "Agents' letters proposed an inducement for the Miami leader Richardville; whether any was paid is not confirmed, though the treaty grants him land."
 how: "treaty_under_pressure"
 how_basis: "The Myaamia Center blog quotes agents proposing to bribe chief Richardville and describes pressure on the Miami to sell before losing the land by other means."
 confidence: "high"

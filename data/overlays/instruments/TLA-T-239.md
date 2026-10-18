@@ -3,6 +3,7 @@ id: "TLA-T-239"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1840 the Miami ceded all their remaining Indiana land for $550,000, mostly to pay debts, and agreed to move west within five years."
+note: "The account of why the Miami National Council agreed comes from the Myaamia Center, a Miami community source."
 how: "removal"
 how_basis: "Article 8 of the treaty text requires the Miami to remove west of the Mississippi within five years; the Myaamia Center blog describes pressure to agree to Removal."
 confidence: "medium"

@@ -15,5 +15,3 @@ This is not a treaty. It is a file of papers sent to Congress with three 1825 tr
 According to the Archives' description, the file includes letters from the Secretary of War appointing William Clark to open negotiations with the Osage and Kansa and to relocate the Shawnee, a report from Henry Atkinson and Benjamin O'Fallon on commissioners' proceedings, and a hand-drawn map of the country ceded by the Osage and Kansa. It also holds Shawnee and Delaware papers, including a talk to the President and a letter asking that public sale of land granted to them be suspended.
 
 The three treaties it accompanied are on the Oklahoma State database. On 2 June 1825 at St. Louis, the Osage ceded lands in Missouri and what was then Arkansas Territory and west of them, kept a reserved tract, and were promised seven thousand dollars a year for twenty years. On 3 June the Kansa ceded their Missouri lands and others to its west, kept a reserve, and were promised 3,500 dollars a year for twenty years. On 7 November the Shawnee gave up a tract near Cape Girardeau for fifty miles square west of Missouri.
-
-The papers inside the file were not opened for this entry.

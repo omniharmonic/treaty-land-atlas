@@ -3,8 +3,9 @@ id: "TLA-T-344"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Two Kettles Sioux treaty of October 1865 paid $6,000 a year to leave overland routes and $1,000 for a chief killed by soldiers."
+note: "This treaty ceded no land."
 how: "treaty_negotiated"
-how_basis: "The text records a treaty made by U.S. commissioners with the band's chiefs and head-men, 'read, interpreted, and explained' to them and signed with marks; no source opened shows pressure."
+how_basis: "The text records a treaty made by U.S. commissioners with the band's chiefs and head-men, 'read, interpreted, and explained' to them and signed with marks; no source shows pressure."
 confidence: "high"
 cautions: "Only the treaty text was used; it does not say what happened afterward (including later treaties), so this story stops at the signed terms. The text shows no cession of land."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-two-kettle-band-1865-0896", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Two Kettles) at Fort Sully, Dakota Territory (1865)", "quote": "shall withdraw from the routes overland already established, or hereafter to be established, through their country"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-two-kettle-band-1865-0896", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Two Kettles) at Fort Sully, Dakota Territory (1865)", "quote": "Soldiers in the United States service having killed Ish-tah-chah-ne-aha, (Puffing Eyes,) a friendly chief of the Two-Kettles band"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-two-kettle-band-1865-0896", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Two Kettles) at Fort Sully, Dakota Territory (1865)", "quote": "they shall be entitled to a farmer and blacksmith, at the expense of the Government, also teachers"}]

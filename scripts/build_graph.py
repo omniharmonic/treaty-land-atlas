@@ -896,6 +896,40 @@ def add_successor_research_edges(cross):
                    successor_status="disputed" if r["disputed"] == "true" else "unreviewed")
 
 
+STATE_NAMES = {
+    "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado",
+    "CT": "Connecticut", "DE": "Delaware", "FL": "Florida", "GA": "Georgia", "ID": "Idaho", "IL": "Illinois",
+    "IN": "Indiana", "IA": "Iowa", "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine",
+    "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi",
+    "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey",
+    "NM": "New Mexico", "NY": "New York", "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio",
+    "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina",
+    "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VT": "Vermont", "VA": "Virginia",
+    "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming",
+}
+
+
+def and_list(xs):
+    return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1]
+
+
+def area_label(ev, rr, first):
+    """A plain name for a Royce area: whose land it was recorded as, where, and what happened to it.
+    'Blackfoot land in Montana, ceded 1874 (area 574)'. The number is Royce's, for citation."""
+    tribes = ev["tribes_as_named_in_schedule"] or []
+    who = (and_list(tribes) if len(tribes) <= 2 else f"{tribes[0]}, {tribes[1]} and others") if tribes else ""
+    states = [STATE_NAMES.get(s, s) for s in ev["states"] or []]
+    where = f" in {and_list(states)}" if 0 < len(states) <= 3 else (" in several states" if states else "")
+    num = ev["cessnum"]
+    if rr and rr["status"] == "kept":
+        return (f"Reservation of the {who}" if who else "Reservation land") + f"{where} (area {num})"
+    head = (f"Land of the {who}" if who else "Native land") + where
+    when = (rr["ceded_by"] or rr["taken_by"]) if rr else None
+    if when:
+        return f"{head}, {'taken' if rr['status'] == 'taken' else 'ceded'} {when[:4]} (area {num})"
+    return f"{head}, recorded {first[:4]} (area {num})" if first else f"{head} (area {num})"
+
+
 # --- Royce cessions as GeoFeatures (J5 P1-09, P1-10) ----------------------------------
 CESSION_EVENTS = ROOT / "data" / "derived" / "cession-events.json"
 
@@ -924,11 +958,7 @@ def build_geofeatures(cross, alias_index):
         missing = ev["geometry_quality"] == "missing"
         first = ev["dates"][0]["date"] if ev["dates"] else None
         rr = royce.get(gid)
-        if rr and rr["status"] == "kept":
-            label = f"Royce area {ev['cessnum']} (reservation)"
-        else:
-            when = (rr["ceded_by"] or rr["taken_by"]) if rr else first
-            label = f"Royce cession {ev['cessnum']}" + (f" ({when})" if when else "")
+        label = area_label(ev, rr, first)
         G.add_node("GeoFeature", gid, label,
                    "data/derived/cession-events.json", ev["cessnum"], "medium", "levels",
                    {"geometry_role": "reservation" if rr and rr["status"] == "kept" else "cession",

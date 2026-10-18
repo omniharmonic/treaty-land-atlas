@@ -3,6 +3,7 @@ id: "TLA-T-322"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In March 1863 the Mississippi, Pillager and Lake Winnibigoshish Chippewa ceded six Minnesota reservations for a new reservation and extended annuities."
+note: "\"Depredations\" is the treaty's own word for the 1862 events."
 how: "treaty_negotiated"
 how_basis: "The text records articles concluded in Washington between U.S. officials and Henry M. Rice with the signing chiefs and headmen of the bands."
 confidence: "high"

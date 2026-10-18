@@ -3,6 +3,7 @@ id: "TLA-T-090"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At the Maumee Rapids in 1817 seven nations ceded much of northwestern Ohio and kept reservations; no Miami leaders signed."
+note: "The 4.5 million acre figure comes from a Myaamia Center student blog, which also says six nations ceded the land; the treaty text lists seven and states no total."
 how: "treaty_under_pressure"
 how_basis: "The Myaamia Center blog says the Miami, who claimed part of the land, did not sign and viewed it as unjust, and describes mounting pressure on Native nations to sell."
 confidence: "high"

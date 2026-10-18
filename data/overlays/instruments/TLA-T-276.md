@@ -3,6 +3,7 @@ id: "TLA-T-276"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1854 the Choctaw and Chickasaw redrew the Chickasaw district boundary inside the Choctaw Nation to end a dispute."
+note: "This agreement redrew a line between two nations; it did not cede land to the United States."
 how: "treaty_negotiated"
 how_basis: "The text records a convention between commissioners appointed by the Choctaw and Chickasaw tribes, made subject to approval by the President and Senate."
 confidence: "high"

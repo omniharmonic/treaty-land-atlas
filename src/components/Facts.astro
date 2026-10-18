@@ -1,0 +1,63 @@
+---
+// The record's own fields, labeled in plain words (src/lib/facts.ts).
+import type { Fact } from '../lib/facts';
+
+interface Props {
+  facts: Fact[];
+}
+const { facts } = Astro.props;
+const flagText: Record<string, string> = {
+  'from-memory': 'not yet checked against a source',
+  unverified: 'unverified',
+  disputed: 'disputed',
+};
+---
+
+<dl class="facts">
+  {facts.map((fct) => (
+    <div class:list={[{ wide: String(fct.value).length > 48 }]}>
+      <dt class="sans">{fct.label}</dt>
+      <dd>
+        {fct.href ? <a href={fct.href}>{fct.value}</a> : fct.value}
+        {(fct.flags ?? []).map((fl) => (
+          <span class="flag sans">{flagText[fl] ?? fl}</span>
+        ))}
+      </dd>
+    </div>
+  ))}
+</dl>
+
+<style>
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: var(--space-4) var(--space-5);
+    margin: var(--space-5) 0;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--rule);
+  }
+  .facts > div {
+    display: grid;
+    gap: 2px;
+    align-content: start;
+  }
+  .facts > .wide {
+    grid-column: 1 / -1;
+  }
+  .facts dt {
+    font-size: var(--s-1);
+    color: var(--ink-3);
+    padding-top: 0.15em;
+  }
+  .facts dd {
+    margin: 0;
+    max-width: var(--measure);
+  }
+  .flag {
+    display: inline-block;
+    margin-left: var(--space-2);
+    font-size: var(--s-2);
+    color: var(--warn);
+    border-bottom: 1px dotted currentColor;
+  }
+</style>

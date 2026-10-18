@@ -3,6 +3,7 @@ id: "TLA-T-105"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Chickasaw ceded land between the Tennessee and Mississippi rivers (the Jackson Purchase) for $20,000 a year for fifteen years."
+note: "The Tennessee Encyclopedia calls this the Treaty of Tecumseh."
 how: "treaty_negotiated"
 how_basis: "The statute text and Tennessee Encyclopedia describe a sale for annuities with settlement pressure from land warrants; neither source describes duress by the commissioners."
 confidence: "high"

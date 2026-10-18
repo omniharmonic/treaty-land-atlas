@@ -3,6 +3,7 @@ id: "TLA-T-307"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1858 the Yankton Sioux ceded more than 11 million acres of eastern South Dakota and kept a 400,000-acre reservation."
+note: "Figures differ: the treaty and Supreme Court give more than 11 million acres ceded and 400,000 kept; the National Park Service gives about 11.5 million and 475,000."
 how: "treaty_under_pressure"
 how_basis: "The National Park Service quotes Struck-by-the-Ree telling his people that resistance was useless because white settlers were arriving in great numbers."
 confidence: "medium"

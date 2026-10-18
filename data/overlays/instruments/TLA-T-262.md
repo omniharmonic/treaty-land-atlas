@@ -3,6 +3,7 @@ id: "TLA-T-262"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1853 Fort Atkinson treaty bought peace and U.S. road and post rights from the Comanche, Kiowa and Apache for $18,000 a year."
+note: "The treaty places Fort Atkinson \"in the Indian Territory\"; the site is in present southwestern Kansas. The treaty cedes no land."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated peace-and-passage agreement with annuities; no coercion is described."
 confidence: "high"

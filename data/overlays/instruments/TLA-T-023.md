@@ -3,6 +3,7 @@ id: "TLA-T-023"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Greenville, after a U.S. army victory, twelve nations ceded most of present Ohio and post sites for goods."
+note: "The \"two-thirds of present Ohio\" size is one encyclopedia's estimate; the treaty states no acreage."
 how: "treaty_under_pressure"
 how_basis: "The treaty text says it ended 'a destructive war' and e-WV reports it followed Wayne's military victory at Fallen Timbers."
 confidence: "high"

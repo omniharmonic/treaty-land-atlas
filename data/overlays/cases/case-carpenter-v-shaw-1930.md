@@ -3,6 +3,7 @@ id: "case-carpenter-v-shaw-1930"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "Oklahoma could not tax oil and gas royalties from Choctaw allotments, because the Atoka Agreement exempted allotted lands from taxation."
+note: "The Atoka Agreement was with both the Choctaw and the Chickasaw tribes."
 confidence: "high"
 cautions: "The opinion text has scanning errors (for example 'intcrest'); the quote reproduces the text as printed on the page. Our data lists Choctaw allottees only; the Agreement was also with the Chickasaw Tribe."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep280/usrep280363/usrep280363.pdf", "title": "Carpenter v. Shaw, 280 U.S. 363 (1930) (U.S. Reports, Library of Congress)", "quote": "Tax exemptions secured to the Indians by agreement between them and the national government are to be liberally construed in favor of the Indians."}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep280/usrep280363/usrep280363.pdf", "title": "Carpenter v. Shaw, 280 U.S. 363 (1930) (U.S. Reports, Library of Congress)", "quote": "non-taxable while the title remains in the original allottees but not to exceed twenty-one years"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep280/usrep280363/usrep280363.pdf", "title": "Carpenter v. Shaw, 280 U.S. 363 (1930) (U.S. Reports, Library of Congress)", "quote": "to the extent of 3% of the gross value of the royalty"}]

@@ -3,6 +3,7 @@ id: "TLA-T-096"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1818 the Quapaw ceded a vast area south of the Arkansas River and kept a reservation, which they lost to the 1824 treaty."
+note: "The acreage, about thirty million given up and one million kept, is the Encyclopedia of Arkansas's figure; the treaty states none."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated cession with payments; the Encyclopedia of Arkansas describes later settler pressure that led to the 1824 treaty, not this one."
 confidence: "high"

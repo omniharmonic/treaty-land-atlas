@@ -3,6 +3,7 @@ id: "TLA-T-008"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1778 the Delaware agreed to let U.S. troops cross their country and join the war, and the United States guaranteed their territorial rights."
+note: "This treaty was approved by the Continental Congress, not the Senate."
 how: "treaty_negotiated"
 how_basis: "The OSU text shows articles of agreement and confederation negotiated between U.S. commissioners and Delaware deputies, with mutual obligations and no cession."
 confidence: "medium"

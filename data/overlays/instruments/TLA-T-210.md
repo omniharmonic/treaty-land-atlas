@@ -3,8 +3,9 @@ id: "TLA-T-210"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1836 Wahashaw's band of Sioux gave up their claim to the land between Missouri and the Missouri River for $400 in goods."
+note: "The reasons given in the treaty are the words of a document written by the United States side; whether the signers saw it the same way is not recorded."
 how: "treaty_negotiated"
-how_basis: "The text records a convention between Col. Z. Taylor and the chiefs, braves and principal men, who signed with marks; no source opened shows pressure."
+how_basis: "The text records a convention between Col. Z. Taylor and the chiefs, braves and principal men, who signed with marks; no source shows pressure."
 confidence: "high"
 cautions: "Only the treaty text was used; it does not say what happened to the land or people afterward, so this story stops at the signed terms. The treaty's reasons are the words of the document as written by the United States side; whether the signers saw it the same way is not recorded."
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0466", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Wahashaw's Band) (1836)", "quote": "forever cede, relinquish, and quit claim to the United States, all our right, title and interest of whatsoever nature"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0466", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Wahashaw's Band) (1836)", "quote": "cause said tribes to be furnished with presents to the amount of four hundred dollars"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0466", "title": "Tribal Treaties Database (Oklahoma State University): Sioux (Wahashaw's Band) (1836)", "quote": "Sept. 10, 1836. | 7 Stat., 510. | Proclamation, Feb. 15, 1837."}]

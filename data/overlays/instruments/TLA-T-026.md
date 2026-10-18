@@ -3,6 +3,7 @@ id: "TLA-T-026"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1797 at Albany, Mohawk deputies from Upper Canada gave up all their claims to New York land for $1,000."
+note: "This was a cession of claims to New York State, held under United States authority, not a transfer to the United States."
 how: "treaty_negotiated"
 how_basis: "The text describes a treaty held with Mohawk deputies, who adjusted the compensation with New York's agents."
 confidence: "high"

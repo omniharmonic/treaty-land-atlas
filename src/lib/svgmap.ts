@@ -170,3 +170,31 @@ export function storyMap() {
     lands: lands.map((f) => path(f.geometry, 1.6)).join(''),
   };
 }
+
+/** A longitude/latitude on the same frame as the cession paths. */
+export function projectPoint(lon: number, lat: number): [number, number] {
+  const { minX, minY, scale } = load().frame;
+  const [x, y] = albers(lon, lat);
+  return [(x - minX) * scale + PAD, (y - minY) * scale + PAD];
+}
+
+/** The box around some paths, padded and kept from getting too small to read. */
+export function frameAround(ds: string[], points: [number, number][] = [], min = 60) {
+  let [x0, y0, x1, y1] = [Infinity, Infinity, -Infinity, -Infinity];
+  const add = (x: number, y: number) => {
+    x0 = Math.min(x0, x);
+    y0 = Math.min(y0, y);
+    x1 = Math.max(x1, x);
+    y1 = Math.max(y1, y);
+  };
+  for (const d of ds)
+    for (const m of d.matchAll(/[ML](-?\d+) (-?\d+)/g)) add(Number(m[1]), Number(m[2]));
+  for (const [x, y] of points) add(x, y);
+  if (x0 > x1) return null;
+  const size = Math.max(x1 - x0, y1 - y0, min);
+  const pad = size * 0.18;
+  const cx = (x0 + x1) / 2;
+  const cy = (y0 + y1) / 2;
+  const half = size / 2 + pad;
+  return { x: cx - half * 1.35, y: cy - half, w: half * 2.7, h: half * 2 };
+}

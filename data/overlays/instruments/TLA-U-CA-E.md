@@ -3,6 +3,7 @@ id: "TLA-U-CA-E"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Dent and Vantine's Crossings in 1851, six tribes accepted U.S. sovereignty and a Stanislaus River reservation; the Senate never ratified it."
+note: "Sources give July 2 or July 8, 1852 as the date the Senate rejected it."
 how: "unratified"
 how_basis: "The OSU treaty page marks it Unratified, and Prologue says the Senate rejected all 18 California treaties."
 confidence: "high"

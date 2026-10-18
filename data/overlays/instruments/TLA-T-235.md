@@ -16,4 +16,4 @@ In Article 1 the Creek Nation relinquished those claims. In exchange, Article 2 
 
 Article 5 added $21,103.33 to satisfy claims of early emigrants of the McIntosh party. Article 6 proposed $10,000 in stock animals for about two thousand five hundred Creeks removed "as hostiles," and said that if this article was rejected the others would stand.
 
-The treaty was proclaimed on March 2, 1839. The record's label mentions a supplemental article of June 13, 1854; the page text opened here does not show it.
+The treaty was proclaimed on March 2, 1839. The treaty's catalog label mentions a supplemental article of June 13, 1854; the page text does not show it.

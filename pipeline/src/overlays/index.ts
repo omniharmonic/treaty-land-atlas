@@ -36,6 +36,8 @@ export const overlaySchema = z.strictObject({
   how_basis: z.string().optional(),
   confidence: z.enum(['high', 'medium', 'low']).optional(),
   cautions: z.string().optional(),
+  // what a reader needs to know to read the story right, from the cautions (2026-10-18)
+  note: z.string().optional(),
   written_by: z.string().optional(),
   verdict: z.string().optional(),
   // treaty promises and what became of them, each with its evidence (wave 2)

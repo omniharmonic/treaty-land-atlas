@@ -3,6 +3,7 @@ id: "TLA-T-298"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 Detroit treaty gave Saginaw, Swan Creek and Black River Chippewa Isabella County land and allotments for ceding other Michigan land."
+note: "The 130,000-acre figure covers both the 1855 and 1864 treaties. The State of Michigan has disputed the reservation's status."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text and the tribe's history describe a negotiated treaty at the urging of missionaries; no source I read describes coercion at signing."
 confidence: "high"

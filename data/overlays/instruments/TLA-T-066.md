@@ -3,6 +3,7 @@ id: "TLA-T-066"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "On 19 July 1815 at Portage des Sioux, Sioux of the St. Peter's River made peace with the United States and accepted its protection."
+note: "The text does not say which present-day bands \"the Siouxs of the river St. Peter's\" means."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty of peace and friendship signed by United States commissioners and the tribe's chiefs and warriors; it describes no pressure or cession."
 confidence: "medium"

@@ -3,6 +3,7 @@ id: "TLA-T-209"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "In 1836 the Menominee ceded about four million acres in Wisconsin for $20,000 a year for twenty years and agreed to leave."
+note: "The four million acres is the treaty's own estimate."
 how: "removal"
 how_basis: "Article 4 of the treaty text has the nation agree to remove from the ceded country within one year after ratification."
 confidence: "high"

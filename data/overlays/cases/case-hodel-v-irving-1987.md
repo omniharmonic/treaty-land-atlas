@@ -3,6 +3,7 @@ id: "case-hodel-v-irving-1987"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "A federal law sending tiny fractional land interests to the tribe at death, with no payment, was an unconstitutional taking."
+note: "The ruling covers the original version of the law, not its later amended version."
 confidence: "high"
 cautions: "The Court's holding is about the original section 207; it did not rule on the amended version. The claim that fractionation 'continues to complicate land use' was removed as unsourced. The Oglala Sioux Tribe is named in the opinion as the appellees' tribe."
 sources: [{"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep481/usrep481704/usrep481704.pdf", "title": "Hodel v. Irving, 481 U.S. 704 (1987) (U.S. Reports, Library of Congress)", "quote": "Congress made no provision for the payment of compensation to the owners of the interests covered by §207"}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep481/usrep481704/usrep481704.pdf", "title": "Hodel v. Irving, 481 U.S. 704 (1987) (U.S. Reports, Library of Congress)", "quote": "Appellees have standing to challenge § 207, which has deprived them of the fractional interests they otherwise would have inherited."}, {"url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep519/usrep519234/usrep519234.pdf", "title": "Babbitt v. Youpee, 519 U.S. 234 (1997) (U.S. Reports, Library of Congress)", "quote": "Amended §207 does not cure the constitutional deficiency this Court identified in the original version of §207."}]

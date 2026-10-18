@@ -10,19 +10,22 @@ const all = byType('GeoFeature').sort(
 ---
 
 <Base
-  title="Royce cessions"
-  description="The 724 land cessions C. C. Royce recorded between 1784 and 1894."
+  title="Land areas"
+  description="The 724 areas of Native land the United States recorded as ceded or reserved between 1784 and 1894."
 >
   <div class="intro">
-    <h1>Royce cessions</h1>
+    <h1>Land areas</h1>
     <p class="lede">
-      In 1899 Charles C. Royce mapped {all.length} areas the United States recorded as ceded between
-      1784 and 1894. The US Forest Service georeferenced his maps; we draw from that layer.
+      In 1899 the Smithsonian’s Bureau of American Ethnology published Charles C. Royce’s record of
+      the land the United States acquired from Native nations, and the reservations it set aside, by
+      treaty, act of Congress and executive order from 1784 to 1894. He drew {all.length} numbered
+      areas on maps and listed what each agreement did to each one. Those numbers are how this atlas
+      names the land.
     </p>
     <p>
-      The shapes are approximate and are not legal descriptions. Royce recorded what the government
-      treated as ceded, not the extent of any nation’s homeland.{' '}
-      <a href={href('/map/')}>See them on the map</a>.
+      The shapes come from the US Forest Service’s tracing of his maps. They are approximate, not
+      legal descriptions, and they show what the government recorded, not the extent of any nation’s
+      homeland. <a href={href('/map/')}>See them on the map</a>.
     </p>
   </div>
   <IndexList

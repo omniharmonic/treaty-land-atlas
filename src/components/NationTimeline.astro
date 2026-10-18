@@ -104,7 +104,11 @@ const total = lanes.reduce((s, l) => s + l.marks.length, 0);
             </text>
             <line class="rail" x1={L} x2={W - 12} y1={LANE / 2} y2={LANE / 2} />
             {l.marks.map((m) => (
-              <a href={m.href ?? undefined} aria-label={`${m.label}, ${m.y}`}>
+              <a
+                href={m.href ?? undefined}
+                aria-label={`${m.label}, ${m.y}`}
+                data-say={`${m.y}: ${m.label}`}
+              >
                 <title>{`${m.label} (${m.y})`}</title>
                 {l.key === 'land' ? (
                   <circle
@@ -122,12 +126,26 @@ const total = lanes.reduce((s, l) => s + l.marks.length, 0);
         ))}
       </svg>
     </div>
+    <p class="sans readout" aria-hidden="true" data-readout>
+      Point at a mark to see what it is; select it to open the record.
+    </p>
     <p class="sans note">
-      Each mark opens its record. Land circles are sized by acres and colored by how the land was
-      taken; hover or focus a mark for its name.
+      Circles are land the United States recorded as ceded, sized by acres and colored by how it was
+      taken. Bars are treaties, broken promises, court cases and land returns.
     </p>
   </section>
 )}
+
+<script>
+  for (const tl of document.querySelectorAll<HTMLElement>('.timeline')) {
+    const out = tl.querySelector<HTMLElement>('[data-readout]');
+    for (const a of tl.querySelectorAll<SVGAElement>('a[data-say]')) {
+      const say = () => out && (out.textContent = a.dataset['say'] ?? '');
+      a.addEventListener('mouseenter', say);
+      a.addEventListener('focus', say);
+    }
+  }
+</script>
 
 <style>
   .timeline {
@@ -181,6 +199,11 @@ const total = lanes.reduce((s, l) => s + l.marks.length, 0);
   a:focus-visible rect {
     stroke: var(--ink);
     stroke-width: 2;
+  }
+  .readout {
+    min-height: 1.6em;
+    margin: var(--space-2) 0 0;
+    font-weight: 600;
   }
   .note {
     font-size: var(--s-1);

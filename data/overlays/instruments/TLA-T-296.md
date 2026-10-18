@@ -3,6 +3,7 @@ id: "TLA-T-296"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The 1855 Treaty of Detroit set aside Michigan land for Ottawa and Chippewa bands, guaranteeing they would not be removed."
+note: "The House report quoted here supported federal recognition for the Little Traverse and Little River bands, so it reflects those bands' reading of history."
 how: "treaty_negotiated"
 how_basis: "A 1994 House committee report says the Ottawa themselves pressed for the 1855 treaty to end the threat of removal; the OSU text records the agreement."
 confidence: "high"

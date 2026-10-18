@@ -3,6 +3,7 @@ id: "TLA-T-038"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "The Kaskaskia, as the remnant of the Illinois nations, ceded their lands in Illinois for protection, an annuity and small reserves."
+note: "The description of the Kaskaskia's reduced condition is the treaty's own wording."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession with listed compensation; I found no source describing coercion, though the treaty text itself says the tribe had been reduced in number."
 confidence: "high"
@@ -16,4 +17,4 @@ In Article I the Kaskaskia "relinquish and cede to the United States all the lan
 
 In Article II the United States promised to take the tribe under its "care and patronage" and protect it as it did its own citizens. The Kaskaskia agreed not to make war on any other tribe or nation without U.S. approval. Article III raised their annuity to $1,000. It promised a house for the chief, a fenced field of up to 100 acres, $100 a year for seven years toward a Catholic priest, and $300 toward a church. A further $580 was paid or assured for needed articles and to relieve the tribe's debts.
 
-The text calls this package "a full and ample compensation." The sources opened do not describe the negotiation or later events.
+The text calls this package "a full and ample compensation." The sources here do not describe the negotiation or later events.

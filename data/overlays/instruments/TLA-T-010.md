@@ -3,6 +3,7 @@ id: "TLA-T-010"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
 headline: "At Fort McIntosh in 1785 four nations accepted U.S. protection and a boundary and acknowledged U.S. title to lands outside it."
+note: "The \"two thirds of Ohio\" figure is a local-history source's estimate; the treaty itself gives no size."
 how: "treaty_under_pressure"
 how_basis: "The treaty requires hostages and the Beaver Area Heritage Foundation says its terms were \"imposed rather than negotiated.\""
 confidence: "medium"
