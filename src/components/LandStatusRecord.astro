@@ -1,0 +1,262 @@
+---
+// A land area's K1 record: what the record says happened to the land, every documented defect with
+// its evidence label, source quote and citation, linked massacres, claims checked and not supported,
+// and corrections to the listed record. Built from public/data/tables (written by the emit stage
+// from crosswalks/land-status*.csv, massacre-sites.csv and k1-findings.csv).
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import type { Node } from '../lib/graph';
+import { href } from '../lib/href';
+import {
+  EVIDENCE_CLASS,
+  FLAG_LABEL,
+  MASSACRE_LINK,
+  STATUS_HELP,
+  STATUS_LABEL,
+  statusVar,
+  type LandStatus,
+} from '../islands/map/landStatusStyle';
+
+interface Props {
+  n: Node;
+}
+const { n } = Astro.props;
+const table = (f: string) => {
+  const p = join(process.cwd(), 'public', 'data', 'tables', f);
+  return existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : {};
+};
+type Flag = {
+  flag: string;
+  evidence: string;
+  evidence_display: string;
+  citation: string;
+  quote: string;
+  summary: string;
+};
+const story = (table('cession-stories.json') as Record<string, Record<string, unknown>>)[n.id];
+const k1 = (table('land-status.json') as Record<string, Record<string, unknown>>)[n.id] as
+  | {
+      evidence: string | null;
+      evidence_display: string | null;
+      instrument: string | null;
+      basis: string | null;
+      flags: Flag[];
+      sub_areas: { area: string; label: string; land_status: LandStatus; basis: string }[];
+      massacres: string[];
+      not_supported: { finding_id: string; summary: string; reason: string }[];
+    }
+  | undefined;
+const sites = ((table('massacre-sites.json') as { sites?: Record<string, string>[] }).sites ??
+  []) as unknown as {
+  id: string;
+  name: string;
+  date: string;
+  link_kind: string;
+  linked_instrument: string;
+  deaths_range: string;
+}[];
+const ls = (story?.['land_status'] as LandStatus | undefined) ?? null;
+const linked = sites.filter((m) => k1?.massacres.includes(m.id));
+---
+
+{ls && (
+  <section class="land-status sans" aria-labelledby="ls-h">
+    <h2 id="ls-h">What the record says happened to the land</h2>
+    <p class="status">
+      <span class="sw" style={`background: var(${statusVar(ls)})`} />
+      <span>
+        <strong>{STATUS_LABEL[ls]}.</strong> {String(story?.['land_status_basis'] ?? '')}
+        {k1?.evidence_display && (
+          <span class={`badge ${EVIDENCE_CLASS[k1.evidence ?? 'reported'] ?? ''}`}>
+            {k1.evidence_display}
+          </span>
+        )}
+      </span>
+    </p>
+    <p class="small">{STATUS_HELP[ls]}</p>
+    {k1?.basis && (
+      <details class="note">
+        <summary>Research note (working text, for checking)</summary>
+        {k1.basis}
+      </details>
+    )}
+    <p class="small">
+      Royce shows what the United States recorded as acquired, not what nations agreed to.
+    </p>
+    {k1?.sub_areas.map((s) => (
+      <div class="sub">
+        <strong>Part of this area ({s.label.replace(/^proposed (split|sub-area): /, '')}):</strong>{' '}
+        {STATUS_LABEL[s.land_status]}.
+        <details class="note">
+          <summary>Research note</summary>
+          {s.basis}
+        </details>
+      </div>
+    ))}
+
+    {k1?.flags.length ? (
+      <>
+        <h3>What is documented about how it was taken</h3>
+        <p class="small">
+          These never change the status above. Each finding shows how well it is sourced: a primary
+          source, a scholarly source, a single report, or disputed.
+        </p>
+        <ul class="flags">
+          {k1.flags.map((f) => (
+            <li>
+              <p>
+                <span class={`badge ${EVIDENCE_CLASS[f.evidence] ?? ''}`}>
+                  {f.evidence_display}
+                </span>{' '}
+                <strong>{FLAG_LABEL[f.flag] ?? f.flag}.</strong> {f.summary}
+              </p>
+              {f.quote && <q>{f.quote}</q>}
+              {f.citation && <p class="cite">{f.citation}</p>}
+            </li>
+          ))}
+        </ul>
+      </>
+    ) : null}
+
+    {linked.length > 0 && (
+      <>
+        <h3>Massacres linked to this land</h3>
+        <ul class="sites">
+          {linked.map((m) => (
+            <li>
+              {MASSACRE_LINK[m.link_kind] ?? 'Context for'}
+              {m.link_kind === 'none' ? '' : ' the taking'}:{' '}
+              <a href={href(`/map/#y=1894&l=cessions,massacres&sel=${m.id}`)}>{m.name}</a>,{' '}
+              {m.date.slice(0, 4)}
+              {m.deaths_range && <>; killed: {m.deaths_range}</>}
+            </li>
+          ))}
+        </ul>
+        <p class="small">
+          “Preceded”, “enforced” and “followed” give the order of events in the sources, not a claim
+          of cause. Descendant nations can{' '}
+          <a
+            href={href(
+              `/claim/?id=${encodeURIComponent(n.id)}&name=${encodeURIComponent(n.label)}`,
+            )}
+          >
+            ask for a change or removal
+          </a>
+          .
+        </p>
+      </>
+    )}
+
+    <h3>What the nation says</h3>
+    <p class="small">No nation has reviewed this yet.</p>
+
+    {k1?.not_supported.length ? (
+      <details class="unsupported">
+        <summary>Claims we checked and could not support ({k1.not_supported.length})</summary>
+        <ul>
+          {k1.not_supported.map((c) => (
+            <li>
+              <p>{c.summary}</p>
+              {c.reason && c.reason !== c.summary && <p class="cite">Why: {c.reason}</p>}
+            </li>
+          ))}
+        </ul>
+      </details>
+    ) : null}
+  </section>
+)}
+
+<style>
+  .land-status {
+    margin: var(--space-6) 0;
+  }
+  .land-status h3 {
+    font-size: var(--s0);
+    margin: var(--space-5) 0 var(--space-2);
+  }
+  .status {
+    display: flex;
+    gap: var(--space-2);
+    align-items: flex-start;
+  }
+  .sw {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+    margin-top: 0.3em;
+    border-radius: 2px;
+  }
+  .small,
+  .cite {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+  }
+  .cite {
+    overflow-wrap: anywhere;
+  }
+  .sub {
+    border-left: 3px solid var(--ls-contested);
+    padding-left: var(--space-3);
+    font-size: var(--s-1);
+  }
+  .flags,
+  .sites,
+  .unsupported ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  .flags li,
+  .unsupported li {
+    border-top: 1px solid var(--rule);
+    padding: var(--space-3) 0;
+    font-size: var(--s-1);
+  }
+  .flags p {
+    margin: 0 0 var(--space-2);
+  }
+  q {
+    display: block;
+    padding-left: var(--space-3);
+    border-left: 2px solid var(--rule-strong);
+    color: var(--ink-2);
+    overflow-wrap: anywhere;
+  }
+  .badge {
+    display: inline-block;
+    font-size: var(--s-2);
+    padding: 1px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--rule-strong);
+    background: var(--sheet-2);
+    white-space: nowrap;
+  }
+  .ev-primary {
+    background: var(--ink);
+    color: var(--sheet);
+    border-color: var(--ink);
+  }
+  .ev-scholarly {
+    background: var(--lichen);
+    border-color: var(--moss);
+  }
+  .ev-reported {
+    background: var(--sheet);
+    border-style: dashed;
+  }
+  .ev-disputed {
+    background: var(--ochre);
+    border-color: var(--warn);
+  }
+  .note {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    overflow-wrap: anywhere;
+  }
+  .note summary,
+  .unsupported summary {
+    cursor: pointer;
+    color: var(--moss);
+    margin-top: var(--space-4);
+  }
+</style>

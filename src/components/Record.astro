@@ -14,6 +14,7 @@ import LocatorMap from './LocatorMap.astro';
 import NationTimeline from './NationTimeline.astro';
 import ReturnLand from './ReturnLand.astro';
 import AreaStory from './AreaStory.astro';
+import LandStatusRecord from './LandStatusRecord.astro';
 import Facts from './Facts.astro';
 import { overlayFor } from '../lib/graph';
 
@@ -97,6 +98,9 @@ const corrections = ((n['corrections'] as Correction[]) ?? []).filter((c) =>
 );
 const FIELD_WORD: Record<string, string> = {
   date_signed: 'The signing date',
+  date_ratified: 'The ratification date',
+  plain: 'The plain-language account',
+  royce_summary: 'The summary of Royce’s record',
   label: 'The title',
   land_description: 'The land description',
   summary: 'The summary',
@@ -128,6 +132,7 @@ const FIELD_WORD: Record<string, string> = {
     {shortFacts.length > 0 && n.type !== 'GeoFeature' && <Facts facts={shortFacts} />}
 
     {n.type === 'GeoFeature' && <AreaStory n={n} />}
+    {n.type === 'GeoFeature' && <LandStatusRecord n={n} />}
     {n.type === 'Campaign' && <ReturnLand n={n} />}
     <Narrative n={n} showHeadline={false} />
     <RecordStory n={n} />
@@ -214,7 +219,8 @@ const FIELD_WORD: Record<string, string> = {
           {corrections.map((c) => (
             <li>
               {FIELD_WORD[c.field] ?? c.field.replace(/_/g, ' ')} was listed as “
-              {String(c.as_listed ?? '')}”; corrected from{' '}
+              {String(c.as_listed ?? '')}”; it now reads “
+              {String((c.field === 'label' ? n.label : n[c.field]) ?? '')}”, corrected from{' '}
               <a href={c.source_url}>{new URL(c.source_url).hostname.replace(/^www\./, '')}</a>
               {c.evidence_quote && <q>{c.evidence_quote}</q>}
             </li>

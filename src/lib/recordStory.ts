@@ -121,7 +121,7 @@ export function nationStory(n: Node): Paragraph[] {
     const y0 = cessions[0]![1].ceded_year;
     const y1 = cessions.at(-1)![1].ceded_year;
     const p: Paragraph = [
-      `C. C. Royce’s 1899 schedule records ${cessions.length} cession${cessions.length === 1 ? '' : 's'} of land from `,
+      `C. C. Royce’s 1899 schedule records ${cessions.length} area${cessions.length === 1 ? '' : 's'} of land the United States acquired from `,
       n.label,
       y0 && y1 ? (y0 === y1 ? ` in ${y0}` : ` between ${y0} and ${y1}`) : '',
       total ? `: ${acresText(total)} by this atlas’s estimate, counting overlaps once. ` : '. ',
@@ -133,7 +133,7 @@ export function nationStory(n: Node): Paragraph[] {
       p.push('The largest was ', link(largest[0]), `, ${acresText(largest[1].acres)}`);
       if (largest[1].instrument)
         p.push(
-          largest[1].entries ? ', ceded under ' : ', tied in the record to ',
+          largest[1].entries ? ', recorded as ceded under ' : ', tied in the record to ',
           link(largest[1].instrument),
         );
       p.push('.');
@@ -236,7 +236,9 @@ export function cessionStory(g: Node): Paragraph[] {
       if (i > 0) p.push(i === s.instruments.length - 1 ? ' and ' : ', ');
       p.push(link(x.id));
     });
-    p.push('. Which one ceded it has not been checked yet, so the map dates it by the first.');
+    p.push(
+      '. Which one the record ties to the loss has not been checked yet, so the map dates it by the first.',
+    );
     out.push(p);
   }
   if (s.instrument && s.status !== 'kept')

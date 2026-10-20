@@ -12,7 +12,7 @@ export const HOW_ORDER = [
 export type How = (typeof HOW_ORDER)[number];
 
 export const HOW_LABEL: Record<How, string> = {
-  treaty: 'Treaty or agreement',
+  treaty: 'Ratified treaty (consent not assessed)',
   pressure: 'Treaty under documented pressure',
   removal: 'Removal treaty',
   unratified: 'Unratified treaty',
@@ -23,7 +23,7 @@ export const HOW_LABEL: Record<How, string> = {
 
 export const HOW_HELP: Record<How, string> = {
   treaty:
-    'A ratified treaty or agreement. Many were signed under unequal terms; the record of each says what is known.',
+    'A ratified treaty or agreement the United States recorded as a cession. That is not a finding that the nation consented freely; the record of each says what is known.',
   pressure:
     'A treaty where sources document coercion, fraud, disputed signers, debts or military pressure.',
   removal: 'A treaty that required a nation to leave its homeland and move west.',

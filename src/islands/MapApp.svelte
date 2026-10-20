@@ -74,6 +74,8 @@
   interface AreaK1 {
     land_status: LandStatus | null;
     instrument: string | null;
+    basis: string | null;
+    evidence: string | null;
     evidence_display: string | null;
     flags: FlagRecord[];
     sub_areas: {
@@ -198,6 +200,16 @@
   const selectedSite = $derived(s.sel ? (sites.find((x) => x.id === s.sel) ?? null) : null);
   const siteById = $derived(new Map(sites.map((x) => [x.id, x])));
   const lsOf = (id: string) => stories[id]?.land_status ?? 'taken_no_instrument';
+  // areas lost before the honored-through cut, by land status, for the legal status panel
+  const honoredCounts = $derived.by(() => {
+    const out: Partial<Record<LandStatus, number>> = {};
+    for (const e of events)
+      if (e.t_first !== null && e.t_first < s.cut + 1) {
+        const k = lsOf(e.id);
+        out[k] = (out[k] ?? 0) + 1;
+      }
+    return out;
+  });
   const selectedAgreement = $derived(
     (selectedStory?.instrument ? selected?.neighbors[selectedStory.instrument] : null) ??
       (selected?.edges.out['depicts'] ?? [])
@@ -597,7 +609,7 @@
       try {
         const manifest = await (await fetch(url('/data/manifest.json'))).json();
         const get = (p: string) => fetch(url(`/data/${p}`)).then((r) => r.json());
-        const [ev, cessions, today, st, ll, story, hl] = await Promise.all([
+        const [ev, cessions, today, st, ll, story, hl, lsTable, mas, norecord] = await Promise.all([
           get(manifest.layers['cession-events']),
           get(manifest.layers['cessions']),
           get(manifest.layers['today-aiannh']),
@@ -605,8 +617,15 @@
           get('tables/land-loss.json'),
           get('tables/story.json'),
           get('tables/headlines.json'),
+          get('tables/land-status.json').catch(() => ({})),
+          get('tables/massacre-sites.json').catch(() => ({ features: [], sites: [] })),
+          manifest.layers['no-cession']
+            ? get(manifest.layers['no-cession']).catch(() => null)
+            : Promise.resolve(null),
         ]);
         if (cancelled) return;
+        k1 = lsTable;
+        sites = mas.sites ?? [];
         events = ev;
         stories = st;
         loss = ll;
@@ -671,36 +690,68 @@
             ['case', isFollowed, normal, dim],
             normal,
           ];
-          const howColor: unknown = [
+          // the K1 encoding (src/islands/map/landStatusStyle.ts): fill by land status, line by
+          // status pattern, hatch by the evidence behind defect flags, promise outlines
+          const status = ['get', 'ls'];
+          const statusColor: unknown = [
             'match',
-            ['get', 'how'],
-            ...HOW_ORDER.flatMap((h) => [h, v(`--how-${h}`)]),
-            v('--how-unknown'),
+            status,
+            ...STATUS_ORDER.flatMap((x) => [x, v(statusVar(x))]),
+            v('--ls-taken_no_instrument'),
           ];
           const dash: unknown = [
             'match',
-            ['get', 'how'],
-            ...HOW_ORDER.flatMap((h) => [h, ['literal', HOW_DASH[h]]]),
+            status,
+            ...STATUS_ORDER.flatMap((x) => [x, ['literal', STATUS_DASH[x]]]),
             ['literal', [2, 1]],
           ];
           const afterCut: unknown = ['>=', ['get', 't0'], ['+', ['global-state', 'cut'], 1]];
+          const promisedBy: unknown = [
+            '<=',
+            ['coalesce', ['get', 'py'], 0],
+            ['global-state', 'year'],
+          ];
+          // still with the nation and already promised or described: shown in its own status color
+          const shownHeld: unknown = [
+            'all',
+            ['!', ceded],
+            ['in', status, ['literal', [...NOT_LOST]]],
+            promisedBy,
+          ];
+          const drawn: unknown = ['any', ceded, shownHeld];
+          const noLawful: unknown = ['in', status, ['literal', [...NO_LAWFUL_CESSION]]];
+          const ink = v('--ls-hatch');
+          map.addImage('hatch-solid', hatchImage('solid', ink));
+          map.addImage('hatch-dots', hatchImage('dots', ink));
+          map.addImage('hatch-faint', hatchImage('faint', ink));
 
-          // land still held (Royce records its cession later): green that shrinks as years pass
+          // land with no federal cession record (pre-federal, state and Texas takings), if built
+          if (norecord) {
+            map.addSource('norecord', { type: 'geojson', data: norecord });
+            map.addLayer({
+              id: 'norecord-hatch',
+              type: 'fill',
+              source: 'norecord',
+              filter: on('norecord') as never,
+              paint: { 'fill-pattern': 'hatch-faint', 'fill-opacity': 0.9 },
+            });
+          }
+          // land not yet taken in this year, and not yet promised: a quiet neutral that shrinks
           map.addLayer({
             id: 'held',
             type: 'fill',
             source: 'cessions',
-            filter: ['all', ['!', on('honored')], ['!', ceded]] as never,
-            paint: { 'fill-color': v('--held'), 'fill-opacity': focus(0.42, 0.08) as never },
+            filter: ['all', ['!', on('honored')], ['!', drawn]] as never,
+            paint: { 'fill-color': v('--ls-not-yet'), 'fill-opacity': focus(0.5, 0.08) as never },
           });
-          // land recorded as ceded, colored by how; recent losses bright, older ones settle
+          // what the record says happened, colored by land status; recent changes bright
           map.addLayer({
             id: 'ceded',
             type: 'fill',
             source: 'cessions',
-            filter: ['all', ['!', on('honored')], ceded] as never,
+            filter: ['all', ['!', on('honored')], drawn] as never,
             paint: {
-              'fill-color': howColor as never,
+              'fill-color': statusColor as never,
               'fill-opacity': [
                 'case',
                 ['boolean', ['feature-state', 'selected'], false],
@@ -709,9 +760,25 @@
                   'case',
                   following,
                   ['case', isFollowed, ['case', recent, 0.85, 0.55], 0.06],
-                  ['case', recent, 0.8, 0.32],
+                  ['case', recent, 0.8, 0.4],
                 ],
               ] as never,
+            },
+          });
+          // documented defects: solid hatch for primary or scholarly evidence, dots if only reported
+          map.addLayer({
+            id: 'flags-hatch',
+            type: 'fill',
+            source: 'cessions',
+            filter: ['all', ['!', on('honored')], drawn, ['>', ['get', 'fh'], 0]] as never,
+            paint: {
+              'fill-pattern': [
+                'case',
+                ['==', ['get', 'fh'], 2],
+                'hatch-solid',
+                'hatch-dots',
+              ] as never,
+              'fill-opacity': focus(0.4, 0.05) as never,
             },
           });
           map.addLayer({
@@ -731,12 +798,59 @@
               'line-dasharray': dash as never,
             },
           });
+          // promised or reserved and still held: a solid promise outline
+          map.addLayer({
+            id: 'promise-line',
+            type: 'line',
+            source: 'cessions',
+            filter: [
+              'all',
+              ['!', on('honored')],
+              ['!', ceded],
+              ['has', 'py'],
+              ['!=', ['get', 'py'], null],
+              promisedBy,
+            ] as never,
+            paint: {
+              'line-color': v('--ls-promise-line'),
+              'line-width': [
+                'case',
+                ['boolean', ['feature-state', 'selected'], false],
+                2.8,
+                1.4,
+              ] as never,
+              'line-opacity': focus(0.9, 0.15) as never,
+            },
+          });
+          // promised, then taken: the promise outline broken into dashes
+          map.addLayer({
+            id: 'broken-line',
+            type: 'line',
+            source: 'cessions',
+            filter: ['all', ['!', on('honored')], ceded, ['==', ['get', 'bp'], 1]] as never,
+            paint: {
+              'line-color': v('--ls-promise-line'),
+              'line-width': 2,
+              'line-dasharray': [1.5, 1.5],
+              'line-opacity': focus(0.85, 0.1) as never,
+            },
+          });
+          // "if the treaties had been honored": grey only for land lost before the cut under an
+          // instrument the record treats as a lawful cession; land lost under a treaty never
+          // ratified or with no instrument keeps its own color
           map.addLayer({
             id: 'honored-ceded',
             type: 'fill',
             source: 'cessions',
-            filter: ['all', on('honored'), ['!', afterCut]] as never,
+            filter: ['all', on('honored'), ['!', afterCut], ['!', noLawful]] as never,
             paint: { 'fill-color': v('--ink-3'), 'fill-opacity': 0.16 },
+          });
+          map.addLayer({
+            id: 'honored-unlawful',
+            type: 'fill',
+            source: 'cessions',
+            filter: ['all', on('honored'), ['!', afterCut], noLawful] as never,
+            paint: { 'fill-color': statusColor as never, 'fill-opacity': 0.55 },
           });
           map.addLayer({
             id: 'honored-retained',
@@ -744,12 +858,12 @@
             source: 'cessions',
             filter: ['all', on('honored'), afterCut] as never,
             paint: {
-              'fill-color': v('--held'),
+              'fill-color': v('--ls-promised_reserved'),
               'fill-opacity': [
                 'case',
                 ['boolean', ['feature-state', 'selected'], false],
                 0.7,
-                0.45,
+                0.4,
               ] as never,
             },
           });
@@ -759,7 +873,7 @@
             source: 'cessions',
             filter: ['all', on('honored'), afterCut, ceded] as never,
             paint: {
-              'line-color': howColor as never,
+              'line-color': statusColor as never,
               'line-width': 1.8,
               'line-dasharray': dash as never,
             },
@@ -817,11 +931,48 @@
               'text-halo-width': 1.5,
             },
           });
-          for (const layer of ['ceded', 'held', 'honored-retained', 'honored-ceded']) {
+          // massacre sites at a general location (0.1 degree), off until the reader turns them on
+          map.addSource('massacres', { type: 'geojson', data: mas, promoteId: 'id' });
+          map.addLayer({
+            id: 'massacre-points',
+            type: 'circle',
+            source: 'massacres',
+            filter: [
+              'all',
+              on('massacres'),
+              ['<=', ['coalesce', ['get', 'year'], 0], ['global-state', 'year']],
+            ] as never,
+            paint: {
+              'circle-radius': [
+                'case',
+                ['boolean', ['feature-state', 'selected'], false],
+                8,
+                5.5,
+              ] as never,
+              'circle-color': v('--ls-massacre'),
+              'circle-stroke-color': v('--ground'),
+              'circle-stroke-width': 2,
+            },
+          });
+          for (const layer of [
+            'massacre-points',
+            'ceded',
+            'held',
+            'honored-retained',
+            'honored-ceded',
+            'honored-unlawful',
+          ]) {
             map.on(
               'click',
               layer,
               (e: MapMouseEvent & { features?: { properties: { id: string } }[] }) => {
+                // a massacre point drawn over a land area takes the click
+                if (
+                  layer !== 'massacre-points' &&
+                  map?.getLayer('massacre-points') &&
+                  map.queryRenderedFeatures(e.point, { layers: ['massacre-points'] }).length
+                )
+                  return;
                 const id = e.features?.[0]?.properties.id;
                 if (id) select(id);
               },
@@ -858,7 +1009,7 @@
       class="map"
       bind:this={container}
       role="region"
-      aria-label="Map of land recorded as ceded, by year and by how it was taken"
+      aria-label="Map of what the federal record says happened to Native land, by year"
     ></div>
     <div class="stage" aria-hidden="true">
       <p class="year">{s.view === 'honored' && slider < s.cut ? s.cut : slider}</p>
@@ -867,8 +1018,8 @@
     {#if webglMissing}
       <div class="fallback sans">
         <p>
-          This browser cannot draw the map (WebGL 2 is off or unavailable). Every cession is in the
-          list beside it and in the <a href={url('/cessions/')}>full index</a>.
+          This browser cannot draw the map (WebGL 2 is off or unavailable). Every land area is in
+          the list beside it and in the <a href={url('/cessions/')}>full index</a>.
         </p>
       </div>
     {/if}
@@ -876,7 +1027,60 @@
   </div>
 
   <aside class="rail" bind:this={rail} aria-label="Map explorer">
-    {#if selectedEvent}
+    {#if selectedSite}
+      {@const m = selectedSite}
+      <div class="rail-heading">
+        <button type="button" class="back-map" onclick={() => select(null)}
+          ><span aria-hidden="true">←</span> Back to the map</button
+        >
+      </div>
+      <section id="detail" class="detail site sans" tabindex="-1" aria-labelledby="detail-h">
+        <p class="kicker">
+          {m.category === 'mass_execution'
+            ? 'Mass execution'
+            : m.category === 'internment_deaths'
+              ? 'Deaths in internment'
+              : 'Massacre'}, {m.date.slice(0, 4)}
+        </p>
+        <h2 id="detail-h">{m.name}</h2>
+        {#if m.other_names.length}<p class="small">Also called {m.other_names.join('; ')}.</p>{/if}
+        <dl>
+          <dt>Who was attacked</dt>
+          <dd>{m.nations}</dd>
+          {#if m.perpetrators}<dt>By</dt>
+            <dd>{m.perpetrators}</dd>{/if}
+          {#if m.deaths_range}<dt>Killed</dt>
+            <dd>{m.deaths_range}{m.deaths_source ? ` (${m.deaths_source})` : ''}</dd>{/if}
+          <dt>{MASSACRE_LINK[m.link_kind] ?? 'Context for'}</dt>
+          <dd>
+            {m.linked_instrument || 'No instrument recorded'}{#if m.link_note}. {m.link_note}{/if}
+            {#each m.areas as a (a)}
+              <button type="button" class="link area-link" onclick={() => select(a, true)}
+                >Land area {a.replace('geo-royce-', '')}</button
+              >
+            {/each}
+          </dd>
+        </dl>
+        <p>
+          {m.summary}
+          <span class={`badge ${EVIDENCE_CLASS[m.evidence] ?? ''}`}>{m.evidence_display}</span>
+        </p>
+        {#if m.quote}<blockquote>“{m.quote}”</blockquote>{/if}
+        {#if m.citation}<p class="cite">{m.citation}</p>{/if}
+        <p class="small">
+          The point is a general location, rounded to about 10 km, never a burial or sacred site. “{MASSACRE_LINK[
+            m.link_kind
+          ] ?? 'Context for'}” is the order of events the sources give, not a claim that one caused
+          the other.
+        </p>
+        <p class="small">
+          Descendant nations can ask for a change or removal:
+          <a href={url(`/claim/?record=${encodeURIComponent(m.id)}&kind=correction`)}
+            >ask for a change or removal</a
+          >.
+        </p>
+      </section>
+    {:else if selectedEvent}
       <div class="rail-heading">
         <button type="button" class="back-map" onclick={() => select(null)}
           ><span aria-hidden="true">←</span> Back to the map</button
@@ -898,19 +1102,110 @@
             <path
               class="ar"
               d={outline.area}
-              style={`--c: var(--how-${selectedStory?.how ?? 'unknown'})`}
+              style={`--c: var(${statusVar(selectedStory?.land_status ?? '')})`}
             />
           </svg>
         {/if}
         <h2 id="detail-h">{selected?.node.label ?? selectionTitle}</h2>
         {#if selectedStory?.plain}<p class="plain">{selectedStory.plain}</p>{/if}
-        <p class="how sans">
-          <span class="sw" style={`background: var(--how-${selectedStory?.how ?? 'unknown'})`}
-          ></span><span
-            ><strong>{HOW_LABEL[selectedStory?.how ?? 'unknown']}.</strong>
-            {selectedStory?.how_basis ?? ''}</span
-          >
-        </p>
+        {#if selectedStory}
+          {@const ls = selectedStory.land_status}
+          <section class="status sans" aria-labelledby="status-h">
+            <h3 id="status-h">What the record says happened to the land</h3>
+            <p class="how">
+              <span class="sw" style={`background: var(${statusVar(ls)})`}></span><span
+                ><strong>{STATUS_LABEL[ls]}.</strong>
+                {selectedStory.land_status_basis}{#if selectedK1?.evidence_display}
+                  <span class={`badge ${EVIDENCE_CLASS[selectedK1.evidence ?? 'reported'] ?? ''}`}
+                    >{selectedK1.evidence_display}</span
+                  >{/if}</span
+              >
+            </p>
+            {#if ['pressure', 'removal'].includes(selectedStory.how)}
+              <p class="small">
+                Also in the research record: {HOW_LABEL[selectedStory.how].toLowerCase()} ({selectedStory.how_basis}).
+              </p>
+            {/if}
+            {#if selectedStory.broken_promise}
+              <p class="small">
+                <span class="edge broken" aria-hidden="true"></span>Promised or reserved to the
+                nation{selectedStory.promised_year ? ` in ${selectedStory.promised_year}` : ''},
+                then taken.
+              </p>
+            {:else if selectedStory.promised_year && NOT_LOST.has(ls)}
+              <p class="small">
+                <span class="edge promise" aria-hidden="true"></span>Promised, reserved or described
+                in {selectedStory.promised_year}.
+              </p>
+            {/if}
+            {#if selectedK1?.basis}
+              <details class="note small">
+                <summary>Research note (working text, for checking)</summary>{selectedK1.basis}
+              </details>
+            {/if}
+            {#each selectedK1?.sub_areas ?? [] as sub (sub.area)}
+              <div class="sub-area small">
+                <strong
+                  >Part of this area{sub.label
+                    ? ` (${sub.label.replace(/^proposed (split|sub-area): /, '')})`
+                    : ''}:</strong
+                >
+                {STATUS_LABEL[sub.land_status]}.
+                <span class="badge ev-reported">{sub.evidence_display}</span>
+                <details class="note"><summary>Research note</summary>{sub.basis}</details>
+              </div>
+            {/each}
+          </section>
+          {#if selectedK1?.flags.length}
+            <section class="flags sans" aria-labelledby="flags-h">
+              <h3 id="flags-h">What is documented about how it was taken</h3>
+              <p class="small">
+                These never change the status above. Each shows how well it is sourced.
+              </p>
+              <ul>
+                {#each selectedK1.flags as f (f.flag)}
+                  <li>
+                    <details>
+                      <summary
+                        ><span class={`badge ${EVIDENCE_CLASS[f.evidence] ?? ''}`}
+                          >{f.evidence_display}</span
+                        >
+                        {FLAG_LABEL[f.flag] ?? f.flag}</summary
+                      >
+                      {#if f.summary}<p>{f.summary}</p>{/if}
+                      {#if f.quote}<blockquote>“{f.quote}”</blockquote>{/if}
+                      {#if f.citation}<p class="cite">{f.citation}</p>{/if}
+                    </details>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if selectedK1?.massacres.length}
+            <section class="linked-sites sans" aria-labelledby="sites-h">
+              <h3 id="sites-h">Massacres linked to this land</h3>
+              <ul>
+                {#each selectedK1.massacres as mid (mid)}
+                  {@const m = siteById.get(mid)}
+                  {#if m}
+                    <li>
+                      {MASSACRE_LINK[m.link_kind] ?? 'Context for'}{m.link_kind === 'none'
+                        ? ''
+                        : ' the taking'}:
+                      <button type="button" class="link" onclick={() => select(m.id, true)}
+                        >{m.name}, {m.date.slice(0, 4)}</button
+                      >
+                    </li>
+                  {/if}
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          <section class="nation-says sans" aria-labelledby="nation-h">
+            <h3 id="nation-h">What the nation says</h3>
+            <p class="small">No nation has reviewed this yet.</p>
+          </section>
+        {/if}
         {#if recordLoading}<p class="record-status" role="status">Finding its treaties…</p>{/if}
         {#if recordError}<p class="record-status" role="status">
             The treaty connections could not load. The full record has them.
@@ -924,8 +1219,8 @@
               ><span
                 ><small
                   >{selectedStory?.instrument && n!.label === selectedAgreement?.label
-                    ? 'The agreement that took it'
-                    : 'Agreement in its record'}</small
+                    ? 'The instrument the record ties to the loss'
+                    : 'Also in its record'}</small
                 >{n!
                   .label}{#if selectedStory?.instrument && headlines[selectedStory.instrument] && n!.label === selectedAgreement?.label}<em
                     >{headlines[selectedStory.instrument]}</em
@@ -1067,12 +1362,33 @@
         </label>
       </div>
       <p class="summary">{summary()}</p>
+      <p class="key-head">What the record says happened to the land</p>
       <ul class="key" aria-label="Colors on the map">
-        <li><span class="sw held"></span>Still held</li>
-        {#each HOW_ORDER.filter((h) => h !== 'unknown') as h (h)}
-          <li><span class="sw" style={`background: var(--how-${h})`}></span>{HOW_LABEL[h]}</li>
+        <li><span class="sw notyet"></span>Not yet taken that year</li>
+        {#each STATUS_ORDER.filter((x) => x !== 'ceded_by_agreement_with_consent_process') as x (x)}
+          <li>
+            <span class="sw" style={`background: var(${statusVar(x)})`}></span>{x ===
+            'ceded_by_ratified_treaty'
+              ? 'Recorded as ceded'
+              : STATUS_LABEL[x].replace(', still held in 1894', '')}
+          </li>
         {/each}
+        <li><span class="sw hatch"></span>Documented defect</li>
+        <li><span class="edge broken"></span>Promised, then taken</li>
       </ul>
+      <p class="key-note">
+        Royce shows what the United States recorded as acquired, not what nations agreed to.
+      </p>
+      <div class="overlays" role="group" aria-label="More layers">
+        {#each OVERLAYS as o (o.id)}
+          <label class="today"
+            ><input type="checkbox" checked={layerOn(o.id)} onchange={() => toggleLayer(o.id)} />
+            <span
+              >{o.label}{#if o.note}<small>{o.note}</small>{/if}</span
+            ></label
+          >
+        {/each}
+      </div>
       <p class="visually-hidden" aria-live="polite">{announce}</p>
     </section>
 
@@ -1081,7 +1397,7 @@
         <LandMeter
           years={loss.years}
           total={followed.total}
-          byHow={followed.by_how}
+          byStatus={followed.by_status}
           year={slider}
           label={followed.label}
         />
@@ -1114,20 +1430,24 @@
             >
           {/each}
         </fieldset>
-        <LegalStatus {base} />
+        <LegalStatus
+          {base}
+          cut={s.cut}
+          counts={honoredCounts}
+          selected={selectedStory
+            ? {
+                label: selected?.node.label ?? selectionTitle,
+                status: selectedStory.land_status,
+                flags: selectedK1?.flags ?? [],
+              }
+            : null}
+        />
       {/if}
-      <label class="today sans"
-        ><input
-          type="checkbox"
-          checked={s.layers.has('today') || s.year > YEAR_MAX}
-          onchange={toggleToday}
-        /> Show reservations and trust lands today</label
-      >
       {#if loss && !followed}
         <LandMeter
           years={loss.years}
           total={loss.all.total}
-          byHow={loss.all.by_how}
+          byStatus={loss.all.by_status}
           year={slider}
         />
       {/if}
@@ -1135,30 +1455,69 @@
 
     <details class="legend sans context-section">
       <summary>How to read the map</summary>
+      <h2 class="legend-head">What the record says happened to the land</h2>
+      <p class="lead-note">
+        Royce shows what the United States recorded as acquired, not what nations agreed to.
+      </p>
       <ul>
         <li>
-          <span class="sw held"></span><span
-            ><strong>Still held</strong> in that year: land the 1899 record shows as ceded only later.
-            Watch it shrink.</span
+          <span class="sw notyet"></span><span
+            ><strong>Not yet taken</strong> in that year, and not yet promised. Watch it shrink.</span
           >
         </li>
-        {#each HOW_ORDER as h (h)}
+        {#each STATUS_ORDER as x (x)}
           <li>
-            <span class="sw" style={`background: var(--how-${h})`}></span><span
-              ><strong>{HOW_LABEL[h]}.</strong> {HOW_HELP[h]}</span
+            <span class="sw" style={`background: var(${statusVar(x)})`}></span><span
+              ><strong>{STATUS_LABEL[x]}.</strong> {STATUS_HELP[x]}</span
             >
           </li>
         {/each}
         <li>
+          <span class="edge promise"></span><span
+            ><strong>Solid green edge:</strong> promised or reserved to the nation and still held that
+            year.</span
+          >
+        </li>
+        <li>
+          <span class="edge broken"></span><span
+            ><strong>Broken green edge:</strong> promised or reserved first, then taken.</span
+          >
+        </li>
+        <li>
+          <span class="sw hatch"></span><span
+            ><strong>Diagonal hatch:</strong> a documented defect in how the land was taken (duress, hostages,
+            contested signers, fraud and others), from a primary or scholarly source.</span
+          >
+        </li>
+        <li>
+          <span class="sw dots"></span><span
+            ><strong>Dots:</strong> a defect so far only reported (one source, or a book alone). Open
+            a shape for every finding and how it is sourced.</span
+          >
+        </li>
+        <li>
+          <span class="dot-key"></span><span
+            ><strong>Point:</strong> a massacre, at a general location, linked to the land it preceded,
+            enforced or followed. Off until you turn it on.</span
+          >
+        </li>
+        <li>
           <span class="sw bright"></span><span
-            >Bright shapes: ceded in the last {RECENT} years. Older losses fade.</span
+            >Bright shapes: changed in the last {RECENT} years. Older changes fade.</span
           >
         </li>
       </ul>
       <p class="small">
-        Each shape is a numbered area in Charles Royce’s 1899 federal record of land cessions,
-        traced by the US Forest Service. Shapes are approximate, not legal boundaries, and show what
-        the government recorded, not any nation’s homeland. The record ends in 1894.
+        Each shape is a numbered area in Charles Royce’s 1899 federal record, traced by the US
+        Forest Service. “Recorded as ceded” is that record’s word; it does not mean the land was
+        given freely or lawfully. Shapes are approximate, not legal boundaries, and do not show any
+        nation’s homeland. The record ends in 1894.
+      </p>
+      <p class="small">
+        <strong>What Royce does not cover.</strong> Colonial and state takings before or outside federal
+        treaty-making (most of New England and the original states), most of Texas (which kept its public
+        lands when it joined the Union), Alaska and Hawaii have no Royce area. Blank or hatched land there
+        is not land no one held.
       </p>
     </details>
 
@@ -1171,9 +1530,7 @@
               <button type="button" class:on={s.sel === e.id} onclick={() => select(e.id, true)}>
                 <span class="d">{e.dates[0]?.date.slice(0, 4) ?? ''}</span>
                 <span
-                  ><span
-                    class="sw"
-                    style={`background: var(--how-${stories[e.id]?.how ?? 'unknown'})`}
+                  ><span class="sw" style={`background: var(${statusVar(lsOf(e.id))})`}
                   ></span>{e.tribes_as_named_in_schedule.join(', ') || 'Peoples not listed'}
                   <small>area {e.cessnum}</small></span
                 >
@@ -1771,8 +2128,189 @@
     background: var(--held);
   }
   .sw.bright {
-    background: var(--how-treaty);
+    background: var(--ls-ceded_by_ratified_treaty);
     outline: 1.5px solid var(--ink);
+  }
+  .sw.notyet {
+    background: var(--ls-not-yet);
+  }
+  .sw.hatch {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--ls-hatch) 0 1.5px,
+      var(--ls-ceded_by_ratified_treaty) 1.5px 4px
+    );
+  }
+  .sw.dots {
+    background:
+      radial-gradient(circle, var(--ls-hatch) 0.9px, transparent 1.2px) 0 0 / 4px 4px,
+      var(--ls-ceded_by_ratified_treaty);
+  }
+  .edge {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-top: 0.35em;
+    margin-right: var(--space-2);
+    flex: none;
+    border: 2px solid var(--ls-promise-line);
+    background: var(--ls-not-yet);
+  }
+  .edge.broken {
+    border-style: dashed;
+    background: var(--ls-ceded_by_ratified_treaty);
+  }
+  .dot-key {
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: var(--ls-massacre);
+    box-shadow: 0 0 0 2px var(--ground);
+    margin: 0.4em var(--space-2) 0 0.05rem;
+  }
+  .key-head {
+    font-size: var(--s-1);
+    font-weight: 700;
+    margin: var(--space-4) 0 0;
+  }
+  .key-note,
+  .lead-note {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin: var(--space-2) 0 0;
+  }
+  .legend-head {
+    font-size: var(--s1);
+    margin: 0 0 var(--space-2);
+  }
+  .key .edge {
+    margin-top: 0;
+    margin-right: 5px;
+  }
+  .overlays {
+    margin-top: var(--space-3);
+    display: grid;
+    gap: var(--space-1);
+    font-size: var(--s-1);
+  }
+  .overlays label {
+    align-items: flex-start;
+  }
+  .overlays input {
+    margin-top: 0.3em;
+  }
+  .overlays small {
+    display: block;
+    color: var(--ink-2);
+    font-size: var(--s-2);
+  }
+  .badge {
+    display: inline-block;
+    font-size: var(--s-2);
+    line-height: 1.3;
+    padding: 1px 7px;
+    border-radius: 20px;
+    border: 1px solid var(--rule-strong);
+    background: var(--sheet-2);
+    color: var(--ink);
+    margin-left: 4px;
+    white-space: nowrap;
+  }
+  .badge.ev-primary {
+    background: var(--ink);
+    color: var(--sheet);
+    border-color: var(--ink);
+  }
+  .badge.ev-scholarly {
+    background: var(--lichen);
+    border-color: var(--moss);
+  }
+  .badge.ev-reported {
+    background: var(--sheet);
+    border-style: dashed;
+  }
+  .badge.ev-disputed {
+    background: var(--ochre);
+    border-color: var(--warn);
+  }
+  .status,
+  .flags,
+  .linked-sites,
+  .nation-says {
+    margin-top: var(--space-4);
+  }
+  .status h3,
+  .flags h3,
+  .linked-sites h3,
+  .nation-says h3 {
+    font-size: var(--s-1);
+    margin: 0 0 var(--space-2);
+  }
+  .flags ul,
+  .linked-sites ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .flags li {
+    border-top: 1px solid var(--rule);
+    padding: var(--space-2) 0;
+    font-size: var(--s-1);
+  }
+  .flags summary {
+    cursor: pointer;
+  }
+  .flags summary .badge {
+    margin: 0 4px 0 0;
+  }
+  .detail blockquote {
+    margin: var(--space-2) 0;
+    padding-left: var(--space-3);
+    border-left: 2px solid var(--rule-strong);
+    color: var(--ink-2);
+    font-size: var(--s-1);
+    overflow-wrap: anywhere;
+  }
+  .cite {
+    font-size: var(--s-2);
+    color: var(--ink-2);
+    overflow-wrap: anywhere;
+  }
+  .note summary {
+    cursor: pointer;
+    color: var(--moss);
+  }
+  .note {
+    font-size: var(--s-2);
+    color: var(--ink-2);
+    overflow-wrap: anywhere;
+  }
+  .sub-area {
+    border-left: 3px solid var(--ls-contested);
+    padding-left: var(--space-2);
+  }
+  .site dl,
+  .site > p {
+    font-size: var(--s-1);
+  }
+  .site dt {
+    font-weight: 700;
+    margin-top: var(--space-2);
+  }
+  .site dd {
+    margin: 0;
+  }
+  .area-link {
+    display: inline-block;
+    margin-right: var(--space-2);
+  }
+  .kicker {
+    font-size: var(--s-2);
+    color: var(--ink-2);
+    margin: 0 0 var(--space-1);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
   .legend {
     margin-top: var(--space-6);

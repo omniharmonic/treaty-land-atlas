@@ -18,7 +18,7 @@ test('selecting a row opens the record and the list matches the summary count', 
   await page.goto('/map/#y=1851');
   await page.locator('.record-browser > summary').click();
   const count = Number(await page.locator('.record-browser > summary span').innerText());
-  await expect(page.locator('.summary')).toContainText(`${count} cession`);
+  await expect(page.locator('.summary')).toContainText(`${count} land area`);
   await page.locator('.table button').first().click();
   await expect(page.locator('#detail h2')).toContainText('(area ');
   await expect(page.locator('#detail h2')).not.toContainText('Royce');

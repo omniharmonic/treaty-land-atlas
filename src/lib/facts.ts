@@ -75,7 +75,7 @@ export function factsFor(n: Node): Fact[] {
         f('Status', RATIFIED[String(n['ratification_status'])] ?? n['ratification_status']),
         f('Parties as named', n['parties_text']),
         f('Land described', n['land_description']),
-        f('Acres ceded', n['acreage_ceded']),
+        f('Acres recorded as ceded', n['acreage_ceded']),
         f('Statutes at Large', n['stat_cite']),
         f('Kappler', n['kappler_cite']),
         f('National Archives', nara?.rit ? `Ratified Indian Treaty ${nara.rit}` : null, {

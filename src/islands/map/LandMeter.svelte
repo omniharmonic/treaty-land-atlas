@@ -1,18 +1,19 @@
 <script lang="ts">
-  // Cumulative land recorded as ceded, stacked by how it was taken, with a marker at the current year.
-  // An estimate from Royce's shapes (overlaps counted once); the text below says so.
-  import { HOW_ORDER, HOW_LABEL, type How } from './how';
+  // Cumulative land the record shows leaving Native hands, stacked by what the record says happened
+  // (K1 land status), with a marker at the current year. An estimate from Royce's shapes (overlaps
+  // counted once); the text below says so.
+  import { STATUS_LABEL, STATUS_ORDER, statusVar, type LandStatus } from './landStatusStyle';
 
   let {
     years,
     total,
-    byHow,
+    byStatus,
     year,
     label = 'All nations',
   }: {
     years: number[];
     total: number[];
-    byHow: Record<How, number[]>;
+    byStatus: Record<LandStatus, number[]>;
     year: number;
     label?: string;
   } = $props();
@@ -31,10 +32,10 @@
 
   // stacked bands, bottom to top in legend order
   const bands = $derived.by(() => {
-    const out: { how: How; d: string }[] = [];
+    const out: { how: LandStatus; d: string }[] = [];
     const base = years.map(() => 0);
-    for (const h of HOW_ORDER) {
-      const top = years.map((_, i) => base[i]! + (byHow[h]?.[i] ?? 0));
+    for (const h of STATUS_ORDER) {
+      const top = years.map((_, i) => base[i]! + (byStatus?.[h]?.[i] ?? 0));
       if (top.every((v, i) => v === base[i])) continue;
       const upper = top.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
       const lower = base
@@ -55,7 +56,7 @@
         : `${Math.round(acres / 1e3)} thousand`;
   const now = $derived(total[idx] ?? 0);
   const parts = $derived(
-    HOW_ORDER.map((h) => ({ h, v: byHow[h]?.[idx] ?? 0 })).filter((p) => p.v > 0),
+    STATUS_ORDER.map((h) => ({ h, v: byStatus?.[h]?.[idx] ?? 0 })).filter((p) => p.v > 0),
   );
 </script>
 
@@ -64,17 +65,20 @@
     <span class="who">{label}</span>
     <span class="big">About {fmt(now)} acres</span>
     <span class="sub"
-      >recorded as ceded by the end of {Math.min(year, years[years.length - 1]!)}</span
+      >the record shows taken or ceded by the end of {Math.min(
+        year,
+        years[years.length - 1]!,
+      )}</span
     >
   </figcaption>
   <svg
     viewBox={`0 0 ${W} ${H}`}
     role="img"
-    aria-label={`Land recorded as ceded over time, ${label.toLowerCase()}. By ${Math.min(year, 1894)}: about ${fmt(now)} acres.`}
+    aria-label={`Land the record shows taken or ceded over time, ${label.toLowerCase()}. By ${Math.min(year, 1894)}: about ${fmt(now)} acres.`}
     preserveAspectRatio="none"
   >
     {#each bands as b (b.how)}
-      <path d={b.d} style={`fill: var(--how-${b.how})`} opacity="0.85"></path>
+      <path d={b.d} style={`fill: var(${statusVar(b.how)})`} opacity="0.85"></path>
     {/each}
     <line x1={x(idx)} x2={x(idx)} y1="0" y2={H} class="cursor"></line>
   </svg>
@@ -84,14 +88,15 @@
   <ul class="parts">
     {#each parts as p (p.h)}
       <li>
-        <span class="sw" style={`background: var(--how-${p.h})`}></span>{HOW_LABEL[p.h]}<span
-          class="v">{fmt(p.v)}</span
-        >
+        <span class="sw" style={`background: var(${statusVar(p.h)})`}></span>{STATUS_LABEL[
+          p.h
+        ]}<span class="v">{fmt(p.v)}</span>
       </li>
     {/each}
   </ul>
   <p class="note">
-    Estimate from Royce’s maps; overlapping cessions counted once. Not a survey or legal measure.
+    Estimate from Royce’s maps; overlapping areas counted once. Not a survey or legal measure.
+    Reservations still held in 1894 are not counted.
   </p>
 </figure>
 

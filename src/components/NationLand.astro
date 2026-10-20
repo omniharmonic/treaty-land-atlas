@@ -1,18 +1,23 @@
 ---
-// A nation's land recorded as ceded over time, by cause, from the same estimate the map uses.
+// A nation's land the record shows taken or ceded over time, by what the record says happened, from the same estimate the map uses.
 // For a present-day nation with no cessions of its own, shows the peoples whose history it carries.
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import LandMeter from '../islands/map/LandMeter.svelte';
 import { outgoing, type Node } from '../lib/graph';
 import { href } from '../lib/href';
-import type { How } from '../islands/map/how';
+import type { LandStatus } from '../islands/map/landStatusStyle';
 
 interface Props {
   n: Node;
 }
 const { n } = Astro.props;
-type Series = { total: number[]; by_how: Record<How, number[]>; cessions: string[]; label: string };
+type Series = {
+  total: number[];
+  by_status: Record<LandStatus, number[]>;
+  cessions: string[];
+  label: string;
+};
 const loss = JSON.parse(
   readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'land-loss.json'), 'utf8'),
 ) as { years: number[]; by_nation: Record<string, Series> };
@@ -27,7 +32,7 @@ const last = loss.years[loss.years.length - 1]!;
 
 {ids.length > 0 && (
   <section aria-labelledby="land-h">
-    <h2 id="land-h">Land recorded as ceded</h2>
+    <h2 id="land-h">What the record says happened to the land</h2>
     {ids[0] !== n.id && (
       <p class="small sans">
         This nation carries the history of peoples named in Royce’s schedule. Their record:
@@ -40,12 +45,12 @@ const last = loss.years[loss.years.length - 1]!;
           <LandMeter
             years={loss.years}
             total={s.total}
-            byHow={s.by_how}
+            byStatus={s.by_status}
             year={last}
             label={s.label}
           />
           <p class="sans small">
-            {s.cessions.length} cession{s.cessions.length === 1 ? '' : 's'}.{' '}
+            {s.cessions.length} land area{s.cessions.length === 1 ? '' : 's'} in the federal record.{' '}
             <a href={href(`/map/#y=${last}&nation=${id}`)}>
               Follow {s.label} through the years on the map
             </a>

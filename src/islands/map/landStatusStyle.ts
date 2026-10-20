@@ -132,7 +132,7 @@ export type OverlayId = (typeof OVERLAYS)[number]['id'];
 export function hatchImage(
   kind: 'solid' | 'dots' | 'faint',
   ink: string,
-  size = 8,
+  size = 10,
 ): { width: number; height: number; data: Uint8Array } {
   const data = new Uint8Array(size * size * 4);
   const [r, g, b] = [1, 3, 5].map((i) => parseInt(ink.slice(i, i + 2), 16) || 0) as [
@@ -153,12 +153,16 @@ export function hatchImage(
       if (kind === 'faint' && (x - y + size) % size === 0) put(x, y, 70);
     }
   if (kind === 'dots') {
-    put(1, 1, 220);
-    put(2, 1, 160);
-    put(1, 2, 160);
-    put(5, 5, 220);
-    put(6, 5, 160);
-    put(5, 6, 160);
+    const h = Math.floor(size / 2);
+    for (const [x, y] of [
+      [1, 1],
+      [1 + h, 1 + h],
+    ] as const) {
+      put(x, y, 230);
+      put(x + 1, y, 170);
+      put(x, y + 1, 170);
+      put(x + 1, y + 1, 120);
+    }
   }
   return { width: size, height: size, data };
 }

@@ -10,15 +10,15 @@ const relay = process.env.PUBLIC_NLD_RELAY ?? 'https://api.landback.land';
 <Base
   title="Map"
   bleed
-  description="Slide through 1784 to 1894 and see the land the United States recorded as ceded, from Royce's 1899 maps, with reservations and trust lands today."
+  description="Slide through 1784 to 1894 and see what the federal record says happened to Native land, from Royce's 1899 maps, with reservations and trust lands today."
 >
-  <h1 class="visually-hidden">Map of land cessions, 1784 to 1894</h1>
+  <h1 class="visually-hidden">What the record says happened to the land, 1784 to 1894</h1>
   <MapApp client:only="svelte" {base} {relay} />
   <noscript>
     <div class="frame">
       <p>
-        The map needs JavaScript. Every cession has its own page in the{' '}
-        <a href={href('/cessions/')}>cessions index</a>, and every treaty in the{' '}
+        The map needs JavaScript. Every land area has its own page in the{' '}
+        <a href={href('/cessions/')}>index of land areas</a>, and every treaty in the{' '}
         <a href={href('/treaties/')}>treaties index</a>.
       </p>
     </div>

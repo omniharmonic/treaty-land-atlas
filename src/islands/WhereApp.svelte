@@ -196,7 +196,8 @@
           The United States recorded this land as ceded in {first.year}, {HOW_PHRASE[first.how] ??
             'by means the record does not state'}{firstNations ? `, from the ${firstNations}` : ''}.
         {:else}
-          Royce’s maps of cessions do not cover this place.
+          Royce’s federal record has no area for this place. Colonial and state takings, most of
+          Texas, Alaska and Hawaii are not in it; that does not mean no nation held this land.
         {/if}
       </h2>
       {#if keptHere.length}
@@ -260,8 +261,8 @@
                         0
                           ? ', '
                           : ''}{#if x.path}<a href={url(x.path)}>{x.label}</a
-                          >{:else}{x.label}{/if}{/each}. Which one ceded it is still being checked
-                      against Royce’s schedule.
+                          >{:else}{x.label}{/if}{/each}. Which one the record ties to the loss is
+                      still being checked against Royce’s schedule.
                     </p>
                   {/if}
                   {#if c.instrument}
