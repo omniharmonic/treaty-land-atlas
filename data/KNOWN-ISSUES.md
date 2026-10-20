@@ -19,11 +19,9 @@ Generated findings from the pipeline (ingest, graph build, validation) plus hand
 - none
 
 ### stage: validate
-84 finding(s).
+82 finding(s).
 
 - **warn** `nara-ratified-treaties-index.csv RIT 55`: missing_naid: NARA row has no NAID (marked 'Treaty unavailable'); no source link can be built for it.
-- **warn** `treaties-seed.csv TLA-S-HI1993`: statute_only_in_treaties_seed: 'Apology Resolution (Pub. L. 103-150), 1993' is a statute row in treaties-seed.csv with no matching row in statutes-seed.csv; created as stat-apology-resolution-1993. Add it to statutes-seed.csv.
-- **warn** `organizations-seed.csv org-nana`: data_mismatch: 'NANA Regional Corporation' is typed 'tribal-government' but the name says Corporation (ANCSA corporations are not tribal governments). Check indigenous_led.
 - **warn** `violation-instrument-links.csv V039`: stat_cite_crosscheck: 21 Stat. 199 is printed in treaty_name but no linked instrument has that stat_cite.
 - **warn** `violation-instrument-links.csv V047`: stat_cite_crosscheck: 7 Stat. 418 is printed in treaty_name but no linked instrument has that stat_cite.
 - **warn** `violation-instrument-links.csv V047`: stat_cite_crosscheck: 11 Stat. 700 is printed in treaty_name but no linked instrument has that stat_cite.
