@@ -296,7 +296,7 @@
     color: var(--ink-2);
   }
   .unratified {
-    color: #774e35;
+    color: var(--on-clay);
   }
   .load-more {
     display: flex;

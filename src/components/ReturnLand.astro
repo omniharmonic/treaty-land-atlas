@@ -70,7 +70,7 @@ const side = taken?.acres && acres ? Math.max(0.6, Math.sqrt(acres / taken.acres
     <div class="rl-grid">
       <LandShape
         ids={[taken?.id, keptArea?.id].filter((x): x is string => !!x)}
-        fills={keptArea ? { [keptArea.id]: '#6f8a5a' } : {}}
+        fills={keptArea ? { [keptArea.id]: 'var(--land-kept)' } : {}}
         tone="lost"
         point={{ lon: lng, lat, label: loc!.place }}
         label={`Map: ${loc!.place}${takenNode ? `, inside ${takenNode.label}` : ''}.`}
@@ -189,7 +189,7 @@ const side = taken?.acres && acres ? Math.max(0.6, Math.sqrt(acres / taken.acres
   .big-sq {
     width: 100%;
     height: 100%;
-    background: #9d6b4b;
+    background: var(--land-lost);
     opacity: 0.8;
   }
   .small-sq {
@@ -217,7 +217,7 @@ const side = taken?.acres && acres ? Math.max(0.6, Math.sqrt(acres / taken.acres
     background: var(--data-return);
   }
   .k-ced {
-    background: #9d6b4b;
+    background: var(--land-lost);
   }
   .src {
     font-family: var(--sans);

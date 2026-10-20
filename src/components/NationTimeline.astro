@@ -1,4 +1,5 @@
 ---
+import { statusFill, statusInk } from '../islands/map/landStatusStyle';
 // A nation's record on one line of years: treaties, land recorded as ceded (sized by acres,
 // colored by how), broken promises, court cases and land returns. Every mark links to its record.
 // For a present-day nation, it includes the peoples whose history it carries.
@@ -13,7 +14,10 @@ interface Props {
 const { n } = Astro.props;
 const stories = JSON.parse(
   readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'cession-stories.json'), 'utf8'),
-) as Record<string, { how: string; nations: string[]; acres: number; ceded_year: number | null }>;
+) as Record<
+  string,
+  { how: string; land_status: string; nations: string[]; acres: number; ceded_year: number | null }
+>;
 
 const who = new Set([
   n.id,
@@ -49,7 +53,7 @@ const land = collect(
     .map(([id]) => id),
   (id) =>
     mk(id, stories[id]!.ceded_year, {
-      how: stories[id]!.how,
+      how: stories[id]!.land_status,
       r: 3 + 9 * Math.sqrt(stories[id]!.acres / maxAcres),
     }),
 );
@@ -115,7 +119,7 @@ const total = lanes.reduce((s, l) => s + l.marks.length, 0);
                     cx={x(m.y)}
                     cy={LANE / 2}
                     r={m.r}
-                    style={`fill: var(--how-${m.how ?? 'unknown'})`}
+                    style={`fill: ${statusFill(m.how ?? '')}; stroke: ${statusInk(m.how ?? '')}`}
                   />
                 ) : (
                   <rect x={x(m.y) - 2.5} y={LANE / 2 - 9} width="5" height="18" rx="1" />
@@ -130,8 +134,9 @@ const total = lanes.reduce((s, l) => s + l.marks.length, 0);
       Point at a mark to see what it is; select it to open the record.
     </p>
     <p class="sans note">
-      Circles are land the United States recorded as ceded, sized by acres and colored by how it was
-      taken. Bars are treaties, broken promises, court cases and land returns.
+      Circles are land areas in the federal record, sized by acres and colored by what the record
+      says happened to the land (the map legend explains the colors). Bars are treaties, broken
+      promises, court cases and land returns.
     </p>
   </section>
 )}
@@ -182,13 +187,13 @@ const total = lanes.reduce((s, l) => s + l.marks.length, 0);
     fill: var(--ink-2);
   }
   .broken rect {
-    fill: var(--how-pressure);
+    fill: var(--fam-taken-ink);
   }
   .cases rect {
-    fill: var(--how-congress);
+    fill: var(--fam-never-ink);
   }
   .returns rect {
-    fill: var(--held);
+    fill: var(--ls-reserved);
   }
   a:hover circle,
   a:focus-visible circle {

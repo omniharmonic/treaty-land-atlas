@@ -8,7 +8,7 @@
   import SupportView from '../components/SupportView.svelte';
   import { placeReport, type WhereData, type WhereReport } from '../lib/where';
   import { supportFor, type SupportIndex } from '../lib/support';
-  import { HOW_LABEL, type How } from './map/how';
+  import { NOT_LOST, STATUS_LABEL, statusFill, type LandStatus } from './map/landStatusStyle';
 
   let { base = '', relay = '' }: { base?: string; relay?: string } = $props();
 
@@ -154,8 +154,8 @@
     unknown: 'by means the record does not state',
   };
   // the earliest taking here; areas Royce records as kept reservations are told separately
-  const first = $derived(report?.cessions.find((c) => c.status !== 'kept') ?? null);
-  const keptHere = $derived(report?.cessions.filter((c) => c.status === 'kept') ?? []);
+  const first = $derived(report?.cessions.find((c) => !NOT_LOST.has(c.land_status)) ?? null);
+  const keptHere = $derived(report?.cessions.filter((c) => NOT_LOST.has(c.land_status)) ?? []);
   const firstNations = $derived(first ? list(first.nations.map((n) => n.label)) : '');
 </script>
 
@@ -249,11 +249,13 @@
         <section aria-labelledby="taken">
           <h3 id="taken">How this land was taken</h3>
           <ol class="strata">
-            {#each report.cessions.filter((c) => c.status !== 'kept') as c (c.id)}
-              <li style={`--c: var(--how-${c.how})`}>
+            {#each report.cessions.filter((c) => !NOT_LOST.has(c.land_status)) as c (c.id)}
+              <li style={`--c: ${statusFill(c.land_status)}`}>
                 <span class="yr">{c.year}</span>
                 <div>
-                  <p class="how sans">{HOW_LABEL[c.how as How] ?? c.how}</p>
+                  <p class="how sans">
+                    {STATUS_LABEL[c.land_status as LandStatus] ?? c.land_status}
+                  </p>
                   {#if c.royce_summary}<p class="what">{c.royce_summary}</p>{/if}
                   {#if !c.checked && c.instruments.length > 1}
                     <p class="sans small">

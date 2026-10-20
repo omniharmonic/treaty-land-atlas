@@ -37,6 +37,7 @@ export interface WhereData {
       royce_summary?: string;
       status?: string;
       ceded_year?: number | null;
+      land_status?: string;
     }
   >;
   headlines: Record<string, string>;
@@ -68,6 +69,8 @@ export interface WhereReport {
     royce_summary: string | null;
     /** ceded, taken (reservation land restored to the public domain), kept, or unchecked */
     status: string;
+    /** what the record says happened to the land (K1 model) */
+    land_status: string;
   })[];
   /** violations of the treaties that took this land: the broken promises */
   broken: Ref[];
@@ -151,6 +154,7 @@ export function placeReport(d: WhereData, lat: number, lng: number): WhereReport
       checked: !!st?.entries,
       royce_summary: st?.royce_summary ?? null,
       status: st?.status ?? 'unchecked',
+      land_status: st?.land_status ?? 'taken_no_instrument',
     };
   });
   const instruments = [

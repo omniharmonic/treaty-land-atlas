@@ -4,7 +4,8 @@
 // Used wherever a page talks about territory. Static SVG; the faint base map is one shared file.
 import { frameAround, locatorMap, projectPoint } from '../lib/svgmap';
 import { href } from '../lib/href';
-import { areaNumber } from '../lib/land';
+import { areaNumber, areaStories } from '../lib/land';
+import { statusFill } from '../islands/map/landStatusStyle';
 
 interface Props {
   ids: string[];
@@ -31,6 +32,10 @@ const {
   class: cls,
 } = Astro.props;
 const m = locatorMap(ids);
+// lost land takes the color of what the record says happened to it, unless a page sets its own
+const stories = tone === 'lost' ? areaStories() : {};
+const fillOf = (id: string) =>
+  fills[id] ?? (stories[id]?.land_status ? statusFill(stories[id]!.land_status!) : undefined);
 const pt = point ? projectPoint(point.lon, point.lat) : null;
 const fit = wide
   ? null
@@ -64,13 +69,13 @@ const stroke = fit ? Math.max(0.6, fit.w / 500) : 1;
             >
               <path
                 d={h.d}
-                style={fills[h.id] ? `fill: ${fills[h.id]}; fill-opacity: 0.82` : undefined}
+                style={fillOf(h.id) ? `fill: ${fillOf(h.id)}; fill-opacity: 0.82` : undefined}
               />
             </a>
           ) : (
             <path
               d={h.d}
-              style={fills[h.id] ? `fill: ${fills[h.id]}; fill-opacity: 0.82` : undefined}
+              style={fillOf(h.id) ? `fill: ${fillOf(h.id)}; fill-opacity: 0.82` : undefined}
             />
           ),
         )}
@@ -112,20 +117,20 @@ const stroke = fit ? Math.max(0.6, fit.w / 500) : 1;
     border-radius: 8px;
   }
   path {
-    fill: #9d6b4b;
+    fill: var(--land-lost);
     fill-opacity: 0.82;
-    stroke: #5e3f28;
+    stroke: var(--land-lost-ink);
     stroke-width: var(--sw);
     stroke-linejoin: round;
     vector-effect: non-scaling-stroke;
   }
   .kept path {
-    fill: #6f8a5a;
+    fill: var(--land-kept);
     stroke: var(--moss-deep);
   }
   .quiet path {
-    fill: #a3af8d;
-    stroke: #4d603c;
+    fill: var(--land-quiet);
+    stroke: var(--land-kept-ink);
     fill-opacity: 0.6;
   }
   a:hover path,
@@ -139,7 +144,7 @@ const stroke = fit ? Math.max(0.6, fit.w / 500) : 1;
     stroke: none;
   }
   .pt .core {
-    fill: #00664a;
+    fill: var(--fam-held-ink);
     fill-opacity: 1;
     stroke: var(--sheet);
     stroke-width: 1.5;
@@ -156,9 +161,9 @@ const stroke = fit ? Math.max(0.6, fit.w / 500) : 1;
     border-radius: 6px;
   }
   .inset rect {
-    fill: #9d6b4b;
+    fill: var(--land-lost);
     fill-opacity: 0.35;
-    stroke: #5e3f28;
+    stroke: var(--land-lost-ink);
     stroke-width: 6;
   }
   .land :global(figcaption) {

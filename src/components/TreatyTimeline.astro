@@ -288,9 +288,9 @@ const showYear = (r: Row) => (r.year ? String(r.year) : '');
     }
   }
   .tl-map path {
-    fill: #a3af8d;
+    fill: var(--land-quiet);
     fill-opacity: 0.55;
-    stroke: #4d603c;
+    stroke: var(--land-kept-ink);
     stroke-width: var(--sw);
     stroke-linejoin: round;
     vector-effect: non-scaling-stroke;
@@ -305,12 +305,12 @@ const showYear = (r: Row) => (r.year ? String(r.year) : '');
     fill-opacity: 0.9;
   }
   .live .tl-map path.kept {
-    fill: #6f8a5a;
+    fill: var(--land-kept);
     stroke: var(--moss-deep);
   }
   .live .tl-map path.lost {
-    fill: #9d6b4b;
-    stroke: #5e3f28;
+    fill: var(--land-lost);
+    stroke: var(--land-lost-ink);
   }
   @media (prefers-reduced-motion: reduce) {
     .tl-map path {
@@ -341,10 +341,10 @@ const showYear = (r: Row) => (r.year ? String(r.year) : '');
     vertical-align: -0.05rem;
   }
   .k-kept {
-    background: #6f8a5a;
+    background: var(--land-kept);
   }
   .k-lost {
-    background: #9d6b4b;
+    background: var(--land-lost);
   }
   .tl-rows {
     min-width: 0;
@@ -362,18 +362,18 @@ const showYear = (r: Row) => (r.year ? String(r.year) : '');
     transition: border-color 300ms var(--ease);
   }
   .tl-row.kept {
-    border-left-color: #a9bb98;
+    border-left-color: color-mix(in srgb, var(--land-kept) 50%, var(--ground));
   }
   .tl-row.lost,
   .tl-row.broken {
-    border-left-color: #c9a48c;
+    border-left-color: color-mix(in srgb, var(--land-lost) 50%, var(--ground));
   }
   .tl-row.on.kept {
-    border-left-color: #6f8a5a;
+    border-left-color: var(--land-kept);
   }
   .tl-row.on.lost,
   .tl-row.on.broken {
-    border-left-color: #9d6b4b;
+    border-left-color: var(--land-lost);
   }
   .tl-row.return {
     border-left-color: var(--data-return);

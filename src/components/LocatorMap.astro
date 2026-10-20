@@ -1,12 +1,12 @@
 ---
-// Where this record's land is: its cessions on a quiet map of all of Royce's cessions, colored by
-// how each was taken. Static SVG; the base map is one shared file.
+// Where this record's land is: its land areas on a quiet map of all of Royce's areas, colored by
+// what the record says happened to the land (src/islands/map/landStatusStyle.ts). Static SVG; the base map is one shared file.
 import { incoming, outgoing, type Node } from '../lib/graph';
 import { locatorMap } from '../lib/svgmap';
 import LandShape from './LandShape.astro';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { HOW_LABEL, HOW_ORDER, type How } from '../islands/map/how';
+import { CLASS_ORDER, LABEL, classOf, statusFill } from '../islands/map/landStatusStyle';
 
 interface Props {
   n: Node;
@@ -14,7 +14,7 @@ interface Props {
 const { n } = Astro.props;
 const stories = JSON.parse(
   readFileSync(join(process.cwd(), 'public', 'data', 'tables', 'cession-stories.json'), 'utf8'),
-) as Record<string, { how: How; nations: string[]; instrument: string | null }>;
+) as Record<string, { land_status: string; nations: string[]; instrument: string | null }>;
 const ids = new Set<string>();
 const ofInstrument = (i: string) =>
   incoming(i)
@@ -45,7 +45,9 @@ if (n.type === 'Case')
     .filter((e) => e.type === 'concerns_instrument')
     .forEach((e) => ofInstrument(e.target));
 const m = ids.size ? locatorMap(ids) : null;
-const used = HOW_ORDER.filter((h) => m?.hi.some((x) => stories[x.id]?.how === h));
+const used = CLASS_ORDER.filter((c) =>
+  m?.hi.some((x) => classOf(stories[x.id]?.land_status ?? '') === c),
+);
 ---
 
 {m && m.hi.length > 0 && (
@@ -53,15 +55,15 @@ const used = HOW_ORDER.filter((h) => m?.hi.some((x) => stories[x.id]?.how === h)
     class="locator"
     ids={m.hi.map((x) => x.id)}
     fills={Object.fromEntries(
-      m.hi.map((x) => [x.id, `var(--how-${stories[x.id]?.how ?? 'unknown'})`]),
+      m.hi.map((x) => [x.id, statusFill(stories[x.id]?.land_status ?? '')]),
     )}
-    label={`Map of the ${m.hi.length === 1 ? 'land area' : `${m.hi.length} land areas`} connected to this record, colored by how the land was taken.`}
+    label={`Map of the ${m.hi.length === 1 ? 'land area' : `${m.hi.length} land areas`} connected to this record, colored by what the record says happened to the land.`}
   >
     <figcaption>
       {used.map((h) => (
         <span class="key">
-          <i style={`background: var(--how-${h})`} />
-          {HOW_LABEL[h]}
+          <i style={`background: var(--ls-${h})`} />
+          {LABEL[h]}
         </span>
       ))}
       <span class="note">

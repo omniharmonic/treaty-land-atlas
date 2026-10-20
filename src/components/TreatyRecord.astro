@@ -5,7 +5,15 @@
 import type { Node } from '../lib/graph';
 import { graph, overlayFor, cleanTags } from '../lib/graph';
 import { treatyExperience } from '../lib/treaty';
-import { acresText, landTotals, ROLE_KIND, ROLE_PHRASE, treatyLand } from '../lib/land';
+import {
+  acresText,
+  areaStories,
+  landTotals,
+  ROLE_KIND,
+  ROLE_PHRASE,
+  treatyLand,
+} from '../lib/land';
+import { statusFill } from '../islands/map/landStatusStyle';
 import { href } from '../lib/href';
 import Narrative from './Narrative.astro';
 import Sources from './Sources.astro';
@@ -63,11 +71,17 @@ const lawKinds: Record<string, string> = {
   Doctrine: 'Legal doctrine',
   Instrument: 'Related agreement',
 };
-// the hero map colors each area by what this treaty did to it: given up, or kept
+// the hero map colors each area by what this treaty did to it: kept, or lost (in the color of
+// what the record says happened to the land)
 const heroFills = Object.fromEntries(
   areas
     .filter((a) => a.role)
-    .map((a) => [a.id, ROLE_KIND[a.role!] === 'lost' ? '#9d6b4b' : '#6f8a5a']),
+    .map((a) => [
+      a.id,
+      ROLE_KIND[a.role!] === 'lost'
+        ? statusFill(areaStories()[a.id]?.land_status ?? 'ceded_by_ratified_treaty')
+        : 'var(--land-kept)',
+    ]),
 );
 // cases, laws and agreements with a date already sit in "What happened next"; this section keeps
 // what the timeline does not show (the legal doctrines, and anything without a year)

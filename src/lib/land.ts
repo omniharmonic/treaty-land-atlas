@@ -17,6 +17,8 @@ export interface AreaStory {
   entries?: { date: string; role: string; instrument: string | null; quote: string }[];
   royce_summary?: string;
   plain?: string;
+  /** what the record says happened to the land (K1 model) */
+  land_status?: string;
 }
 
 let cache: Record<string, AreaStory> | null = null;

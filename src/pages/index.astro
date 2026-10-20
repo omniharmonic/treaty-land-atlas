@@ -432,7 +432,7 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     display: flex;
     align-items: center;
     background: var(--sheet);
-    border: 1px solid #c6c7b6;
+    border: 1px solid var(--rule-strong);
     border-radius: 9px;
     padding: 6px;
     gap: 10px;
@@ -480,8 +480,8 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     text-decoration: none;
   }
   .land {
-    background: #e4e9db;
-    border: 1px solid #d4dcc9;
+    background: var(--sage);
+    border: 1px solid var(--rule);
     border-radius: 20px;
     margin: 0;
     padding: 24px;
@@ -508,9 +508,9 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     overflow: visible;
   }
   .yr {
-    fill: #a6b397;
-    fill-opacity: 0.7;
-    stroke: #859574;
+    fill: var(--ls-reserved);
+    fill-opacity: 0.55;
+    stroke: var(--fam-held-ink);
     stroke-width: 0.55;
     stroke-linejoin: round;
     transition: fill-opacity 300ms;
@@ -520,8 +520,8 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     stroke-opacity: 0.45;
   }
   .today {
-    fill: #485d3f;
-    stroke: #485d3f;
+    fill: var(--moss-deep);
+    stroke: var(--moss-deep);
     stroke-width: 0.5;
     opacity: 0;
     transition: opacity 600ms;
@@ -540,7 +540,7 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     font-size: 3.5rem;
     line-height: 1;
     letter-spacing: -0.06em;
-    color: #48553e;
+    color: var(--ink-2);
     font-variant-numeric: lining-nums tabular-nums;
   }
   .map-context {
@@ -548,21 +548,21 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     bottom: 6px;
     left: 0;
     font-size: 0.7rem;
-    color: #59664f;
+    color: var(--ink-2);
   }
   .time-controls {
     display: flex;
     gap: 16px;
     align-items: flex-start;
     padding: 16px 0;
-    border-top: 1px solid #c9d2bc;
+    border-top: 1px solid var(--rule);
   }
   .time-controls button {
     width: 36px;
     height: 36px;
-    border: 1px solid #bfcbb3;
+    border: 1px solid var(--rule-strong);
     background: transparent;
-    color: #475c3c;
+    color: var(--moss);
     border-radius: 50%;
     cursor: pointer;
     flex: none;
@@ -575,18 +575,18 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     width: 100%;
     height: 10px;
     margin: 0;
-    accent-color: #485d3f;
+    accent-color: var(--moss);
     cursor: pointer;
   }
   .time-labels {
     display: flex;
     justify-content: space-between;
     font-size: 0.65rem;
-    color: #59664f;
+    color: var(--ink-2);
     margin-top: 8px;
   }
   figcaption {
-    border-top: 1px solid #c9d2bc;
+    border-top: 1px solid var(--rule);
     padding-top: 16px;
   }
   .keys {
@@ -594,7 +594,7 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     flex-wrap: wrap;
     gap: 10px 20px;
     font-size: 0.65rem;
-    color: #59664f;
+    color: var(--ink-2);
   }
   .keys i {
     display: inline-block;
@@ -604,15 +604,15 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     margin-right: 7px;
   }
   .k-held {
-    background: #8b9d78;
+    background: color-mix(in srgb, var(--ls-reserved) 70%, var(--ground));
   }
   .k-today {
-    background: #485d3f;
+    background: var(--moss-deep);
   }
   figcaption p {
     font-size: 0.65rem;
     line-height: 1.6;
-    color: #59664f;
+    color: var(--ink-2);
     margin: 10px 0 0;
   }
   .land-col {
@@ -634,19 +634,19 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     border-radius: 999px;
     font-size: 0.9rem;
     text-decoration: none;
-    border: 1px solid #485d3f;
+    border: 1px solid var(--moss);
   }
   .ra-map {
-    background: #485d3f;
-    color: #f6f7f1;
+    background: var(--moss);
+    color: var(--on-moss);
   }
   .ra-story {
-    color: #364a2f;
+    color: var(--moss-deep);
   }
   .ra:hover {
-    background: #364a2f;
-    border-color: #364a2f;
-    color: #f6f7f1;
+    background: var(--moss-deep);
+    border-color: var(--moss-deep);
+    color: var(--on-moss);
   }
   .ribbon {
     display: flex;
@@ -681,19 +681,19 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     width: 100%;
     height: 8px;
     border-radius: 2px;
-    background: #b9c5ab;
+    background: var(--lichen);
     transition:
       height 150ms,
       background-color 150ms;
   }
   .ribbon li:nth-child(even) .seg {
-    background: #a6b397;
+    background: var(--river);
   }
   .ribbon a.on .seg,
   .ribbon a:hover .seg,
   .ribbon a:focus-visible .seg {
     height: 16px;
-    background: #485d3f;
+    background: var(--moss);
   }
   .ribbon-ends {
     max-width: none;
@@ -702,12 +702,12 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     gap: 12px;
     margin: 4px 0 0;
     font-size: 0.7rem;
-    color: #59664f;
+    color: var(--ink-2);
   }
   .ribbon-now {
     margin: 6px 0 0;
     font-size: 0.85rem;
-    color: #364a2f;
+    color: var(--moss-deep);
   }
   .release {
     max-width: none;
@@ -736,7 +736,7 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
   }
   .path-icon {
     font-size: 2rem;
-    color: #83916f;
+    color: var(--river);
     width: 32px;
     flex: none;
   }
@@ -855,7 +855,7 @@ const national = ix.national.slice(0, 3).map((id) => ix.orgs[id]!);
     align-items: center;
     justify-content: space-between;
     gap: 48px;
-    background: #eee1d6;
+    background: var(--clay);
     border-radius: 16px;
     padding: 40px;
   }

@@ -1,6 +1,6 @@
 ---
 // The story of the land, 1784 to today: chapters that scroll past a pinned map. As each chapter
-// comes into view, land taken before it fades to its cause, land taken during it glows, and land
+// comes into view, land taken before it fades to what the record says happened, land taken during it glows, and land
 // still held stays green. Static SVG and a small observer; works without JavaScript as a long read.
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -8,7 +8,7 @@ import Base from '../layouts/Base.astro';
 import { node, pathFor } from '../lib/graph';
 import { href } from '../lib/href';
 import { storyMap } from '../lib/svgmap';
-import { HOW_LABEL, HOW_ORDER } from '../islands/map/how';
+import { CLASS_ORDER, HOW_TO_CLASS, LABEL } from '../islands/map/landStatusStyle';
 
 type Src = { url: string; title?: string; quote?: string };
 interface Chapter {
@@ -56,7 +56,12 @@ const recordLink = (id: string) => {
       <figure class="board">
         <svg viewBox={`0 0 ${map.width} ${map.height}`} id="story-map">
           {map.groups.map((g) => (
-            <path class="c" data-y={g.y} style={`--how: var(--how-${g.how})`} d={g.d} />
+            <path
+              class={g.y === 9999 ? 'c res' : 'c'}
+              data-y={g.y}
+              style={`--how: var(--ls-${g.cls})`}
+              d={g.d}
+            />
           ))}
           <path class="lands" d={map.lands} />
         </svg>
@@ -65,14 +70,16 @@ const recordLink = (id: string) => {
         </p>
         <p class="key sans">
           <span>
-            <i class="k-held"></i>Still held
+            <i class="k-held"></i>Not yet taken
           </span>
-          {HOW_ORDER.filter((h) => h !== 'unknown').map((h) => (
-            <span>
-              <i style={`background: var(--how-${h})`}></i>
-              {HOW_LABEL[h]}
-            </span>
-          ))}
+          {CLASS_ORDER.filter((c) => map.groups.some((g) => g.cls === c) && c !== 'contested').map(
+            (c) => (
+              <span>
+                <i style={`background: var(--ls-${c})`}></i>
+                {LABEL[c].replace(', held in this year', '')}
+              </span>
+            ),
+          )}
           <span>
             <i class="k-lands"></i>Native lands today
           </span>
@@ -122,7 +129,7 @@ const recordLink = (id: string) => {
               <ol class="moments">
                 {moments.map((m) => (
                   <li
-                    style={m.how ? `--how: var(--how-${m.how})` : undefined}
+                    style={m.how ? `--how: var(--ls-${HOW_TO_CLASS[m.how] ?? 'none'})` : undefined}
                     class:list={[{ taken: !!m.how }]}
                   >
                     <span class="my">{m.year}</span>
@@ -278,8 +285,12 @@ const recordLink = (id: string) => {
       fill-opacity 600ms ease;
   }
   .live .c {
-    fill: var(--held);
+    fill: var(--ls-prior);
     fill-opacity: 0.55;
+  }
+  .live .c.res {
+    fill: var(--how);
+    fill-opacity: 0.7;
   }
   .live .c.gone {
     fill: var(--how);
@@ -334,7 +345,8 @@ const recordLink = (id: string) => {
     border-radius: 2px;
   }
   .k-held {
-    background: color-mix(in srgb, var(--held) 55%, var(--ground));
+    background: var(--ls-prior);
+    border: 1px solid var(--fam-held-ink);
   }
   .k-lands {
     background: var(--moss-deep);

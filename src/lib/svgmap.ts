@@ -4,6 +4,7 @@
 // pages light.
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { classOf } from '../islands/map/landStatusStyle';
 
 const rad = Math.PI / 180;
 const [phi1, phi2, phi0, lam0] = [29.5 * rad, 45.5 * rad, 23 * rad, -96 * rad];
@@ -102,10 +103,21 @@ function cededYears(): Map<string, number> {
   if (!existsSync(file)) return out;
   const t = JSON.parse(readFileSync(file, 'utf8')) as Record<
     string,
-    { ceded_year?: number | null; status?: string }
+    {
+      ceded_year?: number | null;
+      status?: string;
+      land_status?: string;
+      lost_year?: number;
+      entries?: { date: string }[];
+    }
   >;
+  // the same dating as the map (pipeline/src/emit/story.ts lostAt)
   for (const [id, s] of Object.entries(t))
-    if (s.status === 'kept') out.set(id, 9999);
+    if (s.land_status === 'promised_reserved' || s.land_status === 'described_not_ceded')
+      out.set(id, 9999);
+    else if (s.lost_year) out.set(id, s.lost_year);
+    else if (s.status === 'kept' && s.entries?.[0])
+      out.set(id, Number(s.entries[0].date.slice(0, 4)));
     else if (s.ceded_year) out.set(id, s.ceded_year);
   return out;
 }
@@ -140,26 +152,37 @@ export function locatorMap(ids: Iterable<string>) {
   return { width: W, height: frame.height, base, hi };
 }
 
-/** The story page: cessions grouped by year and cause, plus today's lands. */
+/** The story page: land areas grouped by year and land-status class, plus today's lands. */
 export function storyMap() {
   const { cessions, lands, frame } = load();
   const file = join(process.cwd(), 'public', 'data', 'tables', 'cession-stories.json');
   const stories = existsSync(file)
     ? (JSON.parse(readFileSync(file, 'utf8')) as Record<
         string,
-        { how: string; ceded_year?: number | null; status?: string }
+        {
+          land_status?: string;
+          ceded_year?: number | null;
+          status?: string;
+          lost_year?: number;
+          entries?: { date: string }[];
+        }
       >)
     : {};
-  const groups = new Map<string, { y: number; how: string; d: string }>();
+  const NOT_LOST = new Set(['promised_reserved', 'described_not_ceded']);
+  const groups = new Map<string, { y: number; cls: string; d: string }>();
   for (const f of cessions) {
     const id = String(f.properties['id']);
-    const y =
-      stories[id]?.status === 'kept'
-        ? 9999
-        : (stories[id]?.ceded_year ?? Math.floor(Number(f.properties['t0'])));
-    const how = stories[id]?.how ?? 'unknown';
-    const key = `${y}-${how}`;
-    const g = groups.get(key) ?? { y, how, d: '' };
+    const st = stories[id];
+    // the same dating as the map (pipeline/src/emit/story.ts lostAt)
+    const y = NOT_LOST.has(st?.land_status ?? '')
+      ? 9999
+      : (st?.lost_year ??
+        (st?.status === 'kept'
+          ? Number(st.entries?.[0]?.date.slice(0, 4)) || Math.floor(Number(f.properties['t0']))
+          : (st?.ceded_year ?? Math.floor(Number(f.properties['t0'])))));
+    const cls = classOf(st?.land_status ?? '');
+    const key = `${y}-${cls}`;
+    const g = groups.get(key) ?? { y, cls, d: '' };
     g.d += path(f.geometry, 3);
     groups.set(key, g);
   }

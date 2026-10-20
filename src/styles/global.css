@@ -66,6 +66,12 @@
   --ls-promise: #1f6b35;
   --ls-casing: #fdfbf6;
   --ls-hatch: #302f28;
+  /* land kept or lost on record pages (a page with a status uses the status color) */
+  --land-kept: var(--ls-reserved);
+  --land-kept-ink: var(--fam-held-ink);
+  --land-lost: var(--ls-ceded);
+  --land-lost-ink: var(--fam-ceded-ink);
+  --land-quiet: var(--ls-prior);
 
   --serif:
     'Charis', Charter, 'Iowan Old Style', Georgia, 'Noto Sans Cherokee', 'Noto Sans Osage', serif;
