@@ -23,6 +23,9 @@
   --ochre: #eee2bd;
   --rose: #e9d7d2;
   --warn: #8a4b0f;
+  --on-clay: #774e35;
+  --on-ochre: #6c572b;
+  --org-symbol: #ece5d6;
 
   /* map data (Okabe-Ito) */
   --data-cession: #e69f00;
@@ -42,24 +45,27 @@
   --how-unknown: #8a8f86;
   --held: #9aa888;
 
-  /* what the record says happened to the land (K1 model; encoding in src/islands/map/landStatusStyle.ts).
-   * Okabe-Ito hues, checked with the dataviz palette validator against --ground: every pair is at
-   * least 15 apart in normal vision; the closest pair under color-vision deficiency (bluish green and
-   * reddish purple, deltaE 7.6) is also told apart by line pattern and hatch. Both "recorded as
-   * ceded" statuses share orange and differ by line pattern. */
-  --ls-ceded_by_ratified_treaty: #e69f00;
-  --ls-ceded_by_agreement_with_consent_process: #e69f00;
-  --ls-taken_by_statute: #0072b2;
-  --ls-taken_by_executive_order: #56b4e9;
-  --ls-taken_no_instrument: #d55e00;
-  --ls-unratified_treaty_area: #f0e442;
-  --ls-promised_reserved: #009e73;
-  --ls-described_not_ceded: #cc79a7;
-  --ls-contested: #4d4f48;
-  --ls-not-yet: #c9ccd1;
-  --ls-promise-line: #00694d;
+  /* what the record says happened to the land: docs/design/K1-map-visual-encoding.md. The map reads
+   * the same values from src/islands/map/landStatusStyle.ts; these mirror them for swatches. */
+  --ls-ceded: #ceac6c;
+  --ls-agree: #e8cc8e;
+  --ls-contested: #ceac6c;
+  --ls-statute: #985f8c;
+  --ls-eo: #b377a6;
+  --ls-none: #6c3662;
+  --ls-unrat: #7dafdb;
+  --ls-desc: #9dc3e2;
+  --ls-reserved: #48804a;
+  --ls-prior: #dae5d0;
+  --ls-gone: #e3ded0;
+  --fam-ceded-ink: #7d5600;
+  --fam-taken-ink: #4f2246;
+  --fam-never-ink: #2b6492;
+  --fam-held-ink: #2f5e33;
+  --fam-gap-ink: #686a5b;
+  --ls-promise: #1f6b35;
+  --ls-casing: #fdfbf6;
   --ls-hatch: #302f28;
-  --ls-massacre: #302f28;
 
   --serif:
     'Charis', Charter, 'Iowan Old Style', Georgia, 'Noto Sans Cherokee', 'Noto Sans Osage', serif;
@@ -91,6 +97,101 @@
   --radius: 8px;
   --tap: 44px;
   --ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Dark theme (I4 s.8): a separate palette, not an inversion. Applies with the system setting unless
+ * data-theme="light" is set, and always with data-theme="dark". */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --ground: #121915;
+    --sheet: #1e2822;
+    --sheet-2: #26322b;
+    --ink: #ece9de;
+    --ink-2: #c2c5b3;
+    --ink-3: #a3a893;
+    --rule: #34403a;
+    --rule-strong: #6f7c72;
+    --moss: #9acf9e;
+    --moss-deep: #c3e4c5;
+    --lichen: #2c3f30;
+    --river: #a3a893;
+    --focus: #ece9de;
+    --on-moss: #121915;
+    --sage: #22322a;
+    --clay: #3a2c27;
+    --ochre: #3b3420;
+    --rose: #3a2a2a;
+    --warn: #f0b070;
+    --on-clay: #e8c2ac;
+    --on-ochre: #e6d39a;
+    --org-symbol: #26322b;
+    --held: #4f7d55;
+    --ls-ceded: #d1a556;
+    --ls-agree: #ac8b4c;
+    --ls-contested: #d1a556;
+    --ls-statute: #cd8ebf;
+    --ls-eo: #8d6183;
+    --ls-none: #e7b3dc;
+    --ls-unrat: #164d7e;
+    --ls-desc: #1a3c54;
+    --ls-reserved: #2f6c3b;
+    --ls-prior: #1f2c1c;
+    --ls-gone: #41463f;
+    --fam-ceded-ink: #e9c47c;
+    --fam-taken-ink: #f0c6e6;
+    --fam-never-ink: #8fc0ea;
+    --fam-held-ink: #9acf9e;
+    --fam-gap-ink: #a3a893;
+    --ls-promise: #7fd08c;
+    --ls-casing: #121915;
+    --ls-hatch: #121915;
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --ground: #121915;
+  --sheet: #1e2822;
+  --sheet-2: #26322b;
+  --ink: #ece9de;
+  --ink-2: #c2c5b3;
+  --ink-3: #a3a893;
+  --rule: #34403a;
+  --rule-strong: #6f7c72;
+  --moss: #9acf9e;
+  --moss-deep: #c3e4c5;
+  --lichen: #2c3f30;
+  --river: #a3a893;
+  --focus: #ece9de;
+  --on-moss: #121915;
+  --sage: #22322a;
+  --clay: #3a2c27;
+  --ochre: #3b3420;
+  --rose: #3a2a2a;
+  --warn: #f0b070;
+  --on-clay: #e8c2ac;
+  --on-ochre: #e6d39a;
+  --org-symbol: #26322b;
+  --held: #4f7d55;
+  --ls-ceded: #d1a556;
+  --ls-agree: #ac8b4c;
+  --ls-contested: #d1a556;
+  --ls-statute: #cd8ebf;
+  --ls-eo: #8d6183;
+  --ls-none: #e7b3dc;
+  --ls-unrat: #164d7e;
+  --ls-desc: #1a3c54;
+  --ls-reserved: #2f6c3b;
+  --ls-prior: #1f2c1c;
+  --ls-gone: #41463f;
+  --fam-ceded-ink: #e9c47c;
+  --fam-taken-ink: #f0c6e6;
+  --fam-never-ink: #8fc0ea;
+  --fam-held-ink: #9acf9e;
+  --fam-gap-ink: #a3a893;
+  --ls-promise: #7fd08c;
+  --ls-casing: #121915;
+  --ls-hatch: #121915;
 }
 
 *,

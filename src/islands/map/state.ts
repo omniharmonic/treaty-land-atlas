@@ -1,17 +1,20 @@
 // Map state in the URL hash (I2 s.3.2): y year, m mode, w window, v view, cut honored-through
-// year, l layers, c center, sel selection. Parsing never throws; bad values fall back to defaults.
+// year, p preset (docs/design/K1-map-visual-encoding.md s.7), l layers, c center, sel selection. Parsing never throws; bad values fall back to defaults.
 
 export const YEAR_MIN = 1784;
 export const YEAR_MAX = 1894;
 export const WINDOWS = [1, 5, 10, 25] as const;
 export const CUT_POINTS = [1783, 1830, 1851, 1868, 1871, 1887] as const;
-export const LAYERS = ['cessions', 'today', 'massacres', 'norecord'] as const;
+export const LAYERS = ['cessions', 'today', 'massacres'] as const;
+export const PRESETS = ['recorded', 'how', 'promised', 'broken', 'never', 'today'] as const;
+export type Preset = (typeof PRESETS)[number];
 
 export interface MapState {
   year: number;
   mode: 'cum' | 'win';
   win: (typeof WINDOWS)[number];
   view: 'record' | 'honored';
+  preset: Preset;
   cut: (typeof CUT_POINTS)[number];
   layers: Set<(typeof LAYERS)[number]>;
   center: [number, number, number] | null;
@@ -23,6 +26,7 @@ export const DEFAULT_STATE: MapState = {
   mode: 'cum',
   win: 10,
   view: 'record',
+  preset: 'recorded',
   cut: 1851,
   layers: new Set(['cessions']),
   center: null,
@@ -42,6 +46,8 @@ export function parseHash(hash: string): MapState {
   const w = int(p.get('w'), 1, 25);
   if (w && (WINDOWS as readonly number[]).includes(w)) s.win = w as MapState['win'];
   if (p.get('v') === 'honored') s.view = 'honored';
+  const preset = p.get('p');
+  if (preset && (PRESETS as readonly string[]).includes(preset)) s.preset = preset as Preset;
   const cut = int(p.get('cut'), 1700, 1900);
   if (cut && (CUT_POINTS as readonly number[]).includes(cut)) s.cut = cut as MapState['cut'];
   if (p.has('l')) {
@@ -71,6 +77,7 @@ export function toHash(s: MapState): string {
   p.set('y', String(s.year));
   if (s.mode !== 'cum') p.set('m', s.mode);
   if (s.mode === 'win') p.set('w', String(s.win));
+  if (s.preset !== 'recorded') p.set('p', s.preset);
   if (s.view === 'honored') {
     p.set('v', 'honored');
     p.set('cut', String(s.cut));

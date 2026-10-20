@@ -6,7 +6,8 @@
   import {
     EVIDENCE_CLASS,
     FLAG_LABEL,
-    NO_LAWFUL_CESSION,
+    LS_TO_CLASS,
+    NEVER_GIVEN,
     STATUS_LABEL,
     STATUS_ORDER,
     statusVar,
@@ -32,8 +33,9 @@
   const lost = $derived(
     STATUS_ORDER.filter((s) => (counts[s] ?? 0) > 0).map((s) => ({ s, n: counts[s] ?? 0 })),
   );
+  // lost without a cession: these keep their color in the honored view (NEVER_GIVEN)
   const unlawful = $derived(
-    lost.filter((x) => NO_LAWFUL_CESSION.has(x.s)).reduce((a, x) => a + x.n, 0),
+    lost.filter((x) => NEVER_GIVEN.has(LS_TO_CLASS[x.s])).reduce((a, x) => a + x.n, 0),
   );
 
   const rows: [string, string][] = [
@@ -87,8 +89,8 @@
     </ul>
     {#if unlawful}
       <p class="small">
-        {unlawful} of them were lost under a treaty never ratified, with no instrument, or are contested:
-        no lawful cession is on record, so the map keeps their own color instead of greying them out.
+        {unlawful} of them were taken by an act, an order, a treaty never ratified, or with no instrument:
+        no cession is on the record, so the map keeps their own color instead of greying them out.
       </p>
     {/if}
   {/if}

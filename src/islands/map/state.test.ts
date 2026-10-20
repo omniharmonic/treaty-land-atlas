@@ -4,7 +4,7 @@ import { DEFAULT_STATE, inView, parseHash, toHash } from './state';
 describe('map hash state', () => {
   it('round-trips', () => {
     const s = parseHash(
-      '#y=1851&m=win&w=5&v=honored&cut=1830&l=cessions,massacres,norecord,today&c=44.50,-103.10,5.0&sel=geo-royce-89',
+      '#y=1851&m=win&w=5&p=broken&v=honored&cut=1830&l=cessions,massacres,today&c=44.50,-103.10,5.0&sel=geo-royce-89',
     );
     expect(parseHash(toHash(s))).toEqual(s);
     expect(s).toMatchObject({
@@ -12,16 +12,18 @@ describe('map hash state', () => {
       mode: 'win',
       win: 5,
       view: 'honored',
+      preset: 'broken',
       cut: 1830,
       sel: 'geo-royce-89',
     });
   });
   it('ignores bad input without throwing', () => {
-    const s = parseHash('#y=abc&m=evil&w=7&cut=1999&l=nld,cessions&c=999,0,3&sel=<script>');
+    const s = parseHash('#y=abc&m=evil&w=7&p=nope&cut=1999&l=nld,cessions&c=999,0,3&sel=<script>');
     expect(s.year).toBe(DEFAULT_STATE.year);
     expect(s.mode).toBe('cum');
     expect(s.win).toBe(DEFAULT_STATE.win);
     expect(s.cut).toBe(DEFAULT_STATE.cut);
+    expect(s.preset).toBe('recorded');
     expect([...s.layers]).toEqual(['cessions']);
     expect(s.center).toBeNull();
     expect(s.sel).toBeNull();

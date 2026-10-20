@@ -21,20 +21,51 @@
   } from './map/state';
   import { HOW_LABEL, type How } from './map/how';
   import {
+    CASING,
+    CONFIG,
     EVIDENCE_CLASS,
+    EVIDENCE_LEGEND,
+    FAMILY,
+    FAMILY_LABEL,
     FLAG_LABEL,
+    LABEL,
+    LEGEND_GROUPS,
     MASSACRE_LINK,
-    NO_LAWFUL_CESSION,
+    MASSACRE_NOTE,
+    NEVER_GIVEN,
+    classOf,
     NOT_LOST,
     OVERLAYS,
-    STATUS_DASH,
+    PRESETS,
+    PRESET_IDS,
+    PROMISE,
+    SHORT,
     STATUS_HELP,
     STATUS_LABEL,
-    STATUS_ORDER,
-    hatchImage,
+    TEXT,
+    TODAY_FILL,
+    TODAY_LINE,
+    badgeFilterExpr,
+    classExpr,
+    coloredExpr,
+    dashedClasses,
+    drawPatterns,
+    edgeColorExpr,
+    edgeOpacityExpr,
+    edgeWidthExpr,
+    fillColorExpr,
+    gapOpacityExpr,
+    hatchFilterExpr,
+    hatchPatternExpr,
+    laterColorExpr,
+    laterFilterExpr,
+    promiseDashExpr,
+    promiseFilterExpr,
     statusVar,
+    type DisplayClass,
     type LandStatus,
     type OverlayId,
+    type Theme,
   } from './map/landStatusStyle';
   import LegalStatus from './map/LegalStatus.svelte';
   import LandMeter from './map/LandMeter.svelte';
@@ -152,8 +183,6 @@
     >;
   }
 
-  const RECENT = 5; // years a new cession stays bright
-
   let s = $state<MapState>(parseHash(typeof location === 'undefined' ? '' : location.hash));
   let follow = $state<string | null>(null);
   let events = $state<CessionEvent[]>([]);
@@ -163,6 +192,9 @@
   let moments = $state<Moment[]>([]);
   let headlines = $state<Record<string, string>>({});
   let k1 = $state<Record<string, AreaK1>>({});
+  // other records under the last tapped point, topmost first
+  let under = $state<string[]>([]);
+  let massacreNoteSeen = $state(false);
   let sites = $state<Site[]>([]);
   let loadError = $state<string | null>(null);
   let webglMissing = $state(false);
@@ -232,7 +264,7 @@
   const followed = $derived(follow && loss ? (loss.by_nation[follow] ?? null) : null);
   const visible = $derived(
     events
-      .filter((e) => inView(e.t_first, { year: slider, mode: 'cum', win: 999 }))
+      .filter((e) => inView(e.t_first, { year: slider, mode: 'cum', win: 25 }))
       .filter((e) => !follow || stories[e.id]?.nations.includes(follow))
       .sort((a, b) => (b.t_first ?? 0) - (a.t_first ?? 0) || a.cessnum.localeCompare(b.cessnum)),
   );
@@ -255,11 +287,11 @@
 
   function summary(): string {
     if (s.view === 'honored')
-      return `Stopping the clock in ${s.cut}: green is land the record shows leaving Native hands only after ${s.cut}, which the instruments in force that year left with the nations. Land lost before then under a treaty never ratified, or with no instrument at all, keeps its own color: no lawful cession is on record. Outlined: what was taken from ${s.cut + 1} through ${slider}.`;
+      return `Stopping the clock in ${s.cut}: green is land the record shows leaving Native hands only after ${s.cut}, which the instruments in force that year left with the nations. Land taken before then by an act, an order, a treaty never ratified or with no instrument keeps its own color: no cession is on the record. Outlined: what was taken from ${s.cut + 1} through ${slider}.`;
     const who = followed ? `${followed.label}: ` : '';
     const n = visible.length;
-    const noLawful = visible.filter((e) => NO_LAWFUL_CESSION.has(lsOf(e.id))).length;
-    return `${who}${n} land area${n === 1 ? '' : 's'} the record shows taken or ceded by the end of ${slider}${thisYear.length ? `, ${thisYear.length} of them in ${slider}` : ''}${noLawful ? `; ${noLawful} with no lawful cession on record` : ''}.`;
+    const noCession = visible.filter((e) => NEVER_GIVEN.has(classOf(lsOf(e.id)))).length;
+    return `${who}${n} land area${n === 1 ? '' : 's'} the record shows taken or ceded by the end of ${slider}${thisYear.length ? `, ${thisYear.length} of them in ${slider}` : ''}${noCession ? `; ${noCession} with no cession on the record` : ''}.`;
   }
 
   let hashTimer: ReturnType<typeof setTimeout> | undefined;
@@ -277,17 +309,20 @@
   });
 
   function applyState(m: MapLibre) {
-    m.setGlobalStateProperty('year', slider);
-    m.setGlobalStateProperty('recent', RECENT);
+    m.setGlobalStateProperty('year', s.preset === 'today' ? 2026 : slider);
+    m.setGlobalStateProperty('preset', s.preset);
+    m.setGlobalStateProperty('sel', s.sel ?? '');
     m.setGlobalStateProperty('cut', s.cut);
-    m.setGlobalStateProperty('honored', s.view === 'honored');
-    m.setGlobalStateProperty('today', s.layers.has('today') || s.year > YEAR_MAX);
+    m.setGlobalStateProperty('honored', s.view === 'honored' && PRESETS[s.preset].honored);
+    m.setGlobalStateProperty(
+      'today',
+      s.layers.has('today') || s.year > YEAR_MAX || s.preset === 'today',
+    );
     m.setGlobalStateProperty('follow', follow ?? '');
     m.setGlobalStateProperty('massacres', s.layers.has('massacres'));
-    m.setGlobalStateProperty('norecord', s.layers.has('norecord'));
   }
   $effect(() => {
-    void [slider, s.cut, s.view, s.layers, s.year, follow];
+    void [slider, s.cut, s.view, s.layers, s.year, s.preset, s.sel, follow];
     if (map && mapReady) applyState(map);
   });
 
@@ -295,9 +330,10 @@
   $effect(() => {
     const sel = s.sel;
     if (!map || !mapReady) return;
-    const src = (id: string) => (id.startsWith('mas-') ? 'massacres' : 'cessions');
-    if (lastSel) map.setFeatureState({ source: src(lastSel), id: lastSel }, { selected: false });
-    if (sel) map.setFeatureState({ source: src(sel), id: sel }, { selected: true });
+    if (lastSel && !lastSel.startsWith('mas-'))
+      map.setFeatureState({ source: 'cessions', id: lastSel }, { selected: false });
+    if (sel && !sel.startsWith('mas-'))
+      map.setFeatureState({ source: 'cessions', id: sel }, { selected: true });
     lastSel = sel;
   });
 
@@ -495,6 +531,7 @@
 
   function select(id: string | null, fly = false) {
     s.sel = id;
+    under = [];
     if (id && playing) togglePlay();
     if (!id)
       tick().then(() => {
@@ -568,7 +605,29 @@
     }, 700);
   }
 
+  let presetBar: HTMLDivElement;
+  // keep the chosen preset chip in view on a narrow screen
+  $effect(() => {
+    void s.preset;
+    tick().then(() =>
+      presetBar
+        ?.querySelector('button.on')
+        ?.scrollIntoView({ inline: 'nearest', block: 'nearest' }),
+    );
+  });
+  function setPreset(id: (typeof PRESET_IDS)[number]) {
+    s.preset = id;
+    if (!PRESETS[id].honored && s.view === 'honored') s.view = 'record';
+  }
+  const preset = $derived(PRESETS[s.preset]);
+  const keyClasses = $derived(
+    (s.view === 'honored'
+      ? (['gone', 'statute', 'eo', 'none', 'unrat', 'reserved', 'prior'] as DisplayClass[])
+      : preset.color
+    ).filter((c) => c !== 'contested'),
+  );
   function toggleLayer(id: OverlayId) {
+    if (id === 'massacres' && !s.layers.has('massacres')) massacreNoteSeen = true;
     // eslint-disable-next-line svelte/prefer-svelte-reactivity -- a new Set is assigned, never mutated
     const next = new Set(s.layers);
     if (next.has(id)) next.delete(id);
@@ -598,6 +657,8 @@
   onMount(() => {
     reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
     follow = new URLSearchParams(location.hash.slice(1)).get('nation');
+    if (CONFIG.massacresOnByDefault && !/[#&]l=/.test(location.hash))
+      s.layers = new Set([...s.layers, 'massacres']);
     const onHash = (event: HashChangeEvent) => {
       clearTimeout(hashTimer);
       s = parseHash(new URL(event.newURL).hash);
@@ -643,8 +704,7 @@
         }
         setWorkerUrl(workerUrl);
         const dark = getComputedStyle(document.documentElement).colorScheme === 'dark';
-        const css = getComputedStyle(document.documentElement);
-        const v = (name: string) => css.getPropertyValue(name).trim();
+        const theme: Theme = dark ? 'dark' : 'light';
         map = new MapLibre({
           container,
           style: url(`/map/style-atlas-${dark ? 'dark' : 'light'}.json`),
@@ -679,9 +739,6 @@
             data: { type: 'FeatureCollection', features: [] },
           });
           const on = (k: string): unknown => ['==', ['global-state', k], true];
-          const yearEnd: unknown = ['+', ['global-state', 'year'], 1];
-          const ceded: unknown = ['<', ['get', 't0'], yearEnd];
-          const recent: unknown = ['>=', ['get', 't0'], ['-', yearEnd, ['global-state', 'recent']]];
           const following: unknown = ['!=', ['global-state', 'follow'], ''];
           const isFollowed: unknown = ['in', ['global-state', 'follow'], ['get', 'nations']];
           const focus = (normal: number, dim: number): unknown => [
@@ -690,192 +747,66 @@
             ['case', isFollowed, normal, dim],
             normal,
           ];
-          // the K1 encoding (src/islands/map/landStatusStyle.ts): fill by land status, line by
-          // status pattern, hatch by the evidence behind defect flags, promise outlines
-          const status = ['get', 'ls'];
-          const statusColor: unknown = [
-            'match',
-            status,
-            ...STATUS_ORDER.flatMap((x) => [x, v(statusVar(x))]),
-            v('--ls-taken_no_instrument'),
-          ];
-          const dash: unknown = [
-            'match',
-            status,
-            ...STATUS_ORDER.flatMap((x) => [x, ['literal', STATUS_DASH[x]]]),
-            ['literal', [2, 1]],
-          ];
-          const afterCut: unknown = ['>=', ['get', 't0'], ['+', ['global-state', 'cut'], 1]];
-          const promisedBy: unknown = [
-            '<=',
-            ['coalesce', ['get', 'py'], 0],
-            ['global-state', 'year'],
-          ];
-          // still with the nation and already promised or described: shown in its own status color
-          const shownHeld: unknown = [
-            'all',
-            ['!', ceded],
-            ['in', status, ['literal', [...NOT_LOST]]],
-            promisedBy,
-          ];
-          const drawn: unknown = ['any', ceded, shownHeld];
-          const noLawful: unknown = ['in', status, ['literal', [...NO_LAWFUL_CESSION]]];
-          const ink = v('--ls-hatch');
-          map.addImage('hatch-solid', hatchImage('solid', ink));
-          map.addImage('hatch-dots', hatchImage('dots', ink));
-          map.addImage('hatch-faint', hatchImage('faint', ink));
+          const selected: unknown = ['boolean', ['feature-state', 'selected'], false];
+          // patterns and ring icons, drawn for this theme at the screen's pixel ratio
+          const dpr = Math.max(1, Math.round(window.devicePixelRatio || 1));
+          for (const [name, img] of Object.entries(drawPatterns(theme, dpr)))
+            map.addImage(name, img, { pixelRatio: dpr });
 
-          // land with no federal cession record (pre-federal, state and Texas takings), if built
+          // no federal cession record: colonial, state and Texas takings (dots on the basemap)
           if (norecord) {
             map.addSource('norecord', { type: 'geojson', data: norecord });
             map.addLayer({
-              id: 'norecord-hatch',
+              id: 'gap-fill',
               type: 'fill',
               source: 'norecord',
-              filter: on('norecord') as never,
-              paint: { 'fill-pattern': 'hatch-faint', 'fill-opacity': 0.9 },
+              filter: ['!', on('honored')] as never,
+              paint: { 'fill-pattern': 'gap-dots', 'fill-opacity': gapOpacityExpr() as never },
             });
           }
-          // land not yet taken in this year, and not yet promised: a quiet neutral that shrinks
+          // what the record says happened: one opaque fill per display class; areas outside the
+          // preset keep a zero-opacity fill so they stay tappable
           map.addLayer({
-            id: 'held',
+            id: 'status-fill',
             type: 'fill',
             source: 'cessions',
-            filter: ['all', ['!', on('honored')], ['!', drawn]] as never,
-            paint: { 'fill-color': v('--ls-not-yet'), 'fill-opacity': focus(0.5, 0.08) as never },
-          });
-          // what the record says happened, colored by land status; recent changes bright
-          map.addLayer({
-            id: 'ceded',
-            type: 'fill',
-            source: 'cessions',
-            filter: ['all', ['!', on('honored')], drawn] as never,
             paint: {
-              'fill-color': statusColor as never,
-              'fill-opacity': [
-                'case',
-                ['boolean', ['feature-state', 'selected'], false],
-                0.9,
-                [
-                  'case',
-                  following,
-                  ['case', isFollowed, ['case', recent, 0.85, 0.55], 0.06],
-                  ['case', recent, 0.8, 0.4],
-                ],
-              ] as never,
+              'fill-color': fillColorExpr(theme) as never,
+              'fill-opacity': ['case', coloredExpr(), focus(1, 0.12), 0] as never,
             },
           });
-          // documented defects: solid hatch for primary or scholarly evidence, dots if only reported
+          // documented defects: solid hatch for primary or scholarly evidence, dots otherwise
           map.addLayer({
-            id: 'flags-hatch',
+            id: 'status-hatch',
             type: 'fill',
             source: 'cessions',
-            filter: ['all', ['!', on('honored')], drawn, ['>', ['get', 'fh'], 0]] as never,
+            filter: hatchFilterExpr() as never,
             paint: {
-              'fill-pattern': [
-                'case',
-                ['==', ['get', 'fh'], 2],
-                'hatch-solid',
-                'hatch-dots',
-              ] as never,
-              'fill-opacity': focus(0.4, 0.05) as never,
+              'fill-pattern': hatchPatternExpr(theme) as never,
+              'fill-opacity': (reducedMotion ? focus(0.35, 0.05) : focus(1, 0.1)) as never,
             },
           });
           map.addLayer({
-            id: 'ceded-line',
+            id: 'status-edge',
             type: 'line',
             source: 'cessions',
-            filter: ['all', ['!', on('honored')], ceded] as never,
+            filter: ['!', ['in', classExpr(), ['literal', dashedClasses]]] as never,
             paint: {
-              'line-color': v('--ink'),
-              'line-opacity': ['case', recent, 0.75, 0.22] as never,
-              'line-width': [
-                'case',
-                ['boolean', ['feature-state', 'selected'], false],
-                2.6,
-                ['case', recent, 1.2, 0.5],
-              ] as never,
-              'line-dasharray': dash as never,
+              'line-color': edgeColorExpr(theme) as never,
+              'line-width': edgeWidthExpr() as never,
+              'line-opacity': edgeOpacityExpr() as never,
             },
           });
-          // promised or reserved and still held: a solid promise outline
           map.addLayer({
-            id: 'promise-line',
+            id: 'status-edge-dashed',
             type: 'line',
             source: 'cessions',
-            filter: [
-              'all',
-              ['!', on('honored')],
-              ['!', ceded],
-              ['has', 'py'],
-              ['!=', ['get', 'py'], null],
-              promisedBy,
-            ] as never,
+            filter: ['in', classExpr(), ['literal', dashedClasses]] as never,
             paint: {
-              'line-color': v('--ls-promise-line'),
-              'line-width': [
-                'case',
-                ['boolean', ['feature-state', 'selected'], false],
-                2.8,
-                1.4,
-              ] as never,
-              'line-opacity': focus(0.9, 0.15) as never,
-            },
-          });
-          // promised, then taken: the promise outline broken into dashes
-          map.addLayer({
-            id: 'broken-line',
-            type: 'line',
-            source: 'cessions',
-            filter: ['all', ['!', on('honored')], ceded, ['==', ['get', 'bp'], 1]] as never,
-            paint: {
-              'line-color': v('--ls-promise-line'),
-              'line-width': 2,
-              'line-dasharray': [1.5, 1.5],
-              'line-opacity': focus(0.85, 0.1) as never,
-            },
-          });
-          // "if the treaties had been honored": grey only for land lost before the cut under an
-          // instrument the record treats as a lawful cession; land lost under a treaty never
-          // ratified or with no instrument keeps its own color
-          map.addLayer({
-            id: 'honored-ceded',
-            type: 'fill',
-            source: 'cessions',
-            filter: ['all', on('honored'), ['!', afterCut], ['!', noLawful]] as never,
-            paint: { 'fill-color': v('--ink-3'), 'fill-opacity': 0.16 },
-          });
-          map.addLayer({
-            id: 'honored-unlawful',
-            type: 'fill',
-            source: 'cessions',
-            filter: ['all', on('honored'), ['!', afterCut], noLawful] as never,
-            paint: { 'fill-color': statusColor as never, 'fill-opacity': 0.55 },
-          });
-          map.addLayer({
-            id: 'honored-retained',
-            type: 'fill',
-            source: 'cessions',
-            filter: ['all', on('honored'), afterCut] as never,
-            paint: {
-              'fill-color': v('--ls-promised_reserved'),
-              'fill-opacity': [
-                'case',
-                ['boolean', ['feature-state', 'selected'], false],
-                0.7,
-                0.4,
-              ] as never,
-            },
-          });
-          map.addLayer({
-            id: 'honored-altered',
-            type: 'line',
-            source: 'cessions',
-            filter: ['all', on('honored'), afterCut, ceded] as never,
-            paint: {
-              'line-color': statusColor as never,
-              'line-width': 1.8,
-              'line-dasharray': dash as never,
+              'line-color': edgeColorExpr(theme) as never,
+              'line-width': edgeWidthExpr() as never,
+              'line-opacity': edgeOpacityExpr() as never,
+              'line-dasharray': [4, 2],
             },
           });
           map.addLayer({
@@ -883,21 +814,81 @@
             type: 'fill',
             source: 'today',
             filter: ['all', on('today'), ['==', ['get', 'k'], 'land']] as never,
-            paint: { 'fill-color': v('--moss'), 'fill-opacity': 0.5 },
+            paint: { 'fill-color': TODAY_FILL[theme], 'fill-opacity': 0.75 },
           });
           map.addLayer({
             id: 'today-line',
             type: 'line',
             source: 'today',
             filter: ['all', on('today'), ['!=', ['get', 'k'], 'statistical']] as never,
-            paint: { 'line-color': v('--moss-deep'), 'line-width': 1.2 },
+            paint: { 'line-color': TODAY_LINE[theme], 'line-width': 1.1 },
           });
           map.addLayer({
             id: 'today-statistical',
             type: 'line',
             source: 'today',
             filter: ['all', on('today'), ['==', ['get', 'k'], 'statistical']] as never,
-            paint: { 'line-color': v('--river'), 'line-width': 1, 'line-dasharray': [0.5, 2] },
+            paint: { 'line-color': TODAY_LINE[theme], 'line-width': 1, 'line-dasharray': [0.5, 2] },
+          });
+          // a promise stood here: green outline over a casing, inside the ring
+          map.addLayer({
+            id: 'promise-casing',
+            type: 'line',
+            source: 'cessions',
+            filter: promiseFilterExpr() as never,
+            layout: { 'line-join': 'round' },
+            paint: {
+              'line-color': CASING[theme],
+              'line-width': 4.6,
+              'line-offset': -1.2,
+              'line-opacity': focus(0.9, 0.1) as never,
+            },
+          });
+          map.addLayer({
+            id: 'promise-line',
+            type: 'line',
+            source: 'cessions',
+            filter: promiseFilterExpr() as never,
+            layout: { 'line-join': 'round' },
+            paint: {
+              'line-color': PROMISE[theme],
+              'line-width': 2.2,
+              'line-offset': -1.2,
+              'line-dasharray': promiseDashExpr() as never,
+              'line-opacity': focus(1, 0.15) as never,
+            },
+          });
+          // honored-through: each later taking as a dashed outline in the color of how it was taken
+          map.addLayer({
+            id: 'later-line',
+            type: 'line',
+            source: 'cessions',
+            filter: laterFilterExpr() as never,
+            paint: {
+              'line-color': laterColorExpr(theme) as never,
+              'line-width': 1.2,
+              'line-dasharray': [3, 2],
+            },
+          });
+          map.addLayer({
+            id: 'select-casing',
+            type: 'line',
+            source: 'cessions',
+            paint: {
+              'line-color': CASING[theme],
+              'line-width': 5,
+              'line-opacity': ['case', selected, 1, 0] as never,
+            },
+          });
+          map.addLayer({
+            id: 'select-line',
+            type: 'line',
+            source: 'cessions',
+            paint: {
+              'line-color': TEXT[theme],
+              'line-width': 2.2,
+              'line-opacity': ['case', selected, 1, 0] as never,
+            },
           });
           map.addLayer({
             id: 'nld-fill',
@@ -926,46 +917,71 @@
               'symbol-placement': 'point',
             },
             paint: {
-              'text-color': v('--ink'),
-              'text-halo-color': v('--ground'),
+              'text-color': TEXT[theme],
+              'text-halo-color': CASING[theme],
               'text-halo-width': 1.5,
             },
           });
-          // massacre sites at a general location (0.1 degree), off until the reader turns them on
+          // always-visible badges: "Contested", "Payment refused"
+          map.addLayer({
+            id: 'badge',
+            type: 'symbol',
+            source: 'cessions',
+            minzoom: 4,
+            filter: badgeFilterExpr() as never,
+            layout: {
+              'text-field': [
+                'match',
+                ['get', 'bd'],
+                'contested',
+                'Contested',
+                'Payment refused',
+              ] as never,
+              'text-font': ['Noto Sans Regular'],
+              'text-size': 11,
+              'symbol-placement': 'point',
+            },
+            paint: {
+              'text-color': TEXT[theme],
+              'text-halo-color': CASING[theme],
+              'text-halo-width': 2.5,
+            },
+          });
+          // massacre sites at a general location (0.1 degree): hollow rings, broken when the
+          // evidence is reported or disputed; off until the reader turns them on
           map.addSource('massacres', { type: 'geojson', data: mas, promoteId: 'id' });
           map.addLayer({
             id: 'massacre-points',
-            type: 'circle',
+            type: 'symbol',
             source: 'massacres',
             filter: [
               'all',
               on('massacres'),
               ['<=', ['coalesce', ['get', 'year'], 0], ['global-state', 'year']],
             ] as never,
-            paint: {
-              'circle-radius': [
-                'case',
-                ['boolean', ['feature-state', 'selected'], false],
-                8,
-                5.5,
+            layout: {
+              'icon-image': [
+                'concat',
+                'mas-',
+                [
+                  'case',
+                  ['in', ['get', 'evidence'], ['literal', ['primary', 'scholarly']]],
+                  'solid',
+                  'dotted',
+                ],
+                ['case', ['==', ['get', 'id'], ['global-state', 'sel']], '-sel', ''],
               ] as never,
-              'circle-color': v('--ls-massacre'),
-              'circle-stroke-color': v('--ground'),
-              'circle-stroke-width': 2,
+              'icon-allow-overlap': true,
+              'icon-ignore-placement': true,
+              'icon-padding': 11,
             },
           });
-          for (const layer of [
-            'massacre-points',
-            'ceded',
-            'held',
-            'honored-retained',
-            'honored-ceded',
-            'honored-unlawful',
-          ]) {
+          const clickable = ['massacre-points', 'status-fill'];
+          for (const layer of clickable) {
             map.on(
               'click',
               layer,
-              (e: MapMouseEvent & { features?: { properties: { id: string } }[] }) => {
+              (e: MapMouseEvent & { features?: { properties: Record<string, unknown> }[] }) => {
                 // a massacre point drawn over a land area takes the click
                 if (
                   layer !== 'massacre-points' &&
@@ -973,8 +989,11 @@
                   map.queryRenderedFeatures(e.point, { layers: ['massacre-points'] }).length
                 )
                   return;
-                const id = e.features?.[0]?.properties.id;
+                // every record under the point, topmost first, so the panel can list the others
+                const ids = [...new Set((e.features ?? []).map((f) => String(f.properties.id)))];
+                const id = ids[0];
                 if (id) select(id);
+                if (layer === 'status-fill') under = ids.slice(1);
               },
             );
             map.on('mouseenter', layer, () => map && (map.getCanvas().style.cursor = 'pointer'));
@@ -1011,8 +1030,26 @@
       role="region"
       aria-label="Map of what the federal record says happened to Native land, by year"
     ></div>
+    <div
+      class="presets sans"
+      role="radiogroup"
+      aria-label="Ways to look at the map"
+      bind:this={presetBar}
+    >
+      {#each PRESET_IDS as id (id)}
+        <button
+          type="button"
+          role="radio"
+          aria-checked={s.preset === id}
+          class:on={s.preset === id}
+          onclick={() => setPreset(id)}>{PRESETS[id].label}</button
+        >
+      {/each}
+    </div>
     <div class="stage" aria-hidden="true">
-      <p class="year">{s.view === 'honored' && slider < s.cut ? s.cut : slider}</p>
+      <p class="year">
+        {s.preset === 'today' ? 'Today' : s.view === 'honored' && slider < s.cut ? s.cut : slider}
+      </p>
       {#if chapter}<p class="chapter-title">{chapter.title}</p>{/if}
     </div>
     {#if webglMissing}
@@ -1035,6 +1072,7 @@
         >
       </div>
       <section id="detail" class="detail site sans" tabindex="-1" aria-labelledby="detail-h">
+        <p class="warning">{MASSACRE_NOTE}</p>
         <p class="kicker">
           {m.category === 'mass_execution'
             ? 'Mass execution'
@@ -1121,6 +1159,7 @@
                   >{/if}</span
               >
             </p>
+            <p class="small">{STATUS_HELP[ls]}</p>
             {#if ['pressure', 'removal'].includes(selectedStory.how)}
               <p class="small">
                 Also in the research record: {HOW_LABEL[selectedStory.how].toLowerCase()} ({selectedStory.how_basis}).
@@ -1128,14 +1167,14 @@
             {/if}
             {#if selectedStory.broken_promise}
               <p class="small">
-                <span class="edge broken" aria-hidden="true"></span>Promised or reserved to the
-                nation{selectedStory.promised_year ? ` in ${selectedStory.promised_year}` : ''},
-                then taken.
+                <span class="edge" style={`background: var(${statusVar(ls)})`} aria-hidden="true"
+                ></span>Promised or reserved to the nation{selectedStory.promised_year
+                  ? ` in ${selectedStory.promised_year}`
+                  : ''}, then taken.
               </p>
             {:else if selectedStory.promised_year && NOT_LOST.has(ls)}
               <p class="small">
-                <span class="edge promise" aria-hidden="true"></span>Promised, reserved or described
-                in {selectedStory.promised_year}.
+                <span class="edge held" aria-hidden="true"></span>Promised, reserved or described in {selectedStory.promised_year}.
               </p>
             {/if}
             {#if selectedK1?.basis}
@@ -1228,6 +1267,21 @@
               ><span aria-hidden="true">→</span></a
             >
           {/each}
+        {/if}
+        {#if under.length}
+          <div class="under sans">
+            <p class="small">
+              {under.length} other record{under.length === 1 ? '' : 's'} cover{under.length === 1
+                ? 's'
+                : ''} this spot:
+            </p>
+            {#each under.slice(0, 6) as u (u)}
+              {@const ev = events.find((e) => e.id === u)}
+              <button type="button" class="link" onclick={() => select(u)}
+                >Area {ev?.cessnum ?? u.replace('geo-royce-', '')}: {STATUS_LABEL[lsOf(u)]}</button
+              >
+            {/each}
+          </div>
         {/if}
         <p class="record-reference">
           <a href={url(`/cessions/${selectedEvent.cessnum.toLowerCase()}/`)}
@@ -1362,19 +1416,34 @@
         </label>
       </div>
       <p class="summary">{summary()}</p>
+      <p class="question">
+        {s.view === 'honored'
+          ? `If the treaties had been honored through ${s.cut}: what the United States had promised or not yet acquired by ${s.cut}, with every later taking as a dashed outline. A model, not a claim about today.`
+          : preset.question}
+      </p>
       <p class="key-head">What the record says happened to the land</p>
-      <ul class="key" aria-label="Colors on the map">
-        <li><span class="sw notyet"></span>Not yet taken that year</li>
-        {#each STATUS_ORDER.filter((x) => x !== 'ceded_by_agreement_with_consent_process') as x (x)}
+      <ul class="key" aria-label="Colors in this view">
+        {#each keyClasses as c (c)}
           <li>
-            <span class="sw" style={`background: var(${statusVar(x)})`}></span>{x ===
-            'ceded_by_ratified_treaty'
-              ? 'Recorded as ceded'
-              : STATUS_LABEL[x].replace(', still held in 1894', '')}
+            <span
+              class="sw"
+              style={`background: var(--ls-${c}); border-color: var(--fam-${FAMILY[c]}-ink)`}
+              class:dash={c === 'agree' || c === 'eo'}
+              class:heavy={c === 'none' || c === 'desc'}
+            ></span>{SHORT[c]}
           </li>
         {/each}
-        <li><span class="sw hatch"></span>Documented defect</li>
-        <li><span class="edge broken"></span>Promised, then taken</li>
+        {#if preset.hatch || s.view === 'honored'}<li>
+            <span class="sw hatch"></span>Consent problem
+          </li>{/if}
+        {#if preset.promise !== 'none' && s.view !== 'honored'}<li>
+            <span class="edge" class:dotted={preset.promise === 'reserved1894'}
+            ></span>{preset.promise === 'reserved1894' ? 'Reserved in 1894' : 'Promise stood here'}
+          </li>{/if}
+        {#if preset.gap > 0 && s.view !== 'honored'}<li>
+            <span class="sw gap"></span>No federal record
+          </li>{/if}
+        {#if preset.today}<li><span class="sw today-sw"></span>Held today</li>{/if}
       </ul>
       <p class="key-note">
         Royce shows what the United States recorded as acquired, not what nations agreed to.
@@ -1384,7 +1453,9 @@
           <label class="today"
             ><input type="checkbox" checked={layerOn(o.id)} onchange={() => toggleLayer(o.id)} />
             <span
-              >{o.label}{#if o.note}<small>{o.note}</small>{/if}</span
+              >{o.label}{#if o.note && (o.id !== 'massacres' || !massacreNoteSeen || layerOn(o.id))}<small
+                  >{o.note}</small
+                >{/if}</span
             ></label
           >
         {/each}
@@ -1417,8 +1488,16 @@
           ><input type="radio" name="view" value="record" bind:group={s.view} /> As it happened</label
         >
         <label
-          ><input type="radio" name="view" value="honored" bind:group={s.view} /> If the treaties had
-          been honored</label
+          ><input
+            type="radio"
+            name="view"
+            value="honored"
+            bind:group={s.view}
+            disabled={!preset.honored}
+          />
+          If the treaties had been honored{#if !preset.honored}<small>
+              (not in “{preset.label}”)</small
+            >{/if}</label
         >
       </div>
       {#if s.view === 'honored'}
@@ -1459,64 +1538,92 @@
       <p class="lead-note">
         Royce shows what the United States recorded as acquired, not what nations agreed to.
       </p>
+      {#each LEGEND_GROUPS as g (g.family)}
+        <h3 class="fam">{FAMILY_LABEL[g.family]}</h3>
+        <ul>
+          {#each g.classes as c (c)}
+            {@const shown = s.view === 'honored' || preset.color.includes(c)}
+            <li class:muted-row={!shown}>
+              <span
+                class="sw"
+                class:dash={c === 'agree' || c === 'eo'}
+                class:heavy={c === 'none' || c === 'desc'}
+                style={`background: var(--ls-${c}); border-color: var(--fam-${FAMILY[c]}-ink)`}
+              ></span><span
+                >{LABEL[c]}{#if !shown}<small> (outlines only in this view)</small>{/if}</span
+              >
+            </li>
+          {/each}
+        </ul>
+      {/each}
+      <h3 class="fam">Marks on top</h3>
       <ul>
         <li>
-          <span class="sw notyet"></span><span
-            ><strong>Not yet taken</strong> in that year, and not yet promised. Watch it shrink.</span
-          >
-        </li>
-        {#each STATUS_ORDER as x (x)}
-          <li>
-            <span class="sw" style={`background: var(${statusVar(x)})`}></span><span
-              ><strong>{STATUS_LABEL[x]}.</strong> {STATUS_HELP[x]}</span
-            >
-          </li>
-        {/each}
-        <li>
-          <span class="edge promise"></span><span
-            ><strong>Solid green edge:</strong> promised or reserved to the nation and still held that
-            year.</span
-          >
-        </li>
-        <li>
-          <span class="edge broken"></span><span
-            ><strong>Broken green edge:</strong> promised or reserved first, then taken.</span
-          >
-        </li>
-        <li>
           <span class="sw hatch"></span><span
-            ><strong>Diagonal hatch:</strong> a documented defect in how the land was taken (duress, hostages,
-            contested signers, fraud and others), from a primary or scholarly source.</span
+            >Hatched: a documented problem with consent (duress, hostages, bribery, signers, a
+            missing nation), from a primary or scholarly source</span
           >
         </li>
         <li>
           <span class="sw dots"></span><span
-            ><strong>Dots:</strong> a defect so far only reported (one source, or a book alone). Open
-            a shape for every finding and how it is sourced.</span
+            >Dotted hatch: a problem reported but not yet confirmed (one source, oral history, or
+            disputed)</span
           >
         </li>
         <li>
-          <span class="dot-key"></span><span
-            ><strong>Point:</strong> a massacre, at a general location, linked to the land it preceded,
-            enforced or followed. Off until you turn it on.</span
+          <span class="edge"></span><span
+            >Green outline around taken land: promised to the nation, then taken (“Broken promises”
+            and “What was promised”)</span
           >
         </li>
         <li>
-          <span class="sw bright"></span><span
-            >Bright shapes: changed in the last {RECENT} years. Older changes fade.</span
+          <span class="edge dotted"></span><span
+            >Green dots (“Today”): reserved in 1894, to compare with what is held now</span
+          >
+        </li>
+        <li>
+          <span class="sw gap"></span><span
+            >Dots: no federal cession record (colonial and state takings, most of Texas; Alaska and
+            Hawaii are not drawn)</span
+          >
+        </li>
+        <li>
+          <span class="ring"></span><span
+            >Ring: massacre site, general location (primary or scholarly source). Broken ring:
+            reported, source not yet confirmed. Off until you turn it on.</span
+          >
+        </li>
+        <li>
+          <span class="sw thin"></span><span
+            >Thin outline: other records, not part of this view</span
+          >
+        </li>
+        <li>
+          <span class="sw later"></span><span
+            >Dashed outline (honored view): taken after the chosen year, in the color of how it was
+            taken</span
           >
         </li>
       </ul>
       <p class="small">
+        Where records overlap, the most recent is drawn on top, and every edge is shown. Tap a spot
+        to list every record there. Each finding carries its evidence:
+      </p>
+      <p class="chips-ev">
+        {#each EVIDENCE_LEGEND as [k, t] (k)}<span class={`badge ${EVIDENCE_CLASS[k]}`}>{t}</span
+          >{/each}
+      </p>
+      <p class="small">
         Each shape is a numbered area in Charles Royce’s 1899 federal record, traced by the US
-        Forest Service. “Recorded as ceded” is that record’s word; it does not mean the land was
-        given freely or lawfully. Shapes are approximate, not legal boundaries, and do not show any
-        nation’s homeland. The record ends in 1894.
+        Forest Service. “Ceded” is that record’s word; it does not mean the land was given freely or
+        lawfully. Shapes are approximate, not legal boundaries, and do not show any nation’s
+        homeland. The record ends in 1894: cession geometry ends there, and later changes are shown
+        as events, not areas.
       </p>
       <p class="small">
         <strong>What Royce does not cover.</strong> Colonial and state takings before or outside federal
         treaty-making (most of New England and the original states), most of Texas (which kept its public
-        lands when it joined the Union), Alaska and Hawaii have no Royce area. Blank or hatched land there
+        lands when it joined the Union), Alaska and Hawaii have no Royce area. Blank or dotted land there
         is not land no one held.
       </p>
     </details>
@@ -1911,7 +2018,7 @@
   }
   @media (max-width: 899px) {
     .stage {
-      top: var(--space-3);
+      top: 52px;
       bottom: auto;
     }
     .year {
@@ -1930,6 +2037,14 @@
   }
   .mapwrap :global(.maplibregl-ctrl-attrib a) {
     color: var(--ink-2);
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .mapwrap :global(.maplibregl-ctrl-icon) {
+      filter: invert(1);
+    }
+  }
+  :global(:root[data-theme='dark']) .mapwrap :global(.maplibregl-ctrl-icon) {
+    filter: invert(1);
   }
   .mapwrap :global(.maplibregl-ctrl-group) {
     background: var(--sheet);
@@ -2127,24 +2242,44 @@
   .sw.held {
     background: var(--held);
   }
-  .sw.bright {
-    background: var(--ls-ceded_by_ratified_treaty);
-    outline: 1.5px solid var(--ink);
+  .sw {
+    border: 1px solid transparent;
   }
-  .sw.notyet {
-    background: var(--ls-not-yet);
+  .sw.dash {
+    border-style: dashed;
+  }
+  .sw.heavy {
+    border-width: 2px;
   }
   .sw.hatch {
     background: repeating-linear-gradient(
       45deg,
-      var(--ls-hatch) 0 1.5px,
-      var(--ls-ceded_by_ratified_treaty) 1.5px 4px
+      var(--ls-hatch) 0 1.3px,
+      var(--ls-ceded) 1.3px 5.6px
     );
   }
   .sw.dots {
     background:
       radial-gradient(circle, var(--ls-hatch) 0.9px, transparent 1.2px) 0 0 / 4px 4px,
-      var(--ls-ceded_by_ratified_treaty);
+      var(--ls-ceded);
+  }
+  .sw.gap {
+    background:
+      radial-gradient(circle, var(--fam-gap-ink) 0.9px, transparent 1.2px) 0 0 / 4.5px 4.5px,
+      var(--ground);
+    border-color: var(--rule);
+  }
+  .sw.thin {
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+  }
+  .sw.later {
+    background: transparent;
+    border: 1.5px dashed var(--fam-taken-ink);
+  }
+  .sw.today-sw {
+    background: var(--held);
+    border-color: var(--ink);
   }
   .edge {
     display: inline-block;
@@ -2153,21 +2288,96 @@
     margin-top: 0.35em;
     margin-right: var(--space-2);
     flex: none;
-    border: 2px solid var(--ls-promise-line);
-    background: var(--ls-not-yet);
+    border: 2.5px solid var(--ls-promise);
+    background: var(--ls-statute);
   }
-  .edge.broken {
-    border-style: dashed;
-    background: var(--ls-ceded_by_ratified_treaty);
+  .edge.dotted {
+    border-style: dotted;
+    background: transparent;
   }
-  .dot-key {
+  .edge.held {
+    background: var(--ls-reserved);
+  }
+  .ring {
     display: inline-block;
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 50%;
-    background: var(--ls-massacre);
-    box-shadow: 0 0 0 2px var(--ground);
+    border: 2px solid var(--ink);
+    background: var(--ls-casing);
     margin: 0.4em var(--space-2) 0 0.05rem;
+    flex: none;
+  }
+  .presets {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    right: 56px;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding: 2px;
+    scrollbar-width: none;
+    z-index: 2;
+  }
+  .presets button {
+    flex: none;
+    scroll-snap-align: start;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: 20px;
+    border: 1px solid var(--rule-strong);
+    background: var(--sheet);
+    color: var(--ink);
+    font: inherit;
+    font-size: var(--s-1);
+    cursor: pointer;
+  }
+  .presets button.on {
+    background: var(--ink);
+    color: var(--sheet);
+    border-color: var(--ink);
+  }
+  .question {
+    font-size: var(--s-1);
+    color: var(--ink-2);
+    margin: var(--space-3) 0 0;
+  }
+  .fam {
+    font-size: var(--s-1);
+    margin: var(--space-4) 0 0;
+  }
+  .muted-row {
+    color: var(--ink-3);
+  }
+  .muted-row .sw {
+    opacity: 0.45;
+  }
+  .chips-ev {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .warning {
+    font-size: var(--s-2);
+    background: var(--sheet-2);
+    border-left: 3px solid var(--ink-3);
+    padding: var(--space-2) var(--space-3);
+    margin: 0 0 var(--space-3);
+  }
+  .under {
+    margin-top: var(--space-4);
+    display: grid;
+    gap: 4px;
+    justify-items: start;
+  }
+  .under .link {
+    font-size: var(--s-1);
+    text-align: left;
+  }
+  .view-toggle small {
+    color: var(--ink-3);
   }
   .key-head {
     font-size: var(--s-1);
@@ -2234,6 +2444,11 @@
     background: var(--ochre);
     border-color: var(--warn);
   }
+  .badge.ev-oral {
+    background: var(--sage);
+    border-color: var(--moss);
+    border-style: dotted;
+  }
   .status,
   .flags,
   .linked-sites,
@@ -2287,7 +2502,7 @@
     overflow-wrap: anywhere;
   }
   .sub-area {
-    border-left: 3px solid var(--ls-contested);
+    border-left: 3px solid var(--fam-ceded-ink);
     padding-left: var(--space-2);
   }
   .site dl,
