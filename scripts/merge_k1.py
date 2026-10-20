@@ -201,6 +201,8 @@ def finding_view(f, v, known):
     areas = parse_areas(corrected_areas, known) if corrected_areas else parse_areas(f.get("royce_areas"), known)
     cats = [clean(f.get("category"))] + split_list(f.get("secondary_categories"))
     flags = sorted({CATEGORY_FLAG[c] for c in cats if c in CATEGORY_FLAG}, key=FLAGS.index)
+    # a verdict checked the finding's main claim; its secondary categories were not checked
+    main_flag = CATEGORY_FLAG.get(clean(f.get("category")), "")
     pages = clean(f.get("pdf_pages"))
     reported_cite = short_source(f.get("source_doc")) + (f", p. {pages}" if pages else "")
     cite_parts = [v.get("source_title", ""), v.get("source_cite", "")] if verified else []
@@ -217,6 +219,11 @@ def finding_view(f, v, known):
         "round": v.get("round", "") if v else "",
         "category": clean(f.get("category")),
         "flags": ";".join(flags),
+        "main_flag": main_flag,
+        "source_doc": clean(f.get("source_doc")),
+        "reported_citation": clean(reported_cite),
+        "original_quote": clean(f.get("verbatim_quote")),
+        "original_summary": clean(f.get("summary")),
         "royce_areas": ";".join(areas),
         "date": clean(f.get("date")),
         "nations": clean(f.get("nations")),
@@ -278,6 +285,15 @@ def main(argv=None):
     unsupported_flags = []
 
     def add(area, flag, view):
+        # evidence for a secondary claim of a finding stays "reported": the verdict and its quote
+        # are about the finding's main claim
+        if view.get("main_flag") is not None and view.get("main_flag") != flag and view["evidence"] in ("primary", "scholarly"):
+            view = {**view,
+                    "evidence": "reported",
+                    "evidence_display": f"Reported by {short_source(view.get('source_doc'))}",
+                    "citation": view.get("reported_citation") or view["citation"],
+                    "quote": view.get("original_quote", ""),
+                    "summary": view.get("original_summary") or view["summary"]}
         lst = support.setdefault((area, flag), [])
         if view["finding_id"] not in [x["finding_id"] for x in lst]:
             lst.append(view)
@@ -355,10 +371,29 @@ def main(argv=None):
                     "shown": "yes",
                 })
 
+    # flag reviews: a reader checked that the shown evidence supports this specific flag
+    # (decision keep | reported | drop); a later review row wins
+    reviews = {}
+    review_path = k1 / "flag-reviews.csv"
+    if review_path.exists():
+        for r in read(review_path):
+            reviews[(clean(r.get("royce_area")), clean(r.get("flag")))] = r
+
     flag_rows = []
     for (area, flag), lst in support.items():
         ordered = best(lst)
         top = ordered[0]
+        rv = reviews.get((area, flag))
+        decision = clean(rv.get("decision")) if rv else ""
+        if decision == "drop":
+            print(f"flag dropped by review: area {area} {flag} ({clean(rv.get('reason'))})")
+            continue
+        if decision == "reported" and top["evidence"] in ("primary", "scholarly"):
+            top = {**top, "evidence": "reported",
+                   "evidence_display": f"Reported by {short_source(top.get('source_doc'))}" if top.get("source_doc") else "Reported by the K1 research",
+                   "summary": clean(rv.get("corrected_summary")) or top["summary"]}
+        elif decision == "keep" and clean(rv.get("corrected_summary")):
+            top = {**top, "summary": clean(rv.get("corrected_summary"))}
         flag_rows.append({
             "royce_area": area,
             "flag": flag,

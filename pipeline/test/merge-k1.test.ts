@@ -70,6 +70,7 @@ beforeAll(() => {
       finding({
         finding_id: 'F-HOST',
         category: 'HOSTAGE',
+        secondary_categories: 'DURESS_MILITARY',
         royce_areas: '1',
         evidence_level: 'PRIMARY_QUOTED',
         summary: 'six hostages',
@@ -342,6 +343,13 @@ describe('merge_k1.py', () => {
       hatch: 'solid',
     });
     expect(host.quote).toBe('Six hostages shall be delivered');
+    // the verdict checked the finding's main claim (hostages), not its secondary one (duress):
+    // the secondary flag stays "reported" and never borrows the verdict's quote
+    expect(flags.find((r) => r.royce_area === '1' && r.flag === 'duress_military')!).toMatchObject({
+      evidence: 'reported',
+      hatch: 'dotted',
+      quote: '',
+    });
     // a proposal flag with no finding of that kind stays "reported"
     expect(flags.find((r) => r.royce_area === '1' && r.flag === 'rights_reserved')!).toMatchObject({
       evidence: 'reported',
