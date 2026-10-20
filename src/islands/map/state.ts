@@ -5,7 +5,7 @@ export const YEAR_MIN = 1784;
 export const YEAR_MAX = 1894;
 export const WINDOWS = [1, 5, 10, 25] as const;
 export const CUT_POINTS = [1783, 1830, 1851, 1868, 1871, 1887] as const;
-export const LAYERS = ['cessions', 'today'] as const;
+export const LAYERS = ['cessions', 'today', 'massacres', 'norecord'] as const;
 
 export interface MapState {
   year: number;

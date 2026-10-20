@@ -14,7 +14,7 @@
     "schema_version": {
       "type": "string",
       "pattern": "^\\d+\\.\\d+\\.\\d+$",
-      "description": "0.2.0 (2026-10-17): additive Nation name kinds, recognition value, GeoFeature edges."
+      "description": "0.3.0 (2026-10-20): additive K1 land status on GeoFeature (land_status, land_status_basis, plain, royce_summary), LandStatus and LandDefectFlag definitions. 0.2.0 (2026-10-17): additive Nation name kinds, recognition value, GeoFeature edges."
     },
     "generated": {
       "type": "string"
@@ -3224,6 +3224,38 @@
               }
             }
           }
+        },
+        "land_status": {
+          "description": "K1 research land status from crosswalks/land-status.csv (scripts/merge_k1.py), or null where the emit stage derives it from the federal record (pipeline/src/emit/landStatus.ts); public/data/tables/cession-stories.json carries the status of every area.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LandStatus"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "land_status_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Why the K1 research gave this status, in its words."
+        },
+        "plain": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "What happened to the land in plain words (crosswalks/royce-area-plain.csv), after any sourced correction."
+        },
+        "royce_summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Research summary of Royce's Schedule entries for the area (crosswalks/royce-entry-roles.csv), after any sourced correction."
         }
       },
       "allOf": [
@@ -3374,6 +3406,42 @@
           "type": "string"
         }
       }
+    },
+    "LandStatus": {
+      "description": "What the record says happened to a Royce area (K1 model, decision log 2026-10-20). One per area, mutually exclusive; defect flags never change it. 'ceded' means recorded as ceded in the federal record.",
+      "enum": [
+        "ceded_by_ratified_treaty",
+        "ceded_by_agreement_with_consent_process",
+        "taken_by_statute",
+        "taken_by_executive_order",
+        "taken_no_instrument",
+        "unratified_treaty_area",
+        "promised_reserved",
+        "described_not_ceded",
+        "contested"
+      ]
+    },
+    "LandDefectFlag": {
+      "description": "An independent, documented defect in how consent was obtained or how the land was handled (K1 s.4.3). Carried in crosswalks/land-status-flags.csv with its evidence label; never changes the land status.",
+      "enum": [
+        "duress_military",
+        "duress_starvation",
+        "hostages",
+        "signatory_defect",
+        "excluded_party",
+        "intertribal_dispute",
+        "bribery_fraud",
+        "senate_amended_no_consent",
+        "consent_threshold_not_met",
+        "massacre_linked",
+        "promise_broken",
+        "icc_money_not_land",
+        "judicially_found_taking",
+        "trespass_before_cession",
+        "rights_reserved",
+        "payment_refused",
+        "annuities_conditioned_on_assent"
+      ]
     }
   }
 }

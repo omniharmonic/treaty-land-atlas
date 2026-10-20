@@ -8,7 +8,8 @@ import { PUBLIC_DATA_DIR } from '../paths.ts';
 import type { Graph, GraphEdge, GraphNode } from '../validate/graph.ts';
 import type { Overlay } from '../overlays/index.ts';
 import { routeFor } from '../../../src/lib/routes.ts';
-import { cessionStories, landLoss } from './story.ts';
+import { cessionStories, landLoss, lostAt } from './story.ts';
+import { hatchLevel, loadK1 } from './landStatus.ts';
 import { supportIndex } from '../../../src/lib/support.ts';
 
 export interface EmitOptions {
@@ -224,12 +225,50 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
   }
 
   // Story tables: how each cession happened, and approximate land recorded as ceded over time.
-  const stories = cessionStories(graph, overlays);
+  const k1 = loadK1();
+  const stories = cessionStories(graph, overlays, k1.areas);
   write(
     'tables/cession-stories.json',
     Object.fromEntries([...stories.entries()].sort(([a], [b]) => a.localeCompare(b))),
   );
   write('tables/land-loss.json', landLoss(graph, stories));
+  // K1: the evidence behind each area's status and flags, and massacre sites at a general location
+  const geoByNum = new Map(
+    nodes
+      .filter((n) => n.type === 'GeoFeature')
+      .map((n) => [String(n['royce_cession_number'] ?? ''), n.id]),
+  );
+  write(
+    'tables/land-status.json',
+    Object.fromEntries(
+      [...k1.areas.entries()]
+        .filter(([num]) => geoByNum.has(num))
+        .map(([num, a]) => [geoByNum.get(num)!, a] as const)
+        .sort(([a], [b]) => a.localeCompare(b)),
+    ),
+  );
+  write('tables/massacre-sites.json', {
+    type: 'FeatureCollection',
+    note: 'Locations are general (rounded to 0.1 degree), never burial or sacred-site precision. Names follow descendant nations where known. Any nation can ask for a change or removal.',
+    features: k1.massacres
+      .filter((m) => m.lat !== null && m.lon !== null)
+      .map((m) => ({
+        type: 'Feature',
+        properties: {
+          id: m.id,
+          name: m.name,
+          year: Number(m.date.slice(0, 4)) || null,
+          link: m.link_kind,
+          evidence: m.evidence,
+          areas: m.areas.map((a) => geoByNum.get(a)).filter(Boolean),
+        },
+        geometry: { type: 'Point', coordinates: [m.lon, m.lat] },
+      })),
+    sites: k1.massacres.map((m) => ({
+      ...m,
+      areas: m.areas.map((a) => geoByNum.get(a)).filter(Boolean),
+    })),
+  });
   write(
     'tables/headlines.json',
     Object.fromEntries(
@@ -316,28 +355,34 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
         features: { properties: Record<string, unknown> }[];
       };
       for (const f of fc.features) {
-        const st = stories.get(String(f.properties['id']));
+        const id = String(f.properties['id']);
+        const st = stories.get(id);
+        const g = byId.get(id);
         f.properties['how'] = st?.how ?? 'unknown';
         f.properties['nations'] = st?.nations ?? [];
-        // where Royce's Schedule shows a later entry did the ceding, the map dates the land by it
-        if (st?.entries && st.ceded_year) f.properties['t0'] = st.ceded_year + 0.5;
-        // a reservation the nation kept in Royce's record is never drawn as taken
-        if (st?.status === 'kept') {
-          f.properties['t0'] = 9999;
-          f.properties['kept'] = true;
-        }
+        // what the record says happened (K1 land status) and when the map shows the land lost:
+        // the Schedule entry that did the ceding or taking; 9999 when the record never shows it lost
+        f.properties['ls'] = st?.land_status ?? 'taken_no_instrument';
+        const t = g ? lostAt(st, g) : null;
+        f.properties['t0'] = t ?? 9999;
+        if (st?.status === 'kept') f.properties['kept'] = true;
+        // promised first (year), then lost; flags hatch: 2 solid evidence, 1 reported only
+        f.properties['py'] = st?.promised_year ?? null;
+        f.properties['bp'] = st?.broken_promise ? 1 : 0;
+        const research = k1.areas.get(String(g?.['royce_cession_number'] ?? ''));
+        f.properties['fh'] = hatchLevel(research?.flags ?? []);
       }
       body = Buffer.from(JSON.stringify(fc) + '\n');
     }
     if (name === 'cession-events') {
       const list = JSON.parse(body.toString('utf8')) as Record<string, unknown>[];
       for (const e of list) {
-        const st = stories.get(String(e['id']));
-        if (st?.entries && st.ceded_year) e['t_first'] = st.ceded_year + 0.5;
-        if (st?.status === 'kept') {
-          e['t_first'] = null;
-          e['kept'] = true;
-        }
+        const id = String(e['id']);
+        const st = stories.get(id);
+        const g = byId.get(id);
+        e['t_first'] = g ? lostAt(st, g) : (e['t_first'] ?? null);
+        if (st?.status === 'kept') e['kept'] = true;
+        e['land_status'] = st?.land_status ?? 'taken_no_instrument';
       }
       body = Buffer.from(JSON.stringify(list) + '\n');
     }

@@ -4,7 +4,7 @@ import { DEFAULT_STATE, inView, parseHash, toHash } from './state';
 describe('map hash state', () => {
   it('round-trips', () => {
     const s = parseHash(
-      '#y=1851&m=win&w=5&v=honored&cut=1830&l=cessions,today&c=44.50,-103.10,5.0&sel=geo-royce-89',
+      '#y=1851&m=win&w=5&v=honored&cut=1830&l=cessions,massacres,norecord,today&c=44.50,-103.10,5.0&sel=geo-royce-89',
     );
     expect(parseHash(toHash(s))).toEqual(s);
     expect(s).toMatchObject({

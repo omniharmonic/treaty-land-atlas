@@ -19,7 +19,23 @@
     toHash,
     type MapState,
   } from './map/state';
-  import { HOW_DASH, HOW_HELP, HOW_LABEL, HOW_ORDER, type How } from './map/how';
+  import { HOW_LABEL, type How } from './map/how';
+  import {
+    EVIDENCE_CLASS,
+    FLAG_LABEL,
+    MASSACRE_LINK,
+    NO_LAWFUL_CESSION,
+    NOT_LOST,
+    OVERLAYS,
+    STATUS_DASH,
+    STATUS_HELP,
+    STATUS_LABEL,
+    STATUS_ORDER,
+    hatchImage,
+    statusVar,
+    type LandStatus,
+    type OverlayId,
+  } from './map/landStatusStyle';
   import LegalStatus from './map/LegalStatus.svelte';
   import LandMeter from './map/LandMeter.svelte';
   import OrgPanel from './map/OrgPanel.svelte';
@@ -40,10 +56,61 @@
     instrument: string | null;
     nations: string[];
     plain?: string;
+    land_status: LandStatus;
+    land_status_basis: string;
+    land_status_source: 'k1' | 'record';
+    promised_year: number | null;
+    broken_promise: boolean;
+  }
+  interface FlagRecord {
+    flag: string;
+    evidence: string;
+    evidence_display: string;
+    hatch: 'solid' | 'dotted';
+    citation: string;
+    quote: string;
+    summary: string;
+  }
+  interface AreaK1 {
+    land_status: LandStatus | null;
+    instrument: string | null;
+    evidence_display: string | null;
+    flags: FlagRecord[];
+    sub_areas: {
+      area: string;
+      label: string;
+      land_status: LandStatus;
+      basis: string;
+      evidence_display: string;
+    }[];
+    massacres: string[];
+  }
+  interface Site {
+    id: string;
+    name: string;
+    other_names: string[];
+    category: string;
+    date: string;
+    lat: number | null;
+    lon: number | null;
+    nations: string;
+    deaths_range: string;
+    deaths_source: string;
+    perpetrators: string;
+    areas: string[];
+    link_kind: string;
+    linked_instrument: string;
+    link_note: string;
+    citation: string;
+    quote: string;
+    summary: string;
+    evidence: string;
+    evidence_display: string;
   }
   interface Series {
     total: number[];
     by_how: Record<How, number[]>;
+    by_status: Record<LandStatus, number[]>;
   }
   interface NationSeries extends Series {
     cessions: string[];
@@ -93,6 +160,8 @@
   let chapters = $state<Chapter[]>([]);
   let moments = $state<Moment[]>([]);
   let headlines = $state<Record<string, string>>({});
+  let k1 = $state<Record<string, AreaK1>>({});
+  let sites = $state<Site[]>([]);
   let loadError = $state<string | null>(null);
   let webglMissing = $state(false);
   let selected = $state<Entity | null>(null);
@@ -125,6 +194,10 @@
   const slider = $derived(Math.min(s.year, YEAR_MAX));
   const selectedEvent = $derived(events.find((e) => e.id === s.sel) ?? null);
   const selectedStory = $derived(s.sel ? stories[s.sel] : null);
+  const selectedK1 = $derived(s.sel ? (k1[s.sel] ?? null) : null);
+  const selectedSite = $derived(s.sel ? (sites.find((x) => x.id === s.sel) ?? null) : null);
+  const siteById = $derived(new Map(sites.map((x) => [x.id, x])));
+  const lsOf = (id: string) => stories[id]?.land_status ?? 'taken_no_instrument';
   const selectedAgreement = $derived(
     (selectedStory?.instrument ? selected?.neighbors[selectedStory.instrument] : null) ??
       (selected?.edges.out['depicts'] ?? [])
@@ -170,9 +243,11 @@
 
   function summary(): string {
     if (s.view === 'honored')
-      return `Stopping the clock in ${s.cut}: green is land Royce records as ceded only after ${s.cut}, which the agreements in force that year left with the nations. Outlined: what was taken from ${s.cut + 1} through ${slider}.`;
+      return `Stopping the clock in ${s.cut}: green is land the record shows leaving Native hands only after ${s.cut}, which the instruments in force that year left with the nations. Land lost before then under a treaty never ratified, or with no instrument at all, keeps its own color: no lawful cession is on record. Outlined: what was taken from ${s.cut + 1} through ${slider}.`;
     const who = followed ? `${followed.label}: ` : '';
-    return `${who}${visible.length} cession${visible.length === 1 ? '' : 's'} recorded by the end of ${slider}${thisYear.length ? `, ${thisYear.length} of them in ${slider}` : ''}.`;
+    const n = visible.length;
+    const noLawful = visible.filter((e) => NO_LAWFUL_CESSION.has(lsOf(e.id))).length;
+    return `${who}${n} land area${n === 1 ? '' : 's'} the record shows taken or ceded by the end of ${slider}${thisYear.length ? `, ${thisYear.length} of them in ${slider}` : ''}${noLawful ? `; ${noLawful} with no lawful cession on record` : ''}.`;
   }
 
   let hashTimer: ReturnType<typeof setTimeout> | undefined;
@@ -196,6 +271,8 @@
     m.setGlobalStateProperty('honored', s.view === 'honored');
     m.setGlobalStateProperty('today', s.layers.has('today') || s.year > YEAR_MAX);
     m.setGlobalStateProperty('follow', follow ?? '');
+    m.setGlobalStateProperty('massacres', s.layers.has('massacres'));
+    m.setGlobalStateProperty('norecord', s.layers.has('norecord'));
   }
   $effect(() => {
     void [slider, s.cut, s.view, s.layers, s.year, follow];
@@ -206,8 +283,9 @@
   $effect(() => {
     const sel = s.sel;
     if (!map || !mapReady) return;
-    if (lastSel) map.setFeatureState({ source: 'cessions', id: lastSel }, { selected: false });
-    if (sel) map.setFeatureState({ source: 'cessions', id: sel }, { selected: true });
+    const src = (id: string) => (id.startsWith('mas-') ? 'massacres' : 'cessions');
+    if (lastSel) map.setFeatureState({ source: src(lastSel), id: lastSel }, { selected: false });
+    if (sel) map.setFeatureState({ source: src(sel), id: sel }, { selected: true });
     lastSel = sel;
   });
 
@@ -215,8 +293,8 @@
     const sel = s.sel;
     selected = null;
     recordError = false;
-    recordLoading = !!sel;
-    if (!sel) return;
+    recordLoading = !!sel && !sel.startsWith('mas-');
+    if (!sel || sel.startsWith('mas-')) return;
     const controller = new AbortController();
     fetch(url(`/data/entities/GeoFeature/${sel}.json`), { signal: controller.signal })
       .then((r) => {
@@ -413,7 +491,14 @@
       });
     if (id && fly && map) {
       const b = bboxes.get(id);
-      if (b)
+      const site = sites.find((x) => x.id === id);
+      if (site?.lat != null && site.lon != null)
+        map.easeTo({
+          center: [site.lon, site.lat],
+          zoom: Math.max(map.getZoom(), 5),
+          duration: reducedMotion ? 0 : 600,
+        });
+      else if (b)
         map.fitBounds(
           [
             [b[0], b[1]],
@@ -471,13 +556,14 @@
     }, 700);
   }
 
-  function toggleToday() {
+  function toggleLayer(id: OverlayId) {
     // eslint-disable-next-line svelte/prefer-svelte-reactivity -- a new Set is assigned, never mutated
     const next = new Set(s.layers);
-    if (next.has('today')) next.delete('today');
-    else next.add('today');
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
     s.layers = next;
   }
+  const layerOn = (id: OverlayId) => s.layers.has(id) || (id === 'today' && s.year > YEAR_MAX);
 
   function bbox(geom: { type: string; coordinates: unknown }): [number, number, number, number] {
     let x0 = 180,

@@ -9,6 +9,14 @@ import { DATA_DIR } from '../paths.ts';
 import { cellAcres, cellLat } from '../geometry/landloss.ts';
 import { routeFor } from '../../../src/lib/routes.ts';
 import { readCsv } from '../ingest/csv.ts';
+import {
+  LAND_STATUS,
+  NOT_LOST,
+  landStatus,
+  loadK1,
+  type AreaK1,
+  type LandStatus,
+} from './landStatus.ts';
 
 export const HOW = [
   'treaty',
@@ -83,7 +91,18 @@ export interface CessionStory {
   royce_summary?: string;
   /** the same summary in plain words for readers (crosswalks/royce-area-plain.csv) */
   plain?: string;
+  /** what the record says happened to the land (K1 model; landStatus.ts) */
+  land_status: LandStatus;
+  land_status_basis: string;
+  /** 'k1' when a K1 research row decided it, 'record' when derived from the federal record */
+  land_status_source: 'k1' | 'record';
+  /** first year an entry reserved, confirmed or described the land for the nation */
+  promised_year: number | null;
+  /** promised or reserved first, then lost; or a K1 promise_broken flag */
+  broken_promise: boolean;
 }
+
+const PROMISE_ROLES = new Set(['reserved', 'confirmed', 'described_or_recognized']);
 
 interface RoyceRole {
   id: string;
@@ -111,6 +130,7 @@ export function royceRoles(): Map<string, RoyceRole[]> {
 export function cessionStories(
   graph: Graph,
   overlays: Map<string, Overlay>,
+  k1: Map<string, AreaK1> = loadK1().areas,
 ): Map<string, CessionStory> {
   const byId = new Map(graph.nodes.map((n) => [n.id, n]));
   const out = new Map<string, CessionStory>();
@@ -162,6 +182,21 @@ export function cessionStories(
       )
       .map((e) => e.target);
     const t = typeof g['t_first'] === 'number' ? Math.floor(g['t_first'] as number) : null;
+    const research = k1.get(String(g['royce_cession_number'] ?? ''));
+    const ls = landStatus({
+      k1: research?.land_status ?? null,
+      royceStatus: status,
+      roles: roleRows.map((r) => r.role),
+      how,
+      agreement:
+        inst?.['instrument_type'] === 'agreement_statutory' ||
+        (inst ? overlays.get(inst.id)?.how === 'agreement_ratified_by_statute' : false),
+    });
+    const promised = roleRows.find((r) => PROMISE_ROLES.has(r.role));
+    const promisedYear = promised ? Number(promised.date.slice(0, 4)) : null;
+    // the plain text and summary on the node carry any sourced corrections (record-corrections.csv)
+    const plainText = (g['plain'] as string | null | undefined) ?? plain.get(g.id);
+    const summaryText = (g['royce_summary'] as string | null | undefined) ?? roleRows[0]?.summary;
     out.set(g.id, {
       how,
       how_basis: basis,
@@ -182,10 +217,17 @@ export function cessionStories(
               instrument: r.instrument_id && byId.has(r.instrument_id) ? r.instrument_id : null,
               quote: r.quote,
             })),
-            royce_summary: roleRows[0]!.summary,
-            ...(plain.get(g.id) ? { plain: plain.get(g.id) } : {}),
+            royce_summary: summaryText ?? '',
+            ...(plainText ? { plain: plainText } : {}),
           }
         : {}),
+      land_status: ls.status,
+      land_status_basis: research?.basis ?? ls.basis,
+      land_status_source: research?.land_status ? 'k1' : 'record',
+      promised_year: promisedYear,
+      broken_promise:
+        (!!promised && status !== 'kept' && !!cededBy && promised.date < cededBy) ||
+        !!research?.flags.some((f) => f.flag === 'promise_broken'),
     });
   }
   return out;
@@ -197,37 +239,71 @@ interface Cells {
   cells: Record<string, number[]>;
 }
 
-/** Cumulative union acres by year, total and by cause, for a set of cessions. */
-function series(ids: string[], t0: Map<string, number>, how: Map<string, How>, cells: Cells) {
-  const first = new Map<number, { t: number; how: How }>();
+/** Cumulative union acres by year, total and by category (cause or land status), for a set of cessions. */
+function seriesBy<K extends string>(
+  ids: string[],
+  t0: Map<string, number>,
+  keyOf: Map<string, K>,
+  keys: readonly K[],
+  fallback: K,
+  cells: Cells,
+) {
+  const first = new Map<number, { t: number; k: K }>();
   for (const id of ids) {
     const t = t0.get(id);
     if (t === undefined) continue;
     for (const c of cells.cells[id] ?? []) {
       const prev = first.get(c);
-      if (!prev || t < prev.t) first.set(c, { t, how: how.get(id) ?? 'unknown' });
+      if (!prev || t < prev.t) first.set(c, { t, k: keyOf.get(id) ?? fallback });
     }
   }
-  const perYear = new Map<number, Record<How, number>>();
-  for (const [cell, { t, how: h }] of first) {
+  const zero = () => Object.fromEntries(keys.map((k) => [k, 0])) as Record<K, number>;
+  const perYear = new Map<number, Record<K, number>>();
+  for (const [cell, { t, k }] of first) {
     const y = Math.max(YEARS[0]!, Math.floor(t));
-    const row =
-      perYear.get(y) ?? (Object.fromEntries(HOW.map((k) => [k, 0])) as Record<How, number>);
-    row[h] += cellAcres(cellLat(cell));
+    const row = perYear.get(y) ?? zero();
+    row[k] += cellAcres(cellLat(cell));
     perYear.set(y, row);
   }
-  const run = Object.fromEntries(HOW.map((k) => [k, 0])) as Record<How, number>;
-  const byHow = Object.fromEntries(HOW.map((k) => [k, [] as number[]])) as Record<How, number[]>;
+  const run = zero();
+  const by = Object.fromEntries(keys.map((k) => [k, [] as number[]])) as Record<K, number[]>;
   const total: number[] = [];
   for (const y of YEARS) {
     const row = perYear.get(y);
-    for (const k of HOW) {
+    for (const k of keys) {
       if (row) run[k] += row[k];
-      byHow[k].push(Math.round(run[k] / 10000) * 10000);
+      by[k].push(Math.round(run[k] / 10000) * 10000);
     }
-    total.push(HOW.reduce((s, k) => s + byHow[k][byHow[k].length - 1]!, 0));
+    total.push(keys.reduce((s, k) => s + by[k][by[k].length - 1]!, 0));
   }
-  return { total, by_how: byHow };
+  return { total, by };
+}
+
+function series(
+  ids: string[],
+  t0: Map<string, number>,
+  how: Map<string, How>,
+  status: Map<string, LandStatus>,
+  cells: Cells,
+) {
+  const h = seriesBy(ids, t0, how, HOW, 'unknown', cells);
+  const st = seriesBy(ids, t0, status, LAND_STATUS, 'taken_no_instrument', cells);
+  return { total: h.total, by_how: h.by, by_status: st.by };
+}
+
+/** When the map shows the land as lost (decimal year), or null if the record never shows it lost. */
+export function lostAt(st: CessionStory | undefined, g: GraphNode): number | null {
+  const tFirst = typeof g['t_first'] === 'number' ? (g['t_first'] as number) : null;
+  if (!st) return tFirst;
+  if (NOT_LOST.has(st.land_status)) return null;
+  // Royce lists it as kept, but the land status says it was lost (an unratified treaty's reserve,
+  // never set apart in law): dated by its first entry
+  if (st.status === 'kept') {
+    const y = st.entries?.[0]?.date ? Number(st.entries[0].date.slice(0, 4)) : null;
+    return y !== null ? y + 0.5 : tFirst;
+  }
+  if (st.entries && st.ceded_year) return st.ceded_year + 0.5;
+  return tFirst;
 }
 
 export function landLoss(graph: Graph, stories: Map<string, CessionStory>) {
@@ -236,14 +312,12 @@ export function landLoss(graph: Graph, stories: Map<string, CessionStory>) {
   ) as Cells;
   const t0 = new Map<string, number>();
   for (const g of graph.nodes.filter((n) => n.type === 'GeoFeature')) {
-    const st = stories.get(g.id);
-    if (st?.status === 'kept') continue;
-    const researched = st?.entries ? st.ceded_year : null;
-    if (researched) t0.set(g.id, researched + 0.5);
-    else if (typeof g['t_first'] === 'number') t0.set(g.id, g['t_first'] as number);
+    const t = lostAt(stories.get(g.id), g);
+    if (t !== null) t0.set(g.id, t);
   }
   const how = new Map([...stories.entries()].map(([k, v]) => [k, v.how]));
-  const all = series([...t0.keys()], t0, how, cells);
+  const status = new Map([...stories.entries()].map(([k, v]) => [k, v.land_status]));
+  const all = series([...t0.keys()], t0, how, status, cells);
   const byNation: Record<
     string,
     ReturnType<typeof series> & { cessions: string[]; label: string; path: string | null }
@@ -256,15 +330,16 @@ export function landLoss(graph: Graph, stories: Map<string, CessionStory>) {
       (nationCessions.get(nid) ?? nationCessions.set(nid, []).get(nid)!).push(gid);
   for (const [nid, ids] of [...nationCessions.entries()].sort(([a], [b]) => a.localeCompare(b)))
     byNation[nid] = {
-      ...series(ids, t0, how, cells),
+      ...series(ids, t0, how, status, cells),
       cessions: ids.sort(),
       label: (labelOf.get(nid) ?? nid).replace(/ - /g, ', '),
       path: routeFor(nid, 'Nation', nationIds),
     };
   return {
-    note: 'Approximate acres of land the United States recorded as ceded, from Royce cession shapes on a 0.1-degree grid; overlapping cessions are counted once. Not a legal or survey measurement.',
+    note: 'Approximate acres of land the federal record shows leaving Native hands, by how the record says it happened, from Royce shapes on a 0.1-degree grid; overlapping areas are counted once. Not a legal or survey measurement.',
     years: YEARS,
     how: HOW,
+    statuses: LAND_STATUS,
     all,
     by_nation: byNation,
   };

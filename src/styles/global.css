@@ -42,6 +42,25 @@
   --how-unknown: #8a8f86;
   --held: #9aa888;
 
+  /* what the record says happened to the land (K1 model; encoding in src/islands/map/landStatusStyle.ts).
+   * Okabe-Ito hues, checked with the dataviz palette validator against --ground: every pair is at
+   * least 15 apart in normal vision; the closest pair under color-vision deficiency (bluish green and
+   * reddish purple, deltaE 7.6) is also told apart by line pattern and hatch. Both "recorded as
+   * ceded" statuses share orange and differ by line pattern. */
+  --ls-ceded_by_ratified_treaty: #e69f00;
+  --ls-ceded_by_agreement_with_consent_process: #e69f00;
+  --ls-taken_by_statute: #0072b2;
+  --ls-taken_by_executive_order: #56b4e9;
+  --ls-taken_no_instrument: #d55e00;
+  --ls-unratified_treaty_area: #f0e442;
+  --ls-promised_reserved: #009e73;
+  --ls-described_not_ceded: #cc79a7;
+  --ls-contested: #4d4f48;
+  --ls-not-yet: #c9ccd1;
+  --ls-promise-line: #00694d;
+  --ls-hatch: #302f28;
+  --ls-massacre: #302f28;
+
   --serif:
     'Charis', Charter, 'Iowan Old Style', Georgia, 'Noto Sans Cherokee', 'Noto Sans Osage', serif;
   --sans:

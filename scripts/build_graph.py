@@ -51,7 +51,7 @@ BUILD = ROOT / "build"
 SCHEMA_DIR = ROOT / "docs" / "design" / "schema"
 C3_DOC = ROOT / "docs" / "research" / "C3-doctrine-map.md"
 
-SCHEMA_VERSION = "0.2.0"
+SCHEMA_VERSION = "0.3.0"
 
 
 def build_date():
@@ -913,9 +913,21 @@ def and_list(xs):
     return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1]
 
 
-def area_label(ev, rr, first):
+# K1 land status (crosswalks/land-status.csv, from scripts/merge_k1.py): the words a label may use.
+# "ceded" only ever appears as "recorded as ceded", the federal record's own word (K1 s.9.3).
+STATUS_LABEL_WORDS = {
+    "ceded_by_ratified_treaty": "recorded as ceded",
+    "ceded_by_agreement_with_consent_process": "recorded as ceded by agreement",
+    "taken_by_statute": "taken by Act of Congress",
+    "taken_by_executive_order": "taken by executive order",
+    "unratified_treaty_area": "claimed under a treaty never ratified,",
+}
+
+
+def area_label(ev, rr, first, k1=None):
     """A plain name for a Royce area: whose land it was recorded as, where, and what happened to it.
-    'Blackfoot land in Montana, ceded 1874 (area 574)'. The number is Royce's, for citation."""
+    'Land of the Crow in Montana, recorded as ceded 1868 (area 517)'. The number is Royce's, for citation.
+    A K1 land status (k1) decides the verb; without one, the record's own status does."""
     tribes = ev["tribes_as_named_in_schedule"] or []
     who = (and_list(tribes) if len(tribes) <= 2 else f"{tribes[0]}, {tribes[1]} and others") if tribes else ""
     states = [STATE_NAMES.get(s, s) for s in ev["states"] or []]
@@ -927,12 +939,27 @@ def area_label(ev, rr, first):
     # Spanish and Mexican land grants the United States later confirmed (the Pueblo grants)
     if rr and rr["status"] == "kept" and re.search(r"\bland grant\b|Spanish grant", rr.get("summary", "") + rr.get("quote", "")):
         return (f"Land grant of the {who}" if who else "Land grant") + f"{where} (area {num})"
-    if rr and rr["status"] == "kept":
-        return (f"Reservation of the {who}" if who else "Reservation land") + f"{where} (area {num})"
+    status = k1["land_status"] if k1 else None
     head = (f"Land of the {who}" if who else "Native land") + where
     when = (rr["ceded_by"] or rr["taken_by"]) if rr else None
+    year = (when or first or "")[:4]
+    if status == "unratified_treaty_area" and rr and rr["status"] == "kept":
+        return f"{head}, promised under a treaty never ratified, {year} (area {num})"
+    if status in ("promised_reserved",) or (not status and rr and rr["status"] == "kept"):
+        return (f"Reservation of the {who}" if who else "Reservation land") + f"{where} (area {num})"
+    if status == "described_not_ceded":
+        return f"{head}, described {year}, never ceded (area {num})" if year else f"{head}, never ceded (area {num})"
+    if status == "taken_no_instrument":
+        return f"{head}, taken with no treaty or act (area {num})"
+    if status == "contested":
+        return f"{head}, cession contested (area {num})"
+    if status == "taken_by_statute" and rr and rr["status"] != "taken":
+        # Royce's date here is the agreement or treaty, not the act that took the land
+        return f"{head}, taken by Act of Congress (area {num})"
+    if status in STATUS_LABEL_WORDS and year:
+        return f"{head}, {STATUS_LABEL_WORDS[status]} {year} (area {num})"
     if when:
-        return f"{head}, {'taken' if rr['status'] == 'taken' else 'ceded'} {when[:4]} (area {num})"
+        return f"{head}, {'taken' if rr['status'] == 'taken' else 'recorded as ceded'} {when[:4]} (area {num})"
     return f"{head}, recorded {first[:4]} (area {num})" if first else f"{head} (area {num})"
 
 
@@ -963,6 +990,9 @@ def build_geofeatures(cross, alias_index):
     area_fix = defaultdict(dict)
     for o in cross.get("royce-area-overrides.csv", []):
         area_fix[o["id"]][o["field"]] = [v.strip() for v in o["value"].split(";") if v.strip()]
+    # K1 land status per area (sub-areas such as 426-N are shown on their parent's record)
+    k1 = {r["royce_area"]: r for r in cross.get("land-status.csv", []) if not r.get("parent_area")}
+    plain = {r["id"]: r["plain"] for r in cross.get("royce-area-plain.csv", [])}
     for ev in events:
         gid = ev["id"]
         for field, value in area_fix.get(gid, {}).items():
@@ -973,11 +1003,17 @@ def build_geofeatures(cross, alias_index):
         missing = ev["geometry_quality"] == "missing"
         first = ev["dates"][0]["date"] if ev["dates"] else None
         rr = royce.get(gid)
-        label = area_label(ev, rr, first)
+        ks = k1.get(ev["cessnum"])
+        label = area_label(ev, rr, first, ks)
+        reserved = ks["land_status"] == "promised_reserved" if ks else bool(rr and rr["status"] == "kept")
         G.add_node("GeoFeature", gid, label,
                    "data/derived/cession-events.json", ev["cessnum"], "medium", "levels",
-                   {"geometry_role": "reservation" if rr and rr["status"] == "kept" else "cession",
+                   {"geometry_role": "reservation" if reserved else "cession",
                     "royce_status": rr["status"] if rr else "unchecked",
+                    "land_status": ks["land_status"] if ks else None,
+                    "land_status_basis": ks["basis"] or None if ks else None,
+                    "royce_summary": rr["summary"] or None if rr else None,
+                    "plain": plain.get(gid) or None,
                     "boundary_type": "map_generalization",
                     "date_semantic_note": "Dates are Royce Schedule dates (USFS cessdate1-5): the instrument dates Royce gave, not necessarily the date the land changed hands.",
                     "geometry_file": "none" if missing else "layers/cessions.json",
@@ -1662,11 +1698,14 @@ def apply_instrument_citations(cross):
                        qualifiers={"role": "citation_source", "tier": G.nodes[sid]["source_tier"]})
 
 
-def apply_record_corrections(cross):
+def apply_record_corrections(cross, land_areas=False):
     """Sourced corrections to record fields (crosswalks/record-corrections.csv, from source
     verification). The listed value is kept in the record's "corrections" list so nothing is silently overwritten,
-    and the correcting source is linked with its quote. Each correction is listed on the record."""
+    and the correcting source is linked with its quote. Each correction is listed on the record.
+    Land areas (geo-royce-*) are built later than other records, so their corrections run in a second pass."""
     for i, r in enumerate(cross.get("record-corrections.csv", []), start=2):
+        if r["record_id"].startswith("geo-royce-") != land_areas:
+            continue
         node = G.nodes.get(r["record_id"])
         field = r["field"]
         if node is None:
@@ -1844,6 +1883,7 @@ def main():
     alias_index = AliasIndex(cross["nation-aliases.csv"] + research_alias_rows(cross))
     apply_name_research(cross, alias_index)
     build_geofeatures(cross, alias_index)
+    apply_record_corrections(cross, land_areas=True)
     apply_review_ledger(cross)
     add_nation_edges(alias_index, cross["nation-link-overrides.csv"])
     add_tribe_org_edges(data, alias_index)
