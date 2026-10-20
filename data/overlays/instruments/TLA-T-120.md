@@ -2,7 +2,7 @@
 id: "TLA-T-120"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1823 the Florida tribes ceded their claim to Florida except a central district, with twenty years of U.S. support promised."
+headline: "In 1823 the Florida tribes were recorded as ceding their claim to Florida except a central district, with twenty years of U.S. support promised."
 note: "The four million acre figure comes from a historical marker; the treaty describes boundaries, not acreage."
 how: "treaty_negotiated"
 how_basis: "The treaty text and Florida marker describe a negotiated cession and confinement to a reservation; neither source states duress, though the confinement terms and later war are noted in cautions."
@@ -14,7 +14,7 @@ promises: [{"article": "Art. 2-3", "promise": "A reservation would be set aside 
 ---
 On September 18, 1823, chiefs and warriors of the Florida tribes signed a treaty with the United States. A Florida historical marker says the leaders of the Seminole and Miccosukee met government officials on the banks of Moultrie Creek, near St. Augustine, and signed after twelve days of negotiation.
 
-In Article 1 the chiefs and warriors wrote that they "have appealed to the humanity" of the United States and promised to stay under its protection and no other power's. They ceded "all claim or title" to the whole territory of Florida except a district assigned to them. Article 2 says the tribes "will hereafter be concentrated and confined" within set boundaries.
+In Article 1 the chiefs and warriors wrote that they "have appealed to the humanity" of the United States and promised to stay under its protection and no other power's. They were recorded as ceding "all claim or title" to the whole territory of Florida except a district assigned to them. Article 2 says the tribes "will hereafter be concentrated and confined" within set boundaries.
 
 The United States promised protection, $6,000 in tools and livestock, and $5,000 a year for twenty years. It promised twelve months of rations, $4,500 for those forced to abandon improvements, and $1,000 a year for twenty years for a school. Article 9 records the chiefs' concern that the district might not hold enough good land to support them. It says the north line could be moved north if the land was found insufficient.
 

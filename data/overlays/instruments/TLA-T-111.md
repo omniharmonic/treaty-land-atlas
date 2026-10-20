@@ -2,7 +2,7 @@
 id: "TLA-T-111"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1820 the Ottawa and Chippewa ceded the Saint Martin Islands in Lake Huron, which contain plaster of Paris, for a quantity of goods."
+headline: "In 1820 the Ottawa and Chippewa were recorded as ceding the Saint Martin Islands in Lake Huron, which contain plaster of Paris, for a quantity of goods."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for goods, with no mention of coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On July 6, 1820, Lewis Cass, the United States commissioner, signed a treaty at L'Arbre Croche and Michilimackinac in the territory of Michigan. The other parties were the Ottawa and Chippewa nations.
 
-The treaty is only three articles long. In the first, the Ottawa and Chippewa ceded "the Saint Martin Islands in Lake Huron, containing plaster of Paris, and to be located under the direction of the United States." The text does not give the size of the islands. It says the land was to be located, or marked out, under the direction of the United States.
+The treaty is only three articles long. In the first, the Ottawa and Chippewa were recorded as ceding "the Saint Martin Islands in Lake Huron, containing plaster of Paris, and to be located under the direction of the United States." The text does not give the size of the islands. It says the land was to be located, or marked out, under the direction of the United States.
 
 In the second article, the two nations acknowledged that they had "this day received a quantity of goods in full satisfaction of the above cession." The goods are not listed or priced. Chiefs of both nations signed, among them Ottawa chiefs named Chemogueman and Oninjuega and Chippewa chiefs named Weashe and Kenojekum.
 

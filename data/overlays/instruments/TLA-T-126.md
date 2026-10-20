@@ -2,7 +2,7 @@
 id: "TLA-T-126"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1825 the Great and Little Osage ceded lands in Missouri, Arkansas Territory and the plains, keeping a reserved tract, for annuities."
+headline: "In 1825 the Great and Little Osage were recorded as ceding lands in Missouri, Arkansas Territory and the plains, keeping a reserved tract, for annuities."
 note: "The Kansas Historical Society statement covers all Osage cessions from 1825 to 1839, not this treaty alone."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession in St. Louis; the Kansapedia article describes the Osage losing land through repeated treaties but does not call this one coerced."
@@ -13,7 +13,7 @@ verdict: "fixed"
 ---
 On June 2, 1825, William Clark, Superintendent of Indian Affairs, signed a treaty at St. Louis with the chiefs, head men and warriors of the Great and Little Osage. The opening line says the treaty was meant "to extend to said Tribes that protection of the Government so much desired by them."
 
-The Osage ceded all their claims to land within Missouri and the Territory of Arkansas. They also ceded land west of those, north and west of the Red River, south of the Kansas River and east of a line drawn from the head of the Kansas through the Rock Saline. Within that country the treaty reserved a tract for the Osage "so long as they may choose to occupy the same," fifty miles wide, starting twenty-five miles west of Missouri.
+The Osage were recorded as ceding all their claims to land within Missouri and the Territory of Arkansas. They were also recorded as ceding land west of those, north and west of the Red River, south of the Kansas River and east of a line drawn from the head of the Kansas through the Rock Saline. Within that country the treaty reserved a tract for the Osage "so long as they may choose to occupy the same," fifty miles wide, starting twenty-five miles west of Missouri.
 
 The United States agreed to pay $7,000 a year for twenty years. It promised 600 cattle, 600 hogs, 1,000 domestic fowls, ten yoke of oxen, six carts, a blacksmith, and a house for each of four principal chiefs. Article 5 made reservations for people of mixed ancestry.
 

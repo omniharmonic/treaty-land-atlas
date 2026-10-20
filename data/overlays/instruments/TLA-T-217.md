@@ -2,7 +2,7 @@
 id: "TLA-T-217"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Bellevue in 1836, the Oto, Missouria, Omaha and two Sioux bands ceded land south of a line west from Missouri's northwest corner."
+headline: "At Bellevue in 1836, the Oto, Missouria, Omaha and two Sioux bands were recorded as ceding land south of a line west from Missouri's northwest corner."
 note: "The treaty page's side heading says $4,500, but the text of Article 2 says $4,520."
 how: "treaty_negotiated"
 how_basis: "The text records a convention with the named chiefs and head men, signed with marks; no source shows pressure."

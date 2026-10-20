@@ -2,7 +2,7 @@
 id: "TLA-T-026"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1797 at Albany, Mohawk deputies from Upper Canada gave up all their claims to New York land for $1,000."
+headline: "In 1797 at Albany, Mohawk deputies from Upper Canada were recorded as giving up all their claims to New York land for $1,000."
 note: "This was a cession of claims to New York State, held under United States authority, not a transfer to the United States."
 how: "treaty_negotiated"
 how_basis: "The text describes a treaty held with Mohawk deputies, who adjusted the compensation with New York's agents."
@@ -15,6 +15,6 @@ On 29 March 1797, at Albany, New York, deputies of the Mohawk nation met agents 
 
 The agents agreed to pay the deputies one thousand dollars for the use of the nation, to be shared among its persons and families according to their usages. They added five hundred dollars for the deputies' expenses at the treaty and one hundred dollars for their return, and for carrying the thousand dollars home.
 
-In return the deputies ceded and released to the people of the state of New York, forever, all the right and title of the Mohawk nation to lands within New York. The text says the claim was wholly and finally extinguished.
+In return the deputies were recorded as ceding and released to the people of the state of New York, forever, all the right and title of the Mohawk nation to lands within New York. The text says the claim was wholly and finally extinguished.
 
 Three copies were signed, one each for the United States, the state and the Mohawk. The treaty was proclaimed on 27 April 1798.

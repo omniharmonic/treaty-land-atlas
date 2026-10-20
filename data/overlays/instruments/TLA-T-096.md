@@ -2,7 +2,7 @@
 id: "TLA-T-096"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1818 the Quapaw ceded a vast area south of the Arkansas River and kept a reservation, which they lost to the 1824 treaty."
+headline: "In 1818 the Quapaw were recorded as ceding a vast area south of the Arkansas River and kept a reservation, which they lost to the 1824 treaty."
 note: "The acreage, about thirty million given up and one million kept, is the Encyclopedia of Arkansas's figure; the treaty states none."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated cession with payments; the Encyclopedia of Arkansas describes later settler pressure that led to the 1824 treaty, not this one."
@@ -14,7 +14,7 @@ promises: [{"article": "Art. 2", "promise": "A tract between the Arkansas, Washi
 ---
 On August 24, 1818, William Clark and Auguste Chouteau signed a "treaty of friendship, cession, and limits" at St. Louis with the chiefs and warriors of the Quapaw. In Article 1 the Quapaw acknowledged they were under the protection of the United States "and of no other state, power, or sovereignty, whatsoever."
 
-In Article 2 they ceded all the lands within a described boundary. It begins at the mouth of the Arkansas River, runs up the Arkansas and the Canadian fork to its source, then south to the Red River and down it to the Big Raft. A line then reaches the Mississippi thirty leagues below the mouth of the Arkansas. The cession also covered all their claims east of the Mississippi and north of the Arkansas. They reserved a tract between the Arkansas, Washita and Saline rivers, which they could not sell without U.S. approval. Article 4 said no citizen of the United States could settle on it.
+In Article 2 they were recorded as ceding all the lands within a described boundary. It begins at the mouth of the Arkansas River, runs up the Arkansas and the Canadian fork to its source, then south to the Red River and down it to the Big Raft. A line then reaches the Mississippi thirty leagues below the mouth of the Arkansas. The cession also covered all their claims east of the Mississippi and north of the Arkansas. They reserved a tract between the Arkansas, Washita and Saline rivers, which they could not sell without U.S. approval. Article 4 said no citizen of the United States could settle on it.
 
 The United States promised $4,000 in goods at signing and $1,000 in goods yearly. The Quapaw could hunt on the ceded land while they behaved peaceably.
 

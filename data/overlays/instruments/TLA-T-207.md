@@ -2,7 +2,7 @@
 id: "TLA-T-207"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1836 the Swan Creek and Black River Chippewa ceded about 8,320 acres in Michigan for an equal amount west of the Mississippi."
+headline: "In 1836 the Swan Creek and Black River Chippewa were recorded as ceding about 8,320 acres in Michigan for an equal amount west of the Mississippi."
 note: "The 8,320-acre figure is the treaty's own estimate (\"more or less\")."
 how: "removal"
 how_basis: "Article 4 of the treaty text has the United States furnish land west of the Mississippi, and the preamble describes the bands wishing to fix their residence elsewhere."

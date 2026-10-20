@@ -2,7 +2,7 @@
 id: "TLA-T-362"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1867 the Potawatomi agreed to seek a reservation south of Kansas and to sell unallotted Kansas land to a railroad."
+headline: "In 1867 the Potawatomi were bound by the treaty to seek a reservation south of Kansas and to sell unallotted Kansas land to a railroad."
 note: "The treaty spells the U.S. commissioner's name \"Lewis G. Bogy\"; other treaties give Lewis V. Bogy."
 how: "treaty_negotiated"
 how_basis: "The preamble records the tribe's belief that a southern home served its interest; the text describes federal planning of the relocation but states no coercion."

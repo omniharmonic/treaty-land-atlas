@@ -2,7 +2,7 @@
 id: "TLA-T-169"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1832 the Winnebago ceded their land south and east of the Wisconsin and Fox rivers for Neutral Ground land and a 27-year annuity."
+headline: "In 1832 the Winnebago were recorded as ceding their land south and east of the Wisconsin and Fox rivers for Neutral Ground land and a 27-year annuity."
 how: "treaty_under_pressure"
 how_basis: "The OSU treaty text, Article IX, suspends the $10,000 annuity until the Winnebago surrender nine accused men."
 confidence: "high"

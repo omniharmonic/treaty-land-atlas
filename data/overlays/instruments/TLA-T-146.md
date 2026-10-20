@@ -2,7 +2,7 @@
 id: "TLA-T-146"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1826 the Potawatomi ceded land in northern Indiana and a road strip for a 22-year annuity and goods."
+headline: "In 1826 the Potawatomi were recorded as ceding land in northern Indiana and a road strip for a 22-year annuity and goods."
 note: "The words about the tribe's attachment and liberality are the treaty's own wording, not a statement by the nation."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession with annuities and goods; no source cited describes coercion."
@@ -13,7 +13,7 @@ verdict: "fixed"
 ---
 On October 16, 1826, Lewis Cass, James B. Ray and John Tipton signed a treaty near the mouth of the Mississinewa River, upon the Wabash in Indiana. They signed for the United States, with the chiefs and warriors of the Potawatamie Tribe.
 
-In Article 1 the Potawatomi ceded all their right to land within a boundary that followed the Tippecanoe, Eel, St. Joseph and Wabash rivers and the Miami River near Fort Wayne. They also ceded a smaller tract on Lake Michigan. In Article 2, "as an evidence of the attachment which the Potawatamie tribe feel towards the American people," the treaty has the tribe cede a strip a hundred feet wide from Lake Michigan to the Wabash for a road. It adds one section of land for each mile of the road, with a road onward through Indianapolis to the Ohio River. The Indiana legislature was given the right to locate the road and use the land.
+In Article 1 the Potawatomi were recorded as ceding all their right to land within a boundary that followed the Tippecanoe, Eel, St. Joseph and Wabash rivers and the Miami River near Fort Wayne. They were also recorded as ceding a smaller tract on Lake Michigan. In Article 2, "as an evidence of the attachment which the Potawatamie tribe feel towards the American people," the treaty has the tribe cede a strip a hundred feet wide from Lake Michigan to the Wabash for a road. It adds one section of land for each mile of the road, with a road onward through Indianapolis to the Ohio River. The Indiana legislature was given the right to locate the road and use the land.
 
 In return, the United States agreed to pay an annuity of $2,000 in silver for twenty-two years and support a blacksmith. It promised $2,000 a year for education for as long as Congress thought proper, a corn mill, a miller and 160 bushels of salt a year. It had delivered goods worth $30,547.71 and agreed to pay $9,573 in claims against the tribe.
 

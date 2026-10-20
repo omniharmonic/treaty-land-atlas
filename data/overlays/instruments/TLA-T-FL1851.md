@@ -2,7 +2,7 @@
 id: "TLA-T-FL1851"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Horse Creek in 1851 eight Plains nations agreed to peace, mapped their territories, and let the United States build roads and posts."
+headline: "At Horse Creek in 1851 eight Plains nations were bound by the treaty to peace, mapped their territories, and let the United States build roads and posts."
 note: "Sources disagree on whether the Crow accepted the Senate's amendment; one says the treaty was never published as ratified in the Statutes at Large."
 how: "treaty_negotiated"
 how_basis: "The treaty text records an agreement among the eight nations and two U.S. commissioners; the cited sources do not describe duress."

@@ -2,7 +2,7 @@
 id: "TLA-T-338"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1865 the Osage sold a 50-by-30-mile strip of Kansas land for $300,000 and ceded a 20-mile strip to be sold in trust."
+headline: "In 1865 the Osage were recorded as selling a 50-by-30-mile strip of Kansas land for $300,000 and were recorded as ceding a 20-mile strip to be sold in trust."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated sale; it cites the tribe's impoverishment after payments ceased but states no coercion."
 confidence: "high"
@@ -13,6 +13,6 @@ promises: [{"article": "Art. 1", "promise": "Credit $300,000 to the tribe in the
 ---
 On September 29, 1865, at Canville Trading Post in Kansas, D. N. Cooley, Commissioner of Indian Affairs, and Elijah Sells, superintendent of Indian affairs for the southern superintendency, signed a treaty with the chiefs of the Great and Little Osage. The treaty says the Osage had "more lands than are necessary for their occupation," that payments under earlier treaties had ceased, "leaving them greatly impoverished," and that they wished to improve their condition by selling surplus land.
 
-The Osage sold the strip that starts at the southeast corner of their reservation and runs fifty miles north along the eastern boundary, then thirty miles west. The United States agreed to pay $300,000, credited to the tribe in the Treasury, with five percent yearly interest paid twice a year in money, clothing, provisions or other useful articles. The land was to be surveyed and sold as public land, including any land granted to Kansas to help build a railroad. After the United States was repaid its costs and the $300,000, the remaining proceeds went to a general "civilization fund" for the education of Indian tribes across the United States, not to the Osage.
+The Osage were recorded as selling the strip that starts at the southeast corner of their reservation and runs fifty miles north along the eastern boundary, then thirty miles west. The United States agreed to pay $300,000, credited to the tribe in the Treasury, with five percent yearly interest paid twice a year in money, clothing, provisions or other useful articles. The land was to be surveyed and sold as public land, including any land granted to Kansas to help build a railroad. After the United States was repaid its costs and the $300,000, the remaining proceeds went to a general "civilization fund" for the education of Indian tribes across the United States, not to the Osage.
 
-The Osage also ceded a tract twenty miles wide off the north side of the rest of the reservation. It was to be held in trust and sold for the tribe's benefit at not less than $1.25 an acre. The sources here do not describe what followed or the Osage Nation's own account.
+The Osage were also recorded as ceding a tract twenty miles wide off the north side of the rest of the reservation. It was to be held in trust and sold for the tribe's benefit at not less than $1.25 an acre. The sources here do not describe what followed or the Osage Nation's own account.

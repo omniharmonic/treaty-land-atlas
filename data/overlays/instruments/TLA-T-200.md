@@ -2,7 +2,7 @@
 id: "TLA-T-200"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In March 1836 Mesquawbuck's Potawatomi band ceded four reserved sections and agreed to move west of the Mississippi within two years."
+headline: "In March 1836 Mesquawbuck's Potawatomi band was recorded as ceding four reserved sections and was bound by the treaty to move west of the Mississippi within two years."
 how: "removal"
 how_basis: "Article 4 of the treaty text commits the band to remove west of the Mississippi within two years."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On March 26, 1836, Abel C. Pepper, commissioner for the United States, signed a treaty at a camp on Turkey Creek Prairie, Indiana. The other party was Mesquawbuck, a chief of the Potawatomi (spelled Pottawatamy in the text), and his band.
 
-In Article 1 the chief and his band ceded the four sections of land reserved for them by the second article of the October 1832 treaty with the Potawatomi on the Tippecanoe River. The treaty states no acreage. In Article 4 they agreed to yield peaceable possession of those sections and to remove to the country west of the Mississippi provided for the Potawatomi nation by the United States, within two years of the signing date.
+In Article 1 the chief and his band were recorded as ceding the four sections of land reserved for them by the second article of the October 1832 treaty with the Potawatomi on the Tippecanoe River. The treaty states no acreage. In Article 4 they were bound by the treaty to yield peaceable possession of those sections and to remove to the country west of the Mississippi provided for the Potawatomi nation by the United States, within two years of the signing date.
 
 The United States agreed to pay $2,560 in specie, meaning coin, at the next annuity payment after ratification, and to pay the necessary expenses of making the treaty. The Senate struck out Article 6, whose text is not shown on the page. The treaty was proclaimed on June 4, 1836.
 

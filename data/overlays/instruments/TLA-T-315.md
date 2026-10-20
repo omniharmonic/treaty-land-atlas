@@ -11,7 +11,7 @@ sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-arapaho
 verdict: "fixed"
 promises: [{"article": "Annuities and aid provisions", "promise": "Government help teaching the Cheyenne and Arapaho to farm.", "kept": "broken", "evidence_url": "https://www.nps.gov/places/wayside-fort-lyon-reservation.htm", "evidence_quote": "The Treaty of Fort Wise promised government assistance with teaching the Cheyenne and Arapaho how to farm; however, instructors were never sent."}]
 ---
-On February 18, 1861, at Fort Wise, commissioners Albert G. Boone and F. B. Culver signed an agreement with ten named Arapaho and Cheyenne chiefs, including Black Kettle and Little Raven. The chiefs ceded all land the tribes claimed except a reserve along the Arkansas River, bounded by Sandy Fork and the Purgatory River. Each member was to receive forty acres. The United States promised $30,000 a year for fifteen years, a total of $450,000.
+On February 18, 1861, at Fort Wise, commissioners Albert G. Boone and F. B. Culver signed an agreement with ten named Arapaho and Cheyenne chiefs, including Black Kettle and Little Raven. The chiefs were recorded as ceding all land the tribes claimed except a reserve along the Arkansas River, bounded by Sandy Fork and the Purgatory River. Each member was to receive forty acres. The United States promised $30,000 a year for fifteen years, a total of $450,000.
 
 A National Archives article says gold discoveries in 1858 and 1859 brought a tide of settlers, and that trader and agent William Bent asked the government to define the Indians' territorial rights. The result was this treaty, which swapped most of their land for a much smaller triangular tract.
 

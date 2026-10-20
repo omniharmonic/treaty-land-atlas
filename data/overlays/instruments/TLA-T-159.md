@@ -2,7 +2,7 @@
 id: "TLA-T-159"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1830 the Sauk, Fox, Sioux, Omaha, Ioway, Oto and Missouria ceded a large tract and two strips, with ten years of annuities."
+headline: "In 1830 the Sauk, Fox, Sioux, Omaha, Ioway, Oto and Missouria were recorded as ceding a large tract and two strips, with ten years of annuities."
 note: "The pressure described comes from Treaties Matter, not the treaty text, which also does not call the strip a \"neutral ground\"."
 how: "treaty_under_pressure"
 how_basis: "Treaties Matter says the U.S. threatened a military invasion and trade embargo before insisting on land cessions at the 1830 Prairie du Chien council."
@@ -13,7 +13,7 @@ verdict: "fixed"
 ---
 On July 15, 1830, William Clark and Willoughby Morgan signed a treaty at Prairie du Chien for the United States. The other parties were the Sacs and Foxes, four bands of Sioux, and the Omahas, Ioways, Ottoes and Missourias. The preamble says the tribes were "anxious to remove all causes which may hereafter create any unfriendly feeling between them." It adds that hunting, they were "sensible," would "soon entirely fail them."
 
-In Article 1 the tribes ceded a large tract bounded by the Des Moines, Little Sioux, Big Sioux (Calumet) and Missouri rivers and the Missouri state line. The ceded land was to be assigned by the President to tribes living there, or to others he chose. In Articles 2 and 3 the Sacs and Foxes and the Sioux each ceded a strip twenty miles wide from the Mississippi to the Des Moines.
+In Article 1 the tribes were recorded as ceding a large tract bounded by the Des Moines, Little Sioux, Big Sioux (Calumet) and Missouri rivers and the Missouri state line. The ceded land was to be assigned by the President to tribes living there, or to others he chose. In Articles 2 and 3 the Sacs and Foxes and the Sioux were each recorded as ceding a strip twenty miles wide from the Mississippi to the Des Moines.
 
 In return the United States agreed to annuities for ten years, from $500 to $3,000 for each group, plus blacksmiths and $3,000 a year for education. It distributed $5,132 in goods, which, together with the annuities, the treaty called "a full compensation."
 

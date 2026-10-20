@@ -2,8 +2,8 @@
 id: "TLA-T-090"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At the Maumee Rapids in 1817 seven nations ceded much of northwestern Ohio and kept reservations; no Miami leaders signed."
-note: "The 4.5 million acre figure comes from a Myaamia Center student blog, which also says six nations ceded the land; the treaty text lists seven and states no total."
+headline: "At the Maumee Rapids in 1817 seven nations were recorded as ceding much of northwestern Ohio and kept reservations; no Miami leaders signed."
+note: "The 4.5 million acre figure comes from a Myaamia Center student blog, which also says six nations were recorded as ceding the land; the treaty text lists seven and states no total."
 how: "treaty_under_pressure"
 how_basis: "The Myaamia Center blog says the Miami, who claimed part of the land, did not sign and viewed it as unjust, and describes mounting pressure on Native nations to sell."
 confidence: "high"
@@ -12,7 +12,7 @@ sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-P
 verdict: "rewritten"
 promises: [{"article": "Art. 6", "promise": "The United States would patent land in fee simple to chiefs of the Wyandot, Seneca and Shawnee for named people.", "kept": "partly", "evidence_url": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1818-0162", "evidence_quote": "shall not be thus granted, but shall be excepted from the cession made by the said tribes to the United States"}]
 ---
-On September 29, 1817, Lewis Cass and Duncan McArthur signed a treaty at the foot of the Rapids of the Miami of Lake Erie with the Wyandot, Seneca, Delaware, Shawnee, Potawatomi, Ottawa and Chippewa. The Wyandot ceded a tract described from the south shore of Lake Erie down to the Greenville line. The Potawatomi, Ottawa and Chippewa ceded a second tract along the Maumee River. The United States agreed to pay the Wyandot $4,000 a year forever, the Seneca $500 and the Shawnee $2,000, along with shorter annuities to others.
+On September 29, 1817, Lewis Cass and Duncan McArthur signed a treaty at the foot of the Rapids of the Miami of Lake Erie with the Wyandot, Seneca, Delaware, Shawnee, Potawatomi, Ottawa and Chippewa. The Wyandot were recorded as ceding a tract described from the south shore of Lake Erie down to the Greenville line. The Potawatomi, Ottawa and Chippewa were recorded as ceding a second tract along the Maumee River. The United States agreed to pay the Wyandot $4,000 a year forever, the Seneca $500 and the Shawnee $2,000, along with shorter annuities to others.
 
 The treaty also promised patents "in fee simple" to chiefs of the Wyandot, Seneca and Shawnee for named people. These included a tract twelve miles square at Upper Sandusky and a 30,000-acre Seneca tract.
 

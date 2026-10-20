@@ -2,7 +2,7 @@
 id: "TLA-T-041"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Piankashaw ceded land between the Ohio and Wabash rivers and acknowledged the Kaskaskia right to sell their adjoining lands."
+headline: "The Piankashaw were recorded as ceding land between the Ohio and Wabash rivers and acknowledged the Kaskaskia right to sell their adjoining lands."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession for an annuity and goods; no cited source describes coercion."
 confidence: "high"

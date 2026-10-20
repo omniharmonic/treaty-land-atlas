@@ -2,7 +2,7 @@
 id: "TLA-T-029"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Tellico in 1798 the Cherokee ceded a tract in eastern Tennessee for $5,000 in goods and added yearly goods."
+headline: "At Tellico in 1798 the Cherokee were recorded as ceding a tract in eastern Tennessee for $5,000 in goods and added yearly goods."
 how: "treaty_negotiated"
 how_basis: "The OSU text shows a negotiated cession with payment, following boundary disputes after Holston, and no cited source describes coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On October 2, 1798, U.S. commissioners George Walton and Lieutenant Colonel Thomas Butler signed a treaty near Tellico with Cherokee chiefs and warriors. The preamble explains why. The 1791 Treaty of Holston had not been carried out for a time because of "misunderstandings." Its boundary was not marked until late 1797. Before then, citizens of the United States had settled on Cherokee land beyond the line. The United States removed those settlers once the line was marked.
 
-The new treaty aimed at "remedying inconveniences arising to citizens of the United States from the adjustment of the boundary line." In Article IV the Cherokee agreed to "relinquish and cede to the United States, all the lands within the following points and lines." The Tennessee Encyclopedia says the cession covered land settlers had entered between the Clinch River and the Cumberland Plateau and between the Tennessee and Little Tennessee rivers.
+The new treaty aimed at "remedying inconveniences arising to citizens of the United States from the adjustment of the boundary line." In Article IV the Cherokee were bound by the treaty to "relinquish and cede to the United States, all the lands within the following points and lines." The Tennessee Encyclopedia says the cession covered land settlers had entered between the Clinch River and the Cumberland Plateau and between the Tennessee and Little Tennessee rivers.
 
 In return the United States delivered goods worth $5,000 on signing and promised $1,000 in goods each year, on top of the existing annuity. It also promised to continue its guarantee of the Cherokee's remaining country "forever," and let Cherokee hunters take game on the ceded lands until settlements made that improper.
 

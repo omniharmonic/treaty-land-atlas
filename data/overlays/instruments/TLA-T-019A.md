@@ -15,6 +15,6 @@ This National Archives item is a bundle of copies, not a treaty negotiated in 17
 
 According to the National Archives Foundation's teaching page, New York Governor George Clinton sent this abstract to Secretary of State Thomas Jefferson on 19 April 1793. The abstract summarizes the 1785 treaty at Fort Herkimer, as an example of the many land agreements New York made with the Iroquois Confederacy, or Six Nations, after the Revolutionary War.
 
-In that 1785 treaty, the teaching page says, the Oneida and Tuscarora relinquished to New York State some 300,000 acres in present-day Broome and Chenango Counties. In exchange they received $11,500, food and rum.
+In that 1785 treaty, the teaching page says, the Oneida and Tuscarora were recorded as relinquishing to New York State some 300,000 acres in present-day Broome and Chenango Counties. In exchange they received $11,500, food and rum.
 
 The same page says state and federal officials had promised the Oneida and Tuscarora, who had fought for the patriot cause, that their land rights were inviolable, but that New Yorkers wanted the land and promises withered under pressure.

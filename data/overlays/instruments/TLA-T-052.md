@@ -2,7 +2,7 @@
 id: "TLA-T-052"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Vincennes in 1805 the Piankashaw ceded land between the Wabash and the 1803 Kaskaskia cession for an annuity and $1,100."
+headline: "At Vincennes in 1805 the Piankashaw were recorded as ceding land between the Wabash and the 1803 Kaskaskia cession for an annuity and $1,100."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession for an annuity and goods; the sources cited do not describe coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On December 30, 1805, William Henry Harrison, governor of Indiana Territory, signed a treaty at Vincennes with the chiefs and head men of the Piankishaw tribe.
 
-In Article I the tribe "cedes and relinquishes to the United States for ever" all the country between the Wabash River and the tract the Kaskaskia ceded in 1803, south of a line drawn from the northwest corner of the Vincennes tract. One reservation was excepted from the cession.
+In Article I the tribe "cedes and relinquishes to the United States for ever" all the country between the Wabash River and the tract the Kaskaskia were recorded as ceding in 1803, south of a line drawn from the northwest corner of the Vincennes tract. One reservation was excepted from the cession.
 
 Article II had the United States take the Piankishaw "under their immediate care and patronage" and promise protection as effective as the Kaskaskia received. The tribe promised never to commit depredations or make war on other tribes without U.S. consent. Article III added a yearly annuity of $300, paid the same way as the annuity from the Treaty of Greenville. The United States kept the right to divide it among individuals of the tribe.
 

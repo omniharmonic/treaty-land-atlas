@@ -2,7 +2,7 @@
 id: "TLA-T-356"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1866, after the Creeks' Confederate treaty, the Creek Nation ceded the western half of its domain at thirty cents an acre."
+headline: "In 1866, after the Creeks' Confederate treaty, the Creek Nation was recorded as ceding the western half of its domain at thirty cents an acre."
 how: "treaty_under_pressure"
 how_basis: "The preamble says the Creeks' 1861 Confederate treaty made them liable to forfeit lands and that \"the United States require of the Creeks a portion of their land.\""
 confidence: "high"
@@ -13,6 +13,6 @@ promises: [{"article": "Art. 3", "promise": "The eastern half of the Creek domai
 ---
 On June 14, 1866, in Washington, the United States and the Creek Nation signed a treaty. Its preamble says the Creeks had made a treaty with the "so-called Confederate States" in 1861. By doing so, it says, they made themselves "liable to forfeit to the United States all benefits and advantages enjoyed by them in lands, annuities, protection, and immunities." It continues: "in view of said liabilities the United States require of the Creeks a portion of their land whereon to settle other Indians."
 
-In Article 3 the Creeks ceded the west half of their domain, estimated at 3,250,560 acres. The United States agreed to pay thirty cents an acre, $975,168. The land was "to be sold to and used as homes for such other civilized Indians as the United States may choose to settle thereon." The eastern half would "be forever set apart as a home for said Creek Nation." Article 2 gave persons of African descent among the Creeks the rights and privileges of native citizens.
+In Article 3 the Creeks were recorded as ceding the west half of their domain, estimated at 3,250,560 acres. The United States agreed to pay thirty cents an acre, $975,168. The land was "to be sold to and used as homes for such other civilized Indians as the United States may choose to settle thereon." The eastern half would "be forever set apart as a home for said Creek Nation." Article 2 gave persons of African descent among the Creeks the rights and privileges of native citizens.
 
 In McGirt v. Oklahoma (2020), the Supreme Court noted that this treaty reduced the Creek lands but that Congress "explicitly restated its commitment" to the remaining land as a home for the Creek Nation. Because Congress had not said otherwise, the Court held that land reserved for the Creek Nation since the 19th century remains "Indian country" under the federal Major Crimes Act.

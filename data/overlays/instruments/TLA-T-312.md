@@ -2,7 +2,7 @@
 id: "TLA-T-312"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1859 the Sac and Fox of the Mississippi gave up most of their Kansas reservation, keeping about 153,600 acres for allotment."
+headline: "In 1859 the Sac and Fox of the Mississippi were recorded as giving up most of their Kansas reservation, keeping about 153,600 acres for allotment."
 note: "The speech quoted comes from an older translation recorded by a local county history site."
 how: "treaty_under_pressure"
 how_basis: "The Franklin County history portal says the U.S. government initiated the treaty to shrink the reservation and records a Sac and Fox leader stating he would be compelled to sign under protest; the treaty also provides for paying the Indians' debts from land sales."

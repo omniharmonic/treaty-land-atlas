@@ -14,7 +14,7 @@ promises: [{"article": "Art. 12", "promise": "No cession of reservation land val
 ---
 On October 21, 1867, at the council camp on Medicine Lodge Creek in Kansas, seven U.S. commissioners signed a treaty with the confederated Kiowa and Comanche. They included Nathaniel G. Taylor, William S. Harney and John B. Sanborn. Article 1 said war between the parties "shall forever cease." Article 2 set apart a district between the Washita and Red rivers for the tribes' "absolute and undisturbed use and occupation."
 
-In Article 11 the tribes agreed to relinquish "all right to occupy permanently the territory outside of their reservation." They kept the right to hunt south of the Arkansas River "so long as the buffalo may range thereon." They also agreed to withdraw opposition to the railroad being built on the Smoky Hill River.
+In Article 11 the tribes were bound by the treaty to relinquish "all right to occupy permanently the territory outside of their reservation." They kept the right to hunt south of the Arkansas River "so long as the buffalo may range thereon." They were also bound by the treaty to withdraw opposition to the railroad being built on the Smoky Hill River.
 
 Article 12 said no cession of reservation land would be valid unless signed by at least three-fourths of the adult male Indians occupying it. In Lone Wolf v. Hitchcock (decided January 5, 1903) the Supreme Court said the Indians claimed their assent to a later agreement had been obtained by fraudulent misrepresentations and that three-fourths had not signed. The Court held that Article 12 could not "materially limit and qualify the controlling authority of Congress." It called Congress's authority over tribal relations "plenary."
 

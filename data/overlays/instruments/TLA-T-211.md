@@ -2,7 +2,7 @@
 id: "TLA-T-211"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1836 the Ioway and Missouri Sac and Fox ceded the strip between Missouri and the Missouri River for $7,500 and a 400-section tract."
+headline: "In 1836 the Ioway and Missouri Sac and Fox were recorded as ceding the strip between Missouri and the Missouri River for $7,500 and a 400-section tract."
 note: "The treaty itself states no acreage; the figure of about 3,150 square miles comes from ICT News."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession for a money present and an assigned tract, signed by Clark and the chiefs, warriors and counsellors, with no coercion stated."
@@ -13,6 +13,6 @@ verdict: "rewritten"
 ---
 On September 17, 1836, William Clark, Superintendent of Indian Affairs, signed a treaty at Fort Leavenworth on the Missouri River. The other parties were chiefs, warriors and counsellors of the Ioway tribe and the band of Sacs and Foxes of the Missouri, then living west of the State of Missouri. The treaty text says it was represented to them as desirable that the lands between Missouri and the Missouri River be attached to the state, and the Indian title be entirely extinguished.
 
-In Article 1 they ceded, "forever," all their right, title and interest in those lands. The text gives reasons in their name: that the lands could never be made available for Indian purposes, and that moving the state line would give a natural boundary between whites and Indians. The United States paid a present of $7,500 in money. ICT News, an Indigenous news outlet, reports that the cession added about 3,150 square miles to northwest Missouri. It also calls it the Platte Purchase.
+In Article 1 they were recorded as ceding, "forever," all their right, title and interest in those lands. The text gives reasons in their name: that the lands could never be made available for Indian purposes, and that moving the state line would give a natural boundary between whites and Indians. The United States paid a present of $7,500 in money. ICT News, an Indigenous news outlet, reports that the cession added about 3,150 square miles to northwest Missouri. It also calls it the Platte Purchase.
 
 In Article 2 the United States agreed to assign them a strip south of the Missouri River, making four hundred sections. The Sacs and Foxes were to take the lower half, and the Ioways the upper. Article 3 promised houses, 200 acres broken and fenced for each group, a farmer, blacksmith, schoolmaster and interpreter, tools, a year of rations, a ferry-boat, cattle, hogs and a mill. The treaty was proclaimed on February 15, 1837.

@@ -13,6 +13,6 @@ verdict: "fixed"
 ---
 On August 31, 1830, at Franklin, Tennessee, Secretary of War John H. Eaton and General John Coffee signed articles with chiefs and head men of the Chickasaw Nation. The text says they were "duly authorized, by the whole nation, to conclude a treaty."
 
-In Article 1 the Chickasaw ceded all their lands east of the Mississippi River north of a described boundary, up to latitude 35 North, the southern boundary of Tennessee. In Article 2 the United States agreed to furnish a country west of Arkansas Territory of equal extent. Article 5 promised $15,000 a year for twenty years, starting after removal.
+In Article 1 the Chickasaw were recorded as ceding all their lands east of the Mississippi River north of a described boundary, up to latitude 35 North, the southern boundary of Tennessee. In Article 2 the United States agreed to furnish a country west of Arkansas Territory of equal extent. Article 5 promised $15,000 a year for twenty years, starting after removal.
 
 The treaty was conditional. If, after examination, a suitable country could not be found, the text says "this treaty, and all its provisions, shall be considered null and void." The Chickasaw Nation's own history page says a Chickasaw delegation headed by Levi Colbert set out on October 15, 1830, to explore the West. The party could not find an area deemed suitable, and the treaty "was not ratified by the U.S. Senate and became void." The same page says the Chickasaw were "forced to cede their lands." Its timeline lists the 1832 Treaty of Pontotoc Creek as the next event.

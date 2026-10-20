@@ -13,7 +13,7 @@ verdict: "fixed"
 ---
 On January 7, 1806, Secretary of War Henry Dearborn signed a convention in Washington with chiefs and head men of the Cherokee Nation, "duly authorized and empowered by said nation."
 
-In Article I the Cherokee relinquished "all right, title, interest and claim" to the country north of the Tennessee River and west of a line from the Chickasaw Old Fields to the head of the Duck River. They excepted two tracts. One was at Muscle Shoals and was to be the common property of the Cherokee living there. The other, two miles wide on the north bank of the Tennessee, was to belong to Moses Melton and Charles Hicks in equal shares. They also gave up claims to Long Island in the Holston River.
+In Article I the Cherokee were recorded as relinquishing "all right, title, interest and claim" to the country north of the Tennessee River and west of a line from the Chickasaw Old Fields to the head of the Duck River. They excepted two tracts. One was at Muscle Shoals and was to be the common property of the Cherokee living there. The other, two miles wide on the north bank of the Tennessee, was to belong to Moses Melton and Charles Hicks in equal shares. They were also recorded as giving up claims to Long Island in the Holston River.
 
 In Article II the United States agreed to pay $2,000 on ratification and $2,000 in each of the next four years, $10,000 in all. It also promised to build a grist mill within a year, furnish a machine for cleaning cotton, and pay the old chief Black Fox $100 a year for life. In Article III the United States promised to use its influence with the Chickasaw over a boundary south of the Tennessee, but did not promise to secure it.
 

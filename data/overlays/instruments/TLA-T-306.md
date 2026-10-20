@@ -2,7 +2,7 @@
 id: "TLA-T-306"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1858 the Ponca ceded most of their land and kept a Niobrara reservation with a U.S. promise of protection."
+headline: "In 1858 the Ponca were recorded as ceding most of their land and kept a Niobrara reservation with a U.S. promise of protection."
 note: "The Encyclopedia of the Great Plains says the reservation was lost when the 1868 Fort Laramie treaty ceded the entire Ponca Reservation to the Sioux; later Ponca treaties are not covered here."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated cession in exchange for protection and annuities; the later loss of the reservation came from the 1868 Fort Laramie treaty, not this one."
@@ -12,7 +12,7 @@ sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1
 verdict: "fixed"
 promises: [{"article": "Art. 2", "promise": "The United States would protect the Ponca in possession of the tract reserved for their future homes.", "kept": "broken", "evidence_url": "https://plainshumanities.unl.edu/encyclopedia/doc/egp.na.088.html", "evidence_quote": "Overnight, the Poncas found themselves trespassers on their own reservation."}]
 ---
-On March 12, 1858, in Washington, Commissioner Charles E. Mix signed a treaty with six Ponca chiefs. The Ponca ceded "all the lands now owned or claimed by them" except a tract on the Niobrara and Ponca Rivers reserved for their future homes, where they agreed to move within a year of ratification. The United States agreed "to protect the Poncas in the possession of the tract of land reserved for their future homes," during good behavior, and to pay annuities for thirty years, starting at $12,000 a year.
+On March 12, 1858, in Washington, Commissioner Charles E. Mix signed a treaty with six Ponca chiefs. The Ponca ceded "all the lands now owned or claimed by them" except a tract on the Niobrara and Ponca Rivers reserved for their future homes, where they were bound by the treaty to move within a year of ratification. The United States agreed "to protect the Poncas in the possession of the tract of land reserved for their future homes," during good behavior, and to pay annuities for thirty years, starting at $12,000 a year.
 
 The Encyclopedia of the Great Plains says the Ponca signed four treaties, including this one, and never fought the United States. It says the Ponca tried to farm the reservation, but the government's 1868 Treaty of Fort Laramie ceded the entire Ponca Reservation to the Sioux, leaving them "trespassers on their own reservation."
 

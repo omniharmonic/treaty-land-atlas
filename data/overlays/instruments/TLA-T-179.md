@@ -12,7 +12,7 @@ verdict: "new"
 ---
 This 1832 agreement is about changing an earlier treaty. In February 1831 the Menominee and the United States had agreed that a tract (the text says five hundred thousand acres) would be set apart for the New York Indians. The Senate did not ratify it at that session. On 25 June 1832 the Senate agreed to ratify it with a proviso: two townships (46,080 acres) east of Winnebago Lake for the Stockbridge and Munsee, one township for the Brothertown, payment for improvements, and a new line adding 200,000 acres on the west side of the Fox River.
 
-On 22 October 1832, at Green Bay, Michigan's governor George B. Porter put that proviso to the Menominee chiefs and headmen. The text says they refused, "in the most positive and decided manner." It then says that after "much labor and pains, entreaty and persuasion" they agreed to a modified version.
+On 22 October 1832, at Green Bay, Michigan's governor George B. Porter put that proviso to the Menominee chiefs and headmen. The text says they refused, "in the most positive and decided manner." It then says that after "much labor and pains, entreaty and persuasion" they were bound by the treaty to a modified version.
 
 On 27 October 1832, at the Agency House, the Menominee accepted the land for the Stockbridge, Munsee and Brothertown. They objected to the new Fox River line. Instead they offered a different 200,000-acre tract along the southwestern boundary of the 500,000-acre tract, with an equal amount to come off the northeastern side at Oconto Creek, so the whole would not exceed 500,000 acres. Porter gave them clothing worth one thousand dollars, corn, pork and flour.
 

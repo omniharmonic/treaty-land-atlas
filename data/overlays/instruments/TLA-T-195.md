@@ -2,7 +2,7 @@
 id: "TLA-T-195"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "On 16 December 1834 Potawatomi leaders ceded two Indiana sections with their mills for $700, $900 in debts and an end to the miller."
+headline: "On 16 December 1834 Potawatomi leaders were recorded as ceding two Indiana sections with their mills for $700, $900 in debts and an end to the miller."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "new"
 ---
 On 16 December 1834, at the Potawattimie mills in Indiana, William Marshall, commissioner for the United States, made a short treaty with the chiefs, headmen and warriors of the Potawatomi (spelled Potawattamis in the text).
 
-In Article 1 they agreed to cede to the United States their title and interest to a reservation of two sections of land that included their mills on the Tippecanoe River. The text says this reservation was made at the Tippecanoe treaty of 27 October 1832; the Comoza treaty of 4 December 1834 calls the earlier treaty 26 October 1832.
+In Article 1 they were bound by the treaty to cede to the United States their title and interest to a reservation of two sections of land that included their mills on the Tippecanoe River. The text says this reservation was made at the Tippecanoe treaty of 27 October 1832; the Comoza treaty of 4 December 1834 calls the earlier treaty 26 October 1832.
 
 In Article 2 the United States agreed to pay the Potawatomi seven hundred dollars in cash at the payment of their annuities in 1835, and to pay their just debts according to an attached schedule amounting to nine hundred dollars.
 

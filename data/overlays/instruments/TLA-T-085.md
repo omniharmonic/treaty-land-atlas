@@ -2,7 +2,7 @@
 id: "TLA-T-085"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1816 the Choctaw ceded land east of a Tombigbee River line for $6,000 a year for twenty years and $10,000 in merchandise."
+headline: "In 1816 the Choctaw were recorded as ceding land east of a Tombigbee River line for $6,000 a year for twenty years and $10,000 in merchandise."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for stated annual payments and merchandise, with no mention of coercion."
 confidence: "high"

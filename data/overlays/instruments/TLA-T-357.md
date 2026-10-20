@@ -2,7 +2,7 @@
 id: "TLA-T-357"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1866 the Delaware agreed to leave Kansas for Indian Territory and let the Interior Secretary sell their remaining reservation, mainly to a railroad."
+headline: "In 1866 the Delaware were bound by the treaty to leave Kansas for Indian Territory and let the Interior Secretary sell their remaining reservation, mainly to a railroad."
 note: "That the Delawares \"expressed a wish\" to move is the treaty's own wording."
 how: "removal"
 how_basis: "The preamble says Congress made it the President's duty to provide by treaty for the removal of Kansas tribes, and the articles provide for the Delawares' removal."

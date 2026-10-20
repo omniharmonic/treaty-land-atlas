@@ -2,7 +2,7 @@
 id: "TLA-T-127"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1825 the Kansa ceded their Missouri lands and a wide area west, keeping a reservation thirty miles wide on the Kansas River."
+headline: "In 1825 the Kansa were recorded as ceding their Missouri lands and a wide area west, keeping a reservation thirty miles wide on the Kansas River."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession in St. Louis with annuities, with no mention of coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On June 3, 1825, William Clark, Superintendent of Indian Affairs, signed a treaty at St. Louis with the chiefs, head men and warriors of the Kansas Nation.
 
-The Kansas ceded "all the lands lying within the State of Missouri" to which they had title or claim. They also ceded the lands they occupied or claimed west of Missouri. The boundary began where the Kansas River enters the Missouri. It ran north to Missouri's northwest corner, west to the Nodewa River, then to the Big Nemaha and its source, and on to the source of the Kansas River.
+The Kansas were recorded as ceding "all the lands lying within the State of Missouri" to which they had title or claim. They were also recorded as ceding the lands they occupied or claimed west of Missouri. The boundary began where the Kansas River enters the Missouri. It ran north to Missouri's northwest corner, west to the Nodewa River, then to the Big Nemaha and its source, and on to the source of the Kansas River.
 
 From that cession the treaty reserved a tract for the Kansas. It began twenty leagues up the Kansas River, included their village there, and was thirty miles wide. The United States agreed to pay $3,500 a year for twenty years. It promised 300 cattle, 300 hogs, 500 fowls, three yoke of oxen and two carts, along with a blacksmith. Thirty-six sections of good land on the Big Blue River were to be sold to fund schools for Kansa children.
 

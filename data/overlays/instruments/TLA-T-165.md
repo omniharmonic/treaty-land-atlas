@@ -2,7 +2,7 @@
 id: "TLA-T-165"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1831 two Ottawa bands in Ohio ceded about 50,000 acres; one agreed to move west, the other was offered land if it chose."
+headline: "In 1831 two Ottawa bands in Ohio were recorded as ceding about 50,000 acres; one agreed to move west, the other was offered land if it chose."
 how: "removal"
 how_basis: "The OSU treaty text provides for exchanging Ohio reservations for western land and removal, and for paying listed debts from land sales."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On August 30, 1831, James B. Gardiner, special commissioner for the United States, signed articles with chiefs, head men and warriors of Ottoway bands in Ohio. The preamble says the band on Blanchard's Fork and at Oquanoxa's village had "expressed their consent" to the Act of Congress of May 28, 1830 and their "willingness to remove west of the Mississippi."
 
-The first band ceded the reservations from the 1817 treaty, "twenty-one thousand seven hundred and sixty acres." A second band, at Roche de Boeuf and Wolf Rapids, wished to join the convention but was "not being willing, at this time, to stipulate for their removal west of the Mississippi." It ceded 28,157 acres reserved by the 1807 treaty of Detroit.
+The first band was recorded as ceding the reservations from the 1817 treaty, "twenty-one thousand seven hundred and sixty acres." A second band, at Roche de Boeuf and Wolf Rapids, wished to join the convention but was "not being willing, at this time, to stipulate for their removal west of the Mississippi." It ceded 28,157 acres reserved by the 1807 treaty of Detroit.
 
 The United States agreed to remove the first band, "about two hundred souls," and grant them 34,000 acres west of the Mississippi. It would provide a year of food and advance $2,000 for improvements. It promised the second band 40,000 acres if they decided to go.
 

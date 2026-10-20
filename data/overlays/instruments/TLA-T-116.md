@@ -2,7 +2,7 @@
 id: "TLA-T-116"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1821 the Creek Nation ceded Georgia land east of the Flint River; the United States agreed to pay Creek debts to Georgians."
+headline: "In 1821 the Creek Nation was recorded as ceding Georgia land east of the Flint River; the United States agreed to pay Creek debts to Georgians."
 how: "treaty_negotiated"
 how_basis: "The Statutes at Large text records a signed cession with payments; the payment of Creek debts to Georgia citizens is noted but no source cited describes coercion in 1821."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On January 8, 1821, Daniel M. Forney and David Meriwether signed a treaty at the Indian Spring, in the Creek Nation, for the United States. Chiefs, head men and warriors of the Creek Nation signed with them.
 
-The Creeks ceded the land east of a line that ran up the Flint River to its western head, then straight to the Chattahoochee. They kept title to one thousand acres laid out so as to "include the Indian Spring in the centre." They also kept six hundred and forty acres on the Oakmulgee River that took in the improvements held by "General M'Intosh." Several one-mile-square tracts stayed Creek land only "so long as the present occupants shall remain," and a tract on the Flint was reserved for the United States agency.
+The Creeks were recorded as ceding the land east of a line that ran up the Flint River to its western head, then straight to the Chattahoochee. They kept title to one thousand acres laid out so as to "include the Indian Spring in the centre." They also kept six hundred and forty acres on the Oakmulgee River that took in the improvements held by "General M'Intosh." Several one-mile-square tracts stayed Creek land only "so long as the present occupants shall remain," and a tract on the Flint was reserved for the United States agency.
 
 The United States agreed to pay $10,000 at signing, $40,000 after ratification, and then yearly payments for thirteen years: $5,000 for two years, $16,000 for five years and $10,000 for six years. It also agreed to pay the state of Georgia whatever balance the Creeks owed Georgia citizens, up to $250,000. In return, the Georgia commissioners signed a release of claims against the Creek nation for property taken or destroyed before the 1802 act of Congress regulating trade with the Indians.
 

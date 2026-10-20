@@ -2,7 +2,7 @@
 id: "TLA-T-155"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1829 the united Chippewa, Ottawa and Potawatomi ceded two tracts near the Rock River and Lake Michigan for $16,000 a year forever."
+headline: "In 1829 the united Chippewa, Ottawa and Potawatomi were recorded as ceding two tracts near the Rock River and Lake Michigan for $16,000 a year forever."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession for a perpetual annuity and goods; no source cited describes coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On July 29, 1829, commissioners John McNeil, Pierre Menard and Caleb Atwater signed a treaty for the United States at Prairie du Chien, in the Territory of Michigan. The other parties were the united nations of Chippewa, Ottawa and Potawatamie Indians of the waters of the Illinois, Milwaukee and Manitoouck Rivers.
 
-The nations ceded two tracts. The first began at the Winnebago village on the Rock River, forty miles from its mouth. It ran down the Rock River to a line drawn due west from the southern bend of Lake Michigan, then to the Mississippi, up that river to the U.S. reservation at the mouth of the Ouisconsin, and back to the start. The second began on the western shore of Lake Michigan "about twelve miles north of Chicago." It ran west to the Rock River, down it, and east along that line to the Fox River of the Illinois.
+The nations were recorded as ceding two tracts. The first began at the Winnebago village on the Rock River, forty miles from its mouth. It ran down the Rock River to a line drawn due west from the southern bend of Lake Michigan, then to the Mississippi, up that river to the U.S. reservation at the mouth of the Ouisconsin, and back to the start. The second began on the western shore of Lake Michigan "about twelve miles north of Chicago." It ran west to the Rock River, down it, and east along that line to the Fox River of the Illinois.
 
 The United States agreed to pay "sixteen thousand dollars, annually, forever, in specie" at Chicago. It would give $12,000 in goods as a present and fifty barrels of salt a year, and keep the blacksmith's shop at Chicago permanently.
 

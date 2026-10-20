@@ -2,7 +2,7 @@
 id: "TLA-T-040"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Delaware ceded land between the Ohio and Wabash rivers for an added annuity and farming help."
+headline: "The Delaware were recorded as ceding land between the Ohio and Wabash rivers for an added annuity and farming help."
 note: "The reasons in the preamble, an annuity too small and a country too large, are the treaty's own framing."
 how: "treaty_negotiated"
 how_basis: "The OSU text shows a negotiated cession for annuity and goods; the preamble gives the US motive but no cited source describes coercion."

@@ -15,7 +15,7 @@ On 10 November 1808, at Fort Clark on the Missouri River in the Louisiana Territ
 
 The United States promised to build a fort and garrison it. It would keep a store of goods to trade with the Osage, furnish a blacksmith, build a mill and two block houses, and pay its own citizens up to five thousand dollars for property the Osage had stolen or destroyed. It also promised yearly merchandise worth one thousand dollars to the Great Osage and five hundred to the Little Osage.
 
-In return, Article 6 says the Osage ceded forever all lands east of a line running due south from Fort Clark to the Arkansas River, and north of the Arkansas, and all lands north of the Missouri River. They also ceded a tract two leagues square around the fort. The treaty says no acreage.
+In return, Article 6 says the Osage were recorded as ceding forever all lands east of a line running due south from Fort Clark to the Arkansas River, and north of the Arkansas, and all lands north of the Missouri River. They were also recorded as ceding a tract two leagues square around the fort. The treaty says no acreage.
 
 Article 8 let Osage who put themselves under the fort's protection live and hunt west of the line. In Article 10 the Osage disclaimed any right to sell their lands to anyone but the United States without the President's authorization.
 

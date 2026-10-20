@@ -2,7 +2,7 @@
 id: "TLA-T-189"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1833 the united Chippewa, Ottawa and Potawatomi ceded about five million acres by Lake Michigan and agreed to move west."
+headline: "In 1833 the united Chippewa, Ottawa and Potawatomi were recorded as ceding about five million acres by Lake Michigan and were bound by the treaty to move west."
 note: "The five million acre figure is the treaty's own estimate."
 how: "removal"
 how_basis: "The OSU treaty text requires removal west of the Mississippi and pays claims against the nation that it admitted as justly due, which the Senate later ordered reviewed."
@@ -11,7 +11,7 @@ cautions: "Acreage is the treaty's own estimate. The page does not describe the 
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1833-0402", "title": "Tribal Treaties Database (OSU)", "quote": "supposed to contain about five millions of acres"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1833-0402", "title": "Tribal Treaties Database (OSU)", "quote": "to be not less in quantity than five millions of acres"}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg431.pdf", "title": "Statutes at Large, vol. 7 (GovInfo)", "quote": "supposed to contain about five millions of acres"}]
 verdict: "fixed"
 ---
-On September 26, 1833, commissioners George B. Porter, Thomas J. V. Owen and William Weatherford signed a treaty at Chicago for the United States. The other party was the United Nation of Chippewa, Ottowa and Potawatamie Indians. In Article 1 they ceded "all their land, along the western shore of Lake Michigan," and the treaty puts it as "supposed to contain about five millions of acres."
+On September 26, 1833, commissioners George B. Porter, Thomas J. V. Owen and William Weatherford signed a treaty at Chicago for the United States. The other party was the United Nation of Chippewa, Ottowa and Potawatamie Indians. In Article 1 they were recorded as ceding "all their land, along the western shore of Lake Michigan," and the treaty puts it as "supposed to contain about five millions of acres."
 
 In Article 2 the United States agreed to grant them land west of the Mississippi "not less in quantity than five millions of acres," along the Missouri River. They would be removed at United States expense, with a year's subsistence after arrival. Those in Illinois had to leave on ratification. Those north of the state line could stay three years.
 

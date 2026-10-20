@@ -14,7 +14,7 @@ promises: [{"article": "Art. 2", "promise": "Land west of the Mississippi on the
 ---
 On February 12, 1825, commissioners Duncan G. Campbell and James Meriwether signed a convention at Indian Springs with "the Chiefs of the Creek Nation." The preamble says the commissioners told the Creeks it was U.S. policy that tribes inside states should move west of the Mississippi. It says the chiefs of the Creek towns agreed, "those of Tokaubatchee excepted."
 
-The Creeks ceded all their lands in Georgia and a large area north and west of a line in Alabama. The United States offered the same amount of land "acre for acre" on the Arkansas River, and $400,000 for losses and the costs of removal.
+The Creeks were recorded as ceding all their lands in Georgia and a large area north and west of a line in Alabama. The United States offered the same amount of land "acre for acre" on the Arkansas River, and $400,000 for losses and the costs of removal.
 
 The Encyclopedia of Alabama gives a darker account. It says the Creek National Council had refused to sell more land and had made ceding land punishable by death. It says the commissioners then turned to William McIntosh, who "had accepted bribes in the past," and that he and two others were killed on April 30, 1825. A large majority of chiefs and warriors objected that McIntosh lacked authority.
 

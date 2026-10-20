@@ -2,7 +2,7 @@
 id: "TLA-T-360"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1867 the Sisseton and Wahpeton ceded rights of way and received two reservations after Congress confiscated their annuities and reservations."
+headline: "In 1867 the Sisseton and Wahpeton were recorded as ceding rights of way and received two reservations after Congress confiscated their annuities and reservations."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated right-of-way cession and reservations, with a preamble tying it to Congress's earlier confiscation of annuities and reservations."
 confidence: "high"
@@ -12,6 +12,6 @@ verdict: "fixed"
 ---
 On February 19, 1867, in Washington, Commissioner of Indian Affairs Lewis V. Bogy and special commissioner William H. Watson signed a treaty with chiefs and headmen of the Sisseton and Wahpeton bands of Dakota. The preamble says some 1,200 to 1,500 of these people kept their obligations to the United States during and after what the treaty calls the 1862 "outbreak" of other Sioux bands. It says that "Congress, in confiscating the Sioux annuities and reservations, made no provision" for these "friendly" bands, who were left "homeless wanderers."
 
-In Article 2 the bands ceded the right to build wagon roads, railroads, mail stations, telegraph lines and other public improvements across the lands they claimed. In return, Article 3 set apart a permanent reservation at Lake Traverse for members who had surrendered and had not been sent to the Crow Creek reservation. Article 4 set apart a second reservation around Devil's Lake for other band members and the Cut-Head Yanktonais. Article 3 names the reasons: the cession, the bands' services, and "the confiscation of all their annuities, reservations, and improvements."
+In Article 2 the bands were recorded as ceding the right to build wagon roads, railroads, mail stations, telegraph lines and other public improvements across the lands they claimed. In return, Article 3 set apart a permanent reservation at Lake Traverse for members who had surrendered and had not been sent to the Crow Creek reservation. Article 4 set apart a second reservation around Devil's Lake for other band members and the Cut-Head Yanktonais. Article 3 names the reasons: the cession, the bands' services, and "the confiscation of all their annuities, reservations, and improvements."
 
 In DeCoteau v. District County Court (1975), the Supreme Court held that an 1891 Act, ratifying an 1889 agreement, terminated the Lake Traverse reservation created by the 1867 treaty and returned it to the public domain. The Court held that South Dakota's courts therefore have jurisdiction over members' conduct on the non-Indian, unallotted lands within the 1867 borders.

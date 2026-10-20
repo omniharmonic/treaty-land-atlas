@@ -2,7 +2,7 @@
 id: "TLA-T-241"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "An 1842 compromise let the Seneca keep the Cattaraugus and Allegany Reservations but gave up Buffalo Creek and Tonawanda to the Ogden Land Company."
+headline: "An 1842 compromise let the Seneca keep the Cattaraugus and Allegany Reservations but recorded Buffalo Creek and Tonawanda as ceded to the Ogden Land Company."
 note: "The treaty text does not say whether the Tonawanda chiefs consented to this arrangement."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records an agreement signed with a U.S. commissioner present, settling disputes over the 1838 indenture."

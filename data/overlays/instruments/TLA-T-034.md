@@ -2,7 +2,7 @@
 id: "TLA-T-034"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1802 the Seneca sold Little Beard's Reservation, 1,280 acres on the Genesee River, to three men for $1,200."
+headline: "In 1802 the Seneca were recorded as selling Little Beard's Reservation, 1,280 acres on the Genesee River, to three men for $1,200."
 how: "treaty_negotiated"
 how_basis: "The text says the sale was made at a treaty held under United States authority, with a presidential commissioner present."
 confidence: "high"

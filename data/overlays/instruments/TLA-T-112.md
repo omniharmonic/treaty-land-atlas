@@ -12,8 +12,8 @@ verdict: "fixed"
 ---
 On July 19, 1820, Auguste Chouteau and Benjamin Stephenson signed a treaty at St. Louis with chiefs and warriors of the Kickapoo. It was "supplementary to, and amendatory of" the treaty made at Edwardsville on July 30, 1819.
 
-The treaty has one article. It replaces the sixth article of the Edwardsville treaty with new wording. Under that wording, the United States gave the Kickapoo a tract in the territory of Missouri in exchange for the land they ceded in the first article of the 1819 treaty. The United States also paid "three thousand dollars worth of merchandise" that day.
+The treaty has one article. It replaces the sixth article of the Edwardsville treaty with new wording. Under that wording, the United States gave the Kickapoo a tract in the territory of Missouri in exchange for the land they were recorded as ceding in the first article of the 1819 treaty. The United States also paid "three thousand dollars worth of merchandise" that day.
 
-The tract begins where the Pomme de Terre and Osage rivers meet. It follows the Pomme de Terre up to the ridge that divides the waters of the Osage and White rivers, then runs west along that ridge to the Osage line. From there it goes north along that line to Nerve Creek, and on to the Osage River. The text says the Kickapoo were to hold it "in like manner" as they had held the lands they ceded.
+The tract begins where the Pomme de Terre and Osage rivers meet. It follows the Pomme de Terre up to the ridge that divides the waters of the Osage and White rivers, then runs west along that ridge to the Osage line. From there it goes north along that line to Nerve Creek, and on to the Osage River. The text says the Kickapoo were to hold it "in like manner" as they had held the lands they were recorded as ceding.
 
 The Statutes at Large record a proclamation on January 13, 1821. The text does not give the tract's acreage.

@@ -2,7 +2,7 @@
 id: "TLA-T-102"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Wea ceded all their claimed lands in Indiana, Ohio and Illinois except one Wabash reservation, for a $3,000 annuity in silver."
+headline: "The Wea were recorded as ceding all their claimed lands in Indiana, Ohio and Illinois except one Wabash reservation, for a $3,000 annuity in silver."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for an annuity, with no mention of coercion."
 confidence: "high"

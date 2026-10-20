@@ -2,7 +2,7 @@
 id: "TLA-T-265"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1854 the Oto and Missouria ceded all their country west of the Missouri River except a ten-mile strip on the Big Blue River."
+headline: "In 1854 the Oto and Missouria were recorded as ceding all their country west of the Missouri River except a ten-mile strip on the Big Blue River."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated cession for annuities; the Kansas Historical Society page describes persuasion but nothing specific to this treaty."
 confidence: "medium"
@@ -10,7 +10,7 @@ cautions: "The Kansas Historical Society page is about Kansas Territory tribes; 
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oto-and-missouri-1854-0608", "title": "Treaty with the Oto and Missouri, 1854 (OSU Tribal Treaties Database)", "quote": "cede to the United States all their country west of the Missouri River"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-oto-and-missouri-1854-0608", "title": "Treaty with the Oto and Missouri, 1854 (OSU Tribal Treaties Database)", "quote": "they will vacate the ceded country, and remove to the lands herein reserved for them"}, {"url": "https://www.kansashistory.gov/kansapedia/kansas-territory-map/17368", "title": "Kansas Territory map (Kansapedia, Kansas Historical Society)", "quote": "Any excess property would be purchased by the government which would sell it to railroad companies, white settlers, and speculators."}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-10/pdf/STATUTE-10-Pg1038.pdf", "title": "Treaty with the Oto and Missouri, 10 Stat. 1038 (govinfo)", "quote": "excepting a strip of land on the waters of the Big Blue River"}]
 verdict: "fixed"
 ---
-On March 15, 1854, George W. Manypenny, commissioner for the United States, signed a treaty at Washington with seven chiefs of the confederate tribes of the Ottoe and Missouria Indians. In Article 1 the tribes ceded to the United States all their country west of the Missouri River except a strip ten miles wide on the waters of the Big Blue River. The treaty states no acreage. Article 2 said they would vacate the ceded country and remove to the reserved lands within a year after the United States made the necessary provision.
+On March 15, 1854, George W. Manypenny, commissioner for the United States, signed a treaty at Washington with seven chiefs of the confederate tribes of the Ottoe and Missouria Indians. In Article 1 the tribes were recorded as ceding to the United States all their country west of the Missouri River except a strip ten miles wide on the waters of the Big Blue River. The treaty states no acreage. Article 2 said they would vacate the ceded country and remove to the reserved lands within a year after the United States made the necessary provision.
 
 In Article 4 the United States agreed to pay $20,000 a year for three years from 1855, then $13,000 a year for ten years, $9,000 a year for fifteen years and $5,000 a year for twelve years. The President could decide how much was paid in money and how much spent on education, farms, goods and other uses. Article 5 added $20,000 for settling affairs, moving, and a year of subsistence, and Article 3 relinquished claims under former treaties. Article 6 let the President survey the reserve and assign lots to individuals who chose to settle on them. The treaty was ratified on April 17, 1854 and proclaimed on June 21, 1854. The OSU page cross-references a later treaty of December 9, 1854.
 

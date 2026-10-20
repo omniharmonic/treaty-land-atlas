@@ -2,7 +2,7 @@
 id: "TLA-T-212"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In September 1836 two Potawatomi chiefs and their band ceded ten reserved sections for $8,000 and agreed to move west within two years."
+headline: "In September 1836 two Potawatomi chiefs and their band were recorded as ceding ten reserved sections for $8,000 and were bound by the treaty to move west within two years."
 how: "removal"
 how_basis: "Article 3 of the treaty text commits the band to remove west of the Mississippi within two years."
 confidence: "high"
@@ -12,6 +12,6 @@ verdict: "fixed"
 ---
 On September 20, 1836, Abel C. Pepper, commissioner for the United States, signed a treaty at Chippewanaung, Indiana. The other parties were To-i-sa's brother Me-mat-way and Che-quaw-ka-ko, chiefs and headmen of the Potawatomi (spelled Patawattimie in the text), and their band.
 
-In Article 1 they ceded ten sections of land reserved for them by the second article of the October 1832 treaty with the Potawatomi on the Tippecanoe River. The treaty states no acreage. Article 2 has the United States pay $8,000 on or before the first of May following. At the band's request, Article 4 has a commissioner appointed by the United States pay debts of the band that he found just, deducted from that sum. Article 5 has the United States pay the expenses of making the treaty.
+In Article 1 they were recorded as ceding ten sections of land reserved for them by the second article of the October 1832 treaty with the Potawatomi on the Tippecanoe River. The treaty states no acreage. Article 2 has the United States pay $8,000 on or before the first of May following. At the band's request, Article 4 has a commissioner appointed by the United States pay debts of the band that he found just, deducted from that sum. Article 5 has the United States pay the expenses of making the treaty.
 
-In Article 3 the chiefs, headmen and their band agreed to remove to the country west of the Mississippi River provided for the Potawatomi nation by the United States, within two years. The treaty was proclaimed on February 18, 1837. The text does not describe how the negotiation went, and the sources used here do not say what happened to the band afterward.
+In Article 3 the chiefs, headmen and their band were bound by the treaty to remove to the country west of the Mississippi River provided for the Potawatomi nation by the United States, within two years. The treaty was proclaimed on February 18, 1837. The text does not describe how the negotiation went, and the sources used here do not say what happened to the band afterward.

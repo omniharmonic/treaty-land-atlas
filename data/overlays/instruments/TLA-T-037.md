@@ -12,7 +12,7 @@ verdict: "new"
 ---
 On 7 August 1803, at a council at Vincennes, William Henry Harrison met chiefs and warriors of the Eel River, Wyandot, Piankashaw and Kaskaskia nations. The Kickapoo took part through representatives who were chiefs of the Eel River nation. Harrison was governor of the Indiana Territory, superintendent of Indian affairs, and commissioner plenipotentiary of the United States for treaties with Indian nations northwest of the Ohio River.
 
-The paper deals with the fourth article of a treaty made at Fort Wayne on 7 June 1803. The chiefs and warriors gave their free and full consent to that article. They relinquished and confirmed to the United States the privilege and right of locating three tracts of one mile square each on the road from Vincennes to Kaskaskia, plus one more tract of one mile square on the road from Vincennes to Clarksville.
+The paper deals with the fourth article of a treaty made at Fort Wayne on 7 June 1803. The chiefs and warriors gave their free and full consent to that article. They were recorded as relinquishing and confirmed to the United States the privilege and right of locating three tracts of one mile square each on the road from Vincennes to Kaskaskia, plus one more tract of one mile square on the road from Vincennes to Clarksville.
 
 The tracts were to go in places that best suited the convenience and interest of the United States. Their stated purpose was to set up houses of entertainment, meaning inns, for travellers.
 

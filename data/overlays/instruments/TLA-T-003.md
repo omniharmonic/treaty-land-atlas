@@ -2,7 +2,7 @@
 id: "TLA-T-003"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Lancaster in 1744, Six Nations deputies gave up Maryland claims for 300 pounds and signed a Virginia deed for goods and gold."
+headline: "At Lancaster in 1744, Six Nations deputies were recorded as giving up Maryland claims for 300 pounds and signed a Virginia deed for goods and gold."
 note: "The 300 pounds for Maryland is in colonial \"Currency\"; the Virginia goods are priced in \"Pennsylvania Money\"."
 how: "other"
 how_basis: "The transcript shows a council of colonial governments and the Six Nations at Lancaster, with deeds signed there, not a United States treaty."

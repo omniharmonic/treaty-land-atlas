@@ -2,7 +2,7 @@
 id: "TLA-T-118"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "On 31 August 1822 the Great and Little Osage gave up the 1808 promise of a government store, in return for $2,329.40 in merchandise."
+headline: "On 31 August 1822 the Great and Little Osage were recorded as giving up the 1808 promise of a government store, in return for $2,329.40 in merchandise."
 how: "other"
 how_basis: "The text is a payment-for-release agreement that cancels one article of an earlier treaty."
 confidence: "high"

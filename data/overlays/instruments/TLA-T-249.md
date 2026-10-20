@@ -2,7 +2,7 @@
 id: "TLA-T-249"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1846 the Winnebago ceded all lands they claimed for $190,000 and a promised home of at least 800,000 acres."
+headline: "In 1846 the Winnebago were recorded as ceding all lands they claimed for $190,000 and a promised home of at least 800,000 acres."
 note: "MNopedia calls October 13, 1846 the ratification date, but that is the signing date; the treaty was proclaimed February 4, 1847. The 800,000-acre home was promised only if land could be had on just and reasonable terms."
 how: "removal"
 how_basis: "Article 5 of the treaty text requires removal to the new home, and MNopedia records the 1848 removal to Long Prairie."
@@ -12,7 +12,7 @@ sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-winneba
 verdict: "fixed"
 promises: [{"article": "Art. 3", "promise": "United States to purchase and give the Winnebago a home of not less than 800,000 acres north of the St. Peters.", "kept": "partly", "evidence_url": "https://www.mnhs.org/mnopedia/search/index/event/ho-chunk-and-long-prairie-1846-1855", "evidence_quote": "The Ho-Chunk insisted that the Long Prairie land was not chosen by them, but forced on them."}]
 ---
-On October 13, 1846, Albion K. Parris, John J. Abert and T. P. Andrews, commissioners for the United States, signed a treaty at Washington with a delegation of the Winnebago tribe. In Article 2 the Winnebago ceded and sold to the United States all right, title and claim to all lands, wherever situated, that they then or formerly occupied or claimed within the States and Territories. This included especially the "neutral ground" assigned to them by the 1832 treaty of Fort Armstrong.
+On October 13, 1846, Albion K. Parris, John J. Abert and T. P. Andrews, commissioners for the United States, signed a treaty at Washington with a delegation of the Winnebago tribe. In Article 2 the Winnebago were recorded as ceding and selling to the United States all right, title and claim to all lands, wherever situated, that they then or formerly occupied or claimed within the States and Territories. This included especially the "neutral ground" assigned to them by the 1832 treaty of Fort Armstrong.
 
 In Article 3 the United States agreed to purchase and give them as a home a tract north of the St. Peters and west of the Mississippi rivers, of not less than 800,000 acres, if the land could be obtained on just and reasonable terms. In Article 4 it agreed to pay $150,000 for the land and $40,000 for release of hunting privileges, $190,000 in all. Of that, $85,000 stayed in trust at five per cent for thirty years. No money was to be paid until the tribe arrived at its new home. Article 5 had them remove within one year after ratification and after the new home was procured. The treaty was proclaimed on February 4, 1847.
 

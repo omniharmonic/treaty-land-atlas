@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On September 25, 1818, Ninian Edwards and Auguste Chouteau signed a treaty at Edwardsville with the principal chiefs and warriors of the Peoria, Kaskaskia, Mitchigamia, Cahokia and Tamarois tribes of the Illinois nation.
 
-The preamble explains the reason. The 1803 treaty at Vincennes had ceded land "supposed to include all the land claimed" by the Kaskaskia, Mitchigamia, Cahokia and Tamarois. It did not include land rightfully claimed by the Peoria, who lived apart, "were not represented," and never received any part of the payment. The Peoria were now "disposed to cede all their land." To avoid disputes over the boundary, they agreed to join the other tribes in confirming the 1803 cession and extending it to cover all their claims.
+The preamble explains the reason. The 1803 treaty at Vincennes had ceded land "supposed to include all the land claimed" by the Kaskaskia, Mitchigamia, Cahokia and Tamarois. It did not include land rightfully claimed by the Peoria, who lived apart, "were not represented," and never received any part of the payment. The Peoria were now "disposed to cede all their land." To avoid disputes over the boundary, they were bound by the treaty to join the other tribes in confirming the 1803 cession and extending it to cover all their claims.
 
 Article 1 describes the area: from the junction of the Ohio and Mississippi rivers up the Ohio to Saline Creek, along the dividing ridges to the Illinois River waters, to the junction of the Kankakee and Maple rivers, then down the Illinois to the Mississippi. The 1803 stipulations stayed binding.
 

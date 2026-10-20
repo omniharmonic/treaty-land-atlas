@@ -13,7 +13,7 @@ verdict: "new"
 ---
 On October 19, 1865, a United States commission met chiefs and head-men of the Two-Kettles band of Dakota (Sioux) at Fort Sully, Dakota Territory. Commissioners were Governor Newton Edmunds, Edward B. Taylor, Major-General S. R. Curtis, Brigadier-General H. H. Sibley, Henry W. Reed and Orrin Guernsey.
 
-Article 1 has the band acknowledge itself subject to United States jurisdiction. In Article 4 the band agreed to "withdraw from the routes overland" established or to be established through their country. The United States agreed to pay $6,000 a year for twenty years in articles chosen by the Secretary of the Interior.
+Article 1 has the band acknowledge itself subject to United States jurisdiction. In Article 4 the band was bound by the treaty to "withdraw from the routes overland" established or to be established through their country. The United States agreed to pay $6,000 a year for twenty years in articles chosen by the Secretary of the Interior.
 
 Article 5 protects individuals who settle on band land for farming. Once twenty lodges or families had settled and told their agent, each would get $25 a year for five years in implements and improvements. At one hundred families they would be entitled to a farmer and blacksmith at government expense, and teachers at the Secretary's option.
 

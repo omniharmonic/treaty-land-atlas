@@ -2,7 +2,7 @@
 id: "TLA-T-008"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1778 the Delaware agreed to let U.S. troops cross their country and join the war, and the United States guaranteed their territorial rights."
+headline: "In 1778 the Delaware were bound by the treaty to let U.S. troops cross their country and join the war, and the United States guaranteed their territorial rights."
 note: "This treaty was approved by the Continental Congress, not the Senate."
 how: "treaty_negotiated"
 how_basis: "The OSU text shows articles of agreement and confederation negotiated between U.S. commissioners and Delaware deputies, with mutual obligations and no cession."
@@ -13,7 +13,7 @@ verdict: "fixed"
 ---
 On September 17, 1778, at Fort Pitt, Andrew and Thomas Lewis, commissioners of the United States, signed "articles of agreement and confederation" with Capt. White Eyes, Capt. John Kill Buck, Junior, and Capt. Pipe, deputies and chief men of the Delaware Nation. The United States was in the middle of the Revolutionary War. The treaty is a wartime alliance, not a land sale.
 
-The text says the "most practicable way for the troops of the United States to some of the posts and forts is by passing through the country of the Delaware nation." The Delaware deputies agreed to "give a free passage through their country to the troops aforesaid," to supply them, and to join them with "such a number of their best and most expert warriors as they can spare." In return the United States agreed to build a fort at its own expense for the safety of Delaware old men, women and children while the warriors were away.
+The text says the "most practicable way for the troops of the United States to some of the posts and forts is by passing through the country of the Delaware nation." The Delaware deputies were bound by the treaty to "give a free passage through their country to the troops aforesaid," to supply them, and to join them with "such a number of their best and most expert warriors as they can spare." In return the United States agreed to build a fort at its own expense for the safety of Delaware old men, women and children while the warriors were away.
 
 Article VI contains the land promise. The United States engaged "to guarantee to the aforesaid nation of Delawares, and their heirs, all their territorial rights in the fullest and most ample manner, as it hath been bounded by former treaties," as long as the Delaware held to the alliance. It also allowed other friendly tribes to join and "form a state whereof the Delaware nation shall be the head, and have a representation in Congress," provided Congress approved.
 

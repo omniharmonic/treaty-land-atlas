@@ -2,7 +2,7 @@
 id: "TLA-T-138"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In August 1825 the Kansa agreed to a marked road to New Mexico, forever free to US and Mexican travelers, for $800."
+headline: "In August 1825 the Kansa were bound by the treaty to a marked road to New Mexico, forever free to US and Mexican travelers, for $800."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "high"
@@ -13,7 +13,7 @@ promises: [{"article": "Art. 5", "promise": "Pay the Kansa $500 in money or merc
 ---
 This treaty came from the same law as the Osage road treaty of the week before. An act of Congress approved on 3 March 1825 authorized the President to have a road marked from the western frontier of Missouri to the confines of New Mexico, and required the commissioners to get the tribes' consent by treaty. The commissioners were Benjamin Reeves, George Sibley and Thomas Mather.
 
-On 16 August 1825, on Sora Kansas Creek, two hundred and thirty-eight miles southwest of Fort Osage, they met the chiefs and head men of the Kansas tribe. The Kansa agreed that the commissioners could survey and mark a road through any territory the tribe owned or claimed, and that the road would be forever free for citizens of the United States and of the Mexican Republic to pass and repass without hindrance or molestation. They also promised to give friendly aid to travellers they met, and accepted that the road extended a reasonable distance on either side for food and camping.
+On 16 August 1825, on Sora Kansas Creek, two hundred and thirty-eight miles southwest of Fort Osage, they met the chiefs and head men of the Kansas tribe. The Kansa signed terms providing that the commissioners could survey and mark a road through any territory the tribe owned or claimed, and that the road would be forever free for citizens of the United States and of the Mexican Republic to pass and repass without hindrance or molestation. They also promised to give friendly aid to travellers they met, and accepted that the road extended a reasonable distance on either side for food and camping.
 
 In return the United States, through the commissioners, promised five hundred dollars in money or merchandise at the Kansa's option. The chiefs also acknowledged merchandise worth three hundred dollars already received. The text says those two sums are "full and complete compensation" for all privileges granted.
 

@@ -2,7 +2,7 @@
 id: "TLA-T-328"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1863 the Tabeguache Ute ceded all land outside a reserved hunting ground and allowed military posts, railroads and mining."
+headline: "In 1863 the Tabeguache Ute were recorded as ceding all land outside a reserved hunting ground and allowed military posts, railroads and mining."
 how: "treaty_negotiated"
 how_basis: "The text records a treaty made by four commissioners with chiefs and warriors of the Tabeguache band, who signed with marks."
 confidence: "high"

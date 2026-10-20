@@ -2,7 +2,7 @@
 id: "TLA-T-215"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1836 the Sac and Fox ceded their interest in the land between Missouri and the Missouri River."
+headline: "In 1836 the Sac and Fox were recorded as ceding their interest in the land between Missouri and the Missouri River."
 how: "treaty_negotiated"
 how_basis: "The text records a convention between Henry Dodge and the chiefs, braves and principal men, who signed with marks; no source shows pressure."
 confidence: "high"
@@ -14,6 +14,6 @@ On September 27, 1836, Henry Dodge, Superintendent of Indian Affairs, met the ch
 
 The treaty text recalls that the 1830 treaty of Prairie du Chien said this country was to be assigned to tribes living on it, or to others the President might place there. It then says it was represented as "desirable" that the lands become part of Missouri and the Indian title be ended. It adds that the earlier terms would be strictly observed until the Indians concerned gave their assent.
 
-The Sac and Fox signers then agreed to "forever cede, relinquish, and quit claim" every right, title and interest in those lands. The document says they were "well satisfied" the lands could never be used for Indian purposes, and that settling Indians there would lead to collisions with citizens of the United States.
+The Sac and Fox signers were then bound by the treaty to "forever cede, relinquish, and quit claim" every right, title and interest in those lands. The document says they were "well satisfied" the lands could never be used for Indian purposes, and that settling Indians there would lead to collisions with citizens of the United States.
 
 They also freed the United States from any guarantee, condition or limitation in the 1830 treaty, letting it do with the lands whatever seemed expedient. The page lists about two dozen marks, including Keokuk's, and records proclamation on February 15, 1837. It states no payment.

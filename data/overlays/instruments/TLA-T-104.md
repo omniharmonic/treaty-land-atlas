@@ -2,7 +2,7 @@
 id: "TLA-T-104"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At St. Mary's in 1818 the Miami ceded a large tract, kept reservations, and were promised a perpetual $15,000 annuity and mills."
+headline: "At St. Mary's in 1818 the Miami were recorded as ceding a large tract, kept reservations, and were promised a perpetual $15,000 annuity and mills."
 note: "Agents' letters proposed an inducement for the Miami leader Richardville; whether any was paid is not confirmed, though the treaty grants him land."
 how: "treaty_under_pressure"
 how_basis: "The Myaamia Center blog quotes agents proposing to bribe chief Richardville and describes pressure on the Miami to sell before losing the land by other means."
@@ -13,7 +13,7 @@ verdict: "rewritten"
 ---
 On October 6, 1818, Jonathan Jennings, Lewis Cass and Benjamin Parke, commissioners of the United States, signed a treaty at St. Mary's, Ohio, with the Miami nation.
 
-In Article 1 the Miami ceded a tract that begins at the Wabash River near the mouth of Raccoon Creek and runs up the Wabash to the reserve near Fort Wayne. From there it follows the St. Mary's River, the line of the 1817 Wyandot cession, and the old Indian boundary line to Fort Recovery. Article 2 reserved tracts for the Miami, including one along the Wabash from the mouth of the Salamonie to the mouth of the Eel River. Article 3 granted tracts by patent to Jean Baptiste Richardville, the principal chief, and to named Miami people.
+In Article 1 the Miami were recorded as ceding a tract that begins at the Wabash River near the mouth of Raccoon Creek and runs up the Wabash to the reserve near Fort Wayne. From there it follows the St. Mary's River, the line of the 1817 Wyandot cession, and the old Indian boundary line to Fort Recovery. Article 2 reserved tracts for the Miami, including one along the Wabash from the mouth of the Salamonie to the mouth of the Eel River. Article 3 granted tracts by patent to Jean Baptiste Richardville, the principal chief, and to named Miami people.
 
 In Article 5 the United States agreed to pay a perpetual annuity of $15,000 in silver. It promised a grist mill and a saw mill, a blacksmith and a gunsmith, farm implements and 160 bushels of salt a year.
 

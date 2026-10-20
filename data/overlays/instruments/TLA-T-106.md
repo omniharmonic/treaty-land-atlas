@@ -2,7 +2,7 @@
 id: "TLA-T-106"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1819 the Cherokee ceded land north and east of a line, settling the 1817 treaty, with family reservations and a school fund."
+headline: "In 1819 the Cherokee were recorded as ceding land north and east of a line, settling the 1817 treaty, with family reservations and a school fund."
 note: "The treaty's account of the Cherokee wish to remain in the east is the document's own framing."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a convention negotiated in Washington with Cherokee chiefs to settle the 1817 treaty, with no description of duress."

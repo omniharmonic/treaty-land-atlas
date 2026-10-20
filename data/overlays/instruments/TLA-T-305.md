@@ -2,7 +2,7 @@
 id: "TLA-T-305"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1857 the Tonawanda Seneca gave up Kansas land claims for $256,000 and the right to buy back their New York reservation."
+headline: "In 1857 the Tonawanda Seneca were recorded as giving up Kansas land claims for $256,000 and the right to buy back their New York reservation."
 note: "The treaty set a price ceiling of $20 an acre but no acreage; PBS says about two-thirds of the reservation was bought back."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text and PBS describe a negotiated settlement that let the band keep its homeland and ended the removal threat under the Buffalo Creek treaties."

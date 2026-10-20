@@ -2,7 +2,7 @@
 id: "TLA-T-253"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1848 the Menominee sold all their Wisconsin lands for $350,000 and a promised western home; an 1854 treaty gave them Wolf River instead."
+headline: "In 1848 the Menominee were recorded as selling all their Wisconsin lands for $350,000 and a promised western home; an 1854 treaty gave them Wolf River instead."
 how: "removal"
 how_basis: "Article 3 and Article 4 of the 1848 treaty text provide for a new home west of the Mississippi and removal, and the 1854 treaty records the tribe's unwillingness to go."
 confidence: "high"
@@ -11,7 +11,7 @@ sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-menomin
 verdict: "rewritten"
 promises: [{"article": "Art. 3", "promise": "United States to give the Menominee a home of not less than 600,000 acres in the 1847 Chippewa cession.", "kept": "partly", "evidence_url": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1854-0626", "evidence_quote": "to make exchange of the lands given west of the Mississippi for those desired by the tribe"}]
 ---
-On October 18, 1848, William Medill, commissioner for the United States, signed a treaty at Lake Powawhaykonnay, Wisconsin, with the Menomonee (Menominee) tribe, through its chiefs, headmen and warriors. In Article 2 the tribe ceded, sold and relinquished to the United States all their lands in the State of Wisconsin, wherever situated. The treaty states no acreage.
+On October 18, 1848, William Medill, commissioner for the United States, signed a treaty at Lake Powawhaykonnay, Wisconsin, with the Menomonee (Menominee) tribe, through its chiefs, headmen and warriors. In Article 2 the tribe was recorded as ceding, sold and was recorded as relinquishing to the United States all their lands in the State of Wisconsin, wherever situated. The treaty states no acreage.
 
 In Article 3 the United States gave them as a home the country the Chippewa had ceded in the August 2 and August 21, 1847 treaties that was not assigned to the Winnebago, guaranteed to contain not less than 600,000 acres. In Article 4 it agreed to pay $350,000. That included $30,000 to the chiefs to prepare for removal, $40,000 to persons of mixed blood, and $20,000 each for removal and a year's subsistence, in return for the tribe moving and feeding itself at no further cost to the United States. Article 8 let them stay on the ceded lands for two years, until the President gave notice.
 

@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On June 29, 1796, three U.S. commissioners, Benjamin Hawkins, George Clymer and Andrew Pickens, signed a treaty at Colerain, Georgia, with the kings, chiefs and warriors of the Creek nation. Article I said the 1790 Treaty of New York "is, and shall remain obligatory." The line from the Currahee Mountain to the source of the Oconee River was to be clearly marked, with Creek representatives attending.
 
-The treaty also let the President set up trading or military posts on the Altamaha River. To each post the Creek would annex a tract five miles square, "ceded to" and under the government of the United States. If a post was no longer needed, the text says, the land would "revert to and become a part of the Indian lands." The Creek also agreed to help mark the boundary between the United States and Spain.
+The treaty also let the President set up trading or military posts on the Altamaha River. To each post the Creek would annex a tract five miles square, "ceded to" and under the government of the United States. If a post was no longer needed, the text says, the land would "revert to and become a part of the Indian lands." The Creek were also bound by the treaty to help mark the boundary between the United States and Spain.
 
 A history from the Charlton County Historical Society says about twenty kings, seventy-five chiefs and 340 warriors attended, and that the commissioners were accompanied by soldiers. It says the Creek pledged to abide by the New York treaty but "positively refused to cede" land between the Oconee and Ocmulgee rivers to Georgia, which displeased the Georgians.
 

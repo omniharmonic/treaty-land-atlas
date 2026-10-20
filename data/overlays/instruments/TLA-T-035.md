@@ -2,7 +2,7 @@
 id: "TLA-T-035"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Choctaw agreed to re-mark a boundary line in the south and released land between it and the Mobile and Tombigbee rivers."
+headline: "The Choctaw were bound by the treaty to re-mark a boundary line in the south and released land between it and the Mobile and Tombigbee rivers."
 note: "The words \"freely, voluntarily, and without constraint\" are the document's own, not independent evidence. Its listed ratification and proclamation dates appear to be reversed."
 how: "treaty_negotiated"
 how_basis: "The OSU text states the convention was made 'freely, voluntarily, and without constraint', though the payment was one dollar and no independent account of the council is cited."

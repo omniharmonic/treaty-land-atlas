@@ -2,7 +2,7 @@
 id: "TLA-T-009"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1784 the Six Nations gave up claims west of a Fort Stanwix boundary and handed over hostages; a council later rejected the treaty."
+headline: "In 1784 the Six Nations were recorded as giving up claims west of a Fort Stanwix boundary and handed over hostages; a council later rejected the treaty."
 how: "treaty_under_pressure"
 how_basis: "The treaty requires hostages, and EBSCO says the Americans \"coerced the Six Nations into the agreement\" and that the council later rejected it as coerced."
 confidence: "medium"

@@ -12,7 +12,7 @@ verdict: "new"
 ---
 This treaty was signed at Fort Gibson, west of Arkansas, on November 23, 1838. It settles money claims, not land. The Creek delegation had come to adjust "their claims for property and improvements abandoned, or lost, in consequence of their emigration west of the Mississippi."
 
-In Article 1 the Creek Nation relinquished those claims. In exchange, Article 2 had the United States pay $50,000 in stock animals, to be distributed to the people of each town in proportion to their loss. Article 3 promised to invest $350,000 for the individuals concerned and secure five percent interest, paid yearly. Article 4 says that after twenty-five years the invested sum would be used for the common benefit of the Creek nation.
+In Article 1 the Creek Nation was recorded as relinquishing those claims. In exchange, Article 2 had the United States pay $50,000 in stock animals, to be distributed to the people of each town in proportion to their loss. Article 3 promised to invest $350,000 for the individuals concerned and secure five percent interest, paid yearly. Article 4 says that after twenty-five years the invested sum would be used for the common benefit of the Creek nation.
 
 Article 5 added $21,103.33 to satisfy claims of early emigrants of the McIntosh party. Article 6 proposed $10,000 in stock animals for about two thousand five hundred Creeks removed "as hostiles," and said that if this article was rejected the others would stand.
 

@@ -2,7 +2,7 @@
 id: "TLA-T-254"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1848 the Stockbridge tribe sold their township east of Lake Winnebago and agreed to move west after one year."
+headline: "In 1848 the Stockbridge tribe was recorded as selling their township east of Lake Winnebago and was bound by the treaty to move west after one year."
 how: "removal"
 how_basis: "Article 7 of the agreement text has the tribe remove to the country set apart for it, or other land west of the Mississippi, after one year."
 confidence: "high"

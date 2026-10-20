@@ -2,7 +2,7 @@
 id: "TLA-T-027"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1797 the Seneca sold land in western New York to Robert Morris for $100,000 in bank stock, keeping named reservations."
+headline: "In 1797 the Seneca were recorded as selling land in western New York to Robert Morris for $100,000 in bank stock, keeping named reservations."
 note: "This was a private sale to Robert Morris under U.S. supervision; the National Archives calls it an agreement, and one database marks it \"not ratified\"."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a sale under a presidential commissioner's supervision, with a stated price and reservations; no cited source describes coercion."
@@ -15,6 +15,6 @@ On September 15, 1797, at Genesee, New York, the Seneca nation signed a deed to 
 
 Morris held something narrower than ownership. Massachusetts had sold him the pre-emptive right, meaning the right to buy this land from the Seneca. The price was "one hundred thousand dollars," to be invested in Bank of the United States stock, held in the President's name for the use of the Seneca nation.
 
-The Seneca excepted several tracts from the sale. They kept two square miles each at Canawaugas, Big Tree, Little Beard's town and Squawky Hill, a parcel at Gardeau, a tract eight miles by two at Kaounadeau, two pieces along Lake Erie at Cataraugos, forty-two square miles near the Allegheny River, and 200 square miles to be laid off partly at Buffalo and partly at Tonnawanta creeks. They reserved the privilege of fishing and hunting on the land they sold.
+The Seneca excepted several tracts from the sale. They kept two square miles each at Canawaugas, Big Tree, Little Beard's town and Squawky Hill, a parcel at Gardeau, a tract eight miles by two at Kaounadeau, two pieces along Lake Erie at Cataraugos, forty-two square miles near the Allegheny River, and 200 square miles to be laid off partly at Buffalo and partly at Tonnawanta creeks. They reserved the privilege of fishing and hunting on the land they were recorded as selling.
 
 The Oklahoma State University treaty database tags this document "not ratified" under key provisions. It reproduces the contract as printed at 7 Stat. 601.

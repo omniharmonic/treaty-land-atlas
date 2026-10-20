@@ -2,7 +2,7 @@
 id: "TLA-T-277"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1854 the Rogue River tribe agreed to share the Table Rock reserve with other tribes and allow roads and railroads."
+headline: "In 1854 the Rogue River tribe was bound by the treaty to share the Table Rock reserve with other tribes and allow roads and railroads."
 how: "treaty_negotiated"
 how_basis: "The text records an agreement between Superintendent Joel Palmer and the chiefs and headmen of the Rogue River tribe, who signed with marks."
 confidence: "high"

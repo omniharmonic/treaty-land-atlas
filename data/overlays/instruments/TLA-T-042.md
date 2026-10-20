@@ -2,7 +2,7 @@
 id: "TLA-T-042"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Tellico in 1804 the Cherokee ceded a four-mile strip at Wafford's Settlement for $5,000 in goods and added yearly goods."
+headline: "At Tellico in 1804 the Cherokee were recorded as ceding a four-mile strip at Wafford's Settlement for $5,000 in goods and added yearly goods."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated small cession for payment; no cited source describes coercion."
 confidence: "high"

@@ -2,7 +2,7 @@
 id: "TLA-T-049"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "Two days after the Duck River cession, the Cherokee ceded the South West Point tract and a mail road for $1,600."
+headline: "Two days after the Duck River cession, the Cherokee were recorded as ceding the South West Point tract and a mail road for $1,600."
 note: "Phrases such as \"spirit of conciliation\" are the treaty's own framing, not a record of Cherokee views."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession for a stated payment, with the stated aim of a site for the Tennessee legislature, and the sources cited do not describe coercion."
@@ -15,6 +15,6 @@ On October 27, 1805, two days after the larger Tellico treaty, Return J. Meigs a
 
 Article 1 says it had been "represented" to the Cherokee that the section of land on which the South West Point garrison stands, extending to Kingston, was "likely to be a desirable place for the assembly of the state of Tennessee to convene at." A committee of the state legislature, then in session, had viewed it. The treaty says the Cherokee, "possessed of a spirit of conciliation" and seeing that the tract was "desired for public purposes," would "quit claim and cede" it. They kept the ferries to themselves and also ceded the first island in the Tennessee above the mouth of the Clinch. The public buildings there were to belong to the public.
 
-Article 2 dealt with the mail, which was ordered to run from Knoxville to New Orleans through Cherokee, Creek and Choctaw countries. The Cherokee agreed that U.S. citizens could use "a road leading from Tellico to Tombigbe" freely, laid out by viewers from both sides. In Article 3 the United States agreed to pay $1,600 in money or goods, at the Cherokee's option, within ninety days of ratification.
+Article 2 dealt with the mail, which was ordered to run from Knoxville to New Orleans through Cherokee, Creek and Choctaw countries. The Cherokee signed terms providing that U.S. citizens could use "a road leading from Tellico to Tombigbe" freely, laid out by viewers from both sides. In Article 3 the United States agreed to pay $1,600 in money or goods, at the Cherokee's option, within ninety days of ratification.
 
 The Tennessee Encyclopedia says a few days after the main Tellico treaty, an additional payment was made to obtain the rights to operate the mail road.

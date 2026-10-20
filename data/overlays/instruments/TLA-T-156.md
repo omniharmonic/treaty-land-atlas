@@ -2,7 +2,7 @@
 id: "TLA-T-156"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1829 the Winnebago ceded land between the Rock and Wisconsin rivers for $18,000 a year for thirty years plus goods."
+headline: "In 1829 the Winnebago were recorded as ceding land between the Rock and Wisconsin rivers for $18,000 a year for thirty years plus goods."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession for annuities; payment of claims against the Winnebago is noted, but no source cited states coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On August 1, 1829, commissioners John McNeil, Pierre Menard and Caleb Atwater signed a treaty for the United States at Prairie du Chien, in the Territory of Michigan. The other party was the Nation of Winnebaygo Indians.
 
-In Article 1 the Winnebago ceded "all their right, title, and claim" to a stretch of country. It began on the Rock River at the mouth of the Pee-kee-tol-a-ka and ran up that stream and Sugar Creek. From there it went due north to the road from the Eastern Blue Mound to the portage of the Wisconsin and Fox rivers, then along the Fox and Wisconsin rivers to the U.S. reservation at the mouth of the Wisconsin.
+In Article 1 the Winnebago were recorded as ceding "all their right, title, and claim" to a stretch of country. It began on the Rock River at the mouth of the Pee-kee-tol-a-ka and ran up that stream and Sugar Creek. From there it went due north to the road from the Eastern Blue Mound to the portage of the Wisconsin and Fox rivers, then along the Fox and Wisconsin rivers to the U.S. reservation at the mouth of the Wisconsin.
 
 The United States agreed to pay $18,000 a year in specie for thirty years and give $30,000 in goods as a present. Each year for thirty years it would deliver 3,000 pounds of tobacco and fifty barrels of salt. It would support three blacksmiths' shops for thirty years.
 

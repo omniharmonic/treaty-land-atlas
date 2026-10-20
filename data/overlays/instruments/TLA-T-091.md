@@ -2,7 +2,7 @@
 id: "TLA-T-091"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1818 the Creek ceded two tracts along the Altamaha, Ocmulgee and Chattahoochee for $20,000 plus $10,000 a year for ten years."
+headline: "In 1818 the Creek were recorded as ceding two tracts along the Altamaha, Ocmulgee and Chattahoochee for $20,000 plus $10,000 a year for ten years."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for stated payments; no source here describes duress for this treaty."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On January 22, 1818, David Brydie Mitchell, agent of Indian affairs for the Creek nation and sole U.S. commissioner, signed a "treaty of limits" with the kings, chiefs, head men and warriors of the Creek nation "in council assembled." The meeting was at the Creek Agency on the Flint River. William McIntosh was among the signers.
 
-In Article 1 the Creek ceded "two tracts of land" for "certain sums of money." The first begins at the mouth of Goose Creek on the Altamaha River. It follows the line toward the mounts at the head of the St. Marys River to the line run under the Treaty of Fort Jackson, then by the head of a creek to the Ocmulgee River and down to its junction with the Oconee. The second begins at the high shoals of the Appalachee River, follows the line set by the 1805 Washington treaty to the Ulcofauhatchie, and runs by a path to the Chattahoochee River, up it to Suwannee old town and back to the start.
+In Article 1 the Creek were recorded as ceding "two tracts of land" for "certain sums of money." The first begins at the mouth of Goose Creek on the Altamaha River. It follows the line toward the mounts at the head of the St. Marys River to the line run under the Treaty of Fort Jackson, then by the head of a creek to the Ocmulgee River and down to its junction with the Oconee. The second begins at the high shoals of the Appalachee River, follows the line set by the 1805 Washington treaty to the Ulcofauhatchie, and runs by a path to the Chattahoochee River, up it to Suwannee old town and back to the start.
 
 Article 2 says the United States would pay $20,000 within the year and $10,000 annually for ten more years, eleven payments in all and $120,000 in total, "without interest." Article 3 promised two blacksmiths and strikers for three years. Article 4 let the President have any needed boundary lines run.
 

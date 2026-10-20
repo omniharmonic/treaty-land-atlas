@@ -2,7 +2,7 @@
 id: "TLA-T-286"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Neah Bay in 1855, 42 Makah leaders ceded most Makah land for $30,000, with fishing, whaling and sealing rights secured."
+headline: "At Neah Bay in 1855, 42 Makah leaders were recorded as ceding most Makah land for $30,000, with fishing, whaling and sealing rights secured."
 how: "treaty_negotiated"
 how_basis: "HistoryLink describes a signed treaty that did not lead to armed conflict; the cited sources do not describe coercion at Neah Bay itself, though the National Park Service says Stevens pressured Puget Sound tribes in his 1854-55 treaties generally."
 confidence: "high"

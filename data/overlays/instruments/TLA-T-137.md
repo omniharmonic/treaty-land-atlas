@@ -2,7 +2,7 @@
 id: "TLA-T-137"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In August 1825 the Osage agreed to a marked road to New Mexico, forever free to US and Mexican travelers, for $800."
+headline: "In August 1825 the Osage were bound by the treaty to a marked road to New Mexico, forever free to US and Mexican travelers, for $800."
 how: "treaty_negotiated"
 how_basis: "The text is a treaty signed by United States commissioners and the nation's chiefs and warriors; it describes no pressure."
 confidence: "high"
@@ -13,7 +13,7 @@ promises: [{"article": "Art. 5", "promise": "Pay the Osage $500 in money or good
 ---
 This treaty grew out of an act of Congress approved on 3 March 1825, which authorized the President to have a road marked from the western frontier of Missouri to the confines of New Mexico. The act required the commissioners to get the consent of the tribes along the way, by treaty. Benjamin Reeves, George Sibley and Thomas Mather were the commissioners.
 
-On 10 August 1825, at Council Grove on the Neosho River, one hundred and sixty miles southwest of Fort Osage, they met chiefs and head men of the Great and Little Osage. The Osage agreed that the commissioners could survey and mark a road through any territory the Osage owned or claimed. They agreed that the road would be forever free for citizens of the United States and of the Mexican Republic, who could pass and repass without hindrance or molestation. They also promised friendly aid to travellers they met on it, and agreed the road reached a reasonable distance on either side, so travellers could find food and camping places.
+On 10 August 1825, at Council Grove on the Neosho River, one hundred and sixty miles southwest of Fort Osage, they met chiefs and head men of the Great and Little Osage. The Osage signed terms providing that the commissioners could survey and mark a road through any territory the Osage owned or claimed. They signed terms providing that the road would be forever free for citizens of the United States and of the Mexican Republic, who could pass and repass without hindrance or molestation. They also promised friendly aid to travellers they met on it, and agreed the road reached a reasonable distance on either side, so travellers could find food and camping places.
 
 For these privileges the commissioners promised five hundred dollars, in money or goods at the Osage's option. They also acknowledged goods already given worth three hundred dollars. The text says these sums are "full and complete compensation" for every privilege granted.
 

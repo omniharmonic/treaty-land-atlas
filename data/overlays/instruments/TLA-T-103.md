@@ -2,7 +2,7 @@
 id: "TLA-T-103"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At St. Mary's in 1818 the Delaware ceded all Indiana claims for a western country, moving aid and a $4,000 annuity."
+headline: "At St. Mary's in 1818 the Delaware were recorded as ceding all Indiana claims for a western country, moving aid and a $4,000 annuity."
 how: "removal"
 how_basis: "The text exchanges the Delawares' Indiana claim for a country west of the Mississippi and moving aid, so it sets a removal."
 confidence: "high"
@@ -11,7 +11,7 @@ sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawar
 verdict: "new"
 promises: [{"article": "Art. 2", "promise": "Provide the Delawares a country west of the Mississippi and guarantee their peaceable possession.", "kept": "unknown", "evidence_url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1818-0170", "evidence_quote": "the United States agree to provide for the Delawares a country to reside in, upon the west side of the Mississippi"}, {"article": "Art. 5", "promise": "Pay the Delawares a perpetual annuity of $4,000 in silver, plus earlier annuities.", "kept": "unknown", "evidence_url": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1818-0170", "evidence_quote": "a perpetual annuity of four thousand dollars"}]
 ---
-On 3 October 1818, at St. Mary's, Ohio, three United States commissioners (Jonathan Jennings, Lewis Cass and Benjamin Parke) made a treaty with the Delaware nation. In Article 1 the Delawares ceded to the United States all their claim to land in the state of Indiana. The text gives no acreage.
+On 3 October 1818, at St. Mary's, Ohio, three United States commissioners (Jonathan Jennings, Lewis Cass and Benjamin Parke) made a treaty with the Delaware nation. In Article 1 the Delawares were recorded as ceding to the United States all their claim to land in the state of Indiana. The text gives no acreage.
 
 In return the United States agreed in Article 2 to provide the Delawares a country to live in on the west side of the Mississippi and to guarantee them peaceable possession of it. The United States also agreed to pay the full value of their improvements in the ceded country, to be set by persons the President appointed. It would furnish 120 horses worth no more than forty dollars each, boats called perogues, and provisions, to help them move.
 

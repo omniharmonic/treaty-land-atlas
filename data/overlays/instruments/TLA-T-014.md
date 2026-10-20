@@ -16,6 +16,6 @@ On January 31, 1786, commissioners of the United States (George Rogers Clark, Ri
 
 Article I required three hostages to be held by the United States until all prisoners were restored. In Article II the Shawnee "acknowledge the United States to be the sole and absolute sovereigns of all the territory ceded to them" by the King of Great Britain in the 1783 treaty of peace. Article V granted peace and received the Shawnee "into their friendship and protection." Another article warned that a nation that knew of plans for war and failed to tell the nearest U.S. post "shall be considered as parties in such war, and be punished accordingly."
 
-Article VI allotted the Shawnee lands "to live and hunt upon," running down the Great Miami and west to the Wabash, "beyond which lines none of the citizens of the United States shall settle." In return the Shawnee relinquished "all title, or pretence of title" to lands east, west and south of those lines.
+Article VI allotted the Shawnee lands "to live and hunt upon," running down the Great Miami and west to the Wabash, "beyond which lines none of the citizens of the United States shall settle." In return the Shawnee were recorded as relinquishing "all title, or pretence of title" to lands east, west and south of those lines.
 
 Richland Source says that in 1789 many Ohio nations, including the Shawnee, refused to honor the Fort Harmar treaty. It says the Shawnee were among the nations that at Greenville in 1795 agreed to move to the northwestern corner of Ohio.

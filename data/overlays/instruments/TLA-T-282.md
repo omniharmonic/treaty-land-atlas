@@ -2,7 +2,7 @@
 id: "TLA-T-282"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1855 Willamette Valley chiefs ceded their country between the Columbia River and the Calapooia Mountains for annuities and a promised home."
+headline: "In 1855 Willamette Valley chiefs were recorded as ceding their country between the Columbia River and the Calapooia Mountains for annuities and a promised home."
 note: "Palmer and the first chiefs signed on January 4, 1855; further bands assented on January 9 and 10, and the Santiam bands on January 22, the date the treaty is usually given."
 how: "treaty_negotiated"
 how_basis: "The text records articles made between Superintendent Palmer and chiefs 'duly authorized thereto by their respective bands'; the page shows assents by further bands."

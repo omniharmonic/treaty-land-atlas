@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On October 18, 1864, at the Isabella Indian Reservation in Michigan, two U.S. officials signed an agreement with the Chippewas of Saginaw, Swan Creek, and Black River. They were special commissioner H. J. Alvord and Indian agent D. C. Leach. The Chippewas were parties to an earlier treaty of August 2, 1855, which had reserved townships for them in two places: on Saginaw Bay and in Isabella County.
 
-In this treaty the Chippewas released the Saginaw Bay townships to the United States. They also gave up any claim to locate lands in place of land the United States had sold or disposed of on the Isabella reservation. They gave up the right to buy the unselected lands there as well.
+In this treaty the Chippewas released the Saginaw Bay townships to the United States. They were also recorded as giving up any claim to locate lands in place of land the United States had sold or disposed of on the Isabella reservation. They were recorded as giving up the right to buy the unselected lands there as well.
 
 In return, the United States agreed to set apart, for the exclusive use of the Chippewas, all the unsold land in the six Isabella County townships named in the 1855 treaty. Anyone who had picked land on Saginaw Bay could choose the same amount at Isabella. Each chief who signed received eighty more acres, and one headman in each band forty, with fee-simple patents (full private title).
 

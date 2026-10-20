@@ -2,7 +2,7 @@
 id: "TLA-T-018"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Holston in 1791 the Cherokee ceded land east of the Clinch River for a $1,000 yearly payment and accepted U.S. trade control."
+headline: "At Holston in 1791 the Cherokee were recorded as ceding land east of the Clinch River for a $1,000 yearly payment and accepted U.S. trade control."
 how: "treaty_negotiated"
 how_basis: "The OSU text shows a treaty made by Blount with Cherokee chiefs and warriors, with a $1,000 annual payment; no source cited describes coercion."
 confidence: "high"

@@ -2,7 +2,7 @@
 id: "TLA-T-343"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1865 the Comanche and Kiowa agreed at the Little Arkansas River to a southern plains reservation and gave up claims elsewhere."
+headline: "At the Little Arkansas River in 1865 a treaty promised the Comanche and Kiowa a southern plains reservation and recorded them as giving up claims elsewhere; the 1867 Medicine Lodge treaty replaced that reservation with a much smaller one."
 how: "treaty_negotiated"
 how_basis: "The treaty text records a negotiated reservation treaty with signatures by chiefs; it states no duress."
 confidence: "high"
@@ -14,6 +14,6 @@ On October 18, 1865, at the council ground on the Little Arkansas River, seven U
 
 Article 2 set apart a district of the southern plains for the tribes' "absolute and undisturbed use and occupation." It runs from the northeast corner of New Mexico down to the Red River, along the 98th degree of west longitude, and up the Cimarron River to the southern line of Kansas. Only officers, agents and employees of the government, or people formally adopted into a tribe, could live there.
 
-The tribes agreed to move there when the President directed. They agreed to carry written permission when away to hunt, and not to camp within ten miles of main roads, military posts, towns or villages. They gave up all claims outside the reservation, naming "the country north of the Cimarone River and west of the eastern boundary of New Mexico."
+The tribes were bound by the treaty to move there when the President directed. They were bound by the treaty to carry written permission when away to hunt, and not to camp within ten miles of main roads, military posts, towns or villages. They were recorded as giving up all claims outside the reservation, naming "the country north of the Cimarone River and west of the eastern boundary of New Mexico."
 
 The United States kept the right to build roads and military posts through the reservation, with compensation for injury set by Congress. Article 5 promised annual spending for forty years. The sources here do not trace later events.

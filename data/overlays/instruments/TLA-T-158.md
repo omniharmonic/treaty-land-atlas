@@ -2,7 +2,7 @@
 id: "TLA-T-158"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1829 the Delaware agreed to leave Missouri for the fork of the Kansas and Missouri rivers, with a $1,000 added annuity and supplies."
+headline: "In 1829 the Delaware were bound by the treaty to leave Missouri for the fork of the Kansas and Missouri rivers, with a $1,000 added annuity and supplies."
 how: "removal"
 how_basis: "The Oklahoma State treaty text describes the Delaware removing from Missouri under the 1818 promise of a western country, and Kansapedia describes relocations by the United States government."
 confidence: "high"

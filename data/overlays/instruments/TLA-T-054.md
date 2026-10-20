@@ -2,7 +2,7 @@
 id: "TLA-T-054"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Detroit in 1807 four nations ceded land from the Maumee to the Lake Huron outlet for $10,000 and a $2,400 annuity."
+headline: "At Detroit in 1807 four nations were recorded as ceding land from the Maumee to the Lake Huron outlet for $10,000 and a $2,400 annuity."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession with payment and an annuity, and the sources cited do not describe coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On November 17, 1807, William Hull, governor of Michigan Territory and sole U.S. commissioner, signed a treaty at Detroit with the sachems, chiefs and warriors of the Ottawa, Chippewa, Wyandot and Potawatomi nations. The opening says its aim was "to confirm and perpetuate the friendship, which happily subsists" and "to settle arrangements mutually beneficial."
 
-In Article I the nations ceded all their "right, title, and interest" in a tract described by lines. It begins at the mouth of the Miami River of the lakes (the Maumee) and runs up that river to the Au Glaize, due north to a parallel drawn from the outlet of Lake Huron, and northeast to White Rock in Lake Huron. From there it runs east to the boundary with Upper Canada, then south along that boundary through the St. Clair River, Lake St. Clair and the Detroit River into Lake Erie.
+In Article I the nations were recorded as ceding all their "right, title, and interest" in a tract described by lines. It begins at the mouth of the Miami River of the lakes (the Maumee) and runs up that river to the Au Glaize, due north to a parallel drawn from the outlet of Lake Huron, and northeast to White Rock in Lake Huron. From there it runs east to the boundary with Upper Canada, then south along that boundary through the St. Clair River, Lake St. Clair and the Detroit River into Lake Erie.
 
 In Article II the United States agreed to pay $10,000, at Detroit, in money, goods, tools or animals. The shares were $3,333.33 each for the Ottawa and Chippewa and $1,666.67 each for the Wyandot and Potawatomi. It also set an annuity "forever" of $2,400. Article IV promised two blacksmiths for ten years, and Article V let the nations hunt on the ceded land.
 

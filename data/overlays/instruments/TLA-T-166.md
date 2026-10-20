@@ -2,7 +2,7 @@
 id: "TLA-T-166"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In January 1832 the Big Spring band of Wyandots sold their 16,000-acre Ohio reservation for $1.25 an acre as lands were sold."
+headline: "In January 1832 the Big Spring band of Wyandots were recorded as selling their 16,000-acre Ohio reservation for $1.25 an acre as lands were sold."
 note: "Some listings date this to 29 January 1832, but the text says it was concluded 19 January 1832. The band's stated reasons come from the commissioner's English-language text."
 how: "treaty_negotiated"
 how_basis: "The text says the band understood the government was willing to purchase, and that they refused removal west when it was offered in a first draft."
@@ -15,6 +15,6 @@ On 19 January 1832, at McCutcheonsville in Crawford County, Ohio, James B. Gardi
 
 The preamble says the band had become convinced that while they stayed in Ohio, near a growing white population, they could not prosper and be happy. They understood the government was willing to buy their reservation.
 
-Article 1: the band ceded the 16,000 acres granted them by the St. Mary's treaty of 17 September 1818. Article 2: the United States would survey the land into sections and sell it as public land. As acres were sold, it would pay the chiefs, for the whole band, one dollar and twenty-five cents per acre in silver, whatever the sale price was. Article 3: the United States would pay a fair appraised value for improvements. Article 4 reserved a half section, 320 acres, for the old chief Roe-nu-nas.
+Article 1: the band was recorded as ceding the 16,000 acres granted them by the St. Mary's treaty of 17 September 1818. Article 2: the United States would survey the land into sections and sell it as public land. As acres were sold, it would pay the chiefs, for the whole band, one dollar and twenty-five cents per acre in silver, whatever the sale price was. Article 3: the United States would pay a fair appraised value for improvements. Article 4 reserved a half section, 320 acres, for the old chief Roe-nu-nas.
 
 Article 5 says the band could remove to Canada, to the Huron River reservation in Michigan, or elsewhere they obtained a right to go. Article 6 is marked "[Rejected]"; an explanation signed by Gardiner says the first draft provided for removal west of the Mississippi, but the band refused to accept land or move there. The page lists a proclamation on 6 April 1832.

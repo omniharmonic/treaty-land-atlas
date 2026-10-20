@@ -2,7 +2,7 @@
 id: "TLA-T-335"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1865 the Winnebago ceded their Dakota Territory reservation and received land the Omaha had ceded in Nebraska Territory."
+headline: "In 1865 the Winnebago were recorded as ceding their Dakota Territory reservation and received land the Omaha had ceded in Nebraska Territory."
 how: "removal"
 how_basis: "The treaty text says the United States will \"remove the Winnebago tribe of Indians and their property to their new home\" and refers to their earlier move from Minnesota."
 confidence: "high"

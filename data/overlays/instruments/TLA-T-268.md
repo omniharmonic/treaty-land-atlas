@@ -2,7 +2,7 @@
 id: "TLA-T-268"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1854 the Shawnee ceded their Kansas reserve, estimated at 1.6 million acres, and received 200,000 acres back plus $829,000."
+headline: "In 1854 the Shawnee were recorded as ceding their Kansas reserve, estimated at 1.6 million acres, and received 200,000 acres back plus $829,000."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated cession for payment and individual allotment; the cited sources do not describe coercion at this treaty."
 confidence: "high"
@@ -10,7 +10,7 @@ cautions: "The Kansas Historical Society page is general and does not name the S
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1854-0618", "title": "Treaty with the Shawnee, 1854 (Oklahoma State University Tribal Treaties Database)", "quote": "estimated to contain sixteen hundred thousand acres, more or less"}, {"url": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1854-0618", "title": "Treaty with the Shawnee, 1854 (Oklahoma State University Tribal Treaties Database)", "quote": "The United States hereby cede to the Shawnee Indians two hundred thousand acres of land"}, {"url": "https://www.kansashistory.gov/kansapedia/kansas-territory-map/17368", "title": "Kansas Territory map, Kansapedia (Kansas Historical Society)", "quote": "Any excess property would be purchased by the government which would sell it to railroad companies, white settlers, and speculators."}]
 verdict: "fixed"
 ---
-On May 10, 1854, in Washington, Commissioner George W. Manypenny and Shawnee delegates signed a treaty for the "now united tribe" of Shawnee. They ceded the tract west of Missouri that a federal deed had conveyed to the tribe in 1844. The treaty describes it by metes and bounds as "estimated to contain sixteen hundred thousand acres, more or less." The United States ceded back 200,000 acres, to be selected near the Missouri line and divided among individuals and families, with small tracts for mission schools and churches.
+On May 10, 1854, in Washington, Commissioner George W. Manypenny and Shawnee delegates signed a treaty for the "now united tribe" of Shawnee. They were recorded as ceding the tract west of Missouri that a federal deed had conveyed to the tribe in 1844. The treaty describes it by metes and bounds as "estimated to contain sixteen hundred thousand acres, more or less." The United States ceded back 200,000 acres, to be selected near the Missouri line and divided among individuals and families, with small tracts for mission schools and churches.
 
 The United States agreed to pay $829,000, including $700,000 in seven annual installments. The Kansas Historical Society says Manypenny promoted allotment to individual members, with excess land bought by the government and sold to railroad companies, settlers and speculators. It adds that this ignored a clause in the Kansas-Nebraska Act and opened many Kansas lands to settlement.
 

@@ -2,7 +2,7 @@
 id: "TLA-T-121"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1824 the Sauk and Fox ceded their Missouri land claims; a tract by the Des Moines River was set aside for mixed-ancestry relatives."
+headline: "In 1824 the Sauk and Fox were recorded as ceding their Missouri land claims; a tract by the Des Moines River was set aside for mixed-ancestry relatives."
 note: "The 119,000-acre figure and the 1834 repeal come from one history blog. The blog calls this the first cession of Iowa lands, though the treaty itself concerns Missouri."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated cession in Washington with stated payments; no source cited describes coercion in 1824."
@@ -13,7 +13,7 @@ verdict: "fixed"
 ---
 On August 4, 1824, William Clark, Superintendent of Indian Affairs, signed a treaty in Washington with chiefs and head men of the "Sock and Fox" tribes (the treaty's spelling). Its stated aim was "to perpetuate peace and friendship" and to remove causes of dispute from undefined boundaries.
 
-The two nations ceded all their claims to land within the state of Missouri lying between the Mississippi and Missouri rivers. The boundary ran from the mouth of the Kansas River north one hundred miles to the northwest corner of Missouri, then east to the Mississippi. The treaty sets aside a small tract between the Des Moines and Mississippi rivers "for the use of the half-breeds belonging to the Sock and Fox nations." This is the treaty's own wording. Article 2 says the tribes would not settle or hunt on the ceded land after January 1, 1826, without special permission.
+The two nations were recorded as ceding all their claims to land within the state of Missouri lying between the Mississippi and Missouri rivers. The boundary ran from the mouth of the Kansas River north one hundred miles to the northwest corner of Missouri, then east to the Mississippi. The treaty sets aside a small tract between the Des Moines and Mississippi rivers "for the use of the half-breeds belonging to the Sock and Fox nations." This is the treaty's own wording. Article 2 says the tribes would not settle or hunt on the ceded land after January 1, 1826, without special permission.
 
 In return the United States promised $1,000 in cash or goods, $500 a year to each tribe for ten years, a blacksmith, and help with farming. The Statutes at Large record a proclamation on January 18, 1825.
 

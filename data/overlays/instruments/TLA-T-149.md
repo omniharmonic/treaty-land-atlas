@@ -2,7 +2,7 @@
 id: "TLA-T-149"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1827 the Potawatomi ceded reserved tracts in Michigan Territory and received a new continuous reservation of ninety-nine sections."
+headline: "In 1827 the Potawatomi were recorded as ceding reserved tracts in Michigan Territory and received a new continuous reservation of ninety-nine sections."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a negotiated exchange of reserved tracts, though its stated aim is to distance the bands from white settlements."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On September 19, 1827, Lewis Cass, commissioner for the United States, and the chiefs and warriors of the Potawatamie Tribe signed a treaty at St. Joseph, in the Territory of Michigan. The text states its purpose: "to consolidate some of the dispersed bands" of the tribe at a point removed from the Detroit to Chicago road, "and as far as practicable from the settlements of the Whites."
 
-To do this, the tribe ceded tracts that had earlier been reserved for its use. They included two sections at Seginsairn's village and two at Tonguish's village on or near the River Rouge, and six sections at Macon on the River Raisin, less half a section kept for the chief Moran. They also included four tracts at Mang ach qua, Mickesawbe, Prairie Ronde and the head of the Kalamazoo River. The treaty says the ceded tracts "contain in the whole ninety nine sections and one half section of land."
+To do this, the tribe was recorded as ceding tracts that had earlier been reserved for its use. They included two sections at Seginsairn's village and two at Tonguish's village on or near the River Rouge, and six sections at Macon on the River Raisin, less half a section kept for the chief Moran. They also included four tracts at Mang ach qua, Mickesawbe, Prairie Ronde and the head of the Kalamazoo River. The treaty says the ceded tracts "contain in the whole ninety nine sections and one half section of land."
 
 In exchange, the treaty reserved for the tribe, "to be held upon the same terms on which Indian reservations are usually held," tracts in townships south of the base line in Michigan Territory. These "will form a continuous reservation, and contain ninety-nine sections."
 

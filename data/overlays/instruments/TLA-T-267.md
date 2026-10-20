@@ -2,7 +2,7 @@
 id: "TLA-T-267"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1854 the Delaware ceded their land at the fork of the Missouri and Kansas Rivers and kept a reserved home."
+headline: "In 1854 the Delaware were recorded as ceding their land at the fork of the Missouri and Kansas Rivers and kept a reserved home."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a negotiated cession and payment; the Kansas Historical Society says tribes were 'convinced' to cede in 1854 but does not describe coercion at this treaty."
 confidence: "high"

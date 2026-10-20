@@ -2,8 +2,8 @@
 id: "TLA-T-187"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1833 Apalachicola chiefs gave up their river reservations; those who stayed would lose U.S. protection once the Seminoles left."
-note: "The treaty says the chiefs gave up their rights voluntarily; reading the loss of protection as pressure is an inference, not a sourced statement."
+headline: "In 1833 Apalachicola chiefs were recorded as giving up their river reservations; those who stayed would lose U.S. protection once the Seminoles left."
+note: "The treaty says the chiefs were recorded as giving up their rights voluntarily; reading the loss of protection as pressure is an inference, not a sourced statement."
 how: "treaty_under_pressure"
 how_basis: "The OSU treaty text ends U.S. protection for chiefs who stay after other Seminole bands leave, tying their position to removal."
 confidence: "medium"

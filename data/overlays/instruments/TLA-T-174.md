@@ -2,7 +2,7 @@
 id: "TLA-T-174"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1832 the Kickapoo ceded their Missouri claims and agreed to move to a reservation near Fort Leavenworth of at least 1,200 square miles."
+headline: "In 1832 the Kickapoo were recorded as ceding their Missouri claims and were bound by the treaty to move to a reservation near Fort Leavenworth of at least 1,200 square miles."
 how: "removal"
 how_basis: "The OSU treaty text exchanges Missouri land for a western reservation and requires removal with little delay, and directs annuity money to pay tribal debts."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On October 24, 1832, William Clark, Frank J. Allen and Nathan Kouns, commissioners for the United States, signed a treaty at Castor Hill, St. Louis County, Missouri. The other party was the chiefs, warriors and counsellors of the Kickapoo tribe.
 
-In Article 1 the Kickapoo ceded "the lands assigned to them by the treaty of Edwardsville" and all other claims to land in Missouri. In Article 2 the United States agreed to provide a country southwest of the Missouri River "as their permanent place of residence as long as they remain a tribe." It lay on the Missouri River, north of the Delaware lands, near Fort Leavenworth. The Kickapoo were "now willing to remove" from the country on the Osage River.
+In Article 1 the Kickapoo were recorded as ceding "the lands assigned to them by the treaty of Edwardsville" and all other claims to land in Missouri. In Article 2 the United States agreed to provide a country southwest of the Missouri River "as their permanent place of residence as long as they remain a tribe." It lay on the Missouri River, north of the Delaware lands, near Fort Leavenworth. The Kickapoo were "now willing to remove" from the country on the Osage River.
 
 In Article 3 the United States agreed to pay an annuity of $18,000 for one year. At the urgent request of the Kickapoo, $12,000 of it was to go to their creditors. It also agreed to pay $5,000 a year for nineteen years. Smaller sums paid for a blacksmith, a mill and church, a school, farm tools, labor and cattle, plus a year's provisions after arrival.
 

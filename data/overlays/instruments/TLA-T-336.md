@@ -2,7 +2,7 @@
 id: "TLA-T-336"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1865 the Ponca ceded about 30,000 acres of their reservation and received other land back; an 1868 Sioux treaty later overlapped it."
+headline: "In 1865 the Ponca were recorded as ceding about 30,000 acres of their reservation and received other land back; an 1868 Sioux treaty later overlapped it."
 note: "NET Nebraska Studies gives 96,000 acres for the 1865 reservation, a figure not in the treaty; its explanation of the 1868 overlap is its own inference."
 how: "treaty_negotiated"
 how_basis: "The treaty text records an exchange of land between the Ponca and the United States, with no coercion stated; NET Nebraska Studies describes the later 1868 overlap as a separate event."

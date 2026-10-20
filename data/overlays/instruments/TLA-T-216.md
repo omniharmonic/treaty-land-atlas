@@ -2,7 +2,7 @@
 id: "TLA-T-216"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1836 the Sac and Fox ceded their 400-section reservation opposite Rock Island for annuities and payment of their debts."
+headline: "In 1836 the Sac and Fox were recorded as ceding their 400-section reservation opposite Rock Island for annuities and payment of their debts."
 note: "Not to be confused with the separate September 17, 1836 Fort Leavenworth treaty with the Ioway and the Missouri band of Sac and Fox."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records a cession by the confederated tribes in general council for annuities and debt payments, with a removal date; no coercion is described."

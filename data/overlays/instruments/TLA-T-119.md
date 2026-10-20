@@ -2,7 +2,7 @@
 id: "TLA-T-119"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "On 3 September 1822 at Fort Armstrong, the Sac and Fox gave up the 1804 promise of a trading house for $1,000 in merchandise."
+headline: "On 3 September 1822 at Fort Armstrong, the Sac and Fox were recorded as giving up the 1804 promise of a trading house for $1,000 in merchandise."
 how: "other"
 how_basis: "The text is a payment-for-release agreement that cancels one article of an earlier treaty."
 confidence: "high"

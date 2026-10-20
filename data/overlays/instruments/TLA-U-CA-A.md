@@ -2,7 +2,7 @@
 id: "TLA-U-CA-A"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Camp Belt in 1851, twelve tribes agreed to a King's River district and gave up other land claims; the Senate never ratified it."
+headline: "At Camp Belt in 1851, twelve tribes were bound by the treaty to a King's River district and were recorded as giving up other land claims; the Senate never ratified it."
 note: "Sources give July 2 or July 8, 1852 as the date the Senate rejected it."
 how: "unratified"
 how_basis: "The OSU treaty page marks it Unratified, and Prologue says the Senate rejected all 18 California treaties."

@@ -2,7 +2,7 @@
 id: "TLA-T-023"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Greenville, after a U.S. army victory, twelve nations ceded most of present Ohio and post sites for goods."
+headline: "At Greenville, after a U.S. army victory, twelve nations were recorded as ceding most of present Ohio and post sites for goods."
 note: "The \"two-thirds of present Ohio\" size is one encyclopedia's estimate; the treaty states no acreage."
 how: "treaty_under_pressure"
 how_basis: "The treaty text says it ended 'a destructive war' and e-WV reports it followed Wayne's military victory at Fallen Timbers."
@@ -14,7 +14,7 @@ promises: [{"article": "Art. 4", "promise": "The United States relinquished its 
 ---
 On August 3, 1795, Major General Anthony Wayne, commanding the U.S. Army, signed a treaty at Greeneville, Ohio. The other side was leaders of twelve nations: the Wyandots, Delawares, Shawnees, Ottawas, Chippewas, Potawatomi, Miamis, Eel River, Weas, Kickapoos, Piankashaws and Kaskaskias. The treaty says its purpose was "to put an end to a destructive war." The e-WV encyclopedia says the war's fighting had ended with Wayne's victory at the Battle of Fallen Timbers on August 20, 1794.
 
-Article III drew a boundary line. The nations ceded "all their claims to the lands lying eastwardly and southwardly" of it. They also gave up a list of tracts for U.S. posts, including sites at Fort Wayne, the foot of the rapids of the Miami of the Lake, and Detroit. The e-WV encyclopedia says the cession covered about two-thirds of present Ohio.
+Article III drew a boundary line. The nations were recorded as ceding "all their claims to the lands lying eastwardly and southwardly" of it. They were also recorded as giving up a list of tracts for U.S. posts, including sites at Fort Wayne, the foot of the rapids of the Miami of the Lake, and Detroit. The e-WV encyclopedia says the cession covered about two-thirds of present Ohio.
 
 In exchange the United States delivered $20,000 in goods and promised $9,500 in goods every year, shared out among the nations. The nations kept the right to hunt on the lands the United States gave up, and could drive off or punish settlers who moved onto them.
 

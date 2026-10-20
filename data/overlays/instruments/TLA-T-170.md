@@ -2,7 +2,7 @@
 id: "TLA-T-170"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "After the Black Hawk War, the Sac and Fox ceded a Mississippi frontier tract in 1832, keeping 400 square miles, for annuities."
+headline: "After the Black Hawk War, the Sac and Fox were recorded as ceding a Mississippi frontier tract in 1832, keeping 400 square miles, for annuities."
 note: "The preamble's account of the Black Hawk War is the United States' own."
 how: "treaty_under_pressure"
 how_basis: "The OSU treaty text ties the cession to the 1832 war, cites the United States action against the hostile band, and notes chiefs held as hostages."

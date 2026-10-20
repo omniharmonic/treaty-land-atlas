@@ -2,7 +2,7 @@
 id: "TLA-T-152"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1828 the Western Cherokee gave up their Arkansas lands for seven million acres farther west, a guaranteed outlet and payments."
+headline: "In 1828 the Western Cherokee were recorded as giving up their Arkansas lands for seven million acres farther west, a guaranteed outlet and payments."
 note: "The reasons given, an unfavorable location and avoiding future removal costs, are the treaty's own framing."
 how: "removal"
 how_basis: "Article 7 has the Cherokee surrender their Arkansas lands and leave within fourteen months in exchange for land farther west, so it sets a removal."
@@ -16,6 +16,6 @@ On 6 May 1828, at Washington, Secretary of War James Barbour signed a convention
 
 The United States defined Arkansas's western boundary and guaranteed to the Cherokee forever seven million acres between the Arkansas and Canadian rivers, plus a perpetual outlet west. It promised to run the lines by 1 October, remove white persons from the Cherokee side, pay for abandoned improvements, and pay fifty thousand dollars after their removal within fourteen months, plus education money, a printing press and other sums. Eastern Cherokees who wished to move west were promised a rifle, blanket, kettle and tobacco for each family head, along with a payment for property left behind.
 
-In Article 7 the chiefs and head men agreed to surrender to the United States, and leave within fourteen months, all their lands in Arkansas secured by the 1817 treaty and the 1819 convention. Article 9 reserved a tract for the military near Fort Gibson.
+In Article 7 the chiefs and head men were bound by the treaty to surrender to the United States, and leave within fourteen months, all their lands in Arkansas secured by the 1817 treaty and the 1819 convention. Article 9 reserved a tract for the military near Fort Gibson.
 
 The page lists a proclamation on 28 May 1828. In 1833 the two sides signed a supplementary treaty that redrew the boundaries.

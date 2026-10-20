@@ -2,7 +2,7 @@
 id: "TLA-T-236"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1839 the Osage gave up claims to reserves inside other tribes' lands for a twenty-year annuity of $20,000."
+headline: "In 1839 the Osage were recorded as giving up claims to reserves inside other tribes' lands for a twenty-year annuity of $20,000."
 how: "treaty_negotiated"
 how_basis: "The text records articles concluded at Fort Gibson between General Arbuckle and the chiefs, headmen and warriors of the Great and Little Osage."
 confidence: "medium"
@@ -12,7 +12,7 @@ verdict: "new"
 ---
 The Great and Little Osage made this treaty with General M. Arbuckle at Fort Gibson, west of Arkansas, on January 11, 1839.
 
-Article 1 has the Osage cede "all titles or interest in any reservation heretofore claimed by them within the limits of any other tribe," and all claims under treaties of 1808 and 1825, except the sixth article of the 1825 treaty. The Osage also agreed to remove from the lands of other tribes and stay within their own boundaries.
+Article 1 has the Osage cede "all titles or interest in any reservation heretofore claimed by them within the limits of any other tribe," and all claims under treaties of 1808 and 1825, except the sixth article of the 1825 treaty. The Osage were also bound by the treaty to remove from the lands of other tribes and stay within their own boundaries.
 
 Article 2 lists what the United States promised. It would pay a twenty-year annuity of $20,000, twelve thousand in money and eight thousand in goods, stock, provisions or money. It would furnish two blacksmiths and two assistants for twenty years, a grist and saw mill, and one thousand cows and calves, two thousand breeding hogs, and a thousand each of plows, sets of horse gear, axes and hoes. Each family that formed an agricultural settlement would get a set. It would also build houses for named chiefs, pay up to $30,000 of claims against the Osage for depredations, and buy individual reserves from the 1825 treaty at up to two dollars an acre.
 

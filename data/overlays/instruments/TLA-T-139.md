@@ -2,7 +2,7 @@
 id: "TLA-T-139"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Prairie du Chien in 1825 many nations agreed to peace and boundary lines; Treaties Matter says it also made later land purchases easier."
+headline: "At Prairie du Chien in 1825 many nations were bound by the treaty to peace and boundary lines; Treaties Matter says it also made later land purchases easier."
 note: "Treaties Matter says nearly a dozen nations took part, while the treaty names eight groups. The treaty itself ceded no land."
 how: "other"
 how_basis: "The statute text records a multinational peace and boundary treaty with no direct cession; Treaties Matter says it made later single-nation purchases easier."

@@ -2,7 +2,7 @@
 id: "TLA-T-339"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Fort Sully in October 1865 the Minneconjou Sioux agreed to leave overland routes and accept U.S. jurisdiction for $10,000 a year."
+headline: "At Fort Sully in October 1865 the Minneconjou Sioux were bound by the treaty to leave overland routes and accept U.S. jurisdiction for $10,000 a year."
 note: "This treaty ceded no land."
 how: "treaty_negotiated"
 how_basis: "The text records a treaty made by U.S. commissioners with the band's chiefs and head-men, 'read, interpreted, and explained' to them and signed with marks; no source shows pressure."

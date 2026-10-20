@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On October 11, 1832, the chiefs of the Apalachicola Band signed a treaty at Tallahassee, Florida Territory, with commissioner James Gadsden for the United States. The band surrendered "all their right, title and interest to a reservation of land" made for its benefit in the additional article of the 1823 Treaty of Camp Moultrie. That tract ran along the Apalachicola River, beginning one mile below Tuski Hajo's improvements.
 
-The band agreed to remove, with its warriors and families then living on the reservation, "amounting in all to (256) two hundred and fifty-six souls," to the west of the Mississippi. The United States agreed to pay $13,000. Three thousand dollars was paid in cash. The other $10,000 was due when the band completed its arrangements and began to move. The money was to cover a party to explore the western country and "all the expenses of emigration, and subsistence."
+The band was bound by the treaty to remove, with its warriors and families then living on the reservation, "amounting in all to (256) two hundred and fifty-six souls," to the west of the Mississippi. The United States agreed to pay $13,000. Three thousand dollars was paid in cash. The other $10,000 was due when the band completed its arrangements and began to move. The money was to cover a party to explore the western country and "all the expenses of emigration, and subsistence."
 
 The band would leave the reservation by November 1, 1833, with an extension of up to another year if unavoidable circumstances required it. The United States also agreed to continue to Blunt and Davy, chiefs of the towns agreeing to emigrate, their share of a $5,000 annuity.
 

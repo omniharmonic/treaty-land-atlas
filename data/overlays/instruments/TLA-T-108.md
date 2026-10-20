@@ -2,7 +2,7 @@
 id: "TLA-T-108"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Kickapoo of the Vermilion ceded their claimed lands on the Wabash River for an annuity, saying they planned to leave."
+headline: "The Kickapoo of the Vermilion were recorded as ceding their claimed lands on the Wabash River for an annuity, saying they planned to leave."
 note: "The plan to leave the Wabash is stated in the treaty as the Kickapoo's own."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession with annuity; the removal intent is stated by the tribe in the text, with no description of coercion."
@@ -13,8 +13,8 @@ verdict: "fixed"
 ---
 On August 30, 1819, Benjamin Parke, a U.S. commissioner, signed a treaty at Fort Harrison, Indiana, with the chiefs, warriors and head men of the Kickapoos of the Vermilion.
 
-In Article 1 they agreed to cede "all the lands which the said tribe has heretofore possessed, or which they may rightfully claim, on the Wabash river, or any of its waters." Article 2 explains why they described their claim: so the United States could fix a boundary with other tribes. It runs from the northwest corner of the Vincennes tract, along the line set in the 1805 Piankeshaw treaty, to the ridge between the Embarras and Little Wabash, to the source of the Vermilion, to the head of Pine Creek, and down to the Wabash.
+In Article 1 they were bound by the treaty to cede "all the lands which the said tribe has heretofore possessed, or which they may rightfully claim, on the Wabash river, or any of its waters." Article 2 explains why they described their claim: so the United States could fix a boundary with other tribes. It runs from the northwest corner of the Vincennes tract, along the line set in the 1805 Piankeshaw treaty, to the ridge between the Embarras and Little Wabash, to the source of the Vermilion, to the head of Pine Creek, and down to the Wabash.
 
-In Article 3 the Kickapoo gave up an existing $1,000 annuity. The United States agreed to pay $2,000 a year in specie for ten years, and $3,000 was delivered at signing. The treaty calls the whole "a full compensation."
+In Article 3 the Kickapoo were recorded as giving up an existing $1,000 annuity. The United States agreed to pay $2,000 a year in specie for ten years, and $3,000 was delivered at signing. The treaty calls the whole "a full compensation."
 
 Article 4 says: "as the said tribe contemplate removing from the country they now occupy," the annuity would be paid at a place to be agreed. A convention of September 5, 1820 shows how that played out. The annuity was moved to Kaskaskia, Illinois, and the United States advanced $2,000 because the tribe was "now about leaving their settlements on the Wabash." The treaty was proclaimed on May 10, 1820.

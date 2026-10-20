@@ -2,7 +2,7 @@
 id: "TLA-T-031"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Fort Adams the Choctaw allowed a wagon road, agreed to re-mark a boundary, and gave up land near the Mississippi."
+headline: "At Fort Adams the Choctaw were recorded as allowing a wagon road, re-marking a boundary, and giving up land near the Mississippi."
 how: "treaty_negotiated"
 how_basis: "The OSU text shows a negotiated agreement with payment and a council of Choctaw Mingos, and no cited source describes coercion."
 confidence: "high"
@@ -14,6 +14,6 @@ On December 17, 1801, three U.S. commissioners, James Wilkinson, Benjamin Hawkin
 
 Article II gave the Choctaw's "free consent" to a wagon way through their lands. It would run from the northern edge of the Mississippi Territory's settlements to the lands claimed by the Chickasaw, and would be "a high-way for the citizens of the United States and the Choctaws" forever. The Choctaw were to name two men to serve as guides.
 
-Article III dealt with land. The old line set by British officers and the Choctaw, running parallel to the Mississippi, was to be retraced and marked in the presence of two Choctaw representatives. The Choctaw relinquished "all their right, title and pretension" to the land between that line and the Mississippi River, bounded on the south by latitude 31 degrees north and on the north by the Yazoo River. The commissioners agreed that settlers beyond the line would be removed within it and their cabins demolished.
+Article III dealt with land. The old line set by British officers and the Choctaw, running parallel to the Mississippi, was to be retraced and marked in the presence of two Choctaw representatives. The Choctaw were recorded as relinquishing "all their right, title and pretension" to the land between that line and the Mississippi River, bounded on the south by latitude 31 degrees north and on the north by the Yazoo River. The commissioners agreed that settlers beyond the line would be removed within it and their cabins demolished.
 
 For these concessions the United States gave goods worth $2,000 at signing and promised three sets of blacksmith's tools. A later Choctaw cession, at Mount Dexter in 1805, has its own record in the atlas.

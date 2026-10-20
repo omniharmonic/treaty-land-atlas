@@ -15,6 +15,6 @@ On August 13, 1803, at Vincennes, William Henry Harrison, governor of Indiana Te
 
 In Article I the Kaskaskia "relinquish and cede to the United States all the lands in the Illinois country" they had held or could rightfully claim. They kept about 350 acres near the town of Kaskaskia, which an act of Congress in 1791 had secured to them. They also kept the right to locate another 1,280 acres inside the ceded area. Both tracts were to "remain to them forever."
 
-In Article II the United States promised to take the tribe under its "care and patronage" and protect it as it did its own citizens. The Kaskaskia agreed not to make war on any other tribe or nation without U.S. approval. Article III raised their annuity to $1,000. It promised a house for the chief, a fenced field of up to 100 acres, $100 a year for seven years toward a Catholic priest, and $300 toward a church. A further $580 was paid or assured for needed articles and to relieve the tribe's debts.
+In Article II the United States promised to take the tribe under its "care and patronage" and protect it as it did its own citizens. The Kaskaskia were bound by the treaty not to make war on any other tribe or nation without U.S. approval. Article III raised their annuity to $1,000. It promised a house for the chief, a fenced field of up to 100 acres, $100 a year for seven years toward a Catholic priest, and $300 toward a church. A further $580 was paid or assured for needed articles and to relieve the tribe's debts.
 
 The text calls this package "a full and ample compensation."

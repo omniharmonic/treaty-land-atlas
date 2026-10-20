@@ -17,4 +17,4 @@ Article 1 deals with settlers. People who settled on the diminished reserve betw
 
 Article 2 records that the tribe, wishing to thank missionary and teacher Thomas S. Huffaker, asked the Secretary to convey him the half-section on which he had lived since 1851, if he paid the appraised value at not less than $1.75 an acre.
 
-The Kansa chiefs agreed to Senate amendments on February 26, 1863. The treaty was proclaimed March 16, 1863.
+The Kansa chiefs were bound by the treaty to Senate amendments on February 26, 1863. The treaty was proclaimed March 16, 1863.

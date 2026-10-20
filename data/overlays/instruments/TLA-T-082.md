@@ -2,7 +2,7 @@
 id: "TLA-T-082"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1816 the Ottawa, Chippewa and Potawatomi gave up claims to part of the 1804 Sauk and Fox cession and ceded a Chicago-area tract."
+headline: "In 1816 the Ottawa, Chippewa and Potawatomi were recorded as giving up claims to part of the 1804 Sauk and Fox cession and were recorded as ceding a Chicago-area tract."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State Tribal Treaties Database text records an ordinary signed treaty with stated payments and no mention of coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "rewritten"
 ---
 On August 24, 1816, three U.S. commissioners, Ninian Edwards, William Clark and Auguste Chouteau, signed a "treaty of peace, friendship, and limits" at St. Louis. The other side was the chiefs and warriors of the united Ottawa, Chippewa and Potawatomi living on the Illinois and Milwaukee rivers and the southwestern parts of Lake Michigan.
 
-The preamble says "a serious dispute" had for some time existed over the right to part of the lands the Sacs and Foxes ceded to the United States on November 3, 1804. In Article 1 the three nations relinquished "all their right, claim, and title" to the part of that cession south of a due west line from the southern end of Lake Michigan to the Mississippi. They also ceded a separate tract described from the Fox River of Illinois, around the Chicago portage, to the Kankakee and Illinois rivers. They could hunt and fish on it while it remained U.S. property.
+The preamble says "a serious dispute" had for some time existed over the right to part of the lands the Sacs and Foxes were recorded as ceding to the United States on November 3, 1804. In Article 1 the three nations were recorded as relinquishing "all their right, claim, and title" to the part of that cession south of a due west line from the southern end of Lake Michigan to the Mississippi. They were also recorded as ceding a separate tract described from the Fox River of Illinois, around the Chicago portage, to the Kankakee and Illinois rivers. They could hunt and fish on it while it remained U.S. property.
 
 In Article 2 the United States delivered "a considerable quantity of merchandise" and agreed to pay goods worth $1,000 a year for twelve years. It also relinquished "to the said tribes" the part of the 1804 Sauk and Fox cession north of that line. It excepted three leagues square at the mouth of the Wisconsin River and other tracts the President might choose to reserve, up to five leagues square in all.
 

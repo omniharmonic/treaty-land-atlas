@@ -2,7 +2,7 @@
 id: "TLA-T-263"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1853 the Rogue River tribe ceded the upper Rogue Valley at Table Rock for $60,000 and a temporary reserve."
+headline: "In 1853 the Rogue River tribe was recorded as ceding the upper Rogue Valley at Table Rock for $60,000 and a temporary reserve."
 note: "The Siletz history's \"forced to sign\" wording and its 15 million acre figure refer to all seven treaties it describes, not this one alone."
 how: "treaty_under_pressure"
 how_basis: "The Confederated Tribes of Siletz Indians' history describes a cease-fire after open warfare and says its ancestors were \"forced to sign\" seven treaties."
@@ -12,7 +12,7 @@ sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-rogue-r
 verdict: "rewritten"
 promises: [{"article": "Art. 2", "promise": "Rogue River tribe to occupy a tract near Table Rock temporarily until a permanent home was selected.", "kept": "partly", "evidence_url": "https://ctsi.nsn.us/the-end-of-wars-removal/", "evidence_quote": "the Table Rock Reservation could not be considered for a permanent reservation"}]
 ---
-On September 10, 1853, Joel Palmer, superintendent of Indian affairs, and Samuel H. Culver, Indian agent, signed a treaty at Table Rock near the Rogue River in Oregon Territory. The other parties were Jo-aps-er-ka-har, principal chief, two subordinate chiefs and other headmen of the Rogue River tribe. In Article 1 the tribe ceded all its right, title and claim to lands bounded by lines running from near the mouth of Applegate Creek to the Siskiyou and Cascade ranges. The treaty states no acreage. In Article 2 they could occupy a tract near the Table Rocks temporarily as an Indian reserve until a permanent home was chosen by the President.
+On September 10, 1853, Joel Palmer, superintendent of Indian affairs, and Samuel H. Culver, Indian agent, signed a treaty at Table Rock near the Rogue River in Oregon Territory. The other parties were Jo-aps-er-ka-har, principal chief, two subordinate chiefs and other headmen of the Rogue River tribe. In Article 1 the tribe was recorded as ceding all its right, title and claim to lands bounded by lines running from near the mouth of Applegate Creek to the Siskiyou and Cascade ranges. The treaty states no acreage. In Article 2 they could occupy a tract near the Table Rocks temporarily as an Indian reserve until a permanent home was chosen by the President.
 
 In Article 3 the United States agreed to pay $60,000. Fifteen thousand dollars was kept to pay for white settlers' property destroyed in the late war. Another $5,000 was for goods and improvements. The remaining $40,000 was to be paid in sixteen annual installments of $2,500. Article 4 promised dwellings for three chiefs and equal-value improvements at any new reserve. The treaty was ratified on April 12, 1854 and proclaimed on February 5, 1855.
 

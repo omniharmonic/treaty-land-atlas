@@ -2,7 +2,7 @@
 id: "TLA-T-109"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "The Chippewa ceded a large part of central Michigan's Saginaw region, keeping reservations, for cash, annuities and services."
+headline: "The Chippewa were recorded as ceding a large part of central Michigan's Saginaw region, keeping reservations, for cash, annuities and services."
 note: "The six million acre figure is the amount Lewis Cass proposed to buy, according to a 1977 Michigan State atlas; the treaty itself states no total."
 how: "treaty_negotiated"
 how_basis: "The statute text and the MSU geography page describe a negotiated treaty, though the MSU page notes that liquor and soldiers were part of the negotiation setting."
@@ -11,7 +11,7 @@ cautions: "The MSU page is a 1977 atlas text and its language is dated; only its
 sources: [{"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg203.pdf", "title": "Treaty with the Chippewas, 1819, 7 Stat. 203 (U.S. Statutes at Large, govinfo.gov)", "quote": "One tract, of forty thousand acres, on the west side of the Saginaw river, to be hereafter located."}, {"url": "https://www.govinfo.gov/content/pkg/STATUTE-7/pdf/STATUTE-7-Pg203.pdf", "title": "Treaty with the Chippewas, 1819, 7 Stat. 203 (U.S. Statutes at Large, govinfo.gov)", "quote": "the sum of one thousand dollars in silver"}, {"url": "https://project.geo.msu.edu/geogmich/Indian_cessions.html", "title": "Indian Cessions (Geography of Michigan, Michigan State University, from the Atlas of Michigan)", "quote": "The tract Cass proposed to buy from the Indians consisted of some six million acres"}, {"url": "https://project.geo.msu.edu/geogmich/Indian_cessions.html", "title": "Indian Cessions (Geography of Michigan, Michigan State University, from the Atlas of Michigan)", "quote": "ambitious to secure lands for settlement or speculation"}]
 verdict: "fixed"
 ---
-On September 24, 1819, Lewis Cass, commissioner for the United States and governor of Michigan Territory, signed a treaty at Saginaw with the Chippewa nation. The Chippewa ceded a large area in Article 1. It starts at the Indian boundary line six miles south of the "base line," runs west sixty miles, then in a direct line to the head of the Thunder Bay River and down it to its mouth. From there it runs northeast to the boundary with Upper Canada and back along the 1807 Treaty of Detroit line.
+On September 24, 1819, Lewis Cass, commissioner for the United States and governor of Michigan Territory, signed a treaty at Saginaw with the Chippewa nation. The Chippewa were recorded as ceding a large area in Article 1. It starts at the Indian boundary line six miles south of the "base line," runs west sixty miles, then in a direct line to the head of the Thunder Bay River and down it to its mouth. From there it runs northeast to the boundary with Upper Canada and back along the 1807 Treaty of Detroit line.
 
 Article 2 reserved about fifteen tracts for the Chippewa, such as 8,000 acres on the Au Sable River and 40,000 acres on the west side of the Saginaw River. Article 3 reserved 640 acres each for named individuals. Article 4 set an annuity of $1,000 in silver forever. Article 5 let the Chippewa hunt on the ceded land and make sugar there while it stayed U.S. property. Article 8 promised a blacksmith, farming tools and cattle.
 

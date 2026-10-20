@@ -2,7 +2,7 @@
 id: "TLA-T-206"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1836 the Wyandot in Ohio ceded a five-mile strip of their Crawford County reservation and two small tracts for sale."
+headline: "In 1836 the Wyandot in Ohio were recorded as ceding a five-mile strip of their Crawford County reservation and two small tracts for sale."
 how: "treaty_negotiated"
 how_basis: "The OSU treaty text records an agreement with chiefs acting for the tribe, with sale proceeds returning to the tribe and a right to halt the sale; no coercion is described."
 confidence: "high"

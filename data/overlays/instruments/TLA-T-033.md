@@ -12,7 +12,7 @@ verdict: "new"
 ---
 On 30 June 1802 the sachems, chiefs and warriors of the Seneca nation signed an indenture at Buffalo Creek, New York. The other side was nine men of Amsterdam, in the republic of Batavia, acting through their agent and attorney, Joseph Ellicott. John Taylor sat as the commissioner appointed by the President to hold the treaty. The indenture says the full treaty council was held on 13 June 1802.
 
-The Seneca agreed to "exchange, cede, and forever quit claim" to the Amsterdam owners certain lands in Ontario County, New York. These were part of the lands the Seneca had reserved at a 1797 treaty on the Genesee River. The description begins at the mouth of Eighteen Mile Creek and runs along Lake Erie to Cattaraugus Creek, with strips one mile from the lake, and it takes in a second piece at Cattaraugus.
+The Seneca were bound by the treaty to "exchange, cede, and forever quit claim" to the Amsterdam owners certain lands in Ontario County, New York. These were part of the lands the Seneca had reserved at a 1797 treaty on the Genesee River. The description begins at the mouth of Eighteen Mile Creek and runs along Lake Erie to Cattaraugus Creek, with strips one mile from the lake, and it takes in a second piece at Cattaraugus.
 
 In return the Amsterdam owners ceded back to the Seneca a described tract starting at the mouth of Cattaraugus Creek. They kept the right of preemption, meaning the first right to buy if the Seneca later sold it. The tract is to be held by the Seneca in the same way as the lands reserved in 1797.
 

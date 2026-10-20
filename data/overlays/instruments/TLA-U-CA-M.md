@@ -2,7 +2,7 @@
 id: "TLA-U-CA-M"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Camp Fremont in 1851, six tribes gave up land claims for a Merced-Tuolumne district; the Senate never ratified it."
+headline: "At Camp Fremont in 1851, six tribes were recorded as giving up land claims for a Merced-Tuolumne district; the Senate never ratified it."
 note: "Sources give July 2 or July 8, 1852 as the date the Senate rejected it."
 how: "unratified"
 how_basis: "The OSU treaty page marks it Unratified, and Prologue says the Senate rejected all 18 California treaties."
@@ -11,7 +11,7 @@ cautions: "Prologue gives July 2, 1852 for the Senate's rejection; OSU cites the
 sources: [{"url": "https://treaties.okstate.edu/treaties/treaty-with-the-si-yan-te-etc-1851-21822", "title": "Tribal Treaties Database (Oklahoma State University): Treaty with the Si-yan-te, etc., 1851", "quote": "hereby severally relinquish, and forever quit claim to the government of the United States all the right, title, claim, or interest"}, {"url": "https://www.archives.gov/publications/prologue/2013/fall-winter/treaties.pdf", "title": "National Archives, Prologue: The Secret Treaties With California's Indians (Larisa K. Miller, 2013)", "quote": "the Senate rejected the treaties and, following Senate rules, imposed an injunction of secrecy on them"}, {"url": "https://www.archives.gov/publications/prologue/2013/fall-winter/treaties.pdf", "title": "National Archives, Prologue: The Secret Treaties With California's Indians (Larisa K. Miller, 2013)", "quote": "The case was decided in favor of the Indians."}]
 verdict: "fixed"
 ---
-On March 19, 1851, at Camp Fremont near the Little Mariposa River, commissioners Redick McKee, George W. Barbour and Oliver M. Wozencraft made a treaty with the chiefs, captains and head men of the Si-yan-te, Po-to-yun-te, Co-co-noon, Apang-as-se, Aplache and A-wal-a-che tribes. In Article 2 the tribes agreed to "severally relinquish, and forever quit claim" to the United States all right, title, claim or interest to any lands in California or the United States. Article 3 set aside the district lying between the Merced and Tuolumne rivers.
+On March 19, 1851, at Camp Fremont near the Little Mariposa River, commissioners Redick McKee, George W. Barbour and Oliver M. Wozencraft made a treaty with the chiefs, captains and head men of the Si-yan-te, Po-to-yun-te, Co-co-noon, Apang-as-se, Aplache and A-wal-a-che tribes. In Article 2 the tribes were bound by the treaty to "severally relinquish, and forever quit claim" to the United States all right, title, claim or interest to any lands in California or the United States. Article 3 set aside the district lying between the Merced and Tuolumne rivers.
 
 Article 4 promised 100 head of good beef steers and 100 sacks or barrels of flour in each of 1851 and 1852. Article 5 promised, after ratification, further goods and supplies.
 

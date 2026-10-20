@@ -17,4 +17,4 @@ Article I declared the Holston treaty in full force, including its boundaries. A
 
 In Article III the United States promised to pay the Cherokee for their relinquishments of land under the 1785 Hopewell treaty and the Holston treaty. It did so by agreeing, in place of all earlier sums, to provide goods suited to their use worth five thousand dollars a year.
 
-In Article IV the Cherokee agreed that for each horse stolen from white settlers by a Cherokee and not returned within three months, fifty dollars would be deducted from that annuity. The new articles became permanent additions to Holston once the President and the Senate ratified them. The treaty was proclaimed on 21 January 1795.
+In Article IV the Cherokee signed terms providing that for each horse stolen from white settlers by a Cherokee and not returned within three months, fifty dollars would be deducted from that annuity. The new articles became permanent additions to Holston once the President and the Senate ratified them. The treaty was proclaimed on 21 January 1795.

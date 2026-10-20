@@ -2,7 +2,7 @@
 id: "TLA-T-048"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "At Tellico in October 1805 the Cherokee ceded to the United States land north of the Duck River, east to the Tennessee River, for $14,000 and a $3,000 annuity."
+headline: "At Tellico in October 1805 the Cherokee were recorded as ceding to the United States land north of the Duck River, east to the Tennessee River, for $14,000 and a $3,000 annuity."
 note: "The Tennessee Encyclopedia calls this the \"third treaty of Tellico\"."
 how: "treaty_negotiated"
 how_basis: "The OSU text records a negotiated cession for $14,000 and an annuity, and the Tennessee Encyclopedia describes it without noting coercion."

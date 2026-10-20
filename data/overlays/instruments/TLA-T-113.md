@@ -2,7 +2,7 @@
 id: "TLA-T-113"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1820 the Wea ceded the lands reserved in their 1818 treaty for $5,000 in money and goods, contemplating a move from the Wabash."
+headline: "In 1820 the Wea were recorded as ceding the lands reserved in their 1818 treaty for $5,000 in money and goods, contemplating a move from the Wabash."
 how: "treaty_negotiated"
 how_basis: "The Oklahoma State treaty text records a signed cession for a stated payment; the tribe is described as contemplating removal, with no mention of coercion."
 confidence: "high"
@@ -12,7 +12,7 @@ verdict: "fixed"
 ---
 On August 11, 1820, Benjamin Parke, a commissioner for the United States, signed a treaty at Vincennes with the chiefs, warriors and head men of the Wea.
 
-In the first article the Wea ceded and relinquished "all the lands reserved by the second article" of their treaty with the United States made at Saint Mary's on October 2, 1818. In other words, they gave up the land they had held back in that earlier treaty. The United States paid "five thousand dollars, in money and goods," which both sides considered "a full compensation for the cession and relinquishment."
+In the first article the Wea were recorded as ceding and relinquishing "all the lands reserved by the second article" of their treaty with the United States made at Saint Mary's on October 2, 1818. In other words, they were recorded as giving up the land they had held back in that earlier treaty. The United States paid "five thousand dollars, in money and goods," which both sides considered "a full compensation for the cession and relinquishment."
 
 The third article looks ahead. It says "it is contemplated by the said Tribe, to remove from the Wabash," and so the annuity secured to the Wea by the 1818 treaty would from then on be paid to them at Kaskaskia, in Illinois. An annuity is a yearly treaty payment.
 

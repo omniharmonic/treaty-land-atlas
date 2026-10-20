@@ -2,7 +2,7 @@
 id: "TLA-T-352"
 ai_assisted: true
 written_by: "narrative-wave-2026-10"
-headline: "In 1866 the Seminole Nation ceded its whole domain at fifteen cents an acre and took 200,000 acres of Creek land at fifty cents."
+headline: "In 1866 the Seminole Nation was recorded as ceding its whole domain at fifteen cents an acre and took 200,000 acres of Creek land at fifty cents."
 how: "treaty_under_pressure"
 how_basis: "The preamble says the Seminoles' Confederate treaty incurred liability of forfeiture of their lands, and the cession was made \"in compliance with the desire of the United States.\""
 confidence: "high"
@@ -13,6 +13,6 @@ promises: [{"article": "Art. 3", "promise": "Establish a $50,000 school fund and
 ---
 On March 21, 1866, in Washington, the Seminole Nation signed a new treaty with U.S. commissioners D. N. Cooley, Elijah Sells and Ely S. Parker. The preamble says the Seminoles had made a treaty with the "so-called Confederate States" on August 1, 1861. That treaty, it says, "incurred the liability of forfeiture of all lands and other property held by grant or gift of the United States." A treaty of peace was made at Fort Smith in 1865, in which the Seminoles revoked the Confederate treaty.
 
-In Article 3, "in compliance with the desire of the United States to locate other Indians and freedmen thereon," the Seminoles ceded their entire domain, estimated at 2,169,080 acres. The United States agreed to pay $325,362, at fifteen cents an acre. The United States had obtained the western half of the Creek Nation's lands, and granted the Seminoles 200,000 acres of it. The Seminoles were to pay fifty cents an acre, or $100,000, deducted from the payment. Article 2 gave persons of African descent among the Seminoles the rights of native citizens.
+In Article 3, "in compliance with the desire of the United States to locate other Indians and freedmen thereon," the Seminoles were recorded as ceding their entire domain, estimated at 2,169,080 acres. The United States agreed to pay $325,362, at fifteen cents an acre. The United States had obtained the western half of the Creek Nation's lands, and granted the Seminoles 200,000 acres of it. The Seminoles were to pay fifty cents an acre, or $100,000, deducted from the payment. Article 2 gave persons of African descent among the Seminoles the rights of native citizens.
 
 The Interior Department's testimony on the Five Tribes' Reconstruction treaties says the freedmen provisions differed in each. In Seminole Nation v. United States (1942) the Supreme Court noted that for 1867 to 1874 the United States paid only $16,902.80 of the $20,000 appropriated under Article 3's school fund. It said the Nation's right to the $3,097.20 deficiency was undisputed.

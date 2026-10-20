@@ -11,7 +11,7 @@ verdict: "new"
 ---
 The Menominee Indian Tribe of Wisconsin is a tribal government. The Wausau Pilot and Review reports that its sovereign status and federal recognition ended on April 30, 1961, under the federal termination policy, and were not restored until 1973. Congress passed the Menominee Restoration Act, Public Law 93-197, on December 22, 1973 (87 Stat. 770), according to the U.S. Code's notes.
 
-WBAY reports that after termination, the tribe sold thousands of acres to reduce its debts, including land that later became the Legend Lake development. The Wausau Pilot and Review says the tribe lost more than 5,000 acres to the development, with about 2,700 residential lots and a 1,300-acre artificial lake.
+WBAY reports that after termination, the tribe was recorded as selling thousands of acres to reduce its debts, including land that later became the Legend Lake development. The Wausau Pilot and Review says the tribe lost more than 5,000 acres to the development, with about 2,700 residential lots and a 1,300-acre artificial lake.
 
 On June 23, 2026, the Wisconsin Supreme Court ruled 4-3 that the Legend Lake Property Owners Association cannot sue to block the tribe from buying back land on its reservation. WBAY says the Court found that Congress had not abrogated the tribe's sovereign immunity and that the tribe had not waived it. Justice Susan Crawford wrote that "Tribal sovereign immunity is the rule, not the exception." The suit began in 2018 after a tribal member, acting for the tribe, bought parcels for transfer to federal trust.
 
