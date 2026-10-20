@@ -62,9 +62,9 @@ A map that shows only the federal record therefore risks legitimizing dispossess
    - TREC calls it "never legally ratified" (PSL TREC p. 174) and "unratified" (PSL TREC pp. 236, 337).
    - Correct framing: ratified with amendment, never proclaimed, text never printed in the Statutes at Large (11 Stat. 749 is a stub). Kappler says every nation but the Crow assented; another version says the Crow assented in 1854. Courts and the ICC treated the treaty as in force.
 
-3. **Land north of the South Platte (Denver, Boulder, Fort Collins, Greeley) is a contested cession, not "never ceded".**
+3. **Land north and west of the South Platte (Boulder, Fort Collins, Greeley, and the part of the Denver area across the river from the 1858 townsites) is a contested cession, not "never ceded".**
    - *VERIFY OVERRIDE (verify-plains s.3).* It was ceded on paper three times: Fort Wise 1861, Little Arkansas 1865 and the 1868 Northern treaty.
-   - It is contested by the Northern Cheyenne and Northern Arapaho, and by federal officials at the time. The Commissioner of Indian Affairs' 1862 report called the cession "imperfect and indefinite as to the extent of cession" (PSL TREC p. 263; exact words unresolved). U.S. Attorney S. E. Browne opined in 1863 that settlement there had no legal basis (PSL TREC pp. 184-185, 271).
+   - Federal officials at the time questioned it, and the 2024 TREC report contests it. (No Northern Cheyenne or Northern Arapaho government statement on it was found in the K2 pass; it is a question for their review.) The Commissioner of Indian Affairs' 1862 report called the cession "imperfect and indefinite as to the extent of cession" (PSL TREC p. 263; exact words unresolved). U.S. Attorney S. E. Browne opined in 1863 that settlement there had no legal basis (PSL TREC pp. 184-185, 271).
    - The atlas has no Royce area tied to the May 10, 1868 Northern treaty (15 Stat. 655).
 
 4. **Fort Wise (1861) was signed by ten Southern chiefs after the Cheyenne Council of 44 refused.**
@@ -277,7 +277,9 @@ Each entry gives: (a) the federal record; (b) what Native and other sources add;
   - Do not apply `senate_amended_no_consent`.
 - **(e) Royce:** 426, 477.
 
-### 5.3 The South Platte question (Denver, Boulder, Fort Collins, Greeley)
+### 5.3 The South Platte question (Boulder, Fort Collins, Greeley and part of the Denver area)
+
+Most of Denver, including the 1858 Denver and Auraria townsites, lies south and east of the South Platte, so it is outside the north and west part (426-N).
 
 - **(a) Federal record.** Paper cessions:
   - 1861: Southern signers.
@@ -288,11 +290,11 @@ Each entry gives: (a) the federal record; (b) what Native and other sources add;
   - Browne's 1863 opinion and Dole's brief agreement and reversal (PSL TREC pp. 184-185, 271, 483-484).
   - Unrau: "the cession clauses of the Fort Wise agreement were of little value as a means of nullifying tribal claims to the upper South Platte basin" (PSL TREC p. 181).
   - The 1868 Northern treaty was signed by four Council of 44 chiefs and rejected by most Northern people (PSL TREC p. 290). Its reservations were never provided (PSL TREC pp. 285-286, 300-301).
-  - Northern Cheyenne Rec. 2 and Northern Arapaho Rec. 1-3 assert the Front Range was "legally titled" to them and never ceded (PSL TREC pp. 199-201, 353-355).
-- **(c) Verification.** VERIFY OVERRIDE (verify-plains s.3). "Never ceded" is NOT SUPPORTED as a statement of the legal record. The correct framing is "ceded on paper (Fort Wise 1861, Little Arkansas 1865, 1868 Northern treaty), contested by the Northern Cheyenne and Northern Arapaho and by 1862-63 federal officials." The Browne letter is confirmed by search only.
+  - TREC's recommendations for the Northern Cheyenne (Rec. 2) and Northern Arapaho (Rec. 1-3) assert the Front Range was "legally titled" to them and never ceded (PSL TREC pp. 199-201, 353-355). These are the commission's recommendations, not resolutions of those tribal governments.
+- **(c) Verification.** VERIFY OVERRIDE (verify-plains s.3). "Never ceded" is NOT SUPPORTED as a statement of the legal record. The correct framing is "ceded on paper (Fort Wise 1861, Little Arkansas 1865, 1868 Northern treaty), questioned by 1862-63 federal officials and contested by the 2024 TREC report." The Browne letter is confirmed by search only.
 - **(d) Recommendation.**
   - Split 426 at the South Platte. North part: `contested`, flags `excluded_party`, `signatory_defect`, `trespass_before_cession`.
-  - Label: "Ceded on paper, but contested. The Northern nations and the 2024 TREC report hold that this land was never validly ceded."
+  - Label: "Ceded on paper, but contested. The 2024 TREC report states that this land was never validly ceded."
   - Add TLA-T-371 (15 Stat. 655) as an instrument linked to 426.
 - **(e) Royce:** 426.
 

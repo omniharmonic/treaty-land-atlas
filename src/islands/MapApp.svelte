@@ -731,6 +731,56 @@
           attributionControl: false,
         });
         map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
+        // Alaska and Hawaiʻi have no Royce cession record, so the default view leaves them off
+        // screen; these buttons bring them in (and back to the lower 48)
+        const regions: [string, string, [[number, number], [number, number]]][] = [
+          [
+            '48',
+            'Show the lower 48 states',
+            [
+              [-125, 24],
+              [-66, 50],
+            ],
+          ],
+          [
+            'AK',
+            'Show Alaska',
+            [
+              [-170, 51],
+              [-129, 72],
+            ],
+          ],
+          [
+            'HI',
+            'Show Hawaiʻi',
+            [
+              [-161, 18.8],
+              [-154.7, 22.4],
+            ],
+          ],
+        ];
+        map.addControl(
+          {
+            onAdd(m: MapLibre) {
+              const box = document.createElement('div');
+              box.className = 'maplibregl-ctrl maplibregl-ctrl-group region-jump';
+              for (const [label, title, bounds] of regions) {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.textContent = label;
+                b.title = title;
+                b.setAttribute('aria-label', title);
+                b.addEventListener('click', () =>
+                  m.fitBounds(bounds, { padding: 24, duration: 600 }),
+                );
+                box.appendChild(b);
+              }
+              return box;
+            },
+            onRemove() {},
+          },
+          'top-right',
+        );
         map.addControl(
           new AttributionControl({
             // on a phone the credits fold behind the (i) button instead of covering the map
@@ -2411,6 +2461,10 @@
       background: var(--rule-strong);
       margin: 0 auto var(--space-3);
     }
+  }
+  :global(.region-jump button) {
+    font: 600 11px/1 var(--sans);
+    color: var(--ink, #222);
   }
   .presets {
     position: absolute;
