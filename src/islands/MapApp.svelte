@@ -361,15 +361,26 @@
     return () => controller.abort();
   });
 
+  const phone = () => typeof matchMedia !== 'undefined' && matchMedia('(max-width: 899px)').matches;
+  // on a phone the panel opens as a bottom sheet over the lower part of the map
+  const sheetOpen = $derived(!!(selectedEvent || selectedSite));
   $effect(() => {
-    const id = selectedEvent?.id;
+    const id = selectedEvent?.id ?? selectedSite?.id;
     if (!id) return;
     tick().then(() => {
-      if (selectedEvent?.id !== id || !rail) return;
+      if ((selectedEvent?.id ?? selectedSite?.id) !== id || !rail) return;
       rail.scrollTop = 0;
-      if (matchMedia('(max-width: 899px)').matches) rail.scrollIntoView({ block: 'start' });
+      if (phone()) container?.scrollIntoView({ block: 'start' });
     });
   });
+  /** Map padding that keeps a selection clear of the phone sheet. */
+  function sheetPadding() {
+    if (!phone() || !container) return 60;
+    const overlap = Math.max(0, container.clientHeight - innerHeight * 0.45);
+    return { top: 60, left: 30, right: 30, bottom: Math.round(overlap + 24) };
+  }
+  // desktop hover: a one-line summary of the area under the pointer (all of it is in the panel too)
+  let tip = $state<{ x: number; y: number; text: string } | null>(null);
 
   function showHomelands(list: Homeland[]) {
     if (!map || !mapReady) return;
@@ -532,6 +543,8 @@
   function select(id: string | null, fly = false) {
     s.sel = id;
     under = [];
+    tip = null;
+    if (id && phone()) fly = true;
     if (id && playing) togglePlay();
     if (!id)
       tick().then(() => {
@@ -545,6 +558,7 @@
         map.easeTo({
           center: [site.lon, site.lat],
           zoom: Math.max(map.getZoom(), 5),
+          padding: sheetPadding() as never,
           duration: reducedMotion ? 0 : 600,
         });
       else if (b)
@@ -553,7 +567,7 @@
             [b[0], b[1]],
             [b[2], b[3]],
           ],
-          { padding: 60, maxZoom: 7, duration: reducedMotion ? 0 : 600 },
+          { padding: sheetPadding(), maxZoom: 7, duration: reducedMotion ? 0 : 600 },
         );
     }
   }
@@ -976,6 +990,27 @@
               'icon-padding': 11,
             },
           });
+          if (matchMedia('(hover: hover)').matches) {
+            map.on(
+              'mousemove',
+              'status-fill',
+              (e: MapMouseEvent & { features?: { properties: Record<string, unknown> }[] }) => {
+                const p = e.features?.[0]?.properties;
+                const id = p ? String(p['id']) : '';
+                if (!id || phone()) return (tip = null);
+                const st = stories[id];
+                const ev = events.find((x) => x.id === id);
+                const n = k1[id]?.flags.length ?? 0;
+                const year = ev?.t_first ? Math.floor(ev.t_first) : null;
+                tip = {
+                  x: e.point.x,
+                  y: e.point.y,
+                  text: `${STATUS_LABEL[st?.land_status ?? 'taken_no_instrument']}${year ? `, ${year}` : ''}${n ? `; ${n} consent problem${n === 1 ? '' : 's'}` : ''}`,
+                };
+              },
+            );
+            map.on('mouseleave', 'status-fill', () => (tip = null));
+          }
           const clickable = ['massacre-points', 'status-fill'];
           for (const layer of clickable) {
             map.on(
@@ -1061,9 +1096,16 @@
       </div>
     {/if}
     {#if loadError}<p class="fallback sans" role="alert">{loadError}</p>{/if}
+    {#if tip}<p
+        class="tip sans"
+        style={`left: ${tip.x + 14}px; top: ${tip.y + 14}px`}
+        aria-hidden="true"
+      >
+        {tip.text}
+      </p>{/if}
   </div>
 
-  <aside class="rail" bind:this={rail} aria-label="Map explorer">
+  <aside class="rail" class:sheet={sheetOpen} bind:this={rail} aria-label="Map explorer">
     {#if selectedSite}
       {@const m = selectedSite}
       <div class="rail-heading">
@@ -1578,7 +1620,8 @@
         </li>
         <li>
           <span class="edge dotted"></span><span
-            >Green dots (“Today”): reserved in 1894, to compare with what is held now</span
+            >Green dots: a promise known only from oral history, a single report, or disputed; in
+            “Today”, land reserved in 1894, to compare with what is held now</span
           >
         </li>
         <li>
@@ -2307,6 +2350,43 @@
     background: var(--ls-casing);
     margin: 0.4em var(--space-2) 0 0.05rem;
     flex: none;
+  }
+  .tip {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    margin: 0;
+    max-width: 18rem;
+    padding: 4px 10px;
+    font-size: var(--s-2);
+    background: var(--sheet);
+    color: var(--ink);
+    border: 1px solid var(--rule-strong);
+    border-radius: 6px;
+  }
+  @media (max-width: 899px) {
+    .rail.sheet {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 55dvh;
+      overflow-y: auto;
+      z-index: 20;
+      border-top: 1px solid var(--rule-strong);
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 -6px 24px rgb(0 0 0 / 0.18);
+      padding-top: var(--space-3);
+    }
+    .rail.sheet::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--rule-strong);
+      margin: 0 auto var(--space-3);
+    }
   }
   .presets {
     position: absolute;

@@ -88,14 +88,18 @@ test('clicking the actual map reveals a land record without hunting through cont
   await expect(page.locator('#year')).toBeVisible();
 });
 
-test('mobile selection brings the record into view and can return to the map', async ({ page }) => {
+test('mobile selection opens a bottom sheet under the map and can return to the map', async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/map/#y=1868&sel=geo-royce-261');
   await expect(page.locator('#detail .record-reference')).toContainText('261');
+  // the sheet covers the lower part of the screen; the map stays visible above it
   await expect
     .poll(async () => {
-      const box = await page.locator('#detail').boundingBox();
-      return !!box && box.y >= -1 && box.y < 100;
+      const sheet = await page.locator('.rail.sheet').boundingBox();
+      const map = await page.locator('.map').boundingBox();
+      return !!sheet && !!map && sheet.y > 300 && sheet.y < 844 && map.y >= -1 && map.y < 100;
     })
     .toBe(true);
   await page.getByRole('button', { name: 'Back to the map' }).click();

@@ -377,6 +377,9 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
           research?.sub_areas.some((x) => x.land_status === 'contested');
         const refused = research?.flags.some((x) => x.flag === 'payment_refused');
         if (contested || refused) f.properties['bd'] = contested ? 'contested' : 'payment_refused';
+        // how well the promise is sourced: an oral or contested promise gets a dotted outline
+        const promise = research?.flags.find((x) => x.flag === 'promise_broken');
+        if (promise) f.properties['pe'] = promise.evidence;
       }
       // draw order: the record the United States relies on now on top (t0 ascending; reservations
       // never lost, 9999, above the cessions around them), small later areas above large earlier ones

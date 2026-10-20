@@ -261,6 +261,19 @@ export const statusVar = (s: string) =>
   `--ls-${(LS_TO_CLASS as Record<string, DisplayClass>)[s] ?? (CLASS_ORDER.includes(s as DisplayClass) ? s : 'none')}`;
 export const classOf = (s: string): DisplayClass =>
   (LS_TO_CLASS as Record<string, DisplayClass>)[s] ?? 'none';
+/** The older cause vocabulary (`how`, kept for prose and story moments) on the land-status classes. */
+export const HOW_TO_CLASS: Record<string, DisplayClass> = {
+  treaty: 'ceded',
+  pressure: 'ceded',
+  removal: 'ceded',
+  unratified: 'unrat',
+  congress: 'statute',
+  executive: 'eo',
+  unknown: 'none',
+};
+/** CSS fill and family-ink values for a land status, for SVG shapes and swatches on any page. */
+export const statusFill = (s: string) => `var(${statusVar(s)})`;
+export const statusInk = (s: string) => `var(--fam-${FAMILY[classOf(s)]}-ink)`;
 
 /** Never counted as given, in any view: no cession on the record. */
 export const NO_LAWFUL_CESSION: ReadonlySet<string> = new Set([
@@ -567,12 +580,16 @@ export function promiseFilterExpr(): E {
     ],
   ] as unknown as E;
 }
+/** Evidence levels drawn as a dotted (weaker) mark: hatch, massacre ring, promise outline. */
+export const WEAK_EVIDENCE = ['oral_history', 'reported', 'disputed'];
+/** Promise outline: solid; dotted for an oral or contested promise (pe) and for "Today". */
 export const promiseDashExpr = (): E =>
   [
-    'match',
-    ['global-state', 'preset'],
-    'today',
+    'case',
+    ['==', ['global-state', 'preset'], 'today'],
     ['literal', [1, 1.6]],
+    ['in', ['coalesce', get('pe'), ''], ['literal', WEAK_EVIDENCE]],
+    ['literal', [1.5, 2.5]],
     ['literal', [1, 0]],
   ] as unknown as E;
 /** Later change outline in the honored view: lost after the cut, by the slider year. */
