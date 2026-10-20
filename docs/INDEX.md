@@ -57,6 +57,13 @@ Institutions and context
 | `D3-land-statistics.md` | Acreage, trust land, recognition and Buy-Back statistics with source disagreements |
 | `D4-glossary.md` | Plain-language and legal glossary |
 
+Beyond the federal record
+| File | What it is |
+|---|---|
+| `K1-beyond-the-federal-record.md` | Where the federal record (Royce, Kappler, NARA) misleads: land never ceded or taken with no instrument, unratified treaties, duress, hostages, signatory defects, massacres, promised land, ICC payment-for-land; a proposed land-status classification; 30 instrument case files; corrections to atlas data. Built on a full reading of the People of the Sacred Land TREC report (2024) |
+| `K1/data/` | `beyond-federal-record-findings.csv` (682 sourced findings with verification status) and `royce-status-proposals.csv` (100 Royce areas with a proposed status and flags) |
+| `K1/notes/` | Per-chapter notes on the PSL TREC report (with page cites), national research notes, two verification reports, and the research brief |
+
 Land Back and giving
 | File | What it is |
 |---|---|
@@ -91,6 +98,7 @@ Graph
 | `H3-storage-and-build-pipeline.md` | Flat files in git, builder, validation, emitted graph and graph-lite |
 | `H4-parachute-templates.md` | Note templates for the owner's Parachute vault |
 | `H5-graph-exploration-paths.md` | Example paths through the graph for readers and tours |
+| `K1-map-implementation-survey.md` | How the map, pipeline and schema would carry the K1 land-status classification: files, functions, property names, legend wording, tests, and every overstating phrase by file and line |
 
 Product
 | File | What it is |
