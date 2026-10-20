@@ -162,6 +162,33 @@ export const CENSUS_AIANNH = {
   url: 'https://www2.census.gov/geo/tiger/GENZ2025/shp/cb_2025_us_aiannh_500k.zip',
 };
 
+/** Census Cartographic Boundary nation outline, 1:20,000,000: the land mask for "no federal cession record". */
+export const CENSUS_NATION = {
+  vintage: '2023',
+  url: 'https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_nation_20m.zip',
+};
+
+async function fetchCensusNation(today: string) {
+  const dir = join(RAW_DIR, 'census-nation');
+  mkdirSync(dir, { recursive: true });
+  const url = process.env.CENSUS_NATION_URL ?? CENSUS_NATION.url;
+  console.log(`Fetching ${url} ...`);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  const buf = Buffer.from(await res.arrayBuffer());
+  const file = basename(new URL(url).pathname);
+  writeFileSync(join(dir, file), buf);
+  record({
+    source: 'census-nation',
+    file,
+    url,
+    bytes: buf.length,
+    sha256: sha256(buf),
+    retrieved: today,
+  });
+  console.log(`  ${buf.length} bytes`);
+}
+
 async function fetchCensus(today: string) {
   const dir = join(RAW_DIR, 'census-aiannh');
   mkdirSync(dir, { recursive: true });
@@ -207,14 +234,22 @@ export async function fetchCommand(args: string[]) {
   const today = process.env.SOURCE_DATE_EPOCH
     ? new Date(Number(process.env.SOURCE_DATE_EPOCH) * 1000).toISOString().slice(0, 10)
     : new Date().toISOString().slice(0, 10);
-  const sources = which === 'all' ? ['usfs', 'census'] : [which];
+  const sources = which === 'all' ? ['usfs', 'census', 'nation'] : [which];
   for (const s of sources) {
-    const id = s === 'usfs' ? 'usfs-royce' : s === 'census' ? 'census-aiannh' : s;
+    const id =
+      s === 'usfs'
+        ? 'usfs-royce'
+        : s === 'census'
+          ? 'census-aiannh'
+          : s === 'nation'
+            ? 'census-nation'
+            : s;
     try {
       if (dirFlag) fromDir(dirFlag, id);
       else if (id === 'usfs-royce') await fetchUsfs(today);
       else if (id === 'census-aiannh') await fetchCensus(today);
-      else throw new Error(`unknown source ${s} (use usfs or census)`);
+      else if (id === 'census-nation') await fetchCensusNation(today);
+      else throw new Error(`unknown source ${s} (use usfs, census or nation)`);
     } catch (err) {
       console.error(`\nCould not fetch ${id}: ${(err as Error).message}`);
       console.error(

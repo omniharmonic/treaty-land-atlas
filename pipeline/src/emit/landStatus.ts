@@ -43,7 +43,10 @@ export const FLAGS = [
 export type Flag = (typeof FLAGS)[number];
 
 /** Statuses under which the land never left the nation within the record (ends 1894). */
-export const NOT_LOST: ReadonlySet<LandStatus> = new Set(['promised_reserved', 'described_not_ceded']);
+export const NOT_LOST: ReadonlySet<LandStatus> = new Set([
+  'promised_reserved',
+  'described_not_ceded',
+]);
 /** Land lost with no lawful cession on the record: never shown as lawfully ceded, in any view. */
 export const NO_LAWFUL_CESSION: ReadonlySet<LandStatus> = new Set([
   'unratified_treaty_area',

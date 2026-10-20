@@ -69,7 +69,11 @@ function derivedLayers(): Record<string, string> {
   if (!existsSync(DERIVED)) return {};
   return Object.fromEntries(
     readdirSync(DERIVED)
-      .filter((f) => ['cessions.json', 'cession-events.json', 'today-aiannh.json'].includes(f))
+      .filter((f) =>
+        ['cessions.json', 'cession-events.json', 'today-aiannh.json', 'no-cession.json'].includes(
+          f,
+        ),
+      )
       .sort()
       .map((f) => [f.replace(/\.json$/, ''), join(DERIVED, f)]),
   );

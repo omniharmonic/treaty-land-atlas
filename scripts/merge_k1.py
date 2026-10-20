@@ -13,7 +13,8 @@ Inputs (docs/research/K1/data/):
   beyond-federal-record-findings.csv every finding, with its evidence level
   massacre-sites.csv                 editorial list of massacre sites: names as nations use them,
                                      category, link kind (preceded / enforced / followed), death ranges,
-                                     and lat/lon only where a research row names several places
+                                     lat/lon only where a research row names several places, and
+                                     show_quote=no where the verdict's quote is about something else
   verification/round<N>-<batch>.csv  verdicts per finding (finding_id, verification_status,
                                      verified_against, source_*, corrected_*); a later round
                                      overrides an earlier one, and a later batch file within a round
@@ -329,8 +330,10 @@ def main(argv=None):
                 problems.append(f"area {area}: unknown flag {flag!r}")
                 continue
             matching = [x for x in pv if flag in split_list(x["flags"])]
-            if matching and all(x["shown"] == "no" for x in matching):
-                unsupported_flags.append((area, flag, matching))
+            # every finding behind it was contradicted or not supported: never a flag
+            if (matching and all(x["shown"] == "no" for x in matching)) or (
+                not matching and pv and all(x["shown"] == "no" for x in pv)):
+                unsupported_flags.append((area, flag, matching or pv))
                 continue
             for x in matching:
                 if x["shown"] == "yes":
@@ -404,7 +407,8 @@ def main(argv=None):
             "linked_instrument": clean(s.get("linked_instrument")),
             "link_note": clean(s.get("link_note")),
             "citation": top["citation"],
-            "quote": top["quote"],
+            # a verdict's quote can be about another part of the row (Bear River: the Royce 444 remark)
+            "quote": "" if clean(s.get("show_quote")) == "no" else top["quote"],
             "summary": top["summary"],
             "evidence": top["evidence"],
             "evidence_display": top["evidence_display"],

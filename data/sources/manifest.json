@@ -10,6 +10,14 @@
       "retrieved": "2026-10-17"
     },
     {
+      "source": "census-nation",
+      "file": "cb_2023_us_nation_20m.zip",
+      "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_nation_20m.zip",
+      "bytes": 88800,
+      "sha256": "58c1be5aa56534a1f1b8323ddc931b8f37a7a971556fe3f5a1e6e757819406ff",
+      "retrieved": "2026-10-20"
+    },
+    {
       "source": "usfs-royce",
       "file": "attributes.json",
       "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TribalCessionLands_01/MapServer/2/query?where=1%3D1&outFields=*&f=json",

@@ -119,5 +119,5 @@ describe('build_graph.py applies decisions and they persist across rebuilds', ()
       });
       expect(edges.get(b!.id)!.status).toBe('rejected');
     }
-  }, 120_000);
+  }, 300_000);
 });

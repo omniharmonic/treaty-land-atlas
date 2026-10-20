@@ -352,6 +352,63 @@ function processToday(): string[] {
 }
 
 /**
+ * Lower-48 land with no federal cession record (K1 s.3.5): the Census nation outline, clipped to the
+ * lower 48, minus every Royce area. It is colonial, state and Texas takings, not unclaimed land.
+ * Small slivers between neighboring Royce shapes are dropped; the result is approximate.
+ */
+function processNoCession(): string[] {
+  const dir = join(RAW_DIR, 'census-nation');
+  if (!existsSync(dir))
+    throw new Error('raw Census nation file missing: run npm run data:fetch -- nation');
+  const zip = readdirSync(dir).find((f) => f.endsWith('.zip'));
+  if (!zip) throw new Error('no Census zip in data/sources/raw/census-nation');
+  const cessions = join(DERIVED_DIR, 'cessions.json');
+  if (!existsSync(cessions))
+    throw new Error('data/derived/cessions.json missing: build cessions first');
+  const tmp = mkdtempSync(join(tmpdir(), 'tla-nation-'));
+  execFileSync('unzip', ['-o', '-q', join(dir, zip), '-d', tmp]);
+  const shp = readdirSync(tmp).find((f) => f.endsWith('.shp'));
+  if (!shp) throw new Error('no .shp in the Census nation zip');
+  const outFile = join(tmp, 'no-cession.json');
+  const params =
+    'clip bbox=-125,24,-66.5,49.5; erase cessions; filter-slivers min-area=200km2; simplify 20%; precision=0.01';
+  mapshaper([
+    '-i',
+    join(tmp, shp),
+    '-proj',
+    'wgs84',
+    '-clip',
+    'bbox=-125,24,-66.5,49.5',
+    '-erase',
+    cessions,
+    '-filter-slivers',
+    'min-area=200km2',
+    '-explode',
+    '-simplify',
+    '20%',
+    '-o',
+    outFile,
+    'format=geojson',
+    'precision=0.01',
+  ]);
+  const out = JSON.parse(readFileSync(outFile, 'utf8')) as { features: Feature[] };
+  for (const [i, f] of out.features.entries()) f.properties = { id: `no-cession-${i + 1}` };
+  const body = JSON.stringify({ type: 'FeatureCollection', features: out.features });
+  writeFileSync(join(DERIVED_DIR, 'no-cession.json'), body + '\n');
+  const pinned = readManifest().files.find((f) => f.source === 'census-nation');
+  provenanceRow(
+    'data/derived/no-cession.json',
+    `Census Cartographic Boundary nation 1:20,000,000 (${zip}) minus data/derived/cessions.json`,
+    pinned ? pinned.sha256.slice(0, 12) : 'unpinned',
+    `mapshaper ${mapshaperVersion()}`,
+    params,
+  );
+  return [
+    `No-cession layer: ${out.features.length} features; ${(Buffer.byteLength(body) / 1024).toFixed(0)} KB.`,
+  ];
+}
+
+/**
  * Census LSAD codes: statistical areas (Oklahoma, Alaska Native village, tribal- and state-designated)
  * are not reservations and must not be drawn or described as reservations; Hawaiian Home Lands are a
  * distinct legal regime. Everything else is a reservation, rancheria, pueblo, colony, community or
@@ -390,6 +447,7 @@ export async function geometryCommand(args: string[]) {
   try {
     if (which === 'all' || which === 'cessions') out.push(...processCessions());
     if (which === 'all' || which === 'today') out.push(...processToday());
+    if (which === 'all' || which === 'no-cession') out.push(...processNoCession());
     if (which === 'all' || which === 'cessions' || which === 'cells') {
       const { writeCessionCells } = await import('./landloss.ts');
       out.push(writeCessionCells());

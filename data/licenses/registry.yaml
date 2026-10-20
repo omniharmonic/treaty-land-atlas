@@ -38,6 +38,17 @@ sources:
     required_notices: [statistical boundaries, not legal]
     gate: G-04
 
+  - id: census-nation
+    name: 'U.S. Census Bureau Cartographic Boundary File, United States outline (1:20,000,000)'
+    used_in: [layers/no-cession]
+    license_stated: 'Not copyrighted; acknowledge the Census Bureau; TIGER/Line is a registered trademark'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Land with no federal cession record: U.S. Census Bureau, Cartographic Boundary Files (United States, 1:20,000,000), minus the Royce areas. Modified by Benjamin Life (@omniharmonic). Approximate; not a legal description.'
+    required_notices: [modified, not legal]
+    gate: G-04
+
   - id: native-land-digital
     name: 'Native Land Digital (native-land.ca)'
     used_in: [integrations/territory]

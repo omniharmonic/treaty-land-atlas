@@ -222,7 +222,13 @@ export function cessionStories(
           }
         : {}),
       land_status: ls.status,
-      land_status_basis: research?.basis ?? ls.basis,
+      // the research row's own basis is a working note (shown collapsed on the record); readers
+      // get the instrument the research ties the status to
+      land_status_basis: research?.land_status
+        ? research.instrument
+          ? `Classified by the K1 research review from ${research.instrument}.`
+          : 'Classified by the K1 research review.'
+        : ls.basis,
       land_status_source: research?.land_status ? 'k1' : 'record',
       promised_year: promisedYear,
       broken_promise:

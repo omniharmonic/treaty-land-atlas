@@ -16,12 +16,13 @@ npm run data:validate -- --mode=production   # same, but license and review gate
 
 | Step | Command | Reads | Writes |
 |---|---|---|---|
+| 0. Fold in K1 research | `npm run k1:merge` | `docs/research/K1/data/` (proposals, findings, massacre sites, `verification/round*-*.csv`) | `crosswalks/land-status.csv`, `land-status-flags.csv`, `massacre-sites.csv`, `k1-findings.csv` |
 | 1. Check the tables | `npm run data:ingest` | `seed-data/*.csv` | row errors on screen and in `data/KNOWN-ISSUES.md` |
 | 2. Build the graph | `npm run graph:build` | `seed-data/`, `crosswalks/`, `data/derived/` | `build/nodes.json`, `edges.json`, `unresolved.json`, `graph-build-report.md` |
 | 3. Publish | `npm run data:emit` | `build/`, `data/derived/`, `data/suppress.yaml`, `data/overlays/` | `public/data/` (git-ignored) |
 | 4. Check everything | `npm run data:validate` | all of the above | `build/report.md` |
 
-`data:build` runs steps 1 to 3.
+`data:build` runs steps 0 to 3. A new verification round needs no code change: add `docs/research/K1/data/verification/round<N>-<batch>.csv` (same columns; later rounds override earlier ones per finding) and rebuild.
 
 These steps are run only when their inputs change:
 
@@ -29,6 +30,7 @@ These steps are run only when their inputs change:
 |---|---|---|
 | Re-download upstream data | `npm run data:fetch -- usfs` / `-- census` | Downloads the Forest Service cession layer or the Census boundaries into `data/sources/raw/` (git-ignored) and pins each file's SHA-256 in `data/sources/manifest.json` |
 | No network | `npm run data:fetch -- usfs --from-dir=/path` | Copies files you downloaded by hand and checks their checksums |
+| No-federal-record mask | `npm run data:fetch -- nation`, then `npm run data:geometry -- no-cession` | Census nation outline minus the Royce areas, written to `data/derived/no-cession.json` |
 | Rebuild geometry | `npm run data:geometry` | Joins, repairs, simplifies and quantizes the raw files into `data/derived/` (committed) and writes `build/usfs-field-inventory.md` |
 | Relink cessions to treaties | `python3 scripts/link_royce.py` | Rewrites `crosswalks/instrument-royce.csv`, keeping human decisions. CI fails if this file is stale |
 | Fold in new name research | `python3 scripts/merge_name_research.py <folder>` (run it twice) | Rewrites `crosswalks/nation-names.csv` and `crosswalks/nation-successor-research.csv` |

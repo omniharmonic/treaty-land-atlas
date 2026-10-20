@@ -6,6 +6,16 @@ The 2026-10-16 verification corrections are recorded in `verification/CORRECTION
 
 | Date | File | Row | Field | Old | New | Source | Who |
 |---|---|---|---|---|---|---|---|
+| 2026-10-20 | crosswalks/land-status.csv, land-status-flags.csv, massacre-sites.csv, k1-findings.csv (new) | all | all | (none) | written by scripts/merge_k1.py from docs/research/K1/data (proposals, findings, massacre-sites, verification rounds 2-3) | K1 research and verdicts | coding agent |
+| 2026-10-20 | crosswalks/royce-entry-roles.csv | geo-royce-516 | role, status, ceded_by, quote, summary, confidence | reserved, kept (low; read as the Great Sioux Reservation) | ceded 1868-04-29, high | Royce 1899 p. 849 (K1 WEB-PRM-010) | coding agent |
+| 2026-10-20 | docs/research/K1/data/royce-status-proposals.csv | 516 | (new row) | (none) | ceded_by_ratified_treaty | Royce p. 849 | coding agent |
+| 2026-10-20 | crosswalks/record-corrections.csv | geo-royce-426, 517 | plain, royce_summary | "never ratified" | ratified with amendment May 24, 1852; assents by 1854; never proclaimed | Kappler IV pp. 1065-1081 | coding agent |
+| 2026-10-20 | crosswalks/record-corrections.csv | TLA-T-FL1851 | date_ratified, notes | 1852-05; "(Art. 5)" | 1852-05-24; Art. 7 with the assent history | Kappler IV | coding agent |
+| 2026-10-20 | crosswalks/record-corrections.csv | geo-royce-597, 598 | plain | "ceded ... in a September 1876 agreement" | taken by the Act of Feb. 28, 1877 | 448 U.S. 371 | coding agent |
+| 2026-10-20 | crosswalks/record-corrections.csv | 19 California reserve areas | plain | "Set aside as a reservation" | "Promised as a reservation (never set apart in law ...)" | NARA T494 listing; K1 WEB-PRM-026 | coding agent |
+| 2026-10-20 | crosswalks/nations-beyond-federal-list.csv, record-corrections.csv | nat-pd-lumbee-tribe-north-carolina | recognition, label | state_recognized only; label carried the FR note | federal listing (2026, with the FR eligibility note) added; state recognition kept as history; label without the note | Federal Register, Jan. 30, 2026 | coding agent |
+| 2026-10-20 | crosswalks/nation-names.csv | nat-pd-crow-creek endonym | source_url, confidence | https://hunkpatioyate.org/, medium | blank (site serves unrelated retail content), low | checked 2026-10-20 | coding agent |
+| 2026-10-20 | data/story.json | several narratives | wording | "gave up", "agreed ... to sell", "ceded" stated as consensual | attributed or "the treaty took"; quotes untouched | K1 s.9.3, I5 | coding agent |
 | 2026-10-18 | crosswalks/royce-area-plain.csv (new) | 675 areas | plain | (none) | plain-language rewrite of each area's Royce summary, no new facts | crosswalks/royce-entry-roles.csv summary and quotes | coding agent |
 | 2026-10-18 | crosswalks/return-locations.csv (new) | 42 land returns | lat, lng, precision, place, basis_url | (none) | approximate point per return; sacred sites at county-seat precision only; 11 not placed | basis_url per row | coding agent |
 | 2026-10-18 | data/overlays/* | 524 overlays | note (new) | (none) | short reader-facing note drawn only from each overlay's own cautions, narrative and sources | the overlay's own sources | coding agent |
