@@ -63,6 +63,7 @@ Beyond the federal record
 | `K1-beyond-the-federal-record.md` | Where the federal record (Royce, Kappler, NARA) misleads: land never ceded or taken with no instrument, unratified treaties, duress, hostages, signatory defects, massacres, promised land, ICC payment-for-land; a proposed land-status classification; 30 instrument case files; corrections to atlas data. Built on a full reading of the People of the Sacred Land TREC report (2024) |
 | `K1/data/` | `beyond-federal-record-findings.csv` (682 sourced findings with verification status) and `royce-status-proposals.csv` (100 Royce areas with a proposed status and flags) |
 | `K1/notes/` | Per-chapter notes on the PSL TREC report (with page cites), national research notes, two verification reports, and the research brief |
+| `K2-nations-own-accounts.md` | Method and coverage of the research into what nations say themselves. The findings are drafts for each nation's review and are kept privately, not in this repository |
 
 Land Back and giving
 | File | What it is |
@@ -78,6 +79,8 @@ Prior art, method, ethics, teaching
 | `G1-prior-art-survey.md` | Existing maps and projects (NLD, Invasion of America, Land-Grab Universities, others) and gaps |
 | `G2-counterfactual-map-methodology.md` | "Ledger, not a verdict" method: stop-the-clock, layers, evidence flags, uncertainty tiers, legal-status codes |
 | `G3-ethics-and-indigenous-data-governance.md` | CARE, OCAP, US Indigenous data sovereignty, UNDRIP, review statuses, removal right, AI policy |
+| `../governance/K2-nation-review-protocol.md` | How nations are invited to review what the atlas says about them: office-only contact, response options and what the site does for each, disputes side by side, removal, TK and BC Labels, ledger columns |
+| `../governance/K2-site-display-rules.md` | What the public site shows before and after a nation's review, with exact badges and wording |
 | `G4-pedagogy-and-narrative-arcs.md` | Teaching principles and nine guided tours |
 
 ## Data (`docs/data/`)
