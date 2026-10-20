@@ -37,10 +37,11 @@ K1 showed where the federal record (Royce, Kappler, NARA) misleads. K2 asks what
 | Great Basin and Southwest | 68 | Navajo and Hopi accounts incomplete |
 | Alaska and Hawaiʻi | 79 | Most of the 229+ Alaska tribes not yet covered |
 | Nations without federal recognition | 118 | |
-| Native testimony in the public-domain federal record | 89 | Cherokee memorials, Standing Bear, Chief Joseph, the 1876 and 1889 Sioux commissions and 20th-century hearings not yet mined |
+| Native testimony in the public-domain federal record | 89 | First pass |
+| Testimony follow-up (2026-10-20) | 256 | Cherokee memorials 1834-1846 with the Treaty Party's own statements side by side; Plains commissions 1873-1890, the Lone Wolf v. Hitchcock record and the 1880 Senate inquiry into the Northern Cheyenne removal; the 1855 Walla Walla council record, Standing Bear and the Ponca, Chief Joseph (1879), Wind River 1904; Fort Berthold 1949, Kinzua 1957-60, 1954 termination and Survey of Conditions hearings. Not found outside blocked libraries: the 1934 IRA hearings, the 1968-71 Alaska claims hearings, the Fort Robinson board of officers, Boudinot's 1837 Letters, Lone Bear's 1904-05 protest |
 | Land after 1894 | 61 | |
 | Native-authored scholarship (catalog, citations only) | 132 | 21 authors' nations left blank pending the author's own statement |
-| **Total** | **1,466** | About 340 nations and bodies; 1,058 rows from nations' official sources; 124 rows record a disagreement between nations; 51 rows record only that restricted material exists |
+| **Total** | **1,722** | About 340 nations and bodies; 1,058 rows from nations' official sources; 124 rows record a disagreement between nations; 51 rows record only that restricted material exists |
 
 ## Limits
 
