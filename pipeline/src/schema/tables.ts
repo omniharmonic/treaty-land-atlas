@@ -297,7 +297,7 @@ export const TABLES = {
     expectedRows: 376,
   },
   cases: { file: 'cases-seed.csv', schema: caseRow, idColumn: 'id', expectedRows: 104 },
-  statutes: { file: 'statutes-seed.csv', schema: statuteRow, idColumn: 'id', expectedRows: 51 },
+  statutes: { file: 'statutes-seed.csv', schema: statuteRow, idColumn: 'id', expectedRows: 52 },
   violations: {
     file: 'violations-seed.csv',
     schema: violationRow,

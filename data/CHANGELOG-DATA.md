@@ -6,6 +6,9 @@ The 2026-10-16 verification corrections are recorded in `verification/CORRECTION
 
 | Date | File | Row | Field | Old | New | Source | Who |
 |---|---|---|---|---|---|---|---|
+| 2026-10-20 | docs/research/K1/data/royce-status-proposals.csv | 397, 598 | finding_ids | WEB-UR-011; WEB-PRM-012 | removed (merged into WEB-NC-022 and WEB-NC-013 during de-duplication) | findings notes column | coding agent |
+| 2026-10-20 | seed-data/statutes-seed.csv, crosswalks/statute-merge.csv | stat-apology-resolution-1993 | (new row) | only in treaties-seed (TLA-S-HI1993) | statute row, mapped from TLA-S-HI1993 | Pub. L. 103-150, 107 Stat. 1510 | coding agent |
+| 2026-10-20 | seed-data/organizations-seed.csv | org-nana | org_type, indigenous_led, ein_or_registry | Tribal government; tribal-government | ANCSA regional corporation (not a tribal government); yes-self-described | ANCSA (Pub. L. 92-203) | coding agent |
 | 2026-10-20 | crosswalks/land-status.csv, land-status-flags.csv, massacre-sites.csv, k1-findings.csv (new) | all | all | (none) | written by scripts/merge_k1.py from docs/research/K1/data (proposals, findings, massacre-sites, verification rounds 2-3) | K1 research and verdicts | coding agent |
 | 2026-10-20 | crosswalks/royce-entry-roles.csv | geo-royce-516 | role, status, ceded_by, quote, summary, confidence | reserved, kept (low; read as the Great Sioux Reservation) | ceded 1868-04-29, high | Royce 1899 p. 849 (K1 WEB-PRM-010) | coding agent |
 | 2026-10-20 | docs/research/K1/data/royce-status-proposals.csv | 516 | (new row) | (none) | ceded_by_ratified_treaty | Royce p. 849 | coding agent |
