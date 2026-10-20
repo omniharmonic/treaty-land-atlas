@@ -388,10 +388,12 @@ def main(argv=None):
         if decision == "drop":
             print(f"flag dropped by review: area {area} {flag} ({clean(rv.get('reason'))})")
             continue
-        if decision == "reported" and top["evidence"] in ("primary", "scholarly"):
-            top = {**top, "evidence": "reported",
-                   "evidence_display": f"Reported by {short_source(top.get('source_doc'))}" if top.get("source_doc") else "Reported by the K1 research",
-                   "summary": clean(rv.get("corrected_summary")) or top["summary"]}
+        if decision == "reported":
+            if top["evidence"] in ("primary", "scholarly"):
+                top = {**top, "evidence": "reported",
+                       "evidence_display": f"Reported by {short_source(top.get('source_doc'))}" if top.get("source_doc") else "Reported by the K1 research"}
+            if clean(rv.get("corrected_summary")):
+                top = {**top, "summary": clean(rv.get("corrected_summary"))}
         elif decision == "keep":
             # the reviewer may keep a flag on another verified finding than the top one: show that
             # finding's citation and quote, so the panel shows the evidence that meets the standard
@@ -405,6 +407,9 @@ def main(argv=None):
                        "quote": top["quote"] if sup and top["quote"] == sup["quote"] else ""}
             if clean(rv.get("supporting_quote")):
                 top = {**top, "quote": clean(rv.get("supporting_quote"))}
+                # the reviewer matched this exact quote to the primary source named in the citation
+                if clean(rv.get("supporting_citation")) and top["evidence"] not in ("primary", "scholarly"):
+                    top = {**top, "evidence": "primary", "evidence_display": DISPLAY["primary"]}
             if clean(rv.get("corrected_summary")):
                 top = {**top, "summary": clean(rv.get("corrected_summary"))}
         flag_rows.append({
