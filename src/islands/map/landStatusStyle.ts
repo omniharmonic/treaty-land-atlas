@@ -6,7 +6,7 @@
 // cession on the record, held by nations). Lightness and edge say which kind within the family.
 // Texture says what was wrong with consent (solid: primary or scholarly source; dotted: reported,
 // oral history or disputed). A green outline says a promise stood there. Dots say there is no
-// federal record at all. Flags never change the status.
+// Royce cession record (colonial, state and Texas takings; Alaska and Hawaii). Flags never change the status.
 
 import type { ExpressionSpecification } from 'maplibre-gl';
 
@@ -420,7 +420,7 @@ export const PRESETS: Record<PresetId, PresetSpec> = {
   never: {
     label: 'Never ceded',
     question:
-      'No cession on the record: treaties never ratified, land described in a treaty and never ceded, land taken with no instrument, and land with no federal record at all.',
+      'No cession on the record: treaties never ratified, land described in a treaty and never ceded, land taken with no instrument, and land with no Royce cession record.',
     color: ['unrat', 'desc', 'none', 'contested'],
     hatch: true,
     promise: 'none',

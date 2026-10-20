@@ -64,7 +64,7 @@ The engineer's `land_status` (feature prop `ls`, `pipeline/src/emit/landStatus.t
 | Held by nations (green) | `reserved` | `promised_reserved`, or any area with `py <= year` not yet lost | full step | Promised or reserved to the nation, held in this year |
 | | `prior` | any area not yet lost and not yet promised | pale wash, faint edge | Not yet taken in this year |
 | Context | `gone` | honored mode only: recorded cession before the cut | neutral, family edge | Recorded as ceded before [cut] |
-| No federal record | `gap` | land outside every Royce polygon, Alaska, Hawaii | dot texture on the basemap | Dots: no federal cession record (colonial and state takings, Texas, Alaska, Hawaii) |
+| No Royce cession record | `gap` | land outside every Royce polygon, Alaska, Hawaii | dot texture on the basemap | Dots: no Royce cession record (colonial and state takings, Texas; Alaska and Hawaii each with its own note) |
 
 Rule of thumb printed nowhere but kept everywhere: **contrast with the land increases with salience**. In light theme "no instrument" is the darkest plum; in dark theme it is the brightest. Dark mode is selected, not inverted.
 
@@ -265,7 +265,7 @@ Marks on top (only those the preset shows)
 - Green outline around taken land: promised to the nation, then taken
 - (What was promised) Green outline: promised to the nation, gone by this year
 - (Today) Reserved in 1894 (green dots): compare what is held now
-- Dots: no federal cession record (colonial and state takings, Texas, Alaska, Hawaii)
+- Dots: no Royce cession record (colonial and state takings, Texas; Alaska and Hawaii each with its own note)
 - Ring: massacre site, general location (primary or scholarly source)
 - Broken ring: massacre reported, source not yet confirmed
 - Thin outline: other records, not part of this view
@@ -297,7 +297,7 @@ Hover (desktop) shows a one-line tooltip (status + year + "n consent problems");
 ## 10. Phone
 
 - Preset chips are one horizontal-scroll row under the header (snap, trailing fade), 36 px tall, thumb reachable when the dock is pinned at the bottom.
-- Under the map, a **key strip** lists only what the current preset colors (short labels: "Ceded, treaty", "Act of Congress", "No instrument", "Consent problem", "No federal record"); the full legend is a collapsed sheet ("Legend: How it was taken").
+- Under the map, a **key strip** lists only what the current preset colors (short labels: "Ceded, treaty", "Act of Congress", "No instrument", "Consent problem", "No Royce record"); the full legend is a collapsed sheet ("Legend: How it was taken").
 - Tapping a shape opens a bottom sheet at 55% height and fits the selection into the visible map above it (`fitBounds` with bottom padding equal to the sheet). Verified in the prototype (`shots/panel-area477-dark-phone.png`).
 - Badges and region labels hide below zoom 4; massacre hit targets stay 44 px; slider ticks drop to 1784, 1894, Today.
 - Pattern tiles stay 8 px in CSS pixels at any zoom (patterns are screen-space in MapLibre, which is right: texture should not scale with land).

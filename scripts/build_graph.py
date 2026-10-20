@@ -940,6 +940,8 @@ def area_label(ev, rr, first, k1=None):
     if rr and rr["status"] == "kept" and re.search(r"\bland grant\b|Spanish grant", rr.get("summary", "") + rr.get("quote", "")):
         return (f"Land grant of the {who}" if who else "Land grant") + f"{where} (area {num})"
     status = k1["land_status"] if k1 else None
+    if k1 and k1.get("parent_area") and k1.get("sub_area_label"):
+        where = f", {k1['sub_area_label']}"  # a sub-area names its own extent
     head = (f"Land of the {who}" if who else "Native land") + where
     when = (rr["ceded_by"] or rr["taken_by"]) if rr else None
     year = (when or first or "")[:4]
@@ -993,7 +995,22 @@ def build_geofeatures(cross, alias_index):
     for o in cross.get("royce-area-overrides.csv", []):
         area_fix[o["id"]][o["field"]] = [v.strip() for v in o["value"].split(";") if v.strip()]
     # K1 land status per area (sub-areas such as 426-N are shown on their parent's record)
-    k1 = {r["royce_area"]: r for r in cross.get("land-status.csv", []) if not r.get("parent_area")}
+    k1 = {r["royce_area"]: r for r in cross.get("land-status.csv", [])}
+    # K1 sub-areas drawn as their own land areas (data/derived/sub-areas.json): each starts as a
+    # copy of its parent's USFS record, with its own number, and keeps the parent's treaty links
+    sub_file = ROOT / "data" / "derived" / "sub-areas.json"
+    if sub_file.exists():
+        by_num = {e["cessnum"]: i for i, e in enumerate(events)}
+        for f in json.loads(sub_file.read_text(encoding="utf-8"))["features"]:
+            p = f["properties"]
+            if p["parent"] not in by_num or p["n"] not in k1:
+                issue("warn", "sub_area_without_parent", "data/derived/sub-areas.json", p["n"], "No parent area or K1 row; not added.")
+                continue
+            ev = json.loads(json.dumps(events[by_num[p["parent"]]]))
+            ev.update({"id": p["id"], "cessnum": p["n"], "sort": ev["sort"] + 0.5, "states": ["CO"] if "CO" in ev["states"] else ev["states"]})
+            events.insert(by_num[p["parent"]] + 1, ev)
+            by_num = {e["cessnum"]: i for i, e in enumerate(events)}
+            links[p["n"]] = [dict(lk, cessnum=p["n"]) for lk in links.get(p["parent"], [])]
     plain = {r["id"]: r["plain"] for r in cross.get("royce-area-plain.csv", [])}
     for ev in events:
         gid = ev["id"]
@@ -1016,6 +1033,7 @@ def build_geofeatures(cross, alias_index):
                     "land_status_basis": ks["basis"] or None if ks else None,
                     "royce_summary": rr["summary"] or None if rr else None,
                     "plain": plain.get(gid) or None,
+                    "date_of_taking": (rr["ceded_by"] or rr["taken_by"] or first) if rr else first,
                     "boundary_type": "map_generalization",
                     "date_semantic_note": "Dates are Royce Schedule dates (USFS cessdate1-5): the instrument dates Royce gave, not necessarily the date the land changed hands.",
                     "geometry_file": "none" if missing else "layers/cessions.json",

@@ -49,6 +49,17 @@ sources:
     required_notices: [modified, not legal]
     gate: G-04
 
+  - id: natural-earth
+    name: 'Natural Earth 1:10m (rivers and lake centerlines; admin-1 states and provinces)'
+    used_in: [layers/no-cession, layers/cessions]
+    license_stated: 'Public domain ("No permission is needed to use Natural Earth", naturalearthdata.com/about/terms-of-use)'
+    conflict: false
+    status: pending
+    evidence: null
+    attribution_text: 'Made with Natural Earth (public domain): the South Platte line that splits Royce area 426, and the Alaska and Hawaii outlines.'
+    required_notices: []
+    gate: G-04
+
   - id: native-land-digital
     name: 'Native Land Digital (native-land.ca)'
     used_in: [integrations/territory]

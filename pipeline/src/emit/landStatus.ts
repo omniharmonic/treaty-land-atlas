@@ -155,6 +155,9 @@ export interface AreaK1 {
   finding_ids: string[];
   flags: FlagRecord[];
   sub_areas: SubArea[];
+  /** for a sub-area: its parent's Royce number and its own label */
+  parent: string | null;
+  label: string | null;
   massacres: string[];
   not_supported: { finding_id: string; summary: string; reason: string }[];
 }
@@ -210,6 +213,8 @@ export function loadK1(): { areas: Map<string, AreaK1>; massacres: MassacreSite[
         finding_ids: [],
         flags: [],
         sub_areas: [],
+        parent: null,
+        label: null,
         massacres: [],
         not_supported: [],
       };
@@ -236,18 +241,20 @@ export function loadK1(): { areas: Map<string, AreaK1>; massacres: MassacreSite[
   for (const r of rows('land-status.csv')) {
     const status = r['land_status'] as LandStatus;
     if (!(LAND_STATUS as readonly string[]).includes(status)) continue;
+    const a = get(r['royce_area']!);
+    // a sub-area (426-N, 566-UP) is drawn as its own land area; its parent lists it as a part
     if (r['parent_area']) {
+      a.parent = r['parent_area'];
+      a.label = r['sub_area_label'] || null;
       get(r['parent_area']).sub_areas.push({
         area: r['royce_area']!,
         label: r['sub_area_label'] ?? '',
         land_status: status,
         basis: r['basis'] ?? '',
         evidence_display: r['evidence_display'] ?? '',
-        flags: flagsBy.get(r['royce_area']!) ?? [],
+        flags: [],
       });
-      continue;
     }
-    const a = get(r['royce_area']!);
     a.land_status = status;
     a.instrument = r['instrument'] || null;
     a.basis = r['basis'] || null;
@@ -256,7 +263,7 @@ export function loadK1(): { areas: Map<string, AreaK1>; massacres: MassacreSite[
     a.finding_ids = list(r['finding_ids']);
     a.lost_year = /^\d{4}$/.test(r['lost_year'] ?? '') ? Number(r['lost_year']) : null;
   }
-  for (const [area, fl] of flagsBy) if (!/-/.test(area)) get(area).flags = fl;
+  for (const [area, fl] of flagsBy) get(area).flags = fl;
   for (const r of rows('k1-findings.csv'))
     if (r['shown'] === 'no')
       for (const area of list(r['royce_areas']))

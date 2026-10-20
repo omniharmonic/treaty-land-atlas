@@ -392,7 +392,23 @@ function processNoCession(): string[] {
     'precision=0.01',
   ]);
   const out = JSON.parse(readFileSync(outFile, 'utf8')) as { features: Feature[] };
-  for (const [i, f] of out.features.entries()) f.properties = { id: `no-cession-${i + 1}` };
+  for (const [i, f] of out.features.entries())
+    f.properties = { id: `no-cession-${i + 1}`, region: 'lower48' };
+  // Alaska and Hawaii: no Royce cession record either (but each has a federal record of its own,
+  // which the legend names). Natural Earth 10m admin-1, simplified like the mask (data/sources/k1-geo).
+  const akhi = join(DATA_DIR, 'sources', 'k1-geo', 'alaska-hawaii.geojson');
+  if (existsSync(akhi)) {
+    const extra = JSON.parse(readFileSync(akhi, 'utf8')) as { features: Feature[] };
+    const n: Record<string, number> = {};
+    for (const f of extra.features) {
+      const region = String(f.properties['region']);
+      n[region] = (n[region] ?? 0) + 1;
+      out.features.push({
+        ...f,
+        properties: { id: `no-cession-${region.toLowerCase()}-${n[region]}`, region },
+      });
+    }
+  }
   const body = JSON.stringify({ type: 'FeatureCollection', features: out.features });
   writeFileSync(join(DERIVED_DIR, 'no-cession.json'), body + '\n');
   const pinned = readManifest().files.find((f) => f.source === 'census-nation');
@@ -405,6 +421,40 @@ function processNoCession(): string[] {
   );
   return [
     `No-cession layer: ${out.features.length} features; ${(Buffer.byteLength(body) / 1024).toFixed(0)} KB.`,
+  ];
+}
+
+/**
+ * K1 sub-areas drawn as their own land areas (426-N north and west of the South Platte; 566-UP
+ * Uncompahgre Park), from data/sources/k1-geo (see data/PROVENANCE.md). Each keeps its parent's
+ * dates; build_graph.py and the emit stage add them beside the Royce areas.
+ */
+function processSubAreas(): string[] {
+  const dir = join(DATA_DIR, 'sources', 'k1-geo');
+  const features: Feature[] = [];
+  for (const file of ['426-N.geojson', '566-UP.geojson']) {
+    const path = join(dir, file);
+    if (!existsSync(path)) continue;
+    for (const f of (JSON.parse(readFileSync(path, 'utf8')) as { features: Feature[] }).features) {
+      const p = f.properties;
+      features.push({
+        ...f,
+        properties: {
+          id: p['id'],
+          n: p['n'],
+          parent: p['parent'],
+          t0: p['t0'],
+          t1: p['t1'],
+          lt: p['lt'],
+          tier: p['tier'],
+        },
+      });
+    }
+  }
+  const body = JSON.stringify({ type: 'FeatureCollection', features });
+  writeFileSync(join(DERIVED_DIR, 'sub-areas.json'), body + '\n');
+  return [
+    `Sub-areas: ${features.length} features (${features.map((f) => f.properties['n']).join(', ')}).`,
   ];
 }
 
@@ -448,6 +498,7 @@ export async function geometryCommand(args: string[]) {
     if (which === 'all' || which === 'cessions') out.push(...processCessions());
     if (which === 'all' || which === 'today') out.push(...processToday());
     if (which === 'all' || which === 'no-cession') out.push(...processNoCession());
+    if (which === 'all' || which === 'sub-areas') out.push(...processSubAreas());
     if (which === 'all' || which === 'cessions' || which === 'cells') {
       const { writeCessionCells } = await import('./landloss.ts');
       out.push(writeCessionCells());

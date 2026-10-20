@@ -131,7 +131,8 @@ function placeReport(d, lat, lng) {
       instruments: (st?.instruments ?? []).map((x) => ref(x.id)),
       checked: !!st?.entries,
       royce_summary: st?.royce_summary ?? null,
-      status: st?.status ?? "unchecked"
+      status: st?.status ?? "unchecked",
+      land_status: st?.land_status ?? "taken_no_instrument"
     };
   });
   const instruments = [

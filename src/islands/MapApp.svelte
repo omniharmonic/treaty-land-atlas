@@ -109,6 +109,8 @@
     evidence: string | null;
     evidence_display: string | null;
     flags: FlagRecord[];
+    parent?: string | null;
+    label?: string | null;
     sub_areas: {
       area: string;
       label: string;
@@ -767,7 +769,7 @@
           for (const [name, img] of Object.entries(drawPatterns(theme, dpr)))
             map.addImage(name, img, { pixelRatio: dpr });
 
-          // no federal cession record: colonial, state and Texas takings (dots on the basemap)
+          // no Royce cession record: colonial, state and Texas takings; Alaska and Hawaii (dots)
           if (norecord) {
             map.addSource('norecord', { type: 'geojson', data: norecord });
             map.addLayer({
@@ -1225,17 +1227,36 @@
               </details>
             {/if}
             {#each selectedK1?.sub_areas ?? [] as sub (sub.area)}
-              <div class="sub-area small">
-                <strong
-                  >Part of this area{sub.label
-                    ? ` (${sub.label.replace(/^proposed (split|sub-area): /, '')})`
-                    : ''}:</strong
+              <p class="sub-area small">
+                Part of this area is drawn as its own land area:
+                <button
+                  type="button"
+                  class="link"
+                  onclick={() => select(`geo-royce-${sub.area.toLowerCase()}`, true)}
+                  >area {sub.area}, {sub.label}</button
                 >
-                {STATUS_LABEL[sub.land_status]}.
-                <span class="badge ev-reported">{sub.evidence_display}</span>
-                <details class="note"><summary>Research note</summary>{sub.basis}</details>
-              </div>
+                ({STATUS_LABEL[sub.land_status].toLowerCase()}).
+              </p>
             {/each}
+            {#if selectedK1?.parent}
+              <p class="sub-area small">
+                Part of
+                <button
+                  type="button"
+                  class="link"
+                  onclick={() => select(`geo-royce-${selectedK1?.parent}`, true)}
+                  >area {selectedK1.parent}</button
+                >, drawn separately because the research classes it differently. Its boundary is
+                approximate.
+              </p>
+            {/if}
+            {#if selected?.node['date_of_taking'] === 'no date in the record'}
+              <p class="small">
+                Royce gives no date for this taking; the 1886-10-01 date in the source data is
+                carried over from unrelated Schedule rows (Royce pp. 920, 922). The map places it at
+                that date only so it can be drawn.
+              </p>
+            {/if}
           </section>
           {#if selectedK1?.flags.length}
             <section class="flags sans" aria-labelledby="flags-h">
@@ -1483,7 +1504,7 @@
             ></span>{preset.promise === 'reserved1894' ? 'Reserved in 1894' : 'Promise stood here'}
           </li>{/if}
         {#if preset.gap > 0 && s.view !== 'honored'}<li>
-            <span class="sw gap"></span>No federal record
+            <span class="sw gap"></span>No Royce cession record
           </li>{/if}
         {#if preset.today}<li><span class="sw today-sw"></span>Held today</li>{/if}
       </ul>
@@ -1626,8 +1647,11 @@
         </li>
         <li>
           <span class="sw gap"></span><span
-            >Dots: no federal cession record (colonial and state takings, most of Texas; Alaska and
-            Hawaii are not drawn)</span
+            >Dots: no Royce cession record. In the lower 48: colonial and state takings, and most of
+            Texas, which kept its public lands. Alaska: no treaty with Alaska Native nations; the US
+            bought Russia’s claim in 1867 and Congress extinguished aboriginal title by statute
+            (ANCSA, 1971). Hawaii: no treaty with Native Hawaiians; annexed by joint resolution of
+            Congress in 1898 (30 Stat. 750) after the 1893 overthrow.</span
           >
         </li>
         <li>

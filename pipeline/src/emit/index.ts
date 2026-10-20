@@ -4,7 +4,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { PUBLIC_DATA_DIR } from '../paths.ts';
+import { DATA_DIR, PUBLIC_DATA_DIR } from '../paths.ts';
 import type { Graph, GraphEdge, GraphNode } from '../validate/graph.ts';
 import type { Overlay } from '../overlays/index.ts';
 import { routeFor } from '../../../src/lib/routes.ts';
@@ -354,6 +354,8 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
       const fc = JSON.parse(body.toString('utf8')) as {
         features: { properties: Record<string, unknown> }[];
       };
+      // K1 sub-areas (426-N, 566-UP) are drawn as their own land areas
+      for (const f of subAreas()) fc.features.push(f);
       for (const f of fc.features) {
         const id = String(f.properties['id']);
         const st = stories.get(id);
@@ -372,9 +374,7 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
         const research = k1.areas.get(String(g?.['royce_cession_number'] ?? ''));
         f.properties['fh'] = hatchLevel(research?.flags ?? []);
         // always-visible badges: a contested status (here or on a sub-area) or a refused payment
-        const contested =
-          st?.land_status === 'contested' ||
-          research?.sub_areas.some((x) => x.land_status === 'contested');
+        const contested = st?.land_status === 'contested';
         const refused = research?.flags.some((x) => x.flag === 'payment_refused');
         if (contested || refused) f.properties['bd'] = contested ? 'contested' : 'payment_refused';
         // how well the promise is sourced: an oral or contested promise gets a dotted outline
@@ -394,6 +394,15 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
     }
     if (name === 'cession-events') {
       const list = JSON.parse(body.toString('utf8')) as Record<string, unknown>[];
+      for (const f of subAreas()) {
+        const parent = list.find((e) => e['cessnum'] === f.properties['parent']);
+        if (parent)
+          list.splice(list.indexOf(parent) + 1, 0, {
+            ...parent,
+            id: f.properties['id'],
+            cessnum: f.properties['n'],
+          });
+      }
       for (const e of list) {
         const id = String(e['id']);
         const st = stories.get(id);
@@ -479,6 +488,17 @@ function countBy<T>(list: T[], key: (t: T) => string) {
   const out: Record<string, number> = {};
   for (const x of list) out[key(x)] = (out[key(x)] ?? 0) + 1;
   return Object.fromEntries(Object.entries(out).sort(([a], [b]) => a.localeCompare(b)));
+}
+
+/** K1 sub-areas from data/derived/sub-areas.json (pipeline/src/geometry processSubAreas). */
+function subAreas(): { properties: Record<string, unknown> }[] {
+  const file = join(DATA_DIR, 'derived', 'sub-areas.json');
+  if (!existsSync(file)) return [];
+  return (
+    JSON.parse(readFileSync(file, 'utf8')) as {
+      features: { properties: Record<string, unknown> }[];
+    }
+  ).features;
 }
 
 export function sha256(body: string | Buffer): string {

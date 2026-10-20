@@ -3256,6 +3256,13 @@
             "null"
           ],
           "description": "Research summary of Royce's Schedule entries for the area (crosswalks/royce-entry-roles.csv), after any sourced correction."
+        },
+        "date_of_taking": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date the record ties to the taking or cession (the researched Royce entry, else the first USFS date), or 'no date in the record' after a sourced correction."
         }
       },
       "allOf": [

@@ -42,6 +42,7 @@ const k1 = (table('land-status.json') as Record<string, Record<string, unknown>>
       basis: string | null;
       flags: Flag[];
       sub_areas: { area: string; label: string; land_status: LandStatus; basis: string }[];
+      parent: string | null;
       massacres: string[];
       not_supported: { finding_id: string; summary: string; reason: string }[];
     }
@@ -84,15 +85,26 @@ const linked = sites.filter((m) => k1?.massacres.includes(m.id));
       Royce shows what the United States recorded as acquired, not what nations agreed to.
     </p>
     {k1?.sub_areas.map((s) => (
-      <div class="sub">
-        <strong>Part of this area ({s.label.replace(/^proposed (split|sub-area): /, '')}):</strong>{' '}
-        {STATUS_LABEL[s.land_status]}.
-        <details class="note">
-          <summary>Research note</summary>
-          {s.basis}
-        </details>
-      </div>
+      <p class="sub">
+        Part of this area is drawn as its own land area:{' '}
+        <a href={href(`/cessions/${s.area.toLowerCase()}/`)}>
+          area {s.area}, {s.label}
+        </a>{' '}
+        ({STATUS_LABEL[s.land_status].toLowerCase()}).
+      </p>
     ))}
+    {k1?.parent && (
+      <p class="sub">
+        Part of <a href={href(`/cessions/${k1.parent.toLowerCase()}/`)}>area {k1.parent}</a>, drawn
+        separately because the research classes it differently. Its boundary is approximate.
+      </p>
+    )}
+    {n['date_of_taking'] === 'no date in the record' && (
+      <p class="small">
+        Royce gives no date for this taking; the 1886-10-01 date in the source data is carried over
+        from unrelated Schedule rows (Royce pp. 920, 922).
+      </p>
+    )}
 
     {k1?.flags.length ? (
       <>
