@@ -392,8 +392,21 @@ def main(argv=None):
             top = {**top, "evidence": "reported",
                    "evidence_display": f"Reported by {short_source(top.get('source_doc'))}" if top.get("source_doc") else "Reported by the K1 research",
                    "summary": clean(rv.get("corrected_summary")) or top["summary"]}
-        elif decision == "keep" and clean(rv.get("corrected_summary")):
-            top = {**top, "summary": clean(rv.get("corrected_summary"))}
+        elif decision == "keep":
+            # the reviewer may keep a flag on another verified finding than the top one: show that
+            # finding's citation and quote, so the panel shows the evidence that meets the standard
+            sup = views.get(clean(rv.get("supporting_finding_id")))
+            if sup and sup["shown"] == "yes" and sup["evidence"] in ("primary", "scholarly"):
+                top = {**top, "evidence": sup["evidence"], "evidence_display": sup["evidence_display"],
+                       "citation": sup["citation"], "quote": sup["quote"]}
+            if clean(rv.get("supporting_citation")):
+                # a quote is only shown with the citation it came from
+                top = {**top, "citation": clean(rv.get("supporting_citation")),
+                       "quote": top["quote"] if sup and top["quote"] == sup["quote"] else ""}
+            if clean(rv.get("supporting_quote")):
+                top = {**top, "quote": clean(rv.get("supporting_quote"))}
+            if clean(rv.get("corrected_summary")):
+                top = {**top, "summary": clean(rv.get("corrected_summary"))}
         flag_rows.append({
             "royce_area": area,
             "flag": flag,
