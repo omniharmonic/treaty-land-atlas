@@ -47,7 +47,7 @@ export const NOT_LOST: ReadonlySet<LandStatus> = new Set([
   'promised_reserved',
   'described_not_ceded',
 ]);
-/** Land lost with no lawful cession on the record: never shown as lawfully ceded, in any view. */
+/** Land lost with no cession on the record: never shown as ceded, in any view. */
 export const NO_LAWFUL_CESSION: ReadonlySet<LandStatus> = new Set([
   'unratified_treaty_area',
   'taken_no_instrument',
@@ -122,7 +122,7 @@ export function landStatus(i: StatusInput): { status: LandStatus; basis: string 
   };
 }
 
-export type Evidence = 'primary' | 'scholarly' | 'reported' | 'disputed';
+export type Evidence = 'primary' | 'scholarly' | 'oral_history' | 'reported' | 'disputed';
 
 export interface FlagRecord {
   flag: Flag;
@@ -149,6 +149,8 @@ export interface AreaK1 {
   instrument: string | null;
   basis: string | null;
   evidence: Evidence | null;
+  /** year the research shows the land lost, where it corrects Royce's dates */
+  lost_year: number | null;
   evidence_display: string | null;
   finding_ids: string[];
   flags: FlagRecord[];
@@ -203,6 +205,7 @@ export function loadK1(): { areas: Map<string, AreaK1>; massacres: MassacreSite[
         instrument: null,
         basis: null,
         evidence: null,
+        lost_year: null,
         evidence_display: null,
         finding_ids: [],
         flags: [],
@@ -251,6 +254,7 @@ export function loadK1(): { areas: Map<string, AreaK1>; massacres: MassacreSite[
     a.evidence = (r['evidence'] as Evidence) || null;
     a.evidence_display = r['evidence_display'] || null;
     a.finding_ids = list(r['finding_ids']);
+    a.lost_year = /^\d{4}$/.test(r['lost_year'] ?? '') ? Number(r['lost_year']) : null;
   }
   for (const [area, fl] of flagsBy) if (!/-/.test(area)) get(area).flags = fl;
   for (const r of rows('k1-findings.csv'))

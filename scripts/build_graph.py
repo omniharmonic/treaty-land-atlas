@@ -943,6 +943,8 @@ def area_label(ev, rr, first, k1=None):
     head = (f"Land of the {who}" if who else "Native land") + where
     when = (rr["ceded_by"] or rr["taken_by"]) if rr else None
     year = (when or first or "")[:4]
+    if k1 and k1.get("lost_year"):  # the research corrects Royce's date (a superseded reserve)
+        when = year = k1["lost_year"]
     if status == "unratified_treaty_area" and rr and rr["status"] == "kept":
         return f"{head}, promised under a treaty never ratified, {year} (area {num})"
     if status in ("promised_reserved",) or (not status and rr and rr["status"] == "kept"):

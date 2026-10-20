@@ -95,6 +95,12 @@ beforeAll(() => {
         evidence_level: 'CONTESTED',
       }),
       finding({
+        finding_id: 'F-ORAL',
+        category: 'HOSTAGE',
+        royce_areas: '447',
+        evidence_level: 'ORAL_HISTORY',
+      }),
+      finding({
         finding_id: 'F-MAS',
         category: 'MASSACRE',
         royce_areas: '444;447',
@@ -286,6 +292,8 @@ describe('merge_k1.py', () => {
       'finding_ids',
       'confidence',
       'research_verification',
+      'lost_year',
+      'revision_note',
     ]);
     expect(Object.keys(read(out, 'land-status-flags.csv')[0]!)).toEqual([
       'royce_area',
@@ -315,7 +323,7 @@ describe('merge_k1.py', () => {
       'finding_ids',
     ])
       expect(site).toHaveProperty(k);
-    expect(read(out, 'k1-findings.csv')).toHaveLength(5);
+    expect(read(out, 'k1-findings.csv')).toHaveLength(6);
     expect(log).toContain('4 land statuses');
   });
   it('renames recognized_not_ceded and keeps sub-areas under their parent', () => {
@@ -346,6 +354,11 @@ describe('merge_k1.py', () => {
     expect(
       flags.find((r) => r.flag === 'excluded_party' && r.royce_area === '477')!.evidence_display,
     ).toBe('Disputed');
+    expect(flags.find((r) => r.royce_area === '447')!).toMatchObject({
+      evidence: 'oral_history',
+      evidence_display: 'Oral history (published with permission)',
+      hatch: 'dotted',
+    });
     // round 3 contradicted F-NO: its flag is dropped and the claim is listed as not supported
     expect(flags.some((r) => r.royce_area === '426' && r.flag === 'signatory_defect')).toBe(false);
     const no = read(out, 'k1-findings.csv').find((r) => r.finding_id === 'F-NO')!;

@@ -371,7 +371,22 @@ export function emit(graph: Graph, opts: EmitOptions): EmitResult {
         f.properties['bp'] = st?.broken_promise ? 1 : 0;
         const research = k1.areas.get(String(g?.['royce_cession_number'] ?? ''));
         f.properties['fh'] = hatchLevel(research?.flags ?? []);
+        // always-visible badges: a contested status (here or on a sub-area) or a refused payment
+        const contested =
+          st?.land_status === 'contested' ||
+          research?.sub_areas.some((x) => x.land_status === 'contested');
+        const refused = research?.flags.some((x) => x.flag === 'payment_refused');
+        if (contested || refused) f.properties['bd'] = contested ? 'contested' : 'payment_refused';
       }
+      // draw order: the record the United States relies on now on top (t0 ascending; reservations
+      // never lost, 9999, above the cessions around them), small later areas above large earlier ones
+      fc.features.sort(
+        (a, b) =>
+          Number(a.properties['t0']) - Number(b.properties['t0']) ||
+          (stories.get(String(b.properties['id']))?.acres ?? 0) -
+            (stories.get(String(a.properties['id']))?.acres ?? 0) ||
+          String(a.properties['id']).localeCompare(String(b.properties['id'])),
+      );
       body = Buffer.from(JSON.stringify(fc) + '\n');
     }
     if (name === 'cession-events') {

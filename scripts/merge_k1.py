@@ -31,6 +31,7 @@ Evidence shown to readers (decision log 2026-10-20):
   primary    "Primary source"       a verdict confirmed it (in whole or part) against a primary document
   scholarly  "Scholarly source"     a verdict confirmed it against scholarship or a secondary source
   reported   "Reported by <source>" not yet verified: single-source, book-only or unchecked
+  oral_history "Oral history (published with permission)"  a nation's or community's published oral account
   disputed   "Disputed"             the research marks it contested and no verdict confirmed it
   unsupported (not shown as a flag) a verdict found it contradicted or not supported
 
@@ -84,8 +85,9 @@ CATEGORY_FLAG = {
     "LAND_PROMISED_THEN_TAKEN": "promise_broken",
     "ICC_OUTCOME": "icc_money_not_land",
 }
-RANK = {"primary": 4, "scholarly": 3, "reported": 2, "disputed": 1, "unsupported": 0}
-DISPLAY = {"primary": "Primary source", "scholarly": "Scholarly source", "disputed": "Disputed"}
+RANK = {"primary": 5, "scholarly": 4, "oral_history": 3, "reported": 2, "disputed": 1, "unsupported": 0}
+DISPLAY = {"primary": "Primary source", "scholarly": "Scholarly source", "disputed": "Disputed",
+           "oral_history": "Oral history (published with permission)"}
 VERIFIED = {"confirmed", "partly"}
 REJECTED = {"contradicted", "not_supported"}
 
@@ -187,7 +189,7 @@ def evidence_of(f, v):
         return "disputed", DISPLAY["disputed"], ""
     src = "PSL TREC 2024" if against == "book_only" else short_source(f.get("source_doc"))
     if f.get("evidence_level") == "ORAL_HISTORY":
-        return "reported", f"Reported by {src} (oral history)", ""
+        return "oral_history", DISPLAY["oral_history"], ""
     return "reported", f"Reported by {src}", ""
 
 
@@ -322,6 +324,10 @@ def main(argv=None):
             "finding_ids": ";".join(fids),
             "confidence": clean(p.get("confidence")),
             "research_verification": clean(p.get("verification_status")),
+            # the year the map shows the land lost, where the research corrects Royce's dates
+            # (a reserve superseded by a later treaty, such as 478 in 1867)
+            "lost_year": clean(p.get("lost_year")) if re.match(r"^\d{4}$", clean(p.get("lost_year"))) else "",
+            "revision_note": clean(p.get("revision_note")),
         })
         # a proposal's flags: supported by its findings of the matching category; failing that,
         # by the proposal itself, shown as reported until a finding of that kind is verified

@@ -100,6 +100,8 @@ export interface CessionStory {
   promised_year: number | null;
   /** promised or reserved first, then lost; or a K1 promise_broken flag */
   broken_promise: boolean;
+  /** the year the research shows the land lost, where it corrects Royce's dates (K1 lost_year) */
+  lost_year?: number;
 }
 
 const PROMISE_ROLES = new Set(['reserved', 'confirmed', 'described_or_recognized']);
@@ -234,7 +236,13 @@ export function cessionStories(
       broken_promise:
         (!!promised && status !== 'kept' && !!cededBy && promised.date < cededBy) ||
         !!research?.flags.some((f) => f.flag === 'promise_broken'),
+      ...(research?.lost_year ? { lost_year: research.lost_year } : {}),
     });
+    // a promise the record shows lost later is a broken promise, however Royce dated it
+    const story = out.get(g.id)!;
+    const lost = lostAt(story, g);
+    if (promisedYear !== null && lost !== null && promisedYear < Math.floor(lost))
+      story.broken_promise = true;
   }
   return out;
 }
@@ -302,6 +310,7 @@ export function lostAt(st: CessionStory | undefined, g: GraphNode): number | nul
   const tFirst = typeof g['t_first'] === 'number' ? (g['t_first'] as number) : null;
   if (!st) return tFirst;
   if (NOT_LOST.has(st.land_status)) return null;
+  if (st.lost_year) return st.lost_year + 0.5;
   // Royce lists it as kept, but the land status says it was lost (an unratified treaty's reserve,
   // never set apart in law): dated by its first entry
   if (st.status === 'kept') {
