@@ -3,6 +3,12 @@ title = "treaty-land-atlas"
 [extend]
 useDefault = true
 
+# The relay's unit tests use an obvious placeholder, not a key.
+[allowlist]
+description = "test placeholders"
+regexTarget = "match"
+regexes = ['''test-key-not-real''']
+
 [[rules]]
 id = "nld-key"
 description = "Native Land Digital API key assigned in code or config"
