@@ -54,7 +54,7 @@
     "mapshaper": "^0.7.72",
     "mcp-handler": "2.3.0",
     "pagefind": "^1.5.2",
-    "prettier": "3.9.9",
+    "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.0",
     "prettier-plugin-svelte": "4.1.1",
     "subset-font": "^2.9.0",
